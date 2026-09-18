@@ -6,10 +6,11 @@
 3. `Phases.md` — HOW/WHEN; sole execution roadmap
 4. `docs/ARCHITECTURE.md` — technical structure
 5. `docs/ASTROLOGY_STANDARDS.md` — calculation/interpretation standards (locked canonical location; there is exactly one standards document, no separate `docs/calculation-standards.md`)
-6. `PRODUCT_POLICIES.md`
-7. `LEGAL_REGULATIONS.md`
-8. Research documents
-9. Code/configuration
+6. `TECH_STACK.md` — locked technology-stack choices (there is exactly one technology-stack document; derived from and must not contradict `docs/ARCHITECTURE.md`)
+7. `PRODUCT_POLICIES.md`
+8. `LEGAL_REGULATIONS.md`
+9. Research documents
+10. Code/configuration
 
 ## Conflict rule
 Never silently resolve contradictions. Record them, resolve in the higher-authority document, update dependents, and add a changelog entry.

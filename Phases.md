@@ -396,7 +396,58 @@ Use PostgreSQL + vector search where useful.
 
 Deliverable: structured astrology knowledge system.
 
-## Phase 13 — Self-Hosted AI Model
+## Phase 13 — Palm Reading & Vision Intelligence
+
+AI Palm Reading is a locked product feature (see `features.md` §34). Build the deterministic vision/analysis pipeline that produces structured palm facts, and the palmistry rule/knowledge layer that interprets them — before any AI narration is introduced.
+
+Pipeline:
+
+```
+User Palm Image
+        ↓
+Image Quality Validation
+        ↓
+Hand Detection / Localization
+        ↓
+Palm Region Extraction
+        ↓
+Palm Landmark / Feature Extraction
+        ↓
+Palm-Line / Palm Feature Analysis
+        ↓
+Structured Palm Facts
+        ↓
+Palm-Reading Rules / Knowledge
+        ↓
+AI Reasoning
+        ↓
+Verification
+        ↓
+Final Interpretation
+```
+
+Build:
+
+- Image quality validation (lighting, blur, occlusion, framing)
+- Hand detection / localization
+- Left/right hand classification
+- Palm region extraction
+- Palm landmark / feature extraction
+- Palm-line / palm feature analysis (a dedicated vision model/pipeline — generic hand-landmark detection alone is not palmistry interpretation)
+- Structured, versioned palm-fact output
+- Palmistry rules/knowledge layer (source-tagged, same discipline as the Vedic rule engine)
+- AI narration from structured facts only
+- Verification pass before final interpretation is released
+
+This phase must remain consistent with the core Pandit Ji invariant:
+
+**FACTS FLOW ONE DIRECTION; AI ONLY NARRATES.**
+
+Palm-reading AI must not be the authoritative source of extracted measurements/facts — the vision/analysis pipeline is. The AI reasons over structured palm facts and triggered palmistry rules exactly as it reasons over structured chart facts and triggered yogas/doshas elsewhere in the product; it never infers a palm line or feature that the vision pipeline did not actually detect.
+
+Deliverable: palm-reading vision pipeline + palmistry rule/knowledge layer + AI narration + verification, integrated behind the same evidence-bundle/verification architecture as the rest of Pandit Ji.
+
+## Phase 14 — Self-Hosted AI Model
 
 Now build Pandit Ji's AI brain.
 
@@ -438,7 +489,7 @@ Reasoning
 
 Deliverable: self-hosted AI inference service.
 
-## Phase 14 — Pandit Ji Agent
+## Phase 15 — Pandit Ji Agent
 
 This is where the project becomes an actual AI agent.
 
@@ -484,7 +535,7 @@ Build:
 
 Deliverable: Pandit Ji Agent v1.
 
-## Phase 15 — Evidence & Verification Engine
+## Phase 16 — Evidence & Verification Engine
 
 This phase is critical.
 
@@ -516,7 +567,7 @@ Build:
 
 Deliverable: verified-response pipeline.
 
-## Phase 16 — Life-Domain Intelligence
+## Phase 17 — Life-Domain Intelligence
 
 Now build specialized analysis across the complete life spectrum.
 
@@ -572,7 +623,7 @@ Interpretation
 
 Deliverable: complete domain reasoning system.
 
-## Phase 17 — Backend Platform
+## Phase 18 — Backend Platform
 
 Now expose everything through production APIs.
 
@@ -605,7 +656,7 @@ Add:
 
 Deliverable: production backend.
 
-## Phase 18 — Pandit Ji Web + Mobile App
+## Phase 19 — Pandit Ji Web + Mobile App
 
 Now build the actual product experience.
 
@@ -653,7 +704,7 @@ Main modules:
 
 Deliverable: polished mobile + web applications.
 
-## Phase 19 — Voice + Personalization
+## Phase 20 — Voice + Personalization
 
 Give Pandit Ji a natural conversational interface.
 
@@ -691,7 +742,7 @@ Add:
 
 Deliverable: Pandit Ji Voice + Personal AI.
 
-## Phase 20 — Validation, Backtesting & Production Launch
+## Phase 21 — Validation, Backtesting & Production Launch
 
 This is the final and arguably most important phase.
 

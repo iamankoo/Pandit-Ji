@@ -642,9 +642,7 @@ The exact implementation stack can evolve, but the architecture must preserve th
 
 Potential future modules, not required for the initial baseline:
 
-- Palm reading
-- Face reading
-- Image-based palm analysis
+- Face reading (AI Palm Reading is a locked product feature — see §34; face reading remains future/out-of-scope)
 - AI document/report generation
 - Personalized daily notifications
 - Event/period alerts
@@ -656,3 +654,31 @@ Potential future modules, not required for the initial baseline:
 - Research/backtesting laboratory
 - Personal astrology API
 - Developer SDK
+
+## 34. AI Palm Reading — LOCKED PRODUCT FEATURE
+
+**Status: LOCKED PRODUCT FEATURE**, per explicit project-owner decision. This supersedes the earlier "Future Expansion" listing of palm reading in §33 (permitted under §32's "new features can be added... with an explicit product decision" rule).
+
+AI Palm Reading is part of Pandit Ji's locked product baseline: it covers user-provided palm images and AI-assisted palm analysis, on the same footing as the other astrology systems in this document.
+
+This is a **product-scope statement**, not an implementation schedule. The dedicated implementation phase, architecture, and technology stack for this feature belong to `Phases.md`'s own Palm Reading & Vision Intelligence phase and its corresponding technology-stack entries — this section does not itself implement or architect the feature, and does not change when it is built.
+
+Palm Reading must follow the same core invariant as every other Pandit Ji feature:
+
+```
+Image
+ ↓
+Vision / Palm Analysis
+ ↓
+Structured Palm Facts
+ ↓
+Rules / Knowledge
+ ↓
+AI Reasoning
+ ↓
+Verification
+ ↓
+User Response
+```
+
+**FACTS FLOW ONE DIRECTION; AI ONLY NARRATES.** The AI must never independently invent palm-reading facts (lines, mounts, shapes) from an image — it may only narrate structured facts that a deterministic vision/analysis step actually extracted, exactly as it may never independently invent a planetary position, house, or dasha date (§1's Accuracy principle, `docs/ASTROLOGY_STANDARDS.md`'s Core rule). Privacy handling for palm images (purpose disclosure, minimum retention, deletion controls, no secondary use without authorization) is governed by `PRODUCT_POLICIES.md`'s Palm images section and Data & Privacy Principles, and `docs/ASTROLOGY_STANDARDS.md`'s Palmistry standard — this section does not restate that content.

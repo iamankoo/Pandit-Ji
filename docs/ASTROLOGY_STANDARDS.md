@@ -13,7 +13,7 @@ The AI must never independently calculate planetary positions, houses, ascendant
 
 ## AI scope boundary
 
-- **Self-hosted requirement**: Pandit Ji's core astrology reasoning (chart interpretation, prediction, agent planning, personalization, knowledge reasoning, core chatbot responses) must not depend on external hosted proprietary LLM APIs. See `research/AI_MODELS.md` and `docs/ARCHITECTURE.md` §7's `LLMProvider` abstraction for the technical mechanism; this document fixes it as a standing product requirement, not merely an implementation preference.
+- **Self-hosted requirement**: Pandit Ji's core astrology reasoning (chart interpretation, prediction, agent planning, personalization, knowledge reasoning, core chatbot responses) must not depend on external hosted proprietary LLM APIs. See `research/AI_MODELS.md` and `docs/ARCHITECTURE.md` §16's `LLMProvider`/AI Reasoner interface for the technical mechanism; this document fixes it as a standing product requirement, not merely an implementation preference.
 - **Fact-vs-narration boundary**: the AI consumes structured facts and evidence bundles produced by the calculation engine, rule engine, and knowledge base (defined in this document and `docs/ARCHITECTURE.md`); it narrates and explains them, and never originates them. This is the same invariant as the Core rule above, restated as an explicit AI-scope requirement per Phase 1 exit criteria.
 
 ## Default Vedic profile
@@ -65,7 +65,7 @@ For each system: system identity, zodiac/basis, house methodology (where applica
 - Interpretive methodology: KP significator and ruling-planet analysis, distinct from Parashari yogas
 - Source/tradition separation: KP must not reuse Parashari yoga/dosha rules; its own rule set is separate
 - Implemented in Phase 9
-- Note: the sub-lord subdivision arithmetic must be validated against an authoritative KP reference before implementation (see `docs/ARCHITECTURE.md` §14)
+- Note: the sub-lord subdivision arithmetic must be validated against an authoritative KP reference before implementation (see `docs/ARCHITECTURE.md` §30)
 
 ### Lal Kitab
 - Basis: differs fundamentally from Parashari Vedic astrology — traditional Lal Kitab practice does not use the varga (divisional chart) system or nakshatra-based timing the way Parashari Jyotish does, and historically some variants work from a simplified, fixed house-based chart representation rather than degree-precision positions
@@ -82,8 +82,8 @@ For each system: system identity, zodiac/basis, house methodology (where applica
 
 ### Numerology, Chinese astrology, Tarot, Vastu/Feng Shui, Horary, Palmistry
 - Numerology: see the dedicated §Numerology standards section below (implemented Phase 11)
-- Chinese astrology, Tarot, Vastu/Feng Shui, Horary: system identity acknowledged as in-scope per `features.md`; each requires its own dedicated methodology definition before implementation, following the same pattern as the systems above (system identity, basis, core assumptions, source/tradition separation, non-mixing rule); detailed standards for these are deferred to the phase that implements them (Phase 9 for KP/Lal Kitab/Nadi/Western/Chinese, Phase 16 for cross-domain analysis touching Vastu) and must be written before that phase begins, following this document's format
-- Palmistry: see §Palmistry below (implemented as part of the palm-reading pipeline; see `docs/ARCHITECTURE.md` §17 item 3 for the still-open scope/priority question on when this is built)
+- Chinese astrology, Tarot, Vastu/Feng Shui, Horary: system identity acknowledged as in-scope per `features.md`; each requires its own dedicated methodology definition before implementation, following the same pattern as the systems above (system identity, basis, core assumptions, source/tradition separation, non-mixing rule); detailed standards for these are deferred to the phase that implements them (Phase 9 for KP/Lal Kitab/Nadi/Western/Chinese, Phase 17 for cross-domain analysis touching Vastu) and must be written before that phase begins, following this document's format
+- Palmistry: AI Palm Reading is a locked product feature (`features.md` §34); see §Palmistry below for the interpretation-boundary standard, and `Phases.md` Phase 13 (Palm Reading & Vision Intelligence) for the dedicated vision-pipeline/rule-layer implementation
 
 ## Divisional charts (Vargas)
 
@@ -93,7 +93,7 @@ Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)**
 - **D9 / Navamsa**: each of the 12 signs is divided into 9 equal parts of 3°20′ each; a planet's Navamsa sign is determined by classical Parashari rule based on which 3°20′ segment its longitude falls into and the modality (movable/fixed/dual) of its D1 sign, per the standard starting-point convention. Represents marriage, spouse, dharma, and the inner strength of D1 placements.
 - **Divisional-chart framework**: Pandit Ji's locked varga set is the classical Shodashvarga (16 principal divisional charts): D1, D2, D3, D4, D7, D9, D10, D12, D16, D20, D24, D27, D30, D40, D45, D60. Each varga is derived deterministically from the same D1 sidereal longitudes via its classical division formula — no varga is independently observed or separately calculated from the ephemeris.
 - **What each chart represents** (canonical significations, to be expanded per-varga during Phase 5): D1 = self/body/overall life; D2 (Hora) = wealth; D3 (Drekkana) = siblings/courage; D4 (Chaturthamsa) = property/home/fortune; D7 (Saptamsa) = children/progeny; D9 (Navamsa) = marriage/spouse/dharma; D10 (Dasamsa) = career/profession; D12 (Dwadasamsa) = parents; D16 (Shodasamsa) = vehicles/general happiness; D20 (Vimsamsa) = spiritual pursuits; D24 (Chaturvimsamsa) = education/learning; D27 (Nakshatramsa/Bhamsa) = strengths/weaknesses; D30 (Trimsamsa) = misfortunes/challenges; D40 (Khavedamsa) = auspicious/inauspicious effects; D45 (Akshavedamsa) = general life conduct; D60 (Shashtiamsa) = overall past-karma/fine-grained life analysis.
-- **Chart-specific applicability**: which varga is authoritative for which life-domain question is determined by the domain-to-varga mapping used in `docs/ARCHITECTURE.md` §7's Astrology Planner (e.g., a marriage question requires D1 + D9; a career question requires D1 + D10). This mapping is finalized during Phase 5/Phase 16, not Phase 1.
+- **Chart-specific applicability**: which varga is authoritative for which life-domain question is determined by the domain-to-varga mapping used in `docs/ARCHITECTURE.md` §8's Astrology Planner (e.g., a marriage question requires D1 + D9; a career question requires D1 + D10). This mapping is finalized during Phase 5/Phase 17, not Phase 1.
 - **Versioning/configuration**: the varga division scheme (classical Parashari, as fixed above) is part of `calculation_config`; if an alternate varga scheme is ever supported, it must be a distinct, explicit configuration value, never silently substituted.
 
 ## Vimshottari Dasha
@@ -135,7 +135,7 @@ Every Yoga/Dosha rule must be represented with:
 - Exceptions (documented exception conditions from the source tradition)
 - Interpretation (the traditional meaning associated with the triggered rule — narrative phrasing is the AI's job at response time, not stored as free text in the rule itself)
 - Timing relevance (which dasha/transit periods, if any, the rule's effects are most associated with)
-- Conflicting rules (an explicit list of other rule IDs this rule is known to contradict, so the evidence-bundle contradiction analysis in `docs/ARCHITECTURE.md` §6 can surface both sides)
+- Conflicting rules (an explicit list of other rule IDs this rule is known to contradict, so the evidence-bundle contradiction analysis in `docs/ARCHITECTURE.md` §7 can surface both sides)
 
 **Do NOT invent a universal list of Yogas/Doshas where traditions disagree.** Where Parashari, Jaimini, Lal Kitab, KP, or other schools define a given Yoga/Dosha differently, each school's version is recorded as its own tagged rule under its own source/tradition, and the evidence bundle presents both rather than the system silently picking a winner.
 
@@ -184,7 +184,7 @@ Product-level data/privacy principles (data minimization, purpose limitation, co
 
 ## Prediction language policy
 
-- Clearly distinguish three claim classes at all times (matching `SOURCE_OF_TRUTH.md`'s claim-class taxonomy): **calculation facts** (deterministically computed), **traditional interpretations** (what a named tradition/school teaches, per §Yoga/Dosha standards' source-tagging), and **empirical/scientific evidence** (measured, backtested performance — see `docs/ARCHITECTURE.md` §9 and `research/BACKTESTING.md`). Never blur these into one undifferentiated claim.
+- Clearly distinguish three claim classes at all times (matching `SOURCE_OF_TRUTH.md`'s claim-class taxonomy): **calculation facts** (deterministically computed), **traditional interpretations** (what a named tradition/school teaches, per §Yoga/Dosha standards' source-tagging), and **empirical/scientific evidence** (measured, backtested performance — see `docs/ARCHITECTURE.md` §11 and `research/BACKTESTING.md`). Never blur these into one undifferentiated claim.
 - Never present a guaranteed future outcome.
 - Never claim "100% accurate prediction" or equivalent unqualified certainty.
 - Communicate uncertainty wherever it materially affects the interpretation (see §Birth-time uncertainty and §Uncertainty below).
@@ -220,7 +220,7 @@ Astrological health content is traditional/educational only, never diagnosis, pr
 Gemstones, mantras, puja, fasting, donations and rituals are traditional/spiritual practices, not scientifically established treatments.
 
 ## Palmistry
-Image quality, hand side, visible structures and uncertainty must be separated from interpretation. No medical diagnosis from palm images. (See `docs/ARCHITECTURE.md` §17 item 3 for the open scope/priority question on when the full palm-reading pipeline is built; this standard applies whenever it is.)
+Image quality, hand side, visible structures and uncertainty must be separated from interpretation. No medical diagnosis from palm images. AI Palm Reading is a locked product feature (`features.md` §34), implemented in `Phases.md` Phase 13 (Palm Reading & Vision Intelligence); this standard applies to that implementation.
 
 ## Versioning
 Changes to calculation standards require versioning, changelog, regression tests and explicit approval. A standards change record must include: version number, date, change description, reason, affected calculations, affected interpretations, regression-test requirement, and approval status. Historical calculation behavior must never be silently altered — a standards version change is itself a new, distinct, recorded configuration state.

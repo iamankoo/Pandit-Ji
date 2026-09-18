@@ -10,5 +10,5 @@ Core intelligence (chart interpretation, prediction narration, agent planning, p
 
 ## Consequences
 - A hosted-API fallback may exist only as a **development-time stopgap** before self-hosted serving infrastructure is ready — never as the production/core dependency, and always behind the same interface so it can be removed without touching agent logic.
-- Model selection, fine-tuning, and serving-stack choice (vLLM/Ollama/TGI, etc.) are deferred to Phase 13, not decided here.
+- Model selection, fine-tuning, and serving-stack choice (vLLM/Ollama/TGI, etc.) are deferred to Phase 14, not decided here.
 - Sensitive data exposure to the model is bounded by the evidence-bundle pattern (ADR-001) and the Security Architecture's data-minimization rule (`docs/ARCHITECTURE.md` §"Security Architecture") — the model receives evidence necessary to answer, not raw unrelated user data.

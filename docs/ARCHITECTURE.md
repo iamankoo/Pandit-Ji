@@ -12,10 +12,11 @@ Source-of-truth hierarchy for this project: the full, authoritative authority or
 3. Phases.md               — HOW/WHEN; sole execution roadmap
 4. docs/ARCHITECTURE.md    — technical structure (this document)
 5. docs/ASTROLOGY_STANDARDS.md — calculation/interpretation standards (locked canonical location)
-6. PRODUCT_POLICIES.md
-7. LEGAL_REGULATIONS.md
-8. Research documents (research/*.md)
-9. Code/configuration
+6. TECH_STACK.md — locked technology-stack choices
+7. PRODUCT_POLICIES.md
+8. LEGAL_REGULATIONS.md
+9. Research documents (research/*.md)
+10. Code/configuration
 ```
 
 Conflict rule (from `SOURCE_OF_TRUTH.md`): never silently resolve a contradiction between documents. Record it, resolve it in the higher-authority document, update dependents, and add a changelog entry. §"Known Contradictions" of this document tracks contradictions discovered so far.
@@ -101,7 +102,7 @@ Responsibilities (edge, infrastructure-level, not application code — see ADR-0
 
 Explicitly **not** the gateway's job: authorization decisions tied to domain data (profile/report/conversation ownership), business logic, or anything astrology-specific. Those live in `server/` and the owning service.
 
-Implementation is deferred (Phase 17, Backend Platform) — this section fixes responsibility boundaries, not a specific gateway product.
+Implementation is deferred (Phase 18, Backend Platform) — this section fixes responsibility boundaries, not a specific gateway product.
 
 ---
 
@@ -221,7 +222,7 @@ verification → extracts factual claims from the draft response, checks each
 Personalized Response (+ stored agent_trace for explainability)
 ```
 
-Worked example (career question, matching `Phases.md`'s own Phase 14 preview):
+Worked example (career question, matching `Phases.md`'s own Phase 15 preview):
 ```
 User: "Will my career improve next year?"
   → Intent = Career
@@ -318,7 +319,7 @@ Approve / Regenerate
 | Regression suite | Prior confirmed-correct outputs stay correct across engine/rule changes | CI, every commit |
 | Claim/hallucination checker | Every factual assertion in an agent response is traceable to its evidence bundle | Runtime, every chat turn |
 | Contradiction detector | Response doesn't state two mutually exclusive facts | Runtime, every chat turn |
-| Backtesting framework | Long-run comparison of timing-oriented predictions against later user-reported outcomes | Offline, periodic (`Phases.md` Phase 20) |
+| Backtesting framework | Long-run comparison of timing-oriented predictions against later user-reported outcomes | Offline, periodic (`Phases.md` Phase 21) |
 | Human-expert evaluation | Sample of AI narrations reviewed by an astrology-literate human for traditional correctness (not scientific accuracy) | Periodic, pre-release gate |
 
 Verification has access to the same structured evidence bundle `agent` used (ADR-006) — it is never a generic spell-checker. The system must be able to report, per response: which facts were used, which rules fired, what contradicted, and whether verification passed — this is the same data as the explainability feature (`features.md` §25), so explainability and verification share one implementation (`agent_traces`).
@@ -358,7 +359,7 @@ Cross-cutting database concerns (Phase 2 requirement):
 - **Isolation**: standard read-committed isolation is sufficient for this workload (no cross-row invariants requiring serializable isolation have been identified); revisit if one emerges during implementation.
 - **Transactional boundaries**: a single computed artifact (e.g. one `ChartResponse`'s full set of rows) is written in one transaction — partial writes are not acceptable given the "reproducible or absent" requirement.
 - **Retention/deletion**: governed by `PRODUCT_POLICIES.md`'s Data & Privacy Principles — per-category retention schedules, honored user-deletion requests, with `audit_log` itself being append-only and exempt from user-triggered deletion (access-log integrity).
-- **Backups**: standard PostgreSQL backup/restore (e.g. periodic base backup + WAL archiving); exact tooling deferred to Phase 17/20 deployment work — this section only fixes that backups are mandatory and must cover the single database in full (facts + embeddings + audit).
+- **Backups**: standard PostgreSQL backup/restore (e.g. periodic base backup + WAL archiving); exact tooling deferred to Phase 18/21 deployment work — this section only fixes that backups are mandatory and must cover the single database in full (facts + embeddings + audit).
 
 ---
 
@@ -423,7 +424,7 @@ API Gateway (token validated)
 FastAPI (server/) (authorization: does this token's user own this resource?)
 ```
 
-- **Authentication**: standard token/session-based auth (exact mechanism — e.g. JWT access + refresh, or session cookies — deferred to Phase 17, since an established authentication direction is not yet locked in an authoritative document; this section fixes the boundary, not the mechanism).
+- **Authentication**: standard token/session-based auth (exact mechanism — e.g. JWT access + refresh, or session cookies — deferred to Phase 18, since an established authentication direction is not yet locked in an authoritative document; this section fixes the boundary, not the mechanism).
 - **Authorization**: resource-ownership checks (birth profile, report, conversation) happen in `server/`/the owning service, not the gateway — the gateway only confirms "this is a valid, unexpired credential."
 - **User isolation**: every profile/report/conversation row is scoped to a `user_id`; queries are always scoped, never "fetch by ID alone" without an ownership check.
 - **Birth-profile ownership**: a birth profile belongs to exactly one `users` row (with a family/partner flag for profiles a user maintains on behalf of others) — see `profiles.birth_profiles` in §"Database Architecture".
@@ -450,7 +451,7 @@ GPU/CPU infrastructure
 Agent orchestration (§"Agent Orchestrator Architecture") is strictly separated from model inference — this is what lets the model be replaced without redesigning the agent (ADR-002).
 
 - **Inference boundary**: `agent` sends a single, fully-assembled prompt (evidence bundle + user question + conversation memory, per §8) to the AI Reasoner interface and receives text/stream back — no astrology-specific logic lives on the inference side of that boundary.
-- **Model serving**: a dedicated inference service process (candidate stacks: vLLM/Ollama/TGI — selection deferred to Phase 13) sits behind the interface; `agent` never embeds the model in-process.
+- **Model serving**: a dedicated inference service process (candidate stacks: vLLM/Ollama/TGI — selection deferred to Phase 14) sits behind the interface; `agent` never embeds the model in-process.
 - **Batching**: the inference service may batch concurrent requests internally; this is invisible to `agent`, which always makes one logical call per response.
 - **Context limits**: the evidence-assembly step (§8) is responsible for keeping the evidence bundle + memory within the serving model's context window — if evidence would exceed it, the planner trims to the most relevant evidence rather than silently truncating mid-prompt.
 - **Structured output**: where the agent needs machine-parseable output from the model (e.g. a claim list for `verification` to check), the interface supports a structured/JSON-constrained output mode, not free-text parsing.
@@ -557,10 +558,10 @@ A future result must always be able to answer: which calculation standard, which
 | Environment | Application services | PostgreSQL | Redis | Object storage | AI inference | Notes |
 |---|---|---|---|---|---|---|
 | Development | Local processes / Docker Compose | Local/containerized instance | Local/containerized instance | Local filesystem or containerized equivalent | Local (small model) or hosted-API stopgap (ADR-002) | Fast iteration; fixtures from `datasets/` seed local DB. |
-| Staging | Containerized, mirrors production topology | Managed/containerized instance, staging data only | Containerized instance | Staging bucket | Self-hosted staging inference (smaller/cheaper instance acceptable) | Used for Phase 20 validation/backtesting dry-runs before production. |
+| Staging | Containerized, mirrors production topology | Managed/containerized instance, staging data only | Containerized instance | Staging bucket | Self-hosted staging inference (smaller/cheaper instance acceptable) | Used for Phase 21 validation/backtesting dry-runs before production. |
 | Production | Containerized, scaled per §"Scaling Strategy" | Managed instance with backups (§"Database Architecture") | Managed/containerized instance | Production bucket, encrypted | Self-hosted production inference (ADR-002); Swiss Ephemeris Professional License required before activation (`LEGAL_REGULATIONS.md`) | Monitoring/secrets per §"Observability"/§"Security Architecture". |
 
-Cloud infrastructure is not prematurely provisioned in Phase 2 — this table fixes what each environment must contain, not a specific cloud provider or Terraform layout (deferred to Phase 17/20).
+Cloud infrastructure is not prematurely provisioned in Phase 2 — this table fixes what each environment must contain, not a specific cloud provider or Terraform layout (deferred to Phase 18/21).
 
 ---
 
@@ -721,6 +722,7 @@ pandit-ji/
   features.md
   Phases.md
   SOURCE_OF_TRUTH.md
+  TECH_STACK.md
   PRODUCT_POLICIES.md
   LEGAL_REGULATIONS.md
   PRICING.md
@@ -746,7 +748,7 @@ The subsystems, engines, and services named throughout this document are built i
 
 ## 29. Technical Risks
 
-- **Swiss Ephemeris licensing — decision locked, procurement still open**: Professional License chosen (see `LEGAL_REGULATIONS.md`); not yet purchased; signed agreement required before public/commercial distribution (`Phases.md` Phase 20 gate), not before internal development (Phase 4).
+- **Swiss Ephemeris licensing — decision locked, procurement still open**: Professional License chosen (see `LEGAL_REGULATIONS.md`); not yet purchased; signed agreement required before public/commercial distribution (`Phases.md` Phase 21 gate), not before internal development (Phase 4).
 - **Historical timezone/DST accuracy**: pre-standardization birth times are genuinely ambiguous in tzdata; wrong resolution silently shifts the whole chart.
 - **Ayanamsa/house-system disagreement across traditions**: locking Lahiri + Vedic whole-sign is necessary but will visibly disagree with some other apps/astrologers; must be configurable and clearly disclosed.
 - **Self-hosted LLM quality/latency**: open-weight models may lag hosted frontier models on nuanced Hindi/Hinglish reasoning and latency under real hardware budgets.
@@ -754,10 +756,10 @@ The subsystems, engines, and services named throughout this document are built i
 - **Hallucination verification is imperfect in general**: claim-extraction has false negatives; treat the verifier as strong mitigation, not a guarantee.
 - **Voice for Hindi/Hinglish code-switching**: open-source STT/TTS support is weaker than for pure English.
 - **KP/Lal Kitab/Nadi/Chinese systems are each their own research project**: explicitly deferred to `Phases.md` Phase 9; `docs/ASTROLOGY_STANDARDS.md` already marks Lal Kitab/Nadi as provisional.
-- **Sensitive data / regulatory exposure**: needs a privacy/legal review before `Phases.md` Phase 20, ideally sketched by Phase 17.
+- **Sensitive data / regulatory exposure**: needs a privacy/legal review before `Phases.md` Phase 21, ideally sketched by Phase 18.
 - **Backtesting ground truth**: no existing "outcome vs. prediction" dataset; collecting it ethically/usefully is a design problem, not just engineering.
 - **Redis-backed queue delivery guarantees** (new, Phase 2): a Redis-backed queue (ADR-005) does not guarantee exactly-once delivery — every job must be designed idempotent from the start, or duplicate processing (e.g. a report generated twice) becomes a real risk.
-- **API Gateway product choice** (new, Phase 2): §4/ADR-007 fix responsibilities, not a specific product; a wrong early choice (e.g. one that can't cleanly separate authN-enforcement from authZ) could require rework — evaluate against these responsibilities explicitly before adopting one in Phase 17.
+- **API Gateway product choice** (new, Phase 2): §4/ADR-007 fix responsibilities, not a specific product; a wrong early choice (e.g. one that can't cleanly separate authN-enforcement from authZ) could require rework — evaluate against these responsibilities explicitly before adopting one in Phase 18.
 
 ---
 
@@ -771,8 +773,8 @@ The subsystems, engines, and services named throughout this document are built i
 6. Open-weight STT/TTS models with credible Hindi/Hinglish code-switching support.
 7. Authoritative sourcing for KP/Lal Kitab/Nadi/Chinese/Vastu rule content.
 8. Backtesting/outcome-data collection design.
-9. Concrete authentication mechanism (JWT vs. session, refresh strategy) — deferred from §"Authentication Architecture" to Phase 17.
-10. Concrete API Gateway product — deferred from §4/ADR-007 to Phase 17.
+9. Concrete authentication mechanism (JWT vs. session, refresh strategy) — deferred from §"Authentication Architecture" to Phase 18.
+10. Concrete API Gateway product — deferred from §4/ADR-007 to Phase 18.
 
 ---
 
@@ -807,4 +809,4 @@ To begin or resume work: open `Phases.md`, identify the current phase, its deliv
 
 1. **Standards document duplication — RESOLVED, LOCKED** (Phase 1 reconciliation). Canonical standards document is `docs/ASTROLOGY_STANDARDS.md`; no separate `docs/calculation-standards.md`.
 2. **Repository structure mismatch — RESOLVED, LOCKED** (Phase 1 reconciliation; FastAPI placement sub-item now also resolved in Phase 2). Canonical structure per §27 above, including `server/` for the FastAPI composition root (ADR-007). No remaining sub-item.
-3. **Palm reading: scope/priority conflict — still open, out of scope for architecture work.** `features.md` §33 ("Future Expansion") lists palm reading as **not required for the initial baseline**; the Pre-Phase-1 Foundation package's `README.md`/`research/PALM_READING.md` treat it as locked baseline. This is a product-scope decision, not an architecture decision, and Phase 2 explicitly excludes product-scope changes — **not resolved here**. Needs its own explicit project-owner decision.
+3. **Palm reading: scope/priority conflict — RESOLVED, LOCKED** (explicit project-owner decision, pre-Phase-3). AI Palm Reading is now a locked product feature (`features.md` §34), consistent with the Pre-Phase-1 Foundation package's `README.md`/`research/PALM_READING.md`. `features.md` §33 no longer lists palm reading under Future Expansion. Its dedicated implementation phase is `Phases.md` Phase 13 (Palm Reading & Vision Intelligence, inserted pre-Phase-3, shifting the former Phase 13-20 to 14-21) — the product-feature decision and the implementation-phase assignment are deliberately kept distinct, per that decision.

@@ -14,4 +14,4 @@ This is additive to the locked structure: it does not rename or remove any locke
 ## Consequences
 - `docs/ARCHITECTURE.md` §"Repository Structure" is updated to include `server/`.
 - `docs/ARCHITECTURE.md` §"Known Contradictions" item 2 is marked fully resolved, pointing here.
-- Phase 3 (Repository & Engineering Foundation) and Phase 17 (Backend Platform) implement `server/` and the gateway configuration respectively; this ADR only fixes where they go and what they own.
+- Phase 3 (Repository & Engineering Foundation) and Phase 18 (Backend Platform) implement `server/` and the gateway configuration respectively; this ADR only fixes where they go and what they own.

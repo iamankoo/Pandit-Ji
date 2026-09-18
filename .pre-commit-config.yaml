@@ -1,0 +1,57 @@
+# Pre-commit configuration (Phase 3 foundation).
+#
+# Deliberately lightweight: fast, self-contained hooks (generic file hygiene,
+# Ruff) run for everyone; the TypeScript/Dart hooks shell out to each
+# project's own already-installed tooling (`language: system`) rather than
+# trying to make pre-commit manage Node/Flutter environments itself, which
+# would be slower and more fragile than useful. Run `npm install` /
+# `flutter pub get` once (see docs/DEVELOPMENT.md) before those apply.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^.*\.(min\.js|min\.css)$
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+      - id: check-json
+        exclude: ^apps/(web|admin)/tsconfig\.json$ # tsconfig allows comments
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+        files: ^(packages/(contracts|shared)|services/.*|server|infrastructure/migrations)/.*\.py$
+      - id: ruff-format
+        files: ^(packages/(contracts|shared)|services/.*|server|infrastructure/migrations)/.*\.py$
+
+  - repo: local
+    hooks:
+      - id: web-format
+        name: web — prettier check
+        entry: bash -c 'cd apps/web && npm run format'
+        language: system
+        files: ^apps/web/.*\.(ts|tsx|js|jsx|json|md)$
+        pass_filenames: false
+
+      - id: admin-format
+        name: admin — prettier check
+        entry: bash -c 'cd apps/admin && npm run format'
+        language: system
+        files: ^apps/admin/.*\.(ts|tsx|js|jsx|json|md)$
+        pass_filenames: false
+
+      - id: mobile-format
+        name: mobile — dart format check
+        entry: bash -c 'cd apps/mobile && dart format --set-exit-if-changed lib test'
+        language: system
+        files: ^apps/mobile/.*\.dart$
+        pass_filenames: false

@@ -1,0 +1,15 @@
+# Traefik dynamic (file-provider) configuration.
+#
+# Service routing itself is discovered from Docker labels (see
+# infrastructure/docker-compose.yml's `server` service labels) -- this file
+# only holds cross-cutting middleware, per docs/ARCHITECTURE.md §"API Gateway"
+# (rate limiting, request-ID headers). Not wired into any router yet in
+# Phase 3 -- attaching it to the `server` router is Phase 18's job, once
+# there are real endpoints worth rate-limiting.
+
+http:
+  middlewares:
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 50

@@ -1,0 +1,22 @@
+[project]
+name = "pandit-migrations"
+version = "0.1.0"
+description = "Alembic migration foundation for the single shared PostgreSQL database (docs/ARCHITECTURE.md 'Database Architecture'). Phase 3: schema namespaces only, no domain tables yet."
+requires-python = ">=3.10"
+dependencies = [
+  "alembic>=1.13,<2",
+  "sqlalchemy>=2.0,<3",
+  "psycopg[binary]>=3.1,<4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

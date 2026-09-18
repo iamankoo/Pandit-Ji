@@ -1,0 +1,113 @@
+# Development-oriented Docker Compose foundation (Phase 3).
+#
+# Represents the architecture (docs/ARCHITECTURE.md) without prematurely
+# running every future component: no GPU/AI inference service is started by
+# default (ADR-002's dev-time hosted-API/Ollama stopgap runs on the host, not
+# here, so the base repository never requires a GPU to start).
+#
+# Internal service-to-service communication uses Compose service names
+# (postgres, valkey, keycloak, minio), never localhost. Only developer-facing
+# ports are published.
+#
+# Usage: from the repository root, `docker compose -f infrastructure/docker-compose.yml up`.
+
+name: pandit-ji
+
+services:
+  postgres:
+    # pgvector/pgvector ships the pgvector extension pre-built on top of the
+    # official postgres image (ADR-004: PostgreSQL + pgvector, no second
+    # database technology).
+    image: pgvector/pgvector:pg18
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pandit}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pandit}
+      POSTGRES_DB: ${POSTGRES_DB:-pandit}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pandit}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    command: ["start-dev"]
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-changeme-in-env}
+    ports:
+      - "8081:8080"
+
+  minio:
+    image: minio/minio:latest
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: ${OBJECT_STORAGE_ACCESS_KEY:-changeme-in-env}
+      MINIO_ROOT_PASSWORD: ${OBJECT_STORAGE_SECRET_KEY:-changeme-in-env}
+    volumes:
+      - minio-data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  server:
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    env_file:
+      - ../.env
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-pandit}:${POSTGRES_PASSWORD:-pandit}@postgres:5432/${POSTGRES_DB:-pandit}
+      VALKEY_URL: redis://valkey:6379/0
+      AUTH_ISSUER_URL: http://keycloak:8080/realms/pandit-ji
+      OBJECT_STORAGE_ENDPOINT: http://minio:9000
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.server.rule=PathPrefix(`/`)"
+      - "traefik.http.services.server.loadbalancer.server.port=8000"
+
+  gateway:
+    image: traefik:v3.2
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--entrypoints.web.address=:80"
+      - "--api.dashboard=true"
+      - "--api.insecure=true"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./gateway/traefik:/etc/traefik/dynamic:ro
+    ports:
+      - "80:80"
+      - "8080:8080" # Traefik dashboard (local dev only)
+    depends_on:
+      - server
+
+volumes:
+  postgres-data:
+  minio-data:

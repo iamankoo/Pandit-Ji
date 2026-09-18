@@ -7,8 +7,12 @@
 __pycache__/
 *.py[cod]
 .venv/
+.venv-*/
 venv/
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Node / web
 node_modules/
@@ -16,6 +20,8 @@ node_modules/
 dist/
 build/
 out/
+*.tsbuildinfo
+coverage/
 
 # Flutter / mobile
 .dart_tool/

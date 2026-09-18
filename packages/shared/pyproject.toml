@@ -1,0 +1,40 @@
+[project]
+name = "pandit-shared"
+version = "0.1.0"
+description = "Cross-cutting Python utilities shared by server/ and services/ (config base, structured logging). No domain logic."
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic-settings>=2.2,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+  "mypy>=1.10",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pandit_shared = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,42 @@
+[project]
+name = "pandit-rule-engine"
+version = "0.1.0"
+description = "Deterministic astrology rule evaluation engine (Phase 3 foundation only -- no rule content yet)."
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.6,<3",
+  "pandit-contracts",
+  "pandit-shared",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+  "mypy>=1.10",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pandit_rule_engine = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,180 @@
+name: CI
+
+# Pull-request/branch validation (Phase 3 foundation). Deliberately does not
+# depend on any production secret -- everything here runs against the
+# checked-out repository alone. CD (actual deployment) is a separate,
+# later-phase concern and is not defined in this workflow.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python — ${{ matrix.component }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        component:
+          - packages/contracts
+          - packages/shared
+          - services/astro-engine
+          - services/rule-engine
+          - services/agent
+          - services/knowledge
+          - services/verification
+          - server
+          - infrastructure/migrations
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install foundation packages
+        run: |
+          pip install -e packages/contracts
+          pip install -e packages/shared
+
+      - name: Install component (with dev extras where defined)
+        working-directory: ${{ matrix.component }}
+        run: pip install -e ".[dev]" || pip install -e .
+
+      - name: Ruff lint
+        working-directory: ${{ matrix.component }}
+        run: python -m ruff check .
+
+      - name: Ruff format check
+        working-directory: ${{ matrix.component }}
+        run: python -m ruff format --check .
+
+      - name: mypy
+        working-directory: ${{ matrix.component }}
+        if: hashFiles(format('{0}/src/**', matrix.component)) != ''
+        run: python -m mypy src
+
+      - name: pytest
+        working-directory: ${{ matrix.component }}
+        if: hashFiles(format('{0}/tests/**', matrix.component)) != ''
+        run: python -m pytest -q
+
+  web-typescript:
+    name: TypeScript — ${{ matrix.app }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [apps/web, apps/admin, packages/ui]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.app }}
+        run: npm install --no-audit --no-fund
+
+      - name: Typecheck
+        working-directory: ${{ matrix.app }}
+        run: npm run typecheck
+
+      - name: Lint
+        working-directory: ${{ matrix.app }}
+        if: matrix.app != 'packages/ui'
+        run: npm run lint
+
+      - name: Format check
+        working-directory: ${{ matrix.app }}
+        if: matrix.app != 'packages/ui'
+        run: npm run format
+
+      - name: Test
+        working-directory: ${{ matrix.app }}
+        if: matrix.app != 'packages/ui'
+        run: npm test
+
+  flutter:
+    name: Flutter — apps/mobile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        working-directory: apps/mobile
+        run: flutter pub get
+
+      - name: Analyze
+        working-directory: apps/mobile
+        run: flutter analyze
+
+      - name: Format check
+        working-directory: apps/mobile
+        run: dart format --set-exit-if-changed lib test
+
+      - name: Test
+        working-directory: apps/mobile
+        run: flutter test
+
+  docker:
+    name: Docker — build & compose config
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build server image
+        run: docker build -f server/Dockerfile -t pandit-server:ci .
+
+      - name: Validate docker-compose config
+        working-directory: infrastructure
+        run: |
+          cp ../.env.example ../.env
+          docker compose config
+          rm ../.env
+
+  repository-integrity:
+    name: Repository integrity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No forbidden canonical service names introduced
+        run: |
+          if grep -rniE "astrology-engine|ai-agent|knowledge-base" \
+             --include=*.md --include=*.py --include=*.ts --include=*.tsx --include=*.dart --include=*.yml --include=*.yaml \
+             --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.next --exclude-dir=build --exclude-dir=.dart_tool --exclude-dir=.github . \
+             | grep -viE "do not (use|introduce|rename)|forbidden|alternative names such as"; then
+            echo "Forbidden canonical service name usage found (see above)."
+            exit 1
+          fi
+
+      - name: No unwanted attribution
+        run: |
+          if grep -rniE "claude|anthropic" \
+             --include=*.md --include=*.py --include=*.ts --include=*.tsx --include=*.dart \
+             --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=.next --exclude-dir=build --exclude-dir=.dart_tool . ; then
+            echo "Unwanted attribution reference found (see above)."
+            exit 1
+          fi
+        # Note: this workflow file itself is scanned too (not excluded) since
+        # it contains no such reference -- only this job's own step names/
+        # comments, which must also stay clean.
+
+      - name: No committed .env file
+        run: |
+          if [ -f .env ]; then
+            echo ".env must never be committed."
+            exit 1
+          fi

@@ -178,6 +178,29 @@ def rise_or_set(
     return True, times[0]
 
 
+def calculate_ascendant(
+    julian_day_ut: float,
+    *,
+    latitude: float,
+    longitude: float,
+    sidereal: bool,
+) -> float:
+    """Ascendant/Lagna longitude, degrees [0, 360) -- the one new Swiss
+    Ephemeris primitive Phase 5 needs (docs/ASTROLOGY_STANDARDS.md
+    "Default Vedic profile": Vedic whole-sign house baseline). Uses Swiss
+    Ephemeris's Whole Sign house system (hsys=b'W') for consistency with
+    that baseline; only the Ascendant point (`ascmc[0]`) is used here --
+    house-by-house Bhava/Rashi mapping is computed from this single degree
+    via `rashi.py`, not from `houses_ex`'s cusp array, so this adapter
+    never needs to special-case a different house system."""
+    flags = swe.FLG_SIDEREAL if sidereal else 0
+    try:
+        _cusps, ascmc = swe.houses_ex(julian_day_ut, latitude, longitude, b"W", flags)
+    except swe.Error as exc:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(str(exc)) from exc
+    return float(ascmc[0]) % 360.0
+
+
 def julian_day_to_utc_datetime_parts(julian_day_ut: float) -> tuple[int, int, int, int, int, float]:
     """Returns (year, month, day, hour, minute, second) in UTC."""
     year, month, day, hour_float = swe.revjul(julian_day_ut, swe.GREG_CAL)

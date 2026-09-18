@@ -1,6 +1,6 @@
 # Pandit Ji
 
-Self-hosted AI astrology platform. Status: **Phase 3 — Repository & Engineering Foundation** (see `Phases.md`).
+Self-hosted AI astrology platform. Status: **Phase 5 — Birth Chart / Kundli Engine** (see `Phases.md`).
 
 `Phases.md` is the sole authoritative execution roadmap. `features.md` defines WHAT the product contains. `docs/ASTROLOGY_STANDARDS.md` defines calculation/interpretation standards. `docs/ARCHITECTURE.md` defines technical structure. `TECH_STACK.md` defines locked technology choices. See `SOURCE_OF_TRUTH.md` for the full authority order.
 

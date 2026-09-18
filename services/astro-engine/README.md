@@ -1,10 +1,10 @@
 # astro-engine
 
-Deterministic astronomical calculation engine (`Phases.md` Phase 4). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phase 4 + Phase 5). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, and deterministic timezone conversion — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
-**Not responsible for**: chart/Kundli domain concepts (ascendant, houses, nakshatra/pada assignment, divisional charts, dignity, lords — Phase 5), rule evaluation, interpretation, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
+**Not responsible for**: Vimshottari Dasha, transits, Yoga/Dosha rule evaluation, Ashtakvarga, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), interpretation, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
 ## Purpose
 
@@ -44,15 +44,48 @@ result = service.calculate(
     )
 )
 
-result.planets.sun.longitude       # absolute sidereal ecliptic longitude, degrees [0, 360)
+result.planets.sun.longitude  # absolute sidereal ecliptic longitude, degrees [0, 360)
 result.planets.mercury.combustion  # CombustionStatus | None
 result.planets.rahu.node_convention
 result.solar_events.sunrise.utc_datetime
-result.metadata.ephemeris_mode     # SWISS_EPHEMERIS_FILES | MOSHIER | JPL -- always disclosed
-result.metadata.time_resolution    # local/UTC/ephemeris-time distinction, DST flags, offsets
+result.metadata.ephemeris_mode  # SWISS_EPHEMERIS_FILES | MOSHIER | JPL -- always disclosed
+result.metadata.time_resolution  # local/UTC/ephemeris-time distinction, DST flags, offsets
 ```
 
 See `models.py` for the full `CalculationResult` schema. Every `PlanetState` also carries its own `ephemeris_mode`, because the lunar node's position is computed analytically and can genuinely report a different mode than the planets in the same request — the aggregate `metadata.ephemeris_mode` never blurs that; it reports the lowest-precision mode present across all computed bodies.
+
+## Kundli (Phase 5)
+
+```python
+from pandit_astro_engine import KundliCalculationService
+from pandit_astro_engine.models import AstronomicalCalculationRequest, LocalDateTimeInput, Location
+
+kundli = KundliCalculationService().calculate(
+    AstronomicalCalculationRequest(
+        local_datetime=LocalDateTimeInput(
+            year=1947, month=8, day=15, hour=0, minute=0, timezone="Asia/Kolkata"
+        ),
+        location=Location(latitude=28.6139, longitude=77.2090, altitude_meters=216),
+    )
+)
+
+kundli.lagna.rashi                    # Ascendant sign (whole-sign House 1)
+kundli.houses[0].lord                 # House 1's lord
+kundli.planets[1].nakshatra.pada      # A planet's Nakshatra + Pada
+kundli.charts[9].planets              # Navamsa (D9) placements
+kundli.chandra_chart.houses[0].rashi  # Chandra Lagna (Moon-as-Ascendant chart)
+kundli.astronomical                   # The embedded Phase 4 CalculationResult this was built from
+```
+
+`KundliCalculationService` wraps `AstronomicalCalculationService` (Phase 4) rather than duplicating any Swiss Ephemeris call: the single new primitive Phase 5 needs — the Ascendant — is added to `ephemeris.py`, the same adapter boundary Phase 4 established. See `kundli_models.py` for the full `Kundli` schema, `rashi.py`/`nakshatra.py`/`lordship.py`/`dignity.py`/`aspects.py`/`vargas.py` for each standard's implementation, and `docs/ASTROLOGY_STANDARDS.md` (v1.3.0) for the locked formulas themselves.
+
+### Divisional charts (Vargas)
+
+All sixteen locked Shodashvarga charts (D1, D2, D3, D4, D7, D9, D10, D12, D16, D20, D24, D27, D30, D40, D45, D60) are available via `kundli.charts[varga_number]`, keyed by the varga's number. Each is derived purely from the same D1 sidereal longitudes (`vargas.py`) — never independently observed or separately calculated from the ephemeris. A chart's own Ascendant is the varga-transformed D1 Ascendant (classical practice: the Ascendant is treated as another ecliptic point for this purpose, not a separately-defined per-varga concept).
+
+### Chandra (Moon) chart
+
+`kundli.chandra_chart` applies the same whole-sign methodology as D1, but with the Moon's own sign as house 1 instead of the Ascendant. `None` only when the Moon was not among the requested bodies.
 
 ## Supported bodies
 
@@ -91,6 +124,7 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 - **`tests/test_reference_validation.py`** validates tropical Sun longitude against four independently published 2024 equinox/solstice UTC instants (`datasets/fixtures/astro_engine/golden_solstice_equinox.json`, sourced from timeanddate.com/CBS News/thesuntoday.org — genuinely independent of this codebase, since an equinox/solstice is defined by the Sun's tropical longitude being exactly 0°/90°/180°/270° by astronomical definition). All four matched to within 0.0007°, against a 0.01° tolerance.
 - **`tests/test_consistency.py`** validates internal determinism and invariants (Rahu/Ketu 180° relationship, longitude range, retrograde-vs-speed-sign consistency, combustion-threshold consistency) across 2,000 randomized instants spanning 1900-2100. This is **not** independent accuracy validation — it validates that the engine is internally consistent at scale, which is a different (and honestly labeled) claim.
 - **`tests/test_boundary.py`** covers a real, documented Mercury retrograde station (Dec 2023/Jan 2024), degree wraparound near 0°/360°, midnight/date-line boundaries, and the ~26-hour real-world gap between the UTC+14 and UTC-12 timezone extremes.
+- **`tests/test_kundli.py::test_golden_india_independence_chart`** validates the Kundli engine's Ascendant and Moon-sign computation against India's widely published Independence chart (15 Aug 1947, 00:00 IST, New Delhi: Taurus Ascendant, Moon in Cancer — e.g. astrotheme.com, jyotishgram.com) — genuinely independent of this codebase, unlike `tests/test_kundli_invariants.py`'s internal-consistency checks.
 
 ## Known limitations
 
@@ -99,6 +133,11 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 - **`SolarEvent.local_datetime` is not populated** (only `utc_datetime`) — a local-time conversion convenience, not added in Phase 4 to keep scope tight; UTC plus the request's timezone is sufficient to derive it.
 - **Only Lahiri ayanamsa is implemented** (`models.Ayanamsa`) — the standards document only locks Lahiri for Phase 4; additional ayanamsas are a future, explicit addition, never silently assumed equivalent.
 - **KP's sub-lord subdivision, Lal Kitab, and Nadi** remain out of scope per `docs/ASTROLOGY_STANDARDS.md` (Phase 9, after dedicated research validation) — this engine's `CalculationConfig` has no modes for them yet.
+- **Chalit (Bhava-Chalit) and Ashtakvarga are explicitly deferred** for Phase 5 (`docs/ASTROLOGY_STANDARDS.md` "Chalit / Bhava-Chalit and Ashtakvarga — explicitly out of scope for Phase 5") — a documented scope exclusion, not a silent omission. Only the locked whole-sign Bhava convention is implemented.
+- **Mooltrikona is not implemented** — dignity (`dignity.py`) is limited to exalted/debilitated/own-sign/neutral, per the locked standard.
+- **D60 (Shashtiamsa) sign/degree placement only** — the classical 60-named-deity assignment per division is not asserted or implemented.
+- **The Ascendant's own `ephemeris_mode` is not disclosed.** Swiss Ephemeris's `houses_ex` (used for the Ascendant) does not return a mode flag the way `calc_ut` does for planetary bodies, so `Kundli` carries no separate "which mode computed the Ascendant" field — only each planet's own `ephemeris_mode` (inherited from Phase 4) is available. This is a real gap in what Swiss Ephemeris's Python binding exposes, not an oversight.
+- **Ascendant computation is astronomically degenerate at true polar latitudes** (±90°) — Swiss Ephemeris still returns a value there (verified: no crash), but the classical concept of a "rising sign" itself breaks down at the poles; this is an inherent astronomical limitation, not an engine bug.
 
 ## Testing
 
@@ -106,7 +145,7 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 pip install -e ../../packages/contracts
 pip install -e ../../packages/shared
 pip install -e ".[dev]"
-pytest                        # 72 tests: unit, validation, determinism, boundary, golden, consistency, performance
+pytest                        # 191 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phase 4 + Phase 5)
 ruff check .
 ruff format --check .
 mypy src

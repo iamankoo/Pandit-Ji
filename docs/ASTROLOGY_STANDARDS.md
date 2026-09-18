@@ -2,7 +2,7 @@
 
 Status: **LOCKED canonical location** — `docs/ASTROLOGY_STANDARDS.md` is the single, authoritative document for calculation standards, Vedic defaults, ayanamsa, zodiac, house systems, ephemeris configuration, astronomical calculation requirements, astrology methodology separation, interpretation standards, reproducibility, uncertainty, and versioning. There is no separate `docs/calculation-standards.md` — any earlier reference to that filename referred to this document and should be treated as resolved in favor of this one.
 
-Version: 1.2.0 (Phase 4 pre-implementation lock — see §Versioning at the end of this document for the change log).
+Version: 1.3.0 (Phase 5 pre-implementation lock — see §Versioning at the end of this document for the change log).
 
 This document defines **standards and methodology contracts**, not implementations. Every section below states what a later phase's engine must compute and how, not the engine itself. Each section names the `Phases.md` phase responsible for the actual implementation.
 
@@ -95,6 +95,29 @@ Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)**
 - **What each chart represents** (canonical significations, to be expanded per-varga during Phase 5): D1 = self/body/overall life; D2 (Hora) = wealth; D3 (Drekkana) = siblings/courage; D4 (Chaturthamsa) = property/home/fortune; D7 (Saptamsa) = children/progeny; D9 (Navamsa) = marriage/spouse/dharma; D10 (Dasamsa) = career/profession; D12 (Dwadasamsa) = parents; D16 (Shodasamsa) = vehicles/general happiness; D20 (Vimsamsa) = spiritual pursuits; D24 (Chaturvimsamsa) = education/learning; D27 (Nakshatramsa/Bhamsa) = strengths/weaknesses; D30 (Trimsamsa) = misfortunes/challenges; D40 (Khavedamsa) = auspicious/inauspicious effects; D45 (Akshavedamsa) = general life conduct; D60 (Shashtiamsa) = overall past-karma/fine-grained life analysis.
 - **Chart-specific applicability**: which varga is authoritative for which life-domain question is determined by the domain-to-varga mapping used in `docs/ARCHITECTURE.md` §8's Astrology Planner (e.g., a marriage question requires D1 + D9; a career question requires D1 + D10). This mapping is finalized during Phase 5/Phase 17, not Phase 1.
 - **Versioning/configuration**: the varga division scheme (classical Parashari, as fixed above) is part of `calculation_config`; if an alternate varga scheme is ever supported, it must be a distinct, explicit configuration value, never silently substituted.
+
+### Varga derivation formulas
+
+Locked per explicit project-owner decision (see §Versioning change log) during Phase 5's mandatory standards audit. Each formula below is the classical Parashari (Brihat Parashara Hora Shastra) derivation, applied to a planet's precise D1 sidereal longitude and sign. "Same sign" always means the planet's own D1 sign; sign counting is always forward/zodiacal.
+
+- **D1 (Rashi)**: identity — see above.
+- **D2 (Hora)**, 2 × 15°: odd D1 sign — 0-15° = Sun's Hora (maps to Leo), 15-30° = Moon's Hora (maps to Cancer); even D1 sign — reversed (0-15° = Moon's Hora/Cancer, 15-30° = Sun's Hora/Leo).
+- **D3 (Drekkana)**, 3 × 10°: 0-10° = same sign; 10-20° = 5th sign from it; 20-30° = 9th sign from it (BPHS trine-counting rule — the "sequential" alternate convention some software uses is explicitly not adopted).
+- **D4 (Chaturthamsa)**, 4 × 7°30′: parts land on the same, 4th, 7th, and 10th sign from the D1 sign, in that order (kendra/quadrant counting).
+- **D7 (Saptamsa)**, 7 × 4°17′8.571…″: odd D1 sign — count of 7 consecutive signs starts at the same sign; even D1 sign — starts at the 7th sign from it.
+- **D9 (Navamsa)**: see above.
+- **D10 (Dasamsa)**, 10 × 3°: odd D1 sign — count of 10 consecutive signs starts at the same sign; even D1 sign — starts at the 9th sign from it.
+- **D12 (Dwadasamsa)**, 12 × 2°30′: count of 12 consecutive signs always starts at the same sign (no odd/even distinction).
+- **D16 (Shodasamsa)**, 16 × 1°52′30″: count of 16 consecutive signs (cycling the zodiac as needed) starts at Aries for movable D1 signs, Leo for fixed, Sagittarius for dual.
+- **D20 (Vimsamsa)**, 20 × 1°30′: count starts at Aries for movable D1 signs, Sagittarius for fixed, Leo for dual.
+- **D24 (Chaturvimsamsa / Siddhamsa)**, 24 × 1°15′ (two full zodiac cycles): odd D1 sign — count starts at Leo; even D1 sign — starts at Cancer.
+- **D27 (Nakshatramsa / Bhamsa)**, 27 × 1°6′40″: count starts at Aries for movable D1 signs, Cancer for fixed, Libra for dual.
+- **D30 (Trimsamsa)**, 30 divisions, non-equal spans: odd D1 sign — Mars rules 0-5° (maps to Aries), Saturn 5-10° (Aquarius), Jupiter 10-18° (Sagittarius), Mercury 18-25° (Gemini), Venus 25-30° (Libra); even D1 sign — Venus rules 0-5° (Taurus), Mercury 5-12° (Virgo), Jupiter 12-20° (Pisces), Saturn 20-25° (Capricorn), Mars 25-30° (Scorpio).
+- **D40 (Khavedamsa)**, 40 × 0°45′: odd D1 sign — count starts at Aries; even D1 sign — starts at Libra.
+- **D45 (Akshavedamsa)**, 45 × 0°40′: count starts at Aries for movable D1 signs, Leo for fixed, Sagittarius for dual.
+- **D60 (Shashtiamsa)**, 60 × 0°30′: count of 60 divisions always starts at the same sign (sequential, no odd/even or modality distinction). **Scope limitation, locked explicitly rather than guessed**: this standard defines the sign/degree placement only. The classical 60-named-deity assignment per division is not asserted here and is not implemented in Phase 5 — a documented limitation, not a silent omission.
+
+All fourteen formulas above are locked as of this version. Each is a distinct, explicit, versioned configuration value under `calculation_config`'s varga-scheme setting (§Reproducibility) — an alternate scheme for any one of them must never silently replace the formula recorded here.
 
 ## Vimshottari Dasha
 
@@ -213,6 +236,73 @@ Both **Mean Node** and **True Node** conventions are supported as an explicit, d
 - **Ketu** is always derived as Rahu's longitude + 180°, under whichever node convention Rahu was computed with — never independently calculated via a second method.
 - The node convention used must be recorded in the calculation configuration alongside ayanamsa/zodiac/house-system (§Reproducibility), so a result is always traceable to which convention produced it.
 
+## Planetary aspects standard
+
+Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)** implements. Locked per explicit project-owner decision (see §Versioning change log).
+
+Pandit Ji implements classical Vedic **graha drishti** (sign/house-based planetary aspect), not the Western degree-based aspect system (conjunction/sextile/square/trine/opposition) — those remain out of scope for Phase 5.
+
+- **All nine grahas** (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu) cast the universal **7th-house/7th-sign aspect** — full-strength aspect on the sign/house directly opposite their own placement.
+- **Mars** additionally aspects the **4th and 8th** signs/houses from its own placement.
+- **Jupiter** additionally aspects the **5th and 9th** signs/houses from its own placement.
+- **Saturn** additionally aspects the **3rd and 10th** signs/houses from its own placement.
+- **Rahu and Ketu** cast only the standard 7th-house/sign aspect — **no special extra aspects** are attributed to them under this standard (unlike Mars/Jupiter/Saturn). This is an explicit locked decision, not an omission: some regional traditions attribute Mars-like extra aspects to Rahu/Ketu, but that variant convention is not adopted here.
+- Aspects are evaluated sign-to-sign (whole-sign house convention, §Default Vedic profile) — a planet aspects every planet and every house placed in the aspected sign, not a degree-precise partial aspect.
+- This aspect table is a versioned configuration value (§Reproducibility); an alternate aspect convention (e.g., Rahu/Ketu-as-Mars-like, or Western degree-based aspects) must be a distinct, explicit configuration, never silently substituted or blended with this one.
+
+## Planetary dignity standard
+
+Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)** implements. Locked per explicit project-owner decision (see §Versioning change log).
+
+Dignity is evaluated from each planet's precise sidereal D1 longitude against the classical exaltation/debilitation degree and own-sign table below. **Mooltrikona is explicitly out of scope for Phase 5** — a documented deferral, not a silent omission; dignity states are limited to exalted/debilitated/own-sign/neutral.
+
+| Planet | Exaltation (exact degree) | Debilitation (exact degree) | Own sign(s) |
+|---|---|---|---|
+| Sun | 10° Aries | 10° Libra | Leo |
+| Moon | 3° Taurus | 3° Scorpio | Cancer |
+| Mars | 28° Capricorn | 28° Cancer | Aries, Scorpio |
+| Mercury | 15° Virgo | 15° Pisces | Gemini, Virgo |
+| Jupiter | 5° Cancer | 5° Capricorn | Sagittarius, Pisces |
+| Venus | 27° Pisces | 27° Virgo | Taurus, Libra |
+| Saturn | 20° Libra | 20° Aries | Capricorn, Aquarius |
+
+- **Exalted**: the planet's sign matches its exaltation sign (the exact degree is recorded for reference/strength-grading use by later phases, but sign-level exaltation does not itself require the exact degree).
+- **Debilitated**: the planet's sign matches its debilitation sign.
+- **Own sign**: the planet's sign is one of its own sign(s) above.
+- **Neutral**: none of the above apply.
+- Rahu/Ketu are not evaluated against this table under this standard (no classical exaltation/debilitation degree consensus is asserted here for the nodes; a future explicit addition, never silently assumed).
+- This table is a versioned configuration value (§Reproducibility); Mooltrikona ranges, if added in a future phase, must be a distinct, explicit addition rather than silently merged into "own sign."
+
+## Sign / House lordship standard
+
+Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)** implements. This is the traditional, universally-agreed rulership table (no tradition-fork exists for it), recorded here as a versioned, citable standard rather than left as an implicit assumption inside code, per the same reproducibility discipline applied to every other standard in this document.
+
+| Sign | Ruling planet |
+|---|---|
+| Aries | Mars |
+| Taurus | Venus |
+| Gemini | Mercury |
+| Cancer | Moon |
+| Leo | Sun |
+| Virgo | Mercury |
+| Libra | Venus |
+| Scorpio | Mars |
+| Sagittarius | Jupiter |
+| Capricorn | Saturn |
+| Aquarius | Saturn |
+| Pisces | Jupiter |
+
+- A house's "lord" (house-lord) is the ruling planet of the sign occupying that house, under the locked whole-sign house convention (§Default Vedic profile) — house lordship is therefore fully derived from sign lordship plus the house-to-sign mapping, not a separately defined concept.
+- This table applies uniformly across D1 and every divisional chart (§Divisional charts (Vargas)): a chart's house/sign lords are always determined from that chart's own sign placements using this same table.
+- Rahu/Ketu are never assigned sign rulership under classical Parashari convention and are excluded from this table; that exclusion is intentional, not an omission.
+
+## Chalit / Bhava-Chalit and Ashtakvarga — explicitly out of scope for Phase 5
+
+Both are recorded here as deliberate scope exclusions, not silent omissions or guesses:
+
+- **Chalit (Bhava-Chalit) chart**: the alternate house-cusp-based bhava boundary system (as distinct from the locked whole-sign house convention) is deferred to a follow-up decision, per explicit project-owner direction. Phase 5 implements only the whole-sign Bhava convention already locked in §Default Vedic profile.
+- **Ashtakvarga**: the Bindu/point-based strength-scoring system across all planets and houses is out of scope for Phase 5 per `Phases.md`'s explicit phase boundary (not listed among Phase 5's deliverables) and is deferred to whichever later phase's roadmap entry covers strength/scoring systems.
+
 ## Data & privacy principles
 
 Product-level data/privacy principles (data minimization, purpose limitation, consent/notice, birth-data/location-data/conversation-data/palm-image handling, retention/deletion, access control, encryption, auditability, personalization-vs-training-data separation, third-party/vendor restrictions, user export/deletion, minor/child safeguards) are defined in `PRODUCT_POLICIES.md` §"Data & Privacy Principles" — this document cross-references rather than duplicates that content, per the source-of-truth hierarchy (`SOURCE_OF_TRUTH.md`). `LEGAL_REGULATIONS.md` remains the detailed legal/compliance baseline underneath both.
@@ -264,6 +354,7 @@ Changes to calculation standards require versioning, changelog, regression tests
 - **v1.0.0** (Pre-Phase-1 Foundation package): initial draft — Core rule, Default Vedic profile, Supported systems (list only), Interpretation, Uncertainty, Reproducibility, Health, Remedies, Palmistry, Versioning.
 - **v1.1.0** (Phase 1 completion): added AI scope boundary; expanded Time/Location standards; expanded Supported systems into full per-system methodology standards (Vedic, Western/Tropical, KP, Lal Kitab, Nadi, with Lal Kitab/Nadi explicitly marked provisional pending research validation); added Divisional charts (Vargas), Vimshottari Dasha, Nakshatra standards, Yoga/Dosha standards, Panchang/Muhurta standards, and Numerology standards sections; added Data & privacy principles (cross-reference to `PRODUCT_POLICIES.md`); added Prediction language policy; added Birth-time uncertainty section. Approval status: locked per project-owner direction to close all 13 `Phases.md` Phase 1 content requirements.
 - **v1.2.0** (Phase 4 pre-implementation lock): added Combustion standard (per-planet orb thresholds, Brihat Parashara Hora Shastra tradition) and Node convention (Rahu/Ketu: Mean Node default, True Node supported as explicit alternate config) — both were confirmed genuinely unspecified during Phase 4's mandatory cross-check and required an explicit project-owner decision before the astronomical calculation engine could implement them. Reason: `Phases.md` Phase 4 requires combustion and Rahu/Ketu as deliverables; no prior version of this document defined either sufficiently to implement without guessing. Affected calculations: Phase 4's combustion status and node/Ketu derivation. Affected interpretations: none yet (Phase 6 rule content will consume these facts later). Regression-test requirement: Phase 4's golden/boundary tests must cover both thresholds and both node conventions. Approval status: locked per explicit project-owner decision.
+- **v1.3.0** (Phase 5 pre-implementation lock): expanded §Divisional charts (Vargas) with full derivation formulas for the 14 remaining Shodashvarga charts (D2, D3, D4, D7, D10, D12, D16, D20, D24, D27, D30, D40, D45, D60), completing the locked 16-varga set; added Planetary aspects standard (Vedic graha drishti — universal 7th aspect for all nine grahas, Mars 4th/8th, Jupiter 5th/9th, Saturn 3rd/10th, no special extra aspects for Rahu/Ketu); added Planetary dignity standard (exact exaltation/debilitation degrees and own-sign table for the seven classical grahas, Mooltrikona explicitly excluded); added Sign/House lordship standard (the traditional 12-sign ruler table); recorded Chalit/Bhava-Chalit and Ashtakvarga as explicit out-of-scope deferrals for Phase 5. Reason: `Phases.md` Phase 5 requires house lords, planetary aspects, planetary dignity, and all sixteen divisional charts as deliverables; Phase 5's mandatory 35-item pre-implementation standards audit confirmed only D1/D9 had derivation formulas and aspects/dignity/lordship had no locked standard, so all were genuinely unspecified and required explicit project-owner decisions before the Kundli engine could implement them. Affected calculations: Phase 5's house-lord, aspect, dignity, and D2/D3/D4/D7/D10/D12/D16/D20/D24/D27/D30/D40/D45/D60 chart derivations. Affected interpretations: none yet (later rule-engine/interpretation phases will consume these facts). Regression-test requirement: Phase 5's boundary/golden/invariant tests must cover every varga formula's sign-boundary transitions, every aspect rule, and every dignity degree threshold. Approval status: locked per explicit project-owner decision (two `AskUserQuestion` rounds: aspects/dignity-scope/varga-research-approach/Chalit-deferral, then D3-rule-choice and overall-lock-confirmation).
 
 ## Phase 1 standards checklist
 

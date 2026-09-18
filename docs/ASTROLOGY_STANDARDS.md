@@ -2,7 +2,7 @@
 
 Status: **LOCKED canonical location** — `docs/ASTROLOGY_STANDARDS.md` is the single, authoritative document for calculation standards, Vedic defaults, ayanamsa, zodiac, house systems, ephemeris configuration, astronomical calculation requirements, astrology methodology separation, interpretation standards, reproducibility, uncertainty, and versioning. There is no separate `docs/calculation-standards.md` — any earlier reference to that filename referred to this document and should be treated as resolved in favor of this one.
 
-Version: 1.1.0 (Phase 1 completion — see §Versioning at the end of this document for the change log).
+Version: 1.2.0 (Phase 4 pre-implementation lock — see §Versioning at the end of this document for the change log).
 
 This document defines **standards and methodology contracts**, not implementations. Every section below states what a later phase's engine must compute and how, not the engine itself. Each section names the `Phases.md` phase responsible for the actual implementation.
 
@@ -178,6 +178,41 @@ Defines the standard and contract that **Phase 11 (Numerology + Compatibility)**
 - **Source/tradition**: every numerology result is tagged with which system (Vedic/Chaldean vs. Pythagorean) produced it.
 - **Versioning**: numerology configuration follows the same reproducibility/versioning requirement as astrology calculation configuration (see §Reproducibility).
 
+## Combustion standard
+
+Defines the standard and contract that **Phase 4 (Astronomical Calculation Engine)** implements. Locked per explicit project-owner decision (see §Versioning change log).
+
+Combustion (Asta) is a derived astrological status, not raw ephemeris output: a planet is combust when its angular separation from the Sun (computed from each body's precise geocentric ecliptic longitude) is within that planet's specific orb threshold. Per-planet thresholds (degrees of separation from the Sun), per the Brihat Parashara Hora Shastra tradition as commonly implemented in mainstream Vedic astrology software:
+
+| Planet | Threshold (direct) | Threshold (retrograde) |
+|---|---|---|
+| Moon | 12° | — |
+| Mars | 17° | — |
+| Mercury | 14° | 12° |
+| Jupiter | 11° | — |
+| Venus | 10° | 8° |
+| Saturn | 15° | — |
+
+The Sun itself is never combust. Rahu/Ketu are not evaluated for combustion under this standard (they are not physical bodies with a solar-separation relationship in the same sense).
+
+Requirements:
+- Combustion is computed as a **derived layer over raw longitudes**, not embedded inside ephemeris retrieval — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and the Phase 4 ephemeris-adapter/derived-status separation.
+- The angular separation used is the absolute difference between the planet's and Sun's geocentric ecliptic longitude, normalized to the [0°, 180°] range (shortest angular distance).
+- The retrograde-specific threshold (Mercury, Venus) applies only when that planet's own retrograde status (per its documented speed-sign semantics) is true at the same instant.
+- The exact separation value and the threshold applied must be preserved alongside the boolean combust/not-combust result, for reproducibility and later rule-engine use.
+- This threshold table is itself a versioned configuration value (§Reproducibility) — a future alternate combustion standard (e.g., a different classical source) must be a distinct, explicit configuration, never silently substituted.
+
+## Node convention (Rahu / Ketu)
+
+Defines the standard and contract that **Phase 4 (Astronomical Calculation Engine)** implements. Locked per explicit project-owner decision (see §Versioning change log).
+
+Both **Mean Node** and **True Node** conventions are supported as an explicit, distinct `calculation_config` value — never silently mixed or substituted for each other. **Mean Node is the default** for the Vedic profile (§Default Vedic profile), matching the traditional convention used in most classical Parashari/Panchang software. True Node remains available as an explicit alternate configuration (anticipating KP's typical preference, `Phases.md` Phase 9).
+
+- **Mean Node**: the smoothly regressing average node position (Swiss Ephemeris `SE_MEAN_NODE`).
+- **True Node**: the actual perturbed node position, which can briefly station/go direct (Swiss Ephemeris `SE_TRUE_NODE`).
+- **Ketu** is always derived as Rahu's longitude + 180°, under whichever node convention Rahu was computed with — never independently calculated via a second method.
+- The node convention used must be recorded in the calculation configuration alongside ayanamsa/zodiac/house-system (§Reproducibility), so a result is always traceable to which convention produced it.
+
 ## Data & privacy principles
 
 Product-level data/privacy principles (data minimization, purpose limitation, consent/notice, birth-data/location-data/conversation-data/palm-image handling, retention/deletion, access control, encryption, auditability, personalization-vs-training-data separation, third-party/vendor restrictions, user export/deletion, minor/child safeguards) are defined in `PRODUCT_POLICIES.md` §"Data & Privacy Principles" — this document cross-references rather than duplicates that content, per the source-of-truth hierarchy (`SOURCE_OF_TRUTH.md`). `LEGAL_REGULATIONS.md` remains the detailed legal/compliance baseline underneath both.
@@ -228,6 +263,7 @@ Changes to calculation standards require versioning, changelog, regression tests
 ### Change log
 - **v1.0.0** (Pre-Phase-1 Foundation package): initial draft — Core rule, Default Vedic profile, Supported systems (list only), Interpretation, Uncertainty, Reproducibility, Health, Remedies, Palmistry, Versioning.
 - **v1.1.0** (Phase 1 completion): added AI scope boundary; expanded Time/Location standards; expanded Supported systems into full per-system methodology standards (Vedic, Western/Tropical, KP, Lal Kitab, Nadi, with Lal Kitab/Nadi explicitly marked provisional pending research validation); added Divisional charts (Vargas), Vimshottari Dasha, Nakshatra standards, Yoga/Dosha standards, Panchang/Muhurta standards, and Numerology standards sections; added Data & privacy principles (cross-reference to `PRODUCT_POLICIES.md`); added Prediction language policy; added Birth-time uncertainty section. Approval status: locked per project-owner direction to close all 13 `Phases.md` Phase 1 content requirements.
+- **v1.2.0** (Phase 4 pre-implementation lock): added Combustion standard (per-planet orb thresholds, Brihat Parashara Hora Shastra tradition) and Node convention (Rahu/Ketu: Mean Node default, True Node supported as explicit alternate config) — both were confirmed genuinely unspecified during Phase 4's mandatory cross-check and required an explicit project-owner decision before the astronomical calculation engine could implement them. Reason: `Phases.md` Phase 4 requires combustion and Rahu/Ketu as deliverables; no prior version of this document defined either sufficiently to implement without guessing. Affected calculations: Phase 4's combustion status and node/Ketu derivation. Affected interpretations: none yet (Phase 6 rule content will consume these facts later). Regression-test requirement: Phase 4's golden/boundary tests must cover both thresholds and both node conventions. Approval status: locked per explicit project-owner decision.
 
 ## Phase 1 standards checklist
 

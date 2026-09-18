@@ -1,10 +1,12 @@
 [project]
 name = "pandit-astro-engine"
-version = "0.1.0"
-description = "Deterministic astronomical/astrology calculation engine (Phase 3 foundation only -- no domain logic yet)."
+version = "0.2.0"
+description = "Deterministic astronomical calculation engine (Phase 4: Swiss Ephemeris-backed planetary positions, retrograde, combustion, sunrise/sunset, timezone conversion)."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",
+  "pyswisseph>=2.10,<3",
+  "tzdata>=2024.1",
   "pandit-contracts",
   "pandit-shared",
 ]
@@ -37,6 +39,11 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.10"
 strict = true
 mypy_path = "src"
+
+[[tool.mypy.overrides]]
+# pyswisseph is a C extension with no bundled type stubs (py.typed) upstream.
+module = "swisseph"
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

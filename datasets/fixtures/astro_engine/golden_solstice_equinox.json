@@ -1,0 +1,29 @@
+{
+  "description": "Golden reference cases validating tropical Sun longitude against independently published equinox/solstice UTC instants. At an equinox the Sun's tropical ecliptic longitude is exactly 0 deg (March) or 180 deg (September); at a solstice it is exactly 90 deg (June) or 270 deg (December) -- by definition, independent of any astrology software.",
+  "source": "Published UTC times for the 2024 equinoxes/solstices, cross-referenced across timeanddate.com, CBS News, and thesuntoday.org (retrieved via web search during Phase 4 implementation, 2026-09).",
+  "methodology": "For each case, compute tropical (zodiac=tropical, ayanamsa=null) Sun longitude at the given UTC instant and assert it equals the expected value within tolerance_degrees.",
+  "tolerance_degrees": 0.01,
+  "cases": [
+    {
+      "name": "2024 March equinox",
+      "utc": "2024-03-20T03:06:00",
+      "expected_tropical_sun_longitude": 0.0,
+      "note": "0/360 boundary -- longitude may report as ~359.999 or ~0.001"
+    },
+    {
+      "name": "2024 June solstice",
+      "utc": "2024-06-20T20:50:00",
+      "expected_tropical_sun_longitude": 90.0
+    },
+    {
+      "name": "2024 September equinox",
+      "utc": "2024-09-22T12:44:00",
+      "expected_tropical_sun_longitude": 180.0
+    },
+    {
+      "name": "2024 December solstice",
+      "utc": "2024-12-21T09:20:00",
+      "expected_tropical_sun_longitude": 270.0
+    }
+  ]
+}

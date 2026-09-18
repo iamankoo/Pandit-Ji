@@ -1,0 +1,37 @@
+# Environment / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node / web
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# Flutter / mobile
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local source archive — content is already extracted into tracked files under
+# docs/, research/, and project root; kept out of version control to avoid duplication.
+Pandit-Ji-Pre-Phase-1-Foundation.zip

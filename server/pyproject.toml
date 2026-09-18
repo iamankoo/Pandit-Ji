@@ -11,6 +11,11 @@ dependencies = [
   "redis>=5.0,<6",
   "pandit-contracts",
   "pandit-shared",
+  "pandit-astro-engine",
+  "pandit-rule-engine",
+  "pandit-agent",
+  "pandit-knowledge",
+  "pandit-verification",
 ]
 
 [project.optional-dependencies]

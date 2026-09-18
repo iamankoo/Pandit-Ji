@@ -69,12 +69,12 @@ kundli = KundliCalculationService().calculate(
     )
 )
 
-kundli.lagna.rashi                    # Ascendant sign (whole-sign House 1)
-kundli.houses[0].lord                 # House 1's lord
-kundli.planets[1].nakshatra.pada      # A planet's Nakshatra + Pada
-kundli.charts[9].planets              # Navamsa (D9) placements
+kundli.lagna.rashi  # Ascendant sign (whole-sign House 1)
+kundli.houses[0].lord  # House 1's lord
+kundli.planets[1].nakshatra.pada  # A planet's Nakshatra + Pada
+kundli.charts[9].planets  # Navamsa (D9) placements
 kundli.chandra_chart.houses[0].rashi  # Chandra Lagna (Moon-as-Ascendant chart)
-kundli.astronomical                   # The embedded Phase 4 CalculationResult this was built from
+kundli.astronomical  # The embedded Phase 4 CalculationResult this was built from
 ```
 
 `KundliCalculationService` wraps `AstronomicalCalculationService` (Phase 4) rather than duplicating any Swiss Ephemeris call: the single new primitive Phase 5 needs — the Ascendant — is added to `ephemeris.py`, the same adapter boundary Phase 4 established. See `kundli_models.py` for the full `Kundli` schema, `rashi.py`/`nakshatra.py`/`lordship.py`/`dignity.py`/`aspects.py`/`vargas.py` for each standard's implementation, and `docs/ASTROLOGY_STANDARDS.md` (v1.3.0) for the locked formulas themselves.

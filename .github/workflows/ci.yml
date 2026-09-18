@@ -43,6 +43,15 @@ jobs:
           pip install -e packages/contracts
           pip install -e packages/shared
 
+      - name: Install domain services (server only -- it imports each service's get_health)
+        if: matrix.component == 'server'
+        run: |
+          pip install -e services/astro-engine
+          pip install -e services/rule-engine
+          pip install -e services/agent
+          pip install -e services/knowledge
+          pip install -e services/verification
+
       - name: Install component (with dev extras where defined)
         working-directory: ${{ matrix.component }}
         run: pip install -e ".[dev]" || pip install -e .

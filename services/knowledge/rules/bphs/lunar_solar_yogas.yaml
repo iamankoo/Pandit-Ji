@@ -1,0 +1,605 @@
+document_type: rule
+rule_id: BPHS_SAN_SUNAPHA_37_7_10
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_SUNAPHA_37_7_10
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 7-10
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V7_10
+  basis: translation
+  note: A planet other than the Sun in the 2nd from the Moon.
+  conditions:
+    op: exists
+    over:
+      exclude:
+      - sun
+      - moon
+      nodes: unspecified
+    where:
+      op: planet_house
+      planet: $it
+      reference: moon
+      houses:
+      - 2
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.sunapha_37_7_10
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_ANAPHA_37_7_10
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_ANAPHA_37_7_10
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 7-10
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V7_10
+  basis: translation
+  note: A planet other than the Sun in the 12th from the Moon.
+  conditions:
+    op: exists
+    over:
+      exclude:
+      - sun
+      - moon
+      nodes: unspecified
+    where:
+      op: planet_house
+      planet: $it
+      reference: moon
+      houses:
+      - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.anapha_37_7_10
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_DURADHARA_37_7_10
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_DURADHARA_37_7_10
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 7-10
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V7_10
+  basis: translation
+  note: Planets other than the Sun in both.
+  conditions:
+    op: all
+    args:
+    - op: exists
+      over: &id001
+        exclude:
+        - sun
+        - moon
+        nodes: unspecified
+      where:
+        op: planet_house
+        planet: $it
+        reference: moon
+        houses:
+        - 2
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: moon
+        houses:
+        - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.duradhara_37_7_10
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_VESI_38_1
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_VESI_38_1
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 38 v. 1
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V1
+  basis: translation
+  note: A planet other than the Moon (Mars to Saturn) counted from the Sun.
+  conditions:
+    op: exists
+    over:
+      exclude:
+      - moon
+      - sun
+      nodes: unspecified
+    where:
+      op: planet_house
+      planet: $it
+      reference: sun
+      houses:
+      - 2
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.vesi_38_1
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_VOSI_38_1
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_VOSI_38_1
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 38 v. 1
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V1
+  basis: translation
+  note: A planet other than the Moon (Mars to Saturn) counted from the Sun.
+  conditions:
+    op: exists
+    over:
+      exclude:
+      - moon
+      - sun
+      nodes: unspecified
+    where:
+      op: planet_house
+      planet: $it
+      reference: sun
+      houses:
+      - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.vosi_38_1
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_UBHAYACHARI_38_1
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_UBHAYACHARI_38_1
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 38 v. 1
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+ambiguity_group: LUNAR_SOLAR_NODE_PARTICIPATION
+readings:
+- reading_id: V1
+  basis: translation
+  note: A planet other than the Moon (Mars to Saturn) counted from the Sun.
+  conditions:
+    op: all
+    args:
+    - op: exists
+      over: &id001
+        exclude:
+        - moon
+        - sun
+        nodes: unspecified
+      where:
+        op: planet_house
+        planet: $it
+        reference: sun
+        houses:
+        - 2
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: sun
+        houses:
+        - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.ubhayachari_38_1
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_KEMADRUMA_37_11_13
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_KEMADRUMA_37_11_13
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 11-13
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+conflict_group: KEMADRUMA_TOPIC
+ambiguity_group: KEMADRUMA_SUN_SCOPE
+readings:
+- reading_id: SUN_EXCLUDED_FROM_EVERY_CLAUSE
+  basis: translation
+  note: 'Excluding the Sun everywhere: no planet with the Moon, in the 2nd or 12th from it, or in an angle
+    from the Ascendant. The Moon is the reference and is not counted as a planet in any clause.'
+  conditions:
+    op: all
+    args:
+    - &id002
+      op: all
+      args:
+      - op: not
+        arg:
+          op: exists
+          over: &id001
+            exclude:
+            - sun
+            - moon
+            nodes: unspecified
+          where:
+            op: same_sign
+            a: $it
+            b: moon
+      - op: not
+        arg:
+          op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: moon
+            houses:
+            - 2
+            - 12
+    - op: not
+      arg:
+        op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 4
+          - 7
+          - 10
+- reading_id: SUN_EXCLUDED_ONLY_FROM_MOON_CLAUSES
+  basis: translation
+  note: The Sun is excluded only from the Moon-relative clauses; a Sun in an angle from the Ascendant
+    still counts.
+  conditions:
+    op: all
+    args:
+    - *id002
+    - op: not
+      arg:
+        op: exists
+        over:
+          exclude:
+          - moon
+          nodes: unspecified
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 4
+          - 7
+          - 10
+dependencies:
+- dependency_id: NO_CANCELLATION_IN_THIS_EDITION
+  kind: source_gap
+  owner_phase: 6
+  reason: not_specified_by_source
+  unresolved_effect: informational
+  description: This edition gives no cancellation for Kemadruma; the Phaladeepika tradition is a separate
+    profile.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.kemadruma_37_11_13
+  effect_class: challenging
+---
+document_type: rule
+rule_id: BPHS_SAN_ADHI_MOON_37_5
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_ADHI_MOON_37_5
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 5
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: ADHI_HOUSE_SEMANTICS
+readings:
+- reading_id: EACH_OF_6_7_8_HAS_A_BENEFIC
+  basis: translation
+  note: Each of the 6th, 7th and 8th from the Moon holds a natural benefic.
+  conditions:
+    op: all
+    args:
+    - op: exists
+      over: &id001
+        nature: benefic
+        exclude:
+        - moon
+      where:
+        op: planet_house
+        planet: $it
+        reference: moon
+        houses:
+        - 6
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: moon
+        houses:
+        - 7
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: moon
+        houses:
+        - 8
+- reading_id: ANY_BENEFIC_IN_6_7_8
+  basis: translation
+  note: At least one natural benefic in the 6th, 7th or 8th from the Moon.
+  conditions:
+    op: exists
+    over: *id001
+    where:
+      op: planet_house
+      planet: $it
+      reference: moon
+      houses:
+      - 6
+      - 7
+      - 8
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.adhi_moon_37_5
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_SAN_LAGNADHI_36_37
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_LAGNADHI_36_37
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 36 v. 37
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: ADHI_HOUSE_SEMANTICS
+conditions:
+  op: for_all
+  over: &id001
+    nature: benefic
+  where:
+    op: any
+    args:
+    - op: not
+      arg:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 7
+        - 8
+    - op: not
+      arg:
+        op: exists
+        over:
+          nature: malefic
+          nodes: unspecified
+        where:
+          op: any
+          args:
+          - op: same_sign
+            a: $outer
+            b: $it
+          - op: aspected_by
+            planet: $outer
+            by: $it
+readings:
+- reading_id: EACH_OF_7_8_HAS_A_BENEFIC
+  basis: translation
+  note: A natural benefic in each of the 7th and 8th from the Ascendant.
+  conditions:
+    op: all
+    args:
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 7
+    - op: exists
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 8
+- reading_id: ANY_BENEFIC_IN_7_8
+  basis: translation
+  note: At least one natural benefic in the 7th or 8th from the Ascendant.
+  conditions:
+    op: exists
+    over: *id001
+    where:
+      op: planet_house
+      planet: $it
+      reference: lagna
+      houses:
+      - 7
+      - 8
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.lagnadhi_36_37
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_SAN_DHANA_MOON_37_6
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_DHANA_MOON_37_6
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 37 v. 6
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: BENEFICS_IN_UPACHAYA_FROM_MOON
+  basis: translation
+  note: Natural benefics in the 3rd, 6th, 10th or 11th from the Moon; the observed count (3, 2 or 1) is
+    recorded as evidence. Wording of the result is not a Phase 6 concern.
+  conditions:
+    op: count
+    over:
+      nature: benefic
+      exclude:
+      - moon
+    where:
+      op: planet_house
+      planet: $it
+      reference: moon
+      houses:
+      - 3
+      - 6
+      - 10
+      - 11
+    at_least: 1
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.dhana_moon_37_6
+  effect_class: supportive

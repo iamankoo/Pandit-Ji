@@ -1,0 +1,23 @@
+document_type: table
+table_id: BPHS_SAN_REL_TEMPORAL_3_56
+table_kind: temporal_relationship
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 3 v. 56
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  friend_houses:
+  - 2
+  - 3
+  - 4
+  - 10
+  - 11
+  - 12
+  note: A planet in these houses (counted from another planet, whole-sign) is its temporal friend; otherwise
+    its temporal enemy.

@@ -1,0 +1,91 @@
+document_type: rule
+rule_id: BPHS_KAPOOR_80_47_49_MARS_HOUSES
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_80_47_49_MARS_HOUSES
+category: dosha
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 80 v. 47-49 (printed p. 964)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+conflict_group: KUJA_DOSHA_TOPIC
+ambiguity_group: MANGAL_LAGNA_INCLUSION
+readings:
+- reading_id: TRANSLATION_12_4_7_8
+  basis: translation
+  note: 'The English translation: Mars in the 12th, 4th, 7th or 8th from the Ascendant, neither aspected
+    by nor associated with any benefic.'
+  conditions:
+    op: all
+    args:
+    - op: planet_house
+      planet: mars
+      reference: lagna
+      houses:
+      - 4
+      - 7
+      - 8
+      - 12
+    - &id001
+      op: for_all
+      over:
+        nature: benefic
+      where:
+        op: all
+        args:
+        - op: not
+          arg:
+            op: same_sign
+            a: mars
+            b: $it
+        - op: not
+          arg:
+            op: aspected_by
+            planet: mars
+            by: $it
+- reading_id: SANSKRIT_LAGNE_12_4_7_8
+  basis: sanskrit_reading
+  note: 'The Devanagari of v. 47 as read (unreviewed) names the Lagna as well: lagne vyaye sukhe vapi
+    saptame vashtame kuje.'
+  conditions:
+    op: all
+    args:
+    - op: planet_house
+      planet: mars
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 8
+      - 12
+    - *id001
+dependencies:
+- dependency_id: PARTNER_CHART_CANCELLATION
+  kind: later_phase_input
+  owner_phase: 11
+  reason: requires_partner_chart
+  unresolved_effect: not_evaluable_if_detected
+  description: 'v. 49: the yoga ceases to have effect when both partners have it; that needs the partner''s
+    chart.'
+applicability:
+  schools:
+  - parashari
+  gender: effect_label_only
+  notes: Detection does not need gender; the source's effect label differs (widowhood for a woman, widower
+    for a man).
+interpretation_tags:
+  domain:
+  - marriage
+  signification:
+  - marriage.spouse_longevity
+  effect_class: challenging

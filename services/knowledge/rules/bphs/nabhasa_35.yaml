@@ -1,0 +1,4038 @@
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_RAJJU
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 7
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: V7
+  basis: translation
+  note: All seven planets (Sun to Saturn; the text counts seven planets) in movable signs.
+  conditions:
+    op: for_all
+    over: {}
+    where:
+      op: planet_modality
+      planet: $it
+      in:
+      - movable
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.rajju
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_MUSALA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 7
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: V7
+  basis: translation
+  note: All seven planets (Sun to Saturn; the text counts seven planets) in fixed signs.
+  conditions:
+    op: for_all
+    over: {}
+    where:
+      op: planet_modality
+      planet: $it
+      in:
+      - fixed
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.musala
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_NALA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 7
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: V7
+  basis: translation
+  note: All seven planets (Sun to Saturn; the text counts seven planets) in dual signs.
+  conditions:
+    op: for_all
+    over: {}
+    where:
+      op: planet_modality
+      planet: $it
+      in:
+      - dual
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.nala
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_MAALA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 8
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_BENEFIC_MALEFIC_SEMANTICS
+readings:
+- reading_id: THREE_ANGLES_EACH_HAS_ONE
+  basis: translation
+  note: Three angles each occupied by at least one benefic (Maala) or malefic (Sarpa); other planets may
+    share those angles.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: exists
+        over: &id001
+          nature: benefic
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+- reading_id: THREE_ANGLES_OCCUPIED_ONLY_BY_THEM
+  basis: translation
+  note: Three angles each occupied by them and by no planet of the other kind.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: not
+        arg:
+          op: exists
+          over: &id002
+            nature: malefic
+            nodes: unspecified
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.maala
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SARPA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 8
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_BENEFIC_MALEFIC_SEMANTICS
+readings:
+- reading_id: THREE_ANGLES_EACH_HAS_ONE
+  basis: translation
+  note: Three angles each occupied by at least one benefic (Maala) or malefic (Sarpa); other planets may
+    share those angles.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: exists
+        over: &id001
+          nature: malefic
+          nodes: unspecified
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+- reading_id: THREE_ANGLES_OCCUPIED_ONLY_BY_THEM
+  basis: translation
+  note: Three angles each occupied by them and by no planet of the other kind.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: not
+        arg:
+          op: exists
+          over: &id002
+            nature: benefic
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+      - op: not
+        arg:
+          op: exists
+          over: *id002
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.sarpa
+  effect_class: challenging
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_GADA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 4
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 7
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 7
+        - 10
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 10
+        - 1
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 4
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 7
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+          - 10
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+          - 1
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.gada
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SAKATA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 7
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 7
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.sakata
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 10
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 10
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.vihaga
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 5
+        - 9
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 5
+          - 9
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 5
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 9
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.sringataka
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_HALA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 2
+        - 6
+        - 10
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 3
+        - 7
+        - 11
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 8
+        - 12
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 2
+          - 6
+          - 10
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 2
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 6
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 3
+          - 7
+          - 11
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 3
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 11
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 8
+          - 12
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 8
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.hala
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_KAMALA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 12
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 4
+          - 7
+          - 10
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.kamala
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_VAPI
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 12
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 2
+        - 5
+        - 8
+        - 11
+    - op: for_all
+      over: *id001
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 3
+        - 6
+        - 9
+        - 12
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 2
+          - 5
+          - 8
+          - 11
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 2
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 5
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 8
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 11
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 3
+          - 6
+          - 9
+          - 12
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 3
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 6
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 9
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.vapi
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_YUPA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 13
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 2
+        - 3
+        - 4
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 2
+          - 3
+          - 4
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 2
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 3
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.yupa
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SARA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 13
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 5
+        - 6
+        - 7
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 5
+          - 6
+          - 7
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 5
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 6
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.sara
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 13
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 7
+        - 8
+        - 9
+        - 10
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+          - 8
+          - 9
+          - 10
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 8
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 9
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.sakthi
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_DANDA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 13
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 10
+        - 11
+        - 12
+        - 1
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+          - 11
+          - 12
+          - 1
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 11
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 12
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.danda
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 15
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 3
+        - 5
+        - 7
+        - 9
+        - 11
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 3
+          - 5
+          - 7
+          - 9
+          - 11
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 1
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 3
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 5
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 7
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 9
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 11
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.chakra
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 15
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_OCCUPANCY_SEMANTICS
+readings:
+- reading_id: ALL_PLANETS_WITHIN
+  basis: translation
+  note: Every planet lies within the named houses; a named house may be empty.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 2
+        - 4
+        - 6
+        - 8
+        - 10
+        - 12
+- reading_id: ALL_PLANETS_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: Every planet lies within the named houses and every named house holds a planet.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 2
+          - 4
+          - 6
+          - 8
+          - 10
+          - 12
+      - op: all
+        args:
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 2
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 4
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 6
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 8
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 10
+        - op: exists
+          over: *id001
+          where:
+            op: planet_house
+            planet: $it
+            reference: lagna
+            houses:
+            - 12
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.samudra
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_NAUKA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 14
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: SEVEN_CONTINUOUS_HOUSES
+  basis: translation
+  note: The verse states the planets occupy seven continuous houses starting from house 1.
+  conditions:
+    op: all
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 2
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 3
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 5
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 6
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.nauka
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_KOOTA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 14
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: SEVEN_CONTINUOUS_HOUSES
+  basis: translation
+  note: The verse states the planets occupy seven continuous houses starting from house 4.
+  conditions:
+    op: all
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 5
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 6
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 8
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 9
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.koota
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_CHATRA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 14
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: SEVEN_CONTINUOUS_HOUSES
+  basis: translation
+  note: The verse states the planets occupy seven continuous houses starting from house 7.
+  conditions:
+    op: all
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 1
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 8
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 9
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 11
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 12
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.chatra
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_CHAPA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 14
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: SEVEN_CONTINUOUS_HOUSES
+  basis: translation
+  note: The verse states the planets occupy seven continuous houses starting from house 10.
+  conditions:
+    op: all
+    args:
+    - op: for_all
+      over: &id001 {}
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 10
+        - 11
+        - 12
+        - 1
+        - 2
+        - 3
+        - 4
+    - op: all
+      args:
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 11
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 12
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 2
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 3
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.chapa
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_VAJRA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_BENEFIC_MALEFIC_SEMANTICS
+readings:
+- reading_id: ALL_OF_THEM_WITHIN
+  basis: translation
+  note: Every benefic (or every malefic) lies within the named houses.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001
+        nature: benefic
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 7
+    - op: for_all
+      over: &id002
+        nature: malefic
+        nodes: unspecified
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 10
+- reading_id: ALL_OF_THEM_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: As above, and every named house holds one of them.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 7
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+    - op: all
+      args:
+      - op: for_all
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 10
+      - op: exists
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.vajra
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_YAVA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 9-11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+ambiguity_group: NABHASA_BENEFIC_MALEFIC_SEMANTICS
+readings:
+- reading_id: ALL_OF_THEM_WITHIN
+  basis: translation
+  note: Every benefic (or every malefic) lies within the named houses.
+  conditions:
+    op: any
+    args:
+    - op: for_all
+      over: &id001
+        nature: benefic
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 4
+        - 10
+    - op: for_all
+      over: &id002
+        nature: malefic
+        nodes: unspecified
+      where:
+        op: planet_house
+        planet: $it
+        reference: lagna
+        houses:
+        - 1
+        - 7
+- reading_id: ALL_OF_THEM_WITHIN_AND_EVERY_HOUSE_OCCUPIED
+  basis: translation
+  note: As above, and every named house holds one of them.
+  conditions:
+    op: any
+    args:
+    - op: all
+      args:
+      - op: for_all
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+          - 10
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 4
+      - op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 10
+    - op: all
+      args:
+      - op: for_all
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+          - 7
+      - op: exists
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 1
+      - op: exists
+        over: *id002
+        where:
+          op: planet_house
+          planet: $it
+          reference: lagna
+          houses:
+          - 7
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.yava
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_GOLA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 1 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 1
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.gola
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_YUGA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 2 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 2
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.yuga
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_SOOLA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 3 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 3
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.soola
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_KEDARA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 4 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 4
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.kedara
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_PAASA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 5 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 5
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.paasa
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_DAAMA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 6 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 6
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.daama
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: BPHS_SAN_NABHASA_35_VEENA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_NABHASA_35
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 35 v. 16-17
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+ambiguity_group: NABHASA_SANKHYA_SUPPRESSION
+readings:
+- reading_id: SEVEN_PLANETS_IN_N_SIGNS
+  basis: translation
+  note: The seven planets occupy exactly 7 sign(s).
+  conditions:
+    op: distinct_signs
+    over: {}
+    count: 7
+cancellations:
+- cancellation_id: EARLIER_NABHASA_YOGA_DERIVABLE
+  when:
+    op: any
+    args:
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_RAJJU
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MUSALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_MAALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_GADA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKATA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VIHAGA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SRINGATAKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_HALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KAMALA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAPI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YUPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SARA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAKTHI
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_DANDA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAKRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_SAMUDRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_NAUKA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_KOOTA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHATRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_CHAPA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_VAJRA
+      in:
+      - TRIGGERED
+    - op: rule_result
+      rule_id: BPHS_SAN_NABHASA_35_YAVA
+      in:
+      - TRIGGERED
+  effect: full
+  source_location: Ch. 35 v. 17
+  note: The seven Sankhya yogas are not operable if another Nabhasa yoga explained earlier is derivable.
+dependencies:
+- dependency_id: ARDHACHANDRA_CONDITION_ABSENT
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: not_evaluable_if_detected
+  description: Ardhachandra is named among the earlier Nabhasa yogas but no condition is given for it
+    in this edition, so its absence cannot be asserted.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - nabhasa.veena
+  effect_class: context_dependent

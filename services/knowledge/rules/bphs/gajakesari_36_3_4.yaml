@@ -1,0 +1,273 @@
+document_type: rule
+rule_id: BPHS_SAN_GAJAKESARI_36_3_4
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_SAN_GAJAKESARI_36_3_4
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 36 v. 3-4 (printed p. 368)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 100
+conflict_group: GAJAKESARI_TOPIC
+ambiguity_group: GAJAKESARI_EXCLUSION_ATTACHMENT
+readings:
+- reading_id: EXCLUSIONS_ON_JUPITER_ENEMY_SIGN_NATURAL
+  basis: translation
+  note: Jupiter in an angle from the Ascendant or from the Moon, conjunct or aspected by another natural
+    benefic; not debilitated, combust or in an inimical sign for Jupiter; an inimical sign is one whose
+    lord is a natural enemy.
+  conditions:
+    op: all
+    args:
+    - op: any
+      args:
+      - op: planet_house
+        planet: jupiter
+        reference: lagna
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+      - op: planet_house
+        planet: jupiter
+        reference: moon
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+    - op: exists
+      over: &id001
+        nature: benefic
+        exclude:
+        - jupiter
+      where:
+        op: any
+        args:
+        - op: same_sign
+          a: jupiter
+          b: $it
+        - op: aspected_by
+          planet: jupiter
+          by: $it
+    - op: all
+      args:
+      - op: not
+        arg:
+          op: planet_dignity
+          planet: jupiter
+          in:
+          - debilitated
+      - op: not
+        arg:
+          op: planet_flag
+          planet: jupiter
+          flag: combust
+      - op: not
+        arg:
+          op: sign_lord_relation
+          planet: jupiter
+          basis: natural
+          kinds:
+          - enemy
+- reading_id: EXCLUSIONS_ON_JUPITER_ENEMY_SIGN_COMPOUND
+  basis: translation
+  note: Jupiter in an angle from the Ascendant or from the Moon, conjunct or aspected by another natural
+    benefic; not debilitated, combust or in an inimical sign for Jupiter; an inimical sign is one whose
+    lord is a compound enemy.
+  conditions:
+    op: all
+    args:
+    - op: any
+      args:
+      - op: planet_house
+        planet: jupiter
+        reference: lagna
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+      - op: planet_house
+        planet: jupiter
+        reference: moon
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+    - op: exists
+      over: *id001
+      where:
+        op: any
+        args:
+        - op: same_sign
+          a: jupiter
+          b: $it
+        - op: aspected_by
+          planet: jupiter
+          by: $it
+    - op: all
+      args:
+      - op: not
+        arg:
+          op: planet_dignity
+          planet: jupiter
+          in:
+          - debilitated
+      - op: not
+        arg:
+          op: planet_flag
+          planet: jupiter
+          flag: combust
+      - op: not
+        arg:
+          op: sign_lord_relation
+          planet: jupiter
+          basis: compound
+          kinds:
+          - enemy
+          - great_enemy
+- reading_id: EXCLUSIONS_ON_BENEFIC_ENEMY_SIGN_NATURAL
+  basis: translation
+  note: Jupiter in an angle from the Ascendant or from the Moon, conjunct or aspected by another natural
+    benefic; not debilitated, combust or in an inimical sign for the conjunct or aspecting benefic; an
+    inimical sign is one whose lord is a natural enemy.
+  conditions:
+    op: all
+    args:
+    - op: any
+      args:
+      - op: planet_house
+        planet: jupiter
+        reference: lagna
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+      - op: planet_house
+        planet: jupiter
+        reference: moon
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+    - op: exists
+      over: *id001
+      where:
+        op: all
+        args:
+        - op: any
+          args:
+          - op: same_sign
+            a: jupiter
+            b: $it
+          - op: aspected_by
+            planet: jupiter
+            by: $it
+        - op: all
+          args:
+          - op: not
+            arg:
+              op: planet_dignity
+              planet: $it
+              in:
+              - debilitated
+          - op: not
+            arg:
+              op: planet_flag
+              planet: $it
+              flag: combust
+          - op: not
+            arg:
+              op: sign_lord_relation
+              planet: $it
+              basis: natural
+              kinds:
+              - enemy
+- reading_id: EXCLUSIONS_ON_BENEFIC_ENEMY_SIGN_COMPOUND
+  basis: translation
+  note: Jupiter in an angle from the Ascendant or from the Moon, conjunct or aspected by another natural
+    benefic; not debilitated, combust or in an inimical sign for the conjunct or aspecting benefic; an
+    inimical sign is one whose lord is a compound enemy.
+  conditions:
+    op: all
+    args:
+    - op: any
+      args:
+      - op: planet_house
+        planet: jupiter
+        reference: lagna
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+      - op: planet_house
+        planet: jupiter
+        reference: moon
+        houses:
+        - 1
+        - 4
+        - 7
+        - 10
+    - op: exists
+      over: *id001
+      where:
+        op: all
+        args:
+        - op: any
+          args:
+          - op: same_sign
+            a: jupiter
+            b: $it
+          - op: aspected_by
+            planet: jupiter
+            by: $it
+        - op: all
+          args:
+          - op: not
+            arg:
+              op: planet_dignity
+              planet: $it
+              in:
+              - debilitated
+          - op: not
+            arg:
+              op: planet_flag
+              planet: $it
+              flag: combust
+          - op: not
+            arg:
+              op: sign_lord_relation
+              planet: $it
+              basis: compound
+              kinds:
+              - enemy
+              - great_enemy
+dependencies:
+- dependency_id: OTHER_GAJAKESARI_TRADITIONS_ARE_SEPARATE_PROFILES
+  kind: source_gap
+  owner_phase: 6
+  reason: not_specified_by_source
+  unresolved_effect: informational
+  description: Variants reported only in the translator's notes (Jataka Parijata, the Bombay edition,
+    C.G. Rajan, Kumara Swameeyam) are not rules.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.gajakesari
+  effect_class: supportive

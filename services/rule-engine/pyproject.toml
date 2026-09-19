@@ -1,10 +1,11 @@
 [project]
 name = "pandit-rule-engine"
-version = "0.1.0"
-description = "Deterministic astrology rule evaluation engine (Phase 3 foundation only -- no rule content yet)."
+version = "0.6.0"
+description = "Deterministic astrology rule evaluation engine (Phase 6: source-profile rules, ambiguity-preserving evaluation, evidence bundle)."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",
+  "pyyaml>=6.0,<7",
   "pandit-contracts",
   "pandit-shared",
 ]
@@ -14,6 +15,7 @@ dev = [
   "pytest>=8.0",
   "ruff>=0.6",
   "mypy>=1.10",
+  "types-PyYAML>=6.0",
 ]
 
 [build-system]

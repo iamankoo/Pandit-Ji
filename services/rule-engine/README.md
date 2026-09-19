@@ -6,9 +6,19 @@ Structured astrology rules and deterministic rule evaluation. Canonical service 
 
 **Not responsible for**: computing chart facts itself (consumes them from `astro-engine`), or producing user-facing natural language (structured tags + facts only — phrasing is `agent`'s job).
 
-## Phase 3 status
+## Phase 6 status
 
-Foundation only: package boundary, config, health check. No rule schema/evaluator/content yet — that begins in `Phases.md` Phase 6.
+Implemented (`Phases.md` Phase 6, first tranche; methodology in `docs/ASTROLOGY_STANDARDS.md` v1.4.0 §"Phase 6 rule-engine methodology"):
+
+- `schema.py`: typed, declarative rule schema (source-specific profiles, readings, exceptions, cancellations, dependencies); no embedded code.
+- `loader.py`: deterministic loading and registration of `services/knowledge/rules/**/*.yaml` (duplicate IDs, duplicate YAML keys, unknown references and dependency cycles are errors).
+- `conditions.py` / `evaluator.py`: three-valued (Kleene) evaluation; ambiguity-preserving results (`NOT_EVALUABLE(reading_ambiguous)` when readings disagree, every reading kept); priority orders evaluation only.
+- `tables.py` / `derived.py`: BPHS relationships (Ch. 3 v. 55-58), natural benefic/malefic (v. 11), Moolatrikona (v. 51-54) and the 84-cell Ch. 34 functional-nature table, source labels preserved.
+- `bundle.py` / `hashing.py`: reproducible `EvidenceBundle` and canonical ruleset content hash.
+- `adapters.py`: reads a Phase 5 Kundli's JSON form into normalized facts (no import of `astro-engine`).
+- `engine.py`: `RuleEngine.from_directory(...).evaluate_kundli(kundli_json)`.
+
+The rule engine consumes facts only. It never computes astronomy, never calls the network or an AI model, and never resolves a source conflict by picking a winner. Anything owned by a later phase (Shadbala, Dasha, partial drishti, Jaimini, special Lagnas, upagraha calculation, D27 ...) returns a structured `NOT_EVALUABLE` reason.
 
 ## Local development
 

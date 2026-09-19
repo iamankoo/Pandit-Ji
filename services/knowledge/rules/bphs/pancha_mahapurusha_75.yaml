@@ -1,0 +1,239 @@
+document_type: rule
+rule_id: BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 75 v. 1-2 (printed p. 924)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: PMP_V1_2
+  basis: translation
+  note: Mars in its own sign or its sign of exaltation and in a kendra to the Ascendant. No strength,
+    retrograde or combustion requirement appears in the verse.
+  conditions:
+    op: all
+    args:
+    - op: planet_dignity
+      planet: mars
+      in:
+      - exalted
+      - own_sign
+    - op: planet_house
+      planet: mars
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+interpretation_tags:
+  domain:
+  - personality
+  - status
+  signification:
+  - pancha_mahapurusha.ruchaka
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_KAPOOR_PMP_75_1_2_BHADRA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_PMP_75_1_2_BHADRA
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 75 v. 1-2 (printed p. 924)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: PMP_V1_2
+  basis: translation
+  note: Mercury in its own sign or its sign of exaltation and in a kendra to the Ascendant. No strength,
+    retrograde or combustion requirement appears in the verse.
+  conditions:
+    op: all
+    args:
+    - op: planet_dignity
+      planet: mercury
+      in:
+      - exalted
+      - own_sign
+    - op: planet_house
+      planet: mercury
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+interpretation_tags:
+  domain:
+  - personality
+  - status
+  signification:
+  - pancha_mahapurusha.bhadra
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_KAPOOR_PMP_75_1_2_HAMSA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_PMP_75_1_2_HAMSA
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 75 v. 1-2 (printed p. 924)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: PMP_V1_2
+  basis: translation
+  note: Jupiter in its own sign or its sign of exaltation and in a kendra to the Ascendant. No strength,
+    retrograde or combustion requirement appears in the verse.
+  conditions:
+    op: all
+    args:
+    - op: planet_dignity
+      planet: jupiter
+      in:
+      - exalted
+      - own_sign
+    - op: planet_house
+      planet: jupiter
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+interpretation_tags:
+  domain:
+  - personality
+  - status
+  signification:
+  - pancha_mahapurusha.hamsa
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 75 v. 1-2 (printed p. 924)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: PMP_V1_2
+  basis: translation
+  note: Venus in its own sign or its sign of exaltation and in a kendra to the Ascendant. No strength,
+    retrograde or combustion requirement appears in the verse.
+  conditions:
+    op: all
+    args:
+    - op: planet_dignity
+      planet: venus
+      in:
+      - exalted
+      - own_sign
+    - op: planet_house
+      planet: venus
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+interpretation_tags:
+  domain:
+  - personality
+  - status
+  signification:
+  - pancha_mahapurusha.malavya
+  effect_class: supportive
+---
+document_type: rule
+rule_id: BPHS_KAPOOR_PMP_75_1_2_SHASHA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: BPHS_KAPOOR_PMP_75_1_2_SHASHA
+category: yoga
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_KAPOOR_1987
+source_edition: Ranjan Publications, New Delhi, Vol II (Ch. 46-97)
+translator: Gouri Shankar Kapoor
+source_version: 1987 (Vol II)
+source_tier: 2
+source_location: Ch. 75 v. 1-2 (printed p. 924)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+status: active
+priority: 100
+readings:
+- reading_id: PMP_V1_2
+  basis: translation
+  note: Saturn in its own sign or its sign of exaltation and in a kendra to the Ascendant. No strength,
+    retrograde or combustion requirement appears in the verse.
+  conditions:
+    op: all
+    args:
+    - op: planet_dignity
+      planet: saturn
+      in:
+      - exalted
+      - own_sign
+    - op: planet_house
+      planet: saturn
+      reference: lagna
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+interpretation_tags:
+  domain:
+  - personality
+  - status
+  signification:
+  - pancha_mahapurusha.shasha
+  effect_class: supportive

@@ -1,0 +1,121 @@
+{
+  "case_id": "pmp_boundary_mercury_virgo_lagna",
+  "description": "Mercury in Virgo (exalted, also its own sign) in the Lagna: Bhadra.",
+  "expected": {
+    "BPHS_KAPOOR_PMP_75_1_2_BHADRA": "TRIGGERED"
+  },
+  "kundli": {
+    "astronomical": {
+      "metadata": {
+        "calculation_config": {
+          "ayanamsa": "lahiri",
+          "node_convention": "mean",
+          "zodiac": "sidereal"
+        },
+        "engine_version": "test-astro",
+        "location": {
+          "altitude_meters": 0.0,
+          "latitude": 28.61,
+          "longitude": 77.2
+        },
+        "time_resolution": {
+          "input_local_datetime": "2000-01-01T06:00:00",
+          "timezone": "Asia/Kolkata",
+          "utc_datetime": "2000-01-01T00:30:00+00:00"
+        }
+      }
+    },
+    "houses": [
+      {
+        "house": 1,
+        "lord": "mercury",
+        "rashi": "virgo"
+      },
+      {
+        "house": 2,
+        "lord": "venus",
+        "rashi": "libra"
+      },
+      {
+        "house": 3,
+        "lord": "mars",
+        "rashi": "scorpio"
+      },
+      {
+        "house": 4,
+        "lord": "jupiter",
+        "rashi": "sagittarius"
+      },
+      {
+        "house": 5,
+        "lord": "saturn",
+        "rashi": "capricorn"
+      },
+      {
+        "house": 6,
+        "lord": "saturn",
+        "rashi": "aquarius"
+      },
+      {
+        "house": 7,
+        "lord": "jupiter",
+        "rashi": "pisces"
+      },
+      {
+        "house": 8,
+        "lord": "mars",
+        "rashi": "aries"
+      },
+      {
+        "house": 9,
+        "lord": "venus",
+        "rashi": "taurus"
+      },
+      {
+        "house": 10,
+        "lord": "mercury",
+        "rashi": "gemini"
+      },
+      {
+        "house": 11,
+        "lord": "moon",
+        "rashi": "cancer"
+      },
+      {
+        "house": 12,
+        "lord": "sun",
+        "rashi": "leo"
+      }
+    ],
+    "lagna": {
+      "degree_in_sign": 5.0,
+      "rashi": "virgo"
+    },
+    "metadata": {
+      "aspect_standard": "vedic_graha_drishti_v1",
+      "dignity_standard": "classical_exaltation_debilitation_v1",
+      "engine_version": "test-astro",
+      "house_system": "vedic_whole_sign",
+      "standards_version": "1.3.0",
+      "varga_scheme": "classical_parashari_v1"
+    },
+    "planets": [
+      {
+        "aspected_houses": [
+          7
+        ],
+        "body": "mercury",
+        "combust": false,
+        "degree_in_sign": 29.9,
+        "dignity": "exalted",
+        "house": 1,
+        "longitude": 179.9,
+        "rashi": "virgo",
+        "retrograde": false
+      }
+    ]
+  },
+  "profiles": [
+    "BPHS_KAPOOR_PMP_75_1_2_BHADRA"
+  ]
+}

@@ -1,0 +1,140 @@
+document_type: rule
+rule_id: PHALADEEPIKA_SASTRI_KESARI_6_14
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: PHALADEEPIKA_SASTRI_KESARI_6_14
+category: yoga
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_version: 1950 (2nd ed.)
+source_tier: 2
+source_location: Adhyaya VI sloka 14
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+conflict_group: GAJAKESARI_TOPIC
+readings:
+- reading_id: SL14
+  basis: translation
+  note: The Moon in a kendra from Jupiter.
+  conditions:
+    op: planet_house
+    planet: moon
+    reference: jupiter
+    houses:
+    - 1
+    - 4
+    - 7
+    - 10
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.kesari
+  effect_class: context_dependent
+---
+document_type: rule
+rule_id: PHALADEEPIKA_SASTRI_KEMADRUMA_6_5
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: PHALADEEPIKA_SASTRI_KEMADRUMA_6_5
+category: yoga
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_version: 1950 (2nd ed.)
+source_tier: 2
+source_location: Adhyaya VI sloka 5
+verification_level: OCR-TRANSLATION
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+conflict_group: KEMADRUMA_TOPIC
+readings:
+- reading_id: SL5
+  basis: translation
+  note: No planet other than the Sun in the 2nd or 12th from the Moon (the absence of Sunapha, Anapha
+    and Duradhara).
+  conditions:
+    op: all
+    args:
+    - op: not
+      arg:
+        op: exists
+        over: &id001
+          exclude:
+          - sun
+          - moon
+          nodes: unspecified
+        where:
+          op: planet_house
+          planet: $it
+          reference: moon
+          houses:
+          - 2
+    - op: not
+      arg:
+        op: exists
+        over: *id001
+        where:
+          op: planet_house
+          planet: $it
+          reference: moon
+          houses:
+          - 12
+cancellations:
+- cancellation_id: MOON_ASSOCIATED_WITH_A_PLANET
+  when:
+    op: exists
+    over:
+      exclude:
+      - moon
+      nodes: unspecified
+    where:
+      op: same_sign
+      a: $it
+      b: moon
+  effect: full
+  source_location: Adhyaya VI sloka 5 ("some declare")
+  note: Some declare there is no Kemadruma where the Moon is associated with a planet.
+- cancellation_id: PLANET_IN_KENDRA_FROM_MOON
+  when:
+    op: exists
+    over:
+      exclude:
+      - moon
+      nodes: unspecified
+    where:
+      op: planet_house
+      planet: $it
+      reference: moon
+      houses:
+      - 1
+      - 4
+      - 7
+      - 10
+  effect: full
+  source_location: Adhyaya VI sloka 5 ("some declare")
+  note: Some declare there is no Kemadruma where planets occupy a kendra from the Moon.
+dependencies:
+- dependency_id: SLOKA_5_FIRST_CANCELLATION_CLAUSE_ILLEGIBLE
+  kind: source_gap
+  owner_phase: 6
+  reason: condition_absent_in_source
+  unresolved_effect: informational
+  description: The first cancellation clause of the translation (a Kendra) is illegible in the OCR and
+    is not modelled.
+interpretation_tags:
+  domain:
+  - general
+  signification:
+  - yoga.kemadruma
+  effect_class: challenging

@@ -1,0 +1,61 @@
+document_type: table
+table_id: BPHS_SAN_REL_NATURAL_3_55
+table_kind: natural_relationships
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 3 v. 55 (translator table, printed p. 40)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  friends:
+    sun:
+    - moon
+    - mars
+    - jupiter
+    moon:
+    - sun
+    - mercury
+    mars:
+    - sun
+    - moon
+    - jupiter
+    mercury:
+    - sun
+    - venus
+    jupiter:
+    - sun
+    - moon
+    - mars
+    venus:
+    - mercury
+    - saturn
+    saturn:
+    - mercury
+    - venus
+  enemies:
+    sun:
+    - venus
+    - saturn
+    moon: []
+    mars:
+    - mercury
+    mercury:
+    - moon
+    jupiter:
+    - mercury
+    - venus
+    venus:
+    - sun
+    - moon
+    saturn:
+    - sun
+    - moon
+    - mars
+  note: Equals are the remaining classical planets. The Moon row follows the Benares (Chaukhamba) statement
+    quoted by the translator that the Moon has no enemy; the v. 55 counting formula alone would differ
+    (bounded source conflict). Rahu and Ketu are not in the table.

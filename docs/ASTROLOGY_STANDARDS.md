@@ -208,7 +208,7 @@ Defines the standard and contract that **Phase 6 (Vedic Astrology Rule Engine)**
 ### Aspect refinement
 
 - Phase 6 uses only the Phase 5 full-sign graha drishti (§Planetary aspects standard). It never substitutes full-sign aspect for a rule that needs partial, degree-based or Jaimini sign aspect.
-- For a condition phrased as "aspected by X": if a full-sign aspect is present the condition is definitely true. For "unaspected": if no full-sign aspect is present, a partial aspect (BPHS Ch. 26 v. 2–5) may still exist, so the result is `NOT_EVALUABLE(requires_partial_drishti)` until Phase 9 provides partial aspects.
+- For a condition phrased as "aspected by X": if a full-sign aspect is present the condition is definitely true. For "unaspected": if no full-sign aspect is present, a partial aspect (BPHS Ch. 26 v. 2–5) may still exist, so the result is `NOT_EVALUABLE(requires_partial_drishti)` until Phase 9 provides partial aspects. BPHS Ch. 26 v. 2–5 gives partial aspects only on the 3rd/10th, 5th/9th and 4th/8th from the aspecting planet (the 7th is always full), so from any other house no aspect exists and "unaspected" is definitely true there; `requires_partial_drishti` applies only from those six houses (implementation clarification recorded during Phase 6 implementation).
 - Jaimini rashi drishti and degree-based drishti are separate systems and are never blended with graha drishti.
 
 ### Strength

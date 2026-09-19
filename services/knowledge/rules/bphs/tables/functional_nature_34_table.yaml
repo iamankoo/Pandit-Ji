@@ -1,0 +1,268 @@
+document_type: table
+table_id: BPHS_SAN_FUNCNATURE_34_TABLE
+table_kind: functional_nature
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 34 v. 19-44 (printed pp. 347-356)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  lagnas:
+    aries:
+      verse: 34.19-22
+      cells:
+        sun:
+          labels: &id001
+          - auspicious
+        moon:
+          labels: &id004 []
+          status: not_specified_by_source
+        mars:
+          labels:
+          - helpful_to_auspicious
+        mercury:
+          labels: &id002
+          - malefic
+        jupiter:
+          labels: *id001
+        venus:
+          labels: &id003
+          - malefic
+          - killer
+        saturn:
+          labels: *id002
+    taurus:
+      verse: 34.23-24
+      cells:
+        sun:
+          labels: *id001
+        moon:
+          labels: *id003
+        mars:
+          labels: &id007
+          - killer
+        mercury:
+          labels:
+          - somewhat_auspicious
+        jupiter:
+          labels: *id003
+        venus:
+          labels: *id003
+        saturn:
+          labels:
+          - auspicious
+          - rajayoga
+    gemini:
+      verse: 34.25-26
+      cells:
+        sun:
+          labels: *id002
+        moon:
+          labels: &id005
+          - killer_by_association
+        mars:
+          labels: *id002
+        mercury:
+          labels: *id004
+          status: not_specified_by_source
+        jupiter:
+          labels: *id002
+        venus:
+          labels:
+          - auspicious
+          - only_auspicious_planet
+        saturn:
+          labels: *id004
+          status: not_specified_by_source
+    cancer:
+      verse: 34.27-28
+      cells:
+        sun:
+          labels: *id005
+        moon:
+          labels: *id001
+        mars:
+          labels:
+          - auspicious
+          - yoga
+        mercury:
+          labels: *id002
+        jupiter:
+          labels: *id001
+        venus:
+          labels: *id002
+        saturn:
+          labels: *id005
+    leo:
+      verse: 34.29-30
+      cells:
+        sun:
+          labels: *id001
+        moon:
+          labels: *id005
+        mars:
+          labels: *id001
+        mercury:
+          labels: *id002
+        jupiter:
+          labels: *id001
+        venus:
+          labels: *id002
+        saturn:
+          labels:
+          - malefic
+          - killer_by_association
+    virgo:
+      verse: 34.31-32
+      cells:
+        sun:
+          labels:
+          - association_dependent
+        moon:
+          labels: *id002
+        mars:
+          labels: *id002
+        mercury:
+          labels: *id001
+        jupiter:
+          labels: *id002
+        venus:
+          labels:
+          - auspicious
+          - killer
+        saturn:
+          labels: *id004
+          status: not_specified_by_source
+    libra:
+      verse: 34.33-34
+      cells:
+        sun:
+          labels:
+          - malefic
+          - killer
+        moon:
+          labels:
+          - rajayoga_with_mercury
+        mars:
+          labels: *id003
+        mercury:
+          labels: *id001
+        jupiter:
+          labels:
+          - malefic
+          - killer
+        venus:
+          labels: &id006
+          - neutral
+        saturn:
+          labels: *id001
+    scorpio:
+      verse: 34.35-36
+      cells:
+        sun:
+          labels:
+          - yogakaraka
+        moon:
+          labels:
+          - auspicious
+          - yogakaraka
+        mars:
+          labels: *id006
+        mercury:
+          labels: *id003
+        jupiter:
+          labels: *id001
+        venus:
+          labels: *id003
+        saturn:
+          labels: *id003
+    sagittarius:
+      verse: 34.37-38
+      cells:
+        sun:
+          labels:
+          - auspicious
+          - yoga_with_mercury
+        moon:
+          labels: *id004
+          status: not_specified_by_source
+        mars:
+          labels: *id001
+        mercury:
+          labels:
+          - yoga_with_sun
+        jupiter:
+          labels: *id006
+        venus:
+          labels: *id003
+        saturn:
+          labels: *id007
+    capricorn:
+      verse: 34.39-40
+      cells:
+        sun:
+          labels: *id006
+        moon:
+          labels: *id003
+        mars:
+          labels: *id003
+        mercury:
+          labels: *id001
+        jupiter:
+          labels: *id003
+        venus:
+          labels:
+          - auspicious
+          - superior_yoga
+        saturn:
+          labels:
+          - not_killer_of_own
+    aquarius:
+      verse: 34.41-42
+      cells:
+        sun:
+          labels: *id007
+        moon:
+          labels: *id002
+        mars:
+          labels: *id003
+        mercury:
+          labels:
+          - meddling_mixed
+        jupiter:
+          labels: *id003
+        venus:
+          labels:
+          - auspicious
+          - rajayoga
+          - only_rajayoga_planet
+        saturn:
+          labels: *id001
+    pisces:
+      verse: 34.43-44
+      cells:
+        sun:
+          labels: *id002
+        moon:
+          labels: *id001
+        mars:
+          labels:
+          - auspicious
+          - yoga
+          - killer_not_independent
+        mercury:
+          labels: *id003
+        jupiter:
+          labels:
+          - yoga_with_mars
+        venus:
+          labels: *id002
+        saturn:
+          labels: *id003
+  note: Source labels are stored as the verses give them and are never converted into a score. Cells the
+    verse does not address are not_specified_by_source. Rahu and Ketu have no cells.

@@ -1,0 +1,45 @@
+document_type: table
+table_id: BPHS_SAN_MOOLATRIKONA_3_51_54
+table_kind: moolatrikona
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 3 v. 51-54 (printed p. 39)
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  ranges:
+    sun:
+      sign: leo
+      from_degree: 0.0
+      to_degree: 20.0
+    moon:
+      sign: taurus
+      from_degree: 3.0
+      to_degree: 30.0
+    mars:
+      sign: aries
+      from_degree: 0.0
+      to_degree: 12.0
+    mercury:
+      sign: virgo
+      from_degree: 15.0
+      to_degree: 20.0
+    jupiter:
+      sign: sagittarius
+      from_degree: 0.0
+      to_degree: 10.0
+    venus:
+      sign: libra
+      from_degree: 0.0
+      to_degree: 15.0
+    saturn:
+      sign: aquarius
+      from_degree: 0.0
+      to_degree: 20.0
+  note: Degree ranges are [from, to). The remainder of the sign is the planet's own sign; Mercury's first
+    15 degrees of Virgo are the exaltation zone.

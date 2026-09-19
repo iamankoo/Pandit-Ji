@@ -1,0 +1,54 @@
+document_type: rule
+rule_id: JP_KUJA_DOSHA
+rule_version: '1'
+astrology_system: vedic_parashari
+school: parashari
+profile: JP_KUJA_DOSHA
+category: dosha
+source: Jataka Parijata (Vaidyanatha)
+source_id: JATAKA_PARIJATA_CHAUKHAMBHA
+source_edition: Chaukhamba, Varanasi (1979); Sanskrit text with the Sudhashalini and the Hindi Vimala
+  commentary
+translator: Matriprasad Shastri (Hindi commentary Vimala)
+source_version: 1979 (Chaukhamba)
+source_tier: 2
+source_location: Verse 34 (chapter number not extracted from the OCR)
+verification_level: OCR-SOURCE-LANGUAGE
+standards_version: 1.4.0
+confidence: MEDIUM
+status: active
+priority: 200
+conflict_group: KUJA_DOSHA_TOPIC
+readings:
+- reading_id: V34_2_4_7_8_12
+  basis: translation
+  note: 'Mars in the 2nd, 12th, 7th, 4th or 8th from the Lagna: harmful to the wife for a man''s chart
+    and, likewise from the girl''s Lagna, to the husband.'
+  conditions:
+    op: planet_house
+    planet: mars
+    reference: lagna
+    houses:
+    - 2
+    - 4
+    - 7
+    - 8
+    - 12
+dependencies:
+- dependency_id: JP_CANCELLATIONS_NOT_READ
+  kind: source_gap
+  owner_phase: 6
+  reason: not_specified_by_source
+  unresolved_effect: informational
+  description: Cancellations are not part of the passage read; none is modelled.
+applicability:
+  schools:
+  - parashari
+  gender: effect_label_only
+  notes: The same house set applies to both sexes; gender selects the stated effect.
+interpretation_tags:
+  domain:
+  - marriage
+  signification:
+  - marriage.spouse_welfare
+  effect_class: challenging

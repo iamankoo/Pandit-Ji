@@ -1,0 +1,233 @@
+{
+  "case_id": "kuja_partner_chart_dependency",
+  "description": "Mars in the 7th with no benefic joined to or able to aspect it: the BPHS placement holds in both readings but its cancellation needs the partner's chart; JP applies.",
+  "expected": {
+    "BPHS_KAPOOR_80_47_49_MARS_HOUSES": "NOT_EVALUABLE(requires_partner_chart)",
+    "JP_KUJA_DOSHA": "TRIGGERED"
+  },
+  "kundli": {
+    "astronomical": {
+      "metadata": {
+        "calculation_config": {
+          "ayanamsa": "lahiri",
+          "node_convention": "mean",
+          "zodiac": "sidereal"
+        },
+        "engine_version": "test-astro",
+        "location": {
+          "altitude_meters": 0.0,
+          "latitude": 28.61,
+          "longitude": 77.2
+        },
+        "time_resolution": {
+          "input_local_datetime": "2000-01-01T06:00:00",
+          "timezone": "Asia/Kolkata",
+          "utc_datetime": "2000-01-01T00:30:00+00:00"
+        }
+      }
+    },
+    "houses": [
+      {
+        "house": 1,
+        "lord": "mars",
+        "rashi": "aries"
+      },
+      {
+        "house": 2,
+        "lord": "venus",
+        "rashi": "taurus"
+      },
+      {
+        "house": 3,
+        "lord": "mercury",
+        "rashi": "gemini"
+      },
+      {
+        "house": 4,
+        "lord": "moon",
+        "rashi": "cancer"
+      },
+      {
+        "house": 5,
+        "lord": "sun",
+        "rashi": "leo"
+      },
+      {
+        "house": 6,
+        "lord": "mercury",
+        "rashi": "virgo"
+      },
+      {
+        "house": 7,
+        "lord": "venus",
+        "rashi": "libra"
+      },
+      {
+        "house": 8,
+        "lord": "mars",
+        "rashi": "scorpio"
+      },
+      {
+        "house": 9,
+        "lord": "jupiter",
+        "rashi": "sagittarius"
+      },
+      {
+        "house": 10,
+        "lord": "saturn",
+        "rashi": "capricorn"
+      },
+      {
+        "house": 11,
+        "lord": "saturn",
+        "rashi": "aquarius"
+      },
+      {
+        "house": 12,
+        "lord": "jupiter",
+        "rashi": "pisces"
+      }
+    ],
+    "lagna": {
+      "degree_in_sign": 5.0,
+      "rashi": "aries"
+    },
+    "metadata": {
+      "aspect_standard": "vedic_graha_drishti_v1",
+      "dignity_standard": "classical_exaltation_debilitation_v1",
+      "engine_version": "test-astro",
+      "house_system": "vedic_whole_sign",
+      "standards_version": "1.3.0",
+      "varga_scheme": "classical_parashari_v1"
+    },
+    "planets": [
+      {
+        "aspected_houses": [
+          4
+        ],
+        "body": "sun",
+        "combust": null,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 10,
+        "longitude": 280.0,
+        "rashi": "capricorn",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          2
+        ],
+        "body": "moon",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "debilitated",
+        "house": 8,
+        "longitude": 220.0,
+        "rashi": "scorpio",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          1,
+          2,
+          10
+        ],
+        "body": "mars",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 7,
+        "longitude": 190.0,
+        "rashi": "libra",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          3
+        ],
+        "body": "mercury",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 9,
+        "longitude": 250.0,
+        "rashi": "sagittarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          2,
+          10,
+          12
+        ],
+        "body": "jupiter",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 6,
+        "longitude": 160.0,
+        "rashi": "virgo",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          8
+        ],
+        "body": "venus",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "own_sign",
+        "house": 2,
+        "longitude": 40.0,
+        "rashi": "taurus",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          1,
+          6,
+          10
+        ],
+        "body": "saturn",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 4,
+        "longitude": 100.0,
+        "rashi": "cancer",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          5
+        ],
+        "body": "rahu",
+        "combust": null,
+        "degree_in_sign": 10.0,
+        "dignity": null,
+        "house": 11,
+        "longitude": 310.0,
+        "rashi": "aquarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          11
+        ],
+        "body": "ketu",
+        "combust": null,
+        "degree_in_sign": 10.0,
+        "dignity": null,
+        "house": 5,
+        "longitude": 130.0,
+        "rashi": "leo",
+        "retrograde": false
+      }
+    ]
+  },
+  "profiles": [
+    "BPHS_KAPOOR_80_47_49_MARS_HOUSES",
+    "JP_KUJA_DOSHA"
+  ]
+}

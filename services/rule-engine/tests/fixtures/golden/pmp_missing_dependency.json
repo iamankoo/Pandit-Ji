@@ -1,0 +1,124 @@
+{
+  "case_id": "pmp_missing_dependency",
+  "description": "Jupiter is absent from the chart: Hamsa cannot be evaluated.",
+  "expected": {
+    "BPHS_KAPOOR_PMP_75_1_2_HAMSA": "NOT_EVALUABLE(missing_dependency)",
+    "BPHS_KAPOOR_PMP_75_1_2_RUCHAKA": "TRIGGERED"
+  },
+  "kundli": {
+    "astronomical": {
+      "metadata": {
+        "calculation_config": {
+          "ayanamsa": "lahiri",
+          "node_convention": "mean",
+          "zodiac": "sidereal"
+        },
+        "engine_version": "test-astro",
+        "location": {
+          "altitude_meters": 0.0,
+          "latitude": 28.61,
+          "longitude": 77.2
+        },
+        "time_resolution": {
+          "input_local_datetime": "2000-01-01T06:00:00",
+          "timezone": "Asia/Kolkata",
+          "utc_datetime": "2000-01-01T00:30:00+00:00"
+        }
+      }
+    },
+    "houses": [
+      {
+        "house": 1,
+        "lord": "mars",
+        "rashi": "aries"
+      },
+      {
+        "house": 2,
+        "lord": "venus",
+        "rashi": "taurus"
+      },
+      {
+        "house": 3,
+        "lord": "mercury",
+        "rashi": "gemini"
+      },
+      {
+        "house": 4,
+        "lord": "moon",
+        "rashi": "cancer"
+      },
+      {
+        "house": 5,
+        "lord": "sun",
+        "rashi": "leo"
+      },
+      {
+        "house": 6,
+        "lord": "mercury",
+        "rashi": "virgo"
+      },
+      {
+        "house": 7,
+        "lord": "venus",
+        "rashi": "libra"
+      },
+      {
+        "house": 8,
+        "lord": "mars",
+        "rashi": "scorpio"
+      },
+      {
+        "house": 9,
+        "lord": "jupiter",
+        "rashi": "sagittarius"
+      },
+      {
+        "house": 10,
+        "lord": "saturn",
+        "rashi": "capricorn"
+      },
+      {
+        "house": 11,
+        "lord": "saturn",
+        "rashi": "aquarius"
+      },
+      {
+        "house": 12,
+        "lord": "jupiter",
+        "rashi": "pisces"
+      }
+    ],
+    "lagna": {
+      "degree_in_sign": 5.0,
+      "rashi": "aries"
+    },
+    "metadata": {
+      "aspect_standard": "vedic_graha_drishti_v1",
+      "dignity_standard": "classical_exaltation_debilitation_v1",
+      "engine_version": "test-astro",
+      "house_system": "vedic_whole_sign",
+      "standards_version": "1.3.0",
+      "varga_scheme": "classical_parashari_v1"
+    },
+    "planets": [
+      {
+        "aspected_houses": [
+          1,
+          4,
+          5
+        ],
+        "body": "mars",
+        "combust": false,
+        "degree_in_sign": 5.0,
+        "dignity": "exalted",
+        "house": 10,
+        "longitude": 275.0,
+        "rashi": "capricorn",
+        "retrograde": false
+      }
+    ]
+  },
+  "profiles": [
+    "BPHS_KAPOOR_PMP_75_1_2_HAMSA"
+  ]
+}

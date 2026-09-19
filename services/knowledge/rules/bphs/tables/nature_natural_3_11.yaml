@@ -1,0 +1,41 @@
+document_type: table
+table_id: BPHS_SAN_NATURE_3_11
+table_kind: natural_nature
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 3 v. 11
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  malefic:
+  - sun
+  - saturn
+  - mars
+  - rahu
+  - ketu
+  benefic:
+  - jupiter
+  - venus
+  moon:
+    waxing: benefic
+    waning: malefic
+  mercury:
+    alone_or_with_benefics: benefic
+    with_malefic: malefic
+  conventions:
+    label: pandit_ji_convention
+    moon_waxing_elongation_degrees:
+    - 0.0
+    - 180.0
+    moon_boundary_epsilon_degrees: 1.0e-06
+    mercury_joined_with: same_sign_conjunction_only
+    mercury_mixed_association: reading_ambiguous
+    note: BPHS says the decreasing Moon is malefic and Mercury is malefic when he joins a malefic. The
+      0-180 degree elongation boundary, the boundary flag and the same-sign meaning of joins are Pandit
+      Ji conventions, not BPHS text. Mercury with both a malefic and a benefic is not classified (Ch.
+      3 v. 11 versus Ch. 34 v. 8-10).

@@ -1,0 +1,232 @@
+{
+  "case_id": "nabhasa_sankhya_source_gap",
+  "description": "Seven planets in two signs and no defined earlier Nabhasa yoga: Yuga is detected but the suppression cannot be ruled out because Ardhachandra has no condition in the source.",
+  "expected": {
+    "BPHS_SAN_NABHASA_35_GOLA": "NOT_TRIGGERED",
+    "BPHS_SAN_NABHASA_35_YUGA": "NOT_EVALUABLE(condition_absent_in_source)"
+  },
+  "kundli": {
+    "astronomical": {
+      "metadata": {
+        "calculation_config": {
+          "ayanamsa": "lahiri",
+          "node_convention": "mean",
+          "zodiac": "sidereal"
+        },
+        "engine_version": "test-astro",
+        "location": {
+          "altitude_meters": 0.0,
+          "latitude": 28.61,
+          "longitude": 77.2
+        },
+        "time_resolution": {
+          "input_local_datetime": "2000-01-01T06:00:00",
+          "timezone": "Asia/Kolkata",
+          "utc_datetime": "2000-01-01T00:30:00+00:00"
+        }
+      }
+    },
+    "houses": [
+      {
+        "house": 1,
+        "lord": "mars",
+        "rashi": "aries"
+      },
+      {
+        "house": 2,
+        "lord": "venus",
+        "rashi": "taurus"
+      },
+      {
+        "house": 3,
+        "lord": "mercury",
+        "rashi": "gemini"
+      },
+      {
+        "house": 4,
+        "lord": "moon",
+        "rashi": "cancer"
+      },
+      {
+        "house": 5,
+        "lord": "sun",
+        "rashi": "leo"
+      },
+      {
+        "house": 6,
+        "lord": "mercury",
+        "rashi": "virgo"
+      },
+      {
+        "house": 7,
+        "lord": "venus",
+        "rashi": "libra"
+      },
+      {
+        "house": 8,
+        "lord": "mars",
+        "rashi": "scorpio"
+      },
+      {
+        "house": 9,
+        "lord": "jupiter",
+        "rashi": "sagittarius"
+      },
+      {
+        "house": 10,
+        "lord": "saturn",
+        "rashi": "capricorn"
+      },
+      {
+        "house": 11,
+        "lord": "saturn",
+        "rashi": "aquarius"
+      },
+      {
+        "house": 12,
+        "lord": "jupiter",
+        "rashi": "pisces"
+      }
+    ],
+    "lagna": {
+      "degree_in_sign": 5.0,
+      "rashi": "aries"
+    },
+    "metadata": {
+      "aspect_standard": "vedic_graha_drishti_v1",
+      "dignity_standard": "classical_exaltation_debilitation_v1",
+      "engine_version": "test-astro",
+      "house_system": "vedic_whole_sign",
+      "standards_version": "1.3.0",
+      "varga_scheme": "classical_parashari_v1"
+    },
+    "planets": [
+      {
+        "aspected_houses": [
+          8
+        ],
+        "body": "sun",
+        "combust": null,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 2,
+        "longitude": 40.0,
+        "rashi": "taurus",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          8
+        ],
+        "body": "moon",
+        "combust": false,
+        "degree_in_sign": 25.0,
+        "dignity": "exalted",
+        "house": 2,
+        "longitude": 55.0,
+        "rashi": "taurus",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          5,
+          8,
+          9
+        ],
+        "body": "mars",
+        "combust": false,
+        "degree_in_sign": 20.0,
+        "dignity": "neutral",
+        "house": 2,
+        "longitude": 50.0,
+        "rashi": "taurus",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          3
+        ],
+        "body": "mercury",
+        "combust": false,
+        "degree_in_sign": 10.0,
+        "dignity": "neutral",
+        "house": 9,
+        "longitude": 250.0,
+        "rashi": "sagittarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          1,
+          3,
+          5
+        ],
+        "body": "jupiter",
+        "combust": false,
+        "degree_in_sign": 12.0,
+        "dignity": "own_sign",
+        "house": 9,
+        "longitude": 252.0,
+        "rashi": "sagittarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          3
+        ],
+        "body": "venus",
+        "combust": false,
+        "degree_in_sign": 14.0,
+        "dignity": "neutral",
+        "house": 9,
+        "longitude": 254.0,
+        "rashi": "sagittarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          3,
+          6,
+          11
+        ],
+        "body": "saturn",
+        "combust": false,
+        "degree_in_sign": 16.0,
+        "dignity": "neutral",
+        "house": 9,
+        "longitude": 256.0,
+        "rashi": "sagittarius",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          10
+        ],
+        "body": "rahu",
+        "combust": null,
+        "degree_in_sign": 5.0,
+        "dignity": null,
+        "house": 4,
+        "longitude": 95.0,
+        "rashi": "cancer",
+        "retrograde": false
+      },
+      {
+        "aspected_houses": [
+          4
+        ],
+        "body": "ketu",
+        "combust": null,
+        "degree_in_sign": 5.0,
+        "dignity": null,
+        "house": 10,
+        "longitude": 275.0,
+        "rashi": "capricorn",
+        "retrograde": false
+      }
+    ]
+  },
+  "profiles": [
+    "BPHS_SAN_NABHASA_35_YUGA"
+  ]
+}

@@ -1,0 +1,33 @@
+document_type: table
+table_id: BPHS_SAN_REL_COMPOUND_3_57_58
+table_kind: compound_relationship
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_version: 1984 (Vol I)
+source_tier: 2
+source_location: Ch. 3 v. 57-58
+verification_level: IMAGE-TRANSLATION
+standards_version: 1.4.0
+confidence: HIGH
+data:
+  matrix:
+  - natural: friend
+    temporal: friend
+    compound: great_friend
+  - natural: friend
+    temporal: enemy
+    compound: equal
+  - natural: equal
+    temporal: friend
+    compound: friend
+  - natural: equal
+    temporal: enemy
+    compound: enemy
+  - natural: enemy
+    temporal: friend
+    compound: equal
+  - natural: enemy
+    temporal: enemy
+    compound: great_enemy

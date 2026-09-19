@@ -169,23 +169,34 @@ Chart Facts (from astro-engine)
 Fact Normalization  → canonical "Facts" object (planet-in-house, planet-in-sign,
                        aspect, dasha-lord, dosha-precondition, etc.)
         ↓
-Rule Matching  → each rule = { id, version, category, condition (pattern over Facts),
-                                conclusion (yoga/dosha/tag), strength/severity, source_reference,
-                                required_conditions, supporting_conditions, cancellation_conditions,
-                                exceptions, timing_relevance, known_contradictions[] }
+Rule Matching  → each rule is a source-specific profile (fields below); each of its
+                 readings is evaluated separately against the Facts
         ↓
-Evidence Collection  → list of triggered rules + the exact facts that satisfied them
+Evidence Collection  → every rule result (triggered, not triggered, cancelled, partially cancelled,
+                       NOT_EVALUABLE) + the exact facts that satisfied or blocked it
         ↓
-Contradiction/Conflict Analysis → cross-reference triggered rules' known_contradictions;
-                                    surface both supporting and conflicting evidence together
+Contradiction/Conflict Analysis → group results by conflict_group and ambiguity_group and by each
+                                    rule's known_contradictions; surface supporting and conflicting
+                                    evidence together, never dropping either
         ↓
-Evidence Bundle (structured, versioned) → handed to agent
+Evidence Bundle (structured, versioned, reproducible) → handed to agent
 ```
 
-The rule schema fields above match `docs/ASTROLOGY_STANDARDS.md`'s Yoga/Dosha standards exactly — this is the same schema, restated as the engine's internal contract.
+**Rule schema (reconciled with `docs/ASTROLOGY_STANDARDS.md` v1.4.0 and `Phases.md` Phase 6).** The Yoga/Dosha standard's schema is extended, not replaced. A rule is a source-specific profile with:
+
+- Identity: `rule_id`, `rule_version`, `profile` (profile ID, e.g. `BPHS_SAN_GAJAKESARI_36_3_4`), `category`, `astrology_system`, `school`.
+- Provenance: `source`, `source_id`, `source_edition`, `translator`, `source_location`, `source_version`, `standards_version`, `confidence` (translation-level label per `docs/ASTROLOGY_STANDARDS.md` §Source tiers).
+- Logic: `conditions` (typed operators over Facts, with an explicit `reference` of LAGNA or MOON where houses are counted), `readings[]` (each with `reading_id`, its own conditions and source), `required_conditions`, `supporting_conditions`, `exceptions`, `cancellations` (separate from detection), `dependencies` (each naming its owner phase and reason code), `applicability` (school, gender or partner-chart requirements).
+- Output: `interpretation_tags` (structured tags only), `strength_severity`, `timing_relevance`, `known_contradictions[]`, `conflict_group`, `ambiguity_group`.
+- Metadata: `priority` (display and ordering metadata only; never erases conflicting evidence or decides truth), `status` (authoring status).
+
+Rule conditions are declarative data; no arbitrary code is embedded in the rule files. Runtime result statuses are `TRIGGERED`, `NOT_TRIGGERED`, `CANCELLED`, `PARTIALLY_CANCELLED` and `NOT_EVALUABLE(reason)`; the reason codes and the ambiguity-preserving evaluation policy are defined in `docs/ASTROLOGY_STANDARDS.md` §Phase 6 rule-engine methodology.
+
+**Evidence bundle contents.** The bundle preserves, so a result is reproducible: the chart and calculation snapshot; the calculation configuration (ayanamsa, node model, house system, timezone, coordinates); the calculation-engine, standards, rule-engine and ruleset versions; the ruleset content hash; rule IDs, source profiles and reading IDs; triggered, non-triggered and `NOT_EVALUABLE` results; conflicts, unresolved dependencies and provenance. The same input, configuration, ruleset hash and engine version produce the same bundle. Each component keeps the standards version it was produced under: the Phase 5 calculation snapshot records `standards_version` 1.3.0 and Phase 6 rule evaluation records 1.4.0; historical calculation metadata is never upgraded when the standards document advances.
 
 Implementation notes:
 - Rules are authored as YAML/JSON in the repo (`services/knowledge/rules/*.yaml` — see §"Knowledge Architecture"), reviewed like code, and loaded with a content hash as the version.
+- **Source-profile layout**: rule files live under `services/knowledge/rules/`, grouped by source tradition in subdirectories (for example `bphs/`, `phaladeepika/`, `jataka_parijata/`, `modern/`), one profile per rule; each file declares its schema version, and duplicate rule IDs are a load error. The ruleset content hash covers every rule file and the schema version.
 - The matcher is a small forward-chaining evaluator hand-rolled in Python (a full production-rule engine like `experta`/`durable_rules` is unnecessary complexity here and both have maintenance-status risk — evaluate during `Phases.md` Phase 6, don't default to either).
 - Rule authoring must cite a source text/tradition per rule, because classical yoga/dosha rules genuinely conflict across schools (Parashari vs Jaimini vs Lal Kitab) — the engine surfaces conflicts rather than silently picking a winner (`docs/ASTROLOGY_STANDARDS.md`'s explicit "do not invent a universal list" rule).
 - Rule engine output never contains free text meant for the user — only structured tags + facts. Phrasing is `agent`'s job.
@@ -740,7 +751,7 @@ Monorepo is deliberate: these components change together frequently during early
 
 ## 28. Execution Roadmap
 
-The authoritative development roadmap is maintained in `Phases.md`. This document defines system architecture and technical boundaries; `Phases.md` defines the implementation sequence, phases, steps, deliverables, dependencies, and exit criteria (the locked 20-phase plan). When the two documents appear to conflict regarding development sequence, `Phases.md` is authoritative.
+The authoritative development roadmap is maintained in `Phases.md`. This document defines system architecture and technical boundaries; `Phases.md` defines the implementation sequence, phases, steps, deliverables, dependencies, and exit criteria (the locked 21-phase plan). When the two documents appear to conflict regarding development sequence, `Phases.md` is authoritative.
 
 The subsystems, engines, and services named throughout this document are built in the order, and to the deliverables/exit-criteria, that `Phases.md` specifies — this document does not restate or re-derive that sequence. Where a section above cites a specific phase inline, that citation is a pointer for convenience, not a duplicate definition.
 

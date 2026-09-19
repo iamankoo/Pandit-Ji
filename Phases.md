@@ -1,4 +1,4 @@
-🪔 Pandit Ji — 20-Phase Master Development Plan
+🪔 Pandit Ji — 21-Phase Master Development Plan
 
 ## Phase 1 — Product & Astrology Standards
 
@@ -205,6 +205,15 @@ Every rule should have:
 - Sources/reference
 - Tests
 
+Rules are source-specific profiles (for example a BPHS profile and a Phaladeepika profile of the same yoga are separate rules), evaluated with ambiguity-preserving results (`docs/ASTROLOGY_STANDARDS.md` §Phase 6 rule-engine methodology). `Priority` is metadata only and never erases conflicting evidence.
+
+Doshas in Phase 6 are profile-based:
+
+- Mangal/Kuja Dosha as separately tagged source profiles (BPHS Ch. 80 v. 47–49 and Jataka Parijata), never as one generic rule
+- Kaal Sarp Dosha only as a clearly tagged `MODERN_TRADITION` profile, never as a classical rule, and only once a named source is selected; until then it returns `NOT_EVALUABLE(source_profile_not_selected)`
+
+Phase 6 does not calculate astronomy, dashas, transits, Panchang, upagrahas, special Lagnas, Pranapada, Shadbala, partial or degree-based aspects, Jaimini, longevity or D27; rules that need them return `NOT_EVALUABLE` with the dependency named.
+
 Deliverable: versioned astrology rule engine.
 
 ## Phase 7 — Dasha & Timing Engine
@@ -252,7 +261,7 @@ Implement:
 - Saturn
 - Rahu
 - Ketu
-- Sade Sati
+- Sade Sati (owned by this phase, not Phase 6)
 - Major transit events
 
 Create:
@@ -289,6 +298,20 @@ Modules:
 - Feng Shui-related modules
 - Tarot
 
+Vedic strength and scoring systems:
+
+- Shadbala — BPHS Ch. 27–28
+- Ashtakvarga — BPHS Ch. 66–72
+
+Both require methodology audits before implementation.
+
+Jaimini module (isolated, requires a scope decision and methodology audit before implementation):
+
+- Chara Karakas (BPHS Ch. 32)
+- Jaimini sign aspects (Rashi Drishti, BPHS Ch. 8)
+
+Vedic longevity (Ayurdaya) methods (BPHS Ch. 43; requires Shadbala and a methodology and product-policy audit before implementation; produces structural facts only, not lifespan predictions). Maraka timing is owned by Phase 7.
+
 Each system should be isolated as a module, rather than mixing incompatible rules.
 
 Deliverable: modular multi-system astrology framework.
@@ -316,6 +339,15 @@ Implement:
 - Sunset
 - Moonrise
 - Moonset
+
+Special points (sunrise-dependent calculations consumed by Phase 6 rules):
+
+- Sun-based upagrahas (Dhooma, Vyatipata, Parivesha, Indrachapa, Upaketu)
+- Gulika and Mandi, as separately tagged source readings (not assumed identical)
+- Special Lagnas (Bhava, Hora, Ghatika, Varnada)
+- Pranapada
+
+Tara Balam here is the Panchang/Muhurta factor; Tara in the Ashtakoot compatibility list belongs to Phase 11.
 
 Then:
 
@@ -351,8 +383,8 @@ Implement:
 - Yoni
 - Graha Maitri
 - Gana
-- Bhakoot
-- Nadi
+- Bhakoot (Bhakoot Dosha in compatibility is owned by this phase, not Phase 6)
+- Nadi (Nadi Dosha in compatibility is owned by this phase, not Phase 6)
 - 36-point system
 - Doshas
 - Additional compatibility factors

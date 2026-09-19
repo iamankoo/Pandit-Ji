@@ -2,7 +2,7 @@
 
 Status: **LOCKED canonical location** — `docs/ASTROLOGY_STANDARDS.md` is the single, authoritative document for calculation standards, Vedic defaults, ayanamsa, zodiac, house systems, ephemeris configuration, astronomical calculation requirements, astrology methodology separation, interpretation standards, reproducibility, uncertainty, and versioning. There is no separate `docs/calculation-standards.md` — any earlier reference to that filename referred to this document and should be treated as resolved in favor of this one.
 
-Version: 1.3.0 (Phase 5 pre-implementation lock — see §Versioning at the end of this document for the change log).
+Version: 1.4.0 (Phase 6 pre-implementation lock — see §Versioning at the end of this document for the change log).
 
 This document defines **standards and methodology contracts**, not implementations. Every section below states what a later phase's engine must compute and how, not the engine itself. Each section names the `Phases.md` phase responsible for the actual implementation.
 
@@ -15,6 +15,16 @@ The AI must never independently calculate planetary positions, houses, ascendant
 
 - **Self-hosted requirement**: Pandit Ji's core astrology reasoning (chart interpretation, prediction, agent planning, personalization, knowledge reasoning, core chatbot responses) must not depend on external hosted proprietary LLM APIs. See `research/AI_MODELS.md` and `docs/ARCHITECTURE.md` §16's `LLMProvider`/AI Reasoner interface for the technical mechanism; this document fixes it as a standing product requirement, not merely an implementation preference.
 - **Fact-vs-narration boundary**: the AI consumes structured facts and evidence bundles produced by the calculation engine, rule engine, and knowledge base (defined in this document and `docs/ARCHITECTURE.md`); it narrates and explains them, and never originates them. This is the same invariant as the Core rule above, restated as an explicit AI-scope requirement per Phase 1 exit criteria.
+
+## Language and multilingual interaction
+
+Standards and product-interaction requirement, locked per explicit project-owner decision (v1.4.0). It is not implemented in Phase 6; the Agent phase (`Phases.md` Phase 15) and the UI phases implement it.
+
+- **Language understanding**: Pandit Ji's AI must understand English, Hindi, Hinglish, Romanized Hindi, mixed English/Hindi and natural code-switching (including within one conversation). This applies regardless of the UI language. There is **no AI language toggle** and no separate English, Hindi or Hinglish AI modes.
+- **UI language**: controlled separately through Account → Language. Supported UI languages are English and हिन्दी. New users default to English, and the selected UI language persists per account. Changing the UI language does not automatically force the AI's response language, and the UI never changes because of the language the user types.
+- **AI response language**: AI language understanding is multilingual by default. UI language selection is independent from AI language understanding. Agent-phase response-language behavior is defined in the Agent phase and is not defined here.
+- **Language-neutral facts**: canonical astrology facts, rules, evidence and calculations use stable identifiers and structured tags, never language-specific phrases; language is realized only at the interaction and presentation layers.
+- This section adds no model-specific, provider-specific, UI-implementation or language-classification requirements.
 
 ## Default Vedic profile
 - Zodiac: Sidereal
@@ -131,6 +141,7 @@ Defines the standard and contract that **Phase 7 (Dasha & Timing Engine)** imple
 - **Hierarchy**: Mahadasha → Antardasha → Pratyantar (and, if later required, Sookshma) are nested applications of the same nine-lord sequence and proportional-duration logic, each level starting from its parent period's own lord and subdividing the parent's duration across the nine lords in the same fixed sequence and proportion.
 - **Exact timestamps and boundary conditions**: all dasha transitions are computed as precise moments (date and time), not whole-day boundaries, derived from the birth instant plus cumulative duration — boundary dates must be computed to at least day-level precision, with the exact moment retained internally for reproducibility.
 - **Reproducibility**: identical birth data and calculation configuration must reproduce an identical Mahadasha/Antardasha/Pratyantar timeline, byte-for-byte, every time.
+- **Ownership of open Vimshottari conventions (v1.4.0 clarification)**: the balance of the first Mahadasha (BPHS Ch. 46 v. 16 measures the Moon's stay in the nakshatra by time; this standard uses the Moon's longitude fraction), the year length (no verse states it; the translator's worked examples imply 30-day months), leap-year handling and boundary rounding remain **Phase 7** decisions. Phase 6 must not calculate them; it only consumes Phase 7 dasha lords (§Phase 6 rule-engine methodology).
 
 ## Nakshatra standards
 
@@ -161,6 +172,92 @@ Every Yoga/Dosha rule must be represented with:
 - Conflicting rules (an explicit list of other rule IDs this rule is known to contradict, so the evidence-bundle contradiction analysis in `docs/ARCHITECTURE.md` §7 can surface both sides)
 
 **Do NOT invent a universal list of Yogas/Doshas where traditions disagree.** Where Parashari, Jaimini, Lal Kitab, KP, or other schools define a given Yoga/Dosha differently, each school's version is recorded as its own tagged rule under its own source/tradition, and the evidence bundle presents both rather than the system silently picking a winner.
+
+## Phase 6 rule-engine methodology
+
+Defines the standard and contract that **Phase 6 (Vedic Astrology Rule Engine)** implements. Added in v1.4.0 from the Phase 6 methodology research (`research/ASTROLOGY_SOURCES.md`, Groups 1–8), per explicit project-owner approval. Rules evaluate facts from Phases 4–5 (and later phases where declared); the rule engine never calculates astronomy, dashas, transits or Panchang, and the AI layer never calculates astrology.
+
+### Source tiers
+
+- **Tier 1**: primary classical Sanskrit text or critical edition, reviewed by a qualified reader. No source has yet been reviewed at this level; no rule may be labelled `SANSKRIT-LEVEL VERIFIED` until one is.
+- **Tier 2**: recognised scholarly or classical translation (for example the Santhanam and Kapoor translations of Brihat Parashara Hora Shastra, Sastri's Phaladeepika). Can establish a canonical rule, labelled `TRANSLATION-LEVEL VERIFIED`.
+- **Tier 3**: traditional secondary source or translator's commentary. Supplies variants and supporting evidence; a translator's note is never treated as a verse and cannot by itself establish a canonical rule.
+- **Tier 4**: modern practitioner source. May justify a separately tagged `MODERN_TRADITION` profile, never a canonical or classical rule.
+- **Tier 5**: general internet content. Never evidence for a rule.
+
+### Source profiles and rule identifiers
+
+- Rules are **source-specific profiles**. Where traditions differ materially, each is a separate rule with its own profile ID; there is no generic `GAJAKESARI`, `KEMADRUMA` or `MANGAL_DOSHA` rule.
+- Profile IDs are upper-case and underscore-separated: work code, translator or edition code where it matters, family, then chapter and verse (for example `BPHS_SAN_GAJAKESARI_36_3_4`, `BPHS_KAPOOR_80_47_49_MARS_HOUSES`, `JP_KUJA_DOSHA`, `MODERN_KAAL_SARP_<SOURCE>`). The registry of finalized profile IDs is in `research/ASTROLOGY_SOURCES.md` §6.
+- Every profile records: source, edition, translator, source location, source version, astrology system, school, profile ID, conditions, readings, exceptions, cancellations, dependencies, interpretation tags, priority, and ambiguity/conflict metadata.
+- **Priority is metadata only.** It may order display or evaluation where explicitly justified. It never removes conflicting evidence and never means "objectively true".
+- Interpretation is a structured tag (domain, signification, effect class), never prose. Traditional wording belongs to the knowledge base (`Phases.md` Phase 12).
+
+### Ambiguity-preserving evaluation
+
+- A rule may carry several **readings**, each with a reading ID and its source. Each reading is evaluated separately.
+- If all readings give the same result, that result is returned with every reading ID and source ID retained. If they differ, the result is `NOT_EVALUABLE(reading_ambiguous)` with every reading's outcome retained. A reading is never silently chosen.
+- Source conflicts between profiles are provenance and profile metadata, grouped by a conflict group; they are not runtime truth statuses unless they make one rule's own reading ambiguous.
+
+### Result statuses and reason codes
+
+- Statuses: `TRIGGERED`, `NOT_TRIGGERED`, `CANCELLED`, `PARTIALLY_CANCELLED`, `NOT_EVALUABLE(reason)`. `PARTIALLY_CANCELLED` is used only where the source states a partial cancellation.
+- Reason codes: `reading_ambiguous`, `missing_dependency:<id>`, `requires_shadbala`, `requires_dasha`, `requires_partial_drishti`, `requires_gender`, `requires_partner_chart`, `requires_moolatrikona`, `node_participation_unspecified`, `varga_scheme_conflict`, `time_base_unspecified`, `source_profile_not_selected`, `scope`, `not_specified_by_source`, `condition_absent_in_source`.
+- A source silent on a point gives `not_specified_by_source`. A dependency owned by a later phase gives `missing_dependency:<id>`. A rule is never evaluated to `NOT_TRIGGERED` because an input was unavailable.
+
+### Aspect refinement
+
+- Phase 6 uses only the Phase 5 full-sign graha drishti (§Planetary aspects standard). It never substitutes full-sign aspect for a rule that needs partial, degree-based or Jaimini sign aspect.
+- For a condition phrased as "aspected by X": if a full-sign aspect is present the condition is definitely true. For "unaspected": if no full-sign aspect is present, a partial aspect (BPHS Ch. 26 v. 2–5) may still exist, so the result is `NOT_EVALUABLE(requires_partial_drishti)` until Phase 9 provides partial aspects.
+- Jaimini rashi drishti and degree-based drishti are separate systems and are never blended with graha drishti.
+
+### Strength
+
+- "Strong", "stronger" and "weak" have no technical definition in the reviewed BPHS chapters. Rules that use them return `NOT_EVALUABLE(requires_shadbala)` until Shadbala (`Phases.md` Phase 9) exists. Rules that state an explicit dignity or house condition are evaluated normally. No composite strength score is defined.
+
+### Natural relationships, natural nature and functional nature
+
+- **Natural relationships** (Brihat Parashara Hora Shastra Ch. 3 v. 55, Santhanam translation, table checked against the page image). Friend / enemy / equal:
+
+| Planet | Friends | Enemies | Equals |
+|---|---|---|---|
+| Sun | Moon, Mars, Jupiter | Venus, Saturn | Mercury |
+| Moon | Sun, Mercury | none | Mars, Jupiter, Venus, Saturn |
+| Mars | Sun, Moon, Jupiter | Mercury | Venus, Saturn |
+| Mercury | Sun, Venus | Moon | Mars, Jupiter, Saturn |
+| Jupiter | Sun, Moon, Mars | Mercury, Venus | Saturn |
+| Venus | Mercury, Saturn | Sun, Moon | Mars, Jupiter |
+| Saturn | Mercury, Venus | Sun, Moon, Mars | Jupiter |
+
+  The Moon row follows the statement the translator quotes from the Benares (Chaukhamba) edition that the Moon has no enemy; the v. 55 counting formula alone would give a different Moon row. This is recorded as a bounded source conflict in `research/ASTROLOGY_SOURCES.md`.
+- **Temporal relationship** (v. 56): a planet in the 2nd, 3rd, 4th, 10th, 11th or 12th sign from another is its temporal friend; otherwise its temporal enemy.
+- **Compound relationship** (v. 57–58): natural plus temporal: friend + friend gives great friend; friend + enemy gives neutral; friend + equal gives friend; enemy + equal gives enemy; enemy + enemy gives great enemy; equal + equal gives neutral. The output field is `relationship_kind`.
+- **Rahu and Ketu are excluded** from the relationship tables; the only node relationships found are in an unsourced translator's note (Tier 3), which is not used.
+- **Natural benefic/malefic** (v. 11): Sun, Saturn, Mars, the waning Moon, Rahu and Ketu are malefic; the other planets are benefic; Mercury is malefic when joined with a malefic. Two Pandit Ji conventions, labelled as such and not classical: the Moon is waxing when its elongation from the Sun is 0°–180° and waning otherwise, with a near-boundary flag; Mercury's "joined with" means same-sign conjunction only. Mercury's values are benefic, malefic, `mixed` or `none`.
+- **Functional nature**: the canonical BPHS functional-nature source is the 84-cell per-Lagna table of Ch. 34 v. 19–44 (12 Lagnas × 7 planets, checked cell by cell against the page images). Source labels are stored exactly as the source gives them (for example auspicious, malefic, killer, yogakaraka, neutral, association-dependent, and their combinations) and are never converted into a good/bad score. Cells the verse does not address are `not_specified_by_source`. No replacement universal algorithm is derived. The general rules of Ch. 34 v. 2–17 remain separate structural rules, not a functional-nature algorithm.
+
+### Node policy (Rahu and Ketu)
+
+- Natural nature: as in Ch. 3 v. 11 (malefic). Functional nature: no node cell exists in the Ch. 34 table and none is invented; Ch. 34 v. 16–17 (nodes act by association and house; a node in an angle with a trinal lord, or in a trine with an angular lord, is a yogakaraka) is a separate rule.
+- No universal Parashari lordship, relationship table, dignity system, sign-lord inheritance, dispositor inheritance or conjunction inheritance is defined for nodes. Combustion follows §Combustion standard.
+- A node participates in a rule only where the source supports it. If node participation would change the result and the source is silent: `NOT_EVALUABLE(node_participation_unspecified)`. Source-specific node traditions may be added later as separate profiles.
+
+### Moolatrikona (Phase 6 fact)
+
+- Moolatrikona is a Phase 6 data-driven fact, separate from the Phase 5 dignity model, which is unchanged. It is derived from sign and degree (Brihat Parashara Hora Shastra Ch. 3 v. 51–54): Sun Leo 0°–20°; Moon Taurus 3°–30°; Mars Aries 0°–12°; Mercury Virgo 15°–20°; Jupiter Sagittarius 0°–10°; Venus Libra 0°–15°; Saturn Aquarius 0°–20°. A rule that needs it while the fact is unavailable returns `NOT_EVALUABLE(requires_moolatrikona)`.
+
+### Vargas and D27
+
+- **D27 (Nakshatramsa / Bhamsa) is `UNRESOLVED`.** The §Divisional charts formula (Aries, Cancer, Libra by modality) is unchanged. BPHS Ch. 6 v. 24–26 says the count begins "from Aries and the movable signs"; the verse names no element or modality, so both the modality rule and the translator's element table are interpretations. The grammar needs qualified Sanskrit review. Any Phase 6 rule that uses D27 returns `NOT_EVALUABLE(varga_scheme_conflict)`.
+
+### Dependencies owned by other phases
+
+- Dasha (Phase 7), transits (Phase 8), Shadbala, partial and degree drishti, Jaimini and longevity methods (Phase 9), and Panchang, sunrise-based special points and Tara Balam (Phase 10) are not calculated by Phase 6. A rule that needs one returns `NOT_EVALUABLE(missing_dependency:<id>)` or the specific reason code above.
+
+### Evidence bundle and reproducibility
+
+- The evidence bundle preserves: the chart and calculation snapshot; the calculation configuration (ayanamsa, node model, house system, timezone, coordinates); the calculation-engine, standards, rule-engine and ruleset versions; the ruleset content hash; rule IDs, source profiles and reading IDs; triggered, non-triggered and `NOT_EVALUABLE` results; conflicts, unresolved dependencies and provenance. The same input, configuration, ruleset hash and engine version must produce the same bundle.
+- **Standards version per phase**: each result records the standards version under which it was produced and is never re-labelled when the document advances. A Phase 5 calculation snapshot keeps `standards_version = 1.3.0` (its formulas are unchanged in v1.4.0); Phase 6 rule evaluation records `standards_version = 1.4.0`. The evidence bundle therefore carries both the calculation snapshot's standards version and the rule evaluation's.
 
 ## Panchang / Muhurta standards
 
@@ -256,6 +353,8 @@ Defines the standard and contract that **Phase 5 (Birth Chart / Kundli Engine)**
 
 Dignity is evaluated from each planet's precise sidereal D1 longitude against the classical exaltation/debilitation degree and own-sign table below. **Mooltrikona is explicitly out of scope for Phase 5** — a documented deferral, not a silent omission; dignity states are limited to exalted/debilitated/own-sign/neutral.
 
+
+**v1.4.0 note**: Moolatrikona remains outside this Phase 5 dignity model. Phase 6 derives a separate Moolatrikona fact from sign and degree (§Phase 6 rule-engine methodology); this table is unchanged.
 | Planet | Exaltation (exact degree) | Debilitation (exact degree) | Own sign(s) |
 |---|---|---|---|
 | Sun | 10° Aries | 10° Libra | Leo |
@@ -355,6 +454,7 @@ Changes to calculation standards require versioning, changelog, regression tests
 - **v1.1.0** (Phase 1 completion): added AI scope boundary; expanded Time/Location standards; expanded Supported systems into full per-system methodology standards (Vedic, Western/Tropical, KP, Lal Kitab, Nadi, with Lal Kitab/Nadi explicitly marked provisional pending research validation); added Divisional charts (Vargas), Vimshottari Dasha, Nakshatra standards, Yoga/Dosha standards, Panchang/Muhurta standards, and Numerology standards sections; added Data & privacy principles (cross-reference to `PRODUCT_POLICIES.md`); added Prediction language policy; added Birth-time uncertainty section. Approval status: locked per project-owner direction to close all 13 `Phases.md` Phase 1 content requirements.
 - **v1.2.0** (Phase 4 pre-implementation lock): added Combustion standard (per-planet orb thresholds, Brihat Parashara Hora Shastra tradition) and Node convention (Rahu/Ketu: Mean Node default, True Node supported as explicit alternate config) — both were confirmed genuinely unspecified during Phase 4's mandatory cross-check and required an explicit project-owner decision before the astronomical calculation engine could implement them. Reason: `Phases.md` Phase 4 requires combustion and Rahu/Ketu as deliverables; no prior version of this document defined either sufficiently to implement without guessing. Affected calculations: Phase 4's combustion status and node/Ketu derivation. Affected interpretations: none yet (Phase 6 rule content will consume these facts later). Regression-test requirement: Phase 4's golden/boundary tests must cover both thresholds and both node conventions. Approval status: locked per explicit project-owner decision.
 - **v1.3.0** (Phase 5 pre-implementation lock): expanded §Divisional charts (Vargas) with full derivation formulas for the 14 remaining Shodashvarga charts (D2, D3, D4, D7, D10, D12, D16, D20, D24, D27, D30, D40, D45, D60), completing the locked 16-varga set; added Planetary aspects standard (Vedic graha drishti — universal 7th aspect for all nine grahas, Mars 4th/8th, Jupiter 5th/9th, Saturn 3rd/10th, no special extra aspects for Rahu/Ketu); added Planetary dignity standard (exact exaltation/debilitation degrees and own-sign table for the seven classical grahas, Mooltrikona explicitly excluded); added Sign/House lordship standard (the traditional 12-sign ruler table); recorded Chalit/Bhava-Chalit and Ashtakvarga as explicit out-of-scope deferrals for Phase 5. Reason: `Phases.md` Phase 5 requires house lords, planetary aspects, planetary dignity, and all sixteen divisional charts as deliverables; Phase 5's mandatory 35-item pre-implementation standards audit confirmed only D1/D9 had derivation formulas and aspects/dignity/lordship had no locked standard, so all were genuinely unspecified and required explicit project-owner decisions before the Kundli engine could implement them. Affected calculations: Phase 5's house-lord, aspect, dignity, and D2/D3/D4/D7/D10/D12/D16/D20/D24/D27/D30/D40/D45/D60 chart derivations. Affected interpretations: none yet (later rule-engine/interpretation phases will consume these facts). Regression-test requirement: Phase 5's boundary/golden/invariant tests must cover every varga formula's sign-boundary transitions, every aspect rule, and every dignity degree threshold. Approval status: locked per explicit project-owner decision (two `AskUserQuestion` rounds: aspects/dignity-scope/varga-research-approach/Chalit-deferral, then D3-rule-choice and overall-lock-confirmation).
+- **v1.4.0** (Phase 6 pre-implementation lock): added §Phase 6 rule-engine methodology (source tiers; source-profile naming and rule identifiers; ambiguity-preserving evaluation; result statuses and reason codes; aspect refinement for "aspected"/"unaspected" conditions; strength dependency on Shadbala; BPHS Ch. 3 natural and compound relationships, natural benefic/malefic with two labelled Pandit Ji conventions, and the BPHS Ch. 34 84-cell functional-nature table as the canonical BPHS functional profile; node policy; Moolatrikona as a Phase 6 fact; D27 recorded as UNRESOLVED with the Phase 5 D27 formula unchanged; dependencies owned by other phases; evidence bundle contents) and clarified that Vimshottari balance and year-length conventions are Phase 7 decisions. Reason: `Phases.md` Phase 6 requires a versioned rule engine, and the Phase 6 methodology research (`research/ASTROLOGY_SOURCES.md` Groups 1–8) found relationships, natural and functional nature, strength, aspect refinement, node treatment, Moolatrikona and ambiguity handling genuinely unspecified. Affected calculations: none in Phases 4–5 (no formula changed). Affected interpretations: all Phase 6 rule outputs. Regression-test requirement: Phase 5 tests must pass unchanged; Phase 6 tests must cover every rule family. Also added §Language and multilingual interaction (AI understands English, Hindi, Hinglish, Romanized Hindi and code-switching regardless of UI language; no AI language toggle; UI language English or हिन्दी set in Account → Language, default English, persisted, independent of AI response language, which is defined in the Agent phase). Phase 5 calculation records keep `standards_version = 1.3.0`. Approval status: approved by the project owner, Phase 6 Group 8 decision.
 
 ## Phase 1 standards checklist
 

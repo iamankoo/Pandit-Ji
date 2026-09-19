@@ -370,10 +370,10 @@ current `Phases.md` text does not yet name this exact requirement).
 
 ## 9. Phase Roadmap
 
-`Phases.md`'s current authoritative roadmap (its own header text still
-literally reads "20-Phase Master Development Plan" — a stale label left over
-from before Phase 13 was inserted; the actual roadmap below has **21**
-phases, verified directly against the file):
+`Phases.md`'s current authoritative roadmap has **21** phases, verified
+directly against the file. Its header previously read "20-Phase Master
+Development Plan", a stale label left over from before Phase 13 was inserted;
+the header was corrected to "21-Phase" during Phase 6 research:
 
 1. Phase 1 — Product & Astrology Standards
 2. Phase 2 — System Architecture

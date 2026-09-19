@@ -744,7 +744,7 @@ actually verified green on GitHub Actions.**
 
 ---
 
-## 17. Current Exact Repository State
+## 17. Repository State at the End of Phase 5 (historical)
 
 As of this document's creation:
 
@@ -772,7 +772,7 @@ remote SHA, and GitHub Actions status at the start of the next session (see
 
 ---
 
-## 18. Deferred / Pending Methodology Decisions
+## 18. Deferred / Pending Methodology Decisions (as of the end of Phase 5; see §20-21 for later decisions)
 
 Explicitly deferred items on record across the repository (do not invent
 additional ones beyond this list):
@@ -810,7 +810,7 @@ additional ones beyond this list):
 
 ---
 
-## 19. Phase 6 Starting Protocol
+## 19. Phase 6 Starting Protocol (historical; Phase 6 is complete, see §20)
 
 **Phase 6 must NOT be started merely because Phase 5 is complete.** Required
 process for the next session:
@@ -849,32 +849,62 @@ process for the next session:
 
 ---
 
-## 20. Session Handoff Instructions
+## 20. Phase 6 — COMPLETED AND ACCEPTED
+
+Phase 6 (Vedic Astrology Rule Engine) is implemented, accepted by the project owner, and CI is green.
+
+- **Commits**: `337e700` (documentation checkpoint: `docs/ASTROLOGY_STANDARDS.md` v1.4.0, `docs/ARCHITECTURE.md` §7, `Phases.md` ownership clarifications, `research/ASTROLOGY_SOURCES.md` §6), `04c17ca` (implementation), `6e8eba4` (a boundary-test fix: the repository's attribution check forbids vendor names in `.py` files, so tests must not contain them). CI run `35461086198`: 15/15 jobs green.
+- **Tests**: 235 rule-engine tests; 191 Phase 5 (astro-engine) tests unchanged. Ruff and mypy strict pass.
+- **Standards versions**: Phase 5 calculations keep `standards_version = 1.3.0` (`services/astro-engine/src/pandit_astro_engine/kundli.py` was NOT touched); Phase 6 rule evaluation records `1.4.0`. Historical metadata is never upgraded.
+- **Where the code is**: `services/rule-engine/src/pandit_rule_engine/` (`schema.py`, `loader.py`, `conditions.py`, `evaluator.py`, `results.py`, `tables.py`, `derived.py`, `bundle.py`, `hashing.py`, `adapters.py`, `facts.py`, `engine.py`, `vocab.py`). Rule and table YAML: `services/knowledge/rules/` (`ruleset.yaml`, `bphs/`, `phaladeepika/`, `jataka_parijata/`; `modern/` reserved and empty).
+- **Implemented rule families (51 rules)**: Pancha Mahapurusha (5); Nabhasa (31 defined yogas); Sunapha, Anapha, Duradhara; Vesi, Vosi, Ubhayachari; Adhi (Moon) and Lagnadhi; Dhana (structural count); BPHS Kemadruma; BPHS Gajakesari (canonical, four documented readings); separate Phaladeepika Kesari and Kemadruma profiles; BPHS Mangal/Kuja (two readings) and JP Kuja. Methodology tables: relationships (BPHS Ch. 3 v. 55-58), natural benefic/malefic (v. 11), Moolatrikona (v. 51-54), the 84-cell Ch. 34 functional-nature table.
+- **Locked behavior**: source-specific profiles; ambiguity-preserving evaluation (`NOT_EVALUABLE(reading_ambiguous)` when readings disagree, all readings kept); priority is metadata only; structured `NOT_EVALUABLE` reason codes; reproducible EvidenceBundle (no timestamp, canonical ruleset hash). Two implementation choices approved by the owner: (1) `aspected_by` is definitely false where BPHS Ch. 26 gives no aspect at all (`requires_partial_drishti` only from the 3rd/10th, 5th/9th, 4th/8th from the aspecting planet); (2) in Kemadruma the Moon is the reference and is not counted as a surrounding planet.
+- **Deferred**: upagraha/Gulika/Mandi/special-Lagna/Pranapada calculations (Phase 10 special-points module); Jaimini, Chara Karakas and longevity methods (Phase 9); partial/degree drishti and Shadbala (Phase 9); Dasha (Phase 7); Nadi/Bhakoot (Phase 11); Sade Sati (Phase 8).
+- **Unsupported**: Ardhachandra (no condition in the source), canonical Kaal Sarp (modern tradition only; `MODERN_KAAL_SARP_<SOURCE>` reserved), D27 (status `UNRESOLVED`; Phase 5 formula unchanged), translator-note-only Gajakesari variants, node relationships/dignity/lordship.
+
+## 21. Phase 7 — METHODOLOGY RESEARCH ONLY (NOT IMPLEMENTED)
+
+Nothing of Phase 7 exists in the repository. Two research passes were done; no code, YAML, tests or documentation changed for them. All findings below are PROPOSALS awaiting the owner's decision unless stated.
+
+**Scope (from `Phases.md`, authoritative)**: Vimshottari Dasha, Mahadasha, Antardasha, Pratyantar, start/end, current/future/historical Dasha, transitions, "complete life-period timeline", plus "connect Dasha with Houses, Lords, Planets, Yogas, Career, Marriage, Education, Finance, Relationships". `Phases.md` states no dependencies, exit criteria or exclusions for Phase 7. The owner's locked scope: Vimshottari only, to Pratyantar; NOT Ashtottari/Yogini/Chara/Narayana, Sookshma, Prana, rectification. "Connect" means deterministic temporal facts and references only, not life-domain interpretation (that belongs to Phase 12/17 and the agent). `ARCHITECTURE.md` places dashas in `services/astro-engine` (`dashas/`), with `DashaRequest`/`DashaResponse`.
+
+**What is established (translation level, Tier 2, no Sanskrit-level verification)**
+- Sequence and years: BPHS Ch. 46 v. 12-15 (Kapoor, Vol II, printed pp. 505-507, image-checked) and Phaladeepika Adhyaya XIX sl. 2 (printed p. 192, image-checked): Sun 6, Moon 10, Mars 7, Rahu 18, Jupiter 16, Saturn 19, Mercury 17, Ketu 7, Venus 20 (120), counted from Krittika; matches `docs/ASTROLOGY_STANDARDS.md`.
+- Antardasha (BPHS Ch. 51 v. 1-2, printed pp. 618-619, image-checked): Mahadasha years x Antardasha lord's years / 120; first Antardasha belongs to the Mahadasha lord, the rest follow the same nine-lord order; same for Pratyantar. Pratyantar (BPHS Ch. 61 v. 1, printed p. 742, image-checked): Antardasha length x lord's years / 120. Kapoor's worked examples and tables count in 30-day months (for example 3 months 18 days = 108 days) - a translator/edition convention (Tier 3), not a verse statement of year length.
+
+**Balance at birth - three methods, no single source method**
+- BPHS Ch. 46 v. 16: expired part = years x Moon's expired stay in the nakshatra / its total stay, both as Panchanga TIME (ghatis/palas) - directly stated. Kapoor's note says modern researchers use the Moon's longitude instead.
+- Phaladeepika XIX sl. 3 (image-checked): remaining ghatikas x years / 60, remainder x 12/60 for months and x 30/60 for days - divisor 60 (nominal), so whether "ghatikas" is time or an arc measured in 60ths is not stated (inferred only).
+- Uttara Kalamrita, Ch. VI, printed p. 142 (P. Subrahmanya Sastri's worked example, Tier 3, OCR): arc-based balance 1y 11m 6d versus Panchanga-time balance 1y 10m 29d, 7 days apart; the translator calls the arc method "the correct balance".
+- `docs/ASTROLOGY_STANDARDS.md` v1.4.0: longitude fraction. Proposed classification: SOURCE_CONFLICT between time-based (BPHS verse) and arc-based (standard); keep separate profiles. Proposed CANONICAL SOURCE METHOD = the BPHS time-based profile (needs Moon nakshatra entry/exit instants, not currently computed); proposed PANDIT JI DEFAULT IMPLEMENTATION PROFILE = the already-locked longitude-fraction method, labelled a product default, never as classical truth.
+
+**Year length - no BPHS verse states it**
+- Only Tier 2 textual support: Phaladeepika XIX sl. 4 (image-checked, translation level; my Sanskrit reading of the verse is unreviewed): the Sun's return to its birth position is "one solar year, which is also the year taken for the Ududasa system"; days are obtained by sub-dividing it (bhagakrama). Applying it to Vimshottari is inferred from context (Vimshottari is a nakshatra-based dasa).
+- Other conventions, kept as separate profiles: mean sidereal year 365.256363 d (Uttara Kalamrita translator's note), 365.25, 365.2425 (software), 360-day savana (Santhanam/Kapoor translator notes and tables; not a Vimshottari statement). Practitioner and software pages are Tier 4-5 and only corroborate.
+- Proposed: fixed-duration years in exact seconds (no calendar-year arithmetic), so leap years do not arise; the calendar date is derived from the UTC instant. The default profile is an OWNER DECISION still open (candidates: the Sun-return year of Phaladeepika, or the fixed mean sidereal year as a Pandit Ji default).
+
+**Nakshatra boundary - genuine Phase 5 defect (not fixed)**
+- `pandit_astro_engine.nakshatra.nakshatra_position` uses `normalized // (360.0/27.0)`. At exactly representable boundaries it can assign the lower nakshatra: 39 of 81 exact-boundary tests were wrong (for example 40.0 degrees returns Krittika, not Rohini). The `near_boundary` flag is raised but the side is wrong; the standard's own arithmetic (longitude / 13 degrees 20') gives Rohini.
+- No source states interval inclusivity; sources list shared endpoints. Proposed convention (a Pandit Ji standard, not a source): lower-inclusive, upper-exclusive, 360 = 0.
+- Minimum correction, classified PHASE 5 PATCH REQUIRED BEFORE PHASE 7 (needs owner approval and a standards note): compute index and pada with exact rational arithmetic on the float value (index = floor(Fraction(L) x 27 / 360), pada = floor(Fraction(L) x 108 / 360) mod 4 + 1); keep `near_boundary` unchanged. Checked in-process without writing any file: with this change all 191 existing astro-engine tests still pass, so no existing golden case changes.
+
+**Other proposals**: exact rational arithmetic with no intermediate rounding; canonical boundary = UTC instant (integer microseconds) with Julian Day UT derived; half-open intervals [start, end); display rounding never used for period selection; local timezone is display metadata and DST never alters a computed UTC boundary. Birth-time precision model EXACT / APPROXIMATE / NOT_EVALUABLE: the input model has no precision field today; the Moon moves about 13 degrees a day, so an uncertainty interval that crosses a nakshatra boundary makes the starting lord ambiguous and the result must not be shown as exact. Rule-engine contract: astro-engine calculates and owns `DashaFacts` (system, profile IDs for balance/year-length/sub-period, starting nakshatra/pada/lord, balance and unit, period tree with UTC boundaries, current period, calculation version); the rule engine only consumes them (a later facts-model extension) and never calculates Dasha. Maraka timing: an earlier `Phases.md` Phase 9 line says "Maraka timing is owned by Phase 7" but Phase 7 does not list it; proposed correction is that Maraka timing is a later rule-engine consumer of Dasha facts, not Phase 7 scope (this doc correction is NOT yet applied).
+
+**Verdict at the last report: PHASE 7 IMPLEMENTATION READY: NO (pending owner decisions)**, in particular: year-length default profile; balance default profile; approval of the Phase 5 exact-arithmetic patch and boundary convention; birth-time precision field and where it lives; UTC-instant representation; the Maraka documentation correction; a standards amendment (likely v1.5.0).
+
+## 22. Current Exact Repository State (before this summary commit)
+
+- Branch `main`; HEAD `6e8eba4` = `origin/main`; working tree clean; CI green (run `35461086198`).
+- Local environment notes: `pyswisseph` and the rule-engine, knowledge, agent, verification and astro-engine packages were pip-installed in editable mode during the session (needed for local test runs); nothing running in the background.
+- Private research material (page-image excerpts for Sanskrit review, extraction JSON, OCR text, generators for the rule YAML) lives in the assistant session scratchpad under the OS temp directory and is NOT in the repository; it may not survive. The durable record is `research/ASTROLOGY_SOURCES.md` (Groups 1-8 and §6 source tiers and profile IDs).
+
+## 23. Session Handoff Instructions
 
 # NEXT SESSION — START HERE
 
-Pandit Ji is currently at the **VERIFIED END OF PHASE 5**.
+Do not assume anything beyond this document, and re-check it against the repository first.
 
-- Current commit: `a00fc8497dfd9cec65412ed41eecf8304532bdc4`
-- Current branch: `main`
-- **Phase 6 has NOT started.**
-
-The next session must **not** assume anything beyond what this document
-states, and must not assume this document is still accurate without
-re-checking.
-
-**First action**: read this `SUMMARY.md`, then verify it against the actual
-repository and `Phases.md` — check current HEAD, `origin/main`, and GitHub
-Actions status for that commit; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`,
-and `docs/ARCHITECTURE.md` to confirm nothing has changed since this document
-was written.
-
-**Then report** to the user:
-- Current repository state (HEAD, remote, working tree)
-- Which phases are actually complete
-- GitHub Actions state for current HEAD
-- The next phase per `Phases.md`
-- Any mismatch discovered between this document and the live repository
-
-**Do not implement anything — including Phase 6 — until the project owner
-explicitly instructs the session to start it.**
+1. Read this `SUMMARY.md`, then verify HEAD, `origin/main`, working tree and GitHub Actions for HEAD; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`, `docs/ARCHITECTURE.md`, `research/ASTROLOGY_SOURCES.md`.
+2. Report: repository state, which phases are complete (1-6), CI state, next phase (7), and any mismatch with this document.
+3. **Do not implement Phase 7.** Phase 7 has NO implementation approval. The next step is for the owner to review section 21 and decide the open items; the last request was a focused methodology-closure pass (roadmap: `Phases.md` authoritative; research and reports only; no code, YAML, tests, commits or pushes for Phase 7 until explicitly approved).
+4. Standing rules: cite sources honestly (image-checked vs OCR vs translation level; no Sanskrit-level claims without a qualified reviewer); never merge traditions silently; commits use the owner's identity `iamankoo <aniketraj00384@gmail.com>` with no AI attribution (CI rejects vendor names in `.md`, `.py`, `.ts`, `.tsx`, `.dart` files); do not modify Phase 5 or Phase 6 without approval.

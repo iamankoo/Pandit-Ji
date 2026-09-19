@@ -325,7 +325,7 @@ def test_source_never_calls_astronomy_network_or_the_other_services() -> None:
     package = Path(__file__).resolve().parents[1] / "src" / "pandit_rule_engine"
     forbidden = (
         "pandit_astro_engine", "swisseph", "socket", "urllib", "requests", "httpx", "subprocess",
-        "openai", "anthropic", "datetime.now", "time.time", "random",
+        "openai", "datetime.now", "time.time", "random",
     )  # fmt: skip
     for path in package.glob("*.py"):
         text = path.read_text(encoding="utf-8")

@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-Status: verified through the **completion and green CI validation of Phase 5**.
+Status: verified through **Phase 6 (complete, accepted, CI green)**, the **Phase 5 Nakshatra boundary correction** (commit `091ca1b`, CI run `35500359836`, green), and **Phase 7 methodology research (nothing implemented)**. Sections 1-19 were written at the end of Phase 5 and are kept as history; §15 carries a post-completion addendum, and §20-§24 hold the current state.
 This document exists purely for session continuity. A future AI coding
 assistant session should be able to read this file and continue exactly
 where the project left off, without re-deriving context from memory.
@@ -8,7 +8,7 @@ where the project left off, without re-deriving context from memory.
 **How to use this file**: read it fully, then verify its claims against the
 actual repository (`Phases.md`, `docs/ASTROLOGY_STANDARDS.md`,
 `docs/ARCHITECTURE.md`, `TECH_STACK.md`, git log, `gh run list`) before acting
-on it. Treat it as an accurate snapshot as of the commit named in §17, not as
+on it. Treat it as an accurate snapshot as of the commits named in §22 (not §17, which is a historical snapshot), not as
 a substitute for the authoritative documents it summarizes.
 
 ---
@@ -397,14 +397,14 @@ the header was corrected to "21-Phase" during Phase 6 research:
 20. Phase 20 — Voice + Personalization
 21. Phase 21 — Validation, Backtesting & Production Launch
 
-**Phases 1 through 5 are complete and verified. Phase 6 has not started.**
+**Phases 1 through 6 are complete and verified (Phase 6: accepted by the owner, CI green; see §20). Phase 7 is at methodology research only; implementation has not started and has no approval (see §21 and §24).** (This roadmap list was first written at the end of Phase 5, when it read "Phase 6 has not started"; that statement is now historical.)
 
 ---
 
 ## 10. Phase 1 — COMPLETED
 
 Established `docs/ASTROLOGY_STANDARDS.md` as the single canonical standards
-document (v1.0.0 at Phase 1 completion; now v1.3.0, see §15). It defines
+document (v1.0.0 at Phase 1 completion; v1.3.0 at Phase 5; now v1.4.1, see §15, §20 and §24). It defines
 standards/methodology contracts (what a later phase's engine must compute and
 how), not implementations. Content locked in Phase 1:
 
@@ -590,7 +590,7 @@ resuming work.**
 ### Standards locked before implementation
 
 `docs/ASTROLOGY_STANDARDS.md` was bumped to **v1.3.0** (Phase 5
-pre-implementation lock) after a mandatory pre-implementation standards audit
+pre-implementation lock; later v1.4.0 for Phase 6 and v1.4.1 for the Nakshatra boundary clarification) after a mandatory pre-implementation standards audit
 found four genuine gaps, each resolved by explicit project-owner decision
 (never guessed):
 
@@ -687,6 +687,19 @@ concept itself breaks down physically.
 
 Initial Phase 5 completion commit: `e7bd5759381824fcaa75446e6de6ad783bd4e5cb`
 ("feat: complete phase 5 - birth chart kundli engine").
+
+---
+
+### Post-completion correction: Nakshatra/Pada boundary (commit `091ca1b`, CI run `35500359836`, green)
+
+After Phase 5 was accepted, a defect was found in `pandit_astro_engine.nakshatra.nakshatra_position()`: it divided by the float `360.0/27.0`, which is not exactly 13 deg 20 min, so exactly representable boundary longitudes could fall into the lower bucket (40.0 returned Krittika instead of Rohini; 10.0 returned Pada 3 instead of Pada 4). The defect was reproduced in the checkout before the fix. **It is now fixed and closed.**
+
+- Owner-approved convention (a Pandit Ji engineering convention, not a classical source rule): half-open, lower-inclusive and upper-exclusive intervals for Nakshatras and Padas, exact rational classification of the normalized float, 360 = 0.
+- Normalization is unchanged (floating-point modulo 360). The public API, names, ordering, Pada numbering and `near_boundary` behaviour are unchanged. Known unchanged behaviour, not approved for change: a negative longitude smaller in magnitude than about 2.8e-14 degrees normalizes to 360.0 and so classifies as 0 (Ashwini).
+- Files: `services/astro-engine/src/pandit_astro_engine/nakshatra.py`, `tests/test_nakshatra.py`, `tests/test_kundli.py`. Old versus new code gave 0 classification differences and 0 `near_boundary` differences over 200,000 random longitudes; the new tests fail (80 failures) against the old code and pass against the fix.
+- Validation: astro-engine 353 tests passed (previously 191), rule-engine 235 passed, `ruff format --check`, `ruff check` and `mypy` clean; CI 15 of 15 jobs green.
+- Recorded in `docs/ASTROLOGY_STANDARDS.md` v1.4.1 (§Nakshatra standards and the change log).
+- **Open follow-up**: Phase 5 calculation records still carry `standards_version = 1.3.0` (`kundli.py`, `STANDARDS_VERSION`) although their boundary behaviour now follows v1.4.1. Advancing that constant is a code change and an owner decision; it has not been made.
 
 ---
 
@@ -883,18 +896,19 @@ Nothing of Phase 7 exists in the repository. Two research passes were done; no c
 - Other conventions, kept as separate profiles: mean sidereal year 365.256363 d (Uttara Kalamrita translator's note), 365.25, 365.2425 (software), 360-day savana (Santhanam/Kapoor translator notes and tables; not a Vimshottari statement). Practitioner and software pages are Tier 4-5 and only corroborate.
 - Proposed: fixed-duration years in exact seconds (no calendar-year arithmetic), so leap years do not arise; the calendar date is derived from the UTC instant. The default profile is an OWNER DECISION still open (candidates: the Sun-return year of Phaladeepika, or the fixed mean sidereal year as a Pandit Ji default).
 
-**Nakshatra boundary - genuine Phase 5 defect (not fixed)**
+**Nakshatra boundary - genuine Phase 5 defect (RESOLVED by commit `091ca1b`; text below is the original finding, kept as history)**
 - `pandit_astro_engine.nakshatra.nakshatra_position` uses `normalized // (360.0/27.0)`. At exactly representable boundaries it can assign the lower nakshatra: 39 of 81 exact-boundary tests were wrong (for example 40.0 degrees returns Krittika, not Rohini). The `near_boundary` flag is raised but the side is wrong; the standard's own arithmetic (longitude / 13 degrees 20') gives Rohini.
 - No source states interval inclusivity; sources list shared endpoints. Proposed convention (a Pandit Ji standard, not a source): lower-inclusive, upper-exclusive, 360 = 0.
-- Minimum correction, classified PHASE 5 PATCH REQUIRED BEFORE PHASE 7 (needs owner approval and a standards note): compute index and pada with exact rational arithmetic on the float value (index = floor(Fraction(L) x 27 / 360), pada = floor(Fraction(L) x 108 / 360) mod 4 + 1); keep `near_boundary` unchanged. Checked in-process without writing any file: with this change all 191 existing astro-engine tests still pass, so no existing golden case changes.
+- Minimum correction, classified PHASE 5 PATCH REQUIRED BEFORE PHASE 7 (owner-approved and applied in `091ca1b`; standards note added in v1.4.1): compute index and pada with exact rational arithmetic on the float value (index = floor(Fraction(L) x 27 / 360), pada = floor(Fraction(L) x 108 / 360) mod 4 + 1); keep `near_boundary` unchanged. Checked in-process without writing any file: with this change all 191 existing astro-engine tests still pass, so no existing golden case changes.
 
 **Other proposals**: exact rational arithmetic with no intermediate rounding; canonical boundary = UTC instant (integer microseconds) with Julian Day UT derived; half-open intervals [start, end); display rounding never used for period selection; local timezone is display metadata and DST never alters a computed UTC boundary. Birth-time precision model EXACT / APPROXIMATE / NOT_EVALUABLE: the input model has no precision field today; the Moon moves about 13 degrees a day, so an uncertainty interval that crosses a nakshatra boundary makes the starting lord ambiguous and the result must not be shown as exact. Rule-engine contract: astro-engine calculates and owns `DashaFacts` (system, profile IDs for balance/year-length/sub-period, starting nakshatra/pada/lord, balance and unit, period tree with UTC boundaries, current period, calculation version); the rule engine only consumes them (a later facts-model extension) and never calculates Dasha. Maraka timing: an earlier `Phases.md` Phase 9 line says "Maraka timing is owned by Phase 7" but Phase 7 does not list it; proposed correction is that Maraka timing is a later rule-engine consumer of Dasha facts, not Phase 7 scope (this doc correction is NOT yet applied).
 
-**Verdict at the last report: PHASE 7 IMPLEMENTATION READY: NO (pending owner decisions)**, in particular: year-length default profile; balance default profile; approval of the Phase 5 exact-arithmetic patch and boundary convention; birth-time precision field and where it lives; UTC-instant representation; the Maraka documentation correction; a standards amendment (likely v1.5.0).
+**Verdict: PHASE 7 IMPLEMENTATION READY: NO (pending owner decisions)**. The Phase 5 boundary patch and convention are now approved, applied and recorded (`091ca1b`, standards v1.4.1). Still open: year-length default profile; balance default profile; birth-time precision field and where it lives; UTC-instant representation; leap-year and rounding policy; the Phase 6 to Phase 7 contract; the Maraka ownership correction in `Phases.md`; missing Phase 7 dependencies, exit criteria and exclusions in `Phases.md`; and the Phase 7 standards amendment (likely v1.5.0).
 
-## 22. Current Exact Repository State (before this summary commit)
+## 22. Repository State (history and current)
 
-- Branch `main`; HEAD `6e8eba4` = `origin/main`; working tree clean; CI green (run `35461086198`).
+- **Current code state**: the latest code commit is `091ca1b` ("fix: classify Nakshatra and Pada boundaries with exact arithmetic"), CI run `35500359836` green (15 of 15 jobs). Commits after it are documentation only; the current HEAD is whatever `git log` shows (verify it equals `origin/main`). Tests: astro-engine 353, rule-engine 235. Standards version: v1.4.1. No Phase 7 files exist (no `dashas` module).
+- Earlier state, kept as history: branch `main`; HEAD `6e8eba4` = `origin/main`; working tree clean; CI green (run `35461086198`); then `81c9b08` (summary update), CI run `35462906836` green.
 - Local environment notes: `pyswisseph` and the rule-engine, knowledge, agent, verification and astro-engine packages were pip-installed in editable mode during the session (needed for local test runs); nothing running in the background.
 - Private research material (page-image excerpts for Sanskrit review, extraction JSON, OCR text, generators for the rule YAML) lives in the assistant session scratchpad under the OS temp directory and is NOT in the repository; it may not survive. The durable record is `research/ASTROLOGY_SOURCES.md` (Groups 1-8 and §6 source tiers and profile IDs).
 
@@ -906,5 +920,32 @@ Do not assume anything beyond this document, and re-check it against the reposit
 
 1. Read this `SUMMARY.md`, then verify HEAD, `origin/main`, working tree and GitHub Actions for HEAD; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`, `docs/ARCHITECTURE.md`, `research/ASTROLOGY_SOURCES.md`.
 2. Report: repository state, which phases are complete (1-6), CI state, next phase (7), and any mismatch with this document.
-3. **Do not implement Phase 7.** Phase 7 has NO implementation approval. The next step is for the owner to review section 21 and decide the open items; the last request was a focused methodology-closure pass (roadmap: `Phases.md` authoritative; research and reports only; no code, YAML, tests, commits or pushes for Phase 7 until explicitly approved).
+3. **Do not implement Phase 7.** Phase 7 has NO implementation approval. The next step is for the owner to review section 21 and §24 and decide the open items. The Phase 5 boundary correction and its documentation (standards v1.4.1) are complete; no code, YAML or tests for Phase 7 until explicitly approved.
 4. Standing rules: cite sources honestly (image-checked vs OCR vs translation level; no Sanskrit-level claims without a qualified reviewer); never merge traditions silently; commits use the owner's identity `iamankoo <aniketraj00384@gmail.com>` with no AI attribution (CI rejects vendor names in `.md`, `.py`, `.ts`, `.tsx`, `.dart` files); do not modify Phase 5 or Phase 6 without approval.
+
+## 24. Open Blockers Before Phase 7 (documentation closure, 2026-09-20)
+
+Phase 7 implementation is **NOT ready**. Nothing below has been decided; each item needs an explicit owner decision and, where noted, a standards or roadmap edit that has not been made.
+
+**Methodology decisions (open)**
+1. Vimshottari balance-at-birth default profile (BPHS Ch. 46 v. 16 time-based versus longitude-based; separate profiles required).
+2. Year-length default profile (no verse read states it; Phaladeepika XIX sl. 4 is an inference; separate profiles required).
+3. Leap-year and rounding policy.
+4. UTC-instant and Julian-day representation.
+5. Birth-time precision model (EXACT, APPROXIMATE, NOT_EVALUABLE) and where the field lives (the input model has none today).
+6. Phase 6 to Phase 7 contract (`DashaFacts`, owned by astro-engine, consumed by rule-engine).
+7. Phase 7 standards amendment (likely v1.5.0).
+8. Whether `kundli.py` `STANDARDS_VERSION` advances (see the §15 addendum).
+
+**Roadmap and documentation mismatches found, reported and NOT fixed (`Phases.md` is the sole roadmap; edits need owner approval)**
+- `Phases.md` states "Maraka timing is owned by Phase 7" in the Phase 9 module notes, but Phase 7's own list does not include it.
+- `Phases.md` Phase 7 has no stated dependencies, exit criteria or exclusions. The owner's locked scope (Vimshottari only, to Pratyantar; not Ashtottari, Yogini, Chara, Narayana, Sookshma, Prana or rectification; "connect" means deterministic temporal facts and references only) exists only in this file and in the owner's instructions.
+- `docs/ASTROLOGY_STANDARDS.md` §Vimshottari Dasha (Hierarchy bullet) says "and, if later required, Sookshma", which is looser than the owner's locked scope.
+- `docs/ASTROLOGY_STANDARDS.md` Phase 1 checklist line for Vimshottari reads "implemented Phase 7"; it names the responsible phase (the same wording is used for Phases 9-11) and does not mean Phase 7 exists.
+- The Phase 7 deliverable "connect Dasha with Houses, Lords, Planets, Yogas, Career, Marriage, Education, Finance, Relationships" overlaps later phases (Phase 12 knowledge, Phase 17 life-domain intelligence) unless it is read as facts and references only. That is the owner's stated reading, but it is not in `Phases.md`.
+- §8 of this file records a language requirement that the project owner's later locked wording refines (the AI natively understands English, Hindi and Hinglish with no AI language mode; only the UI language is a setting, and it never changes because of what the user types). It was not changed here (outside this task's scope) and should be reconciled before Phase 15 and Phase 19 work.
+
+**Source registry status (`research/ASTROLOGY_SOURCES.md`)**
+- BPHS Ch. 46 v. 2-16: image-checked (printed pp. 505-507), translation level.
+- BPHS Ch. 51 and Ch. 61 sub-period rules: OCR-level in the registry. A prior report says they were image-checked, but no page-image artifact was preserved, so the registry was not upgraded.
+- Phaladeepika XIX sl. 2-4 and the Uttara Kalamrita printed p. 142 worked example: matched against the preserved OCR text and recorded at OCR-TRANSLATION level; the earlier image-check claim for Phaladeepika is not preserved and was not repeated. No Sanskrit-level verification exists for any Vimshottari statement.

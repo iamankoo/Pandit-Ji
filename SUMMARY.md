@@ -397,7 +397,7 @@ the header was corrected to "21-Phase" during Phase 6 research:
 20. Phase 20 — Voice + Personalization
 21. Phase 21 — Validation, Backtesting & Production Launch
 
-**Phases 1 through 6 are complete and verified (Phase 6: accepted by the owner, CI green; see §20). Phase 7 (Vimshottari Dasha) is implemented and CI-verified (see §25); its methodology research is §21.** (This roadmap list was first written at the end of Phase 5, when it read "Phase 6 has not started"; that statement is now historical.)
+**Phases 1 through 7 are complete and verified (Phase 6: accepted by the owner, CI green; see §20). Phase 7 (Vimshottari Dasha) is implemented and CI-verified (see §25); its methodology research is §21.** (This roadmap list was first written at the end of Phase 5, when it read "Phase 6 has not started"; that statement is now historical.)
 
 ---
 
@@ -919,8 +919,8 @@ This section is the research record written before implementation. At the time i
 Do not assume anything beyond this document, and re-check it against the repository first.
 
 1. Read this `SUMMARY.md`, then verify HEAD, `origin/main`, working tree and GitHub Actions for HEAD; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`, `docs/ARCHITECTURE.md`, `research/ASTROLOGY_SOURCES.md`.
-2. Report: repository state, which phases are complete (1-6), CI state, next phase (7), and any mismatch with this document.
-3. Phase 7 is implemented (§25). Do not start Phase 8 or any other phase without reading `Phases.md` and getting the owner's approval. The items the owner still needs to review are listed in §25 ("For owner review").
+2. Report: repository state, which phases are complete (1-7), CI state, the next phase in `Phases.md` (Phase 8, not started; wait for the owner to select it), and any mismatch with this document.
+3. Phase 7 is implemented (§25). Do not start Phase 8 or any other phase without reading `Phases.md` and getting the owner's approval. Section 25 holds the Phase 7 handoff, decisions and limitations.
 4. Standing rules: cite sources honestly (image-checked vs OCR vs translation level; no Sanskrit-level claims without a qualified reviewer); never merge traditions silently; commits use the owner's identity `iamankoo <aniketraj00384@gmail.com>` with no AI attribution (CI rejects vendor names in `.md`, `.py`, `.ts`, `.tsx`, `.dart` files); do not modify Phase 5 or Phase 6 without approval.
 
 ## 24. Open Blockers Before Phase 7 (historical: documentation closure, 2026-09-20; resolved by §25)
@@ -950,31 +950,82 @@ This list was the pre-implementation blocker list. The owner then supplied the d
 - BPHS Ch. 51 and Ch. 61 sub-period rules: OCR-level in the registry. A prior report says they were image-checked, but no page-image artifact was preserved, so the registry was not upgraded.
 - Phaladeepika XIX sl. 2-4 and the Uttara Kalamrita printed p. 142 worked example: matched against the preserved OCR text and recorded at OCR-TRANSLATION level; the earlier image-check claim for Phaladeepika is not preserved and was not repeated. No Sanskrit-level verification exists for any Vimshottari statement.
 
-## 25. Phase 7 — Dasha & Timing Engine: IMPLEMENTED
+## 25. Phase 7 — Vimshottari Dasha Engine — Completion and Handoff
 
-Implemented under the owner's Phase 7 implementation directive (which supplied the balance and year-length defaults and the scope). Commits: `ebc98d2` (docs: standards v1.5.0 methodology lock, `Phases.md` Phase 7 fields, architecture note, source-registry profile table), `7eaada5` (astro-engine `dashas`, version 0.4.0), `e56be0f` (rule-engine evidence integration, version 0.7.0). CI run `35507588698`: 15 of 15 jobs success, each job and each step inspected individually (skipped steps are the conditional "install domain services" step used only by the `server` job).
+### A. Completion status
+- Phase 7 is complete within its defined scope: **Vimshottari Mahadasha → Antardasha → Pratyantar**, as deterministic temporal facts with provenance.
+- Branch `main`. Starting commit `2437bcc`. Final implementation and summary commit before this handoff: `d51ad91`. (This handoff refresh is a further documentation-only commit; verify the current HEAD with `git log`.)
+- Commits:
+  - `ebc98d2`: documentation, standards v1.5.0, Phase 7 roadmap fields, architecture note, source-registry profile table.
+  - `7eaada5`: astro-engine `dashas` package, version 0.4.0, README and tests.
+  - `e56be0f`: rule-engine EvidenceBundle integration, version 0.7.0, fixtures and tests.
+  - `d51ad91`: `SUMMARY.md` and handoff refresh.
 
-**Scope delivered**: Vimshottari Mahadasha, Antardasha and Pratyantar as deterministic temporal facts with provenance; period start/end, current, past and future lookup, transitions, period windows and by-lord queries. **Not delivered by design**: Sookshma, Prana, other Dasha systems, rectification, any interpretation (life-domain, Maraka, planetary results). Maraka timing is recorded in `Phases.md` as a later rule-engine consumer.
+### B. Implemented functionality
+- Birth Nakshatra, Pada and starting Mahadasha lord; birth Mahadasha balance (elapsed and remaining fraction, remaining duration).
+- Mahadasha, Antardasha and Pratyantar generation, as a flat ordered period tree (`parent_id`, `path`, stable period IDs, UTC boundaries), with exact containment, no gaps and no overlaps.
+- Lookup of the periods owning an instant (historical, current and future; the caller supplies "now": the pure calculator and lookup never read the system clock), transition queries, window queries, queries by planetary lord.
+- UTC is the canonical time; exact rational microsecond arithmetic; half-open intervals `[start, end)`.
+- Precision contract (EXACT, APPROXIMATE, NOT_EVALUABLE with an uncertainty interval), structured statuses with reason codes, labelled provenance.
+- The service facade (`DashaCalculationService`) is the part that calls the existing astronomical service (Moon longitude and time resolution, including the Moon at the ends of an uncertainty interval). The pure calculator (`calculate_vimshottari`) has no ephemeris, clock or I/O.
+- EvidenceBundle integration (section G). Code: `services/astro-engine/src/pandit_astro_engine/dashas/` (`constants.py`, `profiles.py`, `models.py`, `vimshottari.py`, `lookup.py`, `service.py`) and `services/rule-engine/src/pandit_rule_engine/dasha_evidence.py` plus the additive `dasha` section in `bundle.py` and `engine.py`.
 
-**Where**: `services/astro-engine/src/pandit_astro_engine/dashas/` (`constants.py`, `profiles.py`, `models.py`, `vimshottari.py`, `lookup.py`, `service.py`); `services/rule-engine/src/pandit_rule_engine/dasha_evidence.py` plus an additive optional `dasha` section in `bundle.py`/`engine.py`.
+### C. Methodology decisions (approved engineering decisions, not universal claims about classical astrology)
+- Default balance profile `DASHA_STANDARD_V1_BALANCE_LONGITUDE`: the longitude fraction is an **engineering convention**. The source-based alternatives `DASHA_BPHS_KAPOOR_46_16_BALANCE_TIME` and `DASHA_PHALADEEPIKA_SASTRI_XIX_3_BALANCE` are registered but **inactive** (not approximated). The balance method remains a documented source conflict.
+- Default year profile `YEAR_365_2425_FIXED_DAY`: 365.2425 mean solar days, exactly 31,556,952 seconds, with no leap-year calendar arithmetic. `YEAR_365_25_FIXED_DAY` and `YEAR_360_FIXED_DAY` are selectable; `YEAR_SIDEREAL_365_256363_FIXED_DAY` and `YEAR_SUN_RETURN_PHALADEEPIKA_XIX_4` are documented and inactive.
+- UTC canonical; exact rational microseconds; each boundary floored once to a whole microsecond.
+- Intervals are half-open `[start, end)`; the later period owns a shared boundary; the timeline end is exclusive.
+- An approximate birth time requires an explicit uncertainty interval. If the interval reaches a Nakshatra boundary the result is `NOT_EVALUABLE(starting_lord_ambiguous)`. No birth-time rectification is performed.
+- Nested sub-period formula (profile `DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1`): child duration = full nominal parent duration × child lord years ÷ 120.
 
-**Methodology (all Pandit Ji engineering conventions unless stated; see standards v1.5.0 §Phase 7 methodology lock)**
-- Balance: default `DASHA_STANDARD_V1_BALANCE_LONGITUDE`; `DASHA_BPHS_KAPOOR_46_16_BALANCE_TIME` and `DASHA_PHALADEEPIKA_SASTRI_XIX_3_BALANCE` are documented and **inactive** (not approximated). The balance method remains a documented source conflict.
-- Year length: default `YEAR_365_2425_FIXED_DAY` (exact 31,556,952 s); `YEAR_365_25_FIXED_DAY` and `YEAR_360_FIXED_DAY` selectable; `YEAR_SIDEREAL_365_256363_FIXED_DAY` and `YEAR_SUN_RETURN_PHALADEEPIKA_XIX_4` inactive. No calendar or leap-year arithmetic.
-- Sub-periods: `DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1` (child = full parent x lord years / 120; the birth-balance Mahadasha keeps the tail of its full sub-period schedule, the one containing birth is truncated at birth and flagged).
-- Time: UTC canonical, exact rational microseconds from the birth instant, each boundary floored once to a whole microsecond. Boundaries half-open [start, end); the later period owns a shared boundary; timeline end exclusive.
-- Precision: EXACT, APPROXIMATE (needs an uncertainty interval, stable starting lord only), NOT_EVALUABLE; an interval reaching a Nakshatra boundary is `NOT_EVALUABLE(starting_lord_ambiguous)`.
-- Statuses: SUCCESS, APPROXIMATE, NOT_EVALUABLE, INVALID_INPUT, UNSUPPORTED_PROFILE, CONFIGURATION_ERROR, INTERNAL_ERROR, each failure with a reason code.
+### D. Birth-balance sub-period decision (approved by the owner)
+- Antardasha and Pratyantar of the birth Mahadasha are calculated from the **full, untruncated** Mahadasha; they are not scaled to the remaining birth balance.
+- Sub-periods that ended before birth are removed; the sub-period containing birth is truncated at birth, keeps its `nominal_start_utc`, and is marked `truncated_at_birth`.
+- This is an **engineering interpretation of the implementation directive**; it is not a claim that all classical traditions subdivide the birth-balance period this way (the sources read do not state it). It has its own profile ID and is explained in standards v1.5.0.
 
-**Validation actually run** (local, before the commits): astro-engine 513 tests (353 existing + 160 new), rule-engine 256 (235 existing + 21 new), ruff format and check and mypy clean for both; the other domain packages' ruff and tests pass; server tests pass with `PYTHONPATH=src` (the `pandit_server` package is not installed locally). The Independence-chart Moon and the Uttara Kalamrita p. 142 worked example (Rahu balance about 1 year 11 months 6 days under the 360-day profile, agreeing within a day) are used as consistency checks; the first is an internal-consistency test, not an external golden. Property-style checks use seeded random loops, not a property-testing library (none is a project dependency).
+### E. Standards-version decision
+- `kundli.py` keeps `STANDARDS_VERSION = "1.3.0"`. The v1.4.1 Nakshatra boundary change corrected an implementation defect against the existing 1.3.0 text (which already said to divide by 13°20′), so the constant was not advanced.
+- Phase 7 methodology and results are recorded under standards **v1.5.0**. Do not change the Kundli constant unless a future standards amendment requires it.
 
-**Measured performance** (one development machine): full three-level timeline about 19 ms (about 885 nodes, about 0.7 MB as JSON); Mahadasha-only about 0.3 ms; 1000 lookups about 26 ms; service call including the ephemeris about 19 ms.
+### F. Source governance
+- Provenance labels recorded in every result: `source_supported`, `translator_note`, `inference`, `engineering_convention`, `derived_calculation`, `unresolved_conflict`.
+- No unsupported image-verification claim was added. BPHS Ch. 51 and Ch. 61 stay **OCR-level** in `research/ASTROLOGY_SOURCES.md` (an earlier report of an image check has no preserved page images). Do not upgrade any evidence tier without page-image verification.
+- The Uttara Kalamrita p. 142 worked example is an independent **consistency check** only: the engine's balance agrees with it to within about a day under the 360-day profile. That agreement is not proof of classical correctness.
 
-**Known limitations**: only Vimshottari to Pratyantar; the two source-alternative balance profiles are unavailable; the `APPROXIMATE` first-Mahadasha end range is an envelope from the interval endpoints and the nominal instant, not a proven bound; the Moon range for an approximate time is evaluated from Julian-day shifts of a few tens of microseconds precision; the rule-engine + real astro-engine integration test (`test_dasha_integration.py`) is skipped in the rule-engine CI job (astro-engine is not installed there) and was run locally only; a local `mypy` run on `server` (with `PYTHONPATH=src`, packages not installed) reports 2 errors in `health.py`, at least one an unused `type: ignore`, while CI's `server` job mypy step passes (`health.py` was not touched).
+### G. Phase 6 integration
+- `RuleEngine.evaluate_kundli(kundli, dasha_facts)` accepts optional astro-engine Dasha facts (JSON form) and records them in an optional `dasha` section of the EvidenceBundle.
+- Bundles without Dasha facts serialize and hash exactly as before; the bundle schema version is unchanged.
+- `requires_dasha` remains reserved: no shipped rule emits it, and no shipped rule reads Dasha facts.
+- No Phase 4, 5 or 6 module was modified in behaviour (`bundle.py` and `engine.py` changed additively).
 
-**For owner review (decisions recorded, not silently resolved)**
-1. **Birth-balance sub-periods**: the directive's formula `child = P x Y / 120` is ambiguous for the balance Mahadasha. The implementation uses the full-parent treatment above (the usual practice; the sources read do not state it) instead of scaling sub-periods to the balance length. This is the one place the implementation interprets, not copies, the directive.
-2. **Kundli `STANDARDS_VERSION`** was deliberately left at `1.3.0` (rationale in standards v1.5.0); Phase 7 results record `1.5.0`.
-3. **Ch. 51/61 image-check** claim from an earlier session is still unpreserved, so the registry keeps those verses at OCR level.
-4. The balance-method source conflict is unresolved by design and can be revisited if the Panchanga-time profile is implemented.
-5. `SUMMARY.md` §8 language wording still predates the owner's locked language rule (reported earlier; unchanged).
+### H. Testing and performance (as reported at completion; run locally unless stated)
+- astro-engine 513 passed (353 existing + 160 new); rule-engine 256 passed (235 existing + 21 new); server 5 passed with `PYTHONPATH=src`.
+- `ruff format`, `ruff check` and `mypy` clean for the astro-engine and rule-engine packages; the other domain packages' ruff and tests passed.
+- Full three-level timeline about 19 ms (about 885 nodes, about 0.7 MB as JSON); Mahadasha-only about 0.3 ms; 1,000 lookups about 26 ms (one development machine).
+- Property-style checks are seeded random loops; no property-testing library was added.
+- The skipped rule-engine integration test (section I) was run locally, not in the rule-engine CI job.
+
+### I. CI records
+- https://github.com/iamankoo/Pandit-Ji/actions/runs/35507588698 (commit `e56be0f`) and https://github.com/iamankoo/Pandit-Ji/actions/runs/35507771059 (commit `d51ad91`): 15 of 15 jobs success in each; every job and step was inspected individually.
+- The conditional "install domain services" step is skipped in every job except `server`, by design.
+- `services/rule-engine/tests/test_dasha_integration.py` (real astro-engine facts) is **skipped in the rule-engine CI job** because astro-engine is not installed there; it was run locally.
+- A local `mypy` run on `server` (with `PYTHONPATH=src`, package not installed) reported 2 errors in the untouched `health.py`; the CI server mypy step passed.
+- The CI run for the handoff-refresh commit that follows `d51ad91` is not recorded here; check it with `gh run list`.
+
+### J. Known limitations and deferred work
+- Scope ends at Pratyantar. Not implemented: Sookshma, Prana, other Dasha systems, birth-time rectification.
+- Life-domain interpretation and Maraka interpretation are not part of Phase 7 (later rule-engine and life-domain phases consume the facts).
+- The source-alternative balance profiles are registered but inactive.
+- The approximate-time first-Mahadasha end range is an envelope from the interval endpoints and the nominal instant, not a proven bound; the Moon range for an approximate time uses Julian-day shifts of a few tens of microseconds precision.
+- The Independence-chart test is an internal consistency test, not an external golden reference.
+- `SUMMARY.md` §8 still predates the locked language rule (English, Hindi and Hinglish understood natively; only the UI language is a setting) and was left out of scope; reconcile it before Phase 15 and Phase 19 work.
+
+### K. Tomorrow's resume instructions
+1. Read `Phases.md` first (authoritative roadmap).
+2. Read this `SUMMARY.md` completely.
+3. Inspect the latest Git commit, `origin/main` and the working tree.
+4. Do not restart Phase 7 or rewrite the completed implementation. Treat Phase 7 as **frozen** unless an explicit correction or amendment is requested.
+5. Before starting any new phase, follow the established Git workflow: commit and push the existing state, cross-check the relevant section of `Phases.md`, prepare a detailed implementation prompt, and report CI results per job.
+6. Make no assumption about the next phase until the user explicitly selects it.
+
+Last session ended after Phase 7 completion, validation, and handoff. Resume from this summary after the user gives the next instruction.

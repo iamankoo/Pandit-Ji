@@ -3,11 +3,19 @@
 docs/ASTROLOGY_STANDARDS.md "Nakshatra standards": 27 Nakshatras of 13°20'
 each spanning the full sidereal zodiac, 4 Padas of 3°20' each, and the nine
 Vimshottari lords repeating three times across the 27 Nakshatras.
+
+Classification convention (a Pandit Ji engineering convention, not a rule
+stated by a classical source): Nakshatra and Pada intervals are half-open,
+lower-inclusive and upper-exclusive, so an exact boundary belongs to the upper
+Nakshatra/Pada, and 360 degrees is 0 degrees. Classification uses exact
+rational arithmetic on the input float, because the float divisor 360.0/27.0
+is not exactly 13 degrees 20 minutes.
 """
 
 from __future__ import annotations
 
 from enum import Enum
+from fractions import Fraction
 
 from pandit_astro_engine.models import CelestialBody
 
@@ -98,9 +106,13 @@ def nakshatra_position(longitude: float) -> NakshatraPosition:
     """`longitude` is an absolute sidereal ecliptic longitude, degrees
     [0, 360)."""
     normalized = longitude % 360.0
-    nakshatra_index = int(normalized // NAKSHATRA_SPAN_DEGREES) % 27
+    # Exact rational classification: `exact` is the float's exact value, so
+    # 27/360 and 108/360 divisions carry no rounding. `% 360` maps a float
+    # normalization result of 360.0 to 0.
+    exact = Fraction(normalized) % 360
+    nakshatra_index = (exact * 27) // 360
+    pada = int((exact * 108) // 360) % 4 + 1
     position_in_nakshatra = normalized - (nakshatra_index * NAKSHATRA_SPAN_DEGREES)
-    pada = int(position_in_nakshatra // PADA_SPAN_DEGREES) % 4 + 1
 
     nakshatra = NAKSHATRA_ORDER[nakshatra_index]
     return NakshatraPosition(

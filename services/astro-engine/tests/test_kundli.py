@@ -4,14 +4,20 @@ duplicates a Swiss Ephemeris call outside `ephemeris.py`."""
 
 from __future__ import annotations
 
+from fractions import Fraction
+
 from pandit_astro_engine.dignity import DignityStatus
-from pandit_astro_engine.kundli import KundliCalculationService
+from pandit_astro_engine.kundli import KundliCalculationService, _build_kundli_planet
 from pandit_astro_engine.models import (
     AstronomicalCalculationRequest,
     CelestialBody,
+    DegreeComponents,
+    EphemerisMode,
     LocalDateTimeInput,
     Location,
+    PlanetState,
 )
+from pandit_astro_engine.nakshatra import NAKSHATRA_ORDER, Nakshatra
 from pandit_astro_engine.rashi import Rashi
 from pandit_astro_engine.vargas import SUPPORTED_VARGAS
 
@@ -126,3 +132,40 @@ def test_astronomical_facts_are_embedded_not_recomputed() -> None:
 
     direct_result = AstronomicalCalculationService().calculate(request)
     assert kundli_result.astronomical.planets.sun.longitude == direct_result.planets.sun.longitude
+
+
+def _planet_state_at(body: CelestialBody, longitude: float) -> PlanetState:
+    return PlanetState(
+        body=body,
+        longitude=longitude,
+        latitude=0.0,
+        distance_au=1.0,
+        speed_longitude=1.0,
+        speed_latitude=0.0,
+        retrograde=False,
+        degree_components=DegreeComponents.from_longitude(longitude),
+        ephemeris_mode=EphemerisMode.MOSHIER,
+    )
+
+
+def test_kundli_path_assigns_exact_boundary_longitudes_to_the_upper_bucket() -> None:
+    """Exact Nakshatra/Pada boundaries (half-open [lower, upper) convention, a
+    Pandit Ji engineering convention) through the Kundli planet builder."""
+    rohini = _build_kundli_planet(CelestialBody.MOON, _planet_state_at(CelestialBody.MOON, 40.0), 0)
+    assert rohini.nakshatra.nakshatra is Nakshatra.ROHINI
+    assert rohini.nakshatra.pada == 1
+    assert rohini.nakshatra.near_boundary is True
+
+    ashwini = _build_kundli_planet(
+        CelestialBody.MOON, _planet_state_at(CelestialBody.MOON, 10.0), 0
+    )
+    assert ashwini.nakshatra.nakshatra is Nakshatra.ASHWINI
+    assert ashwini.nakshatra.pada == 4
+
+
+def test_kundli_nakshatra_and_pada_match_exact_classification_of_the_longitude() -> None:
+    result = KundliCalculationService().calculate(_request(1947, 8, 15, 0, 0))
+    for planet in result.planets:
+        slot = int(Fraction(planet.longitude) % 360 * 108 // 360)
+        assert planet.nakshatra.nakshatra is NAKSHATRA_ORDER[slot // 4]
+        assert planet.nakshatra.pada == slot % 4 + 1

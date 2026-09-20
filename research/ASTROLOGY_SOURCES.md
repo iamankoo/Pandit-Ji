@@ -223,3 +223,19 @@ First-tranche profiles (implemented in Phase 6). "Edition" codes: SAN = Santhana
 | `JP_KUJA_DOSHA` | Jataka Parijata v. 34 (Chaukhambha) | separate profile; text to be re-read at implementation |
 
 Reserved, not implemented in the first tranche: `MODERN_KAAL_SARP_<SOURCE>` (needs a named Tier 4 source; until then `NOT_EVALUABLE(source_profile_not_selected)`). Other Gajakesari traditions (Jataka Parijata, Bombay edition, C.G. Rajan, Kumara Swameeyam) are translator-note variants only and are not profiles.
+
+### 6.3 Phase 7 Dasha profile IDs
+
+Defined in `docs/ASTROLOGY_STANDARDS.md` v1.5.0 §Phase 7 methodology lock. Each profile is an explicit choice; none is presented as the only valid classical method, and the balance method remains a documented source conflict (section 4). "Label" uses the evidence labels recorded in every result.
+
+| Profile ID | Status | Label | Source basis and verification level |
+|---|---|---|---|
+| `DASHA_STANDARD_V1_BALANCE_LONGITUDE` | active, product default | engineering convention | Standards v1.4.0 longitude fraction; BPHS Ch. 46 v. 16 translator's note and the Uttara Kalamrita p. 142 example (OCR-level, Tier 3) support it only as a translator's view |
+| `DASHA_BPHS_KAPOOR_46_16_BALANCE_TIME` | inactive | source-supported (translation level) | BPHS Ch. 46 v. 16 (Kapoor), image-checked translation; needs Moon nakshatra entry and exit instants, not computed |
+| `DASHA_PHALADEEPIKA_SASTRI_XIX_3_BALANCE` | inactive | unresolved conflict | Phaladeepika XIX sl. 3, OCR-level; time or arc unresolved |
+| `YEAR_365_2425_FIXED_DAY` | active, product default | engineering convention | No verse read states a year length |
+| `YEAR_365_25_FIXED_DAY` | active | engineering convention | Julian year; explicit non-default |
+| `YEAR_360_FIXED_DAY` | active | translator note | Kapoor worked examples count months as 30 days; not a verse |
+| `YEAR_SIDEREAL_365_256363_FIXED_DAY` | inactive | translator note | Value from the project research record; not re-verified |
+| `YEAR_SUN_RETURN_PHALADEEPIKA_XIX_4` | inactive | inference | Phaladeepika XIX sl. 4, OCR-level; applying it to Vimshottari is an inference |
+| `DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1` | active | engineering convention | Proportional formula: BPHS Ch. 51 v. 1-2 and Ch. 61 v. 1 (OCR-level in this registry); the birth-balance Mahadasha treatment is not stated in the sources read |

@@ -143,7 +143,7 @@ astro_engine/
   charts/           # D1, D9, and other divisional charts, North/South/Chalit rendering data
   strength/         # dignity, exaltation/debilitation, combustion, retrograde, shadbala (later)
   ashtakvarga/
-  dashas/           # vimshottari (mahadasha/antardasha/pratyantar), timeline builder
+  dashas/           # vimshottari (mahadasha/antardasha/pratyantar), timeline builder, period lookup (Phase 7)
   transits/         # gochar, sade sati, transit-to-natal aspecting
   panchang/         # tithi, vara, nakshatra, yoga, karana, hora, choghadiya, rahu kaal
   muhurta/
@@ -259,7 +259,7 @@ User: "Will my career improve next year?"
 | Contract | Owner | Deterministic? | Notes |
 |---|---|---|---|
 | `ChartRequest` / `ChartResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config` + requested varga(s). Output: positions/houses/nakshatra/dignity/etc. for D1 and requested divisional charts. |
-| `DashaRequest` / `DashaResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config`. Output: Mahadasha/Antardasha/Pratyantar timeline (see `docs/ASTROLOGY_STANDARDS.md`). |
+| `DashaRequest` / `DashaResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config`. Output: Mahadasha/Antardasha/Pratyantar timeline (see `docs/ASTROLOGY_STANDARDS.md` §Phase 7 methodology lock). Phase 7 realizes it as `DashaRequest` (Moon longitude, UTC birth instant, profile IDs, birth-time precision) and `DashaFacts` (status, profile IDs, period tree in UTC, labelled provenance); `rule-engine` records `DashaFacts` in the evidence bundle and never calculates a Dasha. |
 | `TransitRequest` / `TransitResponse` | `astro-engine` | Yes | Input: natal chart reference + date/window. Output: transit positions + transit-to-natal aspects + Sade Sati windows where applicable. |
 | `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |
 | `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |

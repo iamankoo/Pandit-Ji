@@ -220,7 +220,7 @@ Deliverable: versioned astrology rule engine.
 
 Build the temporal intelligence.
 
-Implement:
+Implement (Vimshottari Dasha only, to the Pratyantar level):
 
 - Vimshottari Dasha
 - Mahadasha
@@ -232,19 +232,38 @@ Implement:
 - Historical Dasha
 - Dasha transitions
 
-Then connect Dasha with:
+Phase 7 produces **deterministic temporal facts and their provenance**. "Connecting" Dasha to Houses, Lords, Planets, Yogas, Career, Marriage, Education, Finance and Relationships means exposing stable timing facts and references (period IDs, lords, UTC boundaries) that later phases consume. It does **not** mean interpreting them: life-domain intelligence belongs to Phase 12 (knowledge) and Phase 17 (life-domain intelligence), and Maraka timing is a later rule-engine consumer of these facts, not Phase 7 scope.
 
-- Houses
-- Lords
-- Planets
-- Yogas
-- Career
-- Marriage
-- Education
-- Finance
-- Relationships
+Dependencies:
 
-Deliverable: complete life-period timeline.
+- Phase 4 (UTC time resolution, Moon longitude) and Phase 5 (Nakshatra classification, Nakshatra-lord table)
+- Phase 6 consumes Dasha facts through the evidence bundle; the rule engine never calculates a Dasha
+
+Inputs: the birth Moon's sidereal longitude, the UTC birth instant with its original local input and IANA timezone, a birth-time precision (EXACT, APPROXIMATE with an uncertainty interval, or NOT_EVALUABLE), and explicit balance and year-length profile IDs.
+
+Outputs: a `DashaFacts` result (system, status and reason code, profile IDs, boundary convention, precision, starting Nakshatra/Pada/lord, balance, the nested period tree with UTC boundaries, warnings, labelled provenance), period lookup and transition queries, and an additive optional `dasha` section in the Phase 6 evidence bundle.
+
+Methodology: `docs/ASTROLOGY_STANDARDS.md` §Phase 7 methodology lock (v1.5.0). Balance and year length are explicit profiles, not classical certainty; the balance method remains a documented source conflict.
+
+Exclusions:
+
+- Other Dasha systems (Ashtottari, Yogini, Chara, Narayana and all others)
+- Sookshma and Prana
+- Birth-time rectification or automatic time correction
+- Life-domain predictions (career, marriage, finance, education, health, relationships)
+- Maraka interpretation, planetary-result or house/sign-based prediction, and any AI-generated interpretation
+
+Exit criteria:
+
+- Vimshottari to the Pratyantar level is implemented with explicit balance, year-length and sub-period profile IDs persisted in every result
+- UTC is canonical; the birth-time precision is explicit; Nakshatra and Dasha boundaries are half-open and deterministic
+- Periods are contiguous, non-overlapping and correctly nested; historical, current and future lookup work
+- Dasha facts are recorded in the evidence bundle with provenance, and Phase 5 and Phase 6 behaviour is unchanged
+- Tests cover the sequence, balance, generation, boundaries, precision, lookup, serialization and integration
+
+Test requirements: unit, boundary, invariant (containment, no gaps, no overlaps, duration conservation, determinism), precision and uncertainty, DST and UTC conversion, serialization round trip, evidence-bundle integration and regression of the existing suites.
+
+Deliverable: complete life-period timeline (facts and provenance; no interpretation).
 
 ## Phase 8 — Transit / Gochar Engine
 
@@ -310,7 +329,7 @@ Jaimini module (isolated, requires a scope decision and methodology audit before
 - Chara Karakas (BPHS Ch. 32)
 - Jaimini sign aspects (Rashi Drishti, BPHS Ch. 8)
 
-Vedic longevity (Ayurdaya) methods (BPHS Ch. 43; requires Shadbala and a methodology and product-policy audit before implementation; produces structural facts only, not lifespan predictions). Maraka timing is owned by Phase 7.
+Vedic longevity (Ayurdaya) methods (BPHS Ch. 43; requires Shadbala and a methodology and product-policy audit before implementation; produces structural facts only, not lifespan predictions). Maraka timing is a later rule-engine consumer of the Phase 7 Dasha facts (Phase 7 exposes timing facts only; it does not interpret Maraka periods).
 
 Each system should be isolated as a module, rather than mixing incompatible rules.
 

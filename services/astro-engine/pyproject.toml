@@ -1,6 +1,6 @@
 [project]
 name = "pandit-astro-engine"
-version = "0.3.0"
+version = "0.4.0"
 description = "Deterministic astronomical and chart calculation engine (Phase 4: Swiss Ephemeris-backed planetary positions, retrograde, combustion, sunrise/sunset, timezone conversion; Phase 5: Kundli -- Ascendant, houses, Rashi/Nakshatra placement, house lords, aspects, dignity, and the full Shodashvarga divisional-chart set)."
 requires-python = ">=3.10"
 dependencies = [

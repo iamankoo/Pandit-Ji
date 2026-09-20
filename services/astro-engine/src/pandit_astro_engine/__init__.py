@@ -13,7 +13,11 @@ D16, D20, D24, D27, D30, D40, D45, D60) plus the Chandra (Moon) chart --
 see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and
 `docs/ASTROLOGY_STANDARDS.md` for the standards this package implements.
 
-Dasha, Transit, Yoga/Dosha rule evaluation, interpretation/narration, and
+Phase 7 (Dasha & Timing Engine): Vimshottari Dasha to the Pratyantar level
+as deterministic temporal facts with provenance (`pandit_astro_engine.dashas`);
+see `docs/ASTROLOGY_STANDARDS.md` section "Phase 7 methodology lock".
+
+Transit, Yoga/Dosha rule evaluation, Dasha interpretation, narration, and
 any AI/LLM involvement remain out of scope here and belong to later
 phases and other services (`rule-engine`, `agent`, `knowledge`) -- see
 each phase's boundary section in `Phases.md`.

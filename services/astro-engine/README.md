@@ -87,6 +87,30 @@ All sixteen locked Shodashvarga charts (D1, D2, D3, D4, D7, D9, D10, D12, D16, D
 
 `kundli.chandra_chart` applies the same whole-sign methodology as D1, but with the Moon's own sign as house 1 instead of the Ascendant. `None` only when the Moon was not among the requested bodies.
 
+## Dasha (Phase 7)
+
+`pandit_astro_engine.dashas` calculates the Vimshottari Dasha (Mahadasha, Antardasha, Pratyantar) as deterministic temporal facts with provenance. It produces no interpretation: no life-domain reading and no Maraka timing. Sookshma, Prana, other Dasha systems and birth-time rectification are out of scope.
+
+```python
+from pandit_astro_engine.dashas import DashaCalculationService, DashaTimeline
+
+facts = DashaCalculationService().calculate(request)  # request: AstronomicalCalculationRequest
+facts.status, facts.profile_ids  # SUCCESS; balance / year-length / sub-period profile IDs
+facts.starting  # birth Nakshatra, Pada, lord, elapsed and remaining fraction
+facts.periods  # flat, ordered period tree (parent_id, path, UTC boundaries)
+
+timeline = DashaTimeline(facts)
+timeline.resolve(instant_utc)  # Mahadasha / Antardasha / Pratyantar owning an instant
+timeline.transitions(DashaLevel.ANTARDASHA)  # boundaries between consecutive periods
+```
+
+- **Profiles** (`docs/ASTROLOGY_STANDARDS.md` v1.5.0 section "Phase 7 methodology lock"): default balance `DASHA_STANDARD_V1_BALANCE_LONGITUDE`, default year `YEAR_365_2425_FIXED_DAY`, sub-periods `DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1`. These are Pandit Ji engineering conventions, not classical certainty; the balance method is a documented source conflict, and the two source-alternative balance profiles are registered as inactive rather than approximated.
+- **Time**: UTC is canonical; arithmetic is exact rational microseconds from the birth instant with no calendar or leap-year arithmetic; each boundary is floored once to a whole microsecond.
+- **Boundaries**: half-open [start, end); a shared boundary belongs to the later period; the timeline end is exclusive.
+- **Precision**: EXACT, APPROXIMATE (needs an uncertainty interval; stable starting lord only) or NOT_EVALUABLE. An interval reaching a Nakshatra boundary is `NOT_EVALUABLE(starting_lord_ambiguous)`.
+- **Failures** are structured (`status` plus `reason_code`), never guessed and never a stack trace.
+- **Size**: a full three-level timeline is about 900 period nodes and roughly 0.7 MB as JSON; the evidence bundle records a compact form of each node.
+
 ## Supported bodies
 
 Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase.

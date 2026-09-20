@@ -1,7 +1,7 @@
 [project]
 name = "pandit-rule-engine"
-version = "0.6.0"
-description = "Deterministic astrology rule evaluation engine (Phase 6: source-profile rules, ambiguity-preserving evaluation, evidence bundle)."
+version = "0.7.0"
+description = "Deterministic astrology rule evaluation engine (Phase 6: source-profile rules, ambiguity-preserving evaluation, evidence bundle; Phase 7: Dasha evidence)."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",

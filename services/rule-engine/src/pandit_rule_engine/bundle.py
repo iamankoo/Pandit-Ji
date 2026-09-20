@@ -24,8 +24,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, SerializerFunctionWrapHandler, model_serializer
 
+from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
 from pandit_rule_engine.loader import Ruleset
@@ -105,7 +106,18 @@ class EvidenceBundle(_Model):
     conflicts: tuple[GroupRecord, ...]
     dependencies: tuple[DependencyRecord, ...]
     source_profiles: tuple[SourceProfileRecord, ...]
+    #: Additive, optional (Phase 7): Vimshottari facts calculated by astro-engine.
+    #: Omitted from the serialized bundle when absent, so a bundle built without
+    #: Dasha facts serializes and hashes exactly as before.
+    dasha: DashaEvidence | None = None
     bundle_hash: str
+
+    @model_serializer(mode="wrap")
+    def _omit_absent_dasha(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
+        data: dict[str, Any] = handler(self)
+        if data.get("dasha") is None:
+            data.pop("dasha", None)
+        return data
 
     def canonical_json(self) -> str:
         return canonical_json(self.model_dump(mode="json"))
@@ -189,6 +201,7 @@ def build_bundle(
     results: tuple[RuleResult, ...],
     derived_facts: dict[str, Any],
     rule_engine_version: str,
+    dasha: DashaEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -211,6 +224,7 @@ def build_bundle(
         "conflicts": _groups(results),
         "dependencies": _dependencies(results),
         "source_profiles": _source_profiles(results),
+        "dasha": dasha,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

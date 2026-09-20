@@ -1,0 +1,1362 @@
+{
+ "birth_record": null,
+ "birth_utc": "1990-06-15T04:30:00Z",
+ "boundary_convention": "half_open_start_inclusive_end_exclusive",
+ "depth": 2,
+ "detail": null,
+ "engine_version": "0.4.0",
+ "horizon_years": 40,
+ "periods": [
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 164569504679999,
+   "end_utc": "1995-09-01T22:15:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "mahadasha",
+   "lord": "ketu",
+   "nominal_start_utc": "1988-09-01T05:30:40.679999Z",
+   "parent_id": null,
+   "path": [
+    "ketu"
+   ],
+   "period_id": "vim/m0:ketu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 0,
+   "standards_version": "1.5.0",
+   "start_utc": "1990-06-15T04:30:00Z",
+   "truncated_at_birth": true
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 4417973279999,
+   "end_utc": "1990-08-05T07:42:53.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "sun",
+   "nominal_start_utc": "1990-03-30T11:40:40.079999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "sun"
+   ],
+   "period_id": "vim/m0:ketu/a2:sun",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 2,
+   "standards_version": "1.5.0",
+   "start_utc": "1990-06-15T04:30:00Z",
+   "truncated_at_birth": true
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 18408222000000,
+   "end_utc": "1991-03-06T09:06:35.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "moon",
+   "nominal_start_utc": "1990-08-05T07:42:53.279999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "moon"
+   ],
+   "period_id": "vim/m0:ketu/a3:moon",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 3,
+   "standards_version": "1.5.0",
+   "start_utc": "1990-08-05T07:42:53.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 12885755400000,
+   "end_utc": "1991-08-02T12:29:10.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mars",
+   "nominal_start_utc": "1991-03-06T09:06:35.279999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "mars"
+   ],
+   "period_id": "vim/m0:ketu/a4:mars",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 4,
+   "standards_version": "1.5.0",
+   "start_utc": "1991-03-06T09:06:35.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 33134799600000,
+   "end_utc": "1992-08-20T00:35:50.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "rahu",
+   "nominal_start_utc": "1991-08-02T12:29:10.679999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "rahu"
+   ],
+   "period_id": "vim/m0:ketu/a5:rahu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 5,
+   "standards_version": "1.5.0",
+   "start_utc": "1991-08-02T12:29:10.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 29453155200000,
+   "end_utc": "1993-07-26T22:01:45.479999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "jupiter",
+   "nominal_start_utc": "1992-08-20T00:35:50.279999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "jupiter"
+   ],
+   "period_id": "vim/m0:ketu/a6:jupiter",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 6,
+   "standards_version": "1.5.0",
+   "start_utc": "1992-08-20T00:35:50.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 34975621800000,
+   "end_utc": "1994-09-04T17:28:47.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "saturn",
+   "nominal_start_utc": "1993-07-26T22:01:45.479999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "saturn"
+   ],
+   "period_id": "vim/m0:ketu/a7:saturn",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 7,
+   "standards_version": "1.5.0",
+   "start_utc": "1993-07-26T22:01:45.479999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 31293977400000,
+   "end_utc": "1995-09-01T22:15:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mercury",
+   "nominal_start_utc": "1994-09-04T17:28:47.279999Z",
+   "parent_id": "vim/m0:ketu",
+   "path": [
+    "ketu",
+    "mercury"
+   ],
+   "period_id": "vim/m0:ketu/a8:mercury",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 8,
+   "standards_version": "1.5.0",
+   "start_utc": "1994-09-04T17:28:47.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 631139040000000,
+   "end_utc": "2015-09-01T18:39:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "mahadasha",
+   "lord": "venus",
+   "nominal_start_utc": "1995-09-01T22:15:04.679999Z",
+   "parent_id": null,
+   "path": [
+    "venus"
+   ],
+   "period_id": "vim/m1:venus",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 1,
+   "standards_version": "1.5.0",
+   "start_utc": "1995-09-01T22:15:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 105189840000000,
+   "end_utc": "1999-01-01T09:39:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "venus",
+   "nominal_start_utc": "1995-09-01T22:15:04.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "venus"
+   ],
+   "period_id": "vim/m1:venus/a0:venus",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 0,
+   "standards_version": "1.5.0",
+   "start_utc": "1995-09-01T22:15:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 31556952000000,
+   "end_utc": "2000-01-01T15:28:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "sun",
+   "nominal_start_utc": "1999-01-01T09:39:04.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "sun"
+   ],
+   "period_id": "vim/m1:venus/a1:sun",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 1,
+   "standards_version": "1.5.0",
+   "start_utc": "1999-01-01T09:39:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 52594920000000,
+   "end_utc": "2001-09-01T09:10:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "moon",
+   "nominal_start_utc": "2000-01-01T15:28:16.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "moon"
+   ],
+   "period_id": "vim/m1:venus/a2:moon",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 2,
+   "standards_version": "1.5.0",
+   "start_utc": "2000-01-01T15:28:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 36816444000000,
+   "end_utc": "2002-11-01T11:57:40.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mars",
+   "nominal_start_utc": "2001-09-01T09:10:16.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "mars"
+   ],
+   "period_id": "vim/m1:venus/a3:mars",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 3,
+   "standards_version": "1.5.0",
+   "start_utc": "2001-09-01T09:10:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 94670856000000,
+   "end_utc": "2005-11-01T05:25:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "rahu",
+   "nominal_start_utc": "2002-11-01T11:57:40.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "rahu"
+   ],
+   "period_id": "vim/m1:venus/a4:rahu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 4,
+   "standards_version": "1.5.0",
+   "start_utc": "2002-11-01T11:57:40.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 84151872000000,
+   "end_utc": "2008-07-02T04:56:28.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "jupiter",
+   "nominal_start_utc": "2005-11-01T05:25:16.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "jupiter"
+   ],
+   "period_id": "vim/m1:venus/a5:jupiter",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 5,
+   "standards_version": "1.5.0",
+   "start_utc": "2005-11-01T05:25:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 99930348000000,
+   "end_utc": "2011-09-01T19:22:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "saturn",
+   "nominal_start_utc": "2008-07-02T04:56:28.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "saturn"
+   ],
+   "period_id": "vim/m1:venus/a6:saturn",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 6,
+   "standards_version": "1.5.0",
+   "start_utc": "2008-07-02T04:56:28.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 89411364000000,
+   "end_utc": "2014-07-02T15:51:40.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mercury",
+   "nominal_start_utc": "2011-09-01T19:22:16.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "mercury"
+   ],
+   "period_id": "vim/m1:venus/a7:mercury",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 7,
+   "standards_version": "1.5.0",
+   "start_utc": "2011-09-01T19:22:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 36816444000000,
+   "end_utc": "2015-09-01T18:39:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "ketu",
+   "nominal_start_utc": "2014-07-02T15:51:40.679999Z",
+   "parent_id": "vim/m1:venus",
+   "path": [
+    "venus",
+    "ketu"
+   ],
+   "period_id": "vim/m1:venus/a8:ketu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 8,
+   "standards_version": "1.5.0",
+   "start_utc": "2014-07-02T15:51:40.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 189341712000000,
+   "end_utc": "2021-09-01T05:34:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "mahadasha",
+   "lord": "sun",
+   "nominal_start_utc": "2015-09-01T18:39:04.679999Z",
+   "parent_id": null,
+   "path": [
+    "sun"
+   ],
+   "period_id": "vim/m2:sun",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 2,
+   "standards_version": "1.5.0",
+   "start_utc": "2015-09-01T18:39:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 9467085600000,
+   "end_utc": "2015-12-20T08:23:50.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "sun",
+   "nominal_start_utc": "2015-09-01T18:39:04.679999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "sun"
+   ],
+   "period_id": "vim/m2:sun/a0:sun",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 0,
+   "standards_version": "1.5.0",
+   "start_utc": "2015-09-01T18:39:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 15778476000000,
+   "end_utc": "2016-06-19T23:18:26.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "moon",
+   "nominal_start_utc": "2015-12-20T08:23:50.279999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "moon"
+   ],
+   "period_id": "vim/m2:sun/a1:moon",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 1,
+   "standards_version": "1.5.0",
+   "start_utc": "2015-12-20T08:23:50.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 11044933200000,
+   "end_utc": "2016-10-25T19:20:39.479999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mars",
+   "nominal_start_utc": "2016-06-19T23:18:26.279999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "mars"
+   ],
+   "period_id": "vim/m2:sun/a2:mars",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 2,
+   "standards_version": "1.5.0",
+   "start_utc": "2016-06-19T23:18:26.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 28401256800000,
+   "end_utc": "2017-09-19T12:34:56.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "rahu",
+   "nominal_start_utc": "2016-10-25T19:20:39.479999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "rahu"
+   ],
+   "period_id": "vim/m2:sun/a3:rahu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 3,
+   "standards_version": "1.5.0",
+   "start_utc": "2016-10-25T19:20:39.479999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 25245561600000,
+   "end_utc": "2018-07-08T17:14:17.879999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "jupiter",
+   "nominal_start_utc": "2017-09-19T12:34:56.279999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "jupiter"
+   ],
+   "period_id": "vim/m2:sun/a4:jupiter",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 4,
+   "standards_version": "1.5.0",
+   "start_utc": "2017-09-19T12:34:56.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 29979104400000,
+   "end_utc": "2019-06-20T16:46:02.279999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "saturn",
+   "nominal_start_utc": "2018-07-08T17:14:17.879999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "saturn"
+   ],
+   "period_id": "vim/m2:sun/a5:saturn",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 5,
+   "standards_version": "1.5.0",
+   "start_utc": "2018-07-08T17:14:17.879999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 26823409200000,
+   "end_utc": "2020-04-26T03:42:51.479999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mercury",
+   "nominal_start_utc": "2019-06-20T16:46:02.279999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "mercury"
+   ],
+   "period_id": "vim/m2:sun/a6:mercury",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 6,
+   "standards_version": "1.5.0",
+   "start_utc": "2019-06-20T16:46:02.279999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 11044933200000,
+   "end_utc": "2020-08-31T23:45:04.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "ketu",
+   "nominal_start_utc": "2020-04-26T03:42:51.479999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "ketu"
+   ],
+   "period_id": "vim/m2:sun/a7:ketu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 7,
+   "standards_version": "1.5.0",
+   "start_utc": "2020-04-26T03:42:51.479999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 31556952000000,
+   "end_utc": "2021-09-01T05:34:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "venus",
+   "nominal_start_utc": "2020-08-31T23:45:04.679999Z",
+   "parent_id": "vim/m2:sun",
+   "path": [
+    "sun",
+    "venus"
+   ],
+   "period_id": "vim/m2:sun/a8:venus",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 8,
+   "standards_version": "1.5.0",
+   "start_utc": "2020-08-31T23:45:04.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 315569520000000,
+   "end_utc": "2031-09-01T15:46:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "mahadasha",
+   "lord": "moon",
+   "nominal_start_utc": "2021-09-01T05:34:16.679999Z",
+   "parent_id": null,
+   "path": [
+    "moon"
+   ],
+   "period_id": "vim/m3:moon",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 3,
+   "standards_version": "1.5.0",
+   "start_utc": "2021-09-01T05:34:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 26297460000000,
+   "end_utc": "2022-07-02T14:25:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "moon",
+   "nominal_start_utc": "2021-09-01T05:34:16.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "moon"
+   ],
+   "period_id": "vim/m3:moon/a0:moon",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 0,
+   "standards_version": "1.5.0",
+   "start_utc": "2021-09-01T05:34:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 18408222000000,
+   "end_utc": "2023-01-31T15:48:58.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mars",
+   "nominal_start_utc": "2022-07-02T14:25:16.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "mars"
+   ],
+   "period_id": "vim/m3:moon/a1:mars",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 1,
+   "standards_version": "1.5.0",
+   "start_utc": "2022-07-02T14:25:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 47335428000000,
+   "end_utc": "2024-08-01T12:32:46.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "rahu",
+   "nominal_start_utc": "2023-01-31T15:48:58.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "rahu"
+   ],
+   "period_id": "vim/m3:moon/a2:rahu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 2,
+   "standards_version": "1.5.0",
+   "start_utc": "2023-01-31T15:48:58.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 42075936000000,
+   "end_utc": "2025-12-01T12:18:22.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "jupiter",
+   "nominal_start_utc": "2024-08-01T12:32:46.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "jupiter"
+   ],
+   "period_id": "vim/m3:moon/a3:jupiter",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 3,
+   "standards_version": "1.5.0",
+   "start_utc": "2024-08-01T12:32:46.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 49965174000000,
+   "end_utc": "2027-07-02T19:31:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "saturn",
+   "nominal_start_utc": "2025-12-01T12:18:22.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "saturn"
+   ],
+   "period_id": "vim/m3:moon/a4:saturn",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 4,
+   "standards_version": "1.5.0",
+   "start_utc": "2025-12-01T12:18:22.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 44705682000000,
+   "end_utc": "2028-12-01T05:45:58.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "mercury",
+   "nominal_start_utc": "2027-07-02T19:31:16.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "mercury"
+   ],
+   "period_id": "vim/m3:moon/a5:mercury",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 5,
+   "standards_version": "1.5.0",
+   "start_utc": "2027-07-02T19:31:16.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 18408222000000,
+   "end_utc": "2029-07-02T07:09:40.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "ketu",
+   "nominal_start_utc": "2028-12-01T05:45:58.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "ketu"
+   ],
+   "period_id": "vim/m3:moon/a6:ketu",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 6,
+   "standards_version": "1.5.0",
+   "start_utc": "2028-12-01T05:45:58.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 52594920000000,
+   "end_utc": "2031-03-03T00:51:40.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "venus",
+   "nominal_start_utc": "2029-07-02T07:09:40.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "venus"
+   ],
+   "period_id": "vim/m3:moon/a7:venus",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 7,
+   "standards_version": "1.5.0",
+   "start_utc": "2029-07-02T07:09:40.679999Z",
+   "truncated_at_birth": false
+  },
+  {
+   "calculation_status": "success",
+   "duration_microseconds": 15778476000000,
+   "end_utc": "2031-09-01T15:46:16.679999Z",
+   "engine_version": "0.4.0",
+   "level": "antardasha",
+   "lord": "sun",
+   "nominal_start_utc": "2031-03-03T00:51:40.679999Z",
+   "parent_id": "vim/m3:moon",
+   "path": [
+    "moon",
+    "sun"
+   ],
+   "period_id": "vim/m3:moon/a8:sun",
+   "profile_ids": {
+    "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+    "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+    "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+   },
+   "provenance_ids": [
+    "prov.sequence_and_years",
+    "prov.balance",
+    "prov.year_length",
+    "prov.subperiods",
+    "prov.boundaries",
+    "prov.timeline"
+   ],
+   "sequence_index": 8,
+   "standards_version": "1.5.0",
+   "start_utc": "2031-03-03T00:51:40.679999Z",
+   "truncated_at_birth": false
+  }
+ ],
+ "precision": {
+  "balance_fraction_max": null,
+  "balance_fraction_min": null,
+  "birth_time_status": "exact",
+  "envelope_method": null,
+  "first_mahadasha_end_earliest_utc": null,
+  "first_mahadasha_end_latest_utc": null,
+  "moon_longitude_high": null,
+  "moon_longitude_low": null,
+  "nakshatra_boundary_within_interval": null,
+  "pada_boundary_within_interval": null,
+  "starting_lord_stable": null,
+  "uncertainty_seconds": null
+ },
+ "profile_ids": {
+  "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+  "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+  "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+ },
+ "provenance": [
+  {
+   "entry_id": "prov.sequence_and_years",
+   "evidence_label": "source_supported",
+   "item": "Vimshottari lord sequence and Mahadasha years (120-year cycle)",
+   "references": [
+    {
+     "locator": "Ch. 46 v. 12-15 (Kapoor)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "IMAGE_CHECKED_TRANSLATION"
+    },
+    {
+     "locator": "Adhyaya XIX sl. 2",
+     "note": "",
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "verification_level": "OCR_TRANSLATION"
+    }
+   ],
+   "statement": "Sun 6, Moon 10, Mars 7, Rahu 18, Jupiter 16, Saturn 19, Mercury 17, Ketu 7, Venus 20, counted from Krittika; total 120. Supported at translation level."
+  },
+  {
+   "entry_id": "prov.balance",
+   "evidence_label": "engineering_convention",
+   "item": "Balance at birth: DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+   "references": [
+    {
+     "locator": "Vimshottari Dasha, Balance of the first Mahadasha (v1.4.0)",
+     "note": "The locked Pandit Ji standard states the longitude-fraction rule.",
+     "source_id": "docs/ASTROLOGY_STANDARDS.md",
+     "verification_level": "ENGINEERING_STANDARD"
+    },
+    {
+     "locator": "Ch. 46 v. 16, translator's note (Kapoor)",
+     "note": "Modern researchers use the Moon's longitude instead of Panchanga time.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "TRANSLATOR_NOTE"
+    },
+    {
+     "locator": "printed p. 142 worked example",
+     "note": "Translator calls the arc-based balance the correct one; it differs from the Panchanga-time balance by seven days in that example.",
+     "source_id": "SRC-UTTARA-KALAMRITA-SASTRI",
+     "verification_level": "OCR_TRANSLATION"
+    }
+   ],
+   "statement": "remaining_fraction = 1 - fraction of the birth Nakshatra's 13 deg 20 min span already traversed by the Moon's sidereal longitude; balance = remaining_fraction x the starting lord's full Mahadasha years. This is an explicit profile choice; the balance method is a documented source conflict (time-based BPHS Ch. 46 v. 16 versus longitude-based standard) and this result does not resolve it."
+  },
+  {
+   "entry_id": "prov.year_length",
+   "evidence_label": "engineering_convention",
+   "item": "Year length: YEAR_365_2425_FIXED_DAY",
+   "references": [
+    {
+     "locator": "Ch. 46, Ch. 51, Ch. 61 (Kapoor, Vol II)",
+     "note": "No verse read states the year length used for Vimshottari.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "TRANSLATION_LEVEL"
+    }
+   ],
+   "statement": "Fixed-duration year in exact microseconds; no calendar-year or leap-year arithmetic. No verse read states the year length used for Vimshottari."
+  },
+  {
+   "entry_id": "prov.subperiods",
+   "evidence_label": "engineering_convention",
+   "item": "Sub-periods: DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+   "references": [
+    {
+     "locator": "Ch. 51 v. 1-2 and Ch. 61 v. 1 (Kapoor)",
+     "note": "The proportional formula is source-supported at translation level. How the birth-balance Mahadasha is subdivided is not stated in the sources read; the full-parent treatment is a Pandit Ji engineering convention.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR_TRANSLATION_IN_REGISTRY"
+    }
+   ],
+   "statement": "child duration = full nominal parent duration x child lord years / 120, children in the canonical sequence starting from the parent lord. For the birth-balance Mahadasha the sub-periods are those of the full, untruncated Mahadasha; sub-periods that ended before birth are omitted and the one containing birth starts at birth (truncated_at_birth)."
+  },
+  {
+   "entry_id": "prov.boundaries",
+   "evidence_label": "engineering_convention",
+   "item": "Boundary convention",
+   "references": [],
+   "statement": "Half-open intervals [start, end); a shared boundary belongs to the later period. Nakshatra classification follows standards v1.4.1. No classical source read states an inclusivity rule."
+  },
+  {
+   "entry_id": "prov.timeline",
+   "evidence_label": "derived_calculation",
+   "item": "Period boundaries",
+   "references": [],
+   "statement": "Exact rational arithmetic in UTC microseconds from the birth instant; each boundary is floored to a whole microsecond once."
+  }
+ ],
+ "reason_code": null,
+ "standards_version": "1.5.0",
+ "starting": {
+  "elapsed_fraction": {
+   "denominator": 1407374883553280,
+   "numerator": 358880595306087
+  },
+  "lord": "ketu",
+  "lord_full_years": 7,
+  "nakshatra": "magha",
+  "near_boundary": false,
+  "normalized_longitude": 123.4,
+  "pada": 2,
+  "raw_moon_longitude": 123.4,
+  "remaining_duration_microseconds": 164569504679999,
+  "remaining_duration_microseconds_exact": {
+   "denominator": 549755813888,
+   "numerator": 90473041986498373222715625
+  },
+  "remaining_fraction": {
+   "denominator": 1407374883553280,
+   "numerator": 1048494288247193
+  }
+ },
+ "status": "success",
+ "system_id": "vimshottari",
+ "time_base": "utc",
+ "timeline_end_utc": "2031-09-01T15:46:16.679999Z",
+ "timeline_start_utc": "1990-06-15T04:30:00Z",
+ "warnings": []
+}

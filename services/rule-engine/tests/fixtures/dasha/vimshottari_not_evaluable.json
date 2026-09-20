@@ -1,0 +1,39 @@
+{
+ "birth_record": null,
+ "birth_utc": null,
+ "boundary_convention": "half_open_start_inclusive_end_exclusive",
+ "depth": null,
+ "detail": null,
+ "engine_version": "0.4.0",
+ "horizon_years": null,
+ "periods": [],
+ "precision": {
+  "balance_fraction_max": null,
+  "balance_fraction_min": null,
+  "birth_time_status": "approximate",
+  "envelope_method": null,
+  "first_mahadasha_end_earliest_utc": null,
+  "first_mahadasha_end_latest_utc": null,
+  "moon_longitude_high": 13.4,
+  "moon_longitude_low": 13.2,
+  "nakshatra_boundary_within_interval": true,
+  "pada_boundary_within_interval": true,
+  "starting_lord_stable": false,
+  "uncertainty_seconds": 600.0
+ },
+ "profile_ids": {
+  "balance_profile_id": "DASHA_STANDARD_V1_BALANCE_LONGITUDE",
+  "subperiod_profile_id": "DASHA_SUBPERIOD_PROPORTIONAL_FULL_PARENT_V1",
+  "year_length_profile_id": "YEAR_365_2425_FIXED_DAY"
+ },
+ "provenance": [],
+ "reason_code": "starting_lord_ambiguous",
+ "standards_version": "1.5.0",
+ "starting": null,
+ "status": "not_evaluable",
+ "system_id": "vimshottari",
+ "time_base": "utc",
+ "timeline_end_utc": null,
+ "timeline_start_utc": null,
+ "warnings": []
+}

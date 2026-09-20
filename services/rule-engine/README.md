@@ -20,6 +20,10 @@ Implemented (`Phases.md` Phase 6, first tranche; methodology in `docs/ASTROLOGY_
 
 The rule engine consumes facts only. It never computes astronomy, never calls the network or an AI model, and never resolves a source conflict by picking a winner. Anything owned by a later phase (Shadbala, Dasha, partial drishti, Jaimini, special Lagnas, upagraha calculation, D27 ...) returns a structured `NOT_EVALUABLE` reason.
 
+## Dasha evidence (Phase 7)
+
+`RuleEngine.evaluate_kundli(kundli, dasha_facts)` accepts the JSON form of an `astro-engine` `DashaFacts` and records it in the `EvidenceBundle` as an additive, optional `dasha` section (status, profile IDs, boundary convention, precision, starting Nakshatra/Pada/lord, every period boundary, labelled provenance, and a hash of the facts). The section is omitted when no Dasha facts are given, so bundles built without it serialize and hash exactly as before; the bundle schema version is unchanged. The rule engine never calculates a Dasha, and no shipped rule reads Dasha facts yet, so the reserved `requires_dasha` reason is not emitted by any current rule.
+
 ## Local development
 
 ```

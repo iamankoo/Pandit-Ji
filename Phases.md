@@ -295,7 +295,45 @@ Transit State
 Relevant Events
 ```
 
-Deliverable: dynamic transit engine.
+Phase 8 produces **deterministic transit facts and their provenance** (the natal reference, each planet's sign, degree, speed and retrograde state, structural relations to the natal chart, when a state changes, and the Sade Sati sign-band timeline). It does **not** interpret them: "Transit-based predictions" and "Transit alerts/readings" (`features.md` §7) belong to Phase 12 (knowledge), Phase 15 (agent), Phase 17 (life-domain intelligence) and Phase 20 (notifications). "Relevant Events" means the engineering-defined structural events below, not judged significance.
+
+Dependencies:
+
+- Phase 4 (Swiss Ephemeris positions, speed and retrograde; UTC time resolution; the Mean Node default and True Node alternate) and Phase 5 (sign classification, Nakshatra classification, graha drishti, the Kundli as the natal reference)
+- Phase 7 conventions (UTC canonical, half-open intervals, the EXACT / APPROXIMATE / NOT_EVALUABLE precision model, labelled provenance)
+- Phase 6 consumes transit facts through the evidence bundle; the rule engine never calculates a transit
+
+Inputs: a natal reference (the Moon's sidereal longitude, its precision, and for an exact natal time the Lagna and the natal planet longitudes), a UTC instant and/or a UTC window, methodology profile IDs, and the Phase 4 calculation configuration.
+
+Outputs: a `TransitFacts` result (system, status and reason code, profile IDs, boundary convention, configuration, natal summary, an accuracy block, an optional instant snapshot with per-planet state, favourable-set readings, Vedha facts and sign-based contacts, an optional window with events, an optional Sade Sati section, warnings, labelled provenance) and an additive optional `transit` section in the Phase 6 evidence bundle.
+
+Methodology: `docs/ASTROLOGY_STANDARDS.md` §Transit / Gochar standards (v1.6.0, TR-01 to TR-15). Default reference is the natal Moon sign (`TRANSIT_REF_MOON_SIGN`); the Lagna is an optional engineering-convention fact. The favourable-house readings of Phaladeepika, Brihat Samhita, Brihat Jataka and a BPHS-derived reading are separate profiles; the Moon-from-Moon disagreement is preserved (`NOT_EVALUABLE(reading_ambiguous)`). Vedha is a Phaladeepika-specific structural profile. Rahu and Ketu are single-source and kept separate. Sade Sati is a `MODERN_TRADITION` sign-based profile, not a classical rule.
+
+Events (all Pandit Ji engineering conventions): sign ingress (including backward re-entry), retrograde and direct stations, and, opt-in, Nakshatra ingress; transit-to-natal contacts are sign-based only (same-sign conjunction and Phase 5 graha drishti).
+
+Limits: a window of at most 200 years and at most 50,000 events per request.
+
+Exclusions:
+
+- Effect or prediction text, good or bad verdicts, remedies, alerts, notifications and any AI-generated interpretation
+- Ashtakavarga scoring and transit scoring by bindus (Phase 9), Sarvatobhadra Chakra, Latta, half-sign or decanate effectiveness
+- Degree-based or orb-based contacts, applying and separating aspects
+- Dhaiya, Ashtama Shani and degree-based Sade Sati variants (reserved profile IDs only)
+- Birth-time rectification, HTTP endpoints and database tables (Phase 18)
+
+Exit criteria:
+
+- Transit states, events and the Sade Sati timeline are implemented with explicit profile IDs, configuration and ephemeris mode persisted in every result
+- UTC is canonical; sign, Nakshatra and window intervals are half-open and deterministic; ingress and station instants are documented as numerical solutions with a stated tolerance and are never called exact
+- Source conflicts (Moon from the Moon, Rahu and Ketu, the Venus Vedha wording) are preserved and returned as `NOT_EVALUABLE` where they prevent a single answer
+- Transit facts are recorded in the evidence bundle with provenance, and Phase 4, 5, 6 and 7 behaviour is unchanged
+- Tests cover synthetic-motion ingress, stations and retrograde re-entry, boundaries, source readings, Vedha, nodes, Sade Sati segments and episodes, precision and limits, DST and UTC conversion, serialization and hashing, integration and regression of all earlier suites
+
+Test requirements: unit, boundary, invariant (segments tile, events ordered and unique, determinism), source-reading and conflict, node, precision and limit, timezone and UTC conversion, serialization round trip, evidence-bundle integration, an independent JPL Horizons comparison fixture (engineering evidence, 42 samples) and regression of the existing suites.
+
+Known limitations: Moshier mode unless Swiss Ephemeris data files are configured (about 0.4″ for planets and about 5″ for the Moon in tropical longitude against JPL Horizons in a 42-sample comparison; seconds at a sign boundary and minutes near a station); the Lahiri ayanamsa value and the sidereal frame are not independently verified (the implied ayanamsa differs from `get_ayanamsa_degrees` by up to about 15.6″, about 1.5 hours of Saturn's motion) and published ingress times differ by hours across sources; no Sanskrit-level verification of any Gochar source; Vedha and the node readings are single-source.
+
+Deliverable: dynamic transit engine (facts and provenance; no interpretation).
 
 ## Phase 9 — Advanced Astrology Systems
 

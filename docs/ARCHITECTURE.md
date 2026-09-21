@@ -144,7 +144,7 @@ astro_engine/
   strength/         # dignity, exaltation/debilitation, combustion, retrograde, shadbala (later)
   ashtakvarga/
   dashas/           # vimshottari (mahadasha/antardasha/pratyantar), timeline builder, period lookup (Phase 7)
-  transits/         # gochar, sade sati, transit-to-natal aspecting
+  transits/         # gochar states, ingress/station events, sade sati (modern tradition), sign-based transit-to-natal contacts (Phase 8)
   panchang/         # tithi, vara, nakshatra, yoga, karana, hora, choghadiya, rahu kaal
   muhurta/
   compatibility/    # ashtakoot/guna milan scoring
@@ -260,7 +260,7 @@ User: "Will my career improve next year?"
 |---|---|---|---|
 | `ChartRequest` / `ChartResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config` + requested varga(s). Output: positions/houses/nakshatra/dignity/etc. for D1 and requested divisional charts. |
 | `DashaRequest` / `DashaResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config`. Output: Mahadasha/Antardasha/Pratyantar timeline (see `docs/ASTROLOGY_STANDARDS.md` §Phase 7 methodology lock). Phase 7 realizes it as `DashaRequest` (Moon longitude, UTC birth instant, profile IDs, birth-time precision) and `DashaFacts` (status, profile IDs, period tree in UTC, labelled provenance); `rule-engine` records `DashaFacts` in the evidence bundle and never calculates a Dasha. |
-| `TransitRequest` / `TransitResponse` | `astro-engine` | Yes | Input: natal chart reference + date/window. Output: transit positions + transit-to-natal aspects + Sade Sati windows where applicable. |
+| `TransitRequest` / `TransitResponse` | `astro-engine` | Yes | Input: natal chart reference + date/window. Output: transit positions + transit-to-natal aspects + Sade Sati windows where applicable. Phase 8 realises it as `TransitRequest` (a `NatalReference`, a UTC instant and/or window, methodology profile IDs, the Phase 4 calculation configuration) and `TransitFacts` (status, profile IDs, accuracy block, instant snapshot, window events, Sade Sati segments and episodes, labelled provenance); the transit-to-natal relations are the sign-based contacts of `docs/ASTROLOGY_STANDARDS.md` §Transit / Gochar standards TR-07 (no degree angles); `rule-engine` records `TransitFacts` in the evidence bundle and never calculates a transit. No HTTP endpoint or table exists before Phase 18. |
 | `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |
 | `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |
 | `NumerologyRequest` / `NumerologyResponse` | `astro-engine` | Yes | Input: birth date (+ name, if name-numerology requested) + system config. Output: Moolank/Bhagyank/name-number per `docs/ASTROLOGY_STANDARDS.md`. |
@@ -408,7 +408,7 @@ Candidates and treatment:
 | Cache candidate | Key | TTL/invalidation | Notes |
 |---|---|---|---|
 | Panchang calculations | `(date, location, config_version)` | Long TTL (Panchang for a past/present date+location+config never changes) | Effectively permanent cache once computed; invalidated only by a config version change. |
-| Transit states | `(natal_chart_id, date, config_version)` | Short TTL for "current" transit queries (changes daily), long/permanent for past dates | |
+| Transit states | `(natal_chart_id, date, config_version)`; Phase 8 adds the methodology profile IDs and engine version to the key (`docs/ASTROLOGY_STANDARDS.md` TR-13) | Short TTL for "current" transit queries (changes daily), long/permanent for past dates | Design only until Phase 18. |
 | Repeated chart requests | `(birth_profile_id, calc_config_id, varga_set)` | Effectively permanent (immutable per ADR-004's schema design); cache is a read-through in front of the `charts` schema, not a replacement for it | |
 | Knowledge retrieval | `(query_hash, knowledge_version)` | Medium TTL; invalidated on knowledge/embedding version bump | |
 | Session/context data | session ID | Session-lifetime TTL | |
@@ -792,7 +792,7 @@ The subsystems, engines, and services named throughout this document are built i
 ## 31. Deterministic vs. AI-Driven — Explicit Split
 
 **Deterministic (`astro-engine`/`rule-engine` only — the AI Reasoner never computes or asserts these):**
-Planetary positions & degrees · Ascendant/houses/cusps · Rashi/Nakshatra/Pada · All divisional charts · Dignity/exaltation/debilitation/combustion/retrograde flags · Ashtakvarga bindus · Vimshottari Mahadasha/Antardasha/Pratyantar dates · Transit positions & transit-to-natal angles · Sade Sati windows · Panchang elements · Muhurta windows · Ashtakoot/Guna Milan scores · Numerology numbers · Yoga/Dosha trigger set.
+Planetary positions & degrees · Ascendant/houses/cusps · Rashi/Nakshatra/Pada · All divisional charts · Dignity/exaltation/debilitation/combustion/retrograde flags · Ashtakvarga bindus · Vimshottari Mahadasha/Antardasha/Pratyantar dates · Transit positions, ingress and station instants & sign-based transit-to-natal contacts (Phase 8; degree angles are not produced) · Sade Sati segments (a `MODERN_TRADITION` profile) · Panchang elements · Muhurta windows · Ashtakoot/Guna Milan scores · Numerology numbers · Yoga/Dosha trigger set.
 
 **AI-driven:**
 Natural-language intent/domain understanding · Conversational flow & follow-ups · Turning an evidence bundle into coherent, personalized, language-appropriate narrative · Deciding which of many triggered rules matter most to *this* question · Remedy phrasing · Voice turn-taking.

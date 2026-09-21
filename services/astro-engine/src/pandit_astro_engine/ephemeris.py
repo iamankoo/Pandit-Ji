@@ -37,6 +37,14 @@ SWE_BODY_ID = {
     "saturn": swe.SATURN,
 }
 
+#: Swiss Ephemeris body IDs for the lunar node conventions (keyed by the
+#: `NodeConvention` value). Public so that consumers (Phase 8 transit position
+#: provider) never need their own `swisseph` import.
+SWE_NODE_ID = {
+    "mean": swe.MEAN_NODE,
+    "true": swe.TRUE_NODE,
+}
+
 _EPHE_PATH_CONFIGURED: str | None = None
 
 

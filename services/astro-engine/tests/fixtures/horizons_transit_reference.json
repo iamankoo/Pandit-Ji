@@ -1,0 +1,311 @@
+{
+ "description": "Independent reference longitudes for the Phase 8 transit engine: NASA/JPL Horizons, geocentric apparent ecliptic longitude of date (quantity 31), used only as ENGINEERING EVIDENCE for planetary longitude (not the Lahiri ayanamsa).",
+ "source": "https://ssd.jpl.nasa.gov/api/horizons.api",
+ "target_ephemeris": "Horizons default ephemeris selection (Earth centre: DE441; Saturn target source: sat441l, as printed in the Horizons header; the sources of the other bodies were not recorded)",
+ "retrieved_on": "2026-09-21",
+ "parameters": {
+  "CENTER": "500@399",
+  "EPHEM_TYPE": "OBSERVER",
+  "QUANTITIES": "31",
+  "ANG_FORMAT": "DEG",
+  "TIME_TYPE": "UT",
+  "TLIST": "Julian Day UT (calendar JD, treated as UT)"
+ },
+ "sample_count": 42,
+ "samples": [
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 340.111346
+  },
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 112.9847396
+  },
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 220.3747449
+  },
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 178.5297247
+  },
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 289.4883601
+  },
+  {
+   "body": "sun",
+   "horizons_command": "10",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 99.7300134
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 118.878973
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 83.9020504
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 175.5221351
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 297.3643576
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 234.0081803
+  },
+  {
+   "body": "moon",
+   "horizons_command": "301",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 133.1541851
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 189.1792094
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 113.7647544
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 244.0522462
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 116.0656362
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 98.9415758
+  },
+  {
+   "body": "mars",
+   "horizons_command": "499",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 79.5599513
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 319.5825968
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 139.4630188
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 230.7687422
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 197.2413372
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 292.5643803
+  },
+  {
+   "body": "mercury",
+   "horizons_command": "199",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 85.5405048
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 320.4410202
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 314.5006314
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 353.9223326
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 137.8308754
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 181.7747681
+  },
+  {
+   "body": "jupiter",
+   "horizons_command": "599",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 79.7147286
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 304.4761083
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 70.0092892
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 212.6084188
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 216.0025745
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 254.9506603
+  },
+  {
+   "body": "venus",
+   "horizons_command": "299",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 59.5095361
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 166.5231874
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 231.5529403
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 191.6941607
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 12.3099265
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2466163.65625,
+   "horizons_time_ut": "2040-Jan-10 03:45:00.000",
+   "ecliptic_longitude_of_date_deg": 191.9111738
+  },
+  {
+   "body": "saturn",
+   "horizons_command": "699",
+   "julian_day_ut": 2473641.270833333,
+   "horizons_time_ut": "2060-Jun-30 18:30:00.000",
+   "ecliptic_longitude_of_date_deg": 71.1664308
+  }
+ ]
+}

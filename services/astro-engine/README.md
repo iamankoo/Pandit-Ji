@@ -1,10 +1,10 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phase 4 + Phase 5). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7 and 8). Canonical service name — do not rename to `astrology-engine`.
 
 **Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
-**Not responsible for**: Vimshottari Dasha, transits, Yoga/Dosha rule evaluation, Ashtakvarga, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), interpretation, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
+**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakvarga scoring, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha or transit facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
 ## Purpose
 
@@ -111,6 +111,28 @@ timeline.transitions(DashaLevel.ANTARDASHA)  # boundaries between consecutive pe
 - **Failures** are structured (`status` plus `reason_code`), never guessed and never a stack trace.
 - **Size**: a full three-level timeline is about 900 period nodes and roughly 0.7 MB as JSON; the evidence bundle records a compact form of each node.
 
+## Transits (Phase 8)
+
+`pandit_astro_engine.transits` calculates transit / Gochar facts with provenance: each planet's sign, degree, Nakshatra, speed and retrograde state; houses counted from the natal Moon (and, opt-in, the natal Lagna); favourable-house readings kept per source; the Phaladeepika-specific Vedha fact; sign-based contacts with natal planets; sign ingress, station and (opt-in) Nakshatra ingress events; and the Sade Sati sign-band timeline. It produces no interpretation: no good or bad verdict, prediction, remedy or alert. Ashtakavarga scoring, degree or orb contacts, Dhaiya, Ashtama Shani and degree-based Sade Sati variants are out of scope.
+
+```python
+import datetime as dt
+from pandit_astro_engine.transits import NatalReference, TransitCalculationService
+
+natal = NatalReference.from_kundli(kundli)  # kundli: the Phase 5 result
+service = TransitCalculationService()
+now = service.snapshot(natal, dt.datetime(2026, 9, 21, 12, tzinfo=dt.timezone.utc))
+window = service.events(natal, start_utc, end_utc)  # ingress and station events
+sade = service.sade_sati(natal, start_utc, end_utc)  # MODERN_TRADITION segments and episodes
+now.snapshot.states, now.snapshot.favourable, now.snapshot.vedha, now.snapshot.contacts
+```
+
+- **Methodology** (`docs/ASTROLOGY_STANDARDS.md` v1.6.0, TR-01 to TR-15): default reference `TRANSIT_REF_MOON_SIGN`; four favourable-house readings (Phaladeepika, Brihat Samhita, Brihat Jataka, and a BPHS-derived reading) kept separately, with the Moon-from-Moon disagreement returned as `NOT_EVALUABLE(reading_ambiguous)`; Rahu and Ketu single-source and never consolidated; Vedha is a Phaladeepika-specific structural fact; Sade Sati is `SADE_SATI_SIGN_BASED_MODERN_V1`, a modern-tradition construct, not a classical rule.
+- **Time**: UTC is canonical; sign, Nakshatra and window intervals are half-open `[start, end)`; ingress and station instants are found by bisection to 1e-8 day on a scan grid anchored to absolute multiples of the step, so an event's instant does not depend on the window that contains it.
+- **Accuracy**: instants are numerical solutions and are never exact. Every result records the ephemeris mode, the ayanamsa, the solver tolerance and an accuracy disclosure (an independent 42-sample JPL Horizons comparison, engineering evidence only, and the ayanamsa-sensitivity note).
+- **Limits**: a window of at most 200 years and at most 50,000 events; larger requests are `NOT_EVALUABLE` with no partial result.
+- **Failures** are structured (`status` plus `reason_code`), never guessed and never a stack trace. An approximate natal time needs an explicit Moon range; a range reaching a sign boundary is `NOT_EVALUABLE(natal_moon_sign_ambiguous)`.
+
 ## Supported bodies
 
 Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase.
@@ -169,7 +191,7 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 pip install -e ../../packages/contracts
 pip install -e ../../packages/shared
 pip install -e ".[dev]"
-pytest                        # 191 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phase 4 + Phase 5)
+pytest                        # 788 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phases 4, 5, 7 and 8)
 ruff check .
 ruff format --check .
 mypy src

@@ -17,10 +17,15 @@ Phase 7 (Dasha & Timing Engine): Vimshottari Dasha to the Pratyantar level
 as deterministic temporal facts with provenance (`pandit_astro_engine.dashas`);
 see `docs/ASTROLOGY_STANDARDS.md` section "Phase 7 methodology lock".
 
-Transit, Yoga/Dosha rule evaluation, Dasha interpretation, narration, and
-any AI/LLM involvement remain out of scope here and belong to later
-phases and other services (`rule-engine`, `agent`, `knowledge`) -- see
-each phase's boundary section in `Phases.md`.
+Phase 8 (Transit / Gochar Engine): deterministic transit facts, ingress and
+station events and the Sade Sati sign-band timeline (a MODERN_TRADITION
+profile) with provenance (`pandit_astro_engine.transits`); see
+`docs/ASTROLOGY_STANDARDS.md` section "Transit / Gochar standards".
+
+Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
+scoring, narration, and any AI/LLM involvement remain out of scope here and
+belong to later phases and other services (`rule-engine`, `agent`,
+`knowledge`) -- see each phase's boundary section in `Phases.md`.
 
 This package remains a pure library: no HTTP, no database access, no
 dependency on `agent`, `rule-engine`, `knowledge`, or `verification`.

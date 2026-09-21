@@ -31,6 +31,7 @@ from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
 from pandit_rule_engine.loader import Ruleset
 from pandit_rule_engine.results import Provenance, RuleResult
+from pandit_rule_engine.transit_evidence import TransitEvidence
 from pandit_rule_engine.vocab import ALL_BODIES, Reason, Sign, Status
 
 BUNDLE_VERSION = "1"
@@ -110,13 +111,17 @@ class EvidenceBundle(_Model):
     #: Omitted from the serialized bundle when absent, so a bundle built without
     #: Dasha facts serializes and hashes exactly as before.
     dasha: DashaEvidence | None = None
+    #: Additive, optional (Phase 8): transit / Gochar facts calculated by astro-engine.
+    #: Omitted from the serialized bundle when absent, exactly like `dasha`.
+    transit: TransitEvidence | None = None
     bundle_hash: str
 
     @model_serializer(mode="wrap")
-    def _omit_absent_dasha(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
+    def _omit_absent_sections(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
         data: dict[str, Any] = handler(self)
-        if data.get("dasha") is None:
-            data.pop("dasha", None)
+        for optional in ("dasha", "transit"):
+            if data.get(optional) is None:
+                data.pop(optional, None)
         return data
 
     def canonical_json(self) -> str:
@@ -202,6 +207,7 @@ def build_bundle(
     derived_facts: dict[str, Any],
     rule_engine_version: str,
     dasha: DashaEvidence | None = None,
+    transit: TransitEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -225,6 +231,7 @@ def build_bundle(
         "dependencies": _dependencies(results),
         "source_profiles": _source_profiles(results),
         "dasha": dasha,
+        "transit": transit,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

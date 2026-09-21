@@ -1,0 +1,1353 @@
+{
+ "system_id": "transit_gochara",
+ "status": "success",
+ "reason_code": null,
+ "detail": null,
+ "standards_version": "1.6.0",
+ "engine_version": "0.4.0",
+ "swisseph_version": "2.10.03",
+ "boundary_convention": "half_open_start_inclusive_end_exclusive",
+ "time_base": "utc",
+ "configuration": {
+  "calculation": {
+   "zodiac": "sidereal",
+   "ayanamsa": "lahiri",
+   "node_convention": "mean",
+   "combustion_standard": "brihat_parashara_hora_shastra_v1",
+   "allow_moshier_fallback": true
+  },
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "sade_sati_profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "bodies": [
+   "saturn",
+   "jupiter",
+   "moon",
+   "rahu"
+  ],
+  "event_kinds": [
+   "sign_ingress",
+   "station_retrograde",
+   "station_direct"
+  ],
+  "include_lagna_fact": true,
+  "include_vedha": true,
+  "include_contacts": true,
+  "include_sade_sati": true
+ },
+ "profile_ids": {
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "favourable_reading_ids": [
+   "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+  ],
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "contact_profile_id": "TRANSIT_CONTACT_SIGN_BASED_V1",
+  "events_profile_id": "TRANSIT_EVENTS_ENGINEERING_V1",
+  "boundary_profile_id": "TRANSIT_BOUNDARY_HALF_OPEN_V1",
+  "sade_sati_profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "lagna_profile_id": "TRANSIT_REF_LAGNA_SIGN"
+ },
+ "natal": {
+  "precision": "exact",
+  "moon_sign": "pisces",
+  "moon_sign_status": "available",
+  "moon_sign_reason": null,
+  "lagna_sign": "cancer",
+  "natal_planet_count": 3
+ },
+ "accuracy": {
+  "instants_are_exact": false,
+  "ephemeris_modes": [
+   "moshier",
+   "swiss_ephemeris_files"
+  ],
+  "zodiac": "sidereal",
+  "ayanamsa": "lahiri",
+  "node_convention": "mean",
+  "search_tolerance_seconds": 0.000864,
+  "time_scale_note": "UTC instants map to Julian Day UT with the Phase 4 conversion; the sub-second UT1-UTC difference is not modelled",
+  "ayanamsa_sensitivity_note": "a sidereal ingress instant depends on the ayanamsa value; published ingress times for the same event differ by hours between sources, so published times are not used as references",
+  "engineering_evidence": "engineering_evidence: 42-sample comparison of the Swiss Ephemeris tropical longitude of date (Moshier mode, through the Phase 4 adapter) with JPL Horizons (geocentric apparent ecliptic longitude of date), 7 bodies x 6 dates 1950-2060, retrieved 2026-09-21; maximum differences 0.26 arcsec (Sun), 0.19 (Mars), 0.15 (Mercury, Venus), 0.38 (Jupiter), 0.27 (Saturn), 4.78 (Moon); planetary longitude only, the Lahiri ayanamsa value is not independently verified, and the ayanamsa implied by the sidereal calculation differs from get_ayanamsa_ut by up to about 15.6 arcsec (nutation scale, about 1.5 hours of Saturn's motion; not investigated)",
+  "evidence_label": "engineering_evidence"
+ },
+ "snapshot": {
+  "at_utc": "2025-06-01T18:00:00Z",
+  "julian_day_ut": 2460828.250002602,
+  "states": [
+   {
+    "body": "saturn",
+    "longitude": 336.3226967748019,
+    "sign": "pisces",
+    "degree_in_sign": 6.322696774801898,
+    "nakshatra": "uttara_bhadrapada",
+    "pada": 1,
+    "speed_longitude": 0.06524531259622399,
+    "retrograde": false,
+    "ephemeris_mode": "moshier",
+    "house_from_moon": 1,
+    "house_from_lagna": 9
+   },
+   {
+    "body": "jupiter",
+    "longitude": 63.95491342960143,
+    "sign": "gemini",
+    "degree_in_sign": 3.954913429601433,
+    "nakshatra": "mrigashira",
+    "pada": 4,
+    "speed_longitude": 0.22408294138770915,
+    "retrograde": false,
+    "ephemeris_mode": "moshier",
+    "house_from_moon": 4,
+    "house_from_lagna": 12
+   },
+   {
+    "body": "moon",
+    "longitude": 121.01030372746591,
+    "sign": "leo",
+    "degree_in_sign": 1.0103037274659101,
+    "nakshatra": "magha",
+    "pada": 1,
+    "speed_longitude": 12.81259388840295,
+    "retrograde": false,
+    "ephemeris_mode": "moshier",
+    "house_from_moon": 6,
+    "house_from_lagna": 2
+   },
+   {
+    "body": "rahu",
+    "longitude": 329.2494477247962,
+    "sign": "aquarius",
+    "degree_in_sign": 29.249447724796198,
+    "nakshatra": "purva_bhadrapada",
+    "pada": 3,
+    "speed_longitude": -0.05299199656126461,
+    "retrograde": true,
+    "ephemeris_mode": "swiss_ephemeris_files",
+    "house_from_moon": 12,
+    "house_from_lagna": 8
+   }
+  ],
+  "moon_relative_status": "available",
+  "moon_relative_reason": null,
+  "favourable": [
+   {
+    "body": "saturn",
+    "house_from_moon": 1,
+    "status": "not_in_favourable_set",
+    "reason_code": null,
+    "readings": [
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+      "label": "derived_calculation",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+     }
+    ],
+    "attesting_reading_ids": [
+     "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+     "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+     "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+     "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+    ]
+   },
+   {
+    "body": "jupiter",
+    "house_from_moon": 4,
+    "status": "not_in_favourable_set",
+    "reason_code": null,
+    "readings": [
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+      "label": "derived_calculation",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+     }
+    ],
+    "attesting_reading_ids": [
+     "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+     "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+     "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+     "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+    ]
+   },
+   {
+    "body": "moon",
+    "house_from_moon": 6,
+    "status": "not_evaluable",
+    "reason_code": "reading_ambiguous",
+    "readings": [
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "label": "source_supported",
+      "in_favourable_set": true,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "label": "source_supported",
+      "in_favourable_set": true,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": false,
+      "verification_level": "IMAGE-TRANSLATION"
+     },
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+      "label": "derived_calculation",
+      "in_favourable_set": true,
+      "single_source": false,
+      "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+     }
+    ],
+    "attesting_reading_ids": []
+   },
+   {
+    "body": "rahu",
+    "house_from_moon": 12,
+    "status": "not_evaluable",
+    "reason_code": "node_reading_single_source",
+    "readings": [
+     {
+      "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "label": "source_supported",
+      "in_favourable_set": false,
+      "single_source": true,
+      "verification_level": "IMAGE-TRANSLATION"
+     }
+    ],
+    "attesting_reading_ids": []
+   }
+  ],
+  "vedha": [
+   {
+    "body": "moon",
+    "house_from_moon": 6,
+    "profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+    "status": "not_evaluable",
+    "reason_code": "node_participation_unspecified",
+    "vedha_house": 12,
+    "vedha_sign": "aquarius",
+    "vedha_present": null,
+    "occupants": [],
+    "exempt_occupants": [],
+    "node_occupants": [
+     "rahu"
+    ],
+    "warnings": []
+   },
+   {
+    "body": "rahu",
+    "house_from_moon": 12,
+    "profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+    "status": "not_evaluable",
+    "reason_code": "not_specified_by_source",
+    "vedha_house": null,
+    "vedha_sign": null,
+    "vedha_present": null,
+    "occupants": [],
+    "exempt_occupants": [],
+    "node_occupants": [],
+    "warnings": []
+   }
+  ],
+  "contacts_status": "available",
+  "contacts_reason": null,
+  "contacts": [
+   {
+    "transit_body": "saturn",
+    "natal_body": "moon",
+    "kind": "conjunction",
+    "aspect_house_offset": null,
+    "transit_sign": "pisces",
+    "natal_sign": "pisces"
+   },
+   {
+    "transit_body": "saturn",
+    "natal_body": "saturn",
+    "kind": "conjunction",
+    "aspect_house_offset": null,
+    "transit_sign": "pisces",
+    "natal_sign": "pisces"
+   },
+   {
+    "transit_body": "moon",
+    "natal_body": "sun",
+    "kind": "conjunction",
+    "aspect_house_offset": null,
+    "transit_sign": "leo",
+    "natal_sign": "leo"
+   },
+   {
+    "transit_body": "rahu",
+    "natal_body": "sun",
+    "kind": "aspect",
+    "aspect_house_offset": 7,
+    "transit_sign": "aquarius",
+    "natal_sign": "leo"
+   }
+  ],
+  "lagna_status": "available",
+  "lagna_reason": null,
+  "sade_sati": {
+   "profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+   "in_band": true,
+   "phase": 2
+  }
+ },
+ "window": {
+  "start_utc": "2025-01-01T00:00:00Z",
+  "end_utc": "2025-03-01T00:00:00Z",
+  "start_snapshot": {
+   "at_utc": "2025-01-01T00:00:00Z",
+   "julian_day_ut": 2460676.5000021323,
+   "states": [
+    {
+     "body": "saturn",
+     "longitude": 320.3177077800386,
+     "sign": "aquarius",
+     "degree_in_sign": 20.317707780038575,
+     "nakshatra": "purva_bhadrapada",
+     "pada": 1,
+     "speed_longitude": 0.07554252331774555,
+     "retrograde": false,
+     "ephemeris_mode": "moshier",
+     "house_from_moon": 12,
+     "house_from_lagna": 8
+    },
+    {
+     "body": "jupiter",
+     "longitude": 49.0091584436992,
+     "sign": "taurus",
+     "degree_in_sign": 19.0091584436992,
+     "nakshatra": "rohini",
+     "pada": 3,
+     "speed_longitude": -0.1065458121007015,
+     "retrograde": true,
+     "ephemeris_mode": "moshier",
+     "house_from_moon": 3,
+     "house_from_lagna": 11
+    },
+    {
+     "body": "moon",
+     "longitude": 269.70695270228026,
+     "sign": "sagittarius",
+     "degree_in_sign": 29.70695270228026,
+     "nakshatra": "uttara_ashadha",
+     "pada": 1,
+     "speed_longitude": 13.444072897979076,
+     "retrograde": false,
+     "ephemeris_mode": "moshier",
+     "house_from_moon": 10,
+     "house_from_lagna": 6
+    },
+    {
+     "body": "rahu",
+     "longitude": 337.2909817041792,
+     "sign": "pisces",
+     "degree_in_sign": 7.290981704179217,
+     "nakshatra": "uttara_bhadrapada",
+     "pada": 2,
+     "speed_longitude": -0.05299199696837561,
+     "retrograde": true,
+     "ephemeris_mode": "swiss_ephemeris_files",
+     "house_from_moon": 1,
+     "house_from_lagna": 9
+    }
+   ],
+   "moon_relative_status": "available",
+   "moon_relative_reason": null,
+   "favourable": [
+    {
+     "body": "saturn",
+     "house_from_moon": 12,
+     "status": "not_in_favourable_set",
+     "reason_code": null,
+     "readings": [
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+       "label": "derived_calculation",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+      }
+     ],
+     "attesting_reading_ids": [
+      "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+     ]
+    },
+    {
+     "body": "jupiter",
+     "house_from_moon": 3,
+     "status": "not_in_favourable_set",
+     "reason_code": null,
+     "readings": [
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+       "label": "derived_calculation",
+       "in_favourable_set": false,
+       "single_source": false,
+       "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+      }
+     ],
+     "attesting_reading_ids": [
+      "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+     ]
+    },
+    {
+     "body": "moon",
+     "house_from_moon": 10,
+     "status": "in_favourable_set",
+     "reason_code": null,
+     "readings": [
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+       "label": "source_supported",
+       "in_favourable_set": true,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+       "label": "source_supported",
+       "in_favourable_set": true,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+       "label": "source_supported",
+       "in_favourable_set": true,
+       "single_source": false,
+       "verification_level": "IMAGE-TRANSLATION"
+      },
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+       "label": "derived_calculation",
+       "in_favourable_set": true,
+       "single_source": false,
+       "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)"
+      }
+     ],
+     "attesting_reading_ids": [
+      "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+      "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+      "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+      "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+     ]
+    },
+    {
+     "body": "rahu",
+     "house_from_moon": 1,
+     "status": "not_evaluable",
+     "reason_code": "node_reading_single_source",
+     "readings": [
+      {
+       "reading_id": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+       "label": "source_supported",
+       "in_favourable_set": false,
+       "single_source": true,
+       "verification_level": "IMAGE-TRANSLATION"
+      }
+     ],
+     "attesting_reading_ids": []
+    }
+   ],
+   "vedha": [
+    {
+     "body": "moon",
+     "house_from_moon": 10,
+     "profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+     "status": "available",
+     "reason_code": null,
+     "vedha_house": 4,
+     "vedha_sign": "gemini",
+     "vedha_present": false,
+     "occupants": [],
+     "exempt_occupants": [],
+     "node_occupants": [],
+     "warnings": []
+    },
+    {
+     "body": "rahu",
+     "house_from_moon": 1,
+     "profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+     "status": "not_evaluable",
+     "reason_code": "not_specified_by_source",
+     "vedha_house": null,
+     "vedha_sign": null,
+     "vedha_present": null,
+     "occupants": [],
+     "exempt_occupants": [],
+     "node_occupants": [],
+     "warnings": []
+    }
+   ],
+   "contacts_status": "available",
+   "contacts_reason": null,
+   "contacts": [
+    {
+     "transit_body": "saturn",
+     "natal_body": "sun",
+     "kind": "aspect",
+     "aspect_house_offset": 7,
+     "transit_sign": "aquarius",
+     "natal_sign": "leo"
+    },
+    {
+     "transit_body": "rahu",
+     "natal_body": "moon",
+     "kind": "conjunction",
+     "aspect_house_offset": null,
+     "transit_sign": "pisces",
+     "natal_sign": "pisces"
+    },
+    {
+     "transit_body": "rahu",
+     "natal_body": "saturn",
+     "kind": "conjunction",
+     "aspect_house_offset": null,
+     "transit_sign": "pisces",
+     "natal_sign": "pisces"
+    }
+   ],
+   "lagna_status": "available",
+   "lagna_reason": null,
+   "sade_sati": {
+    "profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+    "in_band": true,
+    "phase": 1
+   }
+  },
+  "events": [
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-01T00:31:22.985924+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-01T00:31:22.985924Z",
+    "julian_day_ut": 2460676.521795951,
+    "from_value": "sagittarius",
+    "to_value": "capricorn",
+    "longitude": 270.0000000183217,
+    "speed_longitude": 13.44867538201545,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-03T05:17:45.300853+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-03T05:17:45.300853Z",
+    "julian_day_ut": 2460678.720665343,
+    "from_value": "capricorn",
+    "to_value": "aquarius",
+    "longitude": 300.00000007886865,
+    "speed_longitude": 13.802334412269616,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "sun",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "aquarius",
+      "natal_sign": "leo"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-05T09:04:58.542778+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-05T09:04:58.542778Z",
+    "julian_day_ut": 2460680.8784575015,
+    "from_value": "aquarius",
+    "to_value": "pisces",
+    "longitude": 330.0000000611099,
+    "speed_longitude": 13.986122113535226,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "moon",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "pisces",
+      "natal_sign": "pisces"
+     },
+     {
+      "transit_body": "moon",
+      "natal_body": "saturn",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "pisces",
+      "natal_sign": "pisces"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-07T12:20:05.064918+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-07T12:20:05.064918Z",
+    "julian_day_ut": 2460683.0139496624,
+    "from_value": "pisces",
+    "to_value": "aries",
+    "longitude": 5.042596425285734e-08,
+    "speed_longitude": 14.103463718908687,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-09T15:16:31.851912+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-09T15:16:31.851912Z",
+    "julian_day_ut": 2460685.136481926,
+    "from_value": "aries",
+    "to_value": "taurus",
+    "longitude": 30.00000009332724,
+    "speed_longitude": 14.142232709362903,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-11T18:25:12.758441+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-11T18:25:12.758441Z",
+    "julian_day_ut": 2460687.267510943,
+    "from_value": "taurus",
+    "to_value": "gemini",
+    "longitude": 60.00000003876246,
+    "speed_longitude": 13.964438006756687,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-13T22:49:30.510328+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-13T22:49:30.510328Z",
+    "julian_day_ut": 2460689.451049745,
+    "from_value": "gemini",
+    "to_value": "cancer",
+    "longitude": 90.00000003522138,
+    "speed_longitude": 13.46326266127411,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-16T05:46:40.790052+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-16T05:46:40.790052Z",
+    "julian_day_ut": 2460691.7407520637,
+    "from_value": "cancer",
+    "to_value": "leo",
+    "longitude": 120.00000002982785,
+    "speed_longitude": 12.729357137214965,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "sun",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "leo",
+      "natal_sign": "leo"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-18T15:58:40.135764+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-18T15:58:40.135764Z",
+    "julian_day_ut": 2460694.1657444984,
+    "from_value": "leo",
+    "to_value": "virgo",
+    "longitude": 150.00000006713987,
+    "speed_longitude": 12.060872495615515,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "moon",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "virgo",
+      "natal_sign": "pisces"
+     },
+     {
+      "transit_body": "moon",
+      "natal_body": "saturn",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "virgo",
+      "natal_sign": "pisces"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-21T04:33:33.595181+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-21T04:33:33.595181Z",
+    "julian_day_ut": 2460696.68997436,
+    "from_value": "virgo",
+    "to_value": "libra",
+    "longitude": 180.0000000586123,
+    "speed_longitude": 11.79915320563882,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-23T17:02:40.289991+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-23T17:02:40.289991Z",
+    "julian_day_ut": 2460699.210190743,
+    "from_value": "libra",
+    "to_value": "scorpio",
+    "longitude": 210.0000000533934,
+    "speed_longitude": 12.100910571039538,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-26T02:56:12.683108+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-26T02:56:12.683108Z",
+    "julian_day_ut": 2460701.6223712265,
+    "from_value": "scorpio",
+    "to_value": "sagittarius",
+    "longitude": 240.00000005389063,
+    "speed_longitude": 12.82415320610323,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-28T09:22:06.473313+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-28T09:22:06.473313Z",
+    "julian_day_ut": 2460703.8903549165,
+    "from_value": "sagittarius",
+    "to_value": "capricorn",
+    "longitude": 270.00000010124177,
+    "speed_longitude": 13.62028074205709,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-01-30T13:05:07.542957+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-01-30T13:05:07.542957Z",
+    "julian_day_ut": 2460706.0452284142,
+    "from_value": "capricorn",
+    "to_value": "aquarius",
+    "longitude": 300.00000002261095,
+    "speed_longitude": 14.16863921523197,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "sun",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "aquarius",
+      "natal_sign": "leo"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-01T15:28:36.711067+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-01T15:28:36.711067Z",
+    "julian_day_ut": 2460708.14487157,
+    "from_value": "aquarius",
+    "to_value": "pisces",
+    "longitude": 330.00000008174214,
+    "speed_longitude": 14.348921677086818,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "moon",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "pisces",
+      "natal_sign": "pisces"
+     },
+     {
+      "transit_body": "moon",
+      "natal_body": "saturn",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "pisces",
+      "natal_sign": "pisces"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-03T17:46:51.706670+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-03T17:46:51.706670Z",
+    "julian_day_ut": 2460710.2408784702,
+    "from_value": "pisces",
+    "to_value": "aries",
+    "longitude": 2.0727452220270037e-09,
+    "speed_longitude": 14.241492115890368,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:STATION_DIRECT:jupiter:2025-02-04T09:54:14.662813+00:00",
+    "kind": "station_direct",
+    "body": "jupiter",
+    "instant_utc": "2025-02-04T09:54:14.662813Z",
+    "julian_day_ut": 2460710.912671946,
+    "from_value": null,
+    "to_value": null,
+    "longitude": 47.07041360745502,
+    "speed_longitude": 2.4383850499123672e-09,
+    "retrograde": false,
+    "backward_motion": null,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-05T20:46:05.825526+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-05T20:46:05.825526Z",
+    "julian_day_ut": 2460712.365347445,
+    "from_value": "aries",
+    "to_value": "taurus",
+    "longitude": 30.000000024323043,
+    "speed_longitude": 13.98565291322008,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-08T00:51:24.296728+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-08T00:51:24.296728Z",
+    "julian_day_ut": 2460714.5357001275,
+    "from_value": "taurus",
+    "to_value": "gemini",
+    "longitude": 60.00000002016298,
+    "speed_longitude": 13.647120739694271,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-10T06:26:44.775685+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-10T06:26:44.775685Z",
+    "julian_day_ut": 2460716.7685760483,
+    "from_value": "gemini",
+    "to_value": "cancer",
+    "longitude": 90.0000000586602,
+    "speed_longitude": 13.206813076910127,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-12T14:05:37.184344+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-12T14:05:37.184344Z",
+    "julian_day_ut": 2460719.0872381926,
+    "from_value": "cancer",
+    "to_value": "leo",
+    "longitude": 120.00000003334867,
+    "speed_longitude": 12.66168938176717,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "sun",
+      "kind": "conjunction",
+      "aspect_house_offset": null,
+      "transit_sign": "leo",
+      "natal_sign": "leo"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-15T00:14:35.740371+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-15T00:14:35.740371Z",
+    "julian_day_ut": 2460721.510138154,
+    "from_value": "leo",
+    "to_value": "virgo",
+    "longitude": 150.0000000614679,
+    "speed_longitude": 12.123677089681044,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "moon",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "virgo",
+      "natal_sign": "pisces"
+     },
+     {
+      "transit_body": "moon",
+      "natal_body": "saturn",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "virgo",
+      "natal_sign": "pisces"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-17T12:32:38.621282+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-17T12:32:38.621282Z",
+    "julian_day_ut": 2460724.022671506,
+    "from_value": "virgo",
+    "to_value": "libra",
+    "longitude": 180.00000001410115,
+    "speed_longitude": 11.817496085429106,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-20T01:19:42.729238+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-20T01:19:42.729238Z",
+    "julian_day_ut": 2460726.555357948,
+    "from_value": "libra",
+    "to_value": "scorpio",
+    "longitude": 210.00000002356953,
+    "speed_longitude": 11.95859093489055,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-22T12:10:26.393344+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-22T12:10:26.393344Z",
+    "julian_day_ut": 2460729.0072522163,
+    "from_value": "scorpio",
+    "to_value": "sagittarius",
+    "longitude": 240.00000002701256,
+    "speed_longitude": 12.589084344699819,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-24T19:26:02.166327+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-24T19:26:02.166327Z",
+    "julian_day_ut": 2460731.309749596,
+    "from_value": "sagittarius",
+    "to_value": "capricorn",
+    "longitude": 270.0000000958153,
+    "speed_longitude": 13.498481722243385,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:SIGN_INGRESS:moon:2025-02-26T23:07:03.226002+00:00",
+    "kind": "sign_ingress",
+    "body": "moon",
+    "instant_utc": "2025-02-26T23:07:03.226002Z",
+    "julian_day_ut": 2460733.4632340893,
+    "from_value": "capricorn",
+    "to_value": "aquarius",
+    "longitude": 300.0000000888776,
+    "speed_longitude": 14.328533939735388,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [
+     {
+      "transit_body": "moon",
+      "natal_body": "sun",
+      "kind": "aspect",
+      "aspect_house_offset": 7,
+      "transit_sign": "aquarius",
+      "natal_sign": "leo"
+     }
+    ],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   }
+  ],
+  "event_count": 27
+ },
+ "sade_sati": {
+  "profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "evidence_label": "modern_tradition",
+  "classical_status": "not found as a combined unit in the classical texts read (BPHS, Brihat Jataka, Brihat Samhita, Phaladeepika, Jataka Parijata; keyword probe of OCR, NOT_VERIFIED_BY_OCR); Saturn's per-house effects are stated individually. A modern-tradition, sign-based construct",
+  "status": "available",
+  "reason_code": null,
+  "natal_moon_sign": "pisces",
+  "band_signs": [
+   "aquarius",
+   "pisces",
+   "aries"
+  ],
+  "window_start_utc": "2025-01-01T00:00:00Z",
+  "window_end_utc": "2025-03-01T00:00:00Z",
+  "segments": [
+   {
+    "segment_id": "SSG:aquarius:window_start",
+    "sign": "aquarius",
+    "phase": 1,
+    "phase_name": "twelfth_from_moon",
+    "start_utc": null,
+    "end_utc": null,
+    "clipped_at_window_start": true,
+    "clipped_at_window_end": true,
+    "entered_by_backward_motion": null,
+    "ended_by_backward_motion": null
+   }
+  ],
+  "episodes": [
+   {
+    "episode_id": "SSE:window_start",
+    "segment_ids": [
+     "SSG:aquarius:window_start"
+    ],
+    "start_utc": null,
+    "end_utc": null,
+    "clipped_at_window_start": true,
+    "clipped_at_window_end": true,
+    "entered_by_backward_motion": null,
+    "ended_by_backward_motion": null,
+    "retrograde_reentry_of_previous_episode": false
+   }
+  ]
+ },
+ "warnings": [
+  "ephemeris_mode_moshier"
+ ],
+ "provenance": [
+  {
+   "entry_id": "reference",
+   "item": "TRANSIT_REF_MOON_SIGN",
+   "evidence_label": "source_supported",
+   "statement": "houses are counted whole-sign from the natal Moon's sign (Phaladeepika XXVI sl. 1 and Brihat Samhita CIV sl. 4, page-image checked, translation level)",
+   "references": []
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "item": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Phaladeepika (Sastri) Adhyaya XXVI sl. 2",
+   "references": [
+    {
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "locator": "Adhyaya XXVI sl. 2 (printed p. 286)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Sun 3,6,10; Moon 1,3,6,7,10; Mars and Saturn 3,6; Mercury 2,4,6,8,10; Jupiter 2,5,7,9; Venus all except 6,7,10; all planets 11; Rahu and Ketu 'similar to the Sun' (single source)"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "item": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Brihat Samhita (Sastri and Bhat) Adhyaya CIV sl. 4",
+   "references": [
+    {
+     "source_id": "SRC-BRIHAT-SAMHITA-SASTRI",
+     "locator": "Adhyaya CIV sl. 4 (printed p. 770)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Same sets as Phaladeepika for the seven planets; nodes not mentioned"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "item": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Brihat Jataka (Sastri) Ch. IX sl. 1-7, from-the-Moon columns",
+   "references": [
+    {
+     "source_id": "SRC-BRIHAT-JATAKA-SASTRI",
+     "locator": "Ch. IX sl. 1-7 (printed pp. 198-202)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "From-the-Moon columns of each planet's Ashtakavarga list; Moon from itself 1,3,5,7,10,11"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+   "item": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+   "evidence_label": "derived_calculation",
+   "statement": "favourable-house set: BPHS (Kapoor) Ch. 66 v. 16-42, derived from the dot lists",
+   "references": [
+    {
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "locator": "Vol II Ch. 66 v. 16-42 (Moon's chart v. 20-22, printed p. 847)",
+     "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)",
+     "note": "Pandit Ji derivation (complement of the dot houses the Moon contributes); not a BPHS statement; Moon from itself 1,3,6,7,9,10,11"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable_conflict",
+   "item": "moon_from_moon",
+   "evidence_label": "unresolved_conflict",
+   "statement": "the readings disagree for the Moon from itself on houses 5, 6 and 9; the result is NOT_EVALUABLE(reading_ambiguous) with every reading kept; Rahu and Ketu rest on one source and are never consolidated",
+   "references": []
+  },
+  {
+   "entry_id": "vedha",
+   "item": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+   "evidence_label": "source_supported",
+   "statement": "Vedha is a Phaladeepika-specific structural profile with a single verse-level source; a structural occupancy fact, not a verdict; the Venus sl. 8 wording anomaly is preserved",
+   "references": [
+    {
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "locator": "Adhyaya XXVI sl. 3-8 (printed pp. 287-288)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Single verse-level source; further mentions (Narada and Jataka Parijata cross-references, Jataka Parijata commentary) are translator notes, not corroboration of the numbers"
+    }
+   ]
+  },
+  {
+   "entry_id": "contacts",
+   "item": "TRANSIT_CONTACT_SIGN_BASED_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "sign-based conjunction and Phase 5 graha drishti; no orb",
+   "references": []
+  },
+  {
+   "entry_id": "lagna",
+   "item": "TRANSIT_REF_LAGNA_SIGN",
+   "evidence_label": "engineering_convention",
+   "statement": "house from the natal Lagna is a positional fact only, never classical",
+   "references": []
+  },
+  {
+   "entry_id": "events",
+   "item": "TRANSIT_EVENTS_ENGINEERING_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "no source defines transit events; instants are numerical solutions",
+   "references": []
+  },
+  {
+   "entry_id": "sade_sati",
+   "item": "SADE_SATI_SIGN_BASED_MODERN_V1",
+   "evidence_label": "modern_tradition",
+   "statement": "not found as a combined unit in the classical texts read (BPHS, Brihat Jataka, Brihat Samhita, Phaladeepika, Jataka Parijata; keyword probe of OCR, NOT_VERIFIED_BY_OCR); Saturn's per-house effects are stated individually. A modern-tradition, sign-based construct",
+   "references": []
+  },
+  {
+   "entry_id": "boundary",
+   "item": "TRANSIT_BOUNDARY_HALF_OPEN_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "half_open_start_inclusive_end_exclusive",
+   "references": []
+  },
+  {
+   "entry_id": "accuracy",
+   "item": "TRANSIT_ACCURACY_HORIZONS_V1",
+   "evidence_label": "engineering_evidence",
+   "statement": "engineering_evidence: 42-sample comparison of the Swiss Ephemeris tropical longitude of date (Moshier mode, through the Phase 4 adapter) with JPL Horizons (geocentric apparent ecliptic longitude of date), 7 bodies x 6 dates 1950-2060, retrieved 2026-09-21; maximum differences 0.26 arcsec (Sun), 0.19 (Mars), 0.15 (Mercury, Venus), 0.38 (Jupiter), 0.27 (Saturn), 4.78 (Moon); planetary longitude only, the Lahiri ayanamsa value is not independently verified, and the ayanamsa implied by the sidereal calculation differs from get_ayanamsa_ut by up to about 15.6 arcsec (nutation scale, about 1.5 hours of Saturn's motion; not investigated)",
+   "references": [
+    {
+     "source_id": "JPL Horizons",
+     "locator": "services/astro-engine/tests/fixtures/horizons_transit_reference.json",
+     "verification_level": "engineering evidence, 42 samples",
+     "note": ""
+    }
+   ]
+  }
+ ]
+}

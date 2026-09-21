@@ -1,0 +1,329 @@
+{
+ "system_id": "transit_gochara",
+ "status": "success",
+ "reason_code": null,
+ "detail": null,
+ "standards_version": "1.6.0",
+ "engine_version": "0.4.0",
+ "swisseph_version": "2.10.03",
+ "boundary_convention": "half_open_start_inclusive_end_exclusive",
+ "time_base": "utc",
+ "configuration": {
+  "calculation": {
+   "zodiac": "sidereal",
+   "ayanamsa": "lahiri",
+   "node_convention": "mean",
+   "combustion_standard": "brihat_parashara_hora_shastra_v1",
+   "allow_moshier_fallback": true
+  },
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "sade_sati_profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "bodies": [
+   "saturn"
+  ],
+  "event_kinds": [
+   "sign_ingress",
+   "station_retrograde",
+   "station_direct"
+  ],
+  "include_lagna_fact": false,
+  "include_vedha": true,
+  "include_contacts": true,
+  "include_sade_sati": true
+ },
+ "profile_ids": {
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "favourable_reading_ids": [
+   "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+  ],
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "contact_profile_id": "TRANSIT_CONTACT_SIGN_BASED_V1",
+  "events_profile_id": "TRANSIT_EVENTS_ENGINEERING_V1",
+  "boundary_profile_id": "TRANSIT_BOUNDARY_HALF_OPEN_V1",
+  "sade_sati_profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "lagna_profile_id": null
+ },
+ "natal": {
+  "precision": "approximate",
+  "moon_sign": null,
+  "moon_sign_status": "not_evaluable",
+  "moon_sign_reason": "natal_moon_sign_ambiguous",
+  "lagna_sign": null,
+  "natal_planet_count": 0
+ },
+ "accuracy": {
+  "instants_are_exact": false,
+  "ephemeris_modes": [
+   "moshier"
+  ],
+  "zodiac": "sidereal",
+  "ayanamsa": "lahiri",
+  "node_convention": "mean",
+  "search_tolerance_seconds": 0.000864,
+  "time_scale_note": "UTC instants map to Julian Day UT with the Phase 4 conversion; the sub-second UT1-UTC difference is not modelled",
+  "ayanamsa_sensitivity_note": "a sidereal ingress instant depends on the ayanamsa value; published ingress times for the same event differ by hours between sources, so published times are not used as references",
+  "engineering_evidence": "engineering_evidence: 42-sample comparison of the Swiss Ephemeris tropical longitude of date (Moshier mode, through the Phase 4 adapter) with JPL Horizons (geocentric apparent ecliptic longitude of date), 7 bodies x 6 dates 1950-2060, retrieved 2026-09-21; maximum differences 0.26 arcsec (Sun), 0.19 (Mars), 0.15 (Mercury, Venus), 0.38 (Jupiter), 0.27 (Saturn), 4.78 (Moon); planetary longitude only, the Lahiri ayanamsa value is not independently verified, and the ayanamsa implied by the sidereal calculation differs from get_ayanamsa_ut by up to about 15.6 arcsec (nutation scale, about 1.5 hours of Saturn's motion; not investigated)",
+  "evidence_label": "engineering_evidence"
+ },
+ "snapshot": {
+  "at_utc": "2025-06-01T00:00:00Z",
+  "julian_day_ut": 2460827.5000026,
+  "states": [
+   {
+    "body": "saturn",
+    "longitude": 336.2733766813935,
+    "sign": "pisces",
+    "degree_in_sign": 6.273376681393472,
+    "nakshatra": "uttara_bhadrapada",
+    "pada": 1,
+    "speed_longitude": 0.06627372779402009,
+    "retrograde": false,
+    "ephemeris_mode": "moshier",
+    "house_from_moon": null,
+    "house_from_lagna": null
+   }
+  ],
+  "moon_relative_status": "not_evaluable",
+  "moon_relative_reason": "natal_moon_sign_ambiguous",
+  "favourable": [],
+  "vedha": [],
+  "contacts_status": "not_evaluable",
+  "contacts_reason": "natal_planets_unavailable",
+  "contacts": [],
+  "lagna_status": "not_requested",
+  "lagna_reason": null,
+  "sade_sati": null
+ },
+ "window": {
+  "start_utc": "2025-01-01T00:00:00Z",
+  "end_utc": "2026-01-01T00:00:00Z",
+  "start_snapshot": {
+   "at_utc": "2025-01-01T00:00:00Z",
+   "julian_day_ut": 2460676.5000021323,
+   "states": [
+    {
+     "body": "saturn",
+     "longitude": 320.3177077800386,
+     "sign": "aquarius",
+     "degree_in_sign": 20.317707780038575,
+     "nakshatra": "purva_bhadrapada",
+     "pada": 1,
+     "speed_longitude": 0.07554252331774555,
+     "retrograde": false,
+     "ephemeris_mode": "moshier",
+     "house_from_moon": null,
+     "house_from_lagna": null
+    }
+   ],
+   "moon_relative_status": "not_evaluable",
+   "moon_relative_reason": "natal_moon_sign_ambiguous",
+   "favourable": [],
+   "vedha": [],
+   "contacts_status": "not_evaluable",
+   "contacts_reason": "natal_planets_unavailable",
+   "contacts": [],
+   "lagna_status": "not_requested",
+   "lagna_reason": null,
+   "sade_sati": null
+  },
+  "events": [
+   {
+    "event_id": "TRN:SIGN_INGRESS:saturn:2025-03-29T16:14:40.642524+00:00",
+    "kind": "sign_ingress",
+    "body": "saturn",
+    "instant_utc": "2025-03-29T16:14:40.642524Z",
+    "julian_day_ut": 2460764.1768616904,
+    "from_value": "aquarius",
+    "to_value": "pisces",
+    "longitude": 330.0000000004006,
+    "speed_longitude": 0.12077957792349389,
+    "retrograde": false,
+    "backward_motion": false,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:STATION_RETROGRADE:saturn:2025-07-13T03:27:18.429214+00:00",
+    "kind": "station_retrograde",
+    "body": "saturn",
+    "instant_utc": "2025-07-13T03:27:18.429214Z",
+    "julian_day_ut": 2460869.643966034,
+    "from_value": null,
+    "to_value": null,
+    "longitude": 337.7197112435765,
+    "speed_longitude": -1.268301114219001e-09,
+    "retrograde": true,
+    "backward_motion": null,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   },
+   {
+    "event_id": "TRN:STATION_DIRECT:saturn:2025-11-28T04:15:28.755118+00:00",
+    "kind": "station_direct",
+    "body": "saturn",
+    "instant_utc": "2025-11-28T04:15:28.755118Z",
+    "julian_day_ut": 2461007.6774193253,
+    "from_value": null,
+    "to_value": null,
+    "longitude": 330.93755168737044,
+    "speed_longitude": 3.4452929320372453e-10,
+    "retrograde": false,
+    "backward_motion": null,
+    "contacts_after": [],
+    "evidence_label": "engineering_convention",
+    "ephemeris_mode": "moshier"
+   }
+  ],
+  "event_count": 3
+ },
+ "sade_sati": {
+  "profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "evidence_label": "modern_tradition",
+  "classical_status": "not found as a combined unit in the classical texts read (BPHS, Brihat Jataka, Brihat Samhita, Phaladeepika, Jataka Parijata; keyword probe of OCR, NOT_VERIFIED_BY_OCR); Saturn's per-house effects are stated individually. A modern-tradition, sign-based construct",
+  "status": "not_evaluable",
+  "reason_code": "natal_moon_sign_ambiguous",
+  "natal_moon_sign": null,
+  "band_signs": [],
+  "window_start_utc": "2025-01-01T00:00:00Z",
+  "window_end_utc": "2026-01-01T00:00:00Z",
+  "segments": [],
+  "episodes": []
+ },
+ "warnings": [
+  "ephemeris_mode_moshier"
+ ],
+ "provenance": [
+  {
+   "entry_id": "reference",
+   "item": "TRANSIT_REF_MOON_SIGN",
+   "evidence_label": "source_supported",
+   "statement": "houses are counted whole-sign from the natal Moon's sign (Phaladeepika XXVI sl. 1 and Brihat Samhita CIV sl. 4, page-image checked, translation level)",
+   "references": []
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "item": "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Phaladeepika (Sastri) Adhyaya XXVI sl. 2",
+   "references": [
+    {
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "locator": "Adhyaya XXVI sl. 2 (printed p. 286)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Sun 3,6,10; Moon 1,3,6,7,10; Mars and Saturn 3,6; Mercury 2,4,6,8,10; Jupiter 2,5,7,9; Venus all except 6,7,10; all planets 11; Rahu and Ketu 'similar to the Sun' (single source)"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "item": "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Brihat Samhita (Sastri and Bhat) Adhyaya CIV sl. 4",
+   "references": [
+    {
+     "source_id": "SRC-BRIHAT-SAMHITA-SASTRI",
+     "locator": "Adhyaya CIV sl. 4 (printed p. 770)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Same sets as Phaladeepika for the seven planets; nodes not mentioned"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "item": "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "evidence_label": "source_supported",
+   "statement": "favourable-house set: Brihat Jataka (Sastri) Ch. IX sl. 1-7, from-the-Moon columns",
+   "references": [
+    {
+     "source_id": "SRC-BRIHAT-JATAKA-SASTRI",
+     "locator": "Ch. IX sl. 1-7 (printed pp. 198-202)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "From-the-Moon columns of each planet's Ashtakavarga list; Moon from itself 1,3,5,7,10,11"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable:GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+   "item": "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED",
+   "evidence_label": "derived_calculation",
+   "statement": "favourable-house set: BPHS (Kapoor) Ch. 66 v. 16-42, derived from the dot lists",
+   "references": [
+    {
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "locator": "Vol II Ch. 66 v. 16-42 (Moon's chart v. 20-22, printed p. 847)",
+     "verification_level": "OCR-TRANSLATION (p. 847 IMAGE-TRANSLATION)",
+     "note": "Pandit Ji derivation (complement of the dot houses the Moon contributes); not a BPHS statement; Moon from itself 1,3,6,7,9,10,11"
+    }
+   ]
+  },
+  {
+   "entry_id": "favourable_conflict",
+   "item": "moon_from_moon",
+   "evidence_label": "unresolved_conflict",
+   "statement": "the readings disagree for the Moon from itself on houses 5, 6 and 9; the result is NOT_EVALUABLE(reading_ambiguous) with every reading kept; Rahu and Ketu rest on one source and are never consolidated",
+   "references": []
+  },
+  {
+   "entry_id": "vedha",
+   "item": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+   "evidence_label": "source_supported",
+   "statement": "Vedha is a Phaladeepika-specific structural profile with a single verse-level source; a structural occupancy fact, not a verdict; the Venus sl. 8 wording anomaly is preserved",
+   "references": [
+    {
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "locator": "Adhyaya XXVI sl. 3-8 (printed pp. 287-288)",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": "Single verse-level source; further mentions (Narada and Jataka Parijata cross-references, Jataka Parijata commentary) are translator notes, not corroboration of the numbers"
+    }
+   ]
+  },
+  {
+   "entry_id": "contacts",
+   "item": "TRANSIT_CONTACT_SIGN_BASED_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "sign-based conjunction and Phase 5 graha drishti; no orb",
+   "references": []
+  },
+  {
+   "entry_id": "events",
+   "item": "TRANSIT_EVENTS_ENGINEERING_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "no source defines transit events; instants are numerical solutions",
+   "references": []
+  },
+  {
+   "entry_id": "sade_sati",
+   "item": "SADE_SATI_SIGN_BASED_MODERN_V1",
+   "evidence_label": "modern_tradition",
+   "statement": "not found as a combined unit in the classical texts read (BPHS, Brihat Jataka, Brihat Samhita, Phaladeepika, Jataka Parijata; keyword probe of OCR, NOT_VERIFIED_BY_OCR); Saturn's per-house effects are stated individually. A modern-tradition, sign-based construct",
+   "references": []
+  },
+  {
+   "entry_id": "boundary",
+   "item": "TRANSIT_BOUNDARY_HALF_OPEN_V1",
+   "evidence_label": "engineering_convention",
+   "statement": "half_open_start_inclusive_end_exclusive",
+   "references": []
+  },
+  {
+   "entry_id": "accuracy",
+   "item": "TRANSIT_ACCURACY_HORIZONS_V1",
+   "evidence_label": "engineering_evidence",
+   "statement": "engineering_evidence: 42-sample comparison of the Swiss Ephemeris tropical longitude of date (Moshier mode, through the Phase 4 adapter) with JPL Horizons (geocentric apparent ecliptic longitude of date), 7 bodies x 6 dates 1950-2060, retrieved 2026-09-21; maximum differences 0.26 arcsec (Sun), 0.19 (Mars), 0.15 (Mercury, Venus), 0.38 (Jupiter), 0.27 (Saturn), 4.78 (Moon); planetary longitude only, the Lahiri ayanamsa value is not independently verified, and the ayanamsa implied by the sidereal calculation differs from get_ayanamsa_ut by up to about 15.6 arcsec (nutation scale, about 1.5 hours of Saturn's motion; not investigated)",
+   "references": [
+    {
+     "source_id": "JPL Horizons",
+     "locator": "services/astro-engine/tests/fixtures/horizons_transit_reference.json",
+     "verification_level": "engineering evidence, 42 samples",
+     "note": ""
+    }
+   ]
+  }
+ ]
+}

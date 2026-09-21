@@ -24,6 +24,10 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 `RuleEngine.evaluate_kundli(kundli, dasha_facts)` accepts the JSON form of an `astro-engine` `DashaFacts` and records it in the `EvidenceBundle` as an additive, optional `dasha` section (status, profile IDs, boundary convention, precision, starting Nakshatra/Pada/lord, every period boundary, labelled provenance, and a hash of the facts). The section is omitted when no Dasha facts are given, so bundles built without it serialize and hash exactly as before; the bundle schema version is unchanged. The rule engine never calculates a Dasha, and no shipped rule reads Dasha facts yet, so the reserved `requires_dasha` reason is not emitted by any current rule.
 
+## Transit evidence (Phase 8)
+
+`RuleEngine.evaluate_kundli(kundli, dasha_facts, transit_facts)` also accepts the JSON form of an `astro-engine` `TransitFacts` and records it in the `EvidenceBundle` as an additive, optional `transit` section (status, profile IDs, boundary convention, accuracy disclosure, every source reading including the unresolved Moon-from-Moon conflict, Vedha facts, events, the Sade Sati segments and episodes with their `modern_tradition` label, labelled provenance and a hash of the facts). Like `dasha`, it is omitted when absent, so bundles built without it serialize and hash exactly as before; the bundle schema version is unchanged. The rule engine never calculates a transit, and no shipped rule reads transit facts yet.
+
 ## Local development
 
 ```

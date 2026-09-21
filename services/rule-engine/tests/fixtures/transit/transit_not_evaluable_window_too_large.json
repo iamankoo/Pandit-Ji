@@ -1,0 +1,65 @@
+{
+ "system_id": "transit_gochara",
+ "status": "not_evaluable",
+ "reason_code": "window_too_large",
+ "detail": "a window may not exceed 200 years",
+ "standards_version": "1.6.0",
+ "engine_version": "0.4.0",
+ "swisseph_version": "2.10.03",
+ "boundary_convention": "half_open_start_inclusive_end_exclusive",
+ "time_base": "utc",
+ "configuration": {
+  "calculation": {
+   "zodiac": "sidereal",
+   "ayanamsa": "lahiri",
+   "node_convention": "mean",
+   "combustion_standard": "brihat_parashara_hora_shastra_v1",
+   "allow_moshier_fallback": true
+  },
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "sade_sati_profile_id": "SADE_SATI_SIGN_BASED_MODERN_V1",
+  "bodies": [
+   "sun",
+   "moon",
+   "mars",
+   "mercury",
+   "jupiter",
+   "venus",
+   "saturn",
+   "rahu",
+   "ketu"
+  ],
+  "event_kinds": [
+   "sign_ingress",
+   "station_retrograde",
+   "station_direct"
+  ],
+  "include_lagna_fact": false,
+  "include_vedha": true,
+  "include_contacts": true,
+  "include_sade_sati": false
+ },
+ "profile_ids": {
+  "reference_profile_id": "TRANSIT_REF_MOON_SIGN",
+  "favourable_reading_ids": [
+   "GOCHARA_FAVOURABLE_PHALADEEPIKA_SASTRI_XXVI_2",
+   "GOCHARA_FAVOURABLE_BRIHAT_SAMHITA_SASTRI_CIV_4",
+   "GOCHARA_FAVOURABLE_BRIHAT_JATAKA_SASTRI_IX_1_7",
+   "GOCHARA_FAVOURABLE_BPHS_KAPOOR_66_DERIVED"
+  ],
+  "vedha_profile_id": "GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8",
+  "contact_profile_id": "TRANSIT_CONTACT_SIGN_BASED_V1",
+  "events_profile_id": "TRANSIT_EVENTS_ENGINEERING_V1",
+  "boundary_profile_id": "TRANSIT_BOUNDARY_HALF_OPEN_V1",
+  "sade_sati_profile_id": null,
+  "lagna_profile_id": null
+ },
+ "natal": null,
+ "accuracy": null,
+ "snapshot": null,
+ "window": null,
+ "sade_sati": null,
+ "warnings": [],
+ "provenance": []
+}

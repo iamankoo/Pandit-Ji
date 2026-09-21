@@ -22,6 +22,7 @@ from pandit_rule_engine.evaluator import evaluate_ruleset
 from pandit_rule_engine.facts import ChartFacts
 from pandit_rule_engine.loader import Ruleset, load_ruleset
 from pandit_rule_engine.tables import Tables, build_tables
+from pandit_rule_engine.transit_evidence import TransitEvidence, transit_evidence_from_facts
 
 
 class RuleEngine:
@@ -33,7 +34,12 @@ class RuleEngine:
     def from_directory(cls, rules_dir: Path) -> RuleEngine:
         return cls(load_ruleset(rules_dir))
 
-    def evaluate(self, facts: ChartFacts, dasha: DashaEvidence | None = None) -> EvidenceBundle:
+    def evaluate(
+        self,
+        facts: ChartFacts,
+        dasha: DashaEvidence | None = None,
+        transit: TransitEvidence | None = None,
+    ) -> EvidenceBundle:
         derived = TableDerivedFacts(facts, self.tables)
         results = evaluate_ruleset(self.ruleset, facts, derived)
         return build_bundle(
@@ -43,13 +49,19 @@ class RuleEngine:
             derived_facts=derived.snapshot(),
             rule_engine_version=__version__,
             dasha=dasha,
+            transit=transit,
         )
 
     def evaluate_kundli(
-        self, kundli: Mapping[str, Any], dasha_facts: Mapping[str, Any] | None = None
+        self,
+        kundli: Mapping[str, Any],
+        dasha_facts: Mapping[str, Any] | None = None,
+        transit_facts: Mapping[str, Any] | None = None,
     ) -> EvidenceBundle:
         """Evaluate a Phase 5 Kundli given in its JSON form. `dasha_facts` is an
-        optional astro-engine `DashaFacts` in JSON form (Phase 7); it is
-        recorded in the bundle, and no rule reads it yet."""
+        optional astro-engine `DashaFacts` (Phase 7) and `transit_facts` an
+        optional astro-engine `TransitFacts` (Phase 8), both in JSON form; they
+        are recorded in the bundle, and no rule reads them yet."""
         dasha = None if dasha_facts is None else dasha_evidence_from_facts(dasha_facts)
-        return self.evaluate(facts_from_kundli(kundli), dasha)
+        transit = None if transit_facts is None else transit_evidence_from_facts(transit_facts)
+        return self.evaluate(facts_from_kundli(kundli), dasha, transit)

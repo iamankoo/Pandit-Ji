@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-Status: verified through **Phase 6 (complete, accepted, CI green)**, the **Phase 5 Nakshatra boundary correction** (commit `091ca1b`, CI run `35500359836`, green), and **Phase 7 (Dasha & Timing Engine): implemented, CI green** (§25). Sections 1-19 were written at the end of Phase 5 and are kept as history; §15 carries a post-completion addendum, and §20-§25 hold the current state.
+Status: verified through **Phase 6 (complete, accepted, CI green)**, the **Phase 5 Nakshatra boundary correction** (commit `091ca1b`, CI run `35500359836`, green), **Phase 7 (Dasha & Timing Engine): implemented, CI green** (§25), and **Phase 8 (Transit / Gochar Engine): methodology approved and locked (standards v1.6.0), implemented and validated locally, not yet committed, awaiting Approval Gate 2** (§26). Sections 1-19 were written at the end of Phase 5 and are kept as history; §15 carries a post-completion addendum, and §20-§26 hold the current state.
 This document exists purely for session continuity. A future AI coding
 assistant session should be able to read this file and continue exactly
 where the project left off, without re-deriving context from memory.
@@ -397,7 +397,7 @@ the header was corrected to "21-Phase" during Phase 6 research:
 20. Phase 20 — Voice + Personalization
 21. Phase 21 — Validation, Backtesting & Production Launch
 
-**Phases 1 through 7 are complete and verified (Phase 6: accepted by the owner, CI green; see §20). Phase 7 (Vimshottari Dasha) is implemented and CI-verified (see §25); its methodology research is §21.** (This roadmap list was first written at the end of Phase 5, when it read "Phase 6 has not started"; that statement is now historical.)
+**Phases 1 through 7 are complete and verified (Phase 6: accepted by the owner, CI green; see §20). Phase 7 (Vimshottari Dasha) is implemented and CI-verified (see §25); its methodology research is §21. Phase 8 (Transit / Gochar) is implemented and validated locally but not committed (see §26).** (This roadmap list was first written at the end of Phase 5, when it read "Phase 6 has not started"; that statement is now historical.)
 
 ---
 
@@ -907,7 +907,7 @@ This section is the research record written before implementation. At the time i
 
 ## 22. Repository State (history and current)
 
-- **Current code state**: the latest code commit is `e56be0f` (Phase 7, see §25), CI run `35507588698` green (15 of 15 jobs, each inspected). Commits after it are documentation only; the current HEAD is whatever `git log` shows (verify it equals `origin/main`). Tests: astro-engine 513, rule-engine 256. Standards version: v1.5.0. (Earlier in this section's history: `091ca1b`, CI run `35500359836`, standards v1.4.1, astro-engine 353 and rule-engine 235 tests, no `dashas` module.)
+- **Current code state**: the latest code commit is `e56be0f` (Phase 7, see §25), CI run `35507588698` green (15 of 15 jobs, each inspected). Commits after it are documentation only; the current HEAD is whatever `git log` shows (verify it equals `origin/main`). Tests at that commit: astro-engine 513, rule-engine 256; standards v1.5.0. **Phase 8 work (§26) is in the working tree, uncommitted: astro-engine 788 and rule-engine 286 tests, standards v1.6.0.** (Earlier in this section's history: `091ca1b`, CI run `35500359836`, standards v1.4.1, astro-engine 353 and rule-engine 235 tests, no `dashas` module.)
 - Earlier state, kept as history: branch `main`; HEAD `6e8eba4` = `origin/main`; working tree clean; CI green (run `35461086198`); then `81c9b08` (summary update), CI run `35462906836` green.
 - Local environment notes: `pyswisseph` and the rule-engine, knowledge, agent, verification and astro-engine packages were pip-installed in editable mode during the session (needed for local test runs); nothing running in the background.
 - Private research material (page-image excerpts for Sanskrit review, extraction JSON, OCR text, generators for the rule YAML) lives in the assistant session scratchpad under the OS temp directory and is NOT in the repository; it may not survive. The durable record is `research/ASTROLOGY_SOURCES.md` (Groups 1-8 and §6 source tiers and profile IDs).
@@ -919,8 +919,8 @@ This section is the research record written before implementation. At the time i
 Do not assume anything beyond this document, and re-check it against the repository first.
 
 1. Read this `SUMMARY.md`, then verify HEAD, `origin/main`, working tree and GitHub Actions for HEAD; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`, `docs/ARCHITECTURE.md`, `research/ASTROLOGY_SOURCES.md`.
-2. Report: repository state, which phases are complete (1-7), CI state, the next phase in `Phases.md` (Phase 8, not started; wait for the owner to select it), and any mismatch with this document.
-3. Phase 7 is implemented (§25). Do not start Phase 8 or any other phase without reading `Phases.md` and getting the owner's approval. Section 25 holds the Phase 7 handoff, decisions and limitations.
+2. Report: repository state, which phases are complete (1-7; Phase 8 implemented and awaiting the owner's commit approval, §26), CI state, and any mismatch with this document.
+3. Phase 7 is implemented (§25) and frozen; Phase 8 is described in §26. Do not start another phase without reading `Phases.md` and getting the owner's approval. Sections 25 and 26 hold the handoffs, decisions and limitations.
 4. Standing rules: cite sources honestly (image-checked vs OCR vs translation level; no Sanskrit-level claims without a qualified reviewer); never merge traditions silently; commits use the owner's identity `iamankoo <aniketraj00384@gmail.com>` with no AI attribution (CI rejects vendor names in `.md`, `.py`, `.ts`, `.tsx`, `.dart` files); do not modify Phase 5 or Phase 6 without approval.
 
 ## 24. Open Blockers Before Phase 7 (historical: documentation closure, 2026-09-20; resolved by §25)
@@ -1029,3 +1029,52 @@ This list was the pre-implementation blocker list. The owner then supplied the d
 6. Make no assumption about the next phase until the user explicitly selects it.
 
 Last session ended after Phase 7 completion, validation, and handoff. Resume from this summary after the user gives the next instruction.
+
+## 26. Phase 8 — Transit / Gochar Engine — Methodology, Implementation and Handoff
+
+**Status at the time of writing: implemented and validated locally in the working tree; NOT committed and NOT pushed; awaiting the owner's Approval Gate 2.** Base commit `db01cc8` (CI run `35520704744`, 15 of 15 jobs green, every job and step inspected). After the owner approves the commit, record the commit hash and the CI result per job here.
+
+### A. Workflow followed
+Research (Step 2 and 2B) -> Approval Gate 1 (all nine recommendations approved) -> documentation lock -> implementation -> tests -> validation -> Approval Gate 2. Earlier approvals by the owner: MOON_SIGN default reference; Moon-from-Moon kept as an explicit source conflict; Vedha structural and Phaladeepika-specific; Ashtakavarga scoring excluded; Sade Sati labelled MODERN_TRADITION; events as engineering conventions.
+
+### B. Research summary and source confidence (all translation level; no Sanskrit-level verification)
+- **Page-image verified (IMAGE-TRANSLATION)**: Phaladeepika Ch. XXVI sl. 1-8 (printed pp. 286-288) and sl. 22-23 (p. 295); Brihat Jataka Ch. IX sl. 1-7 (pp. 198-202); Brihat Samhita Adhyaya CIV sl. 4-5 (p. 770); BPHS Vol II Ch. 66 v. 20-22 (p. 847) and Ch. 72 v. 29-31 (p. 904).
+- **OCR only**: the rest of BPHS Ch. 66 dot lists, Ch. 70 v. 1-14, Ch. 72 v. 1-28, Brihat Samhita CIV sl. 39-61, Uttara Kalamrita (probe), Jataka Parijata XIII v. 60 with its Sanskrit commentary (unreviewed).
+- **Not read**: BPHS Ch. 67-69 mechanics and Ch. 71, Brihat Samhita CIV sl. 6-38, any Sanskrit-level review.
+- A Tier 5 claim that Brihat Samhita Ch. 9-17 contains Gochara, Vedha and Sade Sati was **not supported** (the transit chapter is Adhyaya CIV and its verses contain neither Vedha nor Sade Sati).
+
+### C. Locked methodology (`docs/ASTROLOGY_STANDARDS.md` v1.6.0, TR-01 to TR-15; evidence labels `source_supported`, `translator_note`, `inference`, `engineering_convention`, `derived_calculation`, `unresolved_conflict`, `modern_tradition`, `engineering_evidence`)
+- Facts and provenance only: no interpretation, verdict, remedy, alert, Ashtakavarga scoring, degree or orb contacts, Dhaiya, Ashtama or degree-based Sade Sati (reserved IDs only), HTTP endpoints or database tables.
+- **Reference**: `TRANSIT_REF_MOON_SIGN` (source-supported); optional `TRANSIT_REF_LAGNA_SIGN` positional fact (engineering convention).
+- **Favourable sets**: four separate readings (Phaladeepika, Brihat Samhita, Brihat Jataka, BPHS-derived as `derived_calculation`). The six non-Moon planets agree; **Moon from the Moon conflicts on houses 5, 6, 9** and returns `NOT_EVALUABLE(reading_ambiguous)` with every reading kept. Rahu and Ketu are single-source (Phaladeepika "like the Sun") and never consolidated (`NOT_EVALUABLE(node_reading_single_source)`).
+- **Vedha**: `GOCHARA_VEDHA_PHALADEEPIKA_SASTRI_XXVI_3_8`, structural occupancy of transiting planets in the Vedha sign; exceptions Sun/Saturn and Moon/Mercury; a node alone in the Vedha sign gives `NOT_EVALUABLE(node_participation_unspecified)`; node subjects give `not_specified_by_source`; the Venus sl. 8 wording anomaly is preserved as a warning.
+- **Contacts**: sign-based conjunction and Phase 5 graha drishti only. **Events**: sign ingress (with backward re-entry), retrograde and direct stations, opt-in Nakshatra ingress.
+- **Sade Sati**: `SADE_SATI_SIGN_BASED_MODERN_V1` (`modern_tradition`), segments and episodes; an episode is flagged `retrograde_reentry_of_previous_episode` when retrograde motion bounds the gap at either end (found necessary during implementation: Saturn's 2029 re-entry into Aries is by retrograde motion after a forward exit).
+- **Time and precision**: UTC canonical; half-open `[start, end)`; bisection to 1e-8 day on a scan grid anchored to absolute multiples of the step (so an event's instant does not depend on the window; found necessary when adjacent windows disagreed by 18 ms for a station); scan steps Moon 0.25, Mercury 0.5, Venus 1, Sun and Mars 2, Jupiter, Saturn and nodes 5 days, with a station split so a double crossing inside one step is not missed; limits 200 years and 50,000 events.
+- **Versions**: standards 1.6.0 (Phase 8 results record it), astro-engine 0.5.0, rule-engine 0.8.0; the Phase 5 Kundli constant stays 1.3.0 and Phase 7 results keep 1.5.0.
+
+### D. Unresolved source conflicts (preserved; no winner chosen)
+Moon from the Moon (Brihat Jataka 5th; Phaladeepika, Brihat Samhita and the BPHS-derived reading 6th; BPHS-derived also 9th); Rahu and Ketu favourable houses (single source, a possible opposite reading in an unreviewed Jataka Parijata commentary quote); Vedha (single verse-level source; Venus wording anomaly); sign-part effectiveness (Phaladeepika thirds versus Brihat Samhita halves, not used); Gochara/Vedha versus Ashtakavarga scoring (BPHS Ch. 72 v. 30-31 treats Ashtakavarga as paramount; not merged, Phase 9). Registry: `research/ASTROLOGY_SOURCES.md` Group 9 additions and section 6.4.
+
+### E. What was implemented
+- `services/astro-engine/src/pandit_astro_engine/transits/` (`constants`, `profiles`, `models`, `positions`, `events`, `evaluate`, `sade_sati`, `calculator`, `service`); an additive public `SWE_NODE_ID` constant in `ephemeris.py` (no Phase 4 behaviour changed); `TransitCalculationService` with `calculate`, `snapshot`, `events` and `sade_sati`; `NatalReference.from_kundli`.
+- `services/rule-engine`: `transit_evidence.py`, an additive optional `transit` section in `EvidenceBundle` (omitted when absent, so earlier bundles serialize and hash exactly as before), `RuleEngine.evaluate_kundli(kundli, dasha_facts, transit_facts)`.
+- Documentation: `Phases.md` Phase 8 block, `docs/ASTROLOGY_STANDARDS.md` v1.6.0, `docs/ARCHITECTURE.md` (transit interface, cache key, section 31 wording), `research/ASTROLOGY_SOURCES.md`, service READMEs, this section.
+- Fixtures: `services/astro-engine/tests/fixtures/horizons_transit_reference.json` (42 JPL Horizons samples, retrieved 2026-09-21) and four rule-engine transit fact fixtures.
+
+### F. Validation (run locally; CI not yet run for this work)
+- astro-engine **788 passed** (513 existing + 275 new); rule-engine **286 passed** (256 existing + 30 new); packages, agent, knowledge, verification and server tests unchanged and passing (server 5 with `PYTHONPATH=src`); `ruff check`, `ruff format --check` and `mypy` clean for every component except the known local server `mypy` result (2 errors in the untouched `health.py`, `psycopg` not installed locally; the CI server job installs it).
+- The repository-integrity greps (forbidden service names, vendor names in `.md` and `.py`, no `.env`) were run locally with the CI patterns and found nothing.
+- Independent evidence: the Swiss Ephemeris tropical longitude of date compared with JPL Horizons on 42 samples (maximum 0.26 arcsec Sun, 0.19 Mars, 0.15 Mercury and Venus, 0.38 Jupiter, 0.27 Saturn, 4.78 Moon; Moshier mode). Saturn's ingress and station **dates** in 2019-2026 match widely published dates; published ingress **times** disagree by hours between Tier 5 pages, so they are not used.
+- Performance (development machine, Moshier): 90 years of Saturn, Jupiter and Rahu sign ingress in about 1 s; 20 years of all nine bodies with ingress and stations in about 9 s; 10 years of the Moon with sign and Nakshatra ingress in about 9 s.
+
+### G. Known limitations and deferred work
+- Moshier mode unless Swiss Ephemeris data files are configured; the Lahiri ayanamsa value and the sidereal frame are not independently verified (the ayanamsa implied by the sidereal calculation differs from `get_ayanamsa_degrees` by up to about 15.6 arcsec, about 1.5 hours of Saturn's motion; not investigated); UT1-UTC is not modelled.
+- Station instants are limited by the numerical noise of the ephemeris speed near zero (milliseconds), not by the bisection tolerance.
+- Vedha and the node readings are single-source; the Moon-from-Moon conflict needs qualified Sanskrit review; nothing is verified at Sanskrit level.
+- The rule-engine integration test with real astro-engine facts runs only where both services are installed (skipped in the rule-engine CI job, as for Phase 7).
+- Not implemented (by decision): interpretation of any kind, Ashtakavarga scoring (Phase 9), Sarvatobhadra, Latta, degree or orb contacts, Dhaiya, Ashtama, degree-based Sade Sati, HTTP endpoints, database tables and caching (Phase 18).
+- Roadmap and documentation mismatches found and handled with the owner's approval: `Phases.md` Phase 8 had no dependencies, inputs, outputs, exclusions or exit criteria (added); `docs/ARCHITECTURE.md` §31 said "transit-to-natal angles" (reworded to sign-based contacts). Still open from before: `SUMMARY.md` §8 predates the locked language rule (English, Hindi and Hinglish understood natively; only the UI language is a setting) and should be reconciled before Phase 15 and Phase 19.
+
+### H. Resume instructions
+1. Read `Phases.md`, then this section. 2. Check the Git state: if the Phase 8 work is still uncommitted, it awaits the owner's Approval Gate 2 (commit with the owner's identity, no AI attribution trailer; do not push unless told). 3. Do not restart the Phase 8 research or methodology; treat Phase 8 as frozen after the commit unless the owner requests a correction. 4. After a push, check GitHub Actions for **each job and its steps** individually before saying the jobs passed. 5. Do not start Phase 9 without the owner's selection.

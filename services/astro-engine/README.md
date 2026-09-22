@@ -1,10 +1,10 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles (Phase 9 WP-A1) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
-**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga reductions (Trikona/Ekadhipatya Shodhana, Pinda Sadhana), Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
+**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
 ## Purpose
 
@@ -133,7 +133,7 @@ now.snapshot.states, now.snapshot.favourable, now.snapshot.vedha, now.snapshot.c
 - **Limits**: a window of at most 200 years and at most 50,000 events; larger requests are `NOT_EVALUABLE` with no partial result.
 - **Failures** are structured (`status` plus `reason_code`), never guessed and never a stack trace. An approximate natal time needs an explicit Moon range; a range reaching a sign boundary is `NOT_EVALUABLE(natal_moon_sign_ambiguous)`.
 
-## Ashtakavarga (Phase 9 WP-A1)
+## Ashtakavarga (Phase 9 WP-A1, extended by WP-A2/A3)
 
 `pandit_astro_engine.ashtakavarga` calculates Bhinnashtakavarga (per-planet, per-sign benefic-contributor counts) and Sarvashtakavarga (their sum) from natal sign placements only -- no ephemeris access. Four independent, page-verified source profiles are provided and none is a default; a caller must name one:
 
@@ -151,8 +151,26 @@ facts.charts, facts.sarva, facts.lagna_chart  # lagna_chart is None under this p
 - **Profiles** (`docs/ASTROLOGY_STANDARDS.md` v1.7.0, AV-01 to AV-08): `ASHTAKAVARGA_BRIHAT_JATAKA_SASTRI_IX_1_7`, `ASHTAKAVARGA_PHALADEEPIKA_SASTRI_XXIII_3_9`, `ASHTAKAVARGA_BPHS_GRID_KAPOOR_66`, `ASHTAKAVARGA_BPHS_VERSE_KAPOOR_66`. BPHS's own printed dot grid and its own printed verse-translation list disagree with each other on 5 of 56 cells inside the same chapter, so there is no unqualified "BPHS" profile.
 - **Conflicts preserved, never resolved**: 9 of the 56 (chart, contributor) cells disagree across the four readings (`ashtakavarga.constants.CROSS_TABLE_CONFLICTS`); every profile still returns its own printed value at every cell, and two carry a translator's footnote (kept as `translator_note`, never merged).
 - **Lagna's own chart** (BPHS Ch. 66 v. 65-68) is present only under the two BPHS profiles; Brihat Jataka and Phaladeepika are silent on it and it is never synthesized for them (`facts.lagna_chart` is `None`).
-- **Out of scope for WP-A1** (deferred, not silently dropped): Trikona Shodhana, Ekadhipatya Shodhana and Pinda Sadhana reductions (WP-A2/A3); any use by Shadbala's Drik Bala or by Gochara/transits (Phase 8); Rahu and Ketu are never contributors (no source read gives either a table).
+- **Out of scope** (deferred, not silently dropped): BPHS Ch. 71's Ashtakavarga-based longevity (blocked under the Ayurdaya policy -- lifespan/death-timing claims); Ch. 70 and 72's interpretive effect-judgments; any use by Shadbala's Drik Bala or by Gochara/transits (Phase 8); Rahu and Ketu are never Bhinnashtakavarga contributors (no source read gives either a table; they are used only for the WP-A2 occupancy test).
 - **Failures** are structured (`status` plus `reason_code`): a missing Ascendant longitude is `NOT_EVALUABLE(lagna_unavailable)`; a missing planet longitude is `NOT_EVALUABLE(natal_positions_incomplete)`; a non-finite longitude is `INVALID_INPUT(non_finite_longitude)`; an unknown profile ID is `UNSUPPORTED_PROFILE`.
+
+### Reductions and Pinda Sadhana (Phase 9 WP-A2/A3, BPHS profiles only)
+
+`AshtakavargaCalculationService.calculate_reductions` computes Trikona Shodhana, Ekadhipatya Shodhana and Pinda Sadhana (Rasi, Graha and Yoga Pinda) -- a separate, additive request/response pair that leaves `calculate()` and `AshtakavargaFacts` completely unchanged:
+
+```python
+from pandit_astro_engine.ashtakavarga import AshtakavargaCalculationService, BPHS_GRID_ID
+
+request = AshtakavargaCalculationService.from_kundli_reduction_request(kundli, BPHS_GRID_ID)
+facts = AshtakavargaCalculationService().calculate_reductions(request)
+facts.charts, facts.lagna_chart  # ChartReduction: trikona_corrected, ekadhipatya_corrected
+facts.pinda, facts.lagna_pinda  # PindaResult: rasi_pinda, graha_pinda, yoga_pinda
+```
+
+- **BPHS-only** (`docs/ASTROLOGY_STANDARDS.md` v1.8.0, AV-09 to AV-13): no source read gives Brihat Jataka or Phaladeepika a reduction procedure at all. Requesting one under either profile returns `NOT_EVALUABLE(reduction_unsupported_for_profile)`, never a silently computed result.
+- **Node positions required**: `NatalPositions.rahu_longitude` / `.ketu_longitude` are needed for Ekadhipatya Shodhana's occupancy test (a sign occupied only by Ketu counts as "with a planet", confirmed by BPHS's own worked example); missing either is `NOT_EVALUABLE(node_positions_required)`.
+- **Exact integer arithmetic throughout**, verified against BPHS's own worked examples (Ch. 67 pp. 868-869, Ch. 68 p. 876, Ch. 69 pp. 879-880): Trikona Shodhana subtracts each trine group's minimum from all three; Ekadhipatya Shodhana leaves both-occupied pairs unchanged, reduces both by their minimum when neither is occupied, and otherwise keeps the occupied sign unchanged while clamping the empty one to `max(0, empty - occupied)`.
+- **Three conflicts carried forward, never guessed**: Graha Pinda's multiplier for Sun/Moon/Saturn (5, proven by the worked example's own total, not the verse's stated 6) is resolved, but Mercury's (table 5 vs verse 6) is not -- a sign occupied solely by Mercury with a nonzero value makes that chart's Graha/Yoga Pinda `NOT_EVALUABLE(mercury_multiplier_conflict)`. A sign shared by more than one classical planet is `NOT_EVALUABLE(multiple_occupants_unsupported)` (no source states an aggregation rule) when nonzero. A lordship pair with exactly one sign occupied AND equal Trikona-corrected values is `NOT_EVALUABLE(ekadhipatya_equal_value_conflict)` for the *whole chart* -- BPHS's own printed illustration answers this exact shape two different ways in two different pairs (`ashtakavarga.models.EkadhipatyaConflict` keeps both readings, with provenance); since Rasi Pinda sums all 12 signs, one unresolved sign withholds the chart's entire Rasi, Graha and Yoga Pinda, not just that sign's contribution.
 
 ## Supported bodies
 
@@ -212,7 +230,7 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 pip install -e ../../packages/contracts
 pip install -e ../../packages/shared
 pip install -e ".[dev]"
-pytest                        # 818 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phases 4, 5, 7, 8 and 9 WP-A1)
+pytest                        # 850 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3)
 ruff check .
 ruff format --check .
 mypy src

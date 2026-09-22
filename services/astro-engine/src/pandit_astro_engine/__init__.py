@@ -22,18 +22,19 @@ station events and the Sade Sati sign-band timeline (a MODERN_TRADITION
 profile) with provenance (`pandit_astro_engine.transits`); see
 `docs/ASTROLOGY_STANDARDS.md` section "Transit / Gochar standards".
 
-Phase 9 WP-A1 (Ashtakavarga): Bhinnashtakavarga and Sarvashtakavarga facts
-across four independent, never-merged source profiles (Brihat Jataka,
+Phase 9 WP-A1/A2/A3 (Ashtakavarga): Bhinnashtakavarga and Sarvashtakavarga
+facts across four independent, never-merged source profiles (Brihat Jataka,
 Phaladeepika, and BPHS's own printed dot grid and printed verse-translation
-list, which disagree with each other on 5 of 56 cells) with provenance
-(`pandit_astro_engine.ashtakavarga`); see `docs/ASTROLOGY_STANDARDS.md`
-section "Ashtakavarga standards". Reductions (Trikona/Ekadhipatya
-Shodhana, Pinda Sadhana) remain out of scope (WP-A2/A3).
+list, which disagree with each other on 5 of 56 cells), and -- BPHS
+profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana
+(Rasi/Graha/Yoga Pinda), with provenance (`pandit_astro_engine.ashtakavarga`);
+see `docs/ASTROLOGY_STANDARDS.md` section "Ashtakavarga standards".
 
 Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
-reductions, narration, and any AI/LLM involvement remain out of scope here
-and belong to later phases and other services (`rule-engine`, `agent`,
-`knowledge`) -- see each phase's boundary section in `Phases.md`.
+Ch. 71's longevity calculation (blocked under the Ayurdaya policy), narration,
+and any AI/LLM involvement remain out of scope here and belong to later
+phases and other services (`rule-engine`, `agent`, `knowledge`) -- see each
+phase's boundary section in `Phases.md`.
 
 This package remains a pure library: no HTTP, no database access, no
 dependency on `agent`, `rule-engine`, `knowledge`, or `verification`.

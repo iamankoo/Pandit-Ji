@@ -1,0 +1,74 @@
+{
+  "description": "BPHS Ch. 67/68/69 continued worked example (printed pp. 868-880): a single natal chart reconstructed from the source's own printed 'Example Horoscope' (Ch. 67, p. 868) and its own stated Rekha-count row, by an independent brute-force search against the already-shipped WP-A1 calculator (see the Phase 9 WP-A2/A3 methodology report). Longitudes below are chosen only to land in the correct sign for each body (only the sign matters for this system); the specific degree is not a source-stated value. Expected values are the source's own printed Trikona/Ekadhipatya numbers (Ch. 67 p. 869, Ch. 68 p. 876) and printed Pinda totals (Ch. 69 p. 879-880), not produced by the implementation under test.",
+  "natal_longitudes_degrees": {
+    "lagna": 310.0,
+    "sun": 285.0,
+    "moon": 70.0,
+    "mars": 45.0,
+    "mercury": 315.0,
+    "jupiter": 320.0,
+    "venus": 325.0,
+    "saturn": 225.0
+  },
+  "rahu_longitude_degrees": 75.0,
+  "ketu_longitude_degrees": 250.0,
+  "profile_id": "ASHTAKAVARGA_BPHS_GRID_KAPOOR_66",
+  "chart": "sun",
+  "expected_trikona_corrected": {
+    "aries": 0,
+    "taurus": 1,
+    "gemini": 1,
+    "cancer": 4,
+    "leo": 1,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 4,
+    "sagittarius": 1,
+    "capricorn": 3,
+    "aquarius": 0,
+    "pisces": 0
+  },
+  "expected_ekadhipatya_corrected": {
+    "aries": 0,
+    "taurus": 1,
+    "gemini": 1,
+    "cancer": 4,
+    "leo": 1,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 4,
+    "sagittarius": 1,
+    "capricorn": 3,
+    "aquarius": 0,
+    "pisces": 0
+  },
+  "expected_rasi_pinda": 100,
+  "expected_graha_pinda": 48,
+  "expected_yoga_pinda": 148,
+  "expected_graha_pinda_nonzero_contributions": [
+    {
+      "sign": "taurus",
+      "occupying_contributor": "mars",
+      "multiplier": 8,
+      "product": 8
+    },
+    {
+      "sign": "gemini",
+      "occupying_contributor": "moon",
+      "multiplier": 5,
+      "product": 5
+    },
+    {
+      "sign": "scorpio",
+      "occupying_contributor": "saturn",
+      "multiplier": 5,
+      "product": 20
+    },
+    {
+      "sign": "capricorn",
+      "occupying_contributor": "sun",
+      "multiplier": 5,
+      "product": 15
+    }
+  ]
+}

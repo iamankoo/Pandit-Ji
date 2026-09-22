@@ -28,10 +28,13 @@ from __future__ import annotations
 
 from enum import Enum
 
+from pandit_astro_engine.rashi import Rashi
+
 SYSTEM_ID = "ashtakavarga"
 
-#: Standards version this module implements (Phase 9 WP-A1 methodology lock).
-ASHTAKAVARGA_STANDARDS_VERSION = "1.7.0"
+#: Standards version this module implements (Phase 9 WP-A1 methodology lock,
+#: extended by the WP-A2/A3 reductions and Pinda lock).
+ASHTAKAVARGA_STANDARDS_VERSION = "1.8.0"
 
 
 class Contributor(str, Enum):
@@ -592,3 +595,89 @@ CROSS_TABLE_CONFLICTS: tuple[CrossTableConflict, ...] = (
         },
     ),
 )
+
+
+# ==========================================================================
+# WP-A2 / WP-A3 -- Trikona Shodhana, Ekadhipatya Shodhana, Pinda Sadhana
+# (docs/ASTROLOGY_STANDARDS.md v1.8.0, AV-09 to AV-13)
+#
+# Source: BPHS Vol II (Kapoor), Ch. 67 "Trikona Shodhana", Ch. 68
+# "Ekadhipatya Shodhana", Ch. 69 "Pinda Sadhana" (printed pp. 867-880),
+# IMAGE-TRANSLATION. Brihat Jataka and Phaladeepika give no reduction
+# procedure at all -- this whole section applies only under the two BPHS
+# profiles (`BPHS_GRID_ID`, `BPHS_VERSE_ID`); it is never applied to, or
+# silently combined with, the Brihat Jataka or Phaladeepika tables.
+# ==========================================================================
+
+#: Ch. 67 v. 1-2: the four trikona (trine) groups, equidistant sign triads.
+TRIKONA_GROUPS: tuple[tuple[Rashi, Rashi, Rashi], ...] = (
+    (Rashi.ARIES, Rashi.LEO, Rashi.SAGITTARIUS),
+    (Rashi.TAURUS, Rashi.VIRGO, Rashi.CAPRICORN),
+    (Rashi.GEMINI, Rashi.LIBRA, Rashi.AQUARIUS),
+    (Rashi.CANCER, Rashi.SCORPIO, Rashi.PISCES),
+)
+
+#: Ch. 68: the five planets that own two signs each, and their pair. Sun and
+#: Moon (one sign each) are handled separately -- see `SINGLE_LORDSHIP_SIGN`.
+LORDSHIP_PAIRS: dict[Contributor, tuple[Rashi, Rashi]] = {
+    Contributor.MARS: (Rashi.ARIES, Rashi.SCORPIO),
+    Contributor.VENUS: (Rashi.TAURUS, Rashi.LIBRA),
+    Contributor.MERCURY: (Rashi.GEMINI, Rashi.VIRGO),
+    Contributor.JUPITER: (Rashi.SAGITTARIUS, Rashi.PISCES),
+    Contributor.SATURN: (Rashi.CAPRICORN, Rashi.AQUARIUS),
+}
+
+#: Ch. 68 rule 6's closing sentence: Sun and Moon own one sign only and their
+#: Ekadhipatya-corrected number is always the unreduced Trikona value.
+SINGLE_LORDSHIP_SIGN: dict[Contributor, Rashi] = {
+    Contributor.SUN: Rashi.LEO,
+    Contributor.MOON: Rashi.CANCER,
+}
+
+#: Ch. 69 "Rasimana Chakra" -- IMAGE-TRANSLATION verified, verse and printed
+#: table agree exactly, no conflict. Used by both Rasi Pinda and (as the
+#: per-sign multiplicand) nowhere else.
+RASI_MULTIPLIER: dict[Rashi, int] = {
+    Rashi.ARIES: 7,
+    Rashi.TAURUS: 10,
+    Rashi.GEMINI: 8,
+    Rashi.CANCER: 4,
+    Rashi.LEO: 10,
+    Rashi.VIRGO: 6,
+    Rashi.LIBRA: 7,
+    Rashi.SCORPIO: 8,
+    Rashi.SAGITTARIUS: 9,
+    Rashi.CAPRICORN: 5,
+    Rashi.AQUARIUS: 11,
+    Rashi.PISCES: 12,
+}
+
+#: Ch. 69 "Grahamana Chakra" (planet multipliers for Graha Pinda). Six of
+#: seven values are IMAGE-TRANSLATION verified AND independently proven by
+#: the chapter's own worked example (Sun=5, Mars=8, Moon=5, Saturn=5 all
+#: reproduce the example's stated Graha Pinda total of 48 exactly; using the
+#: verse's own alternate reading of 6 for Sun/Moon/Saturn instead gives 56,
+#: not 48, so the verse's "6" is treated as a translation/printing error for
+#: those three, never applied). Jupiter=10 and Venus=7 agree between the
+#: verse and the table but are not tested by any worked example.
+#: Mercury is deliberately absent here -- see `MERCURY_GRAHA_MULTIPLIER_CANDIDATES`.
+GRAHA_MULTIPLIER: dict[Contributor, int] = {
+    Contributor.SUN: 5,
+    Contributor.MARS: 8,
+    Contributor.MOON: 5,
+    Contributor.JUPITER: 10,
+    Contributor.VENUS: 7,
+    Contributor.SATURN: 5,
+}
+
+#: Unresolved source conflict (Ch. 69 v. 1-4 vs the printed Grahamana Chakra
+#: table): the verse states 6 for Mercury, the table states 5, and no
+#: worked example in the chapter isolates a Mercury-only occupied sign to
+#: arbitrate between them (Mercury only ever co-occupies a sign whose value
+#: is 0 in the chapter's own example). No value is silently chosen; a sign
+#: occupied solely by Mercury makes the whole Graha/Yoga Pinda result for
+#: that chart `NOT_EVALUABLE(mercury_multiplier_conflict)`.
+MERCURY_GRAHA_MULTIPLIER_CANDIDATES: dict[str, int] = {
+    "grahamana_chakra_table": 5,
+    "verse_1_4": 6,
+}

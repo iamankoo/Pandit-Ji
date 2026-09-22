@@ -42,13 +42,14 @@ see `docs/ASTROLOGY_STANDARDS.md` section "Jaimini standards". No other
 Jaimini system (Jaimini Dashas, Arudha Pada, Karakamsa, ...) is implemented
 yet.
 
-Phase 9 WP-C (Partial/Degree Drishti, Profile A only): a continuous,
-degree-based refinement of planet-to-house aspect strength (BPHS Ch. 26),
-layered on top of Phase 5/6's discrete graha drishti, never merged with it
-(`pandit_astro_engine.partial_degree_drishti`); see
-`docs/ASTROLOGY_STANDARDS.md` section "Partial/Degree Drishti standards".
-Profile B (Uttara Kalamrita/Sripatipaddhati interpolation) is methodology-
-locked but not yet implemented.
+Phase 9 WP-C (Partial/Degree Drishti): a continuous, degree-based
+refinement of planet-to-house aspect strength, layered on top of Phase
+5/6's discrete graha drishti, never merged with it
+(`pandit_astro_engine.partial_degree_drishti`), as two independent,
+never-merged profiles -- BPHS Ch. 26 and Uttara Kalamrita Ch. 2 (citing
+Sripatipaddhati-II, unverified) -- with no default and no shared
+calculation entry point between them; see `docs/ASTROLOGY_STANDARDS.md`
+section "Partial/Degree Drishti standards".
 
 Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
 Ch. 71's longevity calculation (blocked under the Ayurdaya policy), narration,

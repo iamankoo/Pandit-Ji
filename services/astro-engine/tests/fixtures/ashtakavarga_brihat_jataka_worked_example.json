@@ -1,0 +1,59 @@
+{
+  "description": "Brihat Jataka Ch. IX sl. 8 / Ch. VII sl. 6 worked example, printed p. 205 -- an independent source-published example, not produced by the calculator under test. Only each body's SIGN matters for Ashtakavarga; the longitudes below are chosen to reproduce the printed chart's sign groupings (Lagna and Venus share a sign; Mercury and Moon share a sign; the Sun, Jupiter, Mars and Saturn are each alone), verified against the printed per-sign dot/stroke counts, not a claim about the exact degree the source printed within each sign.",
+  "natal_longitudes_degrees": {
+    "lagna": 340.0,
+    "venus": 357.0,
+    "sun": 10.0,
+    "mercury": 31.0,
+    "moon": 35.0,
+    "jupiter": 95.0,
+    "mars": 293.0,
+    "saturn": 200.0
+  },
+  "profile_id": "ASHTAKAVARGA_BRIHAT_JATAKA_SASTRI_IX_1_7",
+  "chart": "mars",
+  "expected_benefic_count_by_sign": {
+    "aries": 3,
+    "taurus": 3,
+    "gemini": 3,
+    "cancer": 4,
+    "leo": 5,
+    "virgo": 2,
+    "libra": 5,
+    "scorpio": 1,
+    "sagittarius": 2,
+    "capricorn": 5,
+    "aquarius": 3,
+    "pisces": 3
+  },
+  "expected_malefic_count_by_sign": {
+    "aries": 5,
+    "taurus": 5,
+    "gemini": 5,
+    "cancer": 4,
+    "leo": 3,
+    "virgo": 6,
+    "libra": 3,
+    "scorpio": 7,
+    "sagittarius": 6,
+    "capricorn": 3,
+    "aquarius": 4,
+    "pisces": 5
+  },
+  "expected_effectless_count_by_sign": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 1,
+    "pisces": 0
+  },
+  "expected_total_benefic": 39,
+  "expected_total_malefic": 56
+}

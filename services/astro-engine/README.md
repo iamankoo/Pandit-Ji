@@ -1,10 +1,10 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7 and 8). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles (Phase 9 WP-A1) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
-**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakvarga scoring, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha or transit facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
+**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga reductions (Trikona/Ekadhipatya Shodhana, Pinda Sadhana), Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
 ## Purpose
 
@@ -133,6 +133,27 @@ now.snapshot.states, now.snapshot.favourable, now.snapshot.vedha, now.snapshot.c
 - **Limits**: a window of at most 200 years and at most 50,000 events; larger requests are `NOT_EVALUABLE` with no partial result.
 - **Failures** are structured (`status` plus `reason_code`), never guessed and never a stack trace. An approximate natal time needs an explicit Moon range; a range reaching a sign boundary is `NOT_EVALUABLE(natal_moon_sign_ambiguous)`.
 
+## Ashtakavarga (Phase 9 WP-A1)
+
+`pandit_astro_engine.ashtakavarga` calculates Bhinnashtakavarga (per-planet, per-sign benefic-contributor counts) and Sarvashtakavarga (their sum) from natal sign placements only -- no ephemeris access. Four independent, page-verified source profiles are provided and none is a default; a caller must name one:
+
+```python
+from pandit_astro_engine.ashtakavarga import (
+    AshtakavargaCalculationService,
+    BRIHAT_JATAKA_ID,
+)
+
+request = AshtakavargaCalculationService.from_kundli_request(kundli, BRIHAT_JATAKA_ID)
+facts = AshtakavargaCalculationService().calculate(request)
+facts.charts, facts.sarva, facts.lagna_chart  # lagna_chart is None under this profile
+```
+
+- **Profiles** (`docs/ASTROLOGY_STANDARDS.md` v1.7.0, AV-01 to AV-08): `ASHTAKAVARGA_BRIHAT_JATAKA_SASTRI_IX_1_7`, `ASHTAKAVARGA_PHALADEEPIKA_SASTRI_XXIII_3_9`, `ASHTAKAVARGA_BPHS_GRID_KAPOOR_66`, `ASHTAKAVARGA_BPHS_VERSE_KAPOOR_66`. BPHS's own printed dot grid and its own printed verse-translation list disagree with each other on 5 of 56 cells inside the same chapter, so there is no unqualified "BPHS" profile.
+- **Conflicts preserved, never resolved**: 9 of the 56 (chart, contributor) cells disagree across the four readings (`ashtakavarga.constants.CROSS_TABLE_CONFLICTS`); every profile still returns its own printed value at every cell, and two carry a translator's footnote (kept as `translator_note`, never merged).
+- **Lagna's own chart** (BPHS Ch. 66 v. 65-68) is present only under the two BPHS profiles; Brihat Jataka and Phaladeepika are silent on it and it is never synthesized for them (`facts.lagna_chart` is `None`).
+- **Out of scope for WP-A1** (deferred, not silently dropped): Trikona Shodhana, Ekadhipatya Shodhana and Pinda Sadhana reductions (WP-A2/A3); any use by Shadbala's Drik Bala or by Gochara/transits (Phase 8); Rahu and Ketu are never contributors (no source read gives either a table).
+- **Failures** are structured (`status` plus `reason_code`): a missing Ascendant longitude is `NOT_EVALUABLE(lagna_unavailable)`; a missing planet longitude is `NOT_EVALUABLE(natal_positions_incomplete)`; a non-finite longitude is `INVALID_INPUT(non_finite_longitude)`; an unknown profile ID is `UNSUPPORTED_PROFILE`.
+
 ## Supported bodies
 
 Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase.
@@ -191,7 +212,7 @@ Every calculation is a pure function of `(local_datetime, location, config)` —
 pip install -e ../../packages/contracts
 pip install -e ../../packages/shared
 pip install -e ".[dev]"
-pytest                        # 788 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phases 4, 5, 7 and 8)
+pytest                        # 818 tests: unit, validation, determinism, boundary, golden, consistency, performance (Phases 4, 5, 7, 8 and 9 WP-A1)
 ruff check .
 ruff format --check .
 mypy src

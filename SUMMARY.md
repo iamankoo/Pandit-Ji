@@ -1274,3 +1274,49 @@ This work package went through the most extensive research-and-revision cycle of
 
 ### F. Resume instructions
 1. Read `Phases.md`, then §30, then this section. 2. WP-C is committed, pushed and CI-verified across three commits (`8a532cf`, `76bd540`, `c4059cc`); treat it as frozen unless the owner requests a correction. 3. Do not restart its research or methodology, and do not attempt to resolve the houses-9/10 conflict or the special-planet interior questions without new primary-source evidence and an explicit fresh owner decision. 4. After any future push, check GitHub Actions for **each job and its steps** individually before saying the jobs passed. 5. Do not begin WP-D or any other Phase 9 work package without a new, explicit owner directive scoping it, following the same research-verify-document-approve-implement-test-commit-CI cycle used throughout Phases 7-9.
+
+## 32. Session Handoff (2026-09-22) — WP-C Independent Audit (passed, no changes needed) and WP-D Status (not started)
+
+**Read this section first if resuming tomorrow.** Nothing was implemented for WP-D this session. WP-C required no corrections. The exact continuation point is §F below.
+
+### A. What happened in this session, in order
+1. Completed WP-C implementation across two work packages (§31 above): Profile A (`bphs.py`, commit `76bd540`), Profile B (`uttarakalamrita.py`, commit `c4059cc`), plus the methodology-lock docs commit (`8a532cf`) and the §31 handoff commit (`8053d93`).
+2. The owner then requested a **fresh, independent audit** of WP-C (explicitly: "do not blindly trust the report") before any WP-D work began. This audit was performed and is recorded in full in §B below.
+3. A large WP-D research-and-implementation prompt was received, covering repository re-verification, a WP-D research phase (zodiac, body set, houses, aspects, orbs, provenance), a pre-lock report, and — only after explicit approval — implementation.
+4. **Before any WP-D research was actually carried out**, the owner sent a stop instruction: finalize this handoff, commit and push, and do not begin any WP-D work (research or implementation) today. This section is that handoff. **WP-D research has not started.**
+
+### B. WP-C Independent Audit — Result: PASSED, no corrections needed
+Performed fresh, not by re-reading the prior session's own claims:
+- **Repository state**: `git branch` = `main`; `git status` = clean; `git log` head = `8053d93 → c4059cc → 76bd540 → 8a532cf → de2e625`, matching the prior report exactly; local `HEAD` and `origin/main` both verified equal to `8053d93af513f287a30a5fdbace9aa3230771c87`.
+- **Source files re-read in full, fresh** (not from memory): `services/astro-engine/src/pandit_astro_engine/partial_degree_drishti/bphs.py` and `uttarakalamrita.py`. Confirmed independently: two fully separate modules, no shared calculation function, no shared result base class beyond each module's own private `_Model` (verified: `UkDrishtiResult.__mro__` is `(UkDrishtiResult, _Model, BaseModel, object)` -- no cross-module class in the chain), no default profile, Profile A's `_DISPUTED_HOUSES = (9, 10)` excludes 8, Profile A's special-planet branch checks exact equality (`delta == peak_degrees`) with no tolerance, Profile B's special-planet branch is unconditional (no peak check at all, always `NOT_EVALUABLE`), both modules check `_NODES = (RAHU, KETU)` before any other logic and return `NOT_EVALUABLE(aspecting_node_unresolved)`, both longitude validators reject `[<0 or >=360)`.
+- **Full test suites run fresh**: astro-engine **1057 passed** (including a targeted run of just the two WP-C test files: **119 passed**); rule-engine **317 passed, unchanged**. Ruff lint, Ruff format check and mypy strict all clean, run fresh this session.
+- **CI independently re-verified via the GitHub check-runs API** (not re-reading the prior report's numbers) for all four WP-C commits: `8a532cf`, `76bd540`, `c4059cc`, `8053d93` -- each returns exactly 15 check-runs, 0 with a non-success conclusion.
+- **Conclusion: every claim in the prior §31 handoff was independently confirmed. No gap was found. No code was touched during this audit** -- per the owner's own instruction, WP-C was not modified since it was already clean.
+
+### C. WP-D Status: Not Started
+The large WP-D prompt's Section 1-3 (repository re-verification, "do not skip source verification") were being followed when the stop instruction arrived; the actual WP-D research (Section 5 of that prompt: zodiac, body set, house system, aspects, orbs, provenance) **was not performed this session**. This is a correction to avoid any ambiguity: no WP-D source has been checked, no WP-D profile ID has been proposed, and no WP-D file has been touched, in direct response to today's large prompt.
+
+**Prior, separate WP-D research exists from an earlier point in this project's history** (recorded informally in conversation, not yet in `research/ASTROLOGY_SOURCES.md` or `docs/ASTROLOGY_STANDARDS.md` -- carried here in prose so it is not lost, and must be re-verified before being relied on, not assumed correct):
+- `docs/ASTROLOGY_STANDARDS.md`'s existing "Western / Tropical" section (written in the Phase 1 v1.1.0 pass, long before this project's page-image-verification discipline existed) states Tropical zodiac + Placidus houses + "tropical orb conventions" with **zero source citation** -- unlike every other locked convention in that document. This was flagged, not resolved: whether to treat it as a starting point to formally source, or discard and re-derive from scratch, is an open owner decision.
+- Ptolemy's *Tetrabiblos* (Book I, checked directly via the LacusCurtius/Loeb text) supports the 4 non-conjunction major aspects (opposition/trine/square/sextile -- Ptolemy explicitly does not count conjunction as a formal aspect) at primary-source level, but **contains no orb or per-planet "moiety" values at all**; an editor's footnote attributes even a vague "15 degree maximum" to a later, anonymous commentator, not to Ptolemy. The widely-cited per-planet moiety table (Sun 15 deg, Moon 12 deg, etc.) is a still-later accretion and must never be cited as "Ptolemaic."
+- `docs/ARCHITECTURE.md` already reserves a `western/` package location (never built) matching this project's isolation convention.
+- No WP-D source registry entries exist in `research/ASTROLOGY_SOURCES.md` yet.
+
+**None of the above is a locked decision.** It is prior-session findings, offered as a starting point for tomorrow's research, not a substitute for it.
+
+### D. Source-of-truth chain re-read before finalizing this handoff
+`features.md` (product vision, accuracy principle unchanged), `Phases.md` Phase 9 (Shadbala -- BPHS Ch. 27-28 -- remains the only named Vedic-strength line item; WP-C's Ch. 26 work and any future WP-D work are both, in different ways, not separately named there), `SOURCE_OF_TRUTH.md` (authority order unchanged: explicitly locked owner decisions outrank `Phases.md` itself), `docs/ASTROLOGY_STANDARDS.md` (current version confirmed at **v1.13.0**, PD-01 through PD-11). No inconsistency found between these documents and the current repository state.
+
+### E. Validation Run This Session (all fresh, all passing)
+- astro-engine: ruff lint clean, ruff format clean, mypy strict clean (54 source files), **1057 tests passed** (25.37s).
+- rule-engine: **317 tests passed** (19.43s), untouched.
+- Git: working tree clean before and after this session's only change (this `SUMMARY.md` update); no other file was modified.
+- CI: all four prior WP-C commits re-verified green via the API (§B); this handoff commit's own CI is reported in §G below once pushed.
+
+### F. Exact Continuation Point for Tomorrow
+**Do not repeat the WP-C audit -- it passed and is closed.** Start WP-D fresh, following the large prompt already on record in this session's transcript (repository re-verification -> structured research across zodiac/body-set/houses/aspects/orbs/provenance -> a research deliverable -> a pre-lock report classifying every claim as `SOURCE_SUPPORTED`/`PROJECT_DERIVED`/`INFERENCE`/`UNRESOLVED_CONFLICT`/`NOT_EVALUABLE` -> **stop at the methodology-approval gate** -> only implement after explicit approval). Begin by re-reading this section and `Phases.md`, then re-verifying `origin/main` is still at the commit recorded in §G before doing anything else. Reuse §C's prior findings only as a lead to re-verify, never as an assumed-correct starting fact.
+
+### G. Files Changed, Commit, CI (this handoff)
+- **File changed**: `SUMMARY.md` only (this section).
+- **Commit**: recorded immediately below, after this edit is saved.
+- **Push/CI**: recorded immediately below.

@@ -1,8 +1,8 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1/WP-B-2). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1/WP-B-2/WP-C). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1); Chara Karaka ranking under two body-scope profiles and the separate Constant Karaka table (Phase 9 WP-B-2) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1); Chara Karaka ranking under two body-scope profiles and the separate Constant Karaka table (Phase 9 WP-B-2); a continuous, degree-based refinement of aspect strength, BPHS profile only so far (Phase 9 WP-C) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
 **Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
@@ -209,6 +209,29 @@ constant_karakas()  # the 8-entry static table; father/mother are NOT_EVALUABLE(
 - **Rahu's reverse-degree convention** (v. 3-8, "deduct his longitude in that particular sign from 30") is applied before ranking; Atma Karaka ties are broken by minutes then seconds, matching the source exactly.
 - **Deficit handling matches BPHS's own v. 13, not a synthetic shortcut**: a tie "identical to the second of arc" between two candidates makes both "qualified for that particular karakaatwa" (they share the role), and because roles fill strictly in rank order, the shortfall always lands on the *lowest* role in the fixed sequence -- reported as `NOT_EVALUABLE(rank_deficit)` for that role, exactly as the 7-body profile's structural 7-candidates-for-8-roles shortfall is reported too. A tie at the very top (Atma Karaka itself) instead makes the *whole* result `NOT_EVALUABLE(tie_unresolved)` (no partial role list), since every other Karaka is judged relative to Atma Karaka (v. 9-12) -- a Pandit Ji reading bridging v. 3-8 and v. 13, documented as such, not a single verse's explicit statement.
 - **Constant Karaka is a separate, independent fact set, deliberately not auto-wired as the Chara Karaka deficit's substitute**: BPHS's own worked illustration demonstrates only one substitution (a deficient Dara Karaka falling back to Venus, the constant husband/wife significator); generalizing that one example into an automatic rule for the other six non-Atma roles would invent a mechanism the source does not fully specify. Two of the eight Constant Karaka significations ("the stronger" of Sun/Venus for father, Moon/Mars for mother) are `NOT_EVALUABLE(strength_undefined)`, reproducing a conflict this project already had on record rather than guessing a strength rule.
+
+## Partial/Degree Drishti (Phase 9 WP-C, BPHS profile only)
+
+`pandit_astro_engine.partial_degree_drishti.bphs` computes a continuous, degree-based refinement of planet-to-house aspect strength (BPHS Ch. 26), layered on top of Phase 5/6's discrete graha drishti but never merged with it. A second, methodology-locked profile (Uttara Kalamrita, citing Sripatipaddhati-II) exists in `docs/ASTROLOGY_STANDARDS.md` but is not implemented yet -- there is no default and no shared calculation path between the two.
+
+```python
+from pandit_astro_engine.partial_degree_drishti.bphs import (
+    BphsDrishtiRequest,
+    calculate_bphs_drishti,
+)
+from pandit_astro_engine.models import CelestialBody
+
+calculate_bphs_drishti(
+    BphsDrishtiRequest(
+        aspecting_body=CelestialBody.MERCURY, aspecting_longitude=0.0, aspected_longitude=60.0
+    )
+).value  # 15.0 -- the 3rd house's quarter aspect
+```
+
+- **BPHS's own five-branch formula (v.6-9) is algebraically identical to linear interpolation** between the discrete checkpoints BPHS itself states (v.2-5) -- a project-level derivation, documented as such and never presented as the source's own claim.
+- **Houses 9 and 10 are a permanent, unresolved source-internal conflict, not a bug**: BPHS's own literal reduction step (Sanskrit-confirmed as "10 signs", not a translation error) correctly reproduces house 8 but contradicts BPHS's own stated house-9/house-10 pairing. `NOT_EVALUABLE(reduction_rule_conflict)` for non-special planets there; no winner is chosen.
+- **Saturn/Mars/Jupiter's own special-house peaks are exact, source-confirmed full aspects** (`SUCCESS`, value 60) at the precise angle; any other separation within that planet's own special house is `NOT_EVALUABLE(special_formula_interior_unresolved)` -- no tolerance is invented.
+- **Rahu/Ketu as the aspecting body**: both BPHS Ch. 26 and Uttara Kalamrita Ch. 2 are silent on this; the silence is not resolved by inference. `RAHU`/`KETU` remain structurally valid inputs (never a validation error), and the result is `NOT_EVALUABLE(aspecting_node_unresolved)`.
 
 ## Supported bodies
 

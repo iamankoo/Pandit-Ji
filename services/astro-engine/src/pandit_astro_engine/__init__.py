@@ -30,6 +30,13 @@ profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana
 (Rasi/Graha/Yoga Pinda), with provenance (`pandit_astro_engine.ashtakavarga`);
 see `docs/ASTROLOGY_STANDARDS.md` section "Ashtakavarga standards".
 
+Phase 9 WP-B-1 (Jaimini, Rashi Drishti only): a static, longitude-independent
+sign-to-sign aspect table (BPHS Ch. 8 v. 1-3), kept strictly separate from
+Phase 5/6's planet-to-house graha drishti (`pandit_astro_engine.jaimini`);
+see `docs/ASTROLOGY_STANDARDS.md` section "Jaimini standards". No other
+Jaimini system (Chara Karaka, Jaimini Dashas, Arudha Pada, Karakamsa, ...)
+is implemented yet.
+
 Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
 Ch. 71's longevity calculation (blocked under the Ayurdaya policy), narration,
 and any AI/LLM involvement remain out of scope here and belong to later

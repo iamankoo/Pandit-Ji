@@ -1,8 +1,8 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
 **Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
@@ -171,6 +171,22 @@ facts.pinda, facts.lagna_pinda  # PindaResult: rasi_pinda, graha_pinda, yoga_pin
 - **Node positions required**: `NatalPositions.rahu_longitude` / `.ketu_longitude` are needed for Ekadhipatya Shodhana's occupancy test (a sign occupied only by Ketu counts as "with a planet", confirmed by BPHS's own worked example); missing either is `NOT_EVALUABLE(node_positions_required)`.
 - **Exact integer arithmetic throughout**, verified against BPHS's own worked examples (Ch. 67 pp. 868-869, Ch. 68 p. 876, Ch. 69 pp. 879-880): Trikona Shodhana subtracts each trine group's minimum from all three; Ekadhipatya Shodhana leaves both-occupied pairs unchanged, reduces both by their minimum when neither is occupied, and otherwise keeps the occupied sign unchanged while clamping the empty one to `max(0, empty - occupied)`.
 - **Three conflicts carried forward, never guessed**: Graha Pinda's multiplier for Sun/Moon/Saturn (5, proven by the worked example's own total, not the verse's stated 6) is resolved, but Mercury's (table 5 vs verse 6) is not -- a sign occupied solely by Mercury with a nonzero value makes that chart's Graha/Yoga Pinda `NOT_EVALUABLE(mercury_multiplier_conflict)`. A sign shared by more than one classical planet is `NOT_EVALUABLE(multiple_occupants_unsupported)` (no source states an aggregation rule) when nonzero. A lordship pair with exactly one sign occupied AND equal Trikona-corrected values is `NOT_EVALUABLE(ekadhipatya_equal_value_conflict)` for the *whole chart* -- BPHS's own printed illustration answers this exact shape two different ways in two different pairs (`ashtakavarga.models.EkadhipatyaConflict` keeps both readings, with provenance); since Rasi Pinda sums all 12 signs, one unresolved sign withholds the chart's entire Rasi, Graha and Yoga Pinda, not just that sign's contribution.
+
+## Rashi Drishti (Phase 9 WP-B-1)
+
+`pandit_astro_engine.jaimini` computes Rashi Drishti (BPHS Ch. 8 v. 1-3): a static, longitude-independent sign-to-sign aspect table, entirely separate from Phase 5/6's planet-to-house graha drishti (`aspects.py`). Only WP-B-1 is implemented; Chara Karaka (WP-B-2) and every other Jaimini system are out of scope until separately approved.
+
+```python
+from pandit_astro_engine.jaimini.rashi_drishti import has_rashi_drishti, rashi_drishti
+from pandit_astro_engine.rashi import Rashi
+
+rashi_drishti(Rashi.ARIES)  # (Rashi.LEO, Rashi.SCORPIO, Rashi.AQUARIUS)
+has_rashi_drishti(Rashi.ARIES, Rashi.TAURUS)  # False -- Taurus is Aries's adjacent fixed sign
+```
+
+- **One profile, one source, no default needed**: `RASHI_DRISHTI_BPHS_8_1_3` (`jaimini.profiles`). BPHS's own translator note (page-image verified) attributes the rule to Parasara, not Jaimini, though it is commonly nicknamed the "Jaimini system" because Jaimini's own corpus also uses it.
+- **Derived, not transcribed**: the table is computed from the already-locked Phase 5 `RASHI_MODALITY` classification (`rashi.py`), so it can never silently drift from the Chara/Sthira/Dwiswabhava table the rest of the engine uses; a dedicated test proves the derivation reproduces BPHS's own printed 12-sign table exactly.
+- **Deliberately not implemented**: Ch. 8 v. 4-5 (the same table applied to a planet's own placement) is read and verified but excluded, because it would produce a planet-level aspect that disagrees with the already-locked Vedic graha drishti for the same placement — the two systems are never blended.
 
 ## Supported bodies
 

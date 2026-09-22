@@ -1161,3 +1161,38 @@ Architecture audit (existing `bundle.py`, `engine.py`, the Dasha/Transit adapter
 
 ### F. Resume instructions
 1. Read `Phases.md`, then §27, then this section. 2. WP-EB is committed, pushed and CI-verified (commit `475c14a`); treat it as frozen unless the owner requests a correction. 3. Do not restart its research or methodology. 4. After any future push, check GitHub Actions for **each job and its steps** individually before saying the jobs passed. 5. WP-B Jaimini (Rashi Drishti, then Chara Karaka) may now begin per the owner's Phase 1/Phase 2 directive, with each work package's own independent research-verification, implementation, test, commit, push and CI-verification cycle — do not skip a gate. 6. Do not start any other Phase 9 work package without the owner's selection.
+
+## 29. Phase 9 WP-B-1 — Jaimini Rashi Drishti — Completion and Handoff
+
+**Status: implemented, committed, pushed and CI-verified.** This covers WP-B-1 only (Rashi Drishti, a static sign-to-sign aspect table). **Chara Karaka (WP-B-2) and every other Jaimini system (Jaimini Dashas, Arudha Pada, Karakamsa, ...) remain unimplemented.**
+
+Base commit before this work: `b138513` (§28 documentation commit). Commit: `0d5787b1dd45d12d1015673db6b46991fd36d8d3`. `origin/main` verified equal to `0d5787b` after the push.
+
+### A. Workflow followed
+Re-verified the source from scratch before writing any code, per the owner's explicit "re-verify, not just reuse prior research" instruction: located the same Santhanam-numbered edition via a website mirror (chapter numbering cross-checked against Ch. 32/Ch. 35 already used elsewhere in this project, confirming it is the same translation), then independently confirmed the chapter heading, verses 1-3, the translator's provenance note and the chapter's own complete 12-sign worked table against the actual archive.org page-image scan via the browser (not OCR text) before implementing anything -> implementation, derived from the already-locked Phase 5 sign-modality table rather than hand-transcribed -> tests proving the derivation reproduces BPHS's own printed table exactly, cell by cell -> full validation -> documentation -> commit -> push -> CI verification, job by job.
+
+### B. Methodology summary (`docs/ASTROLOGY_STANDARDS.md` v1.10.0 JN-01 to JN-05; `research/ASTROLOGY_SOURCES.md` Group 12)
+- **One profile, one source, no default question**: `RASHI_DRISHTI_BPHS_8_1_3` (BPHS Ch. 8 v. 1-3, Santhanam translation, Vol I, printed pp. 105-107). Unlike Ashtakavarga, no cross-source variant was found for this rule, so a single profile is sufficient.
+- **Provenance corrected against the popular misattribution**: BPHS's own translator note (page-image verified, printed pp. 105-106) states this Rasi-aspect system is Parasara's own and only "came to be known as [the] Jaimini system though the original propounder is Parasara." The profile ID and every citation name BPHS Ch. 8, never Jaimini, as the source.
+- **Kept strictly separate from graha drishti**: Rashi Drishti (sign-to-sign) is a different system from Phase 5/6's Vedic graha drishti (planet-to-house, `aspects.py`); different module, different rule, a dedicated regression test proves no conflation.
+- **Ch. 8 v. 4-5 read and page-image verified but deliberately not implemented**: the chapter extends the identical table to a planet's own placement, which would produce a planet-level aspect disagreeing with the already-locked graha drishti for the same placement — the two systems must never be blended (an existing, pre-this-work standards rule). Recorded as an open item for the owner, not implemented.
+- **Verified exactly against the source's own printed table**: the implementation derives the 12-sign table from the already-locked Phase 5 `RASHI_MODALITY` (Chara/Sthira/Dwiswabhava) classification rather than transcribing it sign by sign; a test (`test_matches_bphs_printed_table_exactly`) hardcodes BPHS's own printed table (transcribed independently from the page image, not from the implementation) and confirms all 12 signs match exactly, with zero mismatches.
+
+### C. What was implemented
+- `services/astro-engine/src/pandit_astro_engine/jaimini/`: `profiles.py` (the one profile and its source reference) and `rashi_drishti.py` (`rashi_drishti()`, `has_rashi_drishti()`).
+- `services/astro-engine/tests/test_rashi_drishti.py`: 65 tests (all 12 signs against the printed table, always-3-targets, no self-aspect, adjacent-sign exclusion for both movable and fixed signs, common-sign coverage, mutual-relation proof for every sign, `has_rashi_drishti` behavior, invalid-sign rejection, determinism, the graha-drishti non-conflation regression, profile provenance).
+- Documentation: `docs/ASTROLOGY_STANDARDS.md` v1.10.0 (JN-01 to JN-05); `research/ASTROLOGY_SOURCES.md` Group 12; `services/astro-engine/README.md` (new "Rashi Drishti (Phase 9 WP-B-1)" section); `services/astro-engine/src/pandit_astro_engine/__init__.py` docstring.
+- **Explicitly not implemented, by decision**: Ch. 8 v. 4-5 (planet-level Rasi Drishti); Chara Karaka (WP-B-2); any other Jaimini system; any rule reading Rashi Drishti facts; `Phases.md` was not modified.
+
+### D. Validation
+- astro-engine **915 tests passing** (850 pre-existing + 65 new). rule-engine **317 tests passing, unchanged** (not touched by this work at all). Ruff lint, Ruff format check and mypy strict all clean.
+- **CI run `35730094599`** (commit `0d5787b`): 15 of 15 jobs green, every job's steps individually inspected (no failed step; only the established by-design skips already recorded for prior phases), independently cross-checked against the GitHub check-runs API (0 non-success conclusions). The `services/astro-engine` job's own log confirms **915 passed**, matching the local run exactly.
+
+### E. Known limitations and deferred work
+- No shipped rule reads Rashi Drishti facts yet; it is a pure, tested, provenance-carrying static table until a future rule-content work package consumes it.
+- BPHS Ch. 8 v. 4-5 (the same table applied to a planet's own placement) remains an open item for the owner: whether to expose it as a separate, clearly-labelled planet-level fact (never merged with graha drishti) is a future decision, not made here.
+- Chara Karaka (WP-B-2) has an approved scope (eight-body, Rahu reverse-degree convention, explicit tie handling) but no implementation yet; it is the next approved step, gated on its own source re-verification per the owner's Phase 2 directive.
+- Jaimini Dashas, Arudha Pada, Karakamsa and every other Jaimini system remain unresearched-for-implementation and out of scope until separately approved.
+
+### F. Resume instructions
+1. Read `Phases.md`, then §28, then this section. 2. WP-B-1 is committed, pushed and CI-verified (commit `0d5787b`); treat it as frozen unless the owner requests a correction. 3. Do not restart its research or methodology. 4. After any future push, check GitHub Actions for **each job and its steps** individually before saying the jobs passed. 5. Chara Karaka (WP-B-2) may now begin per the owner's Phase 2 directive, with its own independent source re-verification (BPHS Ch. 32 v. 3-17), implementation, test, commit, push and CI-verification cycle — do not skip a gate, and do not silently merge, fill or guess tie values. 6. Do not start any other Jaimini or Phase 9 work package without the owner's selection.

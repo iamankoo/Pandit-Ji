@@ -1,8 +1,8 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1/WP-B-2). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1); Chara Karaka ranking under two body-scope profiles and the separate Constant Karaka table (Phase 9 WP-B-2) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
 **Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
@@ -187,6 +187,28 @@ has_rashi_drishti(Rashi.ARIES, Rashi.TAURUS)  # False -- Taurus is Aries's adjac
 - **One profile, one source, no default needed**: `RASHI_DRISHTI_BPHS_8_1_3` (`jaimini.profiles`). BPHS's own translator note (page-image verified) attributes the rule to Parasara, not Jaimini, though it is commonly nicknamed the "Jaimini system" because Jaimini's own corpus also uses it.
 - **Derived, not transcribed**: the table is computed from the already-locked Phase 5 `RASHI_MODALITY` classification (`rashi.py`), so it can never silently drift from the Chara/Sthira/Dwiswabhava table the rest of the engine uses; a dedicated test proves the derivation reproduces BPHS's own printed 12-sign table exactly.
 - **Deliberately not implemented**: Ch. 8 v. 4-5 (the same table applied to a planet's own placement) is read and verified but excluded, because it would produce a planet-level aspect that disagrees with the already-locked Vedic graha drishti for the same placement — the two systems are never blended.
+
+## Chara Karaka and Constant Karaka (Phase 9 WP-B-2)
+
+`pandit_astro_engine.jaimini.chara_karaka` ranks planets by descending degree traversed within their own sign to name the eight Chara ("inconstant") Karakas (BPHS Ch. 32 v. 1-17); `pandit_astro_engine.jaimini.constant_karaka` gives the separate, static Constant Karaka table (v. 18-21). Re-verifying the source at page-image level (not reusing an earlier, less rigorous pass) found BPHS's own text does not settle its Chara Karaka candidate-body scope -- v. 1-2 states three positions ("Some say Rahu will become a Karka when there is a state of similarity in ... longitude ...; yet some say the 8 planets including Rahu will have to be considered irrespective of such a state") without choosing one.
+
+```python
+from pandit_astro_engine.jaimini.chara_karaka import CharaKarakaRequest, calculate_chara_karaka
+from pandit_astro_engine.jaimini.profiles import CHARA_KARAKA_EIGHT_BODY_ID
+from pandit_astro_engine.jaimini.constant_karaka import constant_karakas
+
+result = calculate_chara_karaka(
+    CharaKarakaRequest(profile_id=CHARA_KARAKA_EIGHT_BODY_ID, longitudes={...})
+)
+result.roles  # RoleAssignment per Karaka (Atma .. Dara), or None if the top rank is an unresolved tie
+
+constant_karakas()  # the 8-entry static table; father/mother are NOT_EVALUABLE(strength_undefined)
+```
+
+- **Two profiles, no default, mirroring the Ashtakavarga precedent**: `JAIMINI_CHARA_KARAKA_SEVEN_BODY_BPHS_32_1_17` (the base rule, 7 classical planets) and `JAIMINI_CHARA_KARAKA_EIGHT_BODY_BPHS_32_1_17` (the "yet some say" 8-body-unconditional reading, which the chapter's own translator's note says is what its own worked example, "the standard nativity", actually uses). The third, conditional reading is read but not implemented (too underspecified). Ketu is never a candidate under any reading; supplying it is a validation error.
+- **Rahu's reverse-degree convention** (v. 3-8, "deduct his longitude in that particular sign from 30") is applied before ranking; Atma Karaka ties are broken by minutes then seconds, matching the source exactly.
+- **Deficit handling matches BPHS's own v. 13, not a synthetic shortcut**: a tie "identical to the second of arc" between two candidates makes both "qualified for that particular karakaatwa" (they share the role), and because roles fill strictly in rank order, the shortfall always lands on the *lowest* role in the fixed sequence -- reported as `NOT_EVALUABLE(rank_deficit)` for that role, exactly as the 7-body profile's structural 7-candidates-for-8-roles shortfall is reported too. A tie at the very top (Atma Karaka itself) instead makes the *whole* result `NOT_EVALUABLE(tie_unresolved)` (no partial role list), since every other Karaka is judged relative to Atma Karaka (v. 9-12) -- a Pandit Ji reading bridging v. 3-8 and v. 13, documented as such, not a single verse's explicit statement.
+- **Constant Karaka is a separate, independent fact set, deliberately not auto-wired as the Chara Karaka deficit's substitute**: BPHS's own worked illustration demonstrates only one substitution (a deficient Dara Karaka falling back to Venus, the constant husband/wife significator); generalizing that one example into an automatic rule for the other six non-Atma roles would invent a mechanism the source does not fully specify. Two of the eight Constant Karaka significations ("the stronger" of Sun/Venus for father, Moon/Mars for mother) are `NOT_EVALUABLE(strength_undefined)`, reproducing a conflict this project already had on record rather than guessing a strength rule.
 
 ## Supported bodies
 

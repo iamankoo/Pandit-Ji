@@ -1,0 +1,1385 @@
+{
+ "system_id": "ashtakavarga",
+ "status": "success",
+ "reason_code": null,
+ "detail": null,
+ "standards_version": "1.8.0",
+ "engine_version": "0.7.0",
+ "profile": {
+  "profile_id": "ASHTAKAVARGA_BPHS_GRID_KAPOOR_66",
+  "label": "source_supported",
+  "title": "BPHS (Vol II Ch. 66, Kapoor translation) printed dot grid",
+  "verification_level": "IMAGE-TRANSLATION",
+  "reference": {
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "locator": "Vol II Ch. 66 v. 16-42, 65-68 (Kapoor translation), the printed 'Chart showing dots in ... Ashtakavarga' tables (pp. 845-854, 864-865)",
+   "verification_level": "IMAGE-TRANSLATION",
+   "note": "Complement of the printed dot houses (source's own note: houses without dots are auspicious); disagrees with BPHS's own printed verse-translation list on 5 of 56 cells in the same chapter (see constants.CROSS_TABLE_CONFLICTS); no correction attempted"
+  },
+  "has_lagna_chart": true
+ },
+ "charts": [
+  {
+   "chart": "sun",
+   "marks": {
+    "aries": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "taurus": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "gemini": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "virgo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "libra": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "capricorn": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "pisces": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 5,
+    "taurus": 3,
+    "gemini": 4,
+    "cancer": 6,
+    "leo": 1,
+    "virgo": 3,
+    "libra": 5,
+    "scorpio": 2,
+    "sagittarius": 5,
+    "capricorn": 5,
+    "aquarius": 4,
+    "pisces": 5
+   },
+   "malefic_count": {
+    "aries": 3,
+    "taurus": 5,
+    "gemini": 4,
+    "cancer": 2,
+    "leo": 7,
+    "virgo": 5,
+    "libra": 3,
+    "scorpio": 6,
+    "sagittarius": 3,
+    "capricorn": 3,
+    "aquarius": 4,
+    "pisces": 3
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 48
+  },
+  {
+   "chart": "moon",
+   "marks": {
+    "aries": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "taurus": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "gemini": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "virgo": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "libra": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "pisces": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 4,
+    "taurus": 3,
+    "gemini": 5,
+    "cancer": 4,
+    "leo": 3,
+    "virgo": 2,
+    "libra": 7,
+    "scorpio": 5,
+    "sagittarius": 3,
+    "capricorn": 3,
+    "aquarius": 5,
+    "pisces": 5
+   },
+   "malefic_count": {
+    "aries": 4,
+    "taurus": 5,
+    "gemini": 3,
+    "cancer": 4,
+    "leo": 5,
+    "virgo": 6,
+    "libra": 1,
+    "scorpio": 3,
+    "sagittarius": 5,
+    "capricorn": 5,
+    "aquarius": 3,
+    "pisces": 3
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 49
+  },
+  {
+   "chart": "mars",
+   "marks": {
+    "aries": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "taurus": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "gemini": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "virgo": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "libra": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "pisces": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 1,
+    "taurus": 1,
+    "gemini": 6,
+    "cancer": 4,
+    "leo": 4,
+    "virgo": 4,
+    "libra": 4,
+    "scorpio": 1,
+    "sagittarius": 3,
+    "capricorn": 4,
+    "aquarius": 2,
+    "pisces": 5
+   },
+   "malefic_count": {
+    "aries": 7,
+    "taurus": 7,
+    "gemini": 2,
+    "cancer": 4,
+    "leo": 4,
+    "virgo": 4,
+    "libra": 4,
+    "scorpio": 7,
+    "sagittarius": 5,
+    "capricorn": 4,
+    "aquarius": 6,
+    "pisces": 3
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 39
+  },
+  {
+   "chart": "mercury",
+   "marks": {
+    "aries": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "taurus": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "gemini": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "virgo": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "libra": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "pisces": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 4,
+    "taurus": 2,
+    "gemini": 6,
+    "cancer": 4,
+    "leo": 7,
+    "virgo": 3,
+    "libra": 5,
+    "scorpio": 2,
+    "sagittarius": 6,
+    "capricorn": 5,
+    "aquarius": 6,
+    "pisces": 4
+   },
+   "malefic_count": {
+    "aries": 4,
+    "taurus": 6,
+    "gemini": 2,
+    "cancer": 4,
+    "leo": 1,
+    "virgo": 5,
+    "libra": 3,
+    "scorpio": 6,
+    "sagittarius": 2,
+    "capricorn": 3,
+    "aquarius": 2,
+    "pisces": 4
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 54
+  },
+  {
+   "chart": "jupiter",
+   "marks": {
+    "aries": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "taurus": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "gemini": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "leo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "virgo": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "libra": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "pisces": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 6,
+    "taurus": 4,
+    "gemini": 7,
+    "cancer": 5,
+    "leo": 2,
+    "virgo": 5,
+    "libra": 3,
+    "scorpio": 7,
+    "sagittarius": 4,
+    "capricorn": 5,
+    "aquarius": 4,
+    "pisces": 4
+   },
+   "malefic_count": {
+    "aries": 2,
+    "taurus": 4,
+    "gemini": 1,
+    "cancer": 3,
+    "leo": 6,
+    "virgo": 3,
+    "libra": 5,
+    "scorpio": 1,
+    "sagittarius": 4,
+    "capricorn": 3,
+    "aquarius": 4,
+    "pisces": 4
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 56
+  },
+  {
+   "chart": "venus",
+   "marks": {
+    "aries": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "taurus": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "gemini": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "cancer": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "virgo": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "libra": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "scorpio": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "pisces": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 6,
+    "taurus": 5,
+    "gemini": 4,
+    "cancer": 4,
+    "leo": 5,
+    "virgo": 4,
+    "libra": 3,
+    "scorpio": 4,
+    "sagittarius": 2,
+    "capricorn": 5,
+    "aquarius": 5,
+    "pisces": 5
+   },
+   "malefic_count": {
+    "aries": 2,
+    "taurus": 3,
+    "gemini": 4,
+    "cancer": 4,
+    "leo": 3,
+    "virgo": 4,
+    "libra": 5,
+    "scorpio": 4,
+    "sagittarius": 6,
+    "capricorn": 3,
+    "aquarius": 3,
+    "pisces": 3
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 52
+  },
+  {
+   "chart": "saturn",
+   "marks": {
+    "aries": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "taurus": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "gemini": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "cancer": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "leo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "virgo": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "libra": {
+     "sun": "benefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "benefic"
+    },
+    "scorpio": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "benefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "sagittarius": {
+     "sun": "malefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "malefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "malefic"
+    },
+    "capricorn": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "benefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    },
+    "aquarius": {
+     "sun": "benefic",
+     "moon": "malefic",
+     "mars": "malefic",
+     "mercury": "malefic",
+     "jupiter": "benefic",
+     "venus": "malefic",
+     "saturn": "benefic",
+     "lagna": "malefic"
+    },
+    "pisces": {
+     "sun": "malefic",
+     "moon": "benefic",
+     "mars": "benefic",
+     "mercury": "benefic",
+     "jupiter": "malefic",
+     "venus": "benefic",
+     "saturn": "malefic",
+     "lagna": "benefic"
+    }
+   },
+   "benefic_count": {
+    "aries": 5,
+    "taurus": 4,
+    "gemini": 2,
+    "cancer": 4,
+    "leo": 3,
+    "virgo": 1,
+    "libra": 5,
+    "scorpio": 3,
+    "sagittarius": 0,
+    "capricorn": 4,
+    "aquarius": 3,
+    "pisces": 5
+   },
+   "malefic_count": {
+    "aries": 3,
+    "taurus": 4,
+    "gemini": 6,
+    "cancer": 4,
+    "leo": 5,
+    "virgo": 7,
+    "libra": 3,
+    "scorpio": 5,
+    "sagittarius": 8,
+    "capricorn": 4,
+    "aquarius": 5,
+    "pisces": 3
+   },
+   "effectless_count": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "total_benefic": 39
+  }
+ ],
+ "sarva": {
+  "benefic_count": {
+   "aries": 31,
+   "taurus": 22,
+   "gemini": 34,
+   "cancer": 31,
+   "leo": 25,
+   "virgo": 22,
+   "libra": 32,
+   "scorpio": 24,
+   "sagittarius": 23,
+   "capricorn": 31,
+   "aquarius": 29,
+   "pisces": 33
+  },
+  "total_benefic": 337
+ },
+ "lagna_chart": {
+  "chart": "lagna",
+  "marks": {
+   "aries": {
+    "sun": "malefic",
+    "moon": "benefic",
+    "mars": "benefic",
+    "mercury": "malefic",
+    "jupiter": "malefic",
+    "venus": "malefic",
+    "saturn": "malefic",
+    "lagna": "malefic"
+   },
+   "taurus": {
+    "sun": "malefic",
+    "moon": "malefic",
+    "mars": "malefic",
+    "mercury": "benefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "benefic",
+    "lagna": "malefic"
+   },
+   "gemini": {
+    "sun": "benefic",
+    "moon": "malefic",
+    "mars": "benefic",
+    "mercury": "benefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "malefic",
+    "lagna": "benefic"
+   },
+   "cancer": {
+    "sun": "benefic",
+    "moon": "benefic",
+    "mars": "malefic",
+    "mercury": "malefic",
+    "jupiter": "benefic",
+    "venus": "malefic",
+    "saturn": "malefic",
+    "lagna": "malefic"
+   },
+   "leo": {
+    "sun": "malefic",
+    "moon": "malefic",
+    "mars": "benefic",
+    "mercury": "benefic",
+    "jupiter": "malefic",
+    "venus": "malefic",
+    "saturn": "malefic",
+    "lagna": "malefic"
+   },
+   "virgo": {
+    "sun": "benefic",
+    "moon": "malefic",
+    "mars": "malefic",
+    "mercury": "benefic",
+    "jupiter": "benefic",
+    "venus": "malefic",
+    "saturn": "benefic",
+    "lagna": "malefic"
+   },
+   "libra": {
+    "sun": "malefic",
+    "moon": "benefic",
+    "mars": "malefic",
+    "mercury": "malefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "benefic",
+    "lagna": "benefic"
+   },
+   "scorpio": {
+    "sun": "malefic",
+    "moon": "malefic",
+    "mars": "benefic",
+    "mercury": "benefic",
+    "jupiter": "malefic",
+    "venus": "benefic",
+    "saturn": "malefic",
+    "lagna": "benefic"
+   },
+   "sagittarius": {
+    "sun": "malefic",
+    "moon": "malefic",
+    "mars": "malefic",
+    "mercury": "malefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "benefic",
+    "lagna": "malefic"
+   },
+   "capricorn": {
+    "sun": "benefic",
+    "moon": "malefic",
+    "mars": "malefic",
+    "mercury": "benefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "malefic",
+    "lagna": "malefic"
+   },
+   "aquarius": {
+    "sun": "benefic",
+    "moon": "benefic",
+    "mars": "malefic",
+    "mercury": "malefic",
+    "jupiter": "benefic",
+    "venus": "benefic",
+    "saturn": "benefic",
+    "lagna": "malefic"
+   },
+   "pisces": {
+    "sun": "benefic",
+    "moon": "benefic",
+    "mars": "benefic",
+    "mercury": "benefic",
+    "jupiter": "benefic",
+    "venus": "malefic",
+    "saturn": "benefic",
+    "lagna": "benefic"
+   }
+  },
+  "benefic_count": {
+   "aries": 2,
+   "taurus": 4,
+   "gemini": 6,
+   "cancer": 3,
+   "leo": 2,
+   "virgo": 4,
+   "libra": 5,
+   "scorpio": 4,
+   "sagittarius": 3,
+   "capricorn": 4,
+   "aquarius": 5,
+   "pisces": 7
+  },
+  "malefic_count": {
+   "aries": 6,
+   "taurus": 4,
+   "gemini": 2,
+   "cancer": 5,
+   "leo": 6,
+   "virgo": 4,
+   "libra": 3,
+   "scorpio": 4,
+   "sagittarius": 5,
+   "capricorn": 4,
+   "aquarius": 3,
+   "pisces": 1
+  },
+  "effectless_count": {
+   "aries": 0,
+   "taurus": 0,
+   "gemini": 0,
+   "cancer": 0,
+   "leo": 0,
+   "virgo": 0,
+   "libra": 0,
+   "scorpio": 0,
+   "sagittarius": 0,
+   "capricorn": 0,
+   "aquarius": 0,
+   "pisces": 0
+  },
+  "total_benefic": 49
+ },
+ "warnings": []
+}

@@ -1,0 +1,927 @@
+{
+ "system_id": "ashtakavarga",
+ "status": "success",
+ "reason_code": null,
+ "detail": null,
+ "standards_version": "1.8.0",
+ "engine_version": "0.7.0",
+ "profile": {
+  "profile_id": "ASHTAKAVARGA_BPHS_GRID_KAPOOR_66",
+  "label": "source_supported",
+  "title": "BPHS (Vol II Ch. 66, Kapoor translation) printed dot grid",
+  "verification_level": "IMAGE-TRANSLATION",
+  "reference": {
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "locator": "Vol II Ch. 66 v. 16-42, 65-68 (Kapoor translation), the printed 'Chart showing dots in ... Ashtakavarga' tables (pp. 845-854, 864-865)",
+   "verification_level": "IMAGE-TRANSLATION",
+   "note": "Complement of the printed dot houses (source's own note: houses without dots are auspicious); disagrees with BPHS's own printed verse-translation list on 5 of 56 cells in the same chapter (see constants.CROSS_TABLE_CONFLICTS); no correction attempted"
+  },
+  "has_lagna_chart": true
+ },
+ "charts": [
+  {
+   "chart": "sun",
+   "trikona_corrected": {
+    "aries": 4,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 4,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 1,
+    "scorpio": 0,
+    "sagittarius": 4,
+    "capricorn": 2,
+    "aquarius": 0,
+    "pisces": 3
+   },
+   "status": "success",
+   "reason_code": null,
+   "ekadhipatya_corrected": {
+    "aries": 4,
+    "taurus": 0,
+    "gemini": 0,
+    "cancer": 4,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 1,
+    "scorpio": 0,
+    "sagittarius": 4,
+    "capricorn": 2,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "ekadhipatya_conflicts": []
+  },
+  {
+   "chart": "moon",
+   "trikona_corrected": {
+    "aries": 1,
+    "taurus": 1,
+    "gemini": 0,
+    "cancer": 0,
+    "leo": 0,
+    "virgo": 0,
+    "libra": 2,
+    "scorpio": 1,
+    "sagittarius": 0,
+    "capricorn": 1,
+    "aquarius": 0,
+    "pisces": 1
+   },
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "ekadhipatya_corrected": null,
+   "ekadhipatya_conflicts": [
+    {
+     "occupied_sign": "aries",
+     "empty_sign": "scorpio",
+     "shared_value": 1,
+     "reading_a_occupied_value": 1,
+     "reading_b_occupied_value": 0,
+     "source_note": "BPHS Ch. 68 'An imaginary illustration' (printed p. 876), IMAGE-TRANSLATION; recorded as an unresolved internal print inconsistency, research/ASTROLOGY_SOURCES.md section 6.5 Group 11."
+    }
+   ]
+  },
+  {
+   "chart": "mars",
+   "trikona_corrected": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 4,
+    "cancer": 3,
+    "leo": 3,
+    "virgo": 3,
+    "libra": 2,
+    "scorpio": 0,
+    "sagittarius": 2,
+    "capricorn": 3,
+    "aquarius": 0,
+    "pisces": 4
+   },
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "ekadhipatya_corrected": null,
+   "ekadhipatya_conflicts": [
+    {
+     "occupied_sign": "aries",
+     "empty_sign": "scorpio",
+     "shared_value": 0,
+     "reading_a_occupied_value": 0,
+     "reading_b_occupied_value": 0,
+     "source_note": "BPHS Ch. 68 'An imaginary illustration' (printed p. 876), IMAGE-TRANSLATION; recorded as an unresolved internal print inconsistency, research/ASTROLOGY_SOURCES.md section 6.5 Group 11."
+    }
+   ]
+  },
+  {
+   "chart": "mercury",
+   "trikona_corrected": {
+    "aries": 0,
+    "taurus": 0,
+    "gemini": 1,
+    "cancer": 2,
+    "leo": 3,
+    "virgo": 1,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 2,
+    "capricorn": 3,
+    "aquarius": 1,
+    "pisces": 2
+   },
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "ekadhipatya_corrected": null,
+   "ekadhipatya_conflicts": [
+    {
+     "occupied_sign": "aries",
+     "empty_sign": "scorpio",
+     "shared_value": 0,
+     "reading_a_occupied_value": 0,
+     "reading_b_occupied_value": 0,
+     "source_note": "BPHS Ch. 68 'An imaginary illustration' (printed p. 876), IMAGE-TRANSLATION; recorded as an unresolved internal print inconsistency, research/ASTROLOGY_SOURCES.md section 6.5 Group 11."
+    },
+    {
+     "occupied_sign": "sagittarius",
+     "empty_sign": "pisces",
+     "shared_value": 2,
+     "reading_a_occupied_value": 2,
+     "reading_b_occupied_value": 0,
+     "source_note": "BPHS Ch. 68 'An imaginary illustration' (printed p. 876), IMAGE-TRANSLATION; recorded as an unresolved internal print inconsistency, research/ASTROLOGY_SOURCES.md section 6.5 Group 11."
+    }
+   ]
+  },
+  {
+   "chart": "jupiter",
+   "trikona_corrected": {
+    "aries": 4,
+    "taurus": 0,
+    "gemini": 4,
+    "cancer": 1,
+    "leo": 0,
+    "virgo": 1,
+    "libra": 0,
+    "scorpio": 3,
+    "sagittarius": 2,
+    "capricorn": 1,
+    "aquarius": 1,
+    "pisces": 0
+   },
+   "status": "success",
+   "reason_code": null,
+   "ekadhipatya_corrected": {
+    "aries": 4,
+    "taurus": 0,
+    "gemini": 4,
+    "cancer": 1,
+    "leo": 0,
+    "virgo": 1,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 2,
+    "capricorn": 0,
+    "aquarius": 0,
+    "pisces": 0
+   },
+   "ekadhipatya_conflicts": []
+  },
+  {
+   "chart": "venus",
+   "trikona_corrected": {
+    "aries": 4,
+    "taurus": 1,
+    "gemini": 1,
+    "cancer": 0,
+    "leo": 3,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 1,
+    "aquarius": 2,
+    "pisces": 1
+   },
+   "status": "success",
+   "reason_code": null,
+   "ekadhipatya_corrected": {
+    "aries": 4,
+    "taurus": 1,
+    "gemini": 1,
+    "cancer": 0,
+    "leo": 3,
+    "virgo": 0,
+    "libra": 0,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 0,
+    "aquarius": 1,
+    "pisces": 1
+   },
+   "ekadhipatya_conflicts": []
+  },
+  {
+   "chart": "saturn",
+   "trikona_corrected": {
+    "aries": 5,
+    "taurus": 3,
+    "gemini": 0,
+    "cancer": 1,
+    "leo": 3,
+    "virgo": 0,
+    "libra": 3,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 3,
+    "aquarius": 1,
+    "pisces": 2
+   },
+   "status": "success",
+   "reason_code": null,
+   "ekadhipatya_corrected": {
+    "aries": 5,
+    "taurus": 3,
+    "gemini": 0,
+    "cancer": 1,
+    "leo": 3,
+    "virgo": 0,
+    "libra": 3,
+    "scorpio": 0,
+    "sagittarius": 0,
+    "capricorn": 2,
+    "aquarius": 0,
+    "pisces": 2
+   },
+   "ekadhipatya_conflicts": []
+  }
+ ],
+ "lagna_chart": {
+  "chart": "lagna",
+  "trikona_corrected": {
+   "aries": 0,
+   "taurus": 0,
+   "gemini": 1,
+   "cancer": 0,
+   "leo": 0,
+   "virgo": 0,
+   "libra": 0,
+   "scorpio": 1,
+   "sagittarius": 1,
+   "capricorn": 0,
+   "aquarius": 0,
+   "pisces": 4
+  },
+  "status": "success",
+  "reason_code": null,
+  "ekadhipatya_corrected": {
+   "aries": 0,
+   "taurus": 0,
+   "gemini": 1,
+   "cancer": 0,
+   "leo": 0,
+   "virgo": 0,
+   "libra": 0,
+   "scorpio": 1,
+   "sagittarius": 1,
+   "capricorn": 0,
+   "aquarius": 0,
+   "pisces": 3
+  },
+  "ekadhipatya_conflicts": []
+ },
+ "pinda": [
+  {
+   "chart": "sun",
+   "status": "success",
+   "reason_code": null,
+   "rasi_pinda": 97,
+   "graha_pinda_status": "available",
+   "graha_pinda_reason": null,
+   "graha_pinda": 47,
+   "graha_contributions": [
+    {
+     "sign": "aries",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": "sun",
+     "multiplier": 5,
+     "product": 20,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "taurus",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "moon",
+     "multiplier": 5,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "gemini",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "mars",
+     "multiplier": 8,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "cancer",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "leo",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "mercury",
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "virgo",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "jupiter",
+     "multiplier": 10,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "libra",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": "venus",
+     "multiplier": 7,
+     "product": 7,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "scorpio",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "sagittarius",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": "saturn",
+     "multiplier": 5,
+     "product": 20,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "capricorn",
+     "ekadhipatya_value": 2,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "aquarius",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "pisces",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    }
+   ],
+   "yoga_pinda": 144
+  },
+  {
+   "chart": "moon",
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "rasi_pinda": null,
+   "graha_pinda_status": null,
+   "graha_pinda_reason": null,
+   "graha_pinda": null,
+   "graha_contributions": [],
+   "yoga_pinda": null
+  },
+  {
+   "chart": "mars",
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "rasi_pinda": null,
+   "graha_pinda_status": null,
+   "graha_pinda_reason": null,
+   "graha_pinda": null,
+   "graha_contributions": [],
+   "yoga_pinda": null
+  },
+  {
+   "chart": "mercury",
+   "status": "not_evaluable",
+   "reason_code": "ekadhipatya_equal_value_conflict",
+   "rasi_pinda": null,
+   "graha_pinda_status": null,
+   "graha_pinda_reason": null,
+   "graha_pinda": null,
+   "graha_contributions": [],
+   "yoga_pinda": null
+  },
+  {
+   "chart": "jupiter",
+   "status": "success",
+   "reason_code": null,
+   "rasi_pinda": 88,
+   "graha_pinda_status": "available",
+   "graha_pinda_reason": null,
+   "graha_pinda": 72,
+   "graha_contributions": [
+    {
+     "sign": "aries",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": "sun",
+     "multiplier": 5,
+     "product": 20,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "taurus",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "moon",
+     "multiplier": 5,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "gemini",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": "mars",
+     "multiplier": 8,
+     "product": 32,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "cancer",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "leo",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "mercury",
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "virgo",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": "jupiter",
+     "multiplier": 10,
+     "product": 10,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "libra",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "venus",
+     "multiplier": 7,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "scorpio",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "sagittarius",
+     "ekadhipatya_value": 2,
+     "occupying_contributor": "saturn",
+     "multiplier": 5,
+     "product": 10,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "capricorn",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "aquarius",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "pisces",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    }
+   ],
+   "yoga_pinda": 160
+  },
+  {
+   "chart": "venus",
+   "status": "success",
+   "reason_code": null,
+   "rasi_pinda": 99,
+   "graha_pinda_status": "not_evaluable",
+   "graha_pinda_reason": "mercury_multiplier_conflict",
+   "graha_pinda": null,
+   "graha_contributions": [
+    {
+     "sign": "aries",
+     "ekadhipatya_value": 4,
+     "occupying_contributor": "sun",
+     "multiplier": 5,
+     "product": 20,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "taurus",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": "moon",
+     "multiplier": 5,
+     "product": 5,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "gemini",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": "mars",
+     "multiplier": 8,
+     "product": 8,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "cancer",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "leo",
+     "ekadhipatya_value": 3,
+     "occupying_contributor": "mercury",
+     "multiplier": null,
+     "product": null,
+     "status": "not_evaluable",
+     "reason_code": "mercury_multiplier_conflict"
+    },
+    {
+     "sign": "virgo",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "jupiter",
+     "multiplier": 10,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "libra",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "venus",
+     "multiplier": 7,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "scorpio",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "sagittarius",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "saturn",
+     "multiplier": 5,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "capricorn",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "aquarius",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "pisces",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    }
+   ],
+   "yoga_pinda": null
+  },
+  {
+   "chart": "saturn",
+   "status": "success",
+   "reason_code": null,
+   "rasi_pinda": 154,
+   "graha_pinda_status": "not_evaluable",
+   "graha_pinda_reason": "mercury_multiplier_conflict",
+   "graha_pinda": null,
+   "graha_contributions": [
+    {
+     "sign": "aries",
+     "ekadhipatya_value": 5,
+     "occupying_contributor": "sun",
+     "multiplier": 5,
+     "product": 25,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "taurus",
+     "ekadhipatya_value": 3,
+     "occupying_contributor": "moon",
+     "multiplier": 5,
+     "product": 15,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "gemini",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "mars",
+     "multiplier": 8,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "cancer",
+     "ekadhipatya_value": 1,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "leo",
+     "ekadhipatya_value": 3,
+     "occupying_contributor": "mercury",
+     "multiplier": null,
+     "product": null,
+     "status": "not_evaluable",
+     "reason_code": "mercury_multiplier_conflict"
+    },
+    {
+     "sign": "virgo",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "jupiter",
+     "multiplier": 10,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "libra",
+     "ekadhipatya_value": 3,
+     "occupying_contributor": "venus",
+     "multiplier": 7,
+     "product": 21,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "scorpio",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "sagittarius",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": "saturn",
+     "multiplier": 5,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "capricorn",
+     "ekadhipatya_value": 2,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "aquarius",
+     "ekadhipatya_value": 0,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    },
+    {
+     "sign": "pisces",
+     "ekadhipatya_value": 2,
+     "occupying_contributor": null,
+     "multiplier": null,
+     "product": 0,
+     "status": "available",
+     "reason_code": null
+    }
+   ],
+   "yoga_pinda": null
+  }
+ ],
+ "lagna_pinda": {
+  "chart": "lagna",
+  "status": "success",
+  "reason_code": null,
+  "rasi_pinda": 61,
+  "graha_pinda_status": "available",
+  "graha_pinda_reason": null,
+  "graha_pinda": 13,
+  "graha_contributions": [
+   {
+    "sign": "aries",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": "sun",
+    "multiplier": 5,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "taurus",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": "moon",
+    "multiplier": 5,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "gemini",
+    "ekadhipatya_value": 1,
+    "occupying_contributor": "mars",
+    "multiplier": 8,
+    "product": 8,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "cancer",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "leo",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": "mercury",
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "virgo",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": "jupiter",
+    "multiplier": 10,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "libra",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": "venus",
+    "multiplier": 7,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "scorpio",
+    "ekadhipatya_value": 1,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "sagittarius",
+    "ekadhipatya_value": 1,
+    "occupying_contributor": "saturn",
+    "multiplier": 5,
+    "product": 5,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "capricorn",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "aquarius",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "pisces",
+    "ekadhipatya_value": 3,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   }
+  ],
+  "yoga_pinda": 74
+ },
+ "warnings": []
+}

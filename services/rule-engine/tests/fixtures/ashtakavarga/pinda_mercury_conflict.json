@@ -1,0 +1,122 @@
+{
+ "pinda_result": {
+  "chart": "sun",
+  "status": "success",
+  "reason_code": null,
+  "rasi_pinda": 24,
+  "graha_pinda_status": "not_evaluable",
+  "graha_pinda_reason": "mercury_multiplier_conflict",
+  "graha_pinda": null,
+  "graha_contributions": [
+   {
+    "sign": "aries",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "taurus",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "gemini",
+    "ekadhipatya_value": 3,
+    "occupying_contributor": "mercury",
+    "multiplier": null,
+    "product": null,
+    "status": "not_evaluable",
+    "reason_code": "mercury_multiplier_conflict"
+   },
+   {
+    "sign": "cancer",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "leo",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "virgo",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "libra",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "scorpio",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "sagittarius",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "capricorn",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "aquarius",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   },
+   {
+    "sign": "pisces",
+    "ekadhipatya_value": 0,
+    "occupying_contributor": null,
+    "multiplier": null,
+    "product": 0,
+    "status": "available",
+    "reason_code": null
+   }
+  ],
+  "yoga_pinda": null
+ }
+}

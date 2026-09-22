@@ -1,0 +1,13 @@
+{
+ "system_id": "ashtakavarga",
+ "status": "not_evaluable",
+ "reason_code": "lagna_unavailable",
+ "detail": "the Ascendant is a contributor to every chart under every profile; missing: ['lagna']",
+ "standards_version": "1.8.0",
+ "engine_version": "0.7.0",
+ "profile": null,
+ "charts": [],
+ "sarva": null,
+ "lagna_chart": null,
+ "warnings": []
+}

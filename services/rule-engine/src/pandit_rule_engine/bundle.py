@@ -26,6 +26,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, SerializerFunctionWrapHandler, model_serializer
 
+from pandit_rule_engine.ashtakavarga_evidence import AshtakavargaEvidence
 from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
@@ -114,12 +115,19 @@ class EvidenceBundle(_Model):
     #: Additive, optional (Phase 8): transit / Gochar facts calculated by astro-engine.
     #: Omitted from the serialized bundle when absent, exactly like `dasha`.
     transit: TransitEvidence | None = None
+    #: Additive, optional (Phase 9 WP-EB): Ashtakavarga facts (WP-A1 Bhinna/Sarva,
+    #: and -- only if the caller supplied reduction facts -- WP-A2/A3 Trikona/
+    #: Ekadhipatya Shodhana and Pinda Sadhana) for exactly one caller-selected
+    #: profile. Omitted from the serialized bundle when absent, exactly like
+    #: `dasha`/`transit`, so a bundle built without Ashtakavarga facts serializes
+    #: and hashes exactly as before.
+    ashtakavarga: AshtakavargaEvidence | None = None
     bundle_hash: str
 
     @model_serializer(mode="wrap")
     def _omit_absent_sections(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
         data: dict[str, Any] = handler(self)
-        for optional in ("dasha", "transit"):
+        for optional in ("dasha", "transit", "ashtakavarga"):
             if data.get(optional) is None:
                 data.pop(optional, None)
         return data
@@ -208,6 +216,7 @@ def build_bundle(
     rule_engine_version: str,
     dasha: DashaEvidence | None = None,
     transit: TransitEvidence | None = None,
+    ashtakavarga: AshtakavargaEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -232,6 +241,7 @@ def build_bundle(
         "source_profiles": _source_profiles(results),
         "dasha": dasha,
         "transit": transit,
+        "ashtakavarga": ashtakavarga,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

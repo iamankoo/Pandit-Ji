@@ -149,7 +149,7 @@ astro_engine/
   muhurta/
   compatibility/    # ashtakoot/guna milan scoring
   numerology/
-  western/          # tropical + Placidus module, kept isolated from Vedic assumptions
+  western/          # tropical + Placidus module, kept isolated from Vedic assumptions (Phase 9 WP-D: built as `pandit_astro_engine/western`, standards WD-01 to WD-20; own body/sign identifiers, no Vedic imports)
   config.py         # CalculationConfig value object (ayanamsa, house system, zodiac, ephemeris version)
 ```
 
@@ -261,6 +261,7 @@ User: "Will my career improve next year?"
 | `ChartRequest` / `ChartResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config` + requested varga(s). Output: positions/houses/nakshatra/dignity/etc. for D1 and requested divisional charts. |
 | `DashaRequest` / `DashaResponse` | `astro-engine` | Yes | Input: birth data + `calculation_config`. Output: Mahadasha/Antardasha/Pratyantar timeline (see `docs/ASTROLOGY_STANDARDS.md` §Phase 7 methodology lock). Phase 7 realizes it as `DashaRequest` (Moon longitude, UTC birth instant, profile IDs, birth-time precision) and `DashaFacts` (status, profile IDs, period tree in UTC, labelled provenance); `rule-engine` records `DashaFacts` in the evidence bundle and never calculates a Dasha. |
 | `TransitRequest` / `TransitResponse` | `astro-engine` | Yes | Input: natal chart reference + date/window. Output: transit positions + transit-to-natal aspects + Sade Sati windows where applicable. Phase 8 realises it as `TransitRequest` (a `NatalReference`, a UTC instant and/or window, methodology profile IDs, the Phase 4 calculation configuration) and `TransitFacts` (status, profile IDs, accuracy block, instant snapshot, window events, Sade Sati segments and episodes, labelled provenance); the transit-to-natal relations are the sign-based contacts of `docs/ASTROLOGY_STANDARDS.md` §Transit / Gochar standards TR-07 (no degree angles); `rule-engine` records `TransitFacts` in the evidence bundle and never calculates a transit. No HTTP endpoint or table exists before Phase 18. |
+| `WesternChartRequest` / `WesternChartFacts` | `astro-engine` | Yes | Phase 9 WP-D. Input: local birth date-time + IANA timezone, coordinates, an explicit birth-time precision, and body/house/aspect/orb/motion profile IDs (plus a node convention only for the node profile). Output: tropical positions and signs, Placidus cusps and angles (or `NOT_EVALUABLE` with a reason), house placement, aspects with orb and applying/separating state, labelled provenance (`docs/ASTROLOGY_STANDARDS.md` §Western standards). Not part of the Phase 6 evidence bundle; that needs its own approval gate. |
 | `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |
 | `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |
 | `NumerologyRequest` / `NumerologyResponse` | `astro-engine` | Yes | Input: birth date (+ name, if name-numerology requested) + system config. Output: Moolank/Bhagyank/name-number per `docs/ASTROLOGY_STANDARDS.md`. |
@@ -792,7 +793,7 @@ The subsystems, engines, and services named throughout this document are built i
 ## 31. Deterministic vs. AI-Driven — Explicit Split
 
 **Deterministic (`astro-engine`/`rule-engine` only — the AI Reasoner never computes or asserts these):**
-Planetary positions & degrees · Ascendant/houses/cusps · Rashi/Nakshatra/Pada · All divisional charts · Dignity/exaltation/debilitation/combustion/retrograde flags · Ashtakvarga bindus · Vimshottari Mahadasha/Antardasha/Pratyantar dates · Transit positions, ingress and station instants & sign-based transit-to-natal contacts (Phase 8; degree angles are not produced) · Sade Sati segments (a `MODERN_TRADITION` profile) · Panchang elements · Muhurta windows · Ashtakoot/Guna Milan scores · Numerology numbers · Yoga/Dosha trigger set.
+Planetary positions & degrees · Ascendant/houses/cusps · Rashi/Nakshatra/Pada · All divisional charts · Dignity/exaltation/debilitation/combustion/retrograde flags · Ashtakvarga bindus · Vimshottari Mahadasha/Antardasha/Pratyantar dates · Transit positions, ingress and station instants & sign-based transit-to-natal contacts (Phase 8; degree angles are not produced) · Sade Sati segments (a `MODERN_TRADITION` profile) · Western tropical positions, Placidus cusps and degree-and-orb aspects (Phase 9 WP-D, a separate system from every Vedic fact) · Panchang elements · Muhurta windows · Ashtakoot/Guna Milan scores · Numerology numbers · Yoga/Dosha trigger set.
 
 **AI-driven:**
 Natural-language intent/domain understanding · Conversational flow & follow-ups · Turning an evidence bundle into coherent, personalized, language-appropriate narrative · Deciding which of many triggered rules matter most to *this* question · Remedy phrasing · Voice turn-taking.

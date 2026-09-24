@@ -244,9 +244,41 @@ calculate_uk_drishti(
 - **Rahu/Ketu as the aspecting body**: both sources are silent on this; the silence is not resolved by inference. `RAHU`/`KETU` remain structurally valid inputs in both profiles (never a validation error), and both return `NOT_EVALUABLE(aspecting_node_unresolved)` symmetrically.
 - **Provenance**: `uttarakalamrita.py` attributes its method to Sripatipaddhati-II, per its own source's citation; that attribution is translation-level, not independently verified (the primary Sripatipaddhati text was unreachable), and every result carries this disclosure verbatim in `provenance_note`.
 
+## Western chart facts (Phase 9 WP-D)
+
+Tropical Western chart facts, kept apart from every Vedic module (`pandit_astro_engine.western`; `docs/ASTROLOGY_STANDARDS.md` v1.14.0, WD-01 to WD-20). Facts and provenance only; no interpretation.
+
+```python
+from pandit_astro_engine.models import LocalDateTimeInput, Location
+from pandit_astro_engine.western import (
+    WesternChartRequest,
+    WesternChartService,
+    WesternTimePrecision,
+)
+
+facts = WesternChartService().calculate(
+    WesternChartRequest(
+        local_datetime=LocalDateTimeInput(
+            year=1990, month=6, day=15, hour=14, minute=30, timezone="Europe/London"
+        ),
+        location=Location(latitude=51.5074, longitude=-0.1278),
+        time_precision=WesternTimePrecision.EXACT,
+    )
+)
+facts.houses.ascendant_sign  # TropicalSign.LIBRA
+[(a.body_a, a.body_b, a.aspect, a.motion_state) for a in facts.aspects.aspects]
+```
+
+- **Zodiac**: tropical, longitude of date, no ayanamsa (`WESTERN_ZODIAC_TROPICAL_OF_DATE`); signs are half-open 30-degree arcs classified with exact arithmetic.
+- **Bodies**: `WESTERN_BODIES_MODERN_10` by default (the seven classical planets plus Uranus, Neptune and Pluto); `WESTERN_BODIES_CLASSICAL_7`; `WESTERN_BODIES_MODERN_10_NODES` adds the lunar nodes as positions only and then requires an explicit `node_convention`. Chiron and asteroids need Swiss Ephemeris asteroid files and are not offered.
+- **Houses**: Placidus only (`WESTERN_HOUSES_PLACIDUS_SWISSEPH`). Inside the polar circles (|latitude| >= 90 degrees minus the true obliquity) the result is `NOT_EVALUABLE(placidus_polar_circle)`, and any other Swiss Ephemeris house failure is `NOT_EVALUABLE(placidus_not_computable)`; Swiss Ephemeris's Porphyry substitute is never returned.
+- **Aspects**: conjunction, sextile, square, trine, opposition on the shorter arc, orb boundary inclusive, one aspect per pair. Orbs: `WESTERN_ORB_FIXED_V1` by default (8 degrees, 6 for the sextile, an engineering convention) or `WESTERN_ORB_LILLY_1647_MOIETY` (Lilly's per-planet orbs by moiety; pairs with an outer planet are listed as not evaluable). Applying/separating comes from the instantaneous speeds.
+- **Unknown birth time** (`time_precision=UNKNOWN`): positions are reported for the supplied clock time with a warning; houses, angles, house placement and aspects are `NOT_EVALUABLE(birth_time_unknown)`.
+- **Evidence**: outer-planet longitudes agree with JPL Horizons within 0.63 arcsec (`tests/fixtures/western_outer_planets_horizons.json`); Placidus cusps agree with an independent implementation of the semi-arc definition to better than 0.01 arcsec (`tests/test_western_houses.py`).
+
 ## Supported bodies
 
-Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase.
+Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase. The Western module has its own identifiers (`western.WesternBody`: the seven classical planets, Uranus, Neptune, Pluto and the north and south nodes), deliberately separate so the outer planets can never enter a Vedic calculation.
 
 ## Units and precision
 

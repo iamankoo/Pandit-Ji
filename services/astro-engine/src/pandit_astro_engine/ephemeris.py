@@ -20,7 +20,11 @@ from __future__ import annotations
 
 import swisseph as swe
 
-from pandit_astro_engine.errors import EphemerisCalculationError, EphemerisDataUnavailableError
+from pandit_astro_engine.errors import (
+    EphemerisCalculationError,
+    EphemerisDataUnavailableError,
+    HouseSystemUnavailableError,
+)
 from pandit_astro_engine.models import Ayanamsa, EphemerisMode
 
 _AYANAMSA_TO_SWE = {
@@ -43,6 +47,15 @@ SWE_BODY_ID = {
 SWE_NODE_ID = {
     "mean": swe.MEAN_NODE,
     "true": swe.TRUE_NODE,
+}
+
+#: Swiss Ephemeris body IDs for the modern (outer) planets used only by the
+#: Western module (Phase 9 WP-D, WD-03). Kept separate from `SWE_BODY_ID` so
+#: no Vedic code path can pick them up by iterating that table.
+SWE_WESTERN_OUTER_BODY_ID = {
+    "uranus": swe.URANUS,
+    "neptune": swe.NEPTUNE,
+    "pluto": swe.PLUTO,
 }
 
 _EPHE_PATH_CONFIGURED: str | None = None
@@ -207,6 +220,52 @@ def calculate_ascendant(
     except swe.Error as exc:  # pragma: no cover - defensive
         raise EphemerisCalculationError(str(exc)) from exc
     return float(ascmc[0]) % 360.0
+
+
+def true_obliquity_degrees(julian_day_ut: float) -> float:
+    """True obliquity of the ecliptic of date, degrees (Swiss Ephemeris
+    `SE_ECL_NUT`, first element). Used by the Western module's polar-circle
+    check for Placidus (Phase 9 WP-D, WD-07)."""
+    try:
+        result, _flags = swe.calc_ut(julian_day_ut, swe.ECL_NUT, 0)
+    except swe.Error as exc:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(str(exc)) from exc
+    return float(result[0])
+
+
+class RawHouses:
+    __slots__ = ("cusps", "ascendant", "midheaven", "armc")
+
+    def __init__(
+        self, cusps: tuple[float, ...], ascendant: float, midheaven: float, armc: float
+    ) -> None:
+        self.cusps = cusps
+        self.ascendant = ascendant
+        self.midheaven = midheaven
+        self.armc = armc
+
+
+def calculate_placidus_houses(
+    julian_day_ut: float, *, latitude: float, longitude: float
+) -> RawHouses:
+    """Tropical Placidus cusps 1-12, Ascendant, MC and ARMC (Phase 9 WP-D,
+    WD-06/WD-07). Swiss Ephemeris cannot compute Placidus inside the polar
+    circles (or when its iteration does not converge) and then substitutes
+    Porphyry cusps; pyswisseph surfaces that as an error. This adapter raises
+    `HouseSystemUnavailableError` with Swiss Ephemeris's own message instead
+    of ever returning the substitute cusps."""
+    try:
+        cusps, ascmc = swe.houses_ex(julian_day_ut, latitude, longitude, b"P", 0)
+    except swe.Error as exc:
+        raise HouseSystemUnavailableError(str(exc)) from exc
+    if len(cusps) != 12:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(f"expected 12 house cusps, got {len(cusps)}")
+    return RawHouses(
+        cusps=tuple(float(c) % 360.0 for c in cusps),
+        ascendant=float(ascmc[0]) % 360.0,
+        midheaven=float(ascmc[1]) % 360.0,
+        armc=float(ascmc[2]) % 360.0,
+    )
 
 
 def julian_day_to_utc_datetime_parts(julian_day_ut: float) -> tuple[int, int, int, int, int, float]:

@@ -84,6 +84,13 @@ class EphemerisCalculationError(AstroEngineError):
     """The underlying Swiss Ephemeris library reported a fatal calculation error."""
 
 
+class HouseSystemUnavailableError(AstroEngineError):
+    """Swiss Ephemeris could not compute the requested house system for this
+    instant and place (for Placidus: inside the polar circles, or a
+    non-converging iteration). Raised instead of accepting Swiss Ephemeris's
+    own substitute house system (Phase 9 WP-D, WD-07)."""
+
+
 class SolarEventUnavailableError(AstroEngineError):
     """Sunrise/sunset does not occur for the given date/location (e.g. polar
     day/night) -- an explicit, typed non-error result, not a fabricated time."""

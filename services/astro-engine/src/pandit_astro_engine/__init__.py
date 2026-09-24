@@ -51,6 +51,13 @@ Sripatipaddhati-II, unverified) -- with no default and no shared
 calculation entry point between them; see `docs/ASTROLOGY_STANDARDS.md`
 section "Partial/Degree Drishti standards".
 
+Phase 9 WP-D (Western): tropical chart facts -- positions including Uranus,
+Neptune and Pluto under explicit body profiles, Placidus houses (not
+evaluable inside the polar circles, never substituted), the five Ptolemaic
+aspects with explicit orb profiles and applying/separating state
+(`pandit_astro_engine.western`), kept apart from every Vedic module; see
+`docs/ASTROLOGY_STANDARDS.md` section "Western standards".
+
 Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
 Ch. 71's longevity calculation (blocked under the Ayurdaya policy), narration,
 and any AI/LLM involvement remain out of scope here and belong to later

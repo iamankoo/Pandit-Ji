@@ -1,0 +1,112 @@
+{
+ "description": "Independent reference longitudes for the Phase 9 WP-D Western module: NASA/JPL Horizons, geocentric apparent ecliptic longitude of date (quantity 31) for Uranus, Neptune and Pluto; ENGINEERING EVIDENCE for tropical longitude only.",
+ "source": "https://ssd.jpl.nasa.gov/api/horizons.api",
+ "retrieved_on": "2026-09-24",
+ "parameters": {
+  "CENTER": "500@399",
+  "EPHEM_TYPE": "OBSERVER",
+  "QUANTITIES": "31",
+  "ANG_FORMAT": "DEG",
+  "TIME_TYPE": "UT",
+  "TLIST_TYPE": "JD"
+ },
+ "sample_count": 12,
+ "samples": [
+  {
+   "body": "uranus",
+   "horizons_command": "799",
+   "target_source_as_printed": "ura184_merged",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 90.9703342
+  },
+  {
+   "body": "uranus",
+   "horizons_command": "799",
+   "target_source_as_printed": "ura184_merged",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 254.5541902
+  },
+  {
+   "body": "uranus",
+   "horizons_command": "799",
+   "target_source_as_printed": "ura184_merged",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 357.1198759
+  },
+  {
+   "body": "uranus",
+   "horizons_command": "799",
+   "target_source_as_printed": "ura184_merged",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 65.648391
+  },
+  {
+   "body": "neptune",
+   "horizons_command": "899",
+   "target_source_as_printed": "nep098_merged",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 196.9000421
+  },
+  {
+   "body": "neptune",
+   "horizons_command": "899",
+   "target_source_as_printed": "nep098_merged",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 271.6699897
+  },
+  {
+   "body": "neptune",
+   "horizons_command": "899",
+   "target_source_as_printed": "nep098_merged",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 325.9194752
+  },
+  {
+   "body": "neptune",
+   "horizons_command": "899",
+   "target_source_as_printed": "nep098_merged",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 3.1252709
+  },
+  {
+   "body": "pluto",
+   "horizons_command": "999",
+   "target_source_as_printed": "plu060_merged",
+   "julian_day_ut": 2433341.770833333,
+   "horizons_time_ut": "1950-Mar-01 06:30:00.000",
+   "ecliptic_longitude_of_date_deg": 136.4707313
+  },
+  {
+   "body": "pluto",
+   "horizons_command": "999",
+   "target_source_as_printed": "plu060_merged",
+   "julian_day_ut": 2446262.052083333,
+   "horizons_time_ut": "1985-Jul-15 13:15:00.000",
+   "ecliptic_longitude_of_date_deg": 211.9271892
+  },
+  {
+   "body": "pluto",
+   "horizons_command": "999",
+   "target_source_as_printed": "plu060_merged",
+   "julian_day_ut": 2455503.416666667,
+   "horizons_time_ut": "2010-Nov-02 22:00:00.000",
+   "ecliptic_longitude_of_date_deg": 273.418028
+  },
+  {
+   "body": "pluto",
+   "horizons_command": "999",
+   "target_source_as_printed": "plu060_merged",
+   "julian_day_ut": 2461305.0,
+   "horizons_time_ut": "2026-Sep-21 12:00:00.000",
+   "ecliptic_longitude_of_date_deg": 303.2083831
+  }
+ ]
+}

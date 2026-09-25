@@ -1564,4 +1564,5 @@ Audit only, on the owner's instruction; no feature added and Phase 11 not starte
 - `services/rule-engine/README.md` did not mention the recorded selected frame; corrected.
 
 ### C. Commit and CI
-Recorded in the follow-up documentation commit after the push.
+- `47c140d` docs: Phase 10 closure audit corrections (`iamankoo <aniketraj00384@gmail.com>`, no AI attribution); files: `SUMMARY.md`, `docs/ARCHITECTURE.md`, `docs/ASTROLOGY_STANDARDS.md`, `services/rule-engine/README.md`, `services/rule-engine/src/pandit_rule_engine/shadbala_gate.py` (docstring only). Push `bf832f9..47c140d`.
+- CI run `36141007597` (commit `47c140d`): success; 15 of 15 jobs; 173 steps inspected, 13 skipped by design, none failed.

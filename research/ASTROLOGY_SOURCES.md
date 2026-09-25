@@ -33,6 +33,9 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - `WEB-TRANSCRIPTION-TRANSLATION` (added in Phase 9 WP-D): English translation read in a published web transcription (for example LacusCurtius), not checked against page images.
 - `OCR-ORIGINAL-ENGLISH` (added in Phase 9 WP-D): a work written in English (for example seventeenth-century English) read in an OCR text of a scan; no translation involved, and not checked against page images.
 - `DOCUMENTATION-DIRECT` (added in Phase 9 WP-D): technical documentation (software or astronomy) read directly in the publisher's current online text.
+- `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` (added in Phase 9 WP-I): a work written in English read in a published web transcription (for example a proofread Wikisource text), not checked against page images.
+- `WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)` (added in Phase 9 WP-H): a non-English original (for example classical Chinese) read in a web transcription by a non-qualified reader. Useful evidence, never a verification of the language, like `OCR-SOURCE-LANGUAGE (unreviewed)`.
+- `SECONDARY` (added in Phase 9 WP-H): several agreeing secondary or popular references (for example almanac websites), no primary or scholarly table read. At most MEDIUM confidence.
 
 "TRANSLATION-LEVEL VERIFIED" means one of the first three levels. "SANSKRIT-LEVEL VERIFIED" means the last level only.
 
@@ -254,6 +257,48 @@ Check copyright and translation rights before ingestion/training. Community uplo
 
 - NASA/JPL Horizons API (https://ssd.jpl.nasa.gov/api/horizons.api), geocentric apparent ecliptic longitude of date (quantity 31). Used only as `ENGINEERING_EVIDENCE` for planetary longitude, never as an astrology source. Phase 8 fixture `horizons_transit_reference.json` (42 samples, retrieved 2026-09-21); WP-D fixture `western_outer_planets_horizons.json` (Uranus 799 `ura184_merged`, Neptune 899 `nep098_merged`, Pluto 999 `plu060_merged`, 4 dates each 1950-2026, retrieved 2026-09-24). Moshier agreement: at most 0.63″ (Pluto), 0.33″ (Neptune), 0.29″ (Uranus).
 
+### SRC-KP-READER-I-KRISHNAMURTI, SRC-KP-READER-III-KRISHNAMURTI, SRC-KP-READER-VI-KRISHNAMURTI (added in Phase 9 WP-E)
+
+- **Titles**: K. S. Krishnamurti, *KP Reader I: Casting the Horoscope*, *KP Reader III: Predictive Stellar Astrology*, *KP Reader VI: Horary Astrology* (publisher and edition statements not verified in the OCR). **Location**: archive.org item `kp-readers` (community upload, rights unverified), files `J_KP reader_1_casting the horoscope_djvu.txt`, `..._3_Predictive Stellar Astrology_djvu.txt`, `..._6_Horary Astrology_djvu.txt`, read 2026-09-24. English original.
+- **Classification**: `MODERN_REFERENCE` (the founding texts of a twentieth-century school; primary for KP's own rules). **Status**: `PARTIALLY_REVIEWED` (the passages below only). **Level**: `OCR-ORIGINAL-ENGLISH`; no page image checked.
+- **Group 16 extracts (wording summarized)**: Reader I -- ayanamsa zero year 291 CE, Newcomb's 50.2388475″ a year, yearly table 1840-2001 (printed pp. 56-59); use Raphael's Ephemeris and Raphael's Tables of Houses; Placidus's semi-arc system named as the method in common use. Reader III -- each constellation of 800′ divided among the nine lords in proportion to their Vimshottari years, the first sub to the star lord and the rest in bhukti order; 249 rather than 243 because some subs fall in two signs; further subdivision "for research students" (pp. 10-13); numbered list of the 249 divisions with sign lord, star lord, sub lord and degrees; "A house commences from the cusp of a house and ends with the succeeding cusp", its lord the lord of the cusp's sign. Reader VI -- order of significators for houses 2, 5, 11: (a) planets in the constellation of the occupants, (b) occupants, (c) planets in the constellation of the lords, (d) lords, (e) planets conjoined with these, (f) planets aspecting; "tenant is stronger than the owner"; Ruling Planets (p. 123): Ascendant star lord and sign lord, Moon star lord and sign lord, day lord, nodes as agents of the lord of the sign they occupy, members in the star of a retrograde planet "rejected"; horary by a number 1-249 whose sub start is the Ascendant, cusps from the table of houses for the latitude of judgment; worked examples for numbers 29, 48 and 74.
+- **Evidence produced**: fixtures `kp_reader3_sub_table.json` (202 legible rows, all agreeing with the derived table) and `kp_reader6_horary_29.json` (example 29 with recorded deviations).
+- **Not read or not implemented**: KP event-judgment rules, timing, node agency, conjunction and aspect significators, the Reader's own mean/true node practice (not found), where the day begins for the day lord (not found).
+- **Rules extracted**: KP-02, KP-04, KP-05, KP-08, KP-10, KP-11. **Copyright**: Krishnamurti died in 1972; presumed in copyright in India to the end of 2032; cited only, never reproduced.
+
+### SRC-HKO-CALENDAR (added in Phase 9 WP-H)
+
+- Hong Kong Observatory: "The 24 Solar Terms" (https://www.hko.gov.hk/en/gts/time/24solarterms.htm), the solar-term XML data files `24SolarTerms_YYYY.xml` (2020-2028 available when read) and the Gregorian-Lunar Calendar Conversion Tables `TYYYYe.txt` (1901-2100), read 2026-09-24. `MODERN_REFERENCE` (official astronomical service). **Level**: `DOCUMENTATION-DIRECT`. **Extracts**: the terms divide the ecliptic into 24 equal parts, 15° of the Sun's longitude apart, vernal equinox at 0°, "spring commences" (立春) at 315°. **Evidence produced**: fixture `hko_solar_terms_and_year_names.json` (216 instants, 7 year names). **Rules extracted**: CN-03, CN-14.
+
+### SRC-SANMING-TONGHUI-WAN-MINYING (added in Phase 9 WP-H)
+
+- 《三命通會》 (Sanming Tonghui), attributed to 萬民英 (Wan Minying), Ming dynasty; classical Chinese. **Location**: Chinese Wikisource `三命通會/卷一`-`卷三` (raw wikitext, simplified-character typography), read 2026-09-24; ctext.org refused automated access. `PRIMARY_CLASSICAL` for the Chinese Four Pillars school. **Status**: `PARTIALLY_REVIEWED` (the sections below). **Level**: `WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)`.
+- **Group 19 extracts**: 卷二 論遁月時 -- months follow the year (遁月從年), hours follow the day (遁時從日); the rhyme 甲己之年丙作首，乙庚之歲戊為頭，丙辛之歲尋庚上，丁壬壬位順行流，更有戊癸何處起？甲寅之上好追求 (the first month's stem), and 甲己還加甲，乙庚丙作初，丙辛從戊起，丁壬庚子居，戊癸何方發？壬子是直途 (the 子 hour's stem). 卷二 大運 passage -- a worked example in which 立春 falls later in the twelfth month, so the jie terms open the months. 卷二 論十干合 -- 甲乙 wood (east), 丙丁 fire (south), 戊己 earth (centre), 庚辛 metal (west), 壬癸 water (north), the first of each pair yang. 卷二 論地支屬相 -- 子鼠 丑牛 寅虎 卯兔 辰龍 巳蛇 午馬 未羊 申猴 酉雞 戌犬 亥豬, odd positions yang. 卷三 論十干祿 -- 寅卯 with 甲乙, 巳午 with 丙丁, 申酉 with 庚辛, 亥子 with 壬癸; 辰戌丑未 as the earth positions.
+- **Not found**: an explicit statement that the year changes at 立春 (CN-04 is labelled `modern_tradition`); a day-boundary or time-basis rule (CN-08, CN-09 open).
+- **Rules extracted**: CN-02, CN-05, CN-07. **Copyright**: public domain.
+
+### SRC-ALMANAC-SECONDARY (added in Phase 9 WP-H)
+
+- Almanac websites returned by a web search on 2026-09-24 (for example almanac.ximizi.com, calendar.8s8s.net, nongli.info) agreeing that 1 January 2000 is 己卯年 丙子月 戊午日. `MODERN_POPULAR`. **Level**: `SECONDARY`; confidence MEDIUM. Used only as engineering evidence for the day count (CN-06). Academia Sinica's 兩千年中西曆轉換 (sinocal.sinica.edu.tw), a scholarly converter, was identified as the better reference but could not be queried automatically; a manual check is recommended.
+
+### SRC-WAITE-PICTORIAL-KEY-1911 (added in Phase 9 WP-I)
+
+- A. E. Waite, *The Pictorial Key to the Tarot* (Rider, 1910/1911), illustrated by Pamela Colman Smith. **Location**: English Wikisource, `The Pictorial Key to the Tarot/Part 2` and `/Part 3` (proofread transcription of the scan `The Pictorial Key to the Tarot.pdf`), read through the MediaWiki parse API 2026-09-24; sacred-texts.com was behind a challenge page; Project Gutenberg #43548 is L. W. de Laurence's derivative *Illustrated Key* and was **not** used. `TRADITIONAL_SECONDARY` (primary for the Waite-Smith deck). **Status**: `PARTIALLY_REVIEWED`. **Level**: `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH`.
+- **Group 20 extracts**: Part II trump headings I The Magician to XXI The World and 0 The Fool, with Strength numbered VIII and Justice XI ("this card has been interchanged with that of Justice, which is usually numbered eight"); Part III suits Wands, Cups, Swords, Pentacles, King to Ace; "An Ancient Celtic Method of Divination": a Significator chosen by the querent's sex and age, the pack shuffled and cut three times, ten positions from "This covers him" to "What will come"; another method asks that some cards be turned round (reversed) before shuffling.
+- **Rules extracted**: TA-02, TA-03, TA-08, TA-09. **Copyright**: public domain (Waite d. 1942, Smith d. 1951); only names, numbers and position titles are used; the divinatory meanings are not stored.
+
+### Group 21: Phase 9 systems researched but not implemented (2026-09-24/25)
+
+- **Lal Kitab**: five Urdu editions identified (1939 *Lal Kitab ke Farman*, 1940 *Lal Kitab ke Arman*, 1941 *Gutka*, 1942, 1952) with archive.org copies (items `lal-kitab-1939_202006`, `LalKitab1941`, `Pt.RoopChandLalKitab.11952`, rights unverified). Authorship attributed to Pt. Roop Chand Joshi (`CONTESTED`); presumed in copyright in India to the end of 2042. **Not read** (no qualified Urdu reader). Status `IDENTIFIED`. P9-01.
+- **Nadi**: palm-leaf text matching by private readers; printed works such as the Chandra Kala Nadi are interpretive. Status `IDENTIFIED`; no computational source exists to verify. P9-02.
+- **Horary (general)**: Lilly, *Christian Astrology* (registered above) and Prasna Marga (registered as `IDENTIFIED`). Tradition not chosen by the roadmap. P9-03.
+- **Vastu**: Mayamata, Manasara, Brihat Samhita Ch. 53 identified, not read. P9-04.
+- **Feng Shui**: Flying Stars (玄空飛星) and Eight Mansions (八宅) identified as the computational schools, not read. P9-05.
+- **Ayurdaya**: BPHS Ch. 43 (Group 5, read completely at `OCR-TRANSLATION` level); excluded by product policy pending an owner decision. P9-06.
+- **Jaimini Dashas**: not re-read this phase. P9-07.
+- **BPHS Ch. 27-28 (Group 17, WP-F)**: all 40 verses of Ch. 27 and Ch. 28 v. 1-20 re-read in the `BPHSEnglish` OCR (Vol I printed pp. 264-292) on 2026-09-24; findings in `docs/ASTROLOGY_STANDARDS.md` SB-01 to SB-20; Ch. 3 v. 19 (planetary genders, p. 31) read. No page image checked for Ch. 27.
+- **BPHS Ch. 8, 29, 33 (Group 18, WP-G)**: Ch. 8 v. 4-5 and example (p. 107), the standard nativity page (p. 294: longitudes and Navamsa chart), the Arudha chart (p. 295) and Ch. 29 v. 4-5 (p. 296) checked against page images rendered from the `BPHSEnglish` PDF; Ch. 29 v. 1-3, v. 6-7 and Ch. 33 v. 1-2 read in OCR. Findings in JN-11 to JN-18.
+
 ### Other sources
 
 | Source | Status | Notes |
@@ -265,7 +310,7 @@ Check copyright and translation rights before ingestion/training. Community uplo
 | Bhavartha Ratnakara (B.V. Raman) | `IDENTIFIED` | `MODERN_REFERENCE`. |
 | Lal Kitab (1941 Urdu edition) | `IDENTIFIED` | Provenance `CONTESTED`. |
 | Nadi and Chaldean numerology items | `IDENTIFIED` | `MODERN_POPULAR` only. |
-| KP source literature | `NOT_RESEARCHED` | |
+| KP source literature | `PARTIALLY_REVIEWED` | KP Readers I, III, VI registered above (Phase 9 WP-E); other KP literature (the *KP Ephemeris*, Readers II, IV, V, magazine articles) not read. |
 | Samudrika / palmistry classics | `NOT_RESEARCHED` | See `research/PALM_READING.md`. |
 | Remedies, puja, paddhati, vrata, mantra, yantra | `NOT_RESEARCHED` | BPHS Ch. 84–97 is a candidate corpus but `CONTESTED`. No other authoritative source has been identified. Nothing may enter the knowledge base without a recorded source. |
 
@@ -283,6 +328,16 @@ Open standards conflicts added by Phase 9 WP-D (no winner chosen; `docs/ASTROLOG
 - **Conjunction as an aspect, status OPEN, terminology.** Ptolemy (I.13, as Robbins notes) does not class the conjunction as an aspect; Lilly does. The conjunction is included in `WESTERN_ASPECTS_PTOLEMAIC_5`, following Lilly, with this recorded.
 - **Orb values, status OPEN, no universal standard.** Ptolemy gives none; Robbins's note records Ashmand's table (Saturn 10°, Jupiter 12°, Mars 7°30′, Sun 17°, Venus 8°, Mercury 7°30′, Moon 12°30′) and a 15° maximum from an anonymous commentator; Lilly's planet chapters give 9, 9, 7, 15, 7, 7, 12. Shipped as two explicit profiles: the Pandit Ji `WESTERN_ORB_FIXED_V1` engineering default and `WESTERN_ORB_LILLY_1647_MOIETY`. The Ashmand table is not implemented and must never be called Ptolemaic.
 - **Lilly's own orbs, status OPEN, internal to one work.** His platick worked example implies Saturn 10° and Venus 8°, against 9° and 7° in the planet chapters; his printed table is illegible in the OCR. A table-based profile needs a page-image check first.
+
+Open standards conflicts added by Phase 9 WP-E to WP-I (no winner chosen unless stated; `docs/ASTROLOGY_STANDARDS.md` v1.15.0-v1.20.0):
+
+- **KP ayanamsa realisation, status OPEN, documented.** The Reader's zero year (291 CE) and its own yearly table disagree by about 1′ (Swiss Ephemeris documentation §2.8.6); the table-fitted mode 5 is the default, the equinox-based mode 45 is selectable.
+- **KP day lord, status OPEN.** Where the day begins for the Ruling Planets' day lord is not stated; civil date and sunrise are both offered, no default.
+- **Shadbala components, status OPEN (six conflicts).** Saptavargaja "Moolatrikona Rasi" versus Ch. 3's degree range in D1; the Varsha/Masa lord method (note only, 160 versus 360); Hora (note only); Ayana (verse khandas versus note declination formula, and the note's doubling of the Sun); Cheshta for Mars to Saturn (v. 21-23 versus v. 24-25); Drik (v. 19's arithmetic). Each is `NOT_EVALUABLE`; see SB-04 and SB-11 to SB-17.
+- **Arudha worked chart versus verse, status RECORDED (verse followed).** The translator's chart (p. 295) omits the 7th-house exception for houses 9 and 10; the note's Aquarius/Saturn-in-Leo example gives Taurus against the verse's Scorpio. JN-14.
+- **Ch. 8 example (b), status RECORDED (verse followed).** "Venus, the Sun and Mercury aspect none" contradicts the verse table and the example's own (c) for Venus and the Sun. JN-11.
+- **Standard nativity degrees, status OBSERVATION.** Ch. 29's longitudes table (p. 294, page image) and the Ch. 32 table used by the WP-B-2 fixture (p. 319) give different degrees for the Sun and Mars (one row apart); the Chara Karaka ranking is unchanged. JN-18.
+- **Chinese day boundary and time basis, status OPEN.** 23:00 versus midnight, and clock versus mean versus apparent solar time; both are no-default request fields. CN-08 to CN-10.
 
 ## 5. Research protocol
 
@@ -411,3 +466,27 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.14.0 §Western standards (WD-01 to W
 | `WESTERN_ORB_FIXED_V1` | active, default | engineering_convention | Pandit Ji choice: 8° (conjunction, square, trine, opposition), 6° (sextile) |
 | `WESTERN_ORB_LILLY_1647_MOIETY` | active | source_supported | Lilly's planet-chapter orbs and moiety rule, `OCR-ORIGINAL-ENGLISH`; outer planets not evaluable |
 | `WESTERN_MOTION_INSTANTANEOUS_V1` | active, only motion rule | engineering_convention | Rate of change of the deviation; reading Lilly's application rules this way is an inference |
+
+### 6.7 Phase 9 WP-E to WP-I profile IDs
+
+Defined in `docs/ASTROLOGY_STANDARDS.md` v1.15.0-v1.19.0. Nothing falls back from one profile to another; fields marked "no default" must be given explicitly.
+
+| Profile ID | Status | Label | Source basis and verification level |
+|---|---|---|---|
+| `KP_AYANAMSA_KRISHNAMURTI_SWISSEPH` | active, default | source_supported | KP Reader I, `OCR-ORIGINAL-ENGLISH`; Swiss Ephemeris §2.8.6 mode 5 |
+| `KP_AYANAMSA_KRISHNAMURTI_VP291_SWISSEPH` | active | engineering_convention | Swiss Ephemeris §2.8.6 mode 45 |
+| `KP_HOUSES_PLACIDUS_SIDEREAL_SWISSEPH` | active, only | inference | KP Readers I and III, `OCR-ORIGINAL-ENGLISH` |
+| `KP_SUBLORD_VIMSHOTTARI_PROPORTIONAL` | active, only | source_supported | KP Reader III, `OCR-ORIGINAL-ENGLISH`; sub-sub derived |
+| `KP_SIGNIFICATORS_FOUR_LEVEL_READER_VI` | active, only | source_supported | KP Reader VI levels (a)-(d), `OCR-ORIGINAL-ENGLISH` |
+| `KP_RULING_PLANETS_READER_VI` | active, only | source_supported | KP Reader VI p. 123; day-lord convention no default |
+| `KP_HORARY_NUMBER_249_READER_VI` | active, only | source_supported | KP Reader VI; ARMC solved numerically |
+| `SHADBALA_BPHS_SANTHANAM_27_VERSE` | active, only | per component | BPHS Ch. 27 verses, `OCR-TRANSLATION`; no total produced |
+| `RASHI_DRISHTI_PLANET_BPHS_8_4_5` | active | source_supported | BPHS Ch. 8 v. 4-5, `IMAGE-TRANSLATION` |
+| `ARUDHA_BHAVA_PADA_BPHS_29_1_5` | active | source_supported | BPHS Ch. 29 v. 1-5, `IMAGE-TRANSLATION` |
+| `ARUDHA_GRAHA_PADA_BPHS_29_6_7` | active (Sun, Moon only) | source_supported | BPHS Ch. 29 v. 6-7, `OCR-TRANSLATION` |
+| `KARAKAMSA_BPHS_33_1_2` | active | source_supported | BPHS Ch. 33 v. 1-2, `OCR-TRANSLATION`; Chara Karaka profile chosen by the caller |
+| `CHINESE_BAZI_FOUR_PILLARS_SOLAR_TERMS_V1` | active, only | per pillar | HKO (`DOCUMENTATION-DIRECT`); 《三命通會》 (`WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)`); time basis and day boundary no default |
+| `TAROT_DECK_WAITE_SMITH_1910` | active, only deck | source_supported | Waite, *Pictorial Key*, `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` |
+| `TAROT_SPREAD_WAITE_CELTIC_METHOD_1910` | active | source_supported | Waite, Part III |
+| `TAROT_SPREAD_SINGLE_CARD` | active | engineering_convention | Pandit Ji |
+| `TAROT_SPREAD_THREE_CARD_UNLABELLED` | active | engineering_convention | Pandit Ji; no position meanings |

@@ -272,6 +272,8 @@ User: "Will my career improve next year?"
 | `ChineseChartRequest` / `ChineseChartFacts` | `astro-engine` | Yes | Phase 9 WP-H. Year, month, day and hour pillars; explicit time basis and day boundary (no defaults); luck cycles not produced (they need the person's sex, not collected) (§Chinese standards). |
 | `TarotDrawRequest` / `TarotSelectionRequest` / `TarotLayout` | `astro-engine` | Yes | Phase 9 WP-I. Card placements only, seeded or user-selected; no meanings; provenance entries (TA-11) (§Tarot standards). |
 | `RamanShadbalaRequest` / `RamanShadbalaFacts` | `astro-engine` | Yes | Phase 9 closure. The modern Shadbala profile after B. V. Raman with totals; two no-default readings; Cheshta in the frame of Raman's tables (SR-01 to SR-24). |
+| `ShadbalaMethodRequest` / `ShadbalaMethodResult` | `astro-engine` | Yes | Shadbala method policy (v1.22.0, SM-01 to SM-12): one method per request, `MODERN_RAMAN` (default user-facing) or `BPHS_VERSE_REFERENCE`; never combined; unconfigured Raman readings reported, never defaulted. |
+| `shadbala_for_rule` | `rule-engine` | Yes | SM-09 gate: a planet's total only from a complete `MODERN_RAMAN` result, otherwise `NOT_EVALUABLE` with one reason; no shipped rule calls it. |
 | `JaiminiFactsRequest` / `JaiminiFacts` | `astro-engine` | Yes | Phase 9 closure. The WP-G facts object with provenance (JN-19). |
 | `EvidenceBundle` sections `kp`, `shadbala`, `jaimini`, `chinese`, `tarot` | `rule-engine` | Yes | Phase 9 closure. Optional, transport-only sections (EV-01 to EV-10); omitted when absent; no rule reads them. |
 | `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |

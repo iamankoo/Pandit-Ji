@@ -493,8 +493,8 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.15.0-v1.19.0. Nothing falls back fro
 | `KP_SIGNIFICATORS_FOUR_LEVEL_READER_VI` | active, only | source_supported | KP Reader VI levels (a)-(d), `OCR-ORIGINAL-ENGLISH` |
 | `KP_RULING_PLANETS_READER_VI` | active, only | source_supported | KP Reader VI p. 123; day-lord convention no default |
 | `KP_HORARY_NUMBER_249_READER_VI` | active, only | source_supported | KP Reader VI; ARMC solved numerically |
-| `SHADBALA_BPHS_SANTHANAM_27_VERSE` | active | per component | BPHS Ch. 27 verses, `OCR-TRANSLATION`; no total produced |
-| `SHADBALA_RAMAN_GRAHA_BHAVA_BALAS` | active (v1.21.0), separate | modern_tradition | B. V. Raman, *Graha and Bhava Balas*, `IMAGE-ORIGINAL-ENGLISH` for the worked numbers; Drekkana and Moon readings required, no default; produces totals |
+| `SHADBALA_BPHS_SANTHANAM_27_VERSE` | active; method `BPHS_VERSE_REFERENCE` (v1.22.0) | per component | BPHS Ch. 27 verses, `OCR-TRANSLATION`; no total produced |
+| `SHADBALA_RAMAN_GRAHA_BHAVA_BALAS` | active (v1.21.0), separate; method `MODERN_RAMAN`, the default for user-facing Shadbala (v1.22.0, SM-02) | modern_tradition | B. V. Raman, *Graha and Bhava Balas*, `IMAGE-ORIGINAL-ENGLISH` for the worked numbers; Drekkana and Moon readings required, no default; produces totals |
 | `RASHI_DRISHTI_PLANET_BPHS_8_4_5` | active | source_supported | BPHS Ch. 8 v. 4-5, `IMAGE-TRANSLATION` |
 | `ARUDHA_BHAVA_PADA_BPHS_29_1_5` | active | source_supported | BPHS Ch. 29 v. 1-5, `IMAGE-TRANSLATION` |
 | `ARUDHA_GRAHA_PADA_BPHS_29_6_7` | active (Sun, Moon only) | source_supported | BPHS Ch. 29 v. 6-7, `OCR-TRANSLATION` |

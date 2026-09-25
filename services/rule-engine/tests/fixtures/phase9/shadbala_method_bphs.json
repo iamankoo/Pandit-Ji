@@ -1,0 +1,4320 @@
+{
+ "alternatives": [],
+ "assumptions": [
+  {
+   "assumption_id": "SM-B1",
+   "evidence_label": "engineering_convention",
+   "statement": "Positions, Lagna and vargas come from the Phase 5 Kundli (Lahiri ayanamsa, whole-sign houses)."
+  },
+  {
+   "assumption_id": "SM-B2",
+   "evidence_label": "engineering_convention",
+   "statement": "Only the translated verses are followed; translator's notes are not used to fill a component."
+  }
+ ],
+ "authority_note": "Verse-literal reference reading of BPHS Ch. 27 (Santhanam translation, OCR level); components whose method is not fixed by the verses are not evaluable, so no Shadbala total is produced.",
+ "engine_version": "0.11.0",
+ "facts": {
+  "apparent_solar_hours": 14.236781228743855,
+  "ayanamsa": "lahiri",
+  "day_night": {
+   "is_day": true,
+   "period_end_julian_day_ut": 2421883.021509965,
+   "period_start_julian_day_ut": 2421882.527650016,
+   "status": "success",
+   "third": 3,
+   "vara_weekday_sunday_zero": 3
+  },
+  "engine_version": "0.11.0",
+  "lagna_longitude": 295.2332149422643,
+  "location": {
+   "altitude_meters": 0.0,
+   "latitude": 13.0,
+   "longitude": 77.5833
+  },
+  "midheaven_longitude": 213.64836516040833,
+  "node_convention": "mean",
+  "planets": [
+   {
+    "body": "sun",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 3.5142870802157518
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 157.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.60292453298147
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": "planetary war is between planets from Mars to Saturn (v. 20)",
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": "Sun: Ayana Bala",
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 175.51428708021575
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 349.4975308026713,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 1,
+      "virupas": 15.0
+     },
+     {
+      "category": "moolatrikona",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 45.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "taurus",
+      "varga": 3,
+      "virupas": 2.0
+     },
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 7,
+      "virupas": 15.0
+     },
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 9,
+      "virupas": 15.0
+     },
+     {
+      "category": "moolatrikona",
+      "sign": "leo",
+      "varga": 12,
+      "virupas": 45.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "scorpio",
+      "varga": 30,
+      "virupas": 20.0
+     }
+    ]
+   },
+   {
+    "body": "moon",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 32.254820919924214
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 86.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 32.038699199788105
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": "planetary war is between planets from Mars to Saturn (v. 20)",
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 51.42857142857143
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 148.2548209199242
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "cheshta",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 329.7775470256163,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 1,
+      "virupas": 4.0
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 10.0
+     },
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 3,
+      "virupas": 4.0
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 7,
+      "virupas": 15.0
+     },
+     {
+      "category": "enemy",
+      "sign": "sagittarius",
+      "varga": 9,
+      "virupas": 4.0
+     },
+     {
+      "category": "moolatrikona",
+      "sign": "taurus",
+      "varga": 12,
+      "virupas": 45.0
+     },
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 30,
+      "virupas": 4.0
+     }
+    ]
+   },
+   {
+    "body": "mars",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 36.668339545063816
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 100.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 55.214448841738964
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "planetary_war_undefined",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "cheshta_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 17.142857142857142
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 181.66833954506382
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 281.7737770065726,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "own",
+      "sign": "scorpio",
+      "varga": 1,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 20.0
+     },
+     {
+      "category": "equal",
+      "sign": "pisces",
+      "varga": 3,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "virgo",
+      "varga": 7,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "sagittarius",
+      "varga": 9,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "gemini",
+      "varga": 12,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "pisces",
+      "varga": 30,
+      "virupas": 10.0
+     }
+    ]
+   },
+   {
+    "body": "mercury",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 54.98220129856054
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 135.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 21.606727054018034
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 45.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "planetary_war_undefined",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "cheshta_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 25.714285714285715
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 279.98220129856054
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 475.73898873367096,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 1,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 3,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 7,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 9,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 12,
+      "virupas": 20.0
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 30,
+      "virupas": 15.0
+     }
+    ]
+   },
+   {
+    "body": "jupiter",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 55.85261807147335
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 79.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 10.891786909281413
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "planetary_war_undefined",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "cheshta_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 34.285714285714285
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 179.85261807147336
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 377.2819877895564,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "great_enemy",
+      "sign": "gemini",
+      "varga": 1,
+      "virupas": 2.0
+     },
+     {
+      "category": "equal",
+      "sign": "cancer",
+      "varga": 2,
+      "virupas": 10.0
+     },
+     {
+      "category": "friend",
+      "sign": "aquarius",
+      "varga": 3,
+      "virupas": 15.0
+     },
+     {
+      "category": "equal",
+      "sign": "scorpio",
+      "varga": 7,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 9,
+      "virupas": 10.0
+     },
+     {
+      "category": "own",
+      "sign": "pisces",
+      "varga": 12,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "gemini",
+      "varga": 30,
+      "virupas": 2.0
+     }
+    ]
+   },
+   {
+    "body": "venus",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 2.4346699445798854
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 94.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 14.650791664715996
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "planetary_war_undefined",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "cheshta_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 42.857142857142854
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 141.43466994457987
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 291.19447298952605,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "great_friend",
+      "sign": "virgo",
+      "varga": 1,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 2.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "capricorn",
+      "varga": 3,
+      "virupas": 20.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "cancer",
+      "varga": 7,
+      "virupas": 2.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "gemini",
+      "varga": 9,
+      "virupas": 20.0
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 12,
+      "virupas": 15.0
+     },
+     {
+      "category": "friend",
+      "sign": "pisces",
+      "varga": 30,
+      "virupas": 15.0
+     }
+    ]
+   },
+   {
+    "body": "saturn",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 34.3086770211084
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 80.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "translator_note",
+      "reason": null,
+      "status": "success",
+      "virupas": 57.435727959646364
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "year_month_lord_method_unverified",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "hora_method_not_locked",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "ayana_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "planetary_war_undefined",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "cheshta_method_conflict",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "source_supported",
+      "reason": null,
+      "status": "success",
+      "virupas": 8.571428571428571
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "drik_formula_ambiguous",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 174.3086770211084
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: abda, masa, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "vara",
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 328.0639650290959,
+    "not_evaluated_components": [
+     "abda",
+     "masa",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": [
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 1,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 3,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 7,
+      "virupas": 10.0
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 9,
+      "virupas": 10.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "virgo",
+      "varga": 12,
+      "virupas": 20.0
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 30,
+      "virupas": 10.0
+     }
+    ]
+   }
+  ],
+  "profile_id": "SHADBALA_BPHS_SANTHANAM_27_VERSE",
+  "provenance": [
+   {
+    "component": "uchcha",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 1 (printed pp. 264-265)",
+     "note": "Debilitation points: the locked Phase 5 dignity table.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "(longitude - deep debilitation point), folded to <= 180 degrees, divided by 3"
+   },
+   {
+    "component": "saptavargaja",
+    "evidence_label": "translator_note",
+    "reference": {
+     "locator": "Ch. 27 v. 2-4 and note (printed p. 265)",
+     "note": "The values are verse; 'compound relationships ... be seen in the Rasi chart only' is the translator's note. The verse says 'Moolatrikona Rasi' (a sign), while Ch. 3 v. 51-54 gives Moolatrikona as a degree range in the Rasi chart: a D1 placement in the Moolatrikona sign but outside the range is not evaluated.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Moolatrikona 45, own 30, great friend 20, friend 15, equal 10, enemy 4, great enemy 2, in each of D1, D2, D3, D7, D9, D12, D30; compound relationship taken from the Rasi chart"
+   },
+   {
+    "component": "ojayugmarasyamsa",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 4-5 (printed p. 266)",
+     "note": "The note's '35 Virupas' contradicts the verse's quarter Rupa and is not used.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "15 each for the Rasi and the Navamsa: Moon and Venus in even signs, the others in odd signs"
+   },
+   {
+    "component": "kendradi",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 5 (printed p. 266)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Angle 60, succedent 30, cadent 15, by whole-sign house from the Lagna (the locked Vedic house baseline)"
+   },
+   {
+    "component": "drekkana",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 6 (printed p. 266); genders Ch. 3 v. 19 (printed p. 31)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "15 to a male, female, neuter planet in the first, second, third 10-degree part"
+   },
+   {
+    "component": "dig",
+    "evidence_label": "translator_note",
+    "reference": {
+     "locator": "Ch. 27 v. 7 (printed p. 267)",
+     "note": "The verse names the 4th, 7th and 10th houses and the ascendant; the translation glosses them as the Nadir, descendant and meridian, which are used (sidereal MC and MC + 180).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "(longitude - zero point), folded to <= 180 degrees, divided by 3; zero points: Nadir for Sun and Mars, descendant for Jupiter and Mercury, meridian for Venus and Moon, Ascendant for Saturn"
+   },
+   {
+    "component": "nathonnatha",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 8-9 (printed p. 268)",
+     "note": "Apparent solar time from Swiss Ephemeris's equation of time (engineering). The note's 'simple method' disagrees with the verse and is not used.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Unnata = apparent time from midnight (0-30 ghatis); Moon, Mars, Saturn get 2 x (30 - Unnata); Sun, Jupiter, Venus get 60 minus that; Mercury always 60"
+   },
+   {
+    "component": "paksha",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 10-11 (printed p. 269)",
+     "note": "The note's doubling of the Moon's Paksha Bala is not in the verse and is not applied; the doubled value is not reported.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Benefics get (Moon - Sun, folded to <= 180) / 3; malefics get 60 minus that; benefic/malefic per the locked Phase 6 natural-nature standard"
+   },
+   {
+    "component": "tribhaga",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 12 (printed pp. 269-270)",
+     "note": "Day = sunrise to sunset, night = sunset to sunrise (Phase 4 sunrise/sunset).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "60 to Mercury, Sun, Saturn in the 1st, 2nd, 3rd third of the day; to Moon, Venus, Mars in the thirds of the night; Jupiter always 60"
+   },
+   {
+    "component": "abda",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+     "note": "The verse gives only the value. How the year lord is found exists only in the note (Surya Siddhanta ahargana via a translator's table), whose stated divisor (160) disagrees with its own worked example (360).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Varsha (year) lord 15: NOT_EVALUABLE"
+   },
+   {
+    "component": "masa",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 13 and note (printed pp. 270-271)",
+     "note": "Month lord method only in the note, on the same unverified ahargana.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Masa (month) lord 30: NOT_EVALUABLE"
+   },
+   {
+    "component": "vara",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+     "note": "The sunrise-to-sunrise day is also the locked Vara standard.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "45 to the lord of the weekday, the day reckoned from sunrise"
+   },
+   {
+    "component": "hora",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+     "note": "Hora division only in the note (24 equal hours from sunrise, mean local time); no Pandit Ji Hora standard is locked yet (Phase 10).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Hora lord 60: NOT_EVALUABLE"
+   },
+   {
+    "component": "ayana",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 15-17 and note (printed p. 277 and the following tables)",
+     "note": "The verse's khanda procedure (45, 33, 12) and the note's declination formula (23 deg 27 min +/- kranti) x 1.2793 are different methods; the note also doubles the Sun's value, which the verse does not.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Ayana Bala: NOT_EVALUABLE"
+   },
+   {
+    "component": "yuddha",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 20 (printed p. 284)",
+     "note": "The chapter does not define when two planets are at war, and the adjustment uses the finished Shadbala of both planets.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Yuddha (planetary war): NOT_EVALUABLE for Mars to Saturn; not applicable to the Sun and Moon"
+   },
+   {
+    "component": "cheshta",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 18, 21-25 (printed pp. 284-285)",
+     "note": "v. 21-23 (eight kinds of motion, values partly illegible in the OCR) and v. 24-25 (Cheshta Kendra from the mean longitude and the sighrocca) are two methods; v. 24-25 needs mean elements the chapter does not supply.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Moon: her Paksha Bala (v. 18). Sun: his Ayana Bala (NOT_EVALUABLE). Mars to Saturn: NOT_EVALUABLE"
+   },
+   {
+    "component": "naisargika",
+    "evidence_label": "source_supported",
+    "reference": {
+     "locator": "Ch. 27 v. 14 (printed p. 276)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "60/7 x (1 Saturn, 2 Mars, 3 Mercury, 4 Jupiter, 5 Venus, 6 Moon, 7 Sun)"
+   },
+   {
+    "component": "drik",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Ch. 27 v. 19 (printed p. 284)",
+     "note": "'Reduce one fourth of the Drishti Pinda if a planet has malefic aspects ... add a fourth if aspected by a benefic ... super add the entire aspect of Mercury and Jupiter' does not fix one arithmetic; it also depends on Ch. 26 aspect values, which are themselves not evaluable in some cases (WP-C).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    "statement": "Drik Bala: NOT_EVALUABLE"
+   }
+  ],
+  "standards_version": "1.16.0",
+  "system": "vedic_parashari",
+  "time_precision": "exact",
+  "time_resolution": {
+   "disambiguation_applied": null,
+   "dst_active": false,
+   "input_local_datetime": "1918-10-16T08:49:40",
+   "julian_day_et": 2421882.868065119,
+   "julian_day_ut": 2421882.867824074,
+   "timezone": "UTC",
+   "utc_datetime": "1918-10-16T08:49:40Z",
+   "utc_offset_seconds": 0,
+   "was_ambiguous": false,
+   "was_nonexistent": false
+  },
+  "unnata_ghatis": 24.408046928140365,
+  "warnings": [
+   "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+   "no Shadbala Pinda is produced: Abda, Masa, Hora, Ayana, Yuddha, Drik and the Cheshta Bala of the Sun and of Mars to Saturn are not evaluable under BPHS Ch. 27 as read; evaluated_subtotal_virupas is a partial sum only"
+  ]
+ },
+ "is_default_user_facing_method": false,
+ "method": "BPHS_VERSE_REFERENCE",
+ "method_produces_total": false,
+ "method_version": "1.0.0",
+ "methodology_choices": [],
+ "not_evaluable_components": [
+  {
+   "body": "sun",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "sun",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "sun",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "sun",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "sun",
+   "component": "cheshta",
+   "detail": "Sun: Ayana Bala",
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "sun",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "moon",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "moon",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "moon",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "moon",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "moon",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "mars",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "mars",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "mars",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "mars",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "mars",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "planetary_war_undefined"
+  },
+  {
+   "body": "mars",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "cheshta_method_conflict"
+  },
+  {
+   "body": "mars",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "mercury",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "mercury",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "mercury",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "mercury",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "mercury",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "planetary_war_undefined"
+  },
+  {
+   "body": "mercury",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "cheshta_method_conflict"
+  },
+  {
+   "body": "mercury",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "jupiter",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "jupiter",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "jupiter",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "jupiter",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "jupiter",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "planetary_war_undefined"
+  },
+  {
+   "body": "jupiter",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "cheshta_method_conflict"
+  },
+  {
+   "body": "jupiter",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "venus",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "venus",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "venus",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "venus",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "venus",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "planetary_war_undefined"
+  },
+  {
+   "body": "venus",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "cheshta_method_conflict"
+  },
+  {
+   "body": "venus",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  },
+  {
+   "body": "saturn",
+   "component": "abda",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "saturn",
+   "component": "masa",
+   "detail": null,
+   "reason": "year_month_lord_method_unverified"
+  },
+  {
+   "body": "saturn",
+   "component": "hora",
+   "detail": null,
+   "reason": "hora_method_not_locked"
+  },
+  {
+   "body": "saturn",
+   "component": "ayana",
+   "detail": null,
+   "reason": "ayana_method_conflict"
+  },
+  {
+   "body": "saturn",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "planetary_war_undefined"
+  },
+  {
+   "body": "saturn",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "cheshta_method_conflict"
+  },
+  {
+   "body": "saturn",
+   "component": "drik",
+   "detail": null,
+   "reason": "drik_formula_ambiguous"
+  }
+ ],
+ "planets": [
+  {
+   "body": "sun",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 3.5142870802157518
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 157.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.60292453298147
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": "planetary war is between planets from Mars to Saturn (v. 20)",
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": "Sun: Ayana Bala",
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 175.51428708021575
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 349.4975308026713,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 1,
+     "virupas": 15.0
+    },
+    {
+     "category": "moolatrikona",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 45.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "taurus",
+     "varga": 3,
+     "virupas": 2.0
+    },
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 7,
+     "virupas": 15.0
+    },
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 9,
+     "virupas": 15.0
+    },
+    {
+     "category": "moolatrikona",
+     "sign": "leo",
+     "varga": 12,
+     "virupas": 45.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "scorpio",
+     "varga": 30,
+     "virupas": 20.0
+    }
+   ]
+  },
+  {
+   "body": "moon",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 32.254820919924214
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 86.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 32.038699199788105
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": "planetary war is between planets from Mars to Saturn (v. 20)",
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 51.42857142857143
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 148.2548209199242
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "cheshta",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 329.7775470256163,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 1,
+     "virupas": 4.0
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 10.0
+    },
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 3,
+     "virupas": 4.0
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 7,
+     "virupas": 15.0
+    },
+    {
+     "category": "enemy",
+     "sign": "sagittarius",
+     "varga": 9,
+     "virupas": 4.0
+    },
+    {
+     "category": "moolatrikona",
+     "sign": "taurus",
+     "varga": 12,
+     "virupas": 45.0
+    },
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 30,
+     "virupas": 4.0
+    }
+   ]
+  },
+  {
+   "body": "mars",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 36.668339545063816
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 100.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 55.214448841738964
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "planetary_war_undefined",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "cheshta_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 17.142857142857142
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 181.66833954506382
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 281.7737770065726,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "own",
+     "sign": "scorpio",
+     "varga": 1,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 20.0
+    },
+    {
+     "category": "equal",
+     "sign": "pisces",
+     "varga": 3,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "virgo",
+     "varga": 7,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "sagittarius",
+     "varga": 9,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "gemini",
+     "varga": 12,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "pisces",
+     "varga": 30,
+     "virupas": 10.0
+    }
+   ]
+  },
+  {
+   "body": "mercury",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 54.98220129856054
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 135.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 21.606727054018034
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 45.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "planetary_war_undefined",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "cheshta_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 25.714285714285715
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 279.98220129856054
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 475.73898873367096,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 1,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 3,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 7,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 9,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 12,
+     "virupas": 20.0
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 30,
+     "virupas": 15.0
+    }
+   ]
+  },
+  {
+   "body": "jupiter",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 55.85261807147335
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 79.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 10.891786909281413
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "planetary_war_undefined",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "cheshta_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 34.285714285714285
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 179.85261807147336
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 377.2819877895564,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "great_enemy",
+     "sign": "gemini",
+     "varga": 1,
+     "virupas": 2.0
+    },
+    {
+     "category": "equal",
+     "sign": "cancer",
+     "varga": 2,
+     "virupas": 10.0
+    },
+    {
+     "category": "friend",
+     "sign": "aquarius",
+     "varga": 3,
+     "virupas": 15.0
+    },
+    {
+     "category": "equal",
+     "sign": "scorpio",
+     "varga": 7,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 9,
+     "virupas": 10.0
+    },
+    {
+     "category": "own",
+     "sign": "pisces",
+     "varga": 12,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "gemini",
+     "varga": 30,
+     "virupas": 2.0
+    }
+   ]
+  },
+  {
+   "body": "venus",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 2.4346699445798854
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 94.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 14.650791664715996
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "planetary_war_undefined",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "cheshta_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 42.857142857142854
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 141.43466994457987
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 291.19447298952605,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "great_friend",
+     "sign": "virgo",
+     "varga": 1,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 2.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "capricorn",
+     "varga": 3,
+     "virupas": 20.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "cancer",
+     "varga": 7,
+     "virupas": 2.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "gemini",
+     "varga": 9,
+     "virupas": 20.0
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 12,
+     "virupas": 15.0
+    },
+    {
+     "category": "friend",
+     "sign": "pisces",
+     "varga": 30,
+     "virupas": 15.0
+    }
+   ]
+  },
+  {
+   "body": "saturn",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 34.3086770211084
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 80.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "translator_note",
+     "reason": null,
+     "status": "success",
+     "virupas": 57.435727959646364
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "year_month_lord_method_unverified",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "hora_method_not_locked",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "ayana_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "planetary_war_undefined",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "cheshta_method_conflict",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "source_supported",
+     "reason": null,
+     "status": "success",
+     "virupas": 8.571428571428571
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "drik_formula_ambiguous",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 174.3086770211084
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: abda, masa, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "vara",
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 328.0639650290959,
+   "not_evaluated_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": [
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 1,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 3,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 7,
+     "virupas": 10.0
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 9,
+     "virupas": 10.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "virgo",
+     "varga": 12,
+     "virupas": 20.0
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 30,
+     "virupas": 10.0
+    }
+   ]
+  }
+ ],
+ "profile_id": "SHADBALA_BPHS_SANTHANAM_27_VERSE",
+ "provenance": [
+  {
+   "component": "uchcha",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 1 (printed pp. 264-265)",
+    "note": "Debilitation points: the locked Phase 5 dignity table.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "(longitude - deep debilitation point), folded to <= 180 degrees, divided by 3"
+  },
+  {
+   "component": "saptavargaja",
+   "evidence_label": "translator_note",
+   "reference": {
+    "locator": "Ch. 27 v. 2-4 and note (printed p. 265)",
+    "note": "The values are verse; 'compound relationships ... be seen in the Rasi chart only' is the translator's note. The verse says 'Moolatrikona Rasi' (a sign), while Ch. 3 v. 51-54 gives Moolatrikona as a degree range in the Rasi chart: a D1 placement in the Moolatrikona sign but outside the range is not evaluated.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Moolatrikona 45, own 30, great friend 20, friend 15, equal 10, enemy 4, great enemy 2, in each of D1, D2, D3, D7, D9, D12, D30; compound relationship taken from the Rasi chart"
+  },
+  {
+   "component": "ojayugmarasyamsa",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 4-5 (printed p. 266)",
+    "note": "The note's '35 Virupas' contradicts the verse's quarter Rupa and is not used.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "15 each for the Rasi and the Navamsa: Moon and Venus in even signs, the others in odd signs"
+  },
+  {
+   "component": "kendradi",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 5 (printed p. 266)",
+    "note": "",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Angle 60, succedent 30, cadent 15, by whole-sign house from the Lagna (the locked Vedic house baseline)"
+  },
+  {
+   "component": "drekkana",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 6 (printed p. 266); genders Ch. 3 v. 19 (printed p. 31)",
+    "note": "",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "15 to a male, female, neuter planet in the first, second, third 10-degree part"
+  },
+  {
+   "component": "dig",
+   "evidence_label": "translator_note",
+   "reference": {
+    "locator": "Ch. 27 v. 7 (printed p. 267)",
+    "note": "The verse names the 4th, 7th and 10th houses and the ascendant; the translation glosses them as the Nadir, descendant and meridian, which are used (sidereal MC and MC + 180).",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "(longitude - zero point), folded to <= 180 degrees, divided by 3; zero points: Nadir for Sun and Mars, descendant for Jupiter and Mercury, meridian for Venus and Moon, Ascendant for Saturn"
+  },
+  {
+   "component": "nathonnatha",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 8-9 (printed p. 268)",
+    "note": "Apparent solar time from Swiss Ephemeris's equation of time (engineering). The note's 'simple method' disagrees with the verse and is not used.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Unnata = apparent time from midnight (0-30 ghatis); Moon, Mars, Saturn get 2 x (30 - Unnata); Sun, Jupiter, Venus get 60 minus that; Mercury always 60"
+  },
+  {
+   "component": "paksha",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 10-11 (printed p. 269)",
+    "note": "The note's doubling of the Moon's Paksha Bala is not in the verse and is not applied; the doubled value is not reported.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Benefics get (Moon - Sun, folded to <= 180) / 3; malefics get 60 minus that; benefic/malefic per the locked Phase 6 natural-nature standard"
+  },
+  {
+   "component": "tribhaga",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 12 (printed pp. 269-270)",
+    "note": "Day = sunrise to sunset, night = sunset to sunrise (Phase 4 sunrise/sunset).",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "60 to Mercury, Sun, Saturn in the 1st, 2nd, 3rd third of the day; to Moon, Venus, Mars in the thirds of the night; Jupiter always 60"
+  },
+  {
+   "component": "abda",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+    "note": "The verse gives only the value. How the year lord is found exists only in the note (Surya Siddhanta ahargana via a translator's table), whose stated divisor (160) disagrees with its own worked example (360).",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Varsha (year) lord 15: NOT_EVALUABLE"
+  },
+  {
+   "component": "masa",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 13 and note (printed pp. 270-271)",
+    "note": "Month lord method only in the note, on the same unverified ahargana.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Masa (month) lord 30: NOT_EVALUABLE"
+  },
+  {
+   "component": "vara",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+    "note": "The sunrise-to-sunrise day is also the locked Vara standard.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "45 to the lord of the weekday, the day reckoned from sunrise"
+  },
+  {
+   "component": "hora",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+    "note": "Hora division only in the note (24 equal hours from sunrise, mean local time); no Pandit Ji Hora standard is locked yet (Phase 10).",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Hora lord 60: NOT_EVALUABLE"
+  },
+  {
+   "component": "ayana",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 15-17 and note (printed p. 277 and the following tables)",
+    "note": "The verse's khanda procedure (45, 33, 12) and the note's declination formula (23 deg 27 min +/- kranti) x 1.2793 are different methods; the note also doubles the Sun's value, which the verse does not.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Ayana Bala: NOT_EVALUABLE"
+  },
+  {
+   "component": "yuddha",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 20 (printed p. 284)",
+    "note": "The chapter does not define when two planets are at war, and the adjustment uses the finished Shadbala of both planets.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Yuddha (planetary war): NOT_EVALUABLE for Mars to Saturn; not applicable to the Sun and Moon"
+  },
+  {
+   "component": "cheshta",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 18, 21-25 (printed pp. 284-285)",
+    "note": "v. 21-23 (eight kinds of motion, values partly illegible in the OCR) and v. 24-25 (Cheshta Kendra from the mean longitude and the sighrocca) are two methods; v. 24-25 needs mean elements the chapter does not supply.",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Moon: her Paksha Bala (v. 18). Sun: his Ayana Bala (NOT_EVALUABLE). Mars to Saturn: NOT_EVALUABLE"
+  },
+  {
+   "component": "naisargika",
+   "evidence_label": "source_supported",
+   "reference": {
+    "locator": "Ch. 27 v. 14 (printed p. 276)",
+    "note": "",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "60/7 x (1 Saturn, 2 Mars, 3 Mercury, 4 Jupiter, 5 Venus, 6 Moon, 7 Sun)"
+  },
+  {
+   "component": "drik",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Ch. 27 v. 19 (printed p. 284)",
+    "note": "'Reduce one fourth of the Drishti Pinda if a planet has malefic aspects ... add a fourth if aspected by a benefic ... super add the entire aspect of Mercury and Jupiter' does not fix one arithmetic; it also depends on Ch. 26 aspect values, which are themselves not evaluable in some cases (WP-C).",
+    "source_id": "SRC-BPHS-SANTHANAM-1984",
+    "verification_level": "OCR-TRANSLATION"
+   },
+   "statement": "Drik Bala: NOT_EVALUABLE"
+  }
+ ],
+ "source_confidence": "MEDIUM",
+ "sources": [
+  {
+   "locator": "Ch. 27 v. 1 (printed pp. 264-265)",
+   "note": "Debilitation points: the locked Phase 5 dignity table.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 2-4 and note (printed p. 265)",
+   "note": "The values are verse; 'compound relationships ... be seen in the Rasi chart only' is the translator's note. The verse says 'Moolatrikona Rasi' (a sign), while Ch. 3 v. 51-54 gives Moolatrikona as a degree range in the Rasi chart: a D1 placement in the Moolatrikona sign but outside the range is not evaluated.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 4-5 (printed p. 266)",
+   "note": "The note's '35 Virupas' contradicts the verse's quarter Rupa and is not used.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 5 (printed p. 266)",
+   "note": "",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 6 (printed p. 266); genders Ch. 3 v. 19 (printed p. 31)",
+   "note": "",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 7 (printed p. 267)",
+   "note": "The verse names the 4th, 7th and 10th houses and the ascendant; the translation glosses them as the Nadir, descendant and meridian, which are used (sidereal MC and MC + 180).",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 8-9 (printed p. 268)",
+   "note": "Apparent solar time from Swiss Ephemeris's equation of time (engineering). The note's 'simple method' disagrees with the verse and is not used.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 10-11 (printed p. 269)",
+   "note": "The note's doubling of the Moon's Paksha Bala is not in the verse and is not applied; the doubled value is not reported.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 12 (printed pp. 269-270)",
+   "note": "Day = sunrise to sunset, night = sunset to sunrise (Phase 4 sunrise/sunset).",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+   "note": "The verse gives only the value. How the year lord is found exists only in the note (Surya Siddhanta ahargana via a translator's table), whose stated divisor (160) disagrees with its own worked example (360).",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 13 and note (printed pp. 270-271)",
+   "note": "Month lord method only in the note, on the same unverified ahargana.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+   "note": "The sunrise-to-sunrise day is also the locked Vara standard.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 13 and note (printed pp. 270-272)",
+   "note": "Hora division only in the note (24 equal hours from sunrise, mean local time); no Pandit Ji Hora standard is locked yet (Phase 10).",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 15-17 and note (printed p. 277 and the following tables)",
+   "note": "The verse's khanda procedure (45, 33, 12) and the note's declination formula (23 deg 27 min +/- kranti) x 1.2793 are different methods; the note also doubles the Sun's value, which the verse does not.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 20 (printed p. 284)",
+   "note": "The chapter does not define when two planets are at war, and the adjustment uses the finished Shadbala of both planets.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 18, 21-25 (printed pp. 284-285)",
+   "note": "v. 21-23 (eight kinds of motion, values partly illegible in the OCR) and v. 24-25 (Cheshta Kendra from the mean longitude and the sighrocca) are two methods; v. 24-25 needs mean elements the chapter does not supply.",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 14 (printed p. 276)",
+   "note": "",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  },
+  {
+   "locator": "Ch. 27 v. 19 (printed p. 284)",
+   "note": "'Reduce one fourth of the Drishti Pinda if a planet has malefic aspects ... add a fourth if aspected by a benefic ... super add the entire aspect of Mercury and Jupiter' does not fix one arithmetic; it also depends on Ch. 26 aspect values, which are themselves not evaluable in some cases (WP-C).",
+   "source_id": "SRC-BPHS-SANTHANAM-1984",
+   "verification_level": "OCR-TRANSLATION"
+  }
+ ],
+ "standards_version": "1.22.0",
+ "system": "vedic_parashari",
+ "time_precision": "exact",
+ "total_status": "partial",
+ "totals": [
+  {
+   "body": "sun",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "moon",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "mars",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "mercury",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "jupiter",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "venus",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "saturn",
+   "missing_components": [
+    "abda",
+    "masa",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  }
+ ],
+ "unresolved_choices": [],
+ "warnings": [
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+  "no Shadbala Pinda is produced: Abda, Masa, Hora, Ayana, Yuddha, Drik and the Cheshta Bala of the Sun and of Mars to Saturn are not evaluable under BPHS Ch. 27 as read; evaluated_subtotal_virupas is a partial sum only"
+ ]
+}

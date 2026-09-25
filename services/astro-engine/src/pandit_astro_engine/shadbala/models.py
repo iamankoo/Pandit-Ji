@@ -65,6 +65,8 @@ class ShadbalaReason(str, Enum):
     PLANETARY_WAR_UNRESOLVED = "planetary_war_unresolved"
     DRIK_NATURE_UNDETERMINED = "drik_nature_undetermined"
     CHESHTA_TABLES_OUT_OF_RANGE = "cheshta_tables_out_of_range"
+    # Method policy (v1.22.0)
+    METHODOLOGY_READING_NOT_SELECTED = "methodology_reading_not_selected"
 
 
 class ShadbalaRequest(_Model):

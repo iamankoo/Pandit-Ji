@@ -22,7 +22,14 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, ValidationError, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    SerializerFunctionWrapHandler,
+    ValidationError,
+    model_serializer,
+    model_validator,
+)
 
 from pandit_rule_engine.adapters import FactsError
 from pandit_rule_engine.hashing import canonical_json, sha256_hex
@@ -250,6 +257,62 @@ class ShadbalaPlanetRecord(_Record):
         return self
 
 
+#: Method identifiers of the Shadbala method policy (v1.22.0, SM-01 to SM-12)
+#: and the one profile each method may carry.
+SHADBALA_METHOD_PROFILE = {
+    "MODERN_RAMAN": "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS",
+    "BPHS_VERSE_REFERENCE": "SHADBALA_BPHS_SANTHANAM_27_VERSE",
+}
+_COMPLETE = "complete"
+_PARTIAL = "partial"
+_NOT_SELECTED = "not_selected"
+
+
+class ShadbalaChoiceRecord(_Record):
+    choice_id: str
+    options: tuple[str, ...]
+    selection: str
+    selected: str | None = None
+    material_for_this_chart: bool | None = None
+    affected: tuple[tuple[str, str], ...] = ()
+    confidence: str
+
+
+class ShadbalaTotalRecord(_Record):
+    body: str
+    status: str
+    total_rupas: float | None = None
+    missing_components: tuple[str, ...] = ()
+
+    @model_validator(mode="after")
+    def _check(self) -> ShadbalaTotalRecord:
+        if self.status not in (_COMPLETE, _PARTIAL):
+            raise ValueError(f"shadbala.total.{self.body}: unknown status {self.status!r}")
+        if (self.status == _COMPLETE) != (self.total_rupas is not None):
+            raise ValueError(f"shadbala.total.{self.body}: rupas only with a complete total")
+        if self.status == _COMPLETE and self.missing_components:
+            raise ValueError(f"shadbala.total.{self.body}: complete total with missing parts")
+        return self
+
+
+class ShadbalaMethodRecord(_Record):
+    """The method-policy envelope of a `ShadbalaMethodResult` (SM-10)."""
+
+    method: str
+    method_version: str
+    is_default_user_facing_method: bool
+    method_produces_total: bool
+    source_confidence: str
+    source_ids: tuple[str, ...]
+    authority_note: str
+    assumption_ids: tuple[str, ...]
+    choices: tuple[ShadbalaChoiceRecord, ...]
+    unresolved_choices: tuple[str, ...]
+    total_status: str
+    totals: tuple[ShadbalaTotalRecord, ...]
+    alternatives: tuple[dict[str, Any], ...] = ()
+
+
 class ShadbalaEvidence(_Record):
     profile_id: str
     standards_version: str
@@ -260,12 +323,74 @@ class ShadbalaEvidence(_Record):
     provenance: tuple[ProvenanceRecord, ...]
     warnings: tuple[str, ...] = ()
     facts_hash: str
+    #: Present only when the section was built from a `ShadbalaMethodResult`;
+    #: omitted when absent, so sections built from profile facts hash as before.
+    method: ShadbalaMethodRecord | None = None
+
+    @model_serializer(mode="wrap")
+    def _omit_absent_method(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
+        data: dict[str, Any] = handler(self)
+        if data.get("method") is None:
+            data.pop("method", None)
+        return data
+
+
+def _method_record(
+    result: Mapping[str, Any], planets: tuple[ShadbalaPlanetRecord, ...]
+) -> ShadbalaMethodRecord:
+    method = result["method"]
+    if SHADBALA_METHOD_PROFILE.get(method) != result["profile_id"]:
+        raise ValueError(
+            f"method {method!r} cannot carry profile {result['profile_id']!r} "
+            "(the two Shadbala methods are never mixed)"
+        )
+    record = ShadbalaMethodRecord(
+        method=method,
+        method_version=result["method_version"],
+        is_default_user_facing_method=result["is_default_user_facing_method"],
+        method_produces_total=result["method_produces_total"],
+        source_confidence=result["source_confidence"],
+        source_ids=tuple(dict.fromkeys(s["source_id"] for s in result["sources"])),
+        authority_note=result["authority_note"],
+        assumption_ids=tuple(a["assumption_id"] for a in result["assumptions"]),
+        choices=tuple(result["methodology_choices"]),
+        unresolved_choices=tuple(result["unresolved_choices"]),
+        total_status=result["total_status"],
+        totals=tuple(result["totals"]),
+        alternatives=tuple(result.get("alternatives", ())),
+    )
+    if method == "BPHS_VERSE_REFERENCE" and (
+        record.method_produces_total
+        or record.choices
+        or any(t.status == _COMPLETE for t in record.totals)
+    ):
+        raise ValueError("BPHS_VERSE_REFERENCE produces no total and has no reading choice")
+    open_material = {
+        c.choice_id
+        for c in record.choices
+        if c.selection == _NOT_SELECTED and c.material_for_this_chart
+    }
+    if open_material != set(record.unresolved_choices):
+        raise ValueError("unresolved_choices must list exactly the open material choices")
+    by_body = {p.body: {c.component: c for c in p.components} for p in planets}
+    for t in record.totals:
+        total = by_body.get(t.body, {}).get("shadbala_total")
+        if total is None or (t.status == _COMPLETE) != (total.status == _SUCCESS):
+            raise ValueError(f"shadbala.total.{t.body}: disagrees with the planet components")
+    complete = bool(record.totals) and all(t.status == _COMPLETE for t in record.totals)
+    if record.total_status != (_COMPLETE if complete else _PARTIAL):
+        raise ValueError("total_status disagrees with the planet totals")
+    return record
 
 
 def shadbala_evidence_from_facts(facts: Mapping[str, Any]) -> ShadbalaEvidence:
-    """One `ShadbalaFacts` (BPHS verse profile) or `RamanShadbalaFacts`."""
+    """One `ShadbalaFacts` (BPHS verse profile), one `RamanShadbalaFacts`, or
+    one `ShadbalaMethodResult` (method policy, v1.22.0), which also records
+    the method envelope."""
     if not isinstance(facts, Mapping):
         raise FactsError("shadbala: expected an object")
+    if "method" in facts:
+        return _shadbala_evidence_from_method_result(facts)
     try:
         readings = {k: facts[k] for k in ("drekkana_reading", "moon_paksha_reading") if k in facts}
         return ShadbalaEvidence(
@@ -284,6 +409,33 @@ def shadbala_evidence_from_facts(facts: Mapping[str, Any]) -> ShadbalaEvidence:
         )
     except (ValidationError, ValueError, KeyError, TypeError) as exc:
         raise FactsError(f"shadbala: malformed facts ({exc})") from exc
+
+
+def _shadbala_evidence_from_method_result(result: Mapping[str, Any]) -> ShadbalaEvidence:
+    try:
+        planets = tuple(
+            ShadbalaPlanetRecord(body=p["body"], components=tuple(p["components"]))
+            for p in result["planets"]
+        )
+        readings = {
+            c["choice_id"]: c["selected"]
+            for c in result["methodology_choices"]
+            if c.get("selected") is not None
+        }
+        return ShadbalaEvidence(
+            profile_id=result["profile_id"],
+            standards_version=result["standards_version"],
+            system=result["system"],
+            time_precision=result["time_precision"],
+            readings=readings,
+            planets=planets,
+            provenance=_provenance(result["provenance"], "component"),
+            warnings=tuple(result.get("warnings", ())),
+            facts_hash=_hash(result),
+            method=_method_record(result, planets),
+        )
+    except (ValidationError, ValueError, KeyError, TypeError) as exc:
+        raise FactsError(f"shadbala: malformed method result ({exc})") from exc
 
 
 # --------------------------------------------------------------------------

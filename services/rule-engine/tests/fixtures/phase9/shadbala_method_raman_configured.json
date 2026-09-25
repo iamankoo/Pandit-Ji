@@ -1,0 +1,4279 @@
+{
+ "alternatives": [],
+ "assumptions": [
+  {
+   "assumption_id": "SM-A1",
+   "evidence_label": "engineering_convention",
+   "statement": "Positions, Lagna and vargas come from the Phase 5 Kundli (Lahiri ayanamsa, whole-sign houses); Raman used his own ayanamsa."
+  },
+  {
+   "assumption_id": "SM-A2",
+   "evidence_label": "engineering_convention",
+   "statement": "Cheshta Bala is computed in the frame of Raman's mean-motion tables (Raman ayanamsa), extrapolated only for the years 1800-2100."
+  },
+  {
+   "assumption_id": "SM-A3",
+   "evidence_label": "engineering_convention",
+   "statement": "Ayana Bala uses the tropical longitude reconstructed as the Lahiri longitude plus the Lahiri ayanamsa."
+  },
+  {
+   "assumption_id": "SM-A4",
+   "evidence_label": "engineering_convention",
+   "statement": "The birth time is exact; with an unknown time only Naisargika Bala is evaluated and no total is produced."
+  }
+ ],
+ "authority_note": "Totals follow one modern manual (B. V. Raman, Graha and Bhava Balas) as implemented and checked on its worked example; they are not a universally authoritative Shadbala, and other manuals and the BPHS verses differ in places.",
+ "engine_version": "0.11.0",
+ "facts": {
+  "apparent_solar_hours": 14.236781228743855,
+  "ayanamsa": "lahiri",
+  "cheshta_frame_ayanamsa": "raman",
+  "day_night": {
+   "is_day": true,
+   "period_end_julian_day_ut": 2421883.021509965,
+   "period_start_julian_day_ut": 2421882.527650016,
+   "status": "success",
+   "third": 3,
+   "vara_weekday_sunday_zero": 3
+  },
+  "details": {
+   "abda_lord": "saturn",
+   "cheshta": [
+    {
+     "body": "mars",
+     "mean_longitude": 266.34175103669895,
+     "reduced_kendra": 66.66375119990431,
+     "sighrocca": 181.2327843524963,
+     "true_longitude_raman_frame": 229.4513200681023
+    },
+    {
+     "body": "mercury",
+     "mean_longitude": 181.2327843524963,
+     "reduced_kendra": 6.864878066531901,
+     "sighrocca": 174.50136287833084,
+     "true_longitude_raman_frame": 181.49969753722922
+    },
+    {
+     "body": "jupiter",
+     "mean_longitude": 66.84225919813116,
+     "reduced_kendra": 105.80957692976529,
+     "sighrocca": 181.2327843524963,
+     "true_longitude_raman_frame": 84.0041556473309
+    },
+    {
+     "body": "venus",
+     "mean_longitude": 181.2327843524963,
+     "reduced_kendra": 17.84214728495749,
+     "sighrocca": 158.34539069087623,
+     "true_longitude_raman_frame": 171.1422915991712
+    },
+    {
+     "body": "saturn",
+     "mean_longitude": 111.23577701365053,
+     "reduced_kendra": 63.42872959755303,
+     "sighrocca": 181.2327843524963,
+     "true_longitude_raman_frame": 124.37233249623604
+    }
+   ],
+   "cheshta_interval_days": 6862.578935184982,
+   "condensed_ahargana": 33405,
+   "drishti": [
+    {
+     "aspected": "sun",
+     "aspecting": "moon",
+     "signed_value": 35.15366200020995
+    },
+    {
+     "aspected": "sun",
+     "aspecting": "jupiter",
+     "signed_value": 41.55035772753366
+    },
+    {
+     "aspected": "sun",
+     "aspecting": "saturn",
+     "signed_value": -13.265553848013774
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "sun",
+     "signed_value": -19.692675999580104
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "mars",
+     "signed_value": -36.759444124581194
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "mercury",
+     "signed_value": 20.28893334454574
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "jupiter",
+     "signed_value": 36.3966957273237
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "venus",
+     "signed_value": 9.931527406487703
+    },
+    {
+     "aspected": "moon",
+     "aspecting": "saturn",
+     "signed_value": -56.58078415177627
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "sun",
+     "signed_value": -9.273939937919351
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "moon",
+     "signed_value": 10.879722062290597
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "mercury",
+     "signed_value": 8.975811265436533
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "jupiter",
+     "signed_value": 34.5528355792286
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "venus",
+     "signed_value": 14.154514234465552
+    },
+    {
+     "aspected": "mars",
+     "aspecting": "saturn",
+     "signed_value": -37.460506214066875
+    },
+    {
+     "aspected": "mercury",
+     "aspecting": "moon",
+     "signed_value": 34.85553332772713
+    },
+    {
+     "aspected": "mercury",
+     "aspecting": "jupiter",
+     "signed_value": 41.25222905505084
+    },
+    {
+     "aspected": "mercury",
+     "aspecting": "saturn",
+     "signed_value": -13.563682520496592
+    },
+    {
+     "aspected": "jupiter",
+     "aspecting": "sun",
+     "signed_value": -18.44964227246635
+    },
+    {
+     "aspected": "jupiter",
+     "aspecting": "moon",
+     "signed_value": 17.206608545352594
+    },
+    {
+     "aspected": "jupiter",
+     "aspecting": "mars",
+     "signed_value": -57.7235822103857
+    },
+    {
+     "aspected": "jupiter",
+     "aspecting": "mercury",
+     "signed_value": 18.747770944949167
+    },
+    {
+     "aspected": "jupiter",
+     "aspecting": "venus",
+     "signed_value": 13.569067975920149
+    },
+    {
+     "aspected": "venus",
+     "aspecting": "moon",
+     "signed_value": 40.03423629675615
+    },
+    {
+     "aspected": "venus",
+     "aspecting": "jupiter",
+     "signed_value": 42.13813595184028
+    },
+    {
+     "aspected": "venus",
+     "aspecting": "saturn",
+     "signed_value": -8.384979551467573
+    },
+    {
+     "aspected": "saturn",
+     "aspecting": "moon",
+     "signed_value": 46.323136607105084
+    },
+    {
+     "aspected": "saturn",
+     "aspecting": "mars",
+     "signed_value": -22.539493785933132
+    },
+    {
+     "aspected": "saturn",
+     "aspecting": "jupiter",
+     "signed_value": 5.184088424452568
+    }
+   ],
+   "hindu_date": "1918-10-16",
+   "hora_lord": "moon",
+   "hours_since_sunrise": 8.164177391678095,
+   "krantis": [
+    [
+     "sun",
+     -8.755423035971164
+    ],
+    [
+     "moon",
+     -10.772579759425309
+    ],
+    [
+     "mars",
+     -22.422046808423776
+    ],
+    [
+     "mercury",
+     -8.98133831889703
+    ],
+    [
+     "jupiter",
+     23.085813928371458
+    ],
+    [
+     "venus",
+     -4.996908180159311
+    ],
+    [
+     "saturn",
+     13.160739232973068
+    ]
+   ],
+   "masa_lord": "mercury",
+   "vara_lord": "mercury",
+   "wars": []
+  },
+  "drekkana_reading": "worked_example_12",
+  "engine_version": "0.11.0",
+  "lagna_longitude": 295.2332149422643,
+  "location": {
+   "altitude_meters": 0.0,
+   "latitude": 13.0,
+   "longitude": 77.5833
+  },
+  "midheaven_longitude": 213.64836516040833,
+  "moon_paksha_reading": "waxing_half",
+  "node_convention": "mean",
+  "planets": [
+   {
+    "body": "sun",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 3.5142870802157518
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 129.375
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.60292453298147
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 38.11144241007209
+     },
+     {
+      "component": "yuddha",
+      "detail": "the Sun and Moon take no part (Art. 76)",
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": "Raman gives Cheshta Bala for Mars to Saturn only (Art. 79)",
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.859616469932456
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 147.88928708021575
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 103.4917615995462
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 375.8435896826759
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 375.8435896826758,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 1,
+      "virupas": 15.0
+     },
+     {
+      "category": "own",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "taurus",
+      "varga": 3,
+      "virupas": 1.875
+     },
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 7,
+      "virupas": 15.0
+     },
+     {
+      "category": "friend",
+      "sign": "virgo",
+      "varga": 9,
+      "virupas": 15.0
+     },
+     {
+      "category": "own",
+      "sign": "leo",
+      "varga": 12,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "scorpio",
+      "varga": 30,
+      "virupas": 22.5
+     }
+    ]
+   },
+   {
+    "body": "moon",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 32.254820919924214
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 41.25
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 32.038699199788105
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 86.87154933361326
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.46572469928164
+     },
+     {
+      "component": "yuddha",
+      "detail": "the Sun and Moon take no part (Art. 76)",
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": "Raman gives Cheshta Bala for Mars to Saturn only (Art. 79)",
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "not_applicable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 51.42857142857143
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": -11.603936949395106
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 103.50482091992421
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 201.52118017661417
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 376.8893347755028
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 376.8893347755028,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 1,
+      "virupas": 3.75
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 7.5
+     },
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 3,
+      "virupas": 3.75
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 7,
+      "virupas": 15.0
+     },
+     {
+      "category": "enemy",
+      "sign": "sagittarius",
+      "varga": 9,
+      "virupas": 3.75
+     },
+     {
+      "category": "enemy",
+      "sign": "taurus",
+      "varga": 12,
+      "virupas": 3.75
+     },
+     {
+      "category": "enemy",
+      "sign": "aquarius",
+      "varga": 30,
+      "virupas": 3.75
+     }
+    ]
+   },
+   {
+    "body": "mars",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 36.668339545063816
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 90.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 55.214448841738964
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 1.97244148947028
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 22.221250399968103
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 17.142857142857142
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 5.457109247358764
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 171.66833954506382
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 29.72057296638292
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 301.42457814336973
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 301.42457814336973,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "own",
+      "sign": "scorpio",
+      "varga": 1,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_friend",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 22.5
+     },
+     {
+      "category": "equal",
+      "sign": "pisces",
+      "varga": 3,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "virgo",
+      "varga": 7,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "sagittarius",
+      "varga": 9,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "gemini",
+      "varga": 12,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "pisces",
+      "varga": 30,
+      "virupas": 7.5
+     }
+    ]
+   },
+   {
+    "body": "mercury",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 54.98220129856054
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 150.0
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 21.606727054018034
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 45.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 41.22667289862129
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 2.288292688843967
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 25.714285714285715
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.636019965570343
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 294.98220129856054
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 219.6624475654279
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 579.8899742867064
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 579.8899742867064,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 1,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 3,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 7,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 9,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "libra",
+      "varga": 12,
+      "virupas": 22.5
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 30,
+      "virupas": 15.0
+     }
+    ]
+   },
+   {
+    "body": "jupiter",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 55.85261807147335
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 71.25
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 10.891786909281413
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 58.857267410464324
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 35.26985897658843
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 34.285714285714285
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": -6.662444254157535
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 172.10261807147336
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 211.10913593355167
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 456.9966699224516
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 456.9966699224516,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "great_enemy",
+      "sign": "gemini",
+      "varga": 1,
+      "virupas": 1.875
+     },
+     {
+      "category": "equal",
+      "sign": "cancer",
+      "varga": 2,
+      "virupas": 7.5
+     },
+     {
+      "category": "friend",
+      "sign": "aquarius",
+      "varga": 3,
+      "virupas": 15.0
+     },
+     {
+      "category": "equal",
+      "sign": "scorpio",
+      "varga": 7,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 9,
+      "virupas": 7.5
+     },
+     {
+      "category": "own",
+      "sign": "pisces",
+      "varga": 12,
+      "virupas": 30.0
+     },
+     {
+      "category": "great_enemy",
+      "sign": "gemini",
+      "varga": 30,
+      "virupas": 1.875
+     }
+    ]
+   },
+   {
+    "body": "venus",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 2.4346699445798854
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 101.25
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 14.650791664715996
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 48.81609385628073
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 43.43577466680663
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 23.753864774800864
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 5.947382428319163
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 42.857142857142854
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 18.446848174282216
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 148.68466994457987
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 116.00573329788821
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 346.5925683669283
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 346.5925683669283,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "great_friend",
+      "sign": "virgo",
+      "varga": 1,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_enemy",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 1.875
+     },
+     {
+      "category": "great_friend",
+      "sign": "capricorn",
+      "varga": 3,
+      "virupas": 22.5
+     },
+     {
+      "category": "great_enemy",
+      "sign": "cancer",
+      "varga": 7,
+      "virupas": 1.875
+     },
+     {
+      "category": "great_friend",
+      "sign": "gemini",
+      "varga": 9,
+      "virupas": 22.5
+     },
+     {
+      "category": "friend",
+      "sign": "aries",
+      "varga": 12,
+      "virupas": 15.0
+     },
+     {
+      "category": "friend",
+      "sign": "pisces",
+      "varga": 30,
+      "virupas": 15.0
+     }
+    ]
+   },
+   {
+    "body": "saturn",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 34.3086770211084
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 67.5
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 30.0
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 57.435727959646364
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 11.18390614371927
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 16.56422533319337
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 15.0
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 13.549075958783664
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 0.0
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 21.14290986585101
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 8.571428571428571
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 7.24193281140613
+     },
+     {
+      "component": "sthana_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 161.8086770211084
+     },
+     {
+      "component": "kala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 116.29720743569631
+     },
+     {
+      "component": "shadbala_total",
+      "detail": null,
+      "evidence_label": "derived_calculation",
+      "reason": null,
+      "status": "success",
+      "virupas": 372.4978836651367
+     }
+    ],
+    "evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "naisargika",
+     "drik"
+    ],
+    "evaluated_subtotal_virupas": 372.4978836651367,
+    "not_evaluated_components": [],
+    "saptavarga": [
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 1,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 2,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 3,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "leo",
+      "varga": 7,
+      "virupas": 7.5
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 9,
+      "virupas": 7.5
+     },
+     {
+      "category": "great_friend",
+      "sign": "virgo",
+      "varga": 12,
+      "virupas": 22.5
+     },
+     {
+      "category": "equal",
+      "sign": "aries",
+      "varga": 30,
+      "virupas": 7.5
+     }
+    ]
+   }
+  ],
+  "profile_id": "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS",
+  "provenance": [
+   {
+    "component": "uchcha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 20, Example 3 (pp. 11-12)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(longitude - debilitation point), folded to <= 180, / 3"
+   },
+   {
+    "component": "saptavargaja",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+     "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Moolatrikona 45 in the Rasi only; own 30, great friend 22.5, friend 15, neutral 7.5, enemy 3.75, bitter enemy 1.875 in D1, D2, D3, D7, D9, D12, D30"
+   },
+   {
+    "component": "ojayugmarasyamsa",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 31, Example 10 (pp. 22-24)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 each for Rasi and Navamsa: Moon and Venus even, others odd"
+   },
+   {
+    "component": "kendradi",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Kendra 60, Panapara 30, Apoklima 15, reckoned by signs from the Lagna"
+   },
+   {
+    "component": "drekkana",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+     "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 by sex and decanate, under the caller's chosen reading (no default)"
+   },
+   {
+    "component": "dig",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(longitude - powerless angle), folded, / 3; angles from the Ascendant and MC"
+   },
+   {
+    "component": "nathonnatha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Apparent-time Diva/Ratri Bala; Mercury always 60"
+   },
+   {
+    "component": "paksha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+     "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Benefics (Moon - Sun folded)/3, malefics 60 minus that; the Moon's value doubled; the Moon's nature under the caller's chosen reading (no default)"
+   },
+   {
+    "component": "tribhaga",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Thirds of day and night; Jupiter always 60"
+   },
+   {
+    "component": "abda",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+     "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 to the lord of the 360-day year from the condensed ahargana"
+   },
+   {
+    "component": "masa",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "30 to the lord of the 30-day month from the condensed ahargana"
+   },
+   {
+    "component": "vara",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "45 to the weekday lord, the day from sunrise"
+   },
+   {
+    "component": "hora",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "60 to the lord of the equal one-hour Hora from sunrise"
+   },
+   {
+    "component": "ayana",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+     "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(24 +/- kranti)/48 x 60 from Raman's 15-degree declination table; Sun doubled"
+   },
+   {
+    "component": "yuddha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Mars to Saturn within 1 degree: the lesser longitude wins; difference of (Sthana + Dig + Kala to Hora) / difference of disc diameters"
+   },
+   {
+    "component": "cheshta",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+     "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Mars to Saturn: sighrocca - (mean + true)/2, reduced, / 3, from Raman's mean-motion tables; not applicable to the Sun and Moon"
+   },
+   {
+    "component": "naisargika",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 108 (pp. 72-73)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "60, 51.43, 42.86, 34.29, 25.71, 17.14, 8.57 for Sun to Saturn"
+   },
+   {
+    "component": "drik",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+     "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "One quarter of the Dristi Pinda: Sripati aspect values plus the special aspects of Mars (+15), Jupiter (+30), Saturn (+45); benefics +, malefics -"
+   }
+  ],
+  "standards_version": "1.21.0",
+  "system": "vedic_parashari",
+  "time_precision": "exact",
+  "time_resolution": {
+   "disambiguation_applied": null,
+   "dst_active": false,
+   "input_local_datetime": "1918-10-16T08:49:40",
+   "julian_day_et": 2421882.868065119,
+   "julian_day_ut": 2421882.867824074,
+   "timezone": "UTC",
+   "utc_datetime": "1918-10-16T08:49:40Z",
+   "utc_offset_seconds": 0,
+   "was_ambiguous": false,
+   "was_nonexistent": false
+  },
+  "totals_in_rupas": [
+   [
+    "sun",
+    6.264059828044598
+   ],
+   [
+    "moon",
+    6.281488912925046
+   ],
+   [
+    "mars",
+    5.023742969056162
+   ],
+   [
+    "mercury",
+    9.664832904778441
+   ],
+   [
+    "jupiter",
+    7.616611165374193
+   ],
+   [
+    "venus",
+    5.776542806115471
+   ],
+   [
+    "saturn",
+    6.208298061085612
+   ]
+  ],
+  "unnata_ghatis": 24.408046928140365,
+  "warnings": [
+   "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+   "modern profile (B. V. Raman, Graha and Bhava Balas); not the BPHS verse profile"
+  ]
+ },
+ "is_default_user_facing_method": true,
+ "method": "MODERN_RAMAN",
+ "method_produces_total": true,
+ "method_version": "1.0.0",
+ "methodology_choices": [
+  {
+   "affected": [],
+   "choice_id": "RAMAN_DREKKANA_ORDER",
+   "confidence": "LOW",
+   "material_for_this_chart": null,
+   "options": [
+    "text_article_36",
+    "worked_example_12"
+   ],
+   "reference": {
+    "locator": "Art. 36 versus Example 12",
+    "note": "text: neuter middle, female last; worked example: female second",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "selected": "worked_example_12",
+   "selection": "caller_configured",
+   "statement": "Order of the male, female and neuter Drekkanas (SR-06)."
+  },
+  {
+   "affected": [],
+   "choice_id": "RAMAN_MOON_BENEFIC_RULE",
+   "confidence": "LOW",
+   "material_for_this_chart": null,
+   "options": [
+    "waxing_half",
+    "eighth_day_window"
+   ],
+   "reference": {
+    "locator": "Art. 53",
+    "note": "'increasing Moon' versus '8th day of the bright half to 8th day of the dark half'",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "selected": "waxing_half",
+   "selection": "caller_configured",
+   "statement": "Rule deciding whether the Moon is benefic for Paksha Bala (SR-09)."
+  }
+ ],
+ "not_evaluable_components": [],
+ "planets": [
+  {
+   "body": "sun",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 3.5142870802157518
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 129.375
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.60292453298147
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 38.11144241007209
+    },
+    {
+     "component": "yuddha",
+     "detail": "the Sun and Moon take no part (Art. 76)",
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": "Raman gives Cheshta Bala for Mars to Saturn only (Art. 79)",
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.859616469932456
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 147.88928708021575
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 103.4917615995462
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 375.8435896826759
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 375.8435896826758,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 1,
+     "virupas": 15.0
+    },
+    {
+     "category": "own",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "taurus",
+     "varga": 3,
+     "virupas": 1.875
+    },
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 7,
+     "virupas": 15.0
+    },
+    {
+     "category": "friend",
+     "sign": "virgo",
+     "varga": 9,
+     "virupas": 15.0
+    },
+    {
+     "category": "own",
+     "sign": "leo",
+     "varga": 12,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "scorpio",
+     "varga": 30,
+     "virupas": 22.5
+    }
+   ]
+  },
+  {
+   "body": "moon",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 32.254820919924214
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 41.25
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 32.038699199788105
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 86.87154933361326
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.46572469928164
+    },
+    {
+     "component": "yuddha",
+     "detail": "the Sun and Moon take no part (Art. 76)",
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": "Raman gives Cheshta Bala for Mars to Saturn only (Art. 79)",
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "not_applicable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 51.42857142857143
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": -11.603936949395106
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 103.50482091992421
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 201.52118017661417
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 376.8893347755028
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 376.8893347755028,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 1,
+     "virupas": 3.75
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 7.5
+    },
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 3,
+     "virupas": 3.75
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 7,
+     "virupas": 15.0
+    },
+    {
+     "category": "enemy",
+     "sign": "sagittarius",
+     "varga": 9,
+     "virupas": 3.75
+    },
+    {
+     "category": "enemy",
+     "sign": "taurus",
+     "varga": 12,
+     "virupas": 3.75
+    },
+    {
+     "category": "enemy",
+     "sign": "aquarius",
+     "varga": 30,
+     "virupas": 3.75
+    }
+   ]
+  },
+  {
+   "body": "mars",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 36.668339545063816
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 90.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 55.214448841738964
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 1.97244148947028
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 22.221250399968103
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 17.142857142857142
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 5.457109247358764
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 171.66833954506382
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 29.72057296638292
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 301.42457814336973
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 301.42457814336973,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "own",
+     "sign": "scorpio",
+     "varga": 1,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_friend",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 22.5
+    },
+    {
+     "category": "equal",
+     "sign": "pisces",
+     "varga": 3,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "virgo",
+     "varga": 7,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "sagittarius",
+     "varga": 9,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "gemini",
+     "varga": 12,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "pisces",
+     "varga": 30,
+     "virupas": 7.5
+    }
+   ]
+  },
+  {
+   "body": "mercury",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 54.98220129856054
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 150.0
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 21.606727054018034
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 45.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 41.22667289862129
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 2.288292688843967
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 25.714285714285715
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.636019965570343
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 294.98220129856054
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 219.6624475654279
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 579.8899742867064
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 579.8899742867064,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 1,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 3,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 7,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 9,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "libra",
+     "varga": 12,
+     "virupas": 22.5
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 30,
+     "virupas": 15.0
+    }
+   ]
+  },
+  {
+   "body": "jupiter",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 55.85261807147335
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 71.25
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 10.891786909281413
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 58.857267410464324
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 35.26985897658843
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 34.285714285714285
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": -6.662444254157535
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 172.10261807147336
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 211.10913593355167
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 456.9966699224516
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 456.9966699224516,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "great_enemy",
+     "sign": "gemini",
+     "varga": 1,
+     "virupas": 1.875
+    },
+    {
+     "category": "equal",
+     "sign": "cancer",
+     "varga": 2,
+     "virupas": 7.5
+    },
+    {
+     "category": "friend",
+     "sign": "aquarius",
+     "varga": 3,
+     "virupas": 15.0
+    },
+    {
+     "category": "equal",
+     "sign": "scorpio",
+     "varga": 7,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 9,
+     "virupas": 7.5
+    },
+    {
+     "category": "own",
+     "sign": "pisces",
+     "varga": 12,
+     "virupas": 30.0
+    },
+    {
+     "category": "great_enemy",
+     "sign": "gemini",
+     "varga": 30,
+     "virupas": 1.875
+    }
+   ]
+  },
+  {
+   "body": "venus",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 2.4346699445798854
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 101.25
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 14.650791664715996
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 48.81609385628073
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 43.43577466680663
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 23.753864774800864
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 5.947382428319163
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 42.857142857142854
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 18.446848174282216
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 148.68466994457987
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 116.00573329788821
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 346.5925683669283
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 346.5925683669283,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "great_friend",
+     "sign": "virgo",
+     "varga": 1,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_enemy",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 1.875
+    },
+    {
+     "category": "great_friend",
+     "sign": "capricorn",
+     "varga": 3,
+     "virupas": 22.5
+    },
+    {
+     "category": "great_enemy",
+     "sign": "cancer",
+     "varga": 7,
+     "virupas": 1.875
+    },
+    {
+     "category": "great_friend",
+     "sign": "gemini",
+     "varga": 9,
+     "virupas": 22.5
+    },
+    {
+     "category": "friend",
+     "sign": "aries",
+     "varga": 12,
+     "virupas": 15.0
+    },
+    {
+     "category": "friend",
+     "sign": "pisces",
+     "varga": 30,
+     "virupas": 15.0
+    }
+   ]
+  },
+  {
+   "body": "saturn",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 34.3086770211084
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 67.5
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 30.0
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 57.435727959646364
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 11.18390614371927
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 16.56422533319337
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 15.0
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 13.549075958783664
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 0.0
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 21.14290986585101
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 8.571428571428571
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 7.24193281140613
+    },
+    {
+     "component": "sthana_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 161.8086770211084
+    },
+    {
+     "component": "kala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 116.29720743569631
+    },
+    {
+     "component": "shadbala_total",
+     "detail": null,
+     "evidence_label": "derived_calculation",
+     "reason": null,
+     "status": "success",
+     "virupas": 372.4978836651367
+    }
+   ],
+   "evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "naisargika",
+    "drik"
+   ],
+   "evaluated_subtotal_virupas": 372.4978836651367,
+   "not_evaluated_components": [],
+   "saptavarga": [
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 1,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 2,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 3,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "leo",
+     "varga": 7,
+     "virupas": 7.5
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 9,
+     "virupas": 7.5
+    },
+    {
+     "category": "great_friend",
+     "sign": "virgo",
+     "varga": 12,
+     "virupas": 22.5
+    },
+    {
+     "category": "equal",
+     "sign": "aries",
+     "varga": 30,
+     "virupas": 7.5
+    }
+   ]
+  }
+ ],
+ "profile_id": "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS",
+ "provenance": [
+  {
+   "component": "uchcha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 20, Example 3 (pp. 11-12)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(longitude - debilitation point), folded to <= 180, / 3"
+  },
+  {
+   "component": "saptavargaja",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+    "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Moolatrikona 45 in the Rasi only; own 30, great friend 22.5, friend 15, neutral 7.5, enemy 3.75, bitter enemy 1.875 in D1, D2, D3, D7, D9, D12, D30"
+  },
+  {
+   "component": "ojayugmarasyamsa",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 31, Example 10 (pp. 22-24)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 each for Rasi and Navamsa: Moon and Venus even, others odd"
+  },
+  {
+   "component": "kendradi",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Kendra 60, Panapara 30, Apoklima 15, reckoned by signs from the Lagna"
+  },
+  {
+   "component": "drekkana",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+    "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 by sex and decanate, under the caller's chosen reading (no default)"
+  },
+  {
+   "component": "dig",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(longitude - powerless angle), folded, / 3; angles from the Ascendant and MC"
+  },
+  {
+   "component": "nathonnatha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Apparent-time Diva/Ratri Bala; Mercury always 60"
+  },
+  {
+   "component": "paksha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+    "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Benefics (Moon - Sun folded)/3, malefics 60 minus that; the Moon's value doubled; the Moon's nature under the caller's chosen reading (no default)"
+  },
+  {
+   "component": "tribhaga",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Thirds of day and night; Jupiter always 60"
+  },
+  {
+   "component": "abda",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+    "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 to the lord of the 360-day year from the condensed ahargana"
+  },
+  {
+   "component": "masa",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "30 to the lord of the 30-day month from the condensed ahargana"
+  },
+  {
+   "component": "vara",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "45 to the weekday lord, the day from sunrise"
+  },
+  {
+   "component": "hora",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "60 to the lord of the equal one-hour Hora from sunrise"
+  },
+  {
+   "component": "ayana",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+    "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(24 +/- kranti)/48 x 60 from Raman's 15-degree declination table; Sun doubled"
+  },
+  {
+   "component": "yuddha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Mars to Saturn within 1 degree: the lesser longitude wins; difference of (Sthana + Dig + Kala to Hora) / difference of disc diameters"
+  },
+  {
+   "component": "cheshta",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+    "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Mars to Saturn: sighrocca - (mean + true)/2, reduced, / 3, from Raman's mean-motion tables; not applicable to the Sun and Moon"
+  },
+  {
+   "component": "naisargika",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 108 (pp. 72-73)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "60, 51.43, 42.86, 34.29, 25.71, 17.14, 8.57 for Sun to Saturn"
+  },
+  {
+   "component": "drik",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+    "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "One quarter of the Dristi Pinda: Sripati aspect values plus the special aspects of Mars (+15), Jupiter (+30), Saturn (+45); benefics +, malefics -"
+  }
+ ],
+ "source_confidence": "HIGH",
+ "sources": [
+  {
+   "locator": "Art. 20, Example 3 (pp. 11-12)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+   "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Art. 31, Example 10 (pp. 22-24)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+   "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+   "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+   "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+   "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+   "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Art. 108 (pp. 72-73)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+   "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  }
+ ],
+ "standards_version": "1.22.0",
+ "system": "vedic_parashari",
+ "time_precision": "exact",
+ "total_status": "complete",
+ "totals": [
+  {
+   "body": "sun",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 6.264059828044598
+  },
+  {
+   "body": "moon",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 6.281488912925046
+  },
+  {
+   "body": "mars",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 5.023742969056162
+  },
+  {
+   "body": "mercury",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 9.664832904778441
+  },
+  {
+   "body": "jupiter",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 7.616611165374193
+  },
+  {
+   "body": "venus",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 5.776542806115471
+  },
+  {
+   "body": "saturn",
+   "missing_components": [],
+   "status": "complete",
+   "total_rupas": 6.208298061085612
+  }
+ ],
+ "unresolved_choices": [],
+ "warnings": [
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+  "modern profile (B. V. Raman, Graha and Bhava Balas); not the BPHS verse profile"
+ ]
+}

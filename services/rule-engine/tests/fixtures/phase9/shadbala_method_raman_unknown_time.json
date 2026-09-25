@@ -1,0 +1,4331 @@
+{
+ "alternatives": [],
+ "assumptions": [
+  {
+   "assumption_id": "SM-A1",
+   "evidence_label": "engineering_convention",
+   "statement": "Positions, Lagna and vargas come from the Phase 5 Kundli (Lahiri ayanamsa, whole-sign houses); Raman used his own ayanamsa."
+  },
+  {
+   "assumption_id": "SM-A2",
+   "evidence_label": "engineering_convention",
+   "statement": "Cheshta Bala is computed in the frame of Raman's mean-motion tables (Raman ayanamsa), extrapolated only for the years 1800-2100."
+  },
+  {
+   "assumption_id": "SM-A3",
+   "evidence_label": "engineering_convention",
+   "statement": "Ayana Bala uses the tropical longitude reconstructed as the Lahiri longitude plus the Lahiri ayanamsa."
+  },
+  {
+   "assumption_id": "SM-A4",
+   "evidence_label": "engineering_convention",
+   "statement": "The birth time is exact; with an unknown time only Naisargika Bala is evaluated and no total is produced."
+  }
+ ],
+ "authority_note": "Totals follow one modern manual (B. V. Raman, Graha and Bhava Balas) as implemented and checked on its worked example; they are not a universally authoritative Shadbala, and other manuals and the BPHS verses differ in places.",
+ "engine_version": "0.11.0",
+ "facts": {
+  "apparent_solar_hours": null,
+  "ayanamsa": "lahiri",
+  "cheshta_frame_ayanamsa": "raman",
+  "day_night": {
+   "is_day": null,
+   "period_end_julian_day_ut": null,
+   "period_start_julian_day_ut": null,
+   "status": "not_evaluable",
+   "third": null,
+   "vara_weekday_sunday_zero": null
+  },
+  "details": {
+   "abda_lord": null,
+   "cheshta": [],
+   "cheshta_interval_days": null,
+   "condensed_ahargana": null,
+   "drishti": [],
+   "hindu_date": null,
+   "hora_lord": null,
+   "hours_since_sunrise": null,
+   "krantis": [],
+   "masa_lord": null,
+   "vara_lord": null,
+   "wars": []
+  },
+  "drekkana_reading": "worked_example_12",
+  "engine_version": "0.11.0",
+  "lagna_longitude": null,
+  "location": {
+   "altitude_meters": 0.0,
+   "latitude": 13.0,
+   "longitude": 77.5833
+  },
+  "midheaven_longitude": null,
+  "moon_paksha_reading": "waxing_half",
+  "node_convention": "mean",
+  "planets": [
+   {
+    "body": "sun",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 60.0
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 60.0,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "moon",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 51.42857142857143
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 51.42857142857143,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "mars",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 17.142857142857142
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 17.142857142857142,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "mercury",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 25.714285714285715
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 25.714285714285715,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "jupiter",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 34.285714285714285
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 34.285714285714285,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "venus",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 42.857142857142854
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 42.857142857142854,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   },
+   {
+    "body": "saturn",
+    "components": [
+     {
+      "component": "uchcha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "saptavargaja",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ojayugmarasyamsa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kendradi",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "drekkana",
+      "detail": null,
+      "evidence_label": "unresolved_conflict",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "dig",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "nathonnatha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "paksha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "tribhaga",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "abda",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "masa",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "vara",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "hora",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "ayana",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "yuddha",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "cheshta",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "naisargika",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": null,
+      "status": "success",
+      "virupas": 8.571428571428571
+     },
+     {
+      "component": "drik",
+      "detail": null,
+      "evidence_label": "modern_tradition",
+      "reason": "birth_time_unknown",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "sthana_total",
+      "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "kala_total",
+      "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     },
+     {
+      "component": "shadbala_total",
+      "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+      "evidence_label": "derived_calculation",
+      "reason": "component_not_evaluable",
+      "status": "not_evaluable",
+      "virupas": null
+     }
+    ],
+    "evaluated_components": [
+     "naisargika"
+    ],
+    "evaluated_subtotal_virupas": 8.571428571428571,
+    "not_evaluated_components": [
+     "uchcha",
+     "saptavargaja",
+     "ojayugmarasyamsa",
+     "kendradi",
+     "drekkana",
+     "dig",
+     "nathonnatha",
+     "paksha",
+     "tribhaga",
+     "abda",
+     "masa",
+     "vara",
+     "hora",
+     "ayana",
+     "yuddha",
+     "cheshta",
+     "drik"
+    ],
+    "saptavarga": []
+   }
+  ],
+  "profile_id": "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS",
+  "provenance": [
+   {
+    "component": "uchcha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 20, Example 3 (pp. 11-12)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(longitude - debilitation point), folded to <= 180, / 3"
+   },
+   {
+    "component": "saptavargaja",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+     "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Moolatrikona 45 in the Rasi only; own 30, great friend 22.5, friend 15, neutral 7.5, enemy 3.75, bitter enemy 1.875 in D1, D2, D3, D7, D9, D12, D30"
+   },
+   {
+    "component": "ojayugmarasyamsa",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 31, Example 10 (pp. 22-24)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 each for Rasi and Navamsa: Moon and Venus even, others odd"
+   },
+   {
+    "component": "kendradi",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Kendra 60, Panapara 30, Apoklima 15, reckoned by signs from the Lagna"
+   },
+   {
+    "component": "drekkana",
+    "evidence_label": "unresolved_conflict",
+    "reference": {
+     "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+     "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 by sex and decanate, under the caller's chosen reading (no default)"
+   },
+   {
+    "component": "dig",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(longitude - powerless angle), folded, / 3; angles from the Ascendant and MC"
+   },
+   {
+    "component": "nathonnatha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Apparent-time Diva/Ratri Bala; Mercury always 60"
+   },
+   {
+    "component": "paksha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+     "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Benefics (Moon - Sun folded)/3, malefics 60 minus that; the Moon's value doubled; the Moon's nature under the caller's chosen reading (no default)"
+   },
+   {
+    "component": "tribhaga",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Thirds of day and night; Jupiter always 60"
+   },
+   {
+    "component": "abda",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+     "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "15 to the lord of the 360-day year from the condensed ahargana"
+   },
+   {
+    "component": "masa",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "30 to the lord of the 30-day month from the condensed ahargana"
+   },
+   {
+    "component": "vara",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "45 to the weekday lord, the day from sunrise"
+   },
+   {
+    "component": "hora",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "60 to the lord of the equal one-hour Hora from sunrise"
+   },
+   {
+    "component": "ayana",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+     "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "(24 +/- kranti)/48 x 60 from Raman's 15-degree declination table; Sun doubled"
+   },
+   {
+    "component": "yuddha",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Mars to Saturn within 1 degree: the lesser longitude wins; difference of (Sthana + Dig + Kala to Hora) / difference of disc diameters"
+   },
+   {
+    "component": "cheshta",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+     "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "Mars to Saturn: sighrocca - (mean + true)/2, reduced, / 3, from Raman's mean-motion tables; not applicable to the Sun and Moon"
+   },
+   {
+    "component": "naisargika",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Art. 108 (pp. 72-73)",
+     "note": "",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "60, 51.43, 42.86, 34.29, 25.71, 17.14, 8.57 for Sun to Saturn"
+   },
+   {
+    "component": "drik",
+    "evidence_label": "modern_tradition",
+    "reference": {
+     "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+     "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    "statement": "One quarter of the Dristi Pinda: Sripati aspect values plus the special aspects of Mars (+15), Jupiter (+30), Saturn (+45); benefics +, malefics -"
+   }
+  ],
+  "standards_version": "1.21.0",
+  "system": "vedic_parashari",
+  "time_precision": "unknown",
+  "time_resolution": {
+   "disambiguation_applied": null,
+   "dst_active": false,
+   "input_local_datetime": "1918-10-16T08:49:40",
+   "julian_day_et": 2421882.868065119,
+   "julian_day_ut": 2421882.867824074,
+   "timezone": "UTC",
+   "utc_datetime": "1918-10-16T08:49:40Z",
+   "utc_offset_seconds": 0,
+   "was_ambiguous": false,
+   "was_nonexistent": false
+  },
+  "totals_in_rupas": [
+   [
+    "sun",
+    null
+   ],
+   [
+    "moon",
+    null
+   ],
+   [
+    "mars",
+    null
+   ],
+   [
+    "mercury",
+    null
+   ],
+   [
+    "jupiter",
+    null
+   ],
+   [
+    "venus",
+    null
+   ],
+   [
+    "saturn",
+    null
+   ]
+  ],
+  "unnata_ghatis": null,
+  "warnings": [
+   "birth time unknown: every component except Naisargika Bala is not evaluated",
+   "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+   "modern profile (B. V. Raman, Graha and Bhava Balas); not the BPHS verse profile"
+  ]
+ },
+ "is_default_user_facing_method": true,
+ "method": "MODERN_RAMAN",
+ "method_produces_total": true,
+ "method_version": "1.0.0",
+ "methodology_choices": [
+  {
+   "affected": [],
+   "choice_id": "RAMAN_DREKKANA_ORDER",
+   "confidence": "LOW",
+   "material_for_this_chart": null,
+   "options": [
+    "text_article_36",
+    "worked_example_12"
+   ],
+   "reference": {
+    "locator": "Art. 36 versus Example 12",
+    "note": "text: neuter middle, female last; worked example: female second",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "selected": "worked_example_12",
+   "selection": "caller_configured",
+   "statement": "Order of the male, female and neuter Drekkanas (SR-06)."
+  },
+  {
+   "affected": [],
+   "choice_id": "RAMAN_MOON_BENEFIC_RULE",
+   "confidence": "LOW",
+   "material_for_this_chart": null,
+   "options": [
+    "waxing_half",
+    "eighth_day_window"
+   ],
+   "reference": {
+    "locator": "Art. 53",
+    "note": "'increasing Moon' versus '8th day of the bright half to 8th day of the dark half'",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "selected": "waxing_half",
+   "selection": "caller_configured",
+   "statement": "Rule deciding whether the Moon is benefic for Paksha Bala (SR-09)."
+  }
+ ],
+ "not_evaluable_components": [
+  {
+   "body": "sun",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "sun",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "moon",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mars",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "mercury",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "jupiter",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "venus",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "uchcha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "saptavargaja",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "ojayugmarasyamsa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "kendradi",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "drekkana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "dig",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "nathonnatha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "paksha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "tribhaga",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "abda",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "masa",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "vara",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "hora",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "ayana",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "yuddha",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "cheshta",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  },
+  {
+   "body": "saturn",
+   "component": "drik",
+   "detail": null,
+   "reason": "birth_time_unknown"
+  }
+ ],
+ "planets": [
+  {
+   "body": "sun",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 60.0
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 60.0,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "moon",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 51.42857142857143
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 51.42857142857143,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "mars",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 17.142857142857142
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 17.142857142857142,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "mercury",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 25.714285714285715
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 25.714285714285715,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "jupiter",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 34.285714285714285
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 34.285714285714285,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "venus",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 42.857142857142854
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 42.857142857142854,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  },
+  {
+   "body": "saturn",
+   "components": [
+    {
+     "component": "uchcha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "saptavargaja",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ojayugmarasyamsa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kendradi",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "drekkana",
+     "detail": null,
+     "evidence_label": "unresolved_conflict",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "dig",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "nathonnatha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "paksha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "tribhaga",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "abda",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "masa",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "vara",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "hora",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "ayana",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "yuddha",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "cheshta",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "naisargika",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": null,
+     "status": "success",
+     "virupas": 8.571428571428571
+    },
+    {
+     "component": "drik",
+     "detail": null,
+     "evidence_label": "modern_tradition",
+     "reason": "birth_time_unknown",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "sthana_total",
+     "detail": "missing: uchcha, saptavargaja, ojayugmarasyamsa, kendradi, drekkana",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "kala_total",
+     "detail": "missing: nathonnatha, paksha, tribhaga, abda, masa, vara, hora, ayana, yuddha",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    },
+    {
+     "component": "shadbala_total",
+     "detail": "missing: sthana_total, dig, kala_total, cheshta, drik",
+     "evidence_label": "derived_calculation",
+     "reason": "component_not_evaluable",
+     "status": "not_evaluable",
+     "virupas": null
+    }
+   ],
+   "evaluated_components": [
+    "naisargika"
+   ],
+   "evaluated_subtotal_virupas": 8.571428571428571,
+   "not_evaluated_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "saptavarga": []
+  }
+ ],
+ "profile_id": "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS",
+ "provenance": [
+  {
+   "component": "uchcha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 20, Example 3 (pp. 11-12)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(longitude - debilitation point), folded to <= 180, / 3"
+  },
+  {
+   "component": "saptavargaja",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+    "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Moolatrikona 45 in the Rasi only; own 30, great friend 22.5, friend 15, neutral 7.5, enemy 3.75, bitter enemy 1.875 in D1, D2, D3, D7, D9, D12, D30"
+  },
+  {
+   "component": "ojayugmarasyamsa",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 31, Example 10 (pp. 22-24)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 each for Rasi and Navamsa: Moon and Venus even, others odd"
+  },
+  {
+   "component": "kendradi",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Kendra 60, Panapara 30, Apoklima 15, reckoned by signs from the Lagna"
+  },
+  {
+   "component": "drekkana",
+   "evidence_label": "unresolved_conflict",
+   "reference": {
+    "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+    "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 by sex and decanate, under the caller's chosen reading (no default)"
+  },
+  {
+   "component": "dig",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(longitude - powerless angle), folded, / 3; angles from the Ascendant and MC"
+  },
+  {
+   "component": "nathonnatha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Apparent-time Diva/Ratri Bala; Mercury always 60"
+  },
+  {
+   "component": "paksha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+    "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Benefics (Moon - Sun folded)/3, malefics 60 minus that; the Moon's value doubled; the Moon's nature under the caller's chosen reading (no default)"
+  },
+  {
+   "component": "tribhaga",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Thirds of day and night; Jupiter always 60"
+  },
+  {
+   "component": "abda",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+    "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "15 to the lord of the 360-day year from the condensed ahargana"
+  },
+  {
+   "component": "masa",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "30 to the lord of the 30-day month from the condensed ahargana"
+  },
+  {
+   "component": "vara",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "45 to the weekday lord, the day from sunrise"
+  },
+  {
+   "component": "hora",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "60 to the lord of the equal one-hour Hora from sunrise"
+  },
+  {
+   "component": "ayana",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+    "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "(24 +/- kranti)/48 x 60 from Raman's 15-degree declination table; Sun doubled"
+  },
+  {
+   "component": "yuddha",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Mars to Saturn within 1 degree: the lesser longitude wins; difference of (Sthana + Dig + Kala to Hora) / difference of disc diameters"
+  },
+  {
+   "component": "cheshta",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+    "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "Mars to Saturn: sighrocca - (mean + true)/2, reduced, / 3, from Raman's mean-motion tables; not applicable to the Sun and Moon"
+  },
+  {
+   "component": "naisargika",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Art. 108 (pp. 72-73)",
+    "note": "",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "60, 51.43, 42.86, 34.29, 25.71, 17.14, 8.57 for Sun to Saturn"
+  },
+  {
+   "component": "drik",
+   "evidence_label": "modern_tradition",
+   "reference": {
+    "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+    "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+    "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+    "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+   },
+   "statement": "One quarter of the Dristi Pinda: Sripati aspect values plus the special aspects of Mars (+15), Jupiter (+30), Saturn (+45); benefics +, malefics -"
+  }
+ ],
+ "source_confidence": "HIGH",
+ "sources": [
+  {
+   "locator": "Art. 20, Example 3 (pp. 11-12)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+   "note": "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman refers to his Manual, not read); compound relationship from the Rasi chart.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Art. 31, Example 10 (pp. 22-24)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 32-35, Example 11 (pp. 24-25)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 36-39, Example 12 (pp. 25-26)",
+   "note": "Text: male first, hermaphrodite middle, female last. Worked example: the Moon (female) gets 15 in the second decanate.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 41-45, Examples 14-15 (pp. 27-30)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 47-51, Examples 16-17 (pp. 30-33)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 52-55, Example 18 (pp. 33-36)",
+   "note": "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 same-sign convention (a Pandit Ji choice).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 56-57, Example 19 (pp. 36-38)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+   "note": "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; reproduces Raman's Standard Horoscope and, independently, the Santhanam BPHS Ch. 27 note example of 1 June 1984.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 62, 67, Example 30 (pp. 41, 45)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 68-70, Example 31 (pp. 45-48)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+   "note": "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 76-77, Example 34 (pp. 55-56)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+   "note": "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Art. 108 (pp. 72-73)",
+   "note": "",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  },
+  {
+   "locator": "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+   "note": "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+   "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+   "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+  }
+ ],
+ "standards_version": "1.22.0",
+ "system": "vedic_parashari",
+ "time_precision": "unknown",
+ "total_status": "partial",
+ "totals": [
+  {
+   "body": "sun",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "moon",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "mars",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "mercury",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "jupiter",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "venus",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  },
+  {
+   "body": "saturn",
+   "missing_components": [
+    "uchcha",
+    "saptavargaja",
+    "ojayugmarasyamsa",
+    "kendradi",
+    "drekkana",
+    "dig",
+    "nathonnatha",
+    "paksha",
+    "tribhaga",
+    "abda",
+    "masa",
+    "vara",
+    "hora",
+    "ayana",
+    "yuddha",
+    "cheshta",
+    "drik"
+   ],
+   "status": "partial",
+   "total_rupas": null
+  }
+ ],
+ "unresolved_choices": [],
+ "warnings": [
+  "birth time unknown: every component except Naisargika Bala is not evaluated",
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+  "modern profile (B. V. Raman, Graha and Bhava Balas); not the BPHS verse profile"
+ ]
+}

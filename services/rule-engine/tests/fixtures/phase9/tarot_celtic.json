@@ -1,0 +1,189 @@
+{
+ "deck_id": "TAROT_DECK_WAITE_SMITH_1910",
+ "draw_method": "seeded_shuffle",
+ "engine_version": "0.10.0",
+ "interpretation": null,
+ "notice": "A Tarot layout is a traditional practice, not a verified statement about the future, and not medical, legal, financial or safety advice.",
+ "placements": [
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "cups_three",
+    "name": "Three of Cups",
+    "number": null,
+    "rank": "three",
+    "suit": "cups"
+   },
+   "index": 1,
+   "position_id": "covers",
+   "position_label": "This covers him",
+   "reversed": false
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "pentacles_knight",
+    "name": "Knight of Pentacles",
+    "number": null,
+    "rank": "knight",
+    "suit": "pentacles"
+   },
+   "index": 2,
+   "position_id": "crosses",
+   "position_label": "This crosses him",
+   "reversed": false
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "wands_seven",
+    "name": "Seven of Wands",
+    "number": null,
+    "rank": "seven",
+    "suit": "wands"
+   },
+   "index": 3,
+   "position_id": "crowns",
+   "position_label": "This crowns him",
+   "reversed": true
+  },
+  {
+   "card": {
+    "arcana": "major",
+    "card_id": "major_21_world",
+    "name": "The World",
+    "number": 21,
+    "rank": null,
+    "suit": null
+   },
+   "index": 4,
+   "position_id": "beneath",
+   "position_label": "This is beneath him",
+   "reversed": true
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "cups_eight",
+    "name": "Eight of Cups",
+    "number": null,
+    "rank": "eight",
+    "suit": "cups"
+   },
+   "index": 5,
+   "position_id": "behind",
+   "position_label": "This is behind him",
+   "reversed": true
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "wands_nine",
+    "name": "Nine of Wands",
+    "number": null,
+    "rank": "nine",
+    "suit": "wands"
+   },
+   "index": 6,
+   "position_id": "before",
+   "position_label": "This is before him",
+   "reversed": true
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "cups_two",
+    "name": "Two of Cups",
+    "number": null,
+    "rank": "two",
+    "suit": "cups"
+   },
+   "index": 7,
+   "position_id": "himself",
+   "position_label": "Himself",
+   "reversed": false
+  },
+  {
+   "card": {
+    "arcana": "major",
+    "card_id": "major_13_death",
+    "name": "Death",
+    "number": 13,
+    "rank": null,
+    "suit": null
+   },
+   "index": 8,
+   "position_id": "his_house",
+   "position_label": "His house",
+   "reversed": false
+  },
+  {
+   "card": {
+    "arcana": "minor",
+    "card_id": "swords_king",
+    "name": "King of Swords",
+    "number": null,
+    "rank": "king",
+    "suit": "swords"
+   },
+   "index": 9,
+   "position_id": "hopes_or_fears",
+   "position_label": "His hopes or fears",
+   "reversed": true
+  },
+  {
+   "card": {
+    "arcana": "major",
+    "card_id": "major_04_emperor",
+    "name": "The Emperor",
+    "number": 4,
+    "rank": null,
+    "suit": null
+   },
+   "index": 10,
+   "position_id": "what_will_come",
+   "position_label": "What will come",
+   "reversed": true
+  }
+ ],
+ "provenance": [
+  {
+   "evidence_label": "source_supported",
+   "item": "TAROT_DECK_WAITE_SMITH_1910",
+   "locator": "Pictorial Key, Part II trump headings; Part III suits",
+   "source_id": "SRC-WAITE-PICTORIAL-KEY-1911",
+   "statement": "78 cards: Trumps Major 0-XXI in Waite's numbering; Wands, Cups, Swords, Pentacles, King to Ace",
+   "verification_level": "WEB-TRANSCRIPTION-ORIGINAL-ENGLISH"
+  },
+  {
+   "evidence_label": "source_supported",
+   "item": "TAROT_SPREAD_WAITE_CELTIC_METHOD_1910",
+   "locator": "Pictorial Key, Part III, 'An Ancient Celtic Method of Divination'",
+   "source_id": "SRC-WAITE-PICTORIAL-KEY-1911",
+   "statement": "An Ancient Celtic Method of Divination (Waite), ten cards around a Significator",
+   "verification_level": "WEB-TRANSCRIPTION-ORIGINAL-ENGLISH"
+  },
+  {
+   "evidence_label": "engineering_convention",
+   "item": "SHA256_COUNTER_REJECTION_V1",
+   "locator": "docs/ASTROLOGY_STANDARDS.md TA-04 to TA-06",
+   "source_id": "PANDIT-JI",
+   "statement": "Caller-seeded SHA-256 counter stream, rejection sampling, Fisher-Yates shuffle",
+   "verification_level": "PROJECT_DERIVED"
+  }
+ ],
+ "reversals_allowed": true,
+ "seed_sha256": "6cb99c3015275b8864446bf164c64dee63805041406973cb50615c6fda22bc7c",
+ "significator": {
+  "arcana": "minor",
+  "card_id": "cups_queen",
+  "name": "Queen of Cups",
+  "number": null,
+  "rank": "queen",
+  "suit": "cups"
+ },
+ "spread_id": "TAROT_SPREAD_WAITE_CELTIC_METHOD_1910",
+ "standards_version": "1.19.0",
+ "stream_id": "SHA256_COUNTER_REJECTION_V1",
+ "system": "tarot"
+}

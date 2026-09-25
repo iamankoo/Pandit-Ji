@@ -1,0 +1,847 @@
+{
+ "ayanamsa_degrees": 23.331929465219226,
+ "cusps": {
+  "cusps": [
+   {
+    "house": 1,
+    "longitude": 40.0,
+    "lordship": {
+     "nakshatra": "rohini",
+     "near_boundary": true,
+     "sign": "taurus",
+     "sign_lord": "venus",
+     "star_lord": "moon",
+     "sub_end": 41.111111111111114,
+     "sub_lord": "moon",
+     "sub_start": 40.0,
+     "sub_sub_lord": "moon"
+    }
+   },
+   {
+    "house": 2,
+    "longitude": 66.21230753597473,
+    "lordship": {
+     "nakshatra": "mrigashira",
+     "near_boundary": false,
+     "sign": "gemini",
+     "sign_lord": "mercury",
+     "star_lord": "mars",
+     "sub_end": 66.66666666666667,
+     "sub_lord": "moon",
+     "sub_start": 65.55555555555556,
+     "sub_sub_lord": "mercury"
+    }
+   },
+   {
+    "house": 3,
+    "longitude": 91.10322220475268,
+    "lordship": {
+     "nakshatra": "punarvasu",
+     "near_boundary": false,
+     "sign": "cancer",
+     "sign_lord": "moon",
+     "star_lord": "jupiter",
+     "sub_end": 91.33333333333333,
+     "sub_lord": "mars",
+     "sub_start": 90.55555555555556,
+     "sub_sub_lord": "venus"
+    }
+   },
+   {
+    "house": 4,
+    "longitude": 118.07435862519759,
+    "lordship": {
+     "nakshatra": "ashlesha",
+     "near_boundary": false,
+     "sign": "cancer",
+     "sign_lord": "moon",
+     "star_lord": "mercury",
+     "sub_end": 120.0,
+     "sub_lord": "saturn",
+     "sub_start": 117.88888888888889,
+     "sub_sub_lord": "saturn"
+    }
+   },
+   {
+    "house": 5,
+    "longitude": 149.5493568536915,
+    "lordship": {
+     "nakshatra": "uttara_phalguni",
+     "near_boundary": false,
+     "sign": "leo",
+     "sign_lord": "sun",
+     "star_lord": "sun",
+     "sub_end": 151.22222222222223,
+     "sub_lord": "rahu",
+     "sub_start": 149.22222222222223,
+     "sub_sub_lord": "jupiter"
+    }
+   },
+   {
+    "house": 6,
+    "longitude": 184.99437705554206,
+    "lordship": {
+     "nakshatra": "chitra",
+     "near_boundary": false,
+     "sign": "libra",
+     "sign_lord": "venus",
+     "star_lord": "mars",
+     "sub_end": 185.55555555555554,
+     "sub_lord": "sun",
+     "sub_start": 184.88888888888889,
+     "sub_sub_lord": "mars"
+    }
+   },
+   {
+    "house": 7,
+    "longitude": 220.0,
+    "lordship": {
+     "nakshatra": "anuradha",
+     "near_boundary": false,
+     "sign": "scorpio",
+     "sign_lord": "mars",
+     "star_lord": "saturn",
+     "sub_end": 220.33333333333334,
+     "sub_lord": "venus",
+     "sub_start": 218.11111111111111,
+     "sub_sub_lord": "mercury"
+    }
+   },
+   {
+    "house": 8,
+    "longitude": 246.21230753597473,
+    "lordship": {
+     "nakshatra": "mula",
+     "near_boundary": false,
+     "sign": "sagittarius",
+     "sign_lord": "jupiter",
+     "star_lord": "ketu",
+     "sub_end": 247.55555555555554,
+     "sub_lord": "rahu",
+     "sub_start": 245.55555555555554,
+     "sub_sub_lord": "saturn"
+    }
+   },
+   {
+    "house": 9,
+    "longitude": 271.1032222047527,
+    "lordship": {
+     "nakshatra": "uttara_ashadha",
+     "near_boundary": false,
+     "sign": "capricorn",
+     "sign_lord": "saturn",
+     "star_lord": "sun",
+     "sub_end": 271.22222222222223,
+     "sub_lord": "rahu",
+     "sub_start": 269.22222222222223,
+     "sub_sub_lord": "moon"
+    }
+   },
+   {
+    "house": 10,
+    "longitude": 298.0743586251976,
+    "lordship": {
+     "nakshatra": "dhanishta",
+     "near_boundary": false,
+     "sign": "capricorn",
+     "sign_lord": "saturn",
+     "star_lord": "mars",
+     "sub_end": 300.0,
+     "sub_lord": "saturn",
+     "sub_start": 297.8888888888889,
+     "sub_sub_lord": "saturn"
+    }
+   },
+   {
+    "house": 11,
+    "longitude": 329.5493568536915,
+    "lordship": {
+     "nakshatra": "purva_bhadrapada",
+     "near_boundary": false,
+     "sign": "aquarius",
+     "sign_lord": "saturn",
+     "star_lord": "jupiter",
+     "sub_end": 330.55555555555554,
+     "sub_lord": "moon",
+     "sub_start": 329.44444444444446,
+     "sub_sub_lord": "mars"
+    }
+   },
+   {
+    "house": 12,
+    "longitude": 4.994377055542056,
+    "lordship": {
+     "nakshatra": "ashwini",
+     "near_boundary": false,
+     "sign": "aries",
+     "sign_lord": "mars",
+     "star_lord": "ketu",
+     "sub_end": 5.555555555555555,
+     "sub_lord": "mars",
+     "sub_start": 4.777777777777778,
+     "sub_sub_lord": "jupiter"
+    }
+   }
+  ],
+  "detail": null,
+  "polar_limit_degrees": 66.5542364584048,
+  "reason": null,
+  "status": "success"
+ },
+ "engine_version": "0.10.0",
+ "entry": {
+  "end": 41.111111111111114,
+  "nakshatra": "rohini",
+  "number": 29,
+  "sign": "taurus",
+  "sign_lord": "venus",
+  "star_lord": "moon",
+  "start": 40.0,
+  "sub_lord": "moon"
+ },
+ "ephemeris_path": null,
+ "location": {
+  "altitude_meters": 0.0,
+  "latitude": 18.97,
+  "longitude": 72.82
+ },
+ "planets": [
+  {
+   "body": "sun",
+   "ephemeris_mode": "moshier",
+   "house": 12,
+   "longitude": 22.441246776339284,
+   "lordship": {
+    "nakshatra": "bharani",
+    "near_boundary": false,
+    "sign": "aries",
+    "sign_lord": "mars",
+    "star_lord": "venus",
+    "sub_end": 24.0,
+    "sub_lord": "saturn",
+    "sub_start": 21.88888888888889,
+    "sub_sub_lord": "mercury"
+   },
+   "node_convention": null,
+   "retrograde": false,
+   "speed_longitude": 0.967717408741404
+  },
+  {
+   "body": "moon",
+   "ephemeris_mode": "moshier",
+   "house": 8,
+   "longitude": 261.3661139622756,
+   "lordship": {
+    "nakshatra": "purva_ashadha",
+    "near_boundary": false,
+    "sign": "sagittarius",
+    "sign_lord": "jupiter",
+    "star_lord": "venus",
+    "sub_end": 261.8888888888889,
+    "sub_lord": "jupiter",
+    "sub_start": 260.1111111111111,
+    "sub_sub_lord": "sun"
+   },
+   "node_convention": null,
+   "retrograde": false,
+   "speed_longitude": 14.560679340680219
+  },
+  {
+   "body": "mars",
+   "ephemeris_mode": "moshier",
+   "house": 7,
+   "longitude": 232.92310883220676,
+   "lordship": {
+    "nakshatra": "jyeshtha",
+    "near_boundary": false,
+    "sign": "scorpio",
+    "sign_lord": "mars",
+    "star_lord": "mercury",
+    "sub_end": 233.33333333333334,
+    "sub_lord": "moon",
+    "sub_start": 232.22222222222223,
+    "sub_sub_lord": "mercury"
+   },
+   "node_convention": null,
+   "retrograde": true,
+   "speed_longitude": -0.11287755350615382
+  },
+  {
+   "body": "mercury",
+   "ephemeris_mode": "moshier",
+   "house": 1,
+   "longitude": 43.42399717690312,
+   "lordship": {
+    "nakshatra": "rohini",
+    "near_boundary": false,
+    "sign": "taurus",
+    "sign_lord": "venus",
+    "star_lord": "moon",
+    "sub_end": 43.888888888888886,
+    "sub_lord": "rahu",
+    "sub_start": 41.888888888888886,
+    "sub_sub_lord": "venus"
+   },
+   "node_convention": null,
+   "retrograde": false,
+   "speed_longitude": 0.9273403188681514
+  },
+  {
+   "body": "jupiter",
+   "ephemeris_mode": "moshier",
+   "house": 5,
+   "longitude": 153.201387552796,
+   "lordship": {
+    "nakshatra": "uttara_phalguni",
+    "near_boundary": false,
+    "sign": "virgo",
+    "sign_lord": "mercury",
+    "star_lord": "sun",
+    "sub_end": 155.11111111111111,
+    "sub_lord": "saturn",
+    "sub_start": 153.0,
+    "sub_sub_lord": "saturn"
+   },
+   "node_convention": null,
+   "retrograde": true,
+   "speed_longitude": -0.05064047048886702
+  },
+  {
+   "body": "venus",
+   "ephemeris_mode": "moshier",
+   "house": 11,
+   "longitude": 348.00837016249636,
+   "lordship": {
+    "nakshatra": "revati",
+    "near_boundary": false,
+    "sign": "pisces",
+    "sign_lord": "jupiter",
+    "star_lord": "mercury",
+    "sub_end": 348.55555555555554,
+    "sub_lord": "mercury",
+    "sub_start": 346.6666666666667,
+    "sub_sub_lord": "jupiter"
+   },
+   "node_convention": null,
+   "retrograde": false,
+   "speed_longitude": 0.24618252895268394
+  },
+  {
+   "body": "saturn",
+   "ephemeris_mode": "moshier",
+   "house": 12,
+   "longitude": 7.491934299637836,
+   "lordship": {
+    "nakshatra": "ashwini",
+    "near_boundary": false,
+    "sign": "aries",
+    "sign_lord": "mars",
+    "star_lord": "ketu",
+    "sub_end": 7.555555555555555,
+    "sub_lord": "rahu",
+    "sub_start": 5.555555555555555,
+    "sub_sub_lord": "mars"
+   },
+   "node_convention": null,
+   "retrograde": false,
+   "speed_longitude": 0.12450918714158887
+  },
+  {
+   "body": "rahu",
+   "ephemeris_mode": "swiss_ephemeris_files",
+   "house": 11,
+   "longitude": 334.63600429183685,
+   "lordship": {
+    "nakshatra": "uttara_bhadrapada",
+    "near_boundary": false,
+    "sign": "pisces",
+    "sign_lord": "jupiter",
+    "star_lord": "saturn",
+    "sub_end": 335.44444444444446,
+    "sub_lord": "saturn",
+    "sub_start": 333.3333333333333,
+    "sub_sub_lord": "moon"
+   },
+   "node_convention": "mean",
+   "retrograde": true,
+   "speed_longitude": -0.052992067275235026
+  },
+  {
+   "body": "ketu",
+   "ephemeris_mode": "swiss_ephemeris_files",
+   "house": 5,
+   "longitude": 154.6360042918368,
+   "lordship": {
+    "nakshatra": "uttara_phalguni",
+    "near_boundary": false,
+    "sign": "virgo",
+    "sign_lord": "mercury",
+    "star_lord": "sun",
+    "sub_end": 155.11111111111111,
+    "sub_lord": "saturn",
+    "sub_start": 153.0,
+    "sub_sub_lord": "rahu"
+   },
+   "node_convention": "mean",
+   "retrograde": true,
+   "speed_longitude": -0.052992067275235026
+  }
+ ],
+ "profiles": {
+  "ayanamsa_profile_id": "KP_AYANAMSA_KRISHNAMURTI_SWISSEPH",
+  "day_lord_convention": "local_civil_date",
+  "horary_profile_id": "KP_HORARY_NUMBER_249_READER_VI",
+  "house_profile_id": "KP_HOUSES_PLACIDUS_SIDEREAL_SWISSEPH",
+  "node_convention": "mean",
+  "ruling_planets_profile_id": "KP_RULING_PLANETS_READER_VI",
+  "significator_profile_id": "KP_SIGNIFICATORS_FOUR_LEVEL_READER_VI",
+  "subdivision_profile_id": "KP_SUBLORD_VIMSHOTTARI_PROPORTIONAL"
+ },
+ "provenance": [
+  {
+   "entry_id": "prov.ayanamsa",
+   "evidence_label": "source_supported",
+   "item": "Ayanamsa: KP_AYANAMSA_KRISHNAMURTI_SWISSEPH",
+   "references": [
+    {
+     "locator": "'Ayanamsa' section and the yearly Ayanamsa table (printed pp. 56-59)",
+     "note": "Krishnamurti places the coincidence of the zodiacs in 291 CE and follows Newcomb's precession of 50.2388475 arcseconds a year; the printed table gives the value per year to the arcminute.",
+     "source_id": "SRC-KP-READER-I-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Yearly Ayanamsa table, 1880-2001, compared on 1 January and 1 July",
+     "note": "Swiss Ephemeris agrees with the printed table within 0.9 arcminutes over 1880-2001 (the table is rounded to whole arcminutes); the default was chosen because it agrees more closely than the VP291 variant (up to 2.1 arcminutes).",
+     "source_id": "SRC-KP-READER-I-KRISHNAMURTI",
+     "verification_level": "ENGINEERING-EVIDENCE"
+    },
+    {
+     "locator": "Section 2.8.6 'Krishnamurti ayanamshas', mode 5",
+     "note": "Mode 5 was fitted to Krishnamurti's yearly table (t0 1 January 1900, 22.363889 degrees); the documentation notes that the table repeats values in 1918-1921, which no steady precession can produce.",
+     "source_id": "SRC-SWISSEPH-DOC",
+     "verification_level": "DOCUMENTATION-DIRECT"
+    }
+   ],
+   "statement": "Krishnamurti ayanamsa as implemented by Swiss Ephemeris (SE_SIDM_KRISHNAMURTI); the default KP ayanamsa"
+  },
+  {
+   "entry_id": "prov.horary",
+   "evidence_label": "source_supported",
+   "item": "Horary: KP_HORARY_NUMBER_249_READER_VI",
+   "references": [
+    {
+     "locator": "Horary examples for numbers 48 and 74, and the 'table of houses' instruction ('All places in the same latitude will have the same cusps')",
+     "note": "",
+     "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Solving the sidereal time for a given Ascendant",
+     "note": "The Reader reads the cusps from Raphael's printed tables; Pandit Ji solves the ARMC numerically with the true obliquity of the judgment date instead, a derived calculation of the same quantity.",
+     "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "A number 1-249 selects the table entry whose starting degree becomes the Ascendant; the other cusps are the Placidus cusps for that Ascendant at the latitude of judgment; planets are for the moment of judgment"
+  },
+  {
+   "entry_id": "prov.houses",
+   "evidence_label": "inference",
+   "item": "Houses: KP_HOUSES_PLACIDUS_SIDEREAL_SWISSEPH",
+   "references": [
+    {
+     "locator": "Methods of house division and 'Table of Houses'",
+     "note": "The Reader names Placidus's semi-arc system as the method in common use and tells the student to use Raphael's Tables of Houses. That Raphael's tables are Placidian is outside knowledge, not stated in the Reader, hence 'inference'.",
+     "source_id": "SRC-KP-READER-I-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Worked chart: 'A house commences from the cusp of a house and ends with the succeeding cusp'",
+     "note": "House extent and cusp-sign lordship are stated directly.",
+     "source_id": "SRC-KP-READER-III-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Placidus cusps computed tropically and reduced by the KP ayanamsa; a house runs from its cusp to the next cusp and is ruled by the lord of the cusp's sign"
+  },
+  {
+   "entry_id": "prov.subdivision",
+   "evidence_label": "source_supported",
+   "item": "Star/sub division: KP_SUBLORD_VIMSHOTTARI_PROPORTIONAL",
+   "references": [
+    {
+     "locator": "Chapter on the sub (printed pp. 10-13)",
+     "note": "Sub spans in proportion to the Vimshottari years; order as in the bhuktis; 249 rather than 243 because some subs fall in two signs. Further subdivision is mentioned only 'for research students'.",
+     "source_id": "SRC-KP-READER-III-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Numbered list of the 249 sign-star-sub divisions",
+     "note": "202 legible OCR rows agree exactly with the derived table (fixture kp_reader3_sub_table.json).",
+     "source_id": "SRC-KP-READER-III-KRISHNAMURTI",
+     "verification_level": "ENGINEERING-EVIDENCE"
+    }
+   ],
+   "statement": "Each 13 deg 20 min star divided into nine subs proportional to the Vimshottari years, first sub to the star lord; 249 sign-star-sub entries. The sub-sub level repeats the rule inside the sub (derived calculation)."
+  },
+  {
+   "entry_id": "prov.significators",
+   "evidence_label": "source_supported",
+   "item": "Significators: KP_SIGNIFICATORS_FOUR_LEVEL_READER_VI",
+   "references": [
+    {
+     "locator": "Order of strength of significators, houses 2, 5 and 11 (items a-f)",
+     "note": "",
+     "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "'Tenant is stronger than the owner ... constellation is stronger than the sign'",
+     "note": "",
+     "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "House significators in the Reader's order: (a) planets in the star of an occupant, (b) occupants, (c) planets in the star of the house lord, (d) the house lord. Conjunction and aspect significators (e, f) and node agency are not evaluated."
+  },
+  {
+   "entry_id": "prov.ruling_planets",
+   "evidence_label": "source_supported",
+   "item": "Ruling planets: KP_RULING_PLANETS_READER_VI",
+   "references": [
+    {
+     "locator": "'Ruling Planets' (printed p. 123)",
+     "note": "The Reader says members in the star of a retrograde planet 'should be rejected'; the flag is reported and the caller decides. Mean nodes are always retrograde, so the flag is not evaluated for a node star lord.",
+     "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Ruling planets of a moment: Ascendant star lord and sign lord, Moon star lord and sign lord, day lord; a node joins when it occupies a sign owned by the Ascendant sign lord, Moon sign lord or day lord. Members in the star of a retrograde planet are flagged, not removed."
+  }
+ ],
+ "ruling_planets": {
+  "ascendant_longitude": 182.09996592839536,
+  "members": [
+   {
+    "body": "mars",
+    "represents": null,
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "ascendant_star_lord",
+    "star_lord_of_body": "mercury"
+   },
+   {
+    "body": "venus",
+    "represents": null,
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "ascendant_sign_lord",
+    "star_lord_of_body": "mercury"
+   },
+   {
+    "body": "venus",
+    "represents": null,
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "moon_star_lord",
+    "star_lord_of_body": "mercury"
+   },
+   {
+    "body": "jupiter",
+    "represents": null,
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "moon_sign_lord",
+    "star_lord_of_body": "sun"
+   },
+   {
+    "body": "mars",
+    "represents": null,
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "day_lord",
+    "star_lord_of_body": "mercury"
+   },
+   {
+    "body": "rahu",
+    "represents": "jupiter",
+    "retrograde_star_flag": "not_in_star_of_retrograde",
+    "role": "node_agent",
+    "star_lord_of_body": "saturn"
+   }
+  ],
+  "reason": null,
+  "status": "success",
+  "weekday_sunday_zero": 2
+ },
+ "significators": {
+  "houses": [
+   {
+    "house": 1,
+    "level_a_in_star_of_occupants": [
+     "mars",
+     "venus"
+    ],
+    "level_b_occupants": [
+     "mercury"
+    ],
+    "level_c_in_star_of_lord": [
+     "sun",
+     "moon"
+    ],
+    "level_d_lord": [
+     "venus"
+    ]
+   },
+   {
+    "house": 2,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "mars",
+     "venus"
+    ],
+    "level_d_lord": [
+     "mercury"
+    ]
+   },
+   {
+    "house": 3,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "mercury"
+    ],
+    "level_d_lord": [
+     "moon"
+    ]
+   },
+   {
+    "house": 4,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "mercury"
+    ],
+    "level_d_lord": [
+     "moon"
+    ]
+   },
+   {
+    "house": 5,
+    "level_a_in_star_of_occupants": [
+     "saturn"
+    ],
+    "level_b_occupants": [
+     "jupiter",
+     "ketu"
+    ],
+    "level_c_in_star_of_lord": [
+     "jupiter",
+     "ketu"
+    ],
+    "level_d_lord": [
+     "sun"
+    ]
+   },
+   {
+    "house": 6,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "sun",
+     "moon"
+    ],
+    "level_d_lord": [
+     "venus"
+    ]
+   },
+   {
+    "house": 7,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [
+     "mars"
+    ],
+    "level_c_in_star_of_lord": [],
+    "level_d_lord": [
+     "mars"
+    ]
+   },
+   {
+    "house": 8,
+    "level_a_in_star_of_occupants": [
+     "mercury"
+    ],
+    "level_b_occupants": [
+     "moon"
+    ],
+    "level_c_in_star_of_lord": [],
+    "level_d_lord": [
+     "jupiter"
+    ]
+   },
+   {
+    "house": 9,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "rahu"
+    ],
+    "level_d_lord": [
+     "saturn"
+    ]
+   },
+   {
+    "house": 10,
+    "level_a_in_star_of_occupants": [],
+    "level_b_occupants": [],
+    "level_c_in_star_of_lord": [
+     "rahu"
+    ],
+    "level_d_lord": [
+     "saturn"
+    ]
+   },
+   {
+    "house": 11,
+    "level_a_in_star_of_occupants": [
+     "sun",
+     "moon"
+    ],
+    "level_b_occupants": [
+     "venus",
+     "rahu"
+    ],
+    "level_c_in_star_of_lord": [
+     "rahu"
+    ],
+    "level_d_lord": [
+     "saturn"
+    ]
+   },
+   {
+    "house": 12,
+    "level_a_in_star_of_occupants": [
+     "jupiter",
+     "rahu",
+     "ketu"
+    ],
+    "level_b_occupants": [
+     "sun",
+     "saturn"
+    ],
+    "level_c_in_star_of_lord": [],
+    "level_d_lord": [
+     "mars"
+    ]
+   }
+  ],
+  "not_evaluated": [
+   "level_e_conjunction",
+   "level_f_aspect",
+   "node_agency"
+  ],
+  "planets": [
+   {
+    "body": "sun",
+    "houses": [
+     1,
+     5,
+     6,
+     11,
+     12
+    ]
+   },
+   {
+    "body": "moon",
+    "houses": [
+     1,
+     3,
+     4,
+     6,
+     8,
+     11
+    ]
+   },
+   {
+    "body": "mars",
+    "houses": [
+     1,
+     2,
+     7,
+     12
+    ]
+   },
+   {
+    "body": "mercury",
+    "houses": [
+     1,
+     2,
+     3,
+     4,
+     8
+    ]
+   },
+   {
+    "body": "jupiter",
+    "houses": [
+     5,
+     8,
+     12
+    ]
+   },
+   {
+    "body": "venus",
+    "houses": [
+     1,
+     2,
+     6,
+     11
+    ]
+   },
+   {
+    "body": "saturn",
+    "houses": [
+     5,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   {
+    "body": "rahu",
+    "houses": [
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   {
+    "body": "ketu",
+    "houses": [
+     5,
+     12
+    ]
+   }
+  ],
+  "reason": null,
+  "status": "success"
+ },
+ "standards_version": "1.15.0",
+ "swisseph_version": "2.10.03",
+ "system": "kp_krishnamurti_paddhati",
+ "time_resolution": {
+  "disambiguation_applied": null,
+  "dst_active": false,
+  "input_local_datetime": "1969-05-06T17:30:00",
+  "julian_day_et": 2440348.0004575728,
+  "julian_day_ut": 2440348.0,
+  "timezone": "Asia/Kolkata",
+  "utc_datetime": "1969-05-06T12:00:00Z",
+  "utc_offset_seconds": 19800,
+  "was_ambiguous": false,
+  "was_nonexistent": false
+ },
+ "warnings": [
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+  "mean node used for Rahu; Ketu is Rahu plus 180 degrees (the KP Readers do not fix mean or true nodes)",
+  "horary cusps: the Ascendant is fixed at the start of the numbered sub and the matching sidereal time is solved numerically (the Reader uses printed tables of houses); planets are for the moment of judgment"
+ ]
+}

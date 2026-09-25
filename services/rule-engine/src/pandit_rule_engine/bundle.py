@@ -31,6 +31,13 @@ from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
 from pandit_rule_engine.loader import Ruleset
+from pandit_rule_engine.phase9_evidence import (
+    ChineseEvidence,
+    JaiminiEvidence,
+    KpEvidence,
+    ShadbalaEvidence,
+    TarotEvidence,
+)
 from pandit_rule_engine.results import Provenance, RuleResult
 from pandit_rule_engine.transit_evidence import TransitEvidence
 from pandit_rule_engine.vocab import ALL_BODIES, Reason, Sign, Status
@@ -122,12 +129,30 @@ class EvidenceBundle(_Model):
     #: `dasha`/`transit`, so a bundle built without Ashtakavarga facts serializes
     #: and hashes exactly as before.
     ashtakavarga: AshtakavargaEvidence | None = None
+    #: Additive, optional (Phase 9 closure, v1.21.0 EV-01 to EV-10): KP chart or
+    #: horary facts, one Shadbala profile's facts, WP-G Jaimini facts, Chinese Four
+    #: Pillars, and a Tarot layout. Each is omitted when absent, exactly like
+    #: `dasha`/`transit`/`ashtakavarga`, so earlier bundles hash as before.
+    kp: KpEvidence | None = None
+    shadbala: ShadbalaEvidence | None = None
+    jaimini: JaiminiEvidence | None = None
+    chinese: ChineseEvidence | None = None
+    tarot: TarotEvidence | None = None
     bundle_hash: str
 
     @model_serializer(mode="wrap")
     def _omit_absent_sections(self, handler: SerializerFunctionWrapHandler) -> dict[str, Any]:
         data: dict[str, Any] = handler(self)
-        for optional in ("dasha", "transit", "ashtakavarga"):
+        for optional in (
+            "dasha",
+            "transit",
+            "ashtakavarga",
+            "kp",
+            "shadbala",
+            "jaimini",
+            "chinese",
+            "tarot",
+        ):
             if data.get(optional) is None:
                 data.pop(optional, None)
         return data
@@ -217,6 +242,11 @@ def build_bundle(
     dasha: DashaEvidence | None = None,
     transit: TransitEvidence | None = None,
     ashtakavarga: AshtakavargaEvidence | None = None,
+    kp: KpEvidence | None = None,
+    shadbala: ShadbalaEvidence | None = None,
+    jaimini: JaiminiEvidence | None = None,
+    chinese: ChineseEvidence | None = None,
+    tarot: TarotEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -242,6 +272,11 @@ def build_bundle(
         "dasha": dasha,
         "transit": transit,
         "ashtakavarga": ashtakavarga,
+        "kp": kp,
+        "shadbala": shadbala,
+        "jaimini": jaimini,
+        "chinese": chinese,
+        "tarot": tarot,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

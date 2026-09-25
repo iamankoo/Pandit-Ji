@@ -1,0 +1,522 @@
+{
+ "bhava_padas": [
+  {
+   "count": 7,
+   "house": 1,
+   "house_sign": "cancer",
+   "lord": "moon",
+   "lord_sign": "capricorn",
+   "name": "lagna_pada",
+   "pada": "aries",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "same_house_takes_tenth"
+  },
+  {
+   "count": 10,
+   "house": 2,
+   "house_sign": "leo",
+   "lord": "sun",
+   "lord_sign": "taurus",
+   "name": "dhana_pada",
+   "pada": "scorpio",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "seventh_house_takes_fourth"
+  },
+  {
+   "count": 8,
+   "house": 3,
+   "house_sign": "virgo",
+   "lord": "mercury",
+   "lord_sign": "aries",
+   "name": "vikrama_pada",
+   "pada": "scorpio",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  },
+  {
+   "count": 6,
+   "house": 4,
+   "house_sign": "libra",
+   "lord": "venus",
+   "lord_sign": "pisces",
+   "name": "matru_pada",
+   "pada": "leo",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  },
+  {
+   "count": 4,
+   "house": 5,
+   "house_sign": "scorpio",
+   "lord": "mars",
+   "lord_sign": "aquarius",
+   "name": "mantra_pada",
+   "pada": "aquarius",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "seventh_house_takes_fourth"
+  },
+  {
+   "count": 7,
+   "house": 6,
+   "house_sign": "sagittarius",
+   "lord": "jupiter",
+   "lord_sign": "gemini",
+   "name": "roga_pada",
+   "pada": "virgo",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "same_house_takes_tenth"
+  },
+  {
+   "count": 1,
+   "house": 7,
+   "house_sign": "capricorn",
+   "lord": "saturn",
+   "lord_sign": "capricorn",
+   "name": "dara_pada",
+   "pada": "libra",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "same_house_takes_tenth"
+  },
+  {
+   "count": 12,
+   "house": 8,
+   "house_sign": "aquarius",
+   "lord": "saturn",
+   "lord_sign": "capricorn",
+   "name": "marana_pada",
+   "pada": "sagittarius",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  },
+  {
+   "count": 4,
+   "house": 9,
+   "house_sign": "pisces",
+   "lord": "jupiter",
+   "lord_sign": "gemini",
+   "name": "pitru_pada",
+   "pada": "gemini",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "seventh_house_takes_fourth"
+  },
+  {
+   "count": 11,
+   "house": 10,
+   "house_sign": "aries",
+   "lord": "mars",
+   "lord_sign": "aquarius",
+   "name": "karma_pada",
+   "pada": "sagittarius",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  },
+  {
+   "count": 11,
+   "house": 11,
+   "house_sign": "taurus",
+   "lord": "venus",
+   "lord_sign": "pisces",
+   "name": "labha_pada",
+   "pada": "capricorn",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  },
+  {
+   "count": 11,
+   "house": 12,
+   "house_sign": "gemini",
+   "lord": "mercury",
+   "lord_sign": "aries",
+   "name": "vyaya_pada",
+   "pada": "aquarius",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "rule": "base"
+  }
+ ],
+ "chara_karaka": {
+  "candidates": [
+   {
+    "body": "mars",
+    "comparison_degree": 25.876170087467415,
+    "input_longitude": 325.8761700874674,
+    "normalized_degree": 25.876170087467415,
+    "rank": 1
+   },
+   {
+    "body": "moon",
+    "comparison_degree": 24.939308173736435,
+    "input_longitude": 294.93930817373644,
+    "normalized_degree": 24.939308173736435,
+    "rank": 2
+   },
+   {
+    "body": "venus",
+    "comparison_degree": 21.04335585701932,
+    "input_longitude": 351.0433558570193,
+    "normalized_degree": 21.04335585701932,
+    "rank": 3
+   },
+   {
+    "body": "jupiter",
+    "comparison_degree": 16.140799694803817,
+    "input_longitude": 76.14079969480382,
+    "normalized_degree": 16.140799694803817,
+    "rank": 4
+   },
+   {
+    "body": "mercury",
+    "comparison_degree": 14.191539629792564,
+    "input_longitude": 14.191539629792564,
+    "normalized_degree": 14.191539629792564,
+    "rank": 5
+   },
+   {
+    "body": "rahu",
+    "comparison_degree": 12.477189153062511,
+    "input_longitude": 287.5228108469375,
+    "normalized_degree": 17.52281084693749,
+    "rank": 6
+   },
+   {
+    "body": "sun",
+    "comparison_degree": 2.316931988550529,
+    "input_longitude": 32.31693198855053,
+    "normalized_degree": 2.316931988550529,
+    "rank": 7
+   },
+   {
+    "body": "saturn",
+    "comparison_degree": 1.4923651498999106,
+    "input_longitude": 271.4923651498999,
+    "normalized_degree": 1.4923651498999106,
+    "rank": 8
+   }
+  ],
+  "profile_id": "JAIMINI_CHARA_KARAKA_EIGHT_BODY_BPHS_32_1_17",
+  "reason_code": null,
+  "roles": [
+   {
+    "body": "mars",
+    "rank": 1,
+    "reason_code": null,
+    "role": "atma_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "moon",
+    "rank": 2,
+    "reason_code": null,
+    "role": "amatya_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "venus",
+    "rank": 3,
+    "reason_code": null,
+    "role": "bhratru_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "jupiter",
+    "rank": 4,
+    "reason_code": null,
+    "role": "matru_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "mercury",
+    "rank": 5,
+    "reason_code": null,
+    "role": "pitru_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "rahu",
+    "rank": 6,
+    "reason_code": null,
+    "role": "putra_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "sun",
+    "rank": 7,
+    "reason_code": null,
+    "role": "gnati_karaka",
+    "status": "success",
+    "tie_group": null
+   },
+   {
+    "body": "saturn",
+    "rank": 8,
+    "reason_code": null,
+    "role": "dara_karaka",
+    "status": "success",
+    "tie_group": null
+   }
+  ],
+  "status": "success"
+ },
+ "engine_version": "0.10.0",
+ "graha_padas": [
+  {
+   "body": "sun",
+   "pada": "scorpio",
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": null,
+   "status": "success"
+  },
+  {
+   "body": "moon",
+   "pada": "capricorn",
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": null,
+   "status": "success"
+  },
+  {
+   "body": "mars",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "stronger_sign_undefined",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "mercury",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "stronger_sign_undefined",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "jupiter",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "stronger_sign_undefined",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "venus",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "stronger_sign_undefined",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "saturn",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "stronger_sign_undefined",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "rahu",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "node_owns_no_sign",
+   "status": "not_evaluable"
+  },
+  {
+   "body": "ketu",
+   "pada": null,
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "reason": "node_owns_no_sign",
+   "status": "not_evaluable"
+  }
+ ],
+ "karakamsa": {
+  "atma_karaka": "mars",
+  "atma_karaka_longitude": 325.8761700874674,
+  "chara_karaka_profile_id": "JAIMINI_CHARA_KARAKA_EIGHT_BODY_BPHS_32_1_17",
+  "karakamsa": "taurus",
+  "profile_id": "KARAKAMSA_BPHS_33_1_2",
+  "reason": null,
+  "status": "success"
+ },
+ "lagna_sign": "cancer",
+ "location": {
+  "altitude_meters": 0.0,
+  "latitude": 28.61,
+  "longitude": 77.21
+ },
+ "node_convention": "mean",
+ "planet_rashi_drishti": [
+  {
+   "aspected_bodies": [
+    "moon",
+    "saturn"
+   ],
+   "aspected_signs": [
+    "cancer",
+    "libra",
+    "capricorn"
+   ],
+   "body": "sun",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "taurus"
+  },
+  {
+   "aspected_bodies": [
+    "sun"
+   ],
+   "aspected_signs": [
+    "taurus",
+    "leo",
+    "scorpio"
+   ],
+   "body": "moon",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "capricorn"
+  },
+  {
+   "aspected_bodies": [
+    "mercury"
+   ],
+   "aspected_signs": [
+    "aries",
+    "cancer",
+    "libra"
+   ],
+   "body": "mars",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "aquarius"
+  },
+  {
+   "aspected_bodies": [
+    "mars"
+   ],
+   "aspected_signs": [
+    "leo",
+    "scorpio",
+    "aquarius"
+   ],
+   "body": "mercury",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "aries"
+  },
+  {
+   "aspected_bodies": [
+    "venus"
+   ],
+   "aspected_signs": [
+    "virgo",
+    "sagittarius",
+    "pisces"
+   ],
+   "body": "jupiter",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "gemini"
+  },
+  {
+   "aspected_bodies": [
+    "jupiter"
+   ],
+   "aspected_signs": [
+    "gemini",
+    "virgo",
+    "sagittarius"
+   ],
+   "body": "venus",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "pisces"
+  },
+  {
+   "aspected_bodies": [
+    "sun"
+   ],
+   "aspected_signs": [
+    "taurus",
+    "leo",
+    "scorpio"
+   ],
+   "body": "saturn",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "sign": "capricorn"
+  }
+ ],
+ "provenance": [
+  {
+   "evidence_label": "source_supported",
+   "profile_id": "JAIMINI_CHARA_KARAKA_EIGHT_BODY_BPHS_32_1_17",
+   "references": [
+    {
+     "locator": "Vol I Ch. 32 v. 1-2, 3-17 (Santhanam translation), printed pp. 316-319",
+     "note": "v. 1-2's 'yet some say the 8 planets including Rahu will have to be considered irrespective of' the longitude-similarity condition. The chapter's own translator's note confirms this is the reading its own worked example uses ('In the standard nativity (ch. 29) ... We take 8 Karkas into consideration'), listing all 8 role-to-planet assignments including Rahu as Matru Karaka. Rahu's comparison degree is 30 minus his own degree within the sign (v. 3-8's explicit reverse-degree convention). Ketu is not a candidate under this or any reading.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "IMAGE-TRANSLATION"
+    }
+   ],
+   "statement": "Brihat Parasara Hora Shastra (Santhanam translation) Ch. 32 v. 1-17, 8-body reading"
+  },
+  {
+   "evidence_label": "source_supported",
+   "profile_id": "RASHI_DRISHTI_PLANET_BPHS_8_4_5",
+   "references": [
+    {
+     "locator": "Vol I Ch. 8 v. 4-5 and note, printed p. 107",
+     "note": "'Simultaneously a planet in the aspected sign is also subjected to the aspect concerned.' The translator's worked example (a)-(f) agrees with the verse except (b), which says Venus and the Sun (Taurus) aspect none although Taurus and Cancer (Jupiter) aspect each other and (c) says Jupiter aspects them. The example includes the nodes as aspecting planets (translator's usage).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "IMAGE-TRANSLATION"
+    }
+   ],
+   "statement": "A planet casts the Rashi Drishti of the sign it occupies, on those signs and their occupants (BPHS Ch. 8 v. 4-5); a separate system from graha drishti"
+  },
+  {
+   "evidence_label": "source_supported",
+   "profile_id": "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+   "references": [
+    {
+     "locator": "Vol I Ch. 29 v. 1-5 (worked chart p. 295, v. 4-5 p. 296)",
+     "note": "Rule and exceptions are verse. The translator's worked Arudha chart (p. 295, page image) agrees for houses 1-8, 11 and 12 but leaves the 9th and 10th Padas in the 7th house without the stated exception (which it does apply to the 6th); the note's example 'Aquarius Lagna, Saturn in Leo: Taurus' also contradicts the rule (Scorpio). The printed Sanskrit of v. 5 reads, to a non-qualified reader, 'lord in the 4th: the 4th is the Pada; lord in the 7th: the 10th is the Pada', agreeing with the rule (unreviewed). The verse is followed; house lords from the locked Phase 5 lordship table (no node co-lordship).",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "IMAGE-TRANSLATION"
+    }
+   ],
+   "statement": "Bhava Pada: count from the house to its lord, count as many again from the lord; a Pada in the house itself moves to the 10th from it, one in the 7th to the 4th"
+  },
+  {
+   "evidence_label": "source_supported",
+   "profile_id": "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+   "references": [
+    {
+     "locator": "Vol I Ch. 29 v. 6-7 and note, printed p. 296",
+     "note": "The note says the Bhava Pada exceptions do not apply to planets (not stated in the verse) and that nodal co-lordship is a translator's reading; neither changes the Sun's or Moon's result.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    }
+   ],
+   "statement": "Graha Pada of the Sun and the Moon: count from the planet to its own sign, count as many again; planets with two own signs are not evaluated ('consider the stronger' is undefined)"
+  },
+  {
+   "evidence_label": "source_supported",
+   "profile_id": "KARAKAMSA_BPHS_33_1_2",
+   "references": [
+    {
+     "locator": "Vol I Ch. 33 v. 1-2 and note",
+     "note": "v. 1 'Karakamsa identical with Aries etc.' with v. 2 'If Atmakaraka be in Aries Navamsa'; the note: 'Karakamsa is the Navamsa occupied by the Atma Karaka planet'. Navamsa from the locked Phase 5 D9 scheme.",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    }
+   ],
+   "statement": "Karakamsa: the Navamsa sign of the Atma Karaka, under the caller's chosen Chara Karaka profile"
+  }
+ ],
+ "standards_version": "1.21.0",
+ "system": "vedic_jaimini_style",
+ "time_resolution": {
+  "disambiguation_applied": null,
+  "dst_active": false,
+  "input_local_datetime": "1990-05-17T10:30:00",
+  "julian_day_et": 2448028.7089951853,
+  "julian_day_ut": 2448028.7083342024,
+  "timezone": "Asia/Kolkata",
+  "utc_datetime": "1990-05-17T05:00:00Z",
+  "utc_offset_seconds": 19800,
+  "was_ambiguous": false,
+  "was_nonexistent": false
+ }
+}

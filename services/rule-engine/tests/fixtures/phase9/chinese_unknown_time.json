@@ -1,0 +1,197 @@
+{
+ "basis_local_datetime": null,
+ "day": {
+  "branch": "wu",
+  "branch_animal": "horse",
+  "branch_character": "午",
+  "branch_element": "fire",
+  "branch_polarity": "yang",
+  "reason": null,
+  "sexagenary_index": 18,
+  "status": "success",
+  "stem": "ren",
+  "stem_character": "壬",
+  "stem_element": "water",
+  "stem_polarity": "yang"
+ },
+ "day_boundary": "midnight",
+ "engine_version": "0.10.0",
+ "ephemeris_mode": "moshier",
+ "hour": {
+  "branch": null,
+  "branch_animal": null,
+  "branch_character": null,
+  "branch_element": null,
+  "branch_polarity": null,
+  "reason": "birth_time_unknown",
+  "sexagenary_index": null,
+  "status": "not_evaluable",
+  "stem": null,
+  "stem_character": null,
+  "stem_element": null,
+  "stem_polarity": null
+ },
+ "lichun_year": 1990,
+ "location": {
+  "altitude_meters": 0.0,
+  "latitude": 28.61,
+  "longitude": 77.21
+ },
+ "month": {
+  "branch": "si",
+  "branch_animal": "snake",
+  "branch_character": "巳",
+  "branch_element": "fire",
+  "branch_polarity": "yin",
+  "reason": null,
+  "sexagenary_index": 17,
+  "status": "success",
+  "stem": "xin",
+  "stem_character": "辛",
+  "stem_element": "metal",
+  "stem_polarity": "yin"
+ },
+ "near_solar_term": false,
+ "not_evaluated": [
+  "luck_cycles_require_sex_not_collected",
+  "hidden_stems",
+  "ten_gods",
+  "na_yin",
+  "interpretation"
+ ],
+ "profile_id": "CHINESE_BAZI_FOUR_PILLARS_SOLAR_TERMS_V1",
+ "provenance": [
+  {
+   "entry_id": "prov.solar_terms",
+   "evidence_label": "source_supported",
+   "item": "Solar terms",
+   "references": [
+    {
+     "locator": "'The 24 Solar Terms' (Table 1) and 24SolarTerms_YYYY.xml, 2020-2028",
+     "note": "Pandit Ji's instants agree with HKO's published minute-rounded times for all 216 terms (largest difference 30.2 s; fixture hko_solar_terms_and_year_names.json).",
+     "source_id": "SRC-HKO-CALENDAR",
+     "verification_level": "DOCUMENTATION-DIRECT"
+    }
+   ],
+   "statement": "The 24 solar terms are the instants the Sun's apparent (tropical) longitude reaches multiples of 15 degrees; 立春 is 315 degrees."
+  },
+  {
+   "entry_id": "prov.year",
+   "evidence_label": "modern_tradition",
+   "item": "Year pillar",
+   "references": [
+    {
+     "locator": "卷二 論遁月時 ('正月起丙寅'); 卷二 大運 passage (立春 opens the next month)",
+     "note": "The text counts months from 寅 opened by the jie terms; it was not found stating the year boundary in so many words, hence 'modern_tradition'. The sexagenary year labels agree with HKO's for 1901-2100 samples.",
+     "source_id": "SRC-SANMING-TONGHUI-WAN-MINYING",
+     "verification_level": "WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)"
+    }
+   ],
+   "statement": "The year pillar changes at 立春, not at the lunar new year; index (Y - 4) mod 60. The popular zodiac year that changes at the lunar new year is a different convention and is not produced."
+  },
+  {
+   "entry_id": "prov.month",
+   "evidence_label": "source_supported",
+   "item": "Month pillar",
+   "references": [
+    {
+     "locator": "卷二 論遁月時, 古歌 '甲己之年丙作首 ...'",
+     "note": "",
+     "source_id": "SRC-SANMING-TONGHUI-WAN-MINYING",
+     "verification_level": "WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)"
+    }
+   ],
+   "statement": "Months open at the twelve jie terms (315, 345, 15, ... degrees); the 寅 month's stem from the year stem: 甲己 丙, 乙庚 戊, 丙辛 庚, 丁壬 壬, 戊癸 甲."
+  },
+  {
+   "entry_id": "prov.day",
+   "evidence_label": "engineering_evidence",
+   "item": "Day pillar",
+   "references": [
+    {
+     "locator": "1 January 2000 = 己卯年 丙子月 戊午日",
+     "note": "Several almanac sites agree; no primary or scholarly table was read (Academia Sinica's converter could not be queried automatically). Confidence MEDIUM.",
+     "source_id": "SRC-ALMANAC-SECONDARY",
+     "verification_level": "SECONDARY"
+    }
+   ],
+   "statement": "The continuous sixty-day count, index (JDN + 49) mod 60 with 甲子 = 0, on the local date in the chosen time basis."
+  },
+  {
+   "entry_id": "prov.hour",
+   "evidence_label": "source_supported",
+   "item": "Hour pillar",
+   "references": [
+    {
+     "locator": "卷二 論遁月時, 古歌 '甲己還加甲 ...'",
+     "note": "",
+     "source_id": "SRC-SANMING-TONGHUI-WAN-MINYING",
+     "verification_level": "WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)"
+    }
+   ],
+   "statement": "Twelve double hours, 子 = 23:00-01:00; the 子 hour's stem from the day stem: 甲己 甲, 乙庚 丙, 丙辛 戊, 丁壬 庚, 戊癸 壬."
+  },
+  {
+   "entry_id": "prov.conventions",
+   "evidence_label": "unresolved_conflict",
+   "item": "Time basis and day boundary",
+   "references": [],
+   "statement": "Clock time, local mean solar time and local apparent solar time are all in use, as are a day that changes at 23:00 (the 子 hour) and at midnight; both are explicit request fields with no default. With the midnight boundary, the hour stem of 23:00-24:00 is not evaluated."
+  },
+  {
+   "entry_id": "prov.elements",
+   "evidence_label": "source_supported",
+   "item": "Elements, polarity, animals",
+   "references": [
+    {
+     "locator": "卷二 論十干合, 論地支屬相; 卷三 論十干祿",
+     "note": "",
+     "source_id": "SRC-SANMING-TONGHUI-WAN-MINYING",
+     "verification_level": "WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)"
+    }
+   ],
+   "statement": "Stem and branch elements and polarity, and the branch animals."
+  }
+ ],
+ "solar_term_bracket": {
+  "next_longitude": 75.0,
+  "next_utc": "1990-06-05T22:46:16.830268Z",
+  "previous_longitude": 45.0,
+  "previous_utc": "1990-05-05T18:35:25.364493Z"
+ },
+ "standards_version": "1.18.0",
+ "sun_apparent_longitude": 56.04282222596064,
+ "system": "chinese_bazi",
+ "time_basis": "clock_time",
+ "time_precision": "unknown",
+ "time_resolution": {
+  "disambiguation_applied": null,
+  "dst_active": false,
+  "input_local_datetime": "1990-05-17T10:30:00",
+  "julian_day_et": 2448028.7089951853,
+  "julian_day_ut": 2448028.7083342024,
+  "timezone": "Asia/Kolkata",
+  "utc_datetime": "1990-05-17T05:00:00Z",
+  "utc_offset_seconds": 19800,
+  "was_ambiguous": false,
+  "was_nonexistent": false
+ },
+ "warnings": [
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)",
+  "birth time unknown: the hour pillar is not evaluated; the year and month pillars are evaluated only if no solar term falls on the birth date"
+ ],
+ "year": {
+  "branch": "wu",
+  "branch_animal": "horse",
+  "branch_character": "午",
+  "branch_element": "fire",
+  "branch_polarity": "yang",
+  "reason": null,
+  "sexagenary_index": 6,
+  "status": "success",
+  "stem": "geng",
+  "stem_character": "庚",
+  "stem_element": "metal",
+  "stem_polarity": "yang"
+ }
+}

@@ -38,9 +38,9 @@ source itself gives three disagreeing positions on whether Rahu is a
 candidate) with a labelled `NOT_EVALUABLE(tie_unresolved)`/`rank_deficit`
 tie policy; and the separate Constant Karaka table (Ch. 32 v. 18-21), never
 auto-substituted into a Chara Karaka deficit (`pandit_astro_engine.jaimini`);
-see `docs/ASTROLOGY_STANDARDS.md` section "Jaimini standards". No other
-Jaimini system (Jaimini Dashas, Arudha Pada, Karakamsa, ...) is implemented
-yet.
+see `docs/ASTROLOGY_STANDARDS.md` section "Jaimini standards". WP-G adds
+planet-level Rashi Drishti (Ch. 8 v. 4-5), Arudha Padas (Ch. 29) and
+Karakamsa (Ch. 33); Jaimini Dashas are not implemented.
 
 Phase 9 WP-C (Partial/Degree Drishti): a continuous, degree-based
 refinement of planet-to-house aspect strength, layered on top of Phase
@@ -57,6 +57,15 @@ evaluable inside the polar circles, never substituted), the five Ptolemaic
 aspects with explicit orb profiles and applying/separating state
 (`pandit_astro_engine.western`), kept apart from every Vedic module; see
 `docs/ASTROLOGY_STANDARDS.md` section "Western standards".
+
+Phase 9 WP-E to WP-I: the KP foundation (`kp`: Krishnamurti ayanamsa,
+sidereal Placidus cusps, star/sub/sub-sub lords, the 249-entry table,
+significators, Ruling Planets, KP horary); Shadbala components of BPHS
+Ch. 27 with no total while components are not evaluable (`shadbala`); the
+Chinese Four Pillars calendar pillars (`chinese`); and a Tarot deck, spread
+and seeded-layout foundation (`tarot`). Each is its own module with its own
+profiles and provenance; see `docs/ASTROLOGY_STANDARDS.md` sections "KP
+standards", "Shadbala standards", "Chinese standards" and "Tarot standards".
 
 Yoga/Dosha rule evaluation, Dasha and transit interpretation, Ashtakavarga
 Ch. 71's longevity calculation (blocked under the Ayurdaya policy), narration,

@@ -1,10 +1,10 @@
 # astro-engine
 
-Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3/WP-B-1/WP-B-2/WP-C). Canonical service name — do not rename to `astrology-engine`.
+Deterministic astronomical and chart calculation engine (`Phases.md` Phases 4, 5, 7, 8 and 9 WP-A1/A2/A3, WP-B-1/WP-B-2, WP-C, WP-D, WP-E, WP-F, WP-G, WP-H, WP-I). Canonical service name — do not rename to `astrology-engine`.
 
-**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1); Chara Karaka ranking under two body-scope profiles and the separate Constant Karaka table (Phase 9 WP-B-2); a continuous, degree-based refinement of aspect strength under two independent BPHS/Uttara-Kalamrita profiles (Phase 9 WP-C) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
+**Responsible for**: planetary positions (longitude/latitude/speed/degrees), retrograde, combustion, sunrise/sunset, deterministic timezone conversion (Phase 4); Ascendant/Lagna, whole-sign Houses/Bhavas, Rashi placement, Nakshatra/Pada, house lords, planetary aspects (graha drishti), planetary dignity, and the full locked Shodashvarga divisional-chart set plus the Chandra (Moon) chart (Phase 5); Vimshottari Dasha (Phase 7); transit / Gochar facts and Sade Sati (Phase 8); Ashtakavarga Bhinna and Sarva facts across four independent source profiles, and -- BPHS profiles only -- Trikona/Ekadhipatya Shodhana reductions and Pinda Sadhana (Phase 9 WP-A1/A2/A3); Rashi Drishti, a static sign-to-sign aspect table (Phase 9 WP-B-1); Chara Karaka ranking under two body-scope profiles and the separate Constant Karaka table (Phase 9 WP-B-2); a continuous, degree-based refinement of aspect strength under two independent BPHS/Uttara-Kalamrita profiles (Phase 9 WP-C); Western tropical chart facts (WP-D); the KP foundation (WP-E); Shadbala components (WP-F); planet-level Rashi Drishti, Arudha Padas and Karakamsa (WP-G); Chinese Four Pillars (WP-H); Tarot layouts (WP-I) — see `docs/ARCHITECTURE.md` §"Astrology Engine Architecture" and `docs/ASTROLOGY_STANDARDS.md` for the standards this implements.
 
-**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
+**Not responsible for**: Yoga/Dosha rule evaluation, Ashtakavarga's Ch. 71 longevity calculation (blocked under the Ayurdaya policy) or Ch. 70/72 interpretive judgments, Ayurdaya, Lal Kitab, Nadi, general Horary, Vastu, Feng Shui and Jaimini Dashas (not implemented; `docs/ASTROLOGY_STANDARDS.md` §Phase 9 closure), a Shadbala total, Chalit/Bhava-Chalit (explicitly deferred, see `docs/ASTROLOGY_STANDARDS.md`), any interpretation of Dasha, transit or Ashtakavarga facts, or narration. No HTTP, no database, no dependency on `agent`/`rule-engine`/`knowledge`/`verification`.
 
 ## Purpose
 
@@ -275,6 +275,143 @@ facts.houses.ascendant_sign  # TropicalSign.LIBRA
 - **Aspects**: conjunction, sextile, square, trine, opposition on the shorter arc, orb boundary inclusive, one aspect per pair. Orbs: `WESTERN_ORB_FIXED_V1` by default (8 degrees, 6 for the sextile, an engineering convention) or `WESTERN_ORB_LILLY_1647_MOIETY` (Lilly's per-planet orbs by moiety; pairs with an outer planet are listed as not evaluable). Applying/separating comes from the instantaneous speeds.
 - **Unknown birth time** (`time_precision=UNKNOWN`): positions are reported for the supplied clock time with a warning; houses, angles, house placement and aspects are `NOT_EVALUABLE(birth_time_unknown)`.
 - **Evidence**: outer-planet longitudes agree with JPL Horizons within 0.63 arcsec (`tests/fixtures/western_outer_planets_horizons.json`); Placidus cusps agree with an independent implementation of the semi-arc definition to better than 0.01 arcsec (`tests/test_western_houses.py`).
+
+## KP foundation (Phase 9 WP-E)
+
+KP (Krishnamurti Paddhati) facts in `pandit_astro_engine.kp` (`docs/ASTROLOGY_STANDARDS.md` v1.15.0, KP-01 to KP-16). A foundation, not complete KP: no event judgment, no timing, no conjunction or aspect significators, no node agency.
+
+```python
+from pandit_astro_engine.kp import (
+    DayLordConvention,
+    KpChartRequest,
+    KpHoraryRequest,
+    KpService,
+    KpTimePrecision,
+)
+from pandit_astro_engine.models import LocalDateTimeInput, Location, NodeConvention
+
+kp = KpService()
+chart = kp.calculate_chart(
+    KpChartRequest(
+        local_datetime=LocalDateTimeInput(
+            year=1990, month=5, day=17, hour=12, minute=0, timezone="Asia/Kolkata"
+        ),
+        location=Location(latitude=28.6139, longitude=77.2090),
+        time_precision=KpTimePrecision.EXACT,
+        node_convention=NodeConvention.MEAN,  # required, no default
+    )
+)
+[(c.house, c.lordship.star_lord, c.lordship.sub_lord) for c in chart.cusps.cusps]
+
+horary = kp.calculate_horary(
+    KpHoraryRequest(
+        horary_number=29,  # KP Reader VI's worked example
+        local_datetime=LocalDateTimeInput(
+            year=1969, month=5, day=6, hour=17, minute=30, timezone="Asia/Kolkata"
+        ),
+        location=Location(latitude=18.97, longitude=72.82),
+        node_convention=NodeConvention.MEAN,
+        day_lord_convention=DayLordConvention.LOCAL_CIVIL_DATE,  # required, no default
+    )
+)
+horary.cusps.cusps[6].lordship.sub_lord  # CelestialBody.VENUS (7th cusp, Scorpio 10 deg)
+```
+
+- **Ayanamsa**: `KP_AYANAMSA_KRISHNAMURTI_SWISSEPH` (Swiss Ephemeris mode 5, fitted to KP Reader I's table, within 0.9 arcmin over 1880-2001) by default, `KP_AYANAMSA_KRISHNAMURTI_VP291_SWISSEPH` selectable. It is applied only for the duration of the call and the previous sidereal mode is restored, so Vedic results are never affected (tested).
+- **Houses**: sidereal Placidus cusps; a house runs from its cusp to the next and is ruled by the cusp sign's lord; polar latitudes are `NOT_EVALUABLE`.
+- **Star/sub lords and the 249 table**: derived from the Vimshottari proportions with exact arithmetic (`kp_lords`, `kp_table`); 202 legible rows of KP Reader III's printed list agree exactly (`tests/fixtures/kp_reader3_sub_table.json`).
+- **Significators**: levels (a)-(d) of KP Reader VI; levels (e)/(f) and node agency are listed as not evaluated.
+- **Ruling Planets and horary**: day-lord convention and node convention have no defaults; the horary Ascendant is the start of the numbered sub and the other cusps are solved for the latitude of judgment. Reader VI's example 29 is reproduced (`tests/fixtures/kp_reader6_horary_29.json`, with recorded deviations).
+
+## Shadbala components (Phase 9 WP-F)
+
+Shadbala components of BPHS Ch. 27 in `pandit_astro_engine.shadbala` (`docs/ASTROLOGY_STANDARDS.md` v1.16.0, SB-01 to SB-20), one verse-literal profile `SHADBALA_BPHS_SANTHANAM_27_VERSE`.
+
+```python
+from pandit_astro_engine.models import LocalDateTimeInput, Location
+from pandit_astro_engine.shadbala import (
+    Component,
+    ShadbalaRequest,
+    ShadbalaService,
+    ShadbalaTimePrecision,
+)
+
+facts = ShadbalaService().calculate(
+    ShadbalaRequest(
+        local_datetime=LocalDateTimeInput(
+            year=1990, month=5, day=17, hour=10, minute=30, timezone="Asia/Kolkata"
+        ),
+        location=Location(latitude=28.61, longitude=77.21),
+        time_precision=ShadbalaTimePrecision.EXACT,
+    )
+)
+sun = facts.planets[0]
+sun.component(Component.UCHCHA).virupas  # 52.56...
+sun.component(Component.SHADBALA_TOTAL).status  # ComponentStatus.NOT_EVALUABLE
+sun.not_evaluated_components  # abda, masa, hora, ayana, cheshta, drik (Yuddha: not applicable to the Sun)
+```
+
+- **Evaluated**: Uchcha, Saptavargaja, Ojayugma, Kendradi, Drekkana, Dig, Nathonnatha, Paksha, Tribhaga, Vara, Naisargika, and the Moon's Cheshta (her Paksha Bala).
+- **Not evaluable, with reasons**: Abda and Masa (lord method only in the translator's note, internally inconsistent), Hora (no locked Hora standard), Ayana (verse and note give different methods), Yuddha (war undefined), Cheshta of the Sun and of Mars to Saturn (two methods), Drik (ambiguous arithmetic). Consequently **no Shadbala total is produced**; `evaluated_subtotal_virupas` is a labelled partial sum.
+
+## Jaimini WP-G: planet-level Rashi Drishti, Arudha Pada, Karakamsa (Phase 9)
+
+Pure functions in `pandit_astro_engine.jaimini` (`docs/ASTROLOGY_STANDARDS.md` v1.17.0, JN-11 to JN-18):
+
+- `planet_rashi_drishti(placements)` -- BPHS Ch. 8 v. 4-5 (`RASHI_DRISHTI_PLANET_BPHS_8_4_5`), a separate system from graha drishti.
+- `bhava_padas(lagna, placements)` -- the twelve Bhava Padas with both exceptions, each recording the rule applied (`ARUDHA_BHAVA_PADA_BPHS_29_1_5`); `graha_padas(placements)` for the Sun and Moon only.
+- `karakamsa(chara_karaka_result, longitudes)` -- the Navamsa of the Atma Karaka under the caller's chosen Chara Karaka profile (`KARAKAMSA_BPHS_33_1_2`).
+
+The BPHS worked examples (pp. 107, 294, 295, page images) are the test references; the translator's example disagreements are recorded in the standards (JN-11, JN-14).
+
+## Chinese Four Pillars (Phase 9 WP-H)
+
+Calendar pillars in `pandit_astro_engine.chinese` (`docs/ASTROLOGY_STANDARDS.md` v1.18.0, CN-01 to CN-14).
+
+```python
+from pandit_astro_engine.chinese import (
+    ChineseChartRequest,
+    ChineseChartService,
+    ChineseTimePrecision,
+    DayBoundary,
+    TimeBasis,
+)
+from pandit_astro_engine.models import LocalDateTimeInput, Location
+
+facts = ChineseChartService().calculate(
+    ChineseChartRequest(
+        local_datetime=LocalDateTimeInput(
+            year=2000, month=1, day=1, hour=12, minute=0, timezone="Asia/Shanghai"
+        ),
+        location=Location(latitude=39.9, longitude=116.4),
+        time_precision=ChineseTimePrecision.EXACT,
+        time_basis=TimeBasis.CLOCK_TIME,  # required, no default
+        day_boundary=DayBoundary.ZI_HOUR_2300,  # required, no default
+    )
+)
+[(p.stem_character, p.branch_character) for p in (facts.year, facts.month, facts.day, facts.hour)]
+# [('己', '卯'), ('丙', '子'), ('戊', '午'), ('戊', '午')]
+```
+
+Solar terms come from the Sun's apparent tropical longitude (all 216 Hong Kong Observatory instants for 2020-2028 reproduced within 30.2 s); month and hour stems follow 《三命通會》. Luck cycles need the person's sex, which is not collected, so they are not produced.
+
+## Tarot layouts (Phase 9 WP-I)
+
+`pandit_astro_engine.tarot` (`docs/ASTROLOGY_STANDARDS.md` v1.19.0, TA-01 to TA-10): the Waite-Smith deck (names and Waite's numbering only), Waite's Celtic method and two unlabelled engineering spreads, seeded deterministic draws and user-selected layouts. No meanings; no system randomness.
+
+```python
+from pandit_astro_engine.tarot import CELTIC_CROSS_ID, TarotDrawRequest, TarotService
+
+layout = TarotService().draw(
+    TarotDrawRequest(
+        spread_id=CELTIC_CROSS_ID,
+        seed="caller-supplied-seed",
+        allow_reversals=True,  # required, no default
+        significator_card_id="cups_queen",  # chosen explicitly, never inferred
+    )
+)
+[(p.position_label, p.card.name, p.reversed) for p in layout.placements]
+```
 
 ## Supported bodies
 

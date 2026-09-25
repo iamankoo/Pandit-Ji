@@ -10,8 +10,9 @@ that no open methodology reading changes it. Every other case returns
 taken from the BPHS reference method.
 
 This gate answers "may the total be used"; it does not say whether a planet
-is "strong". No threshold for "strong" is locked (the Phase 6 strength rules
-keep `requires_shadbala`), so no shipped rule calls it yet.
+is "strong". No threshold for "strong" is locked (standards SM-11), so no
+shipped rule calls it; no shipped rule contains a strength condition, and a
+future one returns `requires_shadbala` (standards §Strength).
 """
 
 from __future__ import annotations

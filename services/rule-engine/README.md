@@ -38,7 +38,7 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 ## Panchang evidence (Phase 10)
 
-`RuleEngine.evaluate_kundli` also accepts `panchang_facts`, the JSON form of an astro-engine `DailyPanchang`. `pandit_rule_engine.panchang_evidence` validates it (status/reason invariants; contiguous element lists from the element at sunrise to the one at the next sunrise; the lunar months of both saura frames), keeps the profile and convention identifiers verbatim and records a `facts_hash`. The section is optional and omitted when absent, so earlier bundles hash as before; no rule reads it (`docs/ASTROLOGY_STANDARDS.md` PC-30).
+`RuleEngine.evaluate_kundli` also accepts `panchang_facts`, the JSON form of an astro-engine `DailyPanchang`. `pandit_rule_engine.panchang_evidence` validates it (status/reason invariants; contiguous element lists from the element at sunrise to the one at the next sunrise; the lunar months of both saura frames and the selected frame, Lahiri by default), keeps the profile and convention identifiers verbatim and records a `facts_hash`. The section is optional and omitted when absent, so earlier bundles hash as before; no rule reads it (`docs/ASTROLOGY_STANDARDS.md` PC-30).
 
 ## Local development
 

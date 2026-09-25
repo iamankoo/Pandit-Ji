@@ -145,8 +145,8 @@ astro_engine/
   ashtakvarga/
   dashas/           # vimshottari (mahadasha/antardasha/pratyantar), timeline builder, period lookup (Phase 7)
   transits/         # gochar states, ingress/station events, sade sati (modern tradition), sign-based transit-to-natal contacts (Phase 8)
-  panchang/         # Phase 10: tithi, vara, nakshatra, yoga, karana with exact transitions, sunrise/moonrise, lunar months (both saura frames), horas, eighth-day parts, Panchaka, Bhadra, special points (PC-01 to PC-31)
-  muhurta/          # Phase 10: purpose-tagged, source-tagged factor evaluation and search (MU-01 to MU-14)
+  panchang/         # Phase 10: tithi, vara, nakshatra, yoga, karana with exact transitions, sunrise/moonrise, lunar months (Lahiri saura frame by default, CRC fixed frame as a labelled alternative, both reported), horas, eighth-day parts, Panchaka, Bhadra, special points (PC-01 to PC-31)
+  muhurta/          # Phase 10: purpose-tagged, source-tagged factor evaluation and search (MU-01 to MU-14); rules held as versioned astro-engine data with `export_rules()`, an intentional, owner-approved deviation from the Phase 6 rule format (MU-03)
   compatibility/    # ashtakoot/guna milan scoring
   numerology/
   western/          # tropical + Placidus module, kept isolated from Vedic assumptions (Phase 9 WP-D: built as `pandit_astro_engine/western`, standards WD-01 to WD-20; own body/sign identifiers, no Vedic imports)

@@ -126,6 +126,24 @@ def kp_sidereal_mode(variant: str) -> Iterator[None]:
         swe.set_sid_mode(previous if previous is not None else swe.SIDM_FAGAN_BRADLEY, 0, 0)
 
 
+#: Reference ayanamsas read, never applied as a chart frame, by modules
+#: whose source tables were computed in that frame (Raman Shadbala Cheshta
+#: Bala, standards v1.21.0 SR-17).
+SWE_REFERENCE_AYANAMSA = {"raman": swe.SIDM_RAMAN}
+
+
+def reference_ayanamsa_with_nutation_degrees(key: str, julian_day_ut: float) -> float:
+    """Ayanamsa (with nutation) of a `SWE_REFERENCE_AYANAMSA` mode at the
+    instant, restoring the previously applied sidereal mode afterwards."""
+    previous = _APPLIED_SIDEREAL_MODE
+    swe.set_sid_mode(SWE_REFERENCE_AYANAMSA[key], 0, 0)
+    try:
+        _flags, value = swe.get_ayanamsa_ex_ut(julian_day_ut, 0)
+    finally:
+        swe.set_sid_mode(previous if previous is not None else swe.SIDM_FAGAN_BRADLEY, 0, 0)
+    return float(value)
+
+
 def get_ayanamsa_with_nutation_degrees(julian_day_ut: float) -> float:
     """Ayanamsa of the currently applied sidereal mode including nutation in
     longitude -- the value Swiss Ephemeris itself subtracts from tropical

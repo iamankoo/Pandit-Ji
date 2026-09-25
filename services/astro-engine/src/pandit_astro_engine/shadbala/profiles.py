@@ -317,3 +317,176 @@ COMPONENTS: dict[Component, ComponentDef] = {
         ),
     )
 }
+
+
+# --------------------------------------------------------------------------
+# Modern profile: B. V. Raman, Graha and Bhava Balas (standards v1.21.0)
+# --------------------------------------------------------------------------
+
+RAMAN_PROFILE_ID = "SHADBALA_RAMAN_GRAHA_BHAVA_BALAS"
+RAMAN = "SRC-RAMAN-GRAHA-BHAVA-BALAS"
+_RAMAN_IMG = "IMAGE-ORIGINAL-ENGLISH"
+
+
+def _rref(locator: str, note: str = "") -> SourceReference:
+    return SourceReference(
+        source_id=RAMAN, locator=locator, verification_level=_RAMAN_IMG, note=note
+    )
+
+
+RAMAN_COMPONENTS: dict[Component, ComponentDef] = {
+    d.component: d
+    for d in (
+        ComponentDef(
+            component=Component.UCHCHA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="(longitude - debilitation point), folded to <= 180, / 3",
+            reference=_rref("Art. 20, Example 3 (pp. 11-12)"),
+        ),
+        ComponentDef(
+            component=Component.SAPTAVARGAJA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title=(
+                "Moolatrikona 45 in the Rasi only; own 30, great friend 22.5, friend 15, "
+                "neutral 7.5, enemy 3.75, bitter enemy 1.875 in D1, D2, D3, D7, D9, D12, D30"
+            ),
+            reference=_rref(
+                "Arts. 23-30, Examples 4-9 (pp. 13-22)",
+                "Moolatrikona degree ranges are taken from the locked Phase 6 table (Raman "
+                "refers to his Manual, not read); compound relationship from the Rasi chart.",
+            ),
+        ),
+        ComponentDef(
+            component=Component.OJAYUGMA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="15 each for Rasi and Navamsa: Moon and Venus even, others odd",
+            reference=_rref("Art. 31, Example 10 (pp. 22-24)"),
+        ),
+        ComponentDef(
+            component=Component.KENDRADI,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="Kendra 60, Panapara 30, Apoklima 15, reckoned by signs from the Lagna",
+            reference=_rref("Arts. 32-35, Example 11 (pp. 24-25)"),
+        ),
+        ComponentDef(
+            component=Component.DREKKANA,
+            label=EvidenceLabel.UNRESOLVED_CONFLICT,
+            title="15 by sex and decanate, under the caller's chosen reading (no default)",
+            reference=_rref(
+                "Arts. 36-39, Example 12 (pp. 25-26)",
+                "Text: male first, hermaphrodite middle, female last. Worked example: the Moon "
+                "(female) gets 15 in the second decanate.",
+            ),
+        ),
+        ComponentDef(
+            component=Component.DIG,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="(longitude - powerless angle), folded, / 3; angles from the Ascendant and MC",
+            reference=_rref("Arts. 41-45, Examples 14-15 (pp. 27-30)"),
+        ),
+        ComponentDef(
+            component=Component.NATHONNATHA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="Apparent-time Diva/Ratri Bala; Mercury always 60",
+            reference=_rref("Arts. 47-51, Examples 16-17 (pp. 30-33)"),
+        ),
+        ComponentDef(
+            component=Component.PAKSHA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title=(
+                "Benefics (Moon - Sun folded)/3, malefics 60 minus that; the Moon's value "
+                "doubled; the Moon's nature under the caller's chosen reading (no default)"
+            ),
+            reference=_rref(
+                "Arts. 52-55, Example 18 (pp. 33-36)",
+                "Mercury 'afflicted' or 'well associated' is read with the locked Phase 6 "
+                "same-sign convention (a Pandit Ji choice).",
+            ),
+        ),
+        ComponentDef(
+            component=Component.TRIBHAGA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="Thirds of day and night; Jupiter always 60",
+            reference=_rref("Arts. 56-57, Example 19 (pp. 36-38)"),
+        ),
+        ComponentDef(
+            component=Component.ABDA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="15 to the lord of the 360-day year from the condensed ahargana",
+            reference=_rref(
+                "Arts. 58-60, 63-65, Examples 20-28 (pp. 38-44)",
+                "Condensed ahargana = days from 1 Jan 1900 + 26,543, counted from Wednesday; "
+                "reproduces Raman's Standard Horoscope and, independently, the Santhanam "
+                "BPHS Ch. 27 note example of 1 June 1984.",
+            ),
+        ),
+        ComponentDef(
+            component=Component.MASA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="30 to the lord of the 30-day month from the condensed ahargana",
+            reference=_rref("Arts. 61, 66, Examples 21, 25, 29 (pp. 40-45)"),
+        ),
+        ComponentDef(
+            component=Component.VARA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="45 to the weekday lord, the day from sunrise",
+            reference=_rref("Arts. 62, 67, Example 30 (pp. 41, 45)"),
+        ),
+        ComponentDef(
+            component=Component.HORA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="60 to the lord of the equal one-hour Hora from sunrise",
+            reference=_rref("Arts. 68-70, Example 31 (pp. 45-48)"),
+        ),
+        ComponentDef(
+            component=Component.AYANA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="(24 +/- kranti)/48 x 60 from Raman's 15-degree declination table; Sun doubled",
+            reference=_rref(
+                "Arts. 71-75, Examples 32-33 (pp. 48-55)",
+                "Sayana longitude = the tropical longitude of date. Raman's printed Mars (1.40) "
+                "and Venus (23.80) values are arithmetic slips of his own formula (1.90, 24.30).",
+            ),
+        ),
+        ComponentDef(
+            component=Component.YUDDHA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title=(
+                "Mars to Saturn within 1 degree: the lesser longitude wins; difference of "
+                "(Sthana + Dig + Kala to Hora) / difference of disc diameters"
+            ),
+            reference=_rref("Arts. 76-77, Example 34 (pp. 55-56)"),
+        ),
+        ComponentDef(
+            component=Component.CHESHTA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title=(
+                "Mars to Saturn: sighrocca - (mean + true)/2, reduced, / 3, from Raman's "
+                "mean-motion tables; not applicable to the Sun and Moon"
+            ),
+            reference=_rref(
+                "Arts. 79-107, Examples 36-51, Tables IV-IX (pp. 57-72, 97-101)",
+                "Mercury's sighrocca epoch is 164 degrees as in the text and Example 47; the "
+                "Table VIII header prints 160. Rates from the ten-thousand-day columns.",
+            ),
+        ),
+        ComponentDef(
+            component=Component.NAISARGIKA,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title="60, 51.43, 42.86, 34.29, 25.71, 17.14, 8.57 for Sun to Saturn",
+            reference=_rref("Art. 108 (pp. 72-73)"),
+        ),
+        ComponentDef(
+            component=Component.DRIK,
+            label=EvidenceLabel.MODERN_TRADITION,
+            title=(
+                "One quarter of the Dristi Pinda: Sripati aspect values plus the special "
+                "aspects of Mars (+15), Jupiter (+30), Saturn (+45); benefics +, malefics -"
+            ),
+            reference=_rref(
+                "Arts. 109-120, Examples 53-55 (pp. 74-80)",
+                "The waning Moon and badly associated Mercury are malefic (Art. 117).",
+            ),
+        ),
+    )
+}

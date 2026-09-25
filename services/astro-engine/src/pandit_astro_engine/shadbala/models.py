@@ -10,6 +10,7 @@ Shadbala.
 
 from __future__ import annotations
 
+import datetime as dt
 from enum import Enum
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -24,10 +25,12 @@ from pandit_astro_engine.models import (
 from pandit_astro_engine.rashi import Rashi
 from pandit_astro_engine.shadbala.profiles import (
     PROFILE_ID,
+    RAMAN_PROFILE_ID,
     Component,
     EvidenceLabel,
     SourceReference,
 )
+from pandit_astro_engine.shadbala.raman import DrekkanaReading, MoonPakshaReading
 
 
 class _Model(BaseModel):
@@ -58,6 +61,10 @@ class ShadbalaReason(str, Enum):
     CHESHTA_METHOD_CONFLICT = "cheshta_method_conflict"
     DRIK_FORMULA_AMBIGUOUS = "drik_formula_ambiguous"
     COMPONENT_NOT_EVALUABLE = "component_not_evaluable"
+    # Raman profile (v1.21.0)
+    PLANETARY_WAR_UNRESOLVED = "planetary_war_unresolved"
+    DRIK_NATURE_UNDETERMINED = "drik_nature_undetermined"
+    CHESHTA_TABLES_OUT_OF_RANGE = "cheshta_tables_out_of_range"
 
 
 class ShadbalaRequest(_Model):
@@ -141,5 +148,86 @@ class ShadbalaFacts(_Model):
     unnata_ghatis: float | None
     day_night: DayNight
     planets: tuple[PlanetShadbala, ...]
+    provenance: tuple[ComponentProvenance, ...]
+    warnings: tuple[str, ...] = ()
+
+
+# --------------------------------------------------------------------------
+# Modern profile SHADBALA_RAMAN_GRAHA_BHAVA_BALAS (standards v1.21.0)
+# --------------------------------------------------------------------------
+
+
+class RamanShadbalaRequest(_Model):
+    """A request for the Raman profile. `drekkana_reading` and
+    `moon_paksha_reading` settle two contradictions inside Raman's book and
+    have no default (SR-06, SR-09)."""
+
+    local_datetime: LocalDateTimeInput
+    location: Location
+    time_precision: ShadbalaTimePrecision
+    drekkana_reading: DrekkanaReading
+    moon_paksha_reading: MoonPakshaReading
+    node_convention: NodeConvention = NodeConvention.MEAN
+    allow_moshier_fallback: bool = True
+
+
+class RamanCheshtaDetail(_Model):
+    body: CelestialBody
+    mean_longitude: float
+    sighrocca: float
+    true_longitude_raman_frame: float
+    reduced_kendra: float
+
+
+class RamanDrishtiCell(_Model):
+    aspected: CelestialBody
+    aspecting: CelestialBody
+    signed_value: float
+
+
+class RamanWar(_Model):
+    planets: tuple[CelestialBody, CelestialBody]
+    separation_degrees: float
+    winner: CelestialBody | None = None
+    yuddha_virupas: float | None = None
+    reason: ShadbalaReason | None = None
+
+
+class RamanDetails(_Model):
+    hindu_date: dt.date | None = None
+    condensed_ahargana: int | None = None
+    abda_lord: CelestialBody | None = None
+    masa_lord: CelestialBody | None = None
+    vara_lord: CelestialBody | None = None
+    hora_lord: CelestialBody | None = None
+    hours_since_sunrise: float | None = None
+    krantis: tuple[tuple[CelestialBody, float], ...] = ()
+    cheshta_interval_days: float | None = None
+    cheshta: tuple[RamanCheshtaDetail, ...] = ()
+    drishti: tuple[RamanDrishtiCell, ...] = ()
+    wars: tuple[RamanWar, ...] = ()
+
+
+class RamanShadbalaFacts(_Model):
+    system: str
+    standards_version: str
+    engine_version: str
+    profile_id: str = RAMAN_PROFILE_ID
+    drekkana_reading: DrekkanaReading
+    moon_paksha_reading: MoonPakshaReading
+    time_precision: ShadbalaTimePrecision
+    time_resolution: TimeResolution
+    location: Location
+    ayanamsa: str
+    cheshta_frame_ayanamsa: str
+    node_convention: NodeConvention
+    lagna_longitude: float | None
+    midheaven_longitude: float | None
+    apparent_solar_hours: float | None
+    unnata_ghatis: float | None
+    day_night: DayNight
+    planets: tuple[PlanetShadbala, ...]
+    totals_in_rupas: tuple[tuple[CelestialBody, float | None], ...]
+    details: RamanDetails
     provenance: tuple[ComponentProvenance, ...]
     warnings: tuple[str, ...] = ()

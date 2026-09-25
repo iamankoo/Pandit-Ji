@@ -1,0 +1,288 @@
+{
+ "description": "B. V. Raman, Graha and Bhava Balas (second edition), the worked 'Standard Horoscope' (16 October 1918, 2 p.m. LMT, 13 N, 5h 10m 20s E), transcribed from page images rendered from the archive.org scan (item gzwo_graha-and-bhava-balas-by-b-v-raman-...). Only printed numbers are recorded, never the book's text. printed_slips lists values where Raman's printed figure disagrees with his own stated rule; tests assert the rule and record the slip.",
+ "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+ "verification_level": "IMAGE-ORIGINAL-ENGLISH",
+ "retrieved": "2026-09-25",
+ "inputs": {
+  "nirayana_longitudes_dm": {
+   "sun": [
+    179,
+    8
+   ],
+   "moon": [
+    311,
+    40
+   ],
+   "mars": [
+    229,
+    49
+   ],
+   "mercury": [
+    180,
+    33
+   ],
+   "jupiter": [
+    83,
+    35
+   ],
+   "venus": [
+    170,
+    4
+   ],
+   "saturn": [
+    124,
+    51
+   ]
+  },
+  "ascendant_dm": [
+   294,
+   57
+  ],
+  "midheaven_dm": [
+   214,
+   55
+  ],
+  "ayanamsa_dm": [
+   21,
+   16
+  ],
+  "unnata_ghatis": 24.42,
+  "day_third": 3,
+  "hours_since_sunrise": 8.1,
+  "birth_date": "1918-10-16",
+  "birth_weekday_sunday_zero": 3,
+  "cheshta_total_interval_days": 6862.578,
+  "years_since_1900": 18
+ },
+ "printed": {
+  "uchcha": {
+   "sun": 3.6,
+   "moon": 32.9,
+   "mars": 37.2,
+   "mercury": 54.8,
+   "jupiter": 56.2,
+   "venus": 2.3,
+   "saturn": 34.9
+  },
+  "saptavarga_relations_p18": {
+   "sun": [
+    "friend",
+    "own",
+    "great_enemy",
+    "friend",
+    "friend",
+    "own",
+    "great_friend"
+   ],
+   "moon": [
+    "enemy",
+    "equal",
+    "equal",
+    "friend",
+    "enemy",
+    "equal",
+    "enemy"
+   ],
+   "mars": [
+    "own",
+    "great_friend",
+    "equal",
+    "equal",
+    "equal",
+    "equal",
+    "own"
+   ],
+   "mercury": [
+    "great_friend",
+    "great_friend",
+    "great_friend",
+    "great_friend",
+    "great_friend",
+    "great_friend",
+    "friend"
+   ],
+   "jupiter": [
+    "great_enemy",
+    "equal",
+    "friend",
+    "equal",
+    "equal",
+    "own",
+    "great_enemy"
+   ],
+   "venus": [
+    "great_friend",
+    "great_enemy",
+    "own",
+    "great_enemy",
+    "great_enemy",
+    "own",
+    "great_friend"
+   ],
+   "saturn": [
+    "equal",
+    "equal",
+    "equal",
+    "equal",
+    "great_friend",
+    "great_friend",
+    "equal"
+   ]
+  },
+  "saptavargaja_totals": {
+   "sun": 129.375,
+   "moon": 48.75,
+   "mars": 112.5,
+   "mercury": 150.0,
+   "jupiter": 71.25,
+   "venus": 110.625,
+   "saturn": 82.5
+  },
+  "ojayugma": {
+   "sun": 0.0,
+   "moon": 15.0,
+   "mars": 15.0,
+   "mercury": 30.0,
+   "jupiter": 15.0,
+   "venus": 30.0,
+   "saturn": 15.0
+  },
+  "kendra": {
+   "sun": 15.0,
+   "moon": 30.0,
+   "mars": 30.0,
+   "mercury": 60.0,
+   "jupiter": 15.0,
+   "venus": 15.0,
+   "saturn": 30.0
+  },
+  "drekkana_worked_example": {
+   "sun": 0.0,
+   "moon": 15.0,
+   "mars": 0.0,
+   "mercury": 0.0,
+   "jupiter": 0.0,
+   "venus": 0.0,
+   "saturn": 0.0
+  },
+  "dig": {
+   "sun": 48.07,
+   "moon": 32.25,
+   "mars": 55.03,
+   "mercury": 21.86,
+   "jupiter": 10.45,
+   "venus": 14.95,
+   "saturn": 56.7
+  },
+  "nathonnatha": {
+   "sun": 48.84,
+   "moon": 11.16,
+   "mars": 11.16,
+   "mercury": 60.0,
+   "jupiter": 48.84,
+   "venus": 48.84,
+   "saturn": 11.16
+  },
+  "paksha": {
+   "sun": 15.83,
+   "moon": 88.34,
+   "mars": 15.83,
+   "mercury": 44.17,
+   "jupiter": 44.17,
+   "venus": 44.17,
+   "saturn": 15.83
+  },
+  "tribhaga": {
+   "jupiter": 60.0,
+   "saturn": 60.0
+  },
+  "abda_lord": "saturn",
+  "masa_lord": "mercury",
+  "vara_lord": "mercury",
+  "hora_lord": "moon",
+  "condensed_ahargana": 33405,
+  "krantis_deg": {
+   "sun": -8.07,
+   "moon": -10.6,
+   "mars": -22.48,
+   "mercury": -8.6,
+   "jupiter": 23.14,
+   "venus": -4.56,
+   "saturn": 13.0
+  },
+  "ayana": {
+   "sun": 39.82,
+   "moon": 43.258,
+   "mars": 1.4,
+   "mercury": 40.75,
+   "jupiter": 58.92,
+   "venus": 23.8,
+   "saturn": 13.75
+  },
+  "mean_longitudes": {
+   "sun": 181.2275,
+   "mars": 266.34,
+   "jupiter": 66.91,
+   "saturn": 111.23
+  },
+  "sighroccas": {
+   "mercury": 174.49,
+   "venus": 158.35
+  },
+  "reduced_cheshta_kendra": {
+   "mars": 66.85,
+   "mercury": 6.4,
+   "jupiter": 105.99,
+   "venus": 17.3,
+   "saturn": 63.19
+  },
+  "cheshta": {
+   "mars": 22.28,
+   "mercury": 2.13,
+   "jupiter": 35.33,
+   "venus": 5.76,
+   "saturn": 21.06
+  },
+  "dristi_pinda": {
+   "sun": 66.9,
+   "moon": -47.6,
+   "mars": 21.4,
+   "mercury": 64.2,
+   "jupiter": -26.3,
+   "venus": 74.7,
+   "saturn": 29.5
+  },
+  "drik": {
+   "sun": 16.72,
+   "moon": -11.9,
+   "mars": 5.35,
+   "mercury": 16.05,
+   "jupiter": -6.57,
+   "venus": 18.67,
+   "saturn": 7.37
+  },
+  "shadbala_virupas": {
+   "sun": 377.255,
+   "moon": 416.18,
+   "mars": 322.59,
+   "mercury": 580.46,
+   "jupiter": 442.87,
+   "venus": 356.965,
+   "saturn": 371.79
+  }
+ },
+ "printed_slips": {
+  "ayana_mars": "printed 1.40; (24 - 22.48) / 48 x 60 = 1.90",
+  "ayana_venus": "printed 23.80; (24 - 4.56) / 48 x 60 = 24.30",
+  "saptavarga_moon_hora_cell": "p. 22 prints 30.000 but p. 18 says Sama (7.5) and the total 48.750 uses 7.5",
+  "saptavarga_mars_d30": "p. 18 says Swa; the locked Phase 5 Trimsamsa puts Scorpio 19 deg 49 min in Jupiter's part (equal)",
+  "saptavarga_saturn_d7": "p. 18 says Sama; the locked Phase 5 Saptamsa puts Leo 4 deg 51 min in the second part, Virgo (great friend)",
+  "drishti_saturn_by_mars_angle": "p. 75 prints 225 deg 02 min; the longitudes give 255 deg 02 min, which the printed cell (-22.5) uses",
+  "drishti_cells": "four cells (Sun by Jupiter, Sun by Saturn, Moon by Mars, Jupiter by Mercury) differ from the stated formula by 0.2 to 0.6",
+  "kala_saturn": "p. 57 totals 115.740; p. 81 uses 115.690",
+  "sighrocca_venus": "Art. 104 lists 151.35; Example 48 and Art. 105 use 158.35",
+  "mercury_sighrocca_epoch": "Table VIII header 160; text and Example 47 use 164",
+  "uchcha_rounding": "one decimal, sometimes truncated (Mars 111 deg 49 min / 3 = 37.27, printed 37.2) and sometimes rounded (Jupiter 56.19, printed 56.2)",
+  "total_mars": "p. 81 prints 322.590; its own Mars column sums to 322.890"
+ }
+}

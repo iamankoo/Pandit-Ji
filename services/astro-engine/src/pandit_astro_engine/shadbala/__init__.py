@@ -7,6 +7,11 @@ whose method exists only in the translator's notes, or whose verse and
 notes disagree, are NOT_EVALUABLE with a reason code; consequently no
 Shadbala Pinda (total) is produced, and the partial sum of the evaluated
 components is labelled as partial. No strength judgment, no interpretation.
+
+A second, separately labelled modern profile, `SHADBALA_RAMAN_GRAHA_BHAVA_BALAS`
+(standards v1.21.0, SR-01 to SR-24), follows B. V. Raman's *Graha and Bhava
+Balas* and does produce totals; it has its own request, service and
+provenance (`RamanShadbalaService`) and is never mixed with the BPHS profile.
 """
 
 from pandit_astro_engine.shadbala.constants import (
@@ -19,18 +24,24 @@ from pandit_astro_engine.shadbala.models import (
     ComponentStatus,
     DayNight,
     PlanetShadbala,
+    RamanShadbalaFacts,
+    RamanShadbalaRequest,
     SaptavargaPlacement,
     ShadbalaFacts,
     ShadbalaReason,
     ShadbalaRequest,
     ShadbalaTimePrecision,
 )
-from pandit_astro_engine.shadbala.profiles import PROFILE_ID, Component
+from pandit_astro_engine.shadbala.profiles import PROFILE_ID, RAMAN_PROFILE_ID, Component
+from pandit_astro_engine.shadbala.raman import DrekkanaReading, MoonPakshaReading
+from pandit_astro_engine.shadbala.raman_service import RAMAN_STANDARDS_VERSION, RamanShadbalaService
 from pandit_astro_engine.shadbala.service import LEAF_COMPONENTS, ShadbalaService
 
 __all__ = [
     "LEAF_COMPONENTS",
     "PROFILE_ID",
+    "RAMAN_PROFILE_ID",
+    "RAMAN_STANDARDS_VERSION",
     "SHADBALA_BODIES",
     "SHADBALA_STANDARDS_VERSION",
     "SHADBALA_SYSTEM_ID",
@@ -38,7 +49,12 @@ __all__ = [
     "ComponentResult",
     "ComponentStatus",
     "DayNight",
+    "DrekkanaReading",
+    "MoonPakshaReading",
     "PlanetShadbala",
+    "RamanShadbalaFacts",
+    "RamanShadbalaRequest",
+    "RamanShadbalaService",
     "SaptavargaPlacement",
     "ShadbalaFacts",
     "ShadbalaReason",

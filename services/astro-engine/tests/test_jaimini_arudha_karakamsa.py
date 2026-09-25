@@ -274,3 +274,66 @@ def test_karakamsa_not_evaluable_on_atma_tie() -> None:
     assert result.status is KarakamsaStatus.NOT_EVALUABLE
     assert result.reason is KarakamsaReason.ATMA_KARAKA_UNRESOLVED
     assert result.karakamsa is None
+
+
+# --------------------------------------------------------------------------
+# WP-G facts object with provenance (standards v1.21.0, JN-19/JN-20)
+# --------------------------------------------------------------------------
+
+
+def test_jaimini_facts_service() -> None:
+    from pydantic import ValidationError
+
+    from pandit_astro_engine.jaimini.facts import JaiminiFactsRequest, JaiminiFactsService
+    from pandit_astro_engine.models import LocalDateTimeInput, Location
+
+    ldt = LocalDateTimeInput(
+        year=1990, month=5, day=17, hour=10, minute=30, timezone="Asia/Kolkata"
+    )
+    delhi = Location(latitude=28.61, longitude=77.21)
+    service = JaiminiFactsService()
+    with_nodes = service.calculate(
+        JaiminiFactsRequest(
+            local_datetime=ldt,
+            location=delhi,
+            chara_karaka_profile_id=CHARA_KARAKA_EIGHT_BODY_ID,
+            include_nodes_in_rashi_drishti=True,
+        )
+    )
+    without = service.calculate(
+        JaiminiFactsRequest(
+            local_datetime=ldt,
+            location=delhi,
+            chara_karaka_profile_id=CHARA_KARAKA_EIGHT_BODY_ID,
+            include_nodes_in_rashi_drishti=False,
+        )
+    )
+    assert with_nodes.standards_version == "1.21.0"
+    assert len(with_nodes.planet_rashi_drishti) == 9 and len(without.planet_rashi_drishti) == 7
+    assert len(with_nodes.bhava_padas) == 12 and len(with_nodes.graha_padas) == 9
+    assert with_nodes.karakamsa.chara_karaka_profile_id == CHARA_KARAKA_EIGHT_BODY_ID
+    assert [p.profile_id for p in with_nodes.provenance][1:] == [
+        PLANET_RASHI_DRISHTI_PROFILE_ID,
+        "ARUDHA_BHAVA_PADA_BPHS_29_1_5",
+        "ARUDHA_GRAHA_PADA_BPHS_29_6_7",
+        KARAKAMSA_PROFILE_ID,
+    ]
+    assert with_nodes.model_dump(mode="json") == service.calculate(
+        JaiminiFactsRequest(
+            local_datetime=ldt,
+            location=delhi,
+            chara_karaka_profile_id=CHARA_KARAKA_EIGHT_BODY_ID,
+            include_nodes_in_rashi_drishti=True,
+        )
+    ).model_dump(mode="json")
+    with pytest.raises(ValidationError):
+        JaiminiFactsRequest(  # type: ignore[call-arg]
+            local_datetime=ldt, location=delhi, chara_karaka_profile_id=CHARA_KARAKA_EIGHT_BODY_ID
+        )
+    with pytest.raises(ValidationError):
+        JaiminiFactsRequest(
+            local_datetime=ldt,
+            location=delhi,
+            chara_karaka_profile_id="UNKNOWN",
+            include_nodes_in_rashi_drishti=False,
+        )

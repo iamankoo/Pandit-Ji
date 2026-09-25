@@ -113,6 +113,48 @@ class PlacedCard(_Model):
     reversed: bool
 
 
+class TarotProvenance(_Model):
+    item: str
+    evidence_label: str
+    statement: str
+    source_id: str
+    locator: str
+    verification_level: str
+
+
+_DECK_PROVENANCE = TarotProvenance(
+    item=WAITE_SMITH_DECK_ID,
+    evidence_label="source_supported",
+    statement="78 cards: Trumps Major 0-XXI in Waite's numbering; Wands, Cups, Swords, "
+    "Pentacles, King to Ace",
+    source_id="SRC-WAITE-PICTORIAL-KEY-1911",
+    locator="Pictorial Key, Part II trump headings; Part III suits",
+    verification_level="WEB-TRANSCRIPTION-ORIGINAL-ENGLISH",
+)
+_STREAM_PROVENANCE = TarotProvenance(
+    item=STREAM_ID,
+    evidence_label="engineering_convention",
+    statement="Caller-seeded SHA-256 counter stream, rejection sampling, Fisher-Yates shuffle",
+    source_id="PANDIT-JI",
+    locator="docs/ASTROLOGY_STANDARDS.md TA-04 to TA-06",
+    verification_level="PROJECT_DERIVED",
+)
+
+
+def _spread_provenance(spread: SpreadDef) -> TarotProvenance:
+    source = "SRC-WAITE-PICTORIAL-KEY-1911" if spread.source_locator else "PANDIT-JI"
+    return TarotProvenance(
+        item=spread.spread_id,
+        evidence_label=spread.evidence_label,
+        statement=spread.title,
+        source_id=source,
+        locator=spread.source_locator or "docs/ASTROLOGY_STANDARDS.md TA-03",
+        verification_level="WEB-TRANSCRIPTION-ORIGINAL-ENGLISH"
+        if spread.source_locator
+        else "PROJECT_DERIVED",
+    )
+
+
 class TarotLayout(_Model):
     system: str = TAROT_SYSTEM_ID
     standards_version: str = TAROT_STANDARDS_VERSION
@@ -126,6 +168,7 @@ class TarotLayout(_Model):
     significator: Card | None = None
     placements: tuple[PlacedCard, ...]
     interpretation: None = None
+    provenance: tuple[TarotProvenance, ...] = ()
     notice: str = (
         "A Tarot layout is a traditional practice, not a verified statement about the future, "
         "and not medical, legal, financial or safety advice."
@@ -165,6 +208,7 @@ class TarotService:
             if request.significator_card_id
             else None,
             placements=tuple(placements),
+            provenance=(_DECK_PROVENANCE, _spread_provenance(spread), _STREAM_PROVENANCE),
         )
 
     def select(self, request: TarotSelectionRequest) -> TarotLayout:
@@ -187,4 +231,5 @@ class TarotService:
                 )
                 for position, chosen in zip(spread.positions, request.cards, strict=True)
             ),
+            provenance=(_DECK_PROVENANCE, _spread_provenance(spread)),
         )

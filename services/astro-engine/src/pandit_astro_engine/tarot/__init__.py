@@ -32,6 +32,7 @@ from pandit_astro_engine.tarot.service import (
     SelectedCard,
     TarotDrawRequest,
     TarotLayout,
+    TarotProvenance,
     TarotSelectionRequest,
     TarotService,
 )
@@ -57,6 +58,7 @@ __all__ = [
     "Suit",
     "TarotDrawRequest",
     "TarotLayout",
+    "TarotProvenance",
     "TarotSelectionRequest",
     "TarotService",
 ]

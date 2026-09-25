@@ -206,3 +206,21 @@ def test_no_system_randomness_or_clock() -> None:
             elif isinstance(node, ast.ImportFrom) and node.module:
                 names = [node.module.split(".")[0]]
             assert not (set(names) & forbidden), (path.name, names)
+
+
+def test_layouts_carry_provenance() -> None:
+    drawn = _draw("prov", CELTIC_CROSS_ID, sig="major_00_fool")
+    assert [p.item for p in drawn.provenance] == [
+        "TAROT_DECK_WAITE_SMITH_1910",
+        CELTIC_CROSS_ID,
+        "SHA256_COUNTER_REJECTION_V1",
+    ]
+    assert drawn.provenance[0].source_id == "SRC-WAITE-PICTORIAL-KEY-1911"
+    single = _draw("prov")
+    assert single.provenance[1].evidence_label == "engineering_convention"
+    chosen = SERVICE.select(
+        TarotSelectionRequest(
+            spread_id=SINGLE_CARD_ID, cards=(SelectedCard(card_id="cups_ace", reversed=False),)
+        )
+    )
+    assert [p.item for p in chosen.provenance] == ["TAROT_DECK_WAITE_SMITH_1910", SINGLE_CARD_ID]

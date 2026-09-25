@@ -94,3 +94,11 @@ def evaluate_dignity(
         return DignityStatus.OWN_SIGN
 
     return DignityStatus.NEUTRAL
+
+
+def debilitation_point(body: CelestialBody) -> tuple[Rashi, float]:
+    """(sign, degree) of the deep debilitation point of a classical planet,
+    from the table above. Used by Uchcha Bala (Phase 9 WP-F, SB-03); raises
+    `KeyError` for Rahu/Ketu, which have no point under this standard."""
+    point = _DEBILITATION[body]
+    return point.rashi, point.degree

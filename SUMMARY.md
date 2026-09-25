@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-Status: verified through **Phase 6 (complete, accepted, CI green)**, the **Phase 5 Nakshatra boundary correction** (commit `091ca1b`, CI run `35500359836`, green), **Phase 7 (Dasha & Timing Engine): implemented, CI green** (§25), **Phase 8 (Transit / Gochar Engine): methodology locked (standards v1.6.0), implemented, committed and pushed, CI green** (§26), and, within Phase 9, **WP-A1/A2/A3 Ashtakavarga** (standards v1.7.0/v1.8.0, §27), **WP-EB Ashtakavarga EvidenceBundle integration** (v1.9.0, §28), **WP-B-1 Rashi Drishti** (v1.10.0, §29), **WP-B-2 Chara Karaka and Constant Karaka** (v1.11.0, §30) **WP-C Partial/Degree Drishti** (v1.12.0/v1.13.0, §31; independent audit passed, §32) and **WP-D Western** (tropical positions, Placidus, aspects and orbs; v1.14.0, §33) -- each methodology-locked, implemented, committed, pushed and CI green (WP-D: §33.G). **Phase 9 as a whole is NOT complete**: WP-E KP, WP-F Shadbala, Ayurdaya, the other Jaimini systems and the scope-undefined systems remain open. Current standards document version: **v1.14.0**. Sections 1-19 were written at the end of Phase 5 and are kept as history; §15 carries a post-completion addendum; §20-§31 are per-phase and per-work-package records; §32 is the WP-C audit and documentation-consistency record; **§33 is the current handoff and continuation point**.
+Status: verified through **Phase 6 (complete, accepted, CI green)**, the **Phase 5 Nakshatra boundary correction** (commit `091ca1b`, CI run `35500359836`, green), **Phase 7 (Dasha & Timing Engine): implemented, CI green** (§25), **Phase 8 (Transit / Gochar Engine): methodology locked (standards v1.6.0), implemented, committed and pushed, CI green** (§26), and, within Phase 9, **WP-A1/A2/A3 Ashtakavarga** (standards v1.7.0/v1.8.0, §27), **WP-EB Ashtakavarga EvidenceBundle integration** (v1.9.0, §28), **WP-B-1 Rashi Drishti** (v1.10.0, §29), **WP-B-2 Chara Karaka and Constant Karaka** (v1.11.0, §30) **WP-C Partial/Degree Drishti** (v1.12.0/v1.13.0, §31; independent audit passed, §32) **WP-D Western** (tropical positions, Placidus, aspects and orbs; v1.14.0, §33), and **WP-E KP foundation, WP-F Shadbala components, WP-G Jaimini extensions, WP-H Chinese Four Pillars and WP-I Tarot** (v1.15.0-v1.19.0) with the **Phase 9 closure record** (v1.20.0) (§34). **Phase 9 implementation scope is closed with documented deferrals** (Lal Kitab, Nadi, general Horary, Vastu, Feng Shui, Jaimini Dashas deferred; Ayurdaya excluded pending an owner policy decision; no Shadbala total) -- accepting those deferrals is an owner decision. Current standards document version: **v1.20.0**. Sections 1-19 were written at the end of Phase 5 and are kept as history; §15 carries a post-completion addendum; §20-§31 are per-phase and per-work-package records; §32 is the WP-C audit and documentation-consistency record; §33 is the WP-D handoff; **§34 is the current handoff and continuation point**.
 This document exists purely for session continuity. A future AI coding
 assistant session should be able to read this file and continue exactly
 where the project left off, without re-deriving context from memory.
@@ -919,8 +919,8 @@ This section is the research record written before implementation. At the time i
 Do not assume anything beyond this document, and re-check it against the repository first.
 
 1. Read this `SUMMARY.md`, then verify HEAD, `origin/main`, working tree and GitHub Actions for HEAD; skim `Phases.md`, `docs/ASTROLOGY_STANDARDS.md`, `docs/ARCHITECTURE.md`, `research/ASTROLOGY_SOURCES.md`.
-2. Report: repository state, which phases are complete (1-8 fully, plus Phase 9 WP-A1/A2/A3, WP-EB, WP-B-1, WP-B-2, WP-C and WP-D -- described in §27-§31 and §33; the rest of Phase 9 is open), CI state, and any mismatch with this document.
-3. Phases 7 and 8 are implemented and frozen (§25, §26); Phase 9 WP-A1/A2/A3, WP-EB, WP-B-1, WP-B-2, WP-C and WP-D are implemented and frozen (§27-§31, §33). Do not start another phase, or another Phase 9 work package, without reading `Phases.md` and getting the owner's approval. Sections 25-31 and 33 hold the handoffs, decisions and limitations; **§33.F holds the current continuation point** (§32's "WP-D not started" is now historical).
+2. Report: repository state, which phases are complete (1-8 fully; Phase 9 implementation scope closed with documented deferrals -- WP-A to WP-I in §27-§31, §33, §34), CI state, and any mismatch with this document.
+3. Phases 7 and 8 are implemented and frozen (§25, §26); Phase 9 WP-A1/A2/A3, WP-EB, WP-B-1, WP-B-2, WP-C and WP-D are implemented and frozen (§27-§31, §33). Do not start another phase, or another Phase 9 work package, without reading `Phases.md` and getting the owner's approval. Sections 25-31 and 33 hold the handoffs, decisions and limitations; **§34 holds the current continuation point** (WP-E to WP-I and the Phase 9 closure). The next roadmap phase is Phase 10 (Panchang, Muhurta & Calendar), which needs the owner's go-ahead and a decision on the Phase 9 deferrals.
 4. Standing rules: cite sources honestly (image-checked vs OCR vs translation level; no Sanskrit-level claims without a qualified reviewer); never merge traditions silently; commits use the owner's identity `iamankoo <aniketraj00384@gmail.com>` with no AI attribution (CI rejects vendor names in `.md`, `.py`, `.ts`, `.tsx`, `.dart` files); do not modify Phase 5 or Phase 6 without approval.
 
 ## 24. Open Blockers Before Phase 7 (historical: documentation closure, 2026-09-20; resolved by §25)
@@ -1376,3 +1376,71 @@ Repository and roadmap re-verification (HEAD = `origin/main` = `120c34c`, clean;
 - Commits (author and committer `iamankoo <aniketraj00384@gmail.com>`, no AI attribution): `615947d` docs: lock Phase 9 WP-D Western methodology (standards v1.14.0); `2957a0d` feat: add Western tropical chart facts to astro-engine (Phase 9 WP-D); `e9d68fb` docs: record Phase 9 WP-D Western completion and handoff.
 - Push: the first attempt was rejected by GitHub with an HTTP 500 ("Internal Server Error", request ID `EFE5:3E1945:D9BEF:EB0A4:6AB53540`); `git ls-remote` showed the remote still at `120c34c`, and a single retry succeeded (`120c34c..e9d68fb`). `origin/main` was verified equal to `e9d68fbb28342dccc087fa667921bad592ba29a4`.
 - CI run `36013948673` (event `push`, commit `e9d68fb`; the three commits were pushed together, so this one run covers them): completed, conclusion success. All 15 jobs succeeded, each inspected with its steps; the only skipped steps are the established by-design ones ("Install domain services" outside `server`; `packages/ui` Lint, Format check and Test; `infrastructure/migrations` mypy and pytest). The check-runs API reports 15 check runs, 0 non-success. The `services/astro-engine` job log shows **1166 passed**, matching the local run. The CI result of this §G record itself is in GitHub Actions for the commit that adds it.
+
+## 34. Phase 9 WP-E to WP-I and Phase 9 Closure — Completion and Handoff
+
+**Status: WP-E KP foundation, WP-F Shadbala components, WP-G Jaimini extensions, WP-H Chinese Four Pillars and WP-I Tarot are researched, methodology-locked (standards v1.15.0-v1.19.0), implemented and tested; the remaining Phase 9 systems are researched and recorded as deferred or excluded (v1.20.0, §Phase 9 closure).** The owner's Phase 9 master directive (2026-09-24) authorized the whole cycle -- research, lock, implementation, validation, commit, push, CI -- in one execution, as for WP-D; that directive is the approval for these locks.
+
+**Phase 9 completion status: implementation scope closed, with documented deferrals -- not "complete" in the full roadmap sense.** Lal Kitab, Nadi, general Horary, Vastu, Feng Shui and Jaimini Dashas are not implemented (reasons below), Ayurdaya is excluded pending an owner product-policy decision, and Shadbala produces no total. Accepting these deferrals, or directing further work on any of them, is an owner decision.
+
+Base commit before this work: `fb65f61` (§33.G).
+
+### A. Scope reconciliation (every Phase 9 item)
+
+| Work item (`Phases.md` Phase 9) | Outcome | Where |
+|---|---|---|
+| KP Astrology | Implemented as a foundation (positions, cusps, star/sub/sub-sub lords, 249 table, significators a-d, Ruling Planets); no judgment or timing | WP-E, KP-01 to KP-16 |
+| KP Horary | Implemented (number 1-249 horary chart, Ruling Planets); no judgment | WP-E, KP-11 |
+| Lal Kitab | Research only, deferred (Urdu editions, no qualified reader, presumed in copyright to 2042) | P9-01 |
+| Nadi Astrology | Research only; leaf-matching is not a deterministic calculation | P9-02 |
+| Horary Astrology (general) | Deferred; tradition (Western/Lilly or Vedic/Prashna) not chosen by the roadmap | P9-03 |
+| Western Astrology, Tropical zodiac, Western aspects, Placidus | Done in WP-D | §33 |
+| Chinese astrology | Implemented as Four Pillars calendar pillars; luck cycles not produced (need sex, not collected) | WP-H, CN-01 to CN-14 |
+| Vastu | Deferred (no building data collected; Phase 17 cross-domain) | P9-04 |
+| Feng Shui-related modules | Deferred (needs building data; Eight Mansions needs sex) | P9-05 |
+| Tarot | Implemented as deck, spreads and seeded/user-selected layouts; no meanings | WP-I, TA-01 to TA-10 |
+| Shadbala (BPHS Ch. 27-28) | Implemented with documented limits: 11 components plus the Moon's Cheshta evaluated; 7 not evaluable; no total; Ch. 28 research only | WP-F, SB-01 to SB-20 |
+| Ashtakavarga (BPHS Ch. 66-72) | Done in WP-A1/A2/A3 and WP-EB | §27, §28 |
+| Jaimini: Chara Karakas, Rashi Drishti | Done in WP-B; Ch. 8 v. 4-5 planet level added in WP-G | §29, §30, JN-11 |
+| Arudha Pada, Karakamsa (owner directive; not named in `Phases.md`) | Implemented; roadmap gap reported, `Phases.md` not edited | WP-G, JN-13 to JN-17, P9-09 |
+| Jaimini Dashas | Research only | P9-07 |
+| Ayurdaya (BPHS Ch. 43) | Excluded pending owner product-policy decision | P9-06 |
+
+### B. Research performed (what was actually read)
+- **KP**: KP Readers I, III, VI in archive.org OCR (`OCR-ORIGINAL-ENGLISH`); Swiss Ephemeris §2.8.6 (`DOCUMENTATION-DIRECT`). No page image.
+- **Shadbala**: BPHS Ch. 27 (all 40 verses) and Ch. 28 v. 1-20 in the `BPHSEnglish` OCR (`OCR-TRANSLATION`); Ch. 3 v. 19. No page image.
+- **Jaimini WP-G**: BPHS pp. 107, 294, 295, 296 as page images rendered from the archive.org PDF (`IMAGE-TRANSLATION`); Ch. 29 v. 1-3, 6-7 and Ch. 33 v. 1-2 in OCR.
+- **Chinese**: Hong Kong Observatory solar-term definition and data (`DOCUMENTATION-DIRECT`); 《三命通會》 卷一-卷三 on Wikisource (`WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)`); almanac websites for one day-pillar check (`SECONDARY`, MEDIUM).
+- **Tarot**: Waite, *Pictorial Key*, Parts II-III on English Wikisource (`WEB-TRANSCRIPTION-ORIGINAL-ENGLISH`).
+- **Not read**: any Lal Kitab edition, any Nadi text, Vastu and Feng Shui texts, Jaimini dasha chapters, Prasna Marga. Nothing is claimed about them beyond identification.
+
+### C. Findings and conflicts (preserved, not resolved silently)
+- KP: the Reader's 291 CE zero year and its own table differ by about 1′; the day-lord convention is unstated (no default); the Reader VI example's intermediate cusps differ by 4-9′ (Raphael's tables) and two significator lists differ as a result (recorded in the fixture).
+- Shadbala: six verse/note conflicts or gaps make Abda, Masa, Hora, Ayana, Yuddha, Cheshta (Sun, Mars-Saturn) and Drik `NOT_EVALUABLE`; Saptavargaja is not evaluable when D1 places a planet in its Moolatrikona sign outside the Ch. 3 range.
+- Jaimini: the translator's Arudha chart omits the 7th-house exception for houses 9 and 10, and the note's Aquarius/Saturn example contradicts the verse; the Ch. 8 example (b) contradicts the verse table; the standard-nativity degrees on p. 294 differ from the Ch. 32 table used by the frozen WP-B-2 fixture (ranking unaffected; not edited).
+- Chinese: day boundary and time basis are genuine school differences (no defaults); the late 子 hour under the midnight boundary is not evaluated.
+
+### D. What was implemented
+- New astro-engine packages: `kp/` (constants, profiles, subdivision, significators, ruling_planets, models, service), `shadbala/` (constants, profiles, components, models, service), `chinese/` (constants, pillars, profiles, models, service), `tarot/` (deck, draw, service); `jaimini/` gains `planet_rashi_drishti.py`, `arudha.py`, `karakamsa.py` and WP-G profiles.
+- Additive adapter functions in `ephemeris.py`: `SWE_KP_AYANAMSA`, `kp_sidereal_mode` (applies a KP mode and restores the previous one), `get_ayanamsa_with_nutation_degrees`, `calculate_sidereal_placidus_houses`, `placidus_houses_from_armc`, `calculate_sidereal_angles`, `equation_of_time_days`; `set_sidereal_mode` now records the applied mode. Additive `dignity.debilitation_point`. No existing function's behaviour changed.
+- astro-engine 0.8.0 -> 0.9.0; PyYAML added to astro-engine's dev extras only (the Shadbala drift test reads the locked Phase 6 tables).
+- Fixtures (independent, none generated by the code under test): `kp_reader3_sub_table.json`, `kp_reader6_horary_29.json`, `hko_solar_terms_and_year_names.json`.
+- Not implemented, by decision: interpretation of any kind, EvidenceBundle integration for WP-E to WP-I (separate gates), rule-engine consumers, HTTP endpoints, database tables; `Phases.md` and `features.md` were not modified.
+
+### E. Validation (local, before the commits)
+- astro-engine **1340 passed** (1166 existing + 174 new: KP 70, Shadbala 37, WP-G 15, Chinese 34, Tarot 18); rule-engine 317, agent 2, knowledge 1, verification 1, contracts 2, shared 1, server 5, all passing.
+- `ruff check`, `ruff format --check` clean for every Python package; `mypy src` clean for astro-engine (89 source files) and every other package except `server`, whose two errors (`psycopg` not installed locally) are identical on the untouched baseline and do not occur in CI.
+- Repository-integrity scans (forbidden service names, attribution) and `git diff --check` clean; no secrets, no logging, no personal data in the new files (test charts are published book examples or synthetic).
+- Independent evidence: KP Reader III (202 rows) and Reader VI (example 29); KP Reader I ayanamsa table; BPHS worked examples (Uchcha 50.75; Arudha chart; Navamsa chart; Ch. 8 example); HKO 216 solar terms within 30.2 s and 7 year names; the 1 January 2000 almanac pillars; Waite's trump list and Celtic positions.
+- Isolation: a test proves a Vedic Kundli is identical before and after KP calls; import scans prove KP, Chinese and Tarot import no Vedic/Western modules as applicable and Tarot uses no system randomness.
+
+### F. Known limitations and remaining work
+- KP: no event judgment, timing, conjunction/aspect significators or node agency; OCR-level sources only.
+- Shadbala: no total until the seven not-evaluable components get a source decision (for example a Sanskrit review of Ch. 27 v. 15-25, or an owner-approved modern method as a separately labelled profile); Ch. 28 and Bhava Bala open.
+- Chinese: day count confirmed only against secondary sources (Academia Sinica check recommended); luck cycles blocked by the sex-data rule; no hidden stems, ten gods or Na Yin.
+- Tarot: no meanings (a knowledge/agent-phase task).
+- Deferred systems P9-01 to P9-07 each need owner scoping and sources.
+- Phase 10 dependencies: a Hora standard would unblock Shadbala Hora Bala; sunrise-based Panchang elements are already consumed as noted.
+
+### G. Commits, push and CI
+Recorded after the push in the follow-up documentation commit (a commit cannot record its own hash).

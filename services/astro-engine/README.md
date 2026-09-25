@@ -352,6 +352,7 @@ sun.not_evaluated_components  # abda, masa, hora, ayana, cheshta, drik (Yuddha: 
 ```
 
 - **Evaluated**: Uchcha, Saptavargaja, Ojayugma, Kendradi, Drekkana, Dig, Nathonnatha, Paksha, Tribhaga, Vara, Naisargika, and the Moon's Cheshta (her Paksha Bala).
+- **Modern profile (v1.21.0)**: `RamanShadbalaService` computes the separate profile `SHADBALA_RAMAN_GRAHA_BHAVA_BALAS` after B. V. Raman's *Graha and Bhava Balas*, which evaluates every component and produces totals. It needs two explicit readings (`drekkana_reading`, `moon_paksha_reading`) that settle contradictions inside the book, and it never mixes with the verse profile (SR-01 to SR-24). Every formula is checked on Raman's own printed worked example (`tests/fixtures/raman_standard_horoscope.json`).
 - **Not evaluable, with reasons**: Abda and Masa (lord method only in the translator's note, internally inconsistent), Hora (no locked Hora standard), Ayana (verse and note give different methods), Yuddha (war undefined), Cheshta of the Sun and of Mars to Saturn (two methods), Drik (ambiguous arithmetic). Consequently **no Shadbala total is produced**; `evaluated_subtotal_virupas` is a labelled partial sum.
 
 ## Jaimini WP-G: planet-level Rashi Drishti, Arudha Pada, Karakamsa (Phase 9)
@@ -361,6 +362,8 @@ Pure functions in `pandit_astro_engine.jaimini` (`docs/ASTROLOGY_STANDARDS.md` v
 - `planet_rashi_drishti(placements)` -- BPHS Ch. 8 v. 4-5 (`RASHI_DRISHTI_PLANET_BPHS_8_4_5`), a separate system from graha drishti.
 - `bhava_padas(lagna, placements)` -- the twelve Bhava Padas with both exceptions, each recording the rule applied (`ARUDHA_BHAVA_PADA_BPHS_29_1_5`); `graha_padas(placements)` for the Sun and Moon only.
 - `karakamsa(chara_karaka_result, longitudes)` -- the Navamsa of the Atma Karaka under the caller's chosen Chara Karaka profile (`KARAKAMSA_BPHS_33_1_2`).
+
+`JaiminiFactsService` (v1.21.0, JN-19) bundles these results, with the Chara Karaka ranking and one provenance entry per profile, for one Kundli (`chara_karaka_profile_id` and `include_nodes_in_rashi_drishti` have no default).
 
 The BPHS worked examples (pp. 107, 294, 295, page images) are the test references; the translator's example disagreements are recorded in the standards (JN-11, JN-14).
 

@@ -182,3 +182,117 @@ CHARA_KARAKA_PROFILES: dict[str, CharaKarakaProfileDef] = {
         bodies=_EIGHT_BODIES,
     ),
 }
+
+
+# --------------------------------------------------------------------------
+# Phase 9 WP-G (standards v1.17.0, JN-11 to JN-18): planet-level Rashi
+# Drishti, Arudha Pada and Karakamsa
+# --------------------------------------------------------------------------
+
+
+class JaiminiProfileDef(_Model):
+    profile_id: str
+    label: EvidenceLabel
+    title: str
+    references: tuple[SourceReference, ...]
+
+
+_BPHS = "SRC-BPHS-SANTHANAM-1984"
+
+PLANET_RASHI_DRISHTI_PROFILE_ID = "RASHI_DRISHTI_PLANET_BPHS_8_4_5"
+BHAVA_PADA_PROFILE_ID = "ARUDHA_BHAVA_PADA_BPHS_29_1_5"
+GRAHA_PADA_PROFILE_ID = "ARUDHA_GRAHA_PADA_BPHS_29_6_7"
+KARAKAMSA_PROFILE_ID = "KARAKAMSA_BPHS_33_1_2"
+
+PLANET_RASHI_DRISHTI_PROFILE = JaiminiProfileDef(
+    profile_id=PLANET_RASHI_DRISHTI_PROFILE_ID,
+    label=EvidenceLabel.SOURCE_SUPPORTED,
+    title=(
+        "A planet casts the Rashi Drishti of the sign it occupies, on those signs and their "
+        "occupants (BPHS Ch. 8 v. 4-5); a separate system from graha drishti"
+    ),
+    references=(
+        SourceReference(
+            source_id=_BPHS,
+            locator="Vol I Ch. 8 v. 4-5 and note, printed p. 107",
+            verification_level="IMAGE-TRANSLATION",
+            note=(
+                "'Simultaneously a planet in the aspected sign is also subjected to the aspect "
+                "concerned.' The translator's worked example (a)-(f) agrees with the verse "
+                "except (b), which says Venus and the Sun (Taurus) aspect none although Taurus "
+                "and Cancer (Jupiter) aspect each other and (c) says Jupiter aspects them. The "
+                "example includes the nodes as aspecting planets (translator's usage)."
+            ),
+        ),
+    ),
+)
+
+BHAVA_PADA_PROFILE = JaiminiProfileDef(
+    profile_id=BHAVA_PADA_PROFILE_ID,
+    label=EvidenceLabel.SOURCE_SUPPORTED,
+    title=(
+        "Bhava Pada: count from the house to its lord, count as many again from the lord; a "
+        "Pada in the house itself moves to the 10th from it, one in the 7th to the 4th"
+    ),
+    references=(
+        SourceReference(
+            source_id=_BPHS,
+            locator="Vol I Ch. 29 v. 1-5 (worked chart p. 295, v. 4-5 p. 296)",
+            verification_level="IMAGE-TRANSLATION",
+            note=(
+                "Rule and exceptions are verse. The translator's worked Arudha chart (p. 295, "
+                "page image) agrees for houses 1-8, 11 and 12 but leaves the 9th and 10th "
+                "Padas in the 7th house without the stated exception (which it does apply to "
+                "the 6th); the note's example 'Aquarius Lagna, Saturn in "
+                "Leo: Taurus' also contradicts the rule (Scorpio). The printed Sanskrit of v. 5 "
+                "reads, to a non-qualified reader, 'lord in the 4th: the 4th is the Pada; lord "
+                "in the 7th: the 10th is the Pada', agreeing with the rule (unreviewed). The "
+                "verse is followed; house lords from the locked Phase 5 lordship table (no "
+                "node co-lordship)."
+            ),
+        ),
+    ),
+)
+
+GRAHA_PADA_PROFILE = JaiminiProfileDef(
+    profile_id=GRAHA_PADA_PROFILE_ID,
+    label=EvidenceLabel.SOURCE_SUPPORTED,
+    title=(
+        "Graha Pada of the Sun and the Moon: count from the planet to its own sign, count as "
+        "many again; planets with two own signs are not evaluated ('consider the stronger' is "
+        "undefined)"
+    ),
+    references=(
+        SourceReference(
+            source_id=_BPHS,
+            locator="Vol I Ch. 29 v. 6-7 and note, printed p. 296",
+            verification_level="OCR-TRANSLATION",
+            note=(
+                "The note says the Bhava Pada exceptions do not apply to planets (not stated "
+                "in the verse) and that nodal co-lordship is a translator's reading; neither "
+                "changes the Sun's or Moon's result."
+            ),
+        ),
+    ),
+)
+
+KARAKAMSA_PROFILE = JaiminiProfileDef(
+    profile_id=KARAKAMSA_PROFILE_ID,
+    label=EvidenceLabel.SOURCE_SUPPORTED,
+    title=(
+        "Karakamsa: the Navamsa sign of the Atma Karaka, under the caller's chosen Chara "
+        "Karaka profile"
+    ),
+    references=(
+        SourceReference(
+            source_id=_BPHS,
+            locator="Vol I Ch. 33 v. 1-2 and note",
+            verification_level="OCR-TRANSLATION",
+            note=(
+                "v. 1 'Karakamsa identical with Aries etc.' with v. 2 'If Atmakaraka be in "
+                "Aries Navamsa'; the note: 'Karakamsa is the Navamsa occupied by the Atma "
+                "Karaka planet'. Navamsa from the locked Phase 5 D9 scheme."
+            ),
+        ),
+    ),
+)

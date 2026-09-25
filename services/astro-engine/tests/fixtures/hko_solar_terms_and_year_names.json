@@ -1,0 +1,1124 @@
+{
+ "description": "Hong Kong Observatory (HKO) reference data, retrieved 2026-09-24. solar_terms: the published date and time (Hong Kong Time, UTC+8, to the minute) of all 24 solar terms for 2020-2028, from https://www.hko.gov.hk/en/gts/astronomy/data/files/24SolarTerms_YYYY.xml; HKO defines each term as the Sun's apparent longitude reaching a multiple of 15 degrees. year_names: the sexagenary name and animal HKO gives in the header of its Gregorian-Lunar Calendar Conversion Table for the lunar year beginning in that Gregorian year (https://www.hko.gov.hk/en/gts/time/calendar/text/files/TYYYYe.txt).",
+ "source_id": "SRC-HKO-CALENDAR",
+ "verification_level": "DOCUMENTATION-DIRECT",
+ "solar_terms": [
+  {
+   "hkt": "2020-01-06T05:30",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2020-01-20T22:55",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2020-02-04T17:03",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2020-02-19T12:57",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2020-03-05T10:57",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2020-03-20T11:50",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2020-04-04T15:38",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2020-04-19T22:45",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2020-05-05T08:51",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2020-05-20T21:49",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2020-06-05T12:58",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2020-06-21T05:44",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2020-07-06T23:14",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2020-07-22T16:37",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2020-08-07T09:06",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2020-08-22T23:45",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2020-09-07T12:08",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2020-09-22T21:31",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2020-10-08T03:55",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2020-10-23T07:00",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2020-11-07T07:14",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2020-11-22T04:40",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2020-12-07T00:09",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2020-12-21T18:02",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2021-01-05T11:23",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2021-01-20T04:40",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2021-02-03T22:59",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2021-02-18T18:44",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2021-03-05T16:54",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2021-03-20T17:37",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2021-04-04T21:35",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2021-04-20T04:33",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2021-05-05T14:47",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2021-05-21T03:37",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2021-06-05T18:52",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2021-06-21T11:32",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2021-07-07T05:05",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2021-07-22T22:26",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2021-08-07T14:54",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2021-08-23T05:35",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2021-09-07T17:53",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2021-09-23T03:21",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2021-10-08T09:39",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2021-10-23T12:51",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2021-11-07T12:59",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2021-11-22T10:34",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2021-12-07T05:57",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2021-12-21T23:59",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2022-01-05T17:14",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2022-01-20T10:39",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2022-02-04T04:51",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2022-02-19T00:43",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2022-03-05T22:44",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2022-03-20T23:33",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2022-04-05T03:20",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2022-04-20T10:24",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2022-05-05T20:26",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2022-05-21T09:23",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2022-06-06T00:26",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2022-06-21T17:14",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2022-07-07T10:38",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2022-07-23T04:07",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2022-08-07T20:29",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2022-08-23T11:16",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2022-09-07T23:32",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2022-09-23T09:04",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2022-10-08T15:22",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2022-10-23T18:36",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2022-11-07T18:45",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2022-11-22T16:20",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2022-12-07T11:46",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2022-12-22T05:48",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2023-01-05T23:05",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2023-01-20T16:30",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2023-02-04T10:43",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2023-02-19T06:34",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2023-03-06T04:36",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2023-03-21T05:24",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2023-04-05T09:13",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2023-04-20T16:14",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2023-05-06T02:19",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2023-05-21T15:09",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2023-06-06T06:18",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2023-06-21T22:58",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2023-07-07T16:31",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2023-07-23T09:50",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2023-08-08T02:23",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2023-08-23T17:01",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2023-09-08T05:27",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2023-09-23T14:50",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2023-10-08T21:16",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2023-10-24T00:21",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2023-11-08T00:36",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2023-11-22T22:03",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2023-12-07T17:33",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2023-12-22T11:27",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2024-01-06T04:49",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2024-01-20T22:07",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2024-02-04T16:27",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2024-02-19T12:13",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2024-03-05T10:23",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2024-03-20T11:06",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2024-04-04T15:02",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2024-04-19T22:00",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2024-05-05T08:10",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2024-05-20T21:00",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2024-06-05T12:10",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2024-06-21T04:51",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2024-07-06T22:20",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2024-07-22T15:44",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2024-08-07T08:09",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2024-08-22T22:55",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2024-09-07T11:11",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2024-09-22T20:44",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2024-10-08T03:00",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2024-10-23T06:15",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2024-11-07T06:20",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2024-11-22T03:56",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2024-12-06T23:17",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2024-12-21T17:21",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2025-01-05T10:33",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2025-01-20T04:00",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2025-02-03T22:10",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2025-02-18T18:07",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2025-03-05T16:07",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2025-03-20T17:01",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2025-04-04T20:49",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2025-04-20T03:56",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2025-05-05T13:57",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2025-05-21T02:55",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2025-06-05T17:57",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2025-06-21T10:42",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2025-07-07T04:05",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2025-07-22T21:29",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2025-08-07T13:52",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2025-08-23T04:34",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2025-09-07T16:52",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2025-09-23T02:19",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2025-10-08T08:41",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2025-10-23T11:51",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2025-11-07T12:04",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2025-11-22T09:36",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2025-12-07T05:05",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2025-12-21T23:03",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2026-01-05T16:23",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2026-01-20T09:45",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2026-02-04T04:02",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2026-02-18T23:52",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2026-03-05T21:59",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2026-03-20T22:46",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2026-04-05T02:40",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2026-04-20T09:39",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2026-05-05T19:49",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2026-05-21T08:37",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2026-06-05T23:48",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2026-06-21T16:25",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2026-07-07T09:57",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2026-07-23T03:13",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2026-08-07T19:43",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2026-08-23T10:19",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2026-09-07T22:41",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2026-09-23T08:05",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2026-10-08T14:29",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2026-10-23T17:38",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2026-11-07T17:52",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2026-11-22T15:23",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2026-12-07T10:53",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2026-12-22T04:50",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2027-01-05T22:10",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2027-01-20T15:30",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2027-02-04T09:46",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2027-02-19T05:33",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2027-03-06T03:40",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2027-03-21T04:25",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2027-04-05T08:17",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2027-04-20T15:18",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2027-05-06T01:25",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2027-05-21T14:18",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2027-06-06T05:26",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2027-06-21T22:11",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2027-07-07T15:37",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2027-07-23T09:05",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2027-08-08T01:27",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2027-08-23T16:14",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2027-09-08T04:28",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2027-09-23T14:02",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2027-10-08T20:17",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2027-10-23T23:33",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2027-11-07T23:39",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2027-11-22T21:16",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2027-12-07T16:38",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2027-12-22T10:42",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  },
+  {
+   "hkt": "2028-01-06T03:55",
+   "term": "Moderate cold",
+   "sun_longitude": 285
+  },
+  {
+   "hkt": "2028-01-20T21:22",
+   "term": "Severe cold",
+   "sun_longitude": 300
+  },
+  {
+   "hkt": "2028-02-04T15:31",
+   "term": "Spring commences",
+   "sun_longitude": 315
+  },
+  {
+   "hkt": "2028-02-19T11:26",
+   "term": "Spring showers",
+   "sun_longitude": 330
+  },
+  {
+   "hkt": "2028-03-05T09:25",
+   "term": "Insects waken",
+   "sun_longitude": 345
+  },
+  {
+   "hkt": "2028-03-20T10:17",
+   "term": "Vernal equinox",
+   "sun_longitude": 0
+  },
+  {
+   "hkt": "2028-04-04T14:03",
+   "term": "Bright and clear",
+   "sun_longitude": 15
+  },
+  {
+   "hkt": "2028-04-19T21:09",
+   "term": "Corn rain",
+   "sun_longitude": 30
+  },
+  {
+   "hkt": "2028-05-05T07:12",
+   "term": "Summer commences",
+   "sun_longitude": 45
+  },
+  {
+   "hkt": "2028-05-20T20:10",
+   "term": "Corn forms",
+   "sun_longitude": 60
+  },
+  {
+   "hkt": "2028-06-05T11:16",
+   "term": "Corn on ear",
+   "sun_longitude": 75
+  },
+  {
+   "hkt": "2028-06-21T04:02",
+   "term": "Summer solstice",
+   "sun_longitude": 90
+  },
+  {
+   "hkt": "2028-07-06T21:30",
+   "term": "Moderate heat",
+   "sun_longitude": 105
+  },
+  {
+   "hkt": "2028-07-22T14:54",
+   "term": "Great heat",
+   "sun_longitude": 120
+  },
+  {
+   "hkt": "2028-08-07T07:21",
+   "term": "Autumn commences",
+   "sun_longitude": 135
+  },
+  {
+   "hkt": "2028-08-22T22:01",
+   "term": "End of heat",
+   "sun_longitude": 150
+  },
+  {
+   "hkt": "2028-09-07T10:22",
+   "term": "White dew",
+   "sun_longitude": 165
+  },
+  {
+   "hkt": "2028-09-22T19:45",
+   "term": "Autumnal equinox",
+   "sun_longitude": 180
+  },
+  {
+   "hkt": "2028-10-08T02:09",
+   "term": "Cold dew",
+   "sun_longitude": 195
+  },
+  {
+   "hkt": "2028-10-23T05:13",
+   "term": "Frost",
+   "sun_longitude": 210
+  },
+  {
+   "hkt": "2028-11-07T05:27",
+   "term": "Winter commences",
+   "sun_longitude": 225
+  },
+  {
+   "hkt": "2028-11-22T02:54",
+   "term": "Light snow",
+   "sun_longitude": 240
+  },
+  {
+   "hkt": "2028-12-06T22:25",
+   "term": "Heavy snow",
+   "sun_longitude": 255
+  },
+  {
+   "hkt": "2028-12-21T16:20",
+   "term": "Winter solstice",
+   "sun_longitude": 270
+  }
+ ],
+ "year_names": {
+  "1901": {
+   "stem": "xin",
+   "branch": "chou",
+   "animal": "ox"
+  },
+  "1950": {
+   "stem": "geng",
+   "branch": "yin",
+   "animal": "tiger"
+  },
+  "1984": {
+   "stem": "jia",
+   "branch": "zi",
+   "animal": "mouse"
+  },
+  "2000": {
+   "stem": "geng",
+   "branch": "chen",
+   "animal": "dragon"
+  },
+  "2024": {
+   "stem": "jia",
+   "branch": "chen",
+   "animal": "dragon"
+  },
+  "2044": {
+   "stem": "jia",
+   "branch": "zi",
+   "animal": "mouse"
+  },
+  "2100": {
+   "stem": "geng",
+   "branch": "shen",
+   "animal": "monkey"
+  }
+ }
+}

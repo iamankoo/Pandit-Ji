@@ -1,0 +1,118 @@
+{
+ "description": "KP Reader VI (Horary Astrology), worked horary example: number 29 given at Bombay at 5.30 P.M. IST on 6-5-1969, read in the archive.org OCR text (item kp-readers). Only values legible in the OCR are recorded. The Reader's cusps come from Raphael's printed Tables of Houses; its significator table includes node agency and conjunction/aspect significators, which Pandit Ji does not evaluate.",
+ "source_id": "SRC-KP-READER-VI-KRISHNAMURTI",
+ "verification_level": "OCR-ORIGINAL-ENGLISH",
+ "retrieved": "2026-09-24",
+ "input": {
+  "horary_number": 29,
+  "local": "1969-05-06T17:30:00",
+  "timezone": "Asia/Kolkata",
+  "latitude": 18.97,
+  "longitude": 72.82,
+  "latitude_note": "Bombay; the Reader does not print the coordinates used"
+ },
+ "printed": {
+  "ayanamsa": "23-20",
+  "cusp_7": {
+   "sign": "scorpio",
+   "degree_in_sign": "10-00",
+   "star_lord": "saturn",
+   "sub_lord": "venus"
+  },
+  "cusp_12_degree_in_sign": "5-04",
+  "cusp_8_degree_in_sign": "6-04",
+  "moon_degree_in_sign": "21-22",
+  "venus_degree_in_sign": "18-00",
+  "venus_sign": "pisces",
+  "dasa_balance": "Venus 7 years 11 months 12 days",
+  "significators_by_house": {
+   "1": [
+    "sun",
+    "moon",
+    "mars",
+    "mercury",
+    "venus",
+    "saturn",
+    "rahu",
+    "ketu"
+   ],
+   "2": [
+    "mars",
+    "mercury",
+    "saturn",
+    "ketu"
+   ],
+   "3": [
+    "moon",
+    "mercury",
+    "venus",
+    "rahu",
+    "ketu"
+   ],
+   "4": [
+    "moon",
+    "mercury",
+    "venus",
+    "rahu",
+    "ketu"
+   ],
+   "5": [
+    "mars",
+    "mercury",
+    "jupiter",
+    "venus",
+    "saturn",
+    "rahu",
+    "ketu"
+   ],
+   "6": [
+    "sun",
+    "moon",
+    "venus",
+    "saturn",
+    "rahu",
+    "ketu"
+   ],
+   "7": [
+    "mars"
+   ],
+   "8": [
+    "moon",
+    "mercury",
+    "jupiter",
+    "saturn",
+    "rahu",
+    "ketu"
+   ],
+   "9": [
+    "saturn",
+    "rahu"
+   ],
+   "10": [
+    "saturn",
+    "rahu"
+   ],
+   "11": [
+    "sun",
+    "moon",
+    "jupiter",
+    "venus",
+    "saturn",
+    "rahu",
+    "ketu"
+   ],
+   "12": [
+    "sun",
+    "mars",
+    "jupiter",
+    "saturn",
+    "rahu",
+    "ketu"
+   ]
+  }
+ },
+ "known_deviations": {
+  "intermediate_cusps": "Pandit Ji solves the cusps with the true obliquity of the date; the Reader interpolates Raphael's tables. Cusp 12 differs by about 4 arcmin and cusp 8 by about 9 arcmin.",
+  "houses_2_and_5": "Pandit Ji's 5th cusp falls at Leo 29 deg 33 min, 27 arcmin before Virgo, so the Sun is the 5th-house lord (level d); the Reader's list for house 5 omits the Sun and matches a 5th cusp in Virgo. For house 2, Venus (in Revati, a Mercury star; Mercury rules the 2nd cusp) is a level-c significator in Pandit Ji's result but is absent from the Reader's printed list; no reason is stated in the example. Every other house's Pandit Ji significators are a subset of the Reader's list, which also contains node-agency and conjunction/aspect significators."
+ }
+}

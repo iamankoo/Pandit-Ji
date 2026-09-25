@@ -18,6 +18,9 @@ explicitly flagged in every result.
 
 from __future__ import annotations
 
+from collections.abc import Iterator
+from contextlib import contextmanager
+
 import swisseph as swe
 
 from pandit_astro_engine.errors import (
@@ -58,7 +61,19 @@ SWE_WESTERN_OUTER_BODY_ID = {
     "pluto": swe.PLUTO,
 }
 
+#: Swiss Ephemeris sidereal modes for the KP module (Phase 9 WP-E, KP-02),
+#: keyed by the KP ayanamsa variant name. Kept apart from `_AYANAMSA_TO_SWE`
+#: so the Vedic `Ayanamsa` enum (and every Vedic request) is unchanged.
+SWE_KP_AYANAMSA = {
+    "krishnamurti": swe.SIDM_KRISHNAMURTI,
+    "krishnamurti_vp291": swe.SIDM_KRISHNAMURTI_VP291,
+}
+
 _EPHE_PATH_CONFIGURED: str | None = None
+
+#: The sidereal mode most recently applied through `set_sidereal_mode`, so a
+#: temporary KP mode can be undone (the Swiss Ephemeris mode is process-global).
+_APPLIED_SIDEREAL_MODE: int | None = None
 
 
 def swisseph_version() -> str:
@@ -91,7 +106,33 @@ def utc_to_julian_day(
 
 
 def set_sidereal_mode(ayanamsa: Ayanamsa) -> None:
-    swe.set_sid_mode(_AYANAMSA_TO_SWE[ayanamsa], 0, 0)
+    global _APPLIED_SIDEREAL_MODE
+    mode = _AYANAMSA_TO_SWE[ayanamsa]
+    swe.set_sid_mode(mode, 0, 0)
+    _APPLIED_SIDEREAL_MODE = mode
+
+
+@contextmanager
+def kp_sidereal_mode(variant: str) -> Iterator[None]:
+    """Apply a KP ayanamsa (`SWE_KP_AYANAMSA` key) for the duration of the
+    block, then restore the mode that was applied before it (or the Swiss
+    Ephemeris default when none was), so a KP calculation can never leave
+    its ayanamsa behind for a later Vedic calculation (Phase 9 WP-E, KP-02)."""
+    previous = _APPLIED_SIDEREAL_MODE
+    swe.set_sid_mode(SWE_KP_AYANAMSA[variant], 0, 0)
+    try:
+        yield
+    finally:
+        swe.set_sid_mode(previous if previous is not None else swe.SIDM_FAGAN_BRADLEY, 0, 0)
+
+
+def get_ayanamsa_with_nutation_degrees(julian_day_ut: float) -> float:
+    """Ayanamsa of the currently applied sidereal mode including nutation in
+    longitude -- the value Swiss Ephemeris itself subtracts from tropical
+    positions and cusps when `FLG_SIDEREAL` is set (verified: tropical minus
+    this value reproduces the sidereal Placidus cusps exactly)."""
+    _flags, value = swe.get_ayanamsa_ex_ut(julian_day_ut, 0)
+    return float(value)
 
 
 def get_ayanamsa_degrees(julian_day_ut: float) -> float:
@@ -222,6 +263,30 @@ def calculate_ascendant(
     return float(ascmc[0]) % 360.0
 
 
+def calculate_sidereal_angles(
+    julian_day_ut: float, *, latitude: float, longitude: float
+) -> tuple[float, float]:
+    """(Ascendant, MC) sidereal longitudes under the currently applied
+    sidereal mode. Both angles are independent of the house system (Swiss
+    Ephemeris `ascmc[0]`/`ascmc[1]`); used by Dig Bala (Phase 9 WP-F, SB-06)."""
+    try:
+        _cusps, ascmc = swe.houses_ex(julian_day_ut, latitude, longitude, b"W", swe.FLG_SIDEREAL)
+    except swe.Error as exc:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(str(exc)) from exc
+    return float(ascmc[0]) % 360.0, float(ascmc[1]) % 360.0
+
+
+def equation_of_time_days(julian_day_ut: float) -> float:
+    """Local apparent time minus local mean time, in days (Swiss Ephemeris
+    `swe_time_equ`); used to convert to apparent solar time for Nathonnatha
+    Bala (Phase 9 WP-F, SB-07)."""
+    try:
+        value = swe.time_equ(julian_day_ut)
+    except swe.Error as exc:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(str(exc)) from exc
+    return float(value)
+
+
 def true_obliquity_degrees(julian_day_ut: float) -> float:
     """True obliquity of the ecliptic of date, degrees (Swiss Ephemeris
     `SE_ECL_NUT`, first element). Used by the Western module's polar-circle
@@ -256,6 +321,47 @@ def calculate_placidus_houses(
     of ever returning the substitute cusps."""
     try:
         cusps, ascmc = swe.houses_ex(julian_day_ut, latitude, longitude, b"P", 0)
+    except swe.Error as exc:
+        raise HouseSystemUnavailableError(str(exc)) from exc
+    if len(cusps) != 12:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(f"expected 12 house cusps, got {len(cusps)}")
+    return RawHouses(
+        cusps=tuple(float(c) % 360.0 for c in cusps),
+        ascendant=float(ascmc[0]) % 360.0,
+        midheaven=float(ascmc[1]) % 360.0,
+        armc=float(ascmc[2]) % 360.0,
+    )
+
+
+def calculate_sidereal_placidus_houses(
+    julian_day_ut: float, *, latitude: float, longitude: float
+) -> RawHouses:
+    """Sidereal Placidus cusps 1-12, Ascendant, MC and ARMC under the
+    currently applied sidereal mode (the KP natal chart, Phase 9 WP-E, KP-04).
+    Like `calculate_placidus_houses`, never returns Swiss Ephemeris's
+    Porphyry substitute: a failure raises `HouseSystemUnavailableError`."""
+    try:
+        cusps, ascmc = swe.houses_ex(julian_day_ut, latitude, longitude, b"P", swe.FLG_SIDEREAL)
+    except swe.Error as exc:
+        raise HouseSystemUnavailableError(str(exc)) from exc
+    if len(cusps) != 12:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(f"expected 12 house cusps, got {len(cusps)}")
+    return RawHouses(
+        cusps=tuple(float(c) % 360.0 for c in cusps),
+        ascendant=float(ascmc[0]) % 360.0,
+        midheaven=float(ascmc[1]) % 360.0,
+        armc=float(ascmc[2]) % 360.0,
+    )
+
+
+def placidus_houses_from_armc(armc: float, *, latitude: float, obliquity: float) -> RawHouses:
+    """Tropical Placidus cusps for a given ARMC, latitude and obliquity --
+    the table-of-houses computation used by KP horary (Phase 9 WP-E, KP-11),
+    where the Ascendant is fixed first and the matching sidereal time is
+    solved for. Raises `HouseSystemUnavailableError` instead of accepting a
+    substitute house system."""
+    try:
+        cusps, ascmc = swe.houses_armc(armc, latitude, obliquity, b"P")
     except swe.Error as exc:
         raise HouseSystemUnavailableError(str(exc)) from exc
     if len(cusps) != 12:  # pragma: no cover - defensive

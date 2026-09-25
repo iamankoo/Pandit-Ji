@@ -1,0 +1,1624 @@
+{
+ "description": "Rows of the KP sign-star-sub list printed in KP Reader III (Predictive Stellar Astrology), read in the archive.org OCR text (item kp-readers). Only rows whose OCR text is internally legible are kept: 202 of the 213 parseable rows; each of the other 11 differs from the derived table by a single misread digit. printed_number is kept only where the OCR row number is also legible and agrees; otherwise null. Only the lords and degree ranges are recorded (facts), not the Reader's descriptive text.",
+ "source_id": "SRC-KP-READER-III-KRISHNAMURTI",
+ "verification_level": "OCR-ORIGINAL-ENGLISH",
+ "retrieved": "2026-09-24",
+ "rows": [
+  {
+   "printed_number": 1,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "ketu",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-46-40"
+  },
+  {
+   "printed_number": 2,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "venus",
+   "start_in_sign": "0-46-40",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": 3,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "sun",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "3-40-00"
+  },
+  {
+   "printed_number": 4,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "moon",
+   "start_in_sign": "3-40-00",
+   "end_in_sign": "4-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "mars",
+   "start_in_sign": "4-46-40",
+   "end_in_sign": "5-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "ketu",
+   "sub_lord": "rahu",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "7-33-20"
+  },
+  {
+   "printed_number": 11,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "sun",
+   "start_in_sign": "15-33-20",
+   "end_in_sign": "16-13-20"
+  },
+  {
+   "printed_number": 12,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "moon",
+   "start_in_sign": "16-13-20",
+   "end_in_sign": "17-20-00"
+  },
+  {
+   "printed_number": 13,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "mars",
+   "start_in_sign": "17-20-00",
+   "end_in_sign": "18-06-40"
+  },
+  {
+   "printed_number": 14,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "rahu",
+   "start_in_sign": "18-06-40",
+   "end_in_sign": "20-06-40"
+  },
+  {
+   "printed_number": 15,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "jupiter",
+   "start_in_sign": "20-06-40",
+   "end_in_sign": "21-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "saturn",
+   "start_in_sign": "21-53-20",
+   "end_in_sign": "24-00-00"
+  },
+  {
+   "printed_number": 17,
+   "sign_lord": "mars",
+   "star_lord": "venus",
+   "sub_lord": "mercury",
+   "start_in_sign": "24-00-00",
+   "end_in_sign": "25-53-20"
+  },
+  {
+   "printed_number": 19,
+   "sign_lord": "mars",
+   "star_lord": "sun",
+   "sub_lord": "sun",
+   "start_in_sign": "26-40-00",
+   "end_in_sign": "27-20-00"
+  },
+  {
+   "printed_number": 20,
+   "sign_lord": "mars",
+   "star_lord": "sun",
+   "sub_lord": "moon",
+   "start_in_sign": "27-20-00",
+   "end_in_sign": "28-26-40"
+  },
+  {
+   "printed_number": 21,
+   "sign_lord": "mars",
+   "star_lord": "sun",
+   "sub_lord": "mars",
+   "start_in_sign": "28-26-40",
+   "end_in_sign": "29-13-20"
+  },
+  {
+   "printed_number": 22,
+   "sign_lord": "mars",
+   "star_lord": "sun",
+   "sub_lord": "rahu",
+   "start_in_sign": "29-13-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 23,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "rahu",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "1-13-20"
+  },
+  {
+   "printed_number": 24,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "jupiter",
+   "start_in_sign": "1-13-20",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": 25,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "5-06-40"
+  },
+  {
+   "printed_number": 26,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-06-40",
+   "end_in_sign": "7-00-00"
+  },
+  {
+   "printed_number": 27,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "ketu",
+   "start_in_sign": "7-00-00",
+   "end_in_sign": "7-46-40"
+  },
+  {
+   "printed_number": 28,
+   "sign_lord": "venus",
+   "star_lord": "sun",
+   "sub_lord": "venus",
+   "start_in_sign": "7-46-40",
+   "end_in_sign": "10-00-00"
+  },
+  {
+   "printed_number": 31,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "rahu",
+   "start_in_sign": "11-53-20",
+   "end_in_sign": "13-53-20"
+  },
+  {
+   "printed_number": 32,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "jupiter",
+   "start_in_sign": "13-53-20",
+   "end_in_sign": "15-40-00"
+  },
+  {
+   "printed_number": 33,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "saturn",
+   "start_in_sign": "15-40-00",
+   "end_in_sign": "17-46-40"
+  },
+  {
+   "printed_number": 34,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "mercury",
+   "start_in_sign": "17-46-40",
+   "end_in_sign": "19-40-00"
+  },
+  {
+   "printed_number": 36,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "venus",
+   "start_in_sign": "20-26-40",
+   "end_in_sign": "22-40-00"
+  },
+  {
+   "printed_number": 37,
+   "sign_lord": "venus",
+   "star_lord": "moon",
+   "sub_lord": "sun",
+   "start_in_sign": "22-40-00",
+   "end_in_sign": "23-20-00"
+  },
+  {
+   "printed_number": 38,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": 39,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": 40,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": 41,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 42,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "mercury",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "1-53-20"
+  },
+  {
+   "printed_number": 43,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "ketu",
+   "start_in_sign": "1-53-20",
+   "end_in_sign": "2-40-00"
+  },
+  {
+   "printed_number": 44,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "venus",
+   "start_in_sign": "2-40-00",
+   "end_in_sign": "4-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "sun",
+   "start_in_sign": "4-53-20",
+   "end_in_sign": "5-33-20"
+  },
+  {
+   "printed_number": 46,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "moon",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "6-40-00"
+  },
+  {
+   "printed_number": 47,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "rahu",
+   "start_in_sign": "6-40-00",
+   "end_in_sign": "8-40-00"
+  },
+  {
+   "printed_number": 49,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "saturn",
+   "start_in_sign": "10-26-40",
+   "end_in_sign": "12-33-20"
+  },
+  {
+   "printed_number": 50,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "mercury",
+   "start_in_sign": "12-33-20",
+   "end_in_sign": "14-26-40"
+  },
+  {
+   "printed_number": 51,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "ketu",
+   "start_in_sign": "14-26-40",
+   "end_in_sign": "15-13-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "sun",
+   "start_in_sign": "17-26-40",
+   "end_in_sign": "18-06-40"
+  },
+  {
+   "printed_number": 54,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "moon",
+   "start_in_sign": "18-06-40",
+   "end_in_sign": "19-13-20"
+  },
+  {
+   "printed_number": 55,
+   "sign_lord": "mercury",
+   "star_lord": "rahu",
+   "sub_lord": "mars",
+   "start_in_sign": "19-13-20",
+   "end_in_sign": "20-00-00"
+  },
+  {
+   "printed_number": 56,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "jupiter",
+   "start_in_sign": "20-00-00",
+   "end_in_sign": "21-46-40"
+  },
+  {
+   "printed_number": 57,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "saturn",
+   "start_in_sign": "21-46-40",
+   "end_in_sign": "23-53-20"
+  },
+  {
+   "printed_number": 58,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "mercury",
+   "start_in_sign": "23-53-20",
+   "end_in_sign": "25-46-40"
+  },
+  {
+   "printed_number": 59,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "ketu",
+   "start_in_sign": "25-46-40",
+   "end_in_sign": "26-33-20"
+  },
+  {
+   "printed_number": 61,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "sun",
+   "start_in_sign": "28-46-40",
+   "end_in_sign": "29-26-40"
+  },
+  {
+   "printed_number": 62,
+   "sign_lord": "mercury",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "29-26-40",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 63,
+   "sign_lord": "moon",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "jupiter",
+   "sub_lord": "mars",
+   "start_in_sign": "0-33-20",
+   "end_in_sign": "1-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "jupiter",
+   "sub_lord": "rahu",
+   "start_in_sign": "1-20-00",
+   "end_in_sign": "3-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-20-00",
+   "end_in_sign": "5-26-40"
+  },
+  {
+   "printed_number": 67,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-26-40",
+   "end_in_sign": "7-20-00"
+  },
+  {
+   "printed_number": 68,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "ketu",
+   "start_in_sign": "7-20-00",
+   "end_in_sign": "8-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "sun",
+   "start_in_sign": "10-20-00",
+   "end_in_sign": "11-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "moon",
+   "start_in_sign": "11-00-00",
+   "end_in_sign": "12-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "mars",
+   "start_in_sign": "12-06-40",
+   "end_in_sign": "12-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "rahu",
+   "start_in_sign": "12-53-20",
+   "end_in_sign": "14-53-20"
+  },
+  {
+   "printed_number": 74,
+   "sign_lord": "moon",
+   "star_lord": "saturn",
+   "sub_lord": "jupiter",
+   "start_in_sign": "14-53-20",
+   "end_in_sign": "16-40-00"
+  },
+  {
+   "printed_number": 75,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "mercury",
+   "start_in_sign": "16-40-00",
+   "end_in_sign": "18-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "ketu",
+   "start_in_sign": "18-33-20",
+   "end_in_sign": "19-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "venus",
+   "start_in_sign": "19-20-00",
+   "end_in_sign": "21-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "sun",
+   "start_in_sign": "21-33-20",
+   "end_in_sign": "22-13-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "moon",
+   "start_in_sign": "22-13-20",
+   "end_in_sign": "23-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": 83,
+   "sign_lord": "moon",
+   "star_lord": "mercury",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "ketu",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "venus",
+   "start_in_sign": "0-46-40",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "sun",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "3-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "moon",
+   "start_in_sign": "3-40-00",
+   "end_in_sign": "4-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "rahu",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "7-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "jupiter",
+   "start_in_sign": "7-33-20",
+   "end_in_sign": "9-20-00"
+  },
+  {
+   "printed_number": 91,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "saturn",
+   "start_in_sign": "9-20-00",
+   "end_in_sign": "11-26-40"
+  },
+  {
+   "printed_number": 92,
+   "sign_lord": "sun",
+   "star_lord": "ketu",
+   "sub_lord": "mercury",
+   "start_in_sign": "11-26-40",
+   "end_in_sign": "13-20-00"
+  },
+  {
+   "printed_number": 93,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "venus",
+   "start_in_sign": "13-20-00",
+   "end_in_sign": "15-33-20"
+  },
+  {
+   "printed_number": 94,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "sun",
+   "start_in_sign": "15-33-20",
+   "end_in_sign": "16-13-20"
+  },
+  {
+   "printed_number": 95,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "moon",
+   "start_in_sign": "16-13-20",
+   "end_in_sign": "17-20-00"
+  },
+  {
+   "printed_number": 96,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "mars",
+   "start_in_sign": "17-20-00",
+   "end_in_sign": "18-06-40"
+  },
+  {
+   "printed_number": 97,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "rahu",
+   "start_in_sign": "18-06-40",
+   "end_in_sign": "20-06-40"
+  },
+  {
+   "printed_number": 98,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "jupiter",
+   "start_in_sign": "20-06-40",
+   "end_in_sign": "21-53-20"
+  },
+  {
+   "printed_number": 99,
+   "sign_lord": "sun",
+   "star_lord": "venus",
+   "sub_lord": "saturn",
+   "start_in_sign": "21-53-20",
+   "end_in_sign": "24-00-00"
+  },
+  {
+   "printed_number": 102,
+   "sign_lord": "sun",
+   "star_lord": "sun",
+   "sub_lord": "sun",
+   "start_in_sign": "26-40-00",
+   "end_in_sign": "27-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "sun",
+   "star_lord": "sun",
+   "sub_lord": "mars",
+   "start_in_sign": "28-26-40",
+   "end_in_sign": "29-13-20"
+  },
+  {
+   "printed_number": 105,
+   "sign_lord": "sun",
+   "star_lord": "sun",
+   "sub_lord": "rahu",
+   "start_in_sign": "29-13-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 107,
+   "sign_lord": "mercury",
+   "star_lord": "sun",
+   "sub_lord": "jupiter",
+   "start_in_sign": "1-13-20",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "sun",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "5-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "sun",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-06-40",
+   "end_in_sign": "7-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "sun",
+   "sub_lord": "venus",
+   "start_in_sign": "7-46-40",
+   "end_in_sign": "10-00-00"
+  },
+  {
+   "printed_number": 112,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "moon",
+   "start_in_sign": "10-00-00",
+   "end_in_sign": "11-06-40"
+  },
+  {
+   "printed_number": 113,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "mars",
+   "start_in_sign": "11-06-40",
+   "end_in_sign": "11-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "rahu",
+   "start_in_sign": "11-53-20",
+   "end_in_sign": "13-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "jupiter",
+   "start_in_sign": "13-53-20",
+   "end_in_sign": "15-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "saturn",
+   "start_in_sign": "15-40-00",
+   "end_in_sign": "17-46-40"
+  },
+  {
+   "printed_number": 118,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "ketu",
+   "start_in_sign": "19-40-00",
+   "end_in_sign": "20-26-40"
+  },
+  {
+   "printed_number": 119,
+   "sign_lord": "mercury",
+   "star_lord": "moon",
+   "sub_lord": "venus",
+   "start_in_sign": "20-26-40",
+   "end_in_sign": "22-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mercury",
+   "star_lord": "mars",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 125,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "mercury",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "1-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "ketu",
+   "start_in_sign": "1-53-20",
+   "end_in_sign": "2-40-00"
+  },
+  {
+   "printed_number": 127,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "venus",
+   "start_in_sign": "2-40-00",
+   "end_in_sign": "4-53-20"
+  },
+  {
+   "printed_number": 128,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "sun",
+   "start_in_sign": "4-53-20",
+   "end_in_sign": "5-33-20"
+  },
+  {
+   "printed_number": 129,
+   "sign_lord": "venus",
+   "star_lord": "mars",
+   "sub_lord": "moon",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "6-40-00"
+  },
+  {
+   "printed_number": 130,
+   "sign_lord": "venus",
+   "star_lord": "rahu",
+   "sub_lord": "rahu",
+   "start_in_sign": "6-40-00",
+   "end_in_sign": "8-40-00"
+  },
+  {
+   "printed_number": 140,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "saturn",
+   "start_in_sign": "21-46-40",
+   "end_in_sign": "23-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "mercury",
+   "start_in_sign": "23-53-20",
+   "end_in_sign": "25-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "ketu",
+   "start_in_sign": "25-46-40",
+   "end_in_sign": "26-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "venus",
+   "start_in_sign": "26-33-20",
+   "end_in_sign": "28-46-40"
+  },
+  {
+   "printed_number": 144,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "sun",
+   "start_in_sign": "28-46-40",
+   "end_in_sign": "29-26-40"
+  },
+  {
+   "printed_number": 145,
+   "sign_lord": "venus",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "29-26-40",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "jupiter",
+   "sub_lord": "mars",
+   "start_in_sign": "0-33-20",
+   "end_in_sign": "1-20-00"
+  },
+  {
+   "printed_number": 148,
+   "sign_lord": "mars",
+   "star_lord": "jupiter",
+   "sub_lord": "rahu",
+   "start_in_sign": "1-20-00",
+   "end_in_sign": "3-20-00"
+  },
+  {
+   "printed_number": 149,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-20-00",
+   "end_in_sign": "5-26-40"
+  },
+  {
+   "printed_number": 150,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-26-40",
+   "end_in_sign": "7-20-00"
+  },
+  {
+   "printed_number": 151,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "ketu",
+   "start_in_sign": "7-20-00",
+   "end_in_sign": "8-06-40"
+  },
+  {
+   "printed_number": 152,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "venus",
+   "start_in_sign": "8-06-40",
+   "end_in_sign": "10-20-00"
+  },
+  {
+   "printed_number": 153,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "sun",
+   "start_in_sign": "10-20-00",
+   "end_in_sign": "11-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "moon",
+   "start_in_sign": "11-00-00",
+   "end_in_sign": "12-06-40"
+  },
+  {
+   "printed_number": 155,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "mars",
+   "start_in_sign": "12-06-40",
+   "end_in_sign": "12-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "rahu",
+   "start_in_sign": "12-53-20",
+   "end_in_sign": "14-53-20"
+  },
+  {
+   "printed_number": 157,
+   "sign_lord": "mars",
+   "star_lord": "saturn",
+   "sub_lord": "jupiter",
+   "start_in_sign": "14-53-20",
+   "end_in_sign": "16-40-00"
+  },
+  {
+   "printed_number": 158,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "mercury",
+   "start_in_sign": "16-40-00",
+   "end_in_sign": "18-33-20"
+  },
+  {
+   "printed_number": 159,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "ketu",
+   "start_in_sign": "18-33-20",
+   "end_in_sign": "19-20-00"
+  },
+  {
+   "printed_number": 160,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "venus",
+   "start_in_sign": "19-20-00",
+   "end_in_sign": "21-33-20"
+  },
+  {
+   "printed_number": 161,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "sun",
+   "start_in_sign": "21-33-20",
+   "end_in_sign": "22-13-20"
+  },
+  {
+   "printed_number": 162,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "moon",
+   "start_in_sign": "22-13-20",
+   "end_in_sign": "23-20-00"
+  },
+  {
+   "printed_number": 163,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": 164,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": 165,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": 166,
+   "sign_lord": "mars",
+   "star_lord": "mercury",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 167,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "ketu",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-46-40"
+  },
+  {
+   "printed_number": 168,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "venus",
+   "start_in_sign": "0-46-40",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": 169,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "sun",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "3-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "moon",
+   "start_in_sign": "3-40-00",
+   "end_in_sign": "4-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "mars",
+   "start_in_sign": "4-46-40",
+   "end_in_sign": "5-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "rahu",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "7-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "jupiter",
+   "start_in_sign": "7-33-20",
+   "end_in_sign": "9-20-00"
+  },
+  {
+   "printed_number": 174,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "saturn",
+   "start_in_sign": "9-20-00",
+   "end_in_sign": "11-26-40"
+  },
+  {
+   "printed_number": 175,
+   "sign_lord": "jupiter",
+   "star_lord": "ketu",
+   "sub_lord": "mercury",
+   "start_in_sign": "11-26-40",
+   "end_in_sign": "13-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "venus",
+   "start_in_sign": "13-20-00",
+   "end_in_sign": "15-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "sun",
+   "start_in_sign": "15-33-20",
+   "end_in_sign": "16-13-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "moon",
+   "start_in_sign": "16-13-20",
+   "end_in_sign": "17-20-00"
+  },
+  {
+   "printed_number": 179,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "mars",
+   "start_in_sign": "17-20-00",
+   "end_in_sign": "18-06-40"
+  },
+  {
+   "printed_number": 180,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "rahu",
+   "start_in_sign": "18-06-40",
+   "end_in_sign": "20-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "mercury",
+   "start_in_sign": "24-00-00",
+   "end_in_sign": "25-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "venus",
+   "sub_lord": "ketu",
+   "start_in_sign": "25-53-20",
+   "end_in_sign": "26-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "sun",
+   "sub_lord": "sun",
+   "start_in_sign": "26-40-00",
+   "end_in_sign": "27-20-00"
+  },
+  {
+   "printed_number": 186,
+   "sign_lord": "jupiter",
+   "star_lord": "sun",
+   "sub_lord": "moon",
+   "start_in_sign": "27-20-00",
+   "end_in_sign": "28-26-40"
+  },
+  {
+   "printed_number": 187,
+   "sign_lord": "jupiter",
+   "star_lord": "sun",
+   "sub_lord": "mars",
+   "start_in_sign": "28-26-40",
+   "end_in_sign": "29-13-20"
+  },
+  {
+   "printed_number": 188,
+   "sign_lord": "jupiter",
+   "star_lord": "sun",
+   "sub_lord": "rahu",
+   "start_in_sign": "29-13-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 189,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "rahu",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "1-13-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "jupiter",
+   "start_in_sign": "1-13-20",
+   "end_in_sign": "3-00-00"
+  },
+  {
+   "printed_number": 191,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-00-00",
+   "end_in_sign": "5-06-40"
+  },
+  {
+   "printed_number": 192,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-06-40",
+   "end_in_sign": "7-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "ketu",
+   "start_in_sign": "7-00-00",
+   "end_in_sign": "7-46-40"
+  },
+  {
+   "printed_number": 194,
+   "sign_lord": "saturn",
+   "star_lord": "sun",
+   "sub_lord": "venus",
+   "start_in_sign": "7-46-40",
+   "end_in_sign": "10-00-00"
+  },
+  {
+   "printed_number": 195,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "moon",
+   "start_in_sign": "10-00-00",
+   "end_in_sign": "11-06-40"
+  },
+  {
+   "printed_number": 196,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "mars",
+   "start_in_sign": "11-06-40",
+   "end_in_sign": "11-53-20"
+  },
+  {
+   "printed_number": 197,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "rahu",
+   "start_in_sign": "11-53-20",
+   "end_in_sign": "13-53-20"
+  },
+  {
+   "printed_number": 198,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "jupiter",
+   "start_in_sign": "13-53-20",
+   "end_in_sign": "15-40-00"
+  },
+  {
+   "printed_number": 199,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "saturn",
+   "start_in_sign": "15-40-00",
+   "end_in_sign": "17-46-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "mercury",
+   "start_in_sign": "17-46-40",
+   "end_in_sign": "19-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "ketu",
+   "start_in_sign": "19-40-00",
+   "end_in_sign": "20-26-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "moon",
+   "sub_lord": "venus",
+   "start_in_sign": "20-26-40",
+   "end_in_sign": "22-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": 205,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "mercury",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "1-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "ketu",
+   "start_in_sign": "1-53-20",
+   "end_in_sign": "2-40-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "venus",
+   "start_in_sign": "2-40-00",
+   "end_in_sign": "4-53-20"
+  },
+  {
+   "printed_number": 211,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "sun",
+   "start_in_sign": "4-53-20",
+   "end_in_sign": "5-33-20"
+  },
+  {
+   "printed_number": 212,
+   "sign_lord": "saturn",
+   "star_lord": "mars",
+   "sub_lord": "moon",
+   "start_in_sign": "5-33-20",
+   "end_in_sign": "6-40-00"
+  },
+  {
+   "printed_number": 222,
+   "sign_lord": "saturn",
+   "star_lord": "jupiter",
+   "sub_lord": "jupiter",
+   "start_in_sign": "20-00-00",
+   "end_in_sign": "21-46-40"
+  },
+  {
+   "printed_number": 223,
+   "sign_lord": "saturn",
+   "star_lord": "jupiter",
+   "sub_lord": "saturn",
+   "start_in_sign": "21-46-40",
+   "end_in_sign": "23-53-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "saturn",
+   "star_lord": "jupiter",
+   "sub_lord": "sun",
+   "start_in_sign": "28-46-40",
+   "end_in_sign": "29-26-40"
+  },
+  {
+   "printed_number": 228,
+   "sign_lord": "saturn",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "29-26-40",
+   "end_in_sign": "30-00-00"
+  },
+  {
+   "printed_number": 229,
+   "sign_lord": "jupiter",
+   "star_lord": "jupiter",
+   "sub_lord": "moon",
+   "start_in_sign": "0-00-00",
+   "end_in_sign": "0-33-20"
+  },
+  {
+   "printed_number": 230,
+   "sign_lord": "jupiter",
+   "star_lord": "jupiter",
+   "sub_lord": "mars",
+   "start_in_sign": "0-33-20",
+   "end_in_sign": "1-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "jupiter",
+   "sub_lord": "rahu",
+   "start_in_sign": "1-20-00",
+   "end_in_sign": "3-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "saturn",
+   "start_in_sign": "3-20-00",
+   "end_in_sign": "5-26-40"
+  },
+  {
+   "printed_number": 233,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "mercury",
+   "start_in_sign": "5-26-40",
+   "end_in_sign": "7-20-00"
+  },
+  {
+   "printed_number": 234,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "ketu",
+   "start_in_sign": "7-20-00",
+   "end_in_sign": "8-06-40"
+  },
+  {
+   "printed_number": 235,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "venus",
+   "start_in_sign": "8-06-40",
+   "end_in_sign": "10-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "moon",
+   "start_in_sign": "11-00-00",
+   "end_in_sign": "12-06-40"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "saturn",
+   "sub_lord": "rahu",
+   "start_in_sign": "12-53-20",
+   "end_in_sign": "14-53-20"
+  },
+  {
+   "printed_number": 241,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "mercury",
+   "start_in_sign": "16-40-00",
+   "end_in_sign": "18-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "ketu",
+   "start_in_sign": "18-33-20",
+   "end_in_sign": "19-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "venus",
+   "start_in_sign": "19-20-00",
+   "end_in_sign": "21-33-20"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "sun",
+   "start_in_sign": "21-33-20",
+   "end_in_sign": "22-13-20"
+  },
+  {
+   "printed_number": 245,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "moon",
+   "start_in_sign": "22-13-20",
+   "end_in_sign": "23-20-00"
+  },
+  {
+   "printed_number": null,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "mars",
+   "start_in_sign": "23-20-00",
+   "end_in_sign": "24-06-40"
+  },
+  {
+   "printed_number": 247,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "rahu",
+   "start_in_sign": "24-06-40",
+   "end_in_sign": "26-06-40"
+  },
+  {
+   "printed_number": 248,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "jupiter",
+   "start_in_sign": "26-06-40",
+   "end_in_sign": "27-53-20"
+  },
+  {
+   "printed_number": 249,
+   "sign_lord": "jupiter",
+   "star_lord": "mercury",
+   "sub_lord": "saturn",
+   "start_in_sign": "27-53-20",
+   "end_in_sign": "30-00-00"
+  }
+ ]
+}

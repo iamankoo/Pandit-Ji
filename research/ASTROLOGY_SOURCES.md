@@ -391,7 +391,7 @@ Open standards conflicts added by Phase 9 WP-E to WP-I (no winner chosen unless 
 - **Raman Drekkana order and Moon nature, status OPEN (no default).** Raman's Art. 36 text (neuter middle, female last) versus his Example 12 (female second); Art. 53's "increasing Moon" versus "8th day to 8th day". Exposed as required request fields (SR-06, SR-09).
 - **Raman book slips, status RECORDED (rule followed).** SR-24 lists them; none changes a rule.
 
-- **Saura month frame (Phase 10), status OPEN (both reported, no default).** CRC recommendation (5) fixes the saura months 23 deg 15 min ahead of the equinox; almanacs that use the variable Lahiri ayanamsa place adhika months differently (2023: Shravana versus Bhadrapada; 2026: Jyeshtha versus Ashadha). PC-15.
+- **Saura month frame (Phase 10), status RESOLVED BY OWNER DECISION (2026-09-25; both still reported).** CRC recommendation (5) fixes the saura months 23 deg 15 min ahead of the equinox; almanacs that use the variable Lahiri ayanamsa place adhika months differently (2023: Shravana versus Bhadrapada; 2026: Jyeshtha versus Ashadha). The owner chose Lahiri as the user-facing default for its agreement with present-day almanac practice (secondary evidence); the CRC frame is the labelled alternative. The source conflict itself is unchanged. PC-15.
 - **Chandra Bala (Phase 10), status OPEN (two profiles).** Kalaprakasika avoids the 8th only; Raman the 6th, 8th and 12th. PC-20.
 - **Panchaka (Phase 10), status RESOLVED AS TWO THINGS.** The Nakshatra Panchaka and the remainder Panchaka are different computations under one name; both implemented, never merged. PC-21.
 - **Vyatipata (Phase 10), status RECORDED.** The 17th Panchang yoga and the CRC's printed astronomical phenomenon are different. PC-23.
@@ -558,10 +558,10 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.23.0. Readings the sources do not se
 
 | Profile ID | Status | Label | Source basis and verification level |
 |---|---|---|---|
-| `PANCHANG_DRIK_CRC_1955_V1` | active, default regional configuration | source_supported | CRC 1955, `IMAGE-ORIGINAL-ENGLISH` recommendations and printed calendar |
+| `PANCHANG_DRIK_CRC_1955_V2` (V1 until v1.24.0) | active, default regional configuration | source_supported | CRC 1955, `IMAGE-ORIGINAL-ENGLISH` recommendations and printed calendar |
 | sunrise `crc_1955_centre_refraction_30` | active, default | source_supported | CRC 1955; reproduced to the minute |
 | sunrise `upper_limb_standard_refraction` | active, explicit alternative | engineering_convention | Phase 4 convention (Swiss Ephemeris) |
-| saura frame `crc_fixed_23_15` / `lahiri_variable` | both reported, no default | unresolved_conflict | CRC (5) page image / Lahiri (7) |
+| saura frame `lahiri_variable` / `crc_fixed_23_15` | Lahiri default (owner decision, v1.24.0); CRC labelled alternative; both reported | modern_tradition / source_supported | present-day almanac practice (secondary) / CRC (5) page image |
 | `HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1` | active, only | source_supported | Kalaprakasika pp. 176-177 `IMAGE-TRANSLATION`; Raman Art. 68-70 |
 | `DAY_EIGHTHS_OF_SUNRISE_TO_SUNSET_V1` | active, only | source_supported (Rahu Kalam: translator_note) | Kalaprakasika p. 175-176 `IMAGE-TRANSLATION`; proportional division an inference |
 | `TARA_BALA_NINE_FROM_JANMA` | active | source_supported | Kalaprakasika pp. 166-167; Raman pp. 17-18 |

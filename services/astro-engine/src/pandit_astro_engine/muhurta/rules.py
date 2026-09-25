@@ -501,3 +501,19 @@ RULES: dict[Purpose, tuple[FactorRule, ...]] = {
     Purpose.GRIHA_PRAVESHA: GRIHA_PRAVESHA
     + _common(Purpose.GRIHA_PRAVESHA, ("mrityu", "agni", "raja", "chora", "roga")),
 }
+
+
+def export_rules() -> dict[str, object]:
+    """The rule sets as one versioned, JSON-serializable document (MU-03,
+    owner decision of 2026-09-25): every rule with its identifier, purpose,
+    classification sets, source locator, verification level and evidence
+    label, so the data can be audited, explained or migrated to another rule
+    store without loss."""
+    return {
+        "rules_version": MUHURTA_RULES_VERSION,
+        "purposes": {
+            purpose.value: [rule.model_dump(mode="json") for rule in rules]
+            for purpose, rules in RULES.items()
+        },
+        "aliases": {alias: purpose.value for alias, purpose in PURPOSE_ALIASES.items()},
+    }

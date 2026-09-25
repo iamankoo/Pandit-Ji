@@ -451,12 +451,12 @@ Status (2026-09-25, owner approval of Phase 10; details in `docs/ASTROLOGY_STAND
 | Panchak | Implemented as two different computations: Nakshatra Panchaka and the remainder Panchaka |
 | Bhadra | Implemented as the Vishti karana; Bhadra residence not implemented |
 | Tara Balam, Chandra Balam | Implemented (Chandra Bala in two profiles); need the person's birth nakshatra and Moon sign |
-| Calendar (month, Adhik Maas, years) | Implemented: amanta and purnimanta months, adhika and kshaya, Saka and Chaitradi Vikrama years, under both saura frames with no default |
+| Calendar (month, Adhik Maas, years) | Implemented: amanta and purnimanta months, adhika and kshaya, Saka and Chaitradi Vikrama years; Lahiri saura frame by default, CRC frame as a labelled alternative, both reported |
 | Sun-based upagrahas, Gulika and Mandi, special Lagnas, Pranapada | Implemented with separately tagged readings |
 | Muhurta: Marriage, Griha Pravesh, Mundan, Housewarming | Implemented as factor facts and window search (Housewarming = Griha Pravesh); no verdict |
 | Other auspicious activities | Not implemented (no rule set read) |
 
-Open owner decisions: the saura-frame default (PC-15), the Muhurta rule location (MU-03), Choghadiya and Gowri sources (PC-22), further Muhurta purposes.
+Owner decisions of 2026-09-25 (standards v1.24.0): **Phase 10 is accepted as complete for its supported scope.** Lahiri is the default saura frame for user-facing results, with the CRC 23 deg 15 min frame as a labelled alternative (PC-15); the Muhurta rules stay as astro-engine data, a recorded deviation (MU-03); Choghadiya and Gowri stay deferred and unavailable until verified primary sources exist (PC-22); no further Muhurta purposes until the three are validated in production (MU-01); no Shadbala strength threshold, so Shadbala-dependent rules stay NOT_EVALUABLE (SM-11). Deferred items: Choghadiya, Gowri, unequal horas, Bhadra residence, regional solar calendars, Karttikadi/Ashadhadi Vikrama years, other Muhurta purposes. Roadmap note: Griha Pravesh and Housewarming are one ceremony and one rule set.
 
 ## Phase 11 — Numerology + Compatibility
 

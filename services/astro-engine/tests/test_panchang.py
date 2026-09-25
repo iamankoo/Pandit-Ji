@@ -95,7 +95,6 @@ def test_every_provenance_entry_has_a_reference() -> None:
     assert all(p.references for p in PROVENANCE)
     labels = {p.entry_id: p.label for p in PROVENANCE}
     assert labels["prov.rahu_kalam"] is EvidenceLabel.TRANSLATOR_NOTE
-    assert labels["prov.saura_frames"] is EvidenceLabel.UNRESOLVED_CONFLICT
 
 
 # ------------------------------------------------------------- the day
@@ -104,7 +103,7 @@ def test_every_provenance_entry_has_a_reference() -> None:
 def test_day_contract(service: PanchangService) -> None:
     p = _day(service, dt.date(2026, 3, 20))
     assert p.status is PanchangStatus.SUCCESS and p.reason is None
-    assert p.standards_version == "1.23.0" and p.profile_id == "PANCHANG_DRIK_CRC_1955_V1"
+    assert p.standards_version == "1.24.0" and p.profile_id == "PANCHANG_DRIK_CRC_1955_V2"
     assert p.sunrise_convention is SunriseConvention.CRC_1955_CENTRE_REFRACTION_30
     assert p.vara is not None and p.vara.weekday.value == "friday" and p.vara.lord is B.VENUS
     sr = p.sunrise.instant
@@ -292,3 +291,24 @@ def test_moonrise_may_be_absent_from_a_day(service: PanchangService) -> None:
         _day(service, dt.date(2026, 5, 1) + dt.timedelta(days=i)).moonrise.status for i in range(31)
     }
     assert EventStatus.NO_EVENT_IN_DAY in statuses and EventStatus.OCCURRED in statuses
+
+
+def test_lahiri_is_the_default_saura_frame_and_crc_the_labelled_alternative(
+    service: PanchangService,
+) -> None:
+    """Owner decision of 2026-09-25 (PC-15): Lahiri by default; the CRC fixed
+    frame on request; the month facts of both frames always present."""
+    default = _day(service, dt.date(2023, 8, 1))
+    assert default.saura_frame is SauraFrame.LAHIRI_VARIABLE
+    assert default.lunar_month is not None
+    assert default.lunar_month.saura_frame is SauraFrame.LAHIRI_VARIABLE
+    assert (default.lunar_month.amanta_month, default.lunar_month.amanta_adhika) == (
+        MonthName.SHRAVANA,
+        True,
+    )
+    crc = _day(service, dt.date(2023, 8, 1), saura_frame=SauraFrame.CRC_FIXED_23_15)
+    assert crc.saura_frame is SauraFrame.CRC_FIXED_23_15
+    assert crc.lunar_month is not None and not crc.lunar_month.amanta_adhika
+    assert crc.lunar_months == default.lunar_months  # both frames always reported
+    labels = {p.entry_id: p.label for p in PROVENANCE}
+    assert labels["prov.saura_frames"] is EvidenceLabel.MODERN_TRADITION

@@ -395,6 +395,7 @@ class PanchangService:
             location=request.location,
             timezone=request.timezone,
             ayanamsa="lahiri",
+            saura_frame=request.saura_frame,
             not_implemented=NOT_IMPLEMENTED,
             provenance=_provenance(),
         )
@@ -476,6 +477,7 @@ class PanchangService:
             nakshatras=nakshatras,
             yogas=yogas,
             karanas=karanas,
+            lunar_month=next(m for m in months if m.saura_frame is request.saura_frame),
             lunar_months=months,
             day_parts=day_parts(weekday, sr, ss, nsr, tz),
             horas=horas(weekday, sr, nsr, tz),

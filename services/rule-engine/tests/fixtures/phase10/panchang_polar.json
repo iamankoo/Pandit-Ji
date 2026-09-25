@@ -4,7 +4,7 @@
  "date": "2026-12-21",
  "day_part_profile_id": "DAY_EIGHTHS_OF_SUNRISE_TO_SUNSET_V1",
  "day_parts": [],
- "engine_version": "0.12.0",
+ "engine_version": "0.13.0",
  "ephemeris_mode": null,
  "hora_profile_id": "HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1",
  "horas": [],
@@ -14,6 +14,7 @@
   "latitude": 69.65,
   "longitude": 18.96
  },
+ "lunar_month": null,
  "lunar_months": [],
  "moonrise": {
   "instant": null,
@@ -55,7 +56,7 @@
    "reason": "no source read (PC-18)"
   }
  ],
- "profile_id": "PANCHANG_DRIK_CRC_1955_V1",
+ "profile_id": "PANCHANG_DRIK_CRC_1955_V2",
  "provenance": [
   {
    "entry_id": "prov.day",
@@ -151,7 +152,7 @@
   },
   {
    "entry_id": "prov.saura_frames",
-   "evidence_label": "unresolved_conflict",
+   "evidence_label": "modern_tradition",
    "item": "Saura month frames",
    "references": [
     {
@@ -161,7 +162,7 @@
      "verification_level": "IMAGE-ORIGINAL-ENGLISH"
     }
    ],
-   "statement": "The Committee fixed the saura months 23 deg 15 min ahead of the vernal equinox; nakshatras use the variable (Lahiri) ayanamsa. Almanacs that measure sankrantis with the variable ayanamsa are not verified in a primary source read, so both frames are computed and reported; they differ by the growth of the ayanamsa since 1956."
+   "statement": "Default: the Sun's sidereal sign with the variable (Lahiri) ayanamsa, the frame of present-day almanacs (owner decision of 2026-09-25; the agreement with published adhika months is secondary evidence). Alternative, always also reported: the Committee's saura months fixed 23 deg 15 min ahead of the vernal equinox. The frames differ by the growth of the ayanamsa since 1956 and can place the adhika month a month apart."
   },
   {
    "entry_id": "prov.day_parts",
@@ -320,7 +321,8 @@
  ],
  "reason": "sunrise_not_occurring",
  "regional_convention": "pan_indian_drik_crc_1955",
- "standards_version": "1.23.0",
+ "saura_frame": "lahiri_variable",
+ "standards_version": "1.24.0",
  "status": "not_evaluable",
  "sunrise": {
   "instant": null,

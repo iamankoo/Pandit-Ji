@@ -204,7 +204,7 @@ def test_evaluate_contract(service: MuhurtaService) -> None:
         )
     )
     assert r.status is FactorStatus.SUCCESS and r.purpose is Purpose.GRIHA_PRAVESHA
-    assert r.standards_version == "1.23.0" and r.rules_version == "1.0.0"
+    assert r.standards_version == "1.24.0" and r.rules_version == "1.0.0"
     assert r.facts is not None and r.facts.tithi == "S11" and r.facts.weekday == "friday"
     assert {f.rule_id for f in r.factors} == {x.rule_id for x in RULES[Purpose.GRIHA_PRAVESHA]}
     assert r.notes
@@ -286,3 +286,18 @@ def test_rules_are_frozen_data() -> None:
     assert isinstance(rule, FactorRule)
     with pytest.raises(Exception):  # noqa: B017 - pydantic frozen instance
         rule.statement = "changed"  # type: ignore[misc]
+
+
+def test_rules_export_is_versioned_and_complete() -> None:
+    from pandit_astro_engine.muhurta import export_rules
+
+    doc = json.loads(json.dumps(export_rules()))
+    assert doc["rules_version"] == "1.0.0"
+    assert set(doc["purposes"]) == {p.value for p in Purpose}
+    for purpose, rules in doc["purposes"].items():
+        assert [r["rule_id"] for r in rules] == [r.rule_id for r in RULES[Purpose(purpose)]]
+        for r in rules:
+            assert r["statement"] and r["evidence_label"]
+            assert r["reference"]["source_id"] and r["reference"]["verification_level"]
+            assert r["reference"]["locator"]
+    assert doc["aliases"]["housewarming"] == "griha_pravesha"

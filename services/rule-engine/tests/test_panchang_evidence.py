@@ -29,7 +29,8 @@ def _load(name: str) -> dict[str, Any]:
 def test_successful_day_is_recorded_verbatim() -> None:
     ev = panchang_evidence_from_facts(_load("panchang_delhi"))
     assert ev.status == "success" and ev.reason is None
-    assert ev.profile_id == "PANCHANG_DRIK_CRC_1955_V1" and ev.standards_version == "1.23.0"
+    assert ev.profile_id == "PANCHANG_DRIK_CRC_1955_V2" and ev.standards_version == "1.24.0"
+    assert ev.saura_frame == "lahiri_variable"
     assert ev.sunrise_convention == "crc_1955_centre_refraction_30"
     assert ev.vara == "thursday"
     kinds = {e.kind for e in ev.elements}
@@ -74,6 +75,10 @@ def test_status_invariants() -> None:
     raw = _load("panchang_delhi")
     raw["lunar_months"] = []
     with pytest.raises(FactsError, match="lunar month"):
+        panchang_evidence_from_facts(raw)
+    raw = _load("panchang_delhi")
+    raw["saura_frame"] = "tropical"
+    with pytest.raises(FactsError, match="saura frame"):
         panchang_evidence_from_facts(raw)
     raw = _load("panchang_delhi")
     raw["sunset"] = {"status": "circumpolar_no_event"}

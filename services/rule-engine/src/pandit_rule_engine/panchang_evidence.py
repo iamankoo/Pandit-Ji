@@ -77,6 +77,9 @@ class PanchangEvidence(_Record):
     next_sunrise_utc: str | None = None
     vara: str | None = None
     elements: tuple[PanchangElementRecord, ...] = ()
+    #: The selected saura frame (PC-15: Lahiri by default); the month facts
+    #: of every frame are kept in `lunar_months`.
+    saura_frame: str | None = None
     lunar_months: tuple[LunarMonthRecord, ...] = ()
     not_implemented: tuple[str, ...] = ()
     provenance_ids: tuple[str, ...] = ()
@@ -96,6 +99,8 @@ class PanchangEvidence(_Record):
             raise ValueError("panchang: a successful day needs sunrise, sunset and next sunrise")
         if not self.lunar_months:
             raise ValueError("panchang: a successful day needs its lunar month facts")
+        if self.saura_frame not in {m.saura_frame for m in self.lunar_months}:
+            raise ValueError("panchang: the selected saura frame has no month facts")
         return self
 
 
@@ -159,6 +164,7 @@ def panchang_evidence_from_facts(facts: Mapping[str, Any]) -> PanchangEvidence:
             next_sunrise_utc=_utc(facts["next_sunrise"]),
             vara=None if vara is None else vara["weekday"],
             elements=_elements(facts),
+            saura_frame=facts.get("saura_frame"),
             lunar_months=tuple(facts.get("lunar_months", ())),
             not_implemented=tuple(n["item"] for n in facts.get("not_implemented", ())),
             provenance_ids=tuple(p["entry_id"] for p in facts.get("provenance", ())),

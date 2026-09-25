@@ -19,6 +19,7 @@ from pandit_astro_engine.muhurta.rules import (
     RULES,
     Classification,
     Purpose,
+    export_rules,
 )
 from pandit_astro_engine.muhurta.service import MuhurtaService
 
@@ -34,4 +35,5 @@ __all__ = [
     "MuhurtaSearchResult",
     "MuhurtaService",
     "Purpose",
+    "export_rules",
 ]

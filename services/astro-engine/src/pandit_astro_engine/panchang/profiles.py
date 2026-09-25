@@ -46,7 +46,7 @@ class ProvenanceDef(_Model):
     references: tuple[SourceReference, ...]
 
 
-PANCHANG_STANDARDS_VERSION = "1.23.0"
+PANCHANG_STANDARDS_VERSION = "1.24.0"
 PANCHANG_SYSTEM_ID = "panchang_muhurta_calendar"
 
 CRC = "SRC-CALENDAR-REFORM-COMMITTEE-1955"
@@ -103,7 +103,11 @@ class RegionalConvention(str, Enum):
 
 class SauraFrame(str, Enum):
     """PC-15. How the Sun's entry into a sign (sankranti) is measured for
-    the saura months that name the lunar months. Both are reported."""
+    the saura months that name the lunar months. `LAHIRI_VARIABLE` is the
+    default for user-facing results (owner decision of 2026-09-25: it agrees
+    with present-day almanac practice); `CRC_FIXED_23_15` is the explicitly
+    labelled alternative. Every result carries the selected frame and the
+    month facts of both frames."""
 
     LAHIRI_VARIABLE = "lahiri_variable"
     CRC_FIXED_23_15 = "crc_fixed_23_15"
@@ -111,7 +115,8 @@ class SauraFrame(str, Enum):
 
 CRC_FIXED_AYANAMSA_DEGREES = 23.25
 
-PANCHANG_PROFILE_ID = "PANCHANG_DRIK_CRC_1955_V1"
+PANCHANG_PROFILE_ID = "PANCHANG_DRIK_CRC_1955_V2"
+DEFAULT_SAURA_FRAME = SauraFrame.LAHIRI_VARIABLE
 HORA_PROFILE_ID = "HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1"
 DAY_PART_PROFILE_ID = "DAY_EIGHTHS_OF_SUNRISE_TO_SUNSET_V1"
 NAKSHATRA_PANCHAKA_PROFILE_ID = "NAKSHATRA_PANCHAKA_RAMAN_1948"
@@ -214,12 +219,13 @@ PROVENANCE: tuple[ProvenanceDef, ...] = (
     ProvenanceDef(
         entry_id="prov.saura_frames",
         item="Saura month frames",
-        label=EvidenceLabel.UNRESOLVED_CONFLICT,
-        statement="The Committee fixed the saura months 23 deg 15 min ahead of the vernal "
-        "equinox; nakshatras use the variable (Lahiri) ayanamsa. Almanacs that measure "
-        "sankrantis with the variable ayanamsa are not verified in a primary source read, so "
-        "both frames are computed and reported; they differ by the growth of the ayanamsa "
-        "since 1956.",
+        label=EvidenceLabel.MODERN_TRADITION,
+        statement="Default: the Sun's sidereal sign with the variable (Lahiri) ayanamsa, the "
+        "frame of present-day almanacs (owner decision of 2026-09-25; the agreement with "
+        "published adhika months is secondary evidence). Alternative, always also reported: "
+        "the Committee's saura months fixed 23 deg 15 min ahead of the vernal equinox. The "
+        "frames differ by the growth of the ayanamsa since 1956 and can place the adhika "
+        "month a month apart.",
         references=(ref(CRC, "Recommendations (5) and (7), p. 7", _IMG),),
     ),
     ProvenanceDef(

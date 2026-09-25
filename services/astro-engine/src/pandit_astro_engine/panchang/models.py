@@ -75,6 +75,8 @@ class PanchangRequest(_Model):
     timezone: str
     sunrise_convention: SunriseConvention = SunriseConvention.CRC_1955_CENTRE_REFRACTION_30
     regional_convention: RegionalConvention = RegionalConvention.PAN_INDIAN_DRIK_CRC_1955
+    #: PC-15: Lahiri by default (owner decision); CRC fixed on request.
+    saura_frame: SauraFrame = SauraFrame.LAHIRI_VARIABLE
     allow_moshier_fallback: bool = True
 
 
@@ -192,6 +194,11 @@ class DailyPanchang(_Model):
     nakshatras: tuple[ElementSpan, ...] = ()
     yogas: tuple[ElementSpan, ...] = ()
     karanas: tuple[ElementSpan, ...] = ()
+    #: The selected frame and its month facts (PC-15).
+    saura_frame: SauraFrame
+    lunar_month: LunarMonth | None = None
+    #: The month facts of every frame, the selected one included, so the
+    #: alternative stays visible.
     lunar_months: tuple[LunarMonth, ...] = ()
     day_parts: tuple[DayPart, ...] = ()
     horas: tuple[Hora, ...] = ()

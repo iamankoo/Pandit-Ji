@@ -69,7 +69,7 @@
    }
   }
  ],
- "engine_version": "0.12.0",
+ "engine_version": "0.13.0",
  "ephemeris_mode": "moshier",
  "hora_profile_id": "HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1",
  "horas": [
@@ -495,6 +495,28 @@
   "latitude": 28.61,
   "longitude": 77.21
  },
+ "lunar_month": {
+  "amanta_adhika": false,
+  "amanta_month": "vaishakha",
+  "month_end_new_moon": {
+   "julian_day_ut": 2448035.9910587324,
+   "local": "1990-05-24T17:17:07.474478+05:30",
+   "utc": "1990-05-24T11:47:07.474478Z"
+  },
+  "month_start_new_moon": {
+   "julian_day_ut": 2448006.6857211245,
+   "local": "1990-04-25T09:57:26.305159+05:30",
+   "utc": "1990-04-25T04:27:26.305159Z"
+  },
+  "paksha": "krishna",
+  "purnimanta_adhika": false,
+  "purnimanta_month": "jyeshtha",
+  "saka_year_expired": 1912,
+  "saura_frame": "lahiri_variable",
+  "suppressed_month_before": null,
+  "vikrama_year_chaitradi_expired": 2047,
+  "year_reason": null
+ },
  "lunar_months": [
   {
    "amanta_adhika": false,
@@ -645,7 +667,7 @@
    "reason": "no source read (PC-18)"
   }
  ],
- "profile_id": "PANCHANG_DRIK_CRC_1955_V1",
+ "profile_id": "PANCHANG_DRIK_CRC_1955_V2",
  "provenance": [
   {
    "entry_id": "prov.day",
@@ -741,7 +763,7 @@
   },
   {
    "entry_id": "prov.saura_frames",
-   "evidence_label": "unresolved_conflict",
+   "evidence_label": "modern_tradition",
    "item": "Saura month frames",
    "references": [
     {
@@ -751,7 +773,7 @@
      "verification_level": "IMAGE-ORIGINAL-ENGLISH"
     }
    ],
-   "statement": "The Committee fixed the saura months 23 deg 15 min ahead of the vernal equinox; nakshatras use the variable (Lahiri) ayanamsa. Almanacs that measure sankrantis with the variable ayanamsa are not verified in a primary source read, so both frames are computed and reported; they differ by the growth of the ayanamsa since 1956."
+   "statement": "Default: the Sun's sidereal sign with the variable (Lahiri) ayanamsa, the frame of present-day almanacs (owner decision of 2026-09-25; the agreement with published adhika months is secondary evidence). Alternative, always also reported: the Committee's saura months fixed 23 deg 15 min ahead of the vernal equinox. The frames differ by the growth of the ayanamsa since 1956 and can place the adhika month a month apart."
   },
   {
    "entry_id": "prov.day_parts",
@@ -910,7 +932,8 @@
  ],
  "reason": null,
  "regional_convention": "pan_indian_drik_crc_1955",
- "standards_version": "1.23.0",
+ "saura_frame": "lahiri_variable",
+ "standards_version": "1.24.0",
  "status": "success",
  "sunrise": {
   "instant": {

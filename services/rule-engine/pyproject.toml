@@ -1,6 +1,6 @@
 [project]
 name = "pandit-rule-engine"
-version = "0.12.0"
+version = "0.13.0"
 description = "Deterministic astrology rule evaluation engine (Phase 6: source-profile rules, ambiguity-preserving evaluation, evidence bundle; Phase 7: Dasha evidence; Phase 8: transit evidence; Phase 9: Ashtakavarga, KP, Shadbala, Jaimini, Chinese and Tarot evidence sections)."
 requires-python = ">=3.10"
 dependencies = [

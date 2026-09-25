@@ -439,6 +439,25 @@ Then:
 
 Deliverable: complete Panchang/Muhurta engine.
 
+Status (2026-09-25, owner approval of Phase 10; details in `docs/ASTROLOGY_STANDARDS.md` v1.23.0 PC-01 to PC-31, MU-01 to MU-14 and `SUMMARY.md` §36): **implemented for the source-verified scope, with the items below not implemented and open owner decisions.** The list above is kept unchanged as the original roadmap.
+
+| Roadmap item | Outcome |
+|---|---|
+| Tithi, Vara, Nakshatra, Yoga, Karana | Implemented with exact transitions; reproduced on the Calendar Reform Committee's printed calendar (61 days) |
+| Sunrise, Sunset, Moonrise, Moonset | Implemented; CRC sunrise default, Phase 4 upper-limb convention as an explicit alternative |
+| Hora | Implemented (equal hours from sunrise); unequal horas not implemented (no source) |
+| Rahu Kaal | Implemented (Kalaprakasika translator's note); Yamaganda and Gulika Kalam also given |
+| Choghadiya, Gowri | Not implemented: no primary source read (PC-22) |
+| Panchak | Implemented as two different computations: Nakshatra Panchaka and the remainder Panchaka |
+| Bhadra | Implemented as the Vishti karana; Bhadra residence not implemented |
+| Tara Balam, Chandra Balam | Implemented (Chandra Bala in two profiles); need the person's birth nakshatra and Moon sign |
+| Calendar (month, Adhik Maas, years) | Implemented: amanta and purnimanta months, adhika and kshaya, Saka and Chaitradi Vikrama years, under both saura frames with no default |
+| Sun-based upagrahas, Gulika and Mandi, special Lagnas, Pranapada | Implemented with separately tagged readings |
+| Muhurta: Marriage, Griha Pravesh, Mundan, Housewarming | Implemented as factor facts and window search (Housewarming = Griha Pravesh); no verdict |
+| Other auspicious activities | Not implemented (no rule set read) |
+
+Open owner decisions: the saura-frame default (PC-15), the Muhurta rule location (MU-03), Choghadiya and Gowri sources (PC-22), further Muhurta purposes.
+
 ## Phase 11 — Numerology + Compatibility
 
 Build separate engines.

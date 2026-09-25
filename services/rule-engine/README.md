@@ -36,6 +36,10 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 `RuleEngine.evaluate_kundli` also accepts `kp_facts`, `shadbala_facts`, `jaimini_facts`, `chinese_facts` and `tarot_layout` -- the JSON forms of an astro-engine KP natal or horary chart, one Shadbala profile's facts (the BPHS verse profile or the Raman profile, never both in one bundle), the WP-G `JaiminiFacts`, a Chinese Four Pillars chart and a Tarot layout. `pandit_rule_engine.phase9_evidence` validates each (status/reason invariants; a Shadbala total cannot be successful while a leaf component is not evaluable; a Tarot layout may carry no interpretation), keeps profile IDs, readings and provenance verbatim and records a `facts_hash` of the whole input. Each section is optional and omitted when absent, so bundles built without them serialize and hash exactly as before (`docs/ASTROLOGY_STANDARDS.md` EV-01 to EV-10). No rule reads these sections yet. A Shadbala section may also be built from an astro-engine `ShadbalaMethodResult`, which records the method envelope; `pandit_rule_engine.shadbala_gate.shadbala_for_rule` releases a planet's total only from a complete `MODERN_RAMAN` result and otherwise returns `NOT_EVALUABLE` with one reason (SM-09, SM-10).
 
+## Panchang evidence (Phase 10)
+
+`RuleEngine.evaluate_kundli` also accepts `panchang_facts`, the JSON form of an astro-engine `DailyPanchang`. `pandit_rule_engine.panchang_evidence` validates it (status/reason invariants; contiguous element lists from the element at sunrise to the one at the next sunrise; the lunar months of both saura frames), keeps the profile and convention identifiers verbatim and records a `facts_hash`. The section is optional and omitted when absent, so earlier bundles hash as before; no rule reads it (`docs/ASTROLOGY_STANDARDS.md` PC-30).
+
 ## Local development
 
 ```

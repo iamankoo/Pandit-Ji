@@ -31,6 +31,7 @@ from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
 from pandit_rule_engine.loader import Ruleset
+from pandit_rule_engine.panchang_evidence import PanchangEvidence
 from pandit_rule_engine.phase9_evidence import (
     ChineseEvidence,
     JaiminiEvidence,
@@ -138,6 +139,9 @@ class EvidenceBundle(_Model):
     jaimini: JaiminiEvidence | None = None
     chinese: ChineseEvidence | None = None
     tarot: TarotEvidence | None = None
+    #: Additive, optional (Phase 10, v1.23.0 PC-30): one day's Panchang.
+    #: Omitted when absent, so earlier bundles hash as before.
+    panchang: PanchangEvidence | None = None
     bundle_hash: str
 
     @model_serializer(mode="wrap")
@@ -152,6 +156,7 @@ class EvidenceBundle(_Model):
             "jaimini",
             "chinese",
             "tarot",
+            "panchang",
         ):
             if data.get(optional) is None:
                 data.pop(optional, None)
@@ -247,6 +252,7 @@ def build_bundle(
     jaimini: JaiminiEvidence | None = None,
     chinese: ChineseEvidence | None = None,
     tarot: TarotEvidence | None = None,
+    panchang: PanchangEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -277,6 +283,7 @@ def build_bundle(
         "jaimini": jaimini,
         "chinese": chinese,
         "tarot": tarot,
+        "panchang": panchang,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

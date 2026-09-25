@@ -1,0 +1,1204 @@
+{
+ "source": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+ "locator": "Part B, Reformed Calendar of India for Saka Era 1876, Caitra and Vaisakha (printed pp. [41]-[42]; archive.org calendar_reform_comittee_report PDF pp. 53-54)",
+ "verification_level": "IMAGE-ORIGINAL-ENGLISH",
+ "station": {
+  "latitude": 23.183333333333334,
+  "longitude": 82.5,
+  "timezone": "Asia/Kolkata"
+ },
+ "conventions": "sunrise/sunset: centre of the Sun with 30' refraction; times in IST; tithi K30 = new moon; saura months 23 deg 15 min fixed; nakshatras variable ayanamsa (23 deg 13 min 19 s on 1 Caitra)",
+ "rounding": "printed to the minute",
+ "note": "Months are the reformed civil calendar's Caitra and Vaisakha (22 March - 21 May 1954).",
+ "days": [
+  {
+   "date": "1954-03-22",
+   "sunrise": "6:04",
+   "sunset": "18:10",
+   "tithis": [
+    [
+     "K3",
+     "25:25"
+    ]
+   ],
+   "nakshatras": [
+    [
+     14,
+     "9:42"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-23",
+   "sunrise": "6:03",
+   "sunset": "18:10",
+   "tithis": [
+    [
+     "K4",
+     "27:51"
+    ]
+   ],
+   "nakshatras": [
+    [
+     15,
+     "12:40"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-24",
+   "sunrise": "6:02",
+   "sunset": "18:11",
+   "tithis": [
+    [
+     "K5",
+     null
+    ]
+   ],
+   "nakshatras": [
+    [
+     16,
+     "15:32"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-25",
+   "sunrise": "6:01",
+   "sunset": "18:11",
+   "tithis": [
+    [
+     "K5",
+     "6:05"
+    ]
+   ],
+   "nakshatras": [
+    [
+     17,
+     "18:08"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-26",
+   "sunrise": "6:00",
+   "sunset": "18:12",
+   "tithis": [
+    [
+     "K6",
+     "7:58"
+    ]
+   ],
+   "nakshatras": [
+    [
+     18,
+     "20:19"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-27",
+   "sunrise": "5:59",
+   "sunset": "18:12",
+   "tithis": [
+    [
+     "K7",
+     "9:18"
+    ]
+   ],
+   "nakshatras": [
+    [
+     19,
+     "21:55"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-28",
+   "sunrise": "5:58",
+   "sunset": "18:12",
+   "tithis": [
+    [
+     "K8",
+     "9:58"
+    ]
+   ],
+   "nakshatras": [
+    [
+     20,
+     "22:48"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-29",
+   "sunrise": "5:57",
+   "sunset": "18:13",
+   "tithis": [
+    [
+     "K9",
+     "9:49"
+    ]
+   ],
+   "nakshatras": [
+    [
+     21,
+     "22:52"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-30",
+   "sunrise": "5:56",
+   "sunset": "18:13",
+   "tithis": [
+    [
+     "K10",
+     "8:50"
+    ]
+   ],
+   "nakshatras": [
+    [
+     22,
+     "22:07"
+    ]
+   ]
+  },
+  {
+   "date": "1954-03-31",
+   "sunrise": "5:56",
+   "sunset": "18:13",
+   "tithis": [
+    [
+     "K11",
+     "7:03"
+    ],
+    [
+     "K12",
+     "28:31"
+    ]
+   ],
+   "nakshatras": [
+    [
+     23,
+     "20:35"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-01",
+   "sunrise": "5:55",
+   "sunset": "18:14",
+   "tithis": [
+    [
+     "K13",
+     "25:22"
+    ]
+   ],
+   "nakshatras": [
+    [
+     24,
+     "18:24"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-02",
+   "sunrise": "5:54",
+   "sunset": "18:14",
+   "tithis": [
+    [
+     "K14",
+     "21:47"
+    ]
+   ],
+   "nakshatras": [
+    [
+     25,
+     "15:43"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-03",
+   "sunrise": "5:53",
+   "sunset": "18:14",
+   "tithis": [
+    [
+     "K30",
+     "17:55"
+    ]
+   ],
+   "nakshatras": [
+    [
+     26,
+     "12:43"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-04",
+   "sunrise": "5:52",
+   "sunset": "18:15",
+   "tithis": [
+    [
+     "S1",
+     "13:59"
+    ]
+   ],
+   "nakshatras": [
+    [
+     27,
+     "9:35"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-05",
+   "sunrise": "5:51",
+   "sunset": "18:15",
+   "tithis": [
+    [
+     "S2",
+     "10:11"
+    ]
+   ],
+   "nakshatras": [
+    [
+     1,
+     "6:32"
+    ],
+    [
+     2,
+     "27:48"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-06",
+   "sunrise": "5:50",
+   "sunset": "18:16",
+   "tithis": [
+    [
+     "S3",
+     "6:41"
+    ],
+    [
+     "S4",
+     "27:40"
+    ]
+   ],
+   "nakshatras": [
+    [
+     3,
+     "25:27"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-07",
+   "sunrise": "5:49",
+   "sunset": "18:16",
+   "tithis": [
+    [
+     "S5",
+     "25:17"
+    ]
+   ],
+   "nakshatras": [
+    [
+     4,
+     "23:46"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-08",
+   "sunrise": "5:48",
+   "sunset": "18:16",
+   "tithis": [
+    [
+     "S6",
+     "23:37"
+    ]
+   ],
+   "nakshatras": [
+    [
+     5,
+     "22:47"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-09",
+   "sunrise": "5:47",
+   "sunset": "18:17",
+   "tithis": [
+    [
+     "S7",
+     "22:44"
+    ]
+   ],
+   "nakshatras": [
+    [
+     6,
+     "22:34"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-10",
+   "sunrise": "5:46",
+   "sunset": "18:17",
+   "tithis": [
+    [
+     "S8",
+     "22:38"
+    ]
+   ],
+   "nakshatras": [
+    [
+     7,
+     "23:08"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-11",
+   "sunrise": "5:45",
+   "sunset": "18:17",
+   "tithis": [
+    [
+     "S9",
+     "23:15"
+    ]
+   ],
+   "nakshatras": [
+    [
+     8,
+     "24:23"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-12",
+   "sunrise": "5:44",
+   "sunset": "18:18",
+   "tithis": [
+    [
+     "S10",
+     "24:28"
+    ]
+   ],
+   "nakshatras": [
+    [
+     9,
+     "26:13"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-13",
+   "sunrise": "5:43",
+   "sunset": "18:18",
+   "tithis": [
+    [
+     "S11",
+     "26:11"
+    ]
+   ],
+   "nakshatras": [
+    [
+     10,
+     "28:31"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-14",
+   "sunrise": "5:42",
+   "sunset": "18:19",
+   "tithis": [
+    [
+     "S12",
+     "28:14"
+    ]
+   ],
+   "nakshatras": [
+    [
+     11,
+     null
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-15",
+   "sunrise": "5:41",
+   "sunset": "18:19",
+   "tithis": [
+    [
+     "S13",
+     null
+    ]
+   ],
+   "nakshatras": [
+    [
+     11,
+     "7:08"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-16",
+   "sunrise": "5:41",
+   "sunset": "18:19",
+   "tithis": [
+    [
+     "S13",
+     "6:30"
+    ]
+   ],
+   "nakshatras": [
+    [
+     12,
+     "9:57"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-17",
+   "sunrise": "5:40",
+   "sunset": "18:20",
+   "tithis": [
+    [
+     "S14",
+     "8:53"
+    ]
+   ],
+   "nakshatras": [
+    [
+     13,
+     "12:52"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-18",
+   "sunrise": "5:39",
+   "sunset": "18:20",
+   "tithis": [
+    [
+     "S15",
+     "11:18"
+    ]
+   ],
+   "nakshatras": [
+    [
+     14,
+     "15:49"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-19",
+   "sunrise": "5:38",
+   "sunset": "18:21",
+   "tithis": [
+    [
+     "K1",
+     "13:42"
+    ]
+   ],
+   "nakshatras": [
+    [
+     15,
+     "18:43"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-20",
+   "sunrise": "5:37",
+   "sunset": "18:21",
+   "tithis": [
+    [
+     "K2",
+     "16:00"
+    ]
+   ],
+   "nakshatras": [
+    [
+     16,
+     "21:31"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-21",
+   "sunrise": "5:36",
+   "sunset": "18:21",
+   "tithis": [
+    [
+     "K3",
+     "18:07"
+    ]
+   ],
+   "nakshatras": [
+    [
+     17,
+     "24:08"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-22",
+   "sunrise": "5:36",
+   "sunset": "18:22",
+   "tithis": [
+    [
+     "K4",
+     "19:58"
+    ]
+   ],
+   "nakshatras": [
+    [
+     18,
+     "26:27"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-23",
+   "sunrise": "5:35",
+   "sunset": "18:22",
+   "tithis": [
+    [
+     "K5",
+     "21:24"
+    ]
+   ],
+   "nakshatras": [
+    [
+     19,
+     "28:22"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-24",
+   "sunrise": "5:34",
+   "sunset": "18:23",
+   "tithis": [
+    [
+     "K6",
+     "22:19"
+    ]
+   ],
+   "nakshatras": [
+    [
+     20,
+     null
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-25",
+   "sunrise": "5:33",
+   "sunset": "18:23",
+   "tithis": [
+    [
+     "K7",
+     "22:35"
+    ]
+   ],
+   "nakshatras": [
+    [
+     20,
+     "5:44"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-26",
+   "sunrise": "5:32",
+   "sunset": "18:23",
+   "tithis": [
+    [
+     "K8",
+     "22:08"
+    ]
+   ],
+   "nakshatras": [
+    [
+     21,
+     "6:26"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-27",
+   "sunrise": "5:32",
+   "sunset": "18:24",
+   "tithis": [
+    [
+     "K9",
+     "20:55"
+    ]
+   ],
+   "nakshatras": [
+    [
+     22,
+     "6:26"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-28",
+   "sunrise": "5:31",
+   "sunset": "18:24",
+   "tithis": [
+    [
+     "K10",
+     "18:57"
+    ]
+   ],
+   "nakshatras": [
+    [
+     23,
+     "5:40"
+    ],
+    [
+     24,
+     "28:11"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-29",
+   "sunrise": "5:30",
+   "sunset": "18:25",
+   "tithis": [
+    [
+     "K11",
+     "16:19"
+    ]
+   ],
+   "nakshatras": [
+    [
+     25,
+     "26:04"
+    ]
+   ]
+  },
+  {
+   "date": "1954-04-30",
+   "sunrise": "5:29",
+   "sunset": "18:25",
+   "tithis": [
+    [
+     "K12",
+     "13:08"
+    ]
+   ],
+   "nakshatras": [
+    [
+     26,
+     "23:28"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-01",
+   "sunrise": "5:29",
+   "sunset": "18:26",
+   "tithis": [
+    [
+     "K13",
+     "9:33"
+    ]
+   ],
+   "nakshatras": [
+    [
+     27,
+     "20:33"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-02",
+   "sunrise": "5:28",
+   "sunset": "18:26",
+   "tithis": [
+    [
+     "K14",
+     "5:44"
+    ],
+    [
+     "K30",
+     "25:52"
+    ]
+   ],
+   "nakshatras": [
+    [
+     1,
+     "17:30"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-03",
+   "sunrise": "5:27",
+   "sunset": "18:26",
+   "tithis": [
+    [
+     "S1",
+     "22:09"
+    ]
+   ],
+   "nakshatras": [
+    [
+     2,
+     "14:31"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-04",
+   "sunrise": "5:27",
+   "sunset": "18:27",
+   "tithis": [
+    [
+     "S2",
+     "18:45"
+    ]
+   ],
+   "nakshatras": [
+    [
+     3,
+     "11:47"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-05",
+   "sunrise": "5:26",
+   "sunset": "18:27",
+   "tithis": [
+    [
+     "S3",
+     "15:50"
+    ]
+   ],
+   "nakshatras": [
+    [
+     4,
+     "9:30"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-06",
+   "sunrise": "5:25",
+   "sunset": "18:28",
+   "tithis": [
+    [
+     "S4",
+     "13:34"
+    ]
+   ],
+   "nakshatras": [
+    [
+     5,
+     "7:49"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-07",
+   "sunrise": "5:25",
+   "sunset": "18:28",
+   "tithis": [
+    [
+     "S5",
+     "12:03"
+    ]
+   ],
+   "nakshatras": [
+    [
+     6,
+     "6:51"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-08",
+   "sunrise": "5:24",
+   "sunset": "18:29",
+   "tithis": [
+    [
+     "S6",
+     "11:20"
+    ]
+   ],
+   "nakshatras": [
+    [
+     7,
+     "6:41"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-09",
+   "sunrise": "5:24",
+   "sunset": "18:29",
+   "tithis": [
+    [
+     "S7",
+     "11:27"
+    ]
+   ],
+   "nakshatras": [
+    [
+     8,
+     "7:20"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-10",
+   "sunrise": "5:23",
+   "sunset": "18:30",
+   "tithis": [
+    [
+     "S8",
+     "12:18"
+    ]
+   ],
+   "nakshatras": [
+    [
+     9,
+     "8:43"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-11",
+   "sunrise": "5:23",
+   "sunset": "18:30",
+   "tithis": [
+    [
+     "S9",
+     "13:48"
+    ]
+   ],
+   "nakshatras": [
+    [
+     10,
+     "10:45"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-12",
+   "sunrise": "5:22",
+   "sunset": "18:31",
+   "tithis": [
+    [
+     "S10",
+     "15:46"
+    ]
+   ],
+   "nakshatras": [
+    [
+     11,
+     "13:15"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-13",
+   "sunrise": "5:21",
+   "sunset": "18:31",
+   "tithis": [
+    [
+     "S11",
+     "18:02"
+    ]
+   ],
+   "nakshatras": [
+    [
+     12,
+     "16:03"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-14",
+   "sunrise": "5:21",
+   "sunset": "18:32",
+   "tithis": [
+    [
+     "S12",
+     "20:27"
+    ]
+   ],
+   "nakshatras": [
+    [
+     13,
+     "19:01"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-15",
+   "sunrise": "5:21",
+   "sunset": "18:32",
+   "tithis": [
+    [
+     "S13",
+     "22:51"
+    ]
+   ],
+   "nakshatras": [
+    [
+     14,
+     "21:58"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-16",
+   "sunrise": "5:20",
+   "sunset": "18:32",
+   "tithis": [
+    [
+     "S14",
+     "25:09"
+    ]
+   ],
+   "nakshatras": [
+    [
+     15,
+     "24:50"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-17",
+   "sunrise": "5:20",
+   "sunset": "18:33",
+   "tithis": [
+    [
+     "S15",
+     "27:17"
+    ]
+   ],
+   "nakshatras": [
+    [
+     16,
+     "27:32"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-18",
+   "sunrise": "5:19",
+   "sunset": "18:33",
+   "tithis": [
+    [
+     "K1",
+     "29:09"
+    ]
+   ],
+   "nakshatras": [
+    [
+     17,
+     null
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-19",
+   "sunrise": "5:19",
+   "sunset": "18:34",
+   "tithis": [
+    [
+     "K2",
+     null
+    ]
+   ],
+   "nakshatras": [
+    [
+     17,
+     "5:59"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-20",
+   "sunrise": "5:18",
+   "sunset": "18:34",
+   "tithis": [
+    [
+     "K2",
+     "6:43"
+    ]
+   ],
+   "nakshatras": [
+    [
+     18,
+     "8:09"
+    ]
+   ]
+  },
+  {
+   "date": "1954-05-21",
+   "sunrise": "5:18",
+   "sunset": "18:35",
+   "tithis": [
+    [
+     "K3",
+     "7:56"
+    ]
+   ],
+   "nakshatras": [
+    [
+     19,
+     "9:58"
+    ]
+   ]
+  }
+ ],
+ "phenomena": [
+  {
+   "event": "enters_nakshatra",
+   "nakshatra": 27,
+   "frame": "lahiri",
+   "date": "1954-03-31",
+   "time": "9:07"
+  },
+  {
+   "event": "tropical_longitude_sum",
+   "printed_as": "Vaidhrti",
+   "sum": 0,
+   "date": "1954-04-01",
+   "time": "26:44"
+  },
+  {
+   "event": "new_moon",
+   "date": "1954-04-03",
+   "time": "17:55"
+  },
+  {
+   "event": "enters_nakshatra",
+   "nakshatra": 1,
+   "frame": "lahiri",
+   "date": "1954-04-13",
+   "time": "22:26"
+  },
+  {
+   "event": "saura_sign_entry",
+   "sign": 0,
+   "frame": "crc_fixed_23_15",
+   "date": "1954-04-13",
+   "time": "23:06"
+  },
+  {
+   "event": "tropical_longitude_sum",
+   "printed_as": "Vyatipata",
+   "sum": 180,
+   "date": "1954-04-13",
+   "time": "28:28"
+  },
+  {
+   "event": "full_moon",
+   "date": "1954-04-18",
+   "time": "11:18"
+  },
+  {
+   "event": "tropical_sign_entry",
+   "sign": 1,
+   "date": "1954-04-20",
+   "time": "20:50"
+  },
+  {
+   "event": "enters_nakshatra",
+   "nakshatra": 2,
+   "frame": "lahiri",
+   "date": "1954-04-27",
+   "time": "14:23"
+  },
+  {
+   "event": "tropical_longitude_sum",
+   "printed_as": "Vaidhrti",
+   "sum": 0,
+   "date": "1954-04-27",
+   "time": "18:15"
+  },
+  {
+   "event": "new_moon",
+   "date": "1954-05-02",
+   "time": "25:52"
+  },
+  {
+   "event": "tropical_longitude_sum",
+   "printed_as": "Vyatipata",
+   "sum": 180,
+   "date": "1954-05-09",
+   "time": "11:11"
+  },
+  {
+   "event": "enters_nakshatra",
+   "nakshatra": 3,
+   "frame": "lahiri",
+   "date": "1954-05-11",
+   "time": "8:29"
+  },
+  {
+   "event": "saura_sign_entry",
+   "sign": 1,
+   "frame": "crc_fixed_23_15",
+   "date": "1954-05-14",
+   "time": "20:02"
+  },
+  {
+   "event": "full_moon",
+   "date": "1954-05-17",
+   "time": "27:17"
+  },
+  {
+   "event": "tropical_sign_entry",
+   "sign": 2,
+   "date": "1954-05-21",
+   "time": "20:18"
+  }
+ ],
+ "phenomena_note": "The printed Vyatipata and Vaidhrti phenomena are the instants when the tropical longitudes of the Sun and the Moon sum to 180 and 360 degrees (the astronomical patas), not the 17th and 27th Panchang yogas; verified numerically.",
+ "printed_slips": [
+  {
+   "date": "1954-04-05",
+   "element": "nakshatra",
+   "index": 2,
+   "printed": "27:48",
+   "engine": "27:45.9",
+   "note": "the only printed value more than one minute from the engine; the page image reads 27 48"
+  }
+ ],
+ "lunar_months": [
+  {
+   "from": "1954-03-22",
+   "to": "1954-04-03",
+   "lunar_amanta": "phalguna"
+  },
+  {
+   "from": "1954-04-04",
+   "to": "1954-05-02",
+   "lunar_amanta": "chaitra"
+  },
+  {
+   "from": "1954-05-03",
+   "to": "1954-05-21",
+   "lunar_amanta": "vaishakha"
+  }
+ ]
+}

@@ -297,6 +297,45 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - **Conflicts and slips found (recorded, rule followed)**: see `docs/ASTROLOGY_STANDARDS.md` SR-06, SR-09 and SR-24.
 - **Rules extracted**: SR-04 to SR-21. **Copyright**: cited only; the fixture holds printed numbers, not text.
 
+### SRC-CALENDAR-REFORM-COMMITTEE-1955 (added in Phase 10, v1.23.0)
+
+- **Title**: *Report of the Calendar Reform Committee*, Council of Scientific and Industrial Research, Government of India, New Delhi, 1955 (M. N. Saha, chairman; N. C. Lahiri among the members). **Location**: archive.org `calendar_reform_comittee_report` (also `dli.csl.963`): OCR text and the PDF scan, read 2026-09-25. A Government of India publication of 1955; presumed in the public domain in India (government work, 60 years from publication), not verified further.
+- **Classification**: `PRIMARY_STANDARD` (the official definition behind the national almanac). **Status**: `PARTIALLY_REVIEWED` (final recommendations, the explanation of the specimen calendar, two months of the printed calendar; the historical chapters and the religious-festival tables not read). **Level**: `IMAGE-ORIGINAL-ENGLISH` for recommendations (5)-(11) (printed pp. 7-8) and the calendar for Saka 1876 Caitra and Vaisakha (printed pp. [41]-[42], PDF pp. 53-54); `OCR-ORIGINAL-ENGLISH` for the explanation of the calendar and the Committee's minutes.
+- **Group 23 extracts (wording summarized)**: saura months start 23 deg 15 min ahead of the vernal equinox (a stated compromise, (5)); lunar months from new moon, named after the saura month in which the new moon falls, the first of two new moons in one saura month beginning the adhika month (6); nakshatras with a variable ayanamsa of 23 deg 15 min 0 s on 21 March 1956 (7); the religious day from local sunrise (8); longitudes from the most complete equations of motion (9); sunrise and sunset as the centre of the Sun on the horizon with 30 minutes of refraction (explanation (5)); tithi numbering S 1-15, K 1-14, K 30 and the tithi current at sunrise named for the day (explanation (6)).
+- **Verified**: the printed calendar for 22 March - 21 May 1954 reproduced within one minute (61 days; fixture `crc_1955_calendar_saka_1876.json`), one printed nakshatra ending off by 2.1 minutes recorded; the printed Vyatipata and Vaidhrti phenomena identified as tropical sums of 180 and 360 degrees (PC-23).
+- **Rules extracted**: PC-03, PC-05, PC-13, PC-15, PC-31.
+
+### SRC-SEWELL-DIKSHIT-INDIAN-CALENDAR-1896 (added in Phase 10, v1.23.0)
+
+- **Title**: Robert Sewell and Sankara Balakrishna Dikshit, *The Indian Calendar, with Tables for the Conversion of Hindu and Muhammadan into A.D. Dates* (London: Swan Sonnenschein, 1896). Public domain. **Location**: archive.org `indiancalendarwi00sewerich`: OCR text read 2026-09-25 (the scan was downloaded; no page was image-checked).
+- **Classification**: `SCHOLARLY_REFERENCE`. **Status**: `PARTIALLY_REVIEWED` (Arts. 1-14, 31-33, 45-52, 70-71). **Level**: `OCR-ORIGINAL-ENGLISH`.
+- **Group 23 extracts**: the five limbs (Art. 4); the week-day begins at sunrise (Art. 5); tithi, nakshatra, yoga, karana definitions (Arts. 7-10); amanta and purnimanta systems and their regions (Art. 13); naming by the Mesha sankranti (Art. 14); the tithi current at sunrise names the day, expunged and repeated tithis (Arts. 31-32); dependence on the place (Art. 33); adhika and kshaya rules, old and present (Art. 48); purnimanta intercalation (Art. 51); the luni-solar year begins with amanta Chaitra sukla 1 (Art. 52); current and expired years (Art. 70); Vikrama varieties (Art. 71).
+- **Rules extracted**: PC-06, PC-11, PC-13, PC-14, PC-17.
+
+### SRC-KALAPRAKASIKA-IYER-1917 (added in Phase 10, v1.23.0)
+
+- **Title**: *Kalaprakasika: The Standard Book on the Election (Mahoortha) System*, Sanskrit text with English translation and notes by N. P. Subramania Iyer (first published 1917; the scan is the Asian Educational Services reprint of 1982). **Location**: archive.org `in.ernet.dli.2015.45999`: OCR text and PDF, read 2026-09-25. Presumed public domain (1917); the translator's dates were not verified.
+- **Classification**: `PRIMARY_CLASSICAL` (a South Indian muhurta text; attribution and date not verified) with translator's notes. **Status**: `PARTIALLY_REVIEWED` (Ch. V, XIV, XVIII (p. 99), XXV-XXVI, XXIX (Panchakam), XXXIII (pp. 166-177)). **Level**: `IMAGE-TRANSLATION` for pp. 168 and 175-177 (page images); `OCR-TRANSLATION` otherwise. The Sanskrit appendix was not read.
+- **Group 23 extracts**: eighth parts of the day, Gulika, Ardhapraharam, Yamaganda, Kalan (p. 175, text); the day and night tables and the Rahu Kalam list (p. 176, the translator's footnote and tables, a 12-hour day from six o'clock); horas (p. 176 text, p. 177 table); Pariyaya (Tara), Vainasika, Chandrashtama (pp. 166-167); the Panchakam remainder test (p. 161); Chaula (pp. 37-40), marriage (pp. 79-87), house entry (pp. 129-132); fixed karanas (p. 99 note); Rikta tithis (p. 99).
+- **Not encoded (policy)**: statements of effect, the marriage age of a girl, caste-specific exceptions (MU-10).
+- **Rules extracted**: PC-18 to PC-21, MU-04 to MU-12.
+
+### SRC-RAMAN-MUHURTHA-1948 (added in Phase 10, v1.23.0)
+
+- **Title**: B. V. Raman, *Muhurtha or Electional Astrology*, first edition (Bangalore: Raman Publications, 1948). **Location**: archive.org `in.ernet.dli.2015.128092`: OCR text and PDF, read 2026-09-25. In copyright (Raman died in 1998); cited only.
+- **Classification**: `MODERN_REFERENCE`. **Status**: `PARTIALLY_REVIEWED` (pp. 1-31). **Level**: `OCR-ORIGINAL-ENGLISH`.
+- **Group 23 extracts**: the 27 yogas and 11 karanas (pp. 12-14); Tarabala, Chandrabala (6th, 8th, 12th) and the remainder Panchaka with its purpose-specific exceptions (pp. 17-22); Nakshatra Panchaka from the third quarter of Dhanishta to the end of Revati (p. 26); Bhadra unfit for good work (p. 29).
+- **Rules extracted**: PC-09, PC-10, PC-20, PC-21, MU-04 (common factors).
+
+### Group 23: Phase 10 research (2026-09-25)
+
+- **Sunrise**: CRC centre-with-30-minutes (primary, reproduced) versus the Phase 4 upper-limb convention (Swiss Ephemeris standard); both are profiles (PC-03). No Siddhantic geometric-sunrise source was read.
+- **Saura frame**: CRC fixed 23 deg 15 min (primary recommendation, used in its printed calendar) versus Lahiri variable (matches present-day published adhika months; secondary). Open conflict below.
+- **Choghadiya, Gowri Panchangam**: no primary source found; web pages only (not locked). PC-22.
+- **Muhurta Chintamani**: still `IDENTIFIED` (Sanskrit manuscripts and a Hindi edition on archive.org; no English text read).
+- **Surya Siddhanta (Burgess)**: the archive.org text download failed on 2026-09-25; not read this phase.
+- **Brihat Samhita (Chidambaram Iyer, 1884)**: downloaded (archive.org `brihatsamhitaenglishtranslationchidambaramiyerwithappendix1885_432_w`), not read this phase; its nakshatra, tithi and karana chapters are candidates for further Muhurta purposes.
+
 ### Group 21: Phase 9 systems researched but not implemented (2026-09-24/25)
 
 - **Lal Kitab**: five Urdu editions identified (1939 *Lal Kitab ke Farman*, 1940 *Lal Kitab ke Arman*, 1941 *Gutka*, 1942, 1952) with archive.org copies (items `lal-kitab-1939_202006`, `LalKitab1941`, `Pt.RoopChandLalKitab.11952`, rights unverified). Authorship attributed to Pt. Roop Chand Joshi (`CONTESTED`); presumed in copyright in India to the end of 2042. **Not read** (no qualified Urdu reader). Status `IDENTIFIED`. P9-01.
@@ -313,7 +352,7 @@ Check copyright and translation rights before ingestion/training. Community uplo
 
 | Source | Status | Notes |
 |---|---|---|
-| Muhurta Chintamani (Daivagya Rama) | `IDENTIFIED` | Only Sanskrit manuscript scans found; no readable English text obtained. An English translation exists commercially. Mangal-related verse not verified in this source. |
+| Muhurta Chintamani (Daivagya Rama) | `IDENTIFIED` | Only Sanskrit manuscript scans (and a Hindi edition, not read) found; no readable English text obtained (re-checked in Phase 10). An English translation exists commercially. Mangal-related verse not verified in this source. |
 | Jaimini Upadesa Sutras | `IDENTIFIED` | archive.org search mostly returns the unrelated *Mimamsa Sutras of Jaimini*; the astrological work must be identified separately. |
 | Prasna Marga (B.V. Raman translation) | `IDENTIFIED` | `TRADITIONAL_SECONDARY`. |
 | Brihat Samhita, Surya Siddhanta (Burgess translation) | `IDENTIFIED` | Surya Siddhanta is relevant to combustion and calculation questions. |
@@ -351,6 +390,14 @@ Open standards conflicts added by Phase 9 WP-E to WP-I (no winner chosen unless 
 
 - **Raman Drekkana order and Moon nature, status OPEN (no default).** Raman's Art. 36 text (neuter middle, female last) versus his Example 12 (female second); Art. 53's "increasing Moon" versus "8th day to 8th day". Exposed as required request fields (SR-06, SR-09).
 - **Raman book slips, status RECORDED (rule followed).** SR-24 lists them; none changes a rule.
+
+- **Saura month frame (Phase 10), status OPEN (both reported, no default).** CRC recommendation (5) fixes the saura months 23 deg 15 min ahead of the equinox; almanacs that use the variable Lahiri ayanamsa place adhika months differently (2023: Shravana versus Bhadrapada; 2026: Jyeshtha versus Ashadha). PC-15.
+- **Chandra Bala (Phase 10), status OPEN (two profiles).** Kalaprakasika avoids the 8th only; Raman the 6th, 8th and 12th. PC-20.
+- **Panchaka (Phase 10), status RESOLVED AS TWO THINGS.** The Nakshatra Panchaka and the remainder Panchaka are different computations under one name; both implemented, never merged. PC-21.
+- **Vyatipata (Phase 10), status RECORDED.** The 17th Panchang yoga and the CRC's printed astronomical phenomenon are different. PC-23.
+- **Gulika and Mandi (Phase 10), status OPEN (three readings).** PC-26.
+- **Upagraha Vyatipata and Parivesha (Phase 10), status OPEN (two profiles).** PC-25.
+- **CRC printed nakshatra ending, 5 April 1954, status RECORDED.** Printed 27:48, computed 27:45.9; every other printed value agrees within a minute. PC-31.
 
 ## 5. Research protocol
 
@@ -504,3 +551,25 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.15.0-v1.19.0. Nothing falls back fro
 | `TAROT_SPREAD_WAITE_CELTIC_METHOD_1910` | active | source_supported | Waite, Part III |
 | `TAROT_SPREAD_SINGLE_CARD` | active | engineering_convention | Pandit Ji |
 | `TAROT_SPREAD_THREE_CARD_UNLABELLED` | active | engineering_convention | Pandit Ji; no position meanings |
+
+### 6.8 Phase 10 profile IDs
+
+Defined in `docs/ASTROLOGY_STANDARDS.md` v1.23.0. Readings the sources do not settle are reported side by side.
+
+| Profile ID | Status | Label | Source basis and verification level |
+|---|---|---|---|
+| `PANCHANG_DRIK_CRC_1955_V1` | active, default regional configuration | source_supported | CRC 1955, `IMAGE-ORIGINAL-ENGLISH` recommendations and printed calendar |
+| sunrise `crc_1955_centre_refraction_30` | active, default | source_supported | CRC 1955; reproduced to the minute |
+| sunrise `upper_limb_standard_refraction` | active, explicit alternative | engineering_convention | Phase 4 convention (Swiss Ephemeris) |
+| saura frame `crc_fixed_23_15` / `lahiri_variable` | both reported, no default | unresolved_conflict | CRC (5) page image / Lahiri (7) |
+| `HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1` | active, only | source_supported | Kalaprakasika pp. 176-177 `IMAGE-TRANSLATION`; Raman Art. 68-70 |
+| `DAY_EIGHTHS_OF_SUNRISE_TO_SUNSET_V1` | active, only | source_supported (Rahu Kalam: translator_note) | Kalaprakasika p. 175-176 `IMAGE-TRANSLATION`; proportional division an inference |
+| `TARA_BALA_NINE_FROM_JANMA` | active | source_supported | Kalaprakasika pp. 166-167; Raman pp. 17-18 |
+| Chandra Bala `kalaprakasika_chandrashtama` / `raman_6_8_12` | both reported | source_supported / modern_tradition | Kalaprakasika p. 167; Raman p. 18 |
+| `NAKSHATRA_PANCHAKA_RAMAN_1948` | active | modern_tradition | Raman p. 26, `OCR-ORIGINAL-ENGLISH` |
+| `REMAINDER_PANCHAKA_RAMAN_KALAPRAKASIKA` | active (Muhurta factor) | modern_tradition | Raman pp. 19-21; Kalaprakasika p. 161 equivalent |
+| `BHADRA_AS_VISHTI_KARANA_RAMAN_1948` | active | modern_tradition | Raman pp. 13-14, 29 |
+| upagraha `bphs_verse` / `bphs_translator_note` | both reported | source_supported / translator_note | BPHS Ch. 3 v. 61-64, `IMAGE-TRANSLATION` |
+| Gulika/Mandi `gulika_portion_start_bphs_translation` / `gulika_portion_end` / `mandi_phaladeepika_ghati_table` | all three reported | translator_note / translator_note / source_supported | BPHS Ch. 3 v. 66-70; Uttara Kalamrita; Phaladeepika Ch. 25 sl. 2 (`OCR-TRANSLATION`) |
+| Pranapada `sun_at_given_time` / `sun_at_sunrise` | both reported | inference | BPHS Ch. 3 v. 71-74, `IMAGE-TRANSLATION` |
+| Muhurta rules `MU.*` (rules version 1.0.0) | active: Vivaha, Griha Pravesha, Chaula | source_supported / inference / modern_tradition per rule | Kalaprakasika (`OCR-TRANSLATION`); Raman 1948 (`OCR-ORIGINAL-ENGLISH`) |

@@ -1,0 +1,1023 @@
+{
+ "ayanamsa": "lahiri",
+ "bhadra": [],
+ "date": "1990-05-17",
+ "day_part_profile_id": "DAY_EIGHTHS_OF_SUNRISE_TO_SUNSET_V1",
+ "day_parts": [
+  {
+   "end": {
+    "julian_day_ut": 2448028.924222257,
+    "local": "1990-05-17T15:40:52.803004+05:30",
+    "utc": "1990-05-17T10:10:52.803004Z"
+   },
+   "evidence_label": "translator_note",
+   "kind": "rahu_kalam",
+   "part": 6,
+   "period": "day",
+   "start": {
+    "julian_day_ut": 2448028.8536554533,
+    "local": "1990-05-17T13:59:15.831166+05:30",
+    "utc": "1990-05-17T08:29:15.831166Z"
+   }
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.57138824,
+    "local": "1990-05-17T07:12:47.943934+05:30",
+    "utc": "1990-05-17T01:42:47.943934Z"
+   },
+   "evidence_label": "source_supported",
+   "kind": "yamaganda",
+   "part": 1,
+   "period": "day",
+   "start": {
+    "julian_day_ut": 2448028.5008214368,
+    "local": "1990-05-17T05:31:10.972136+05:30",
+    "utc": "1990-05-17T00:01:10.972136Z"
+   }
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.712521847,
+    "local": "1990-05-17T10:36:01.887570+05:30",
+    "utc": "1990-05-17T05:06:01.887570Z"
+   },
+   "evidence_label": "source_supported",
+   "kind": "gulika_kalam",
+   "part": 3,
+   "period": "day",
+   "start": {
+    "julian_day_ut": 2448028.641955043,
+    "local": "1990-05-17T08:54:24.915732+05:30",
+    "utc": "1990-05-17T03:24:24.915732Z"
+   }
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.3916747654,
+    "local": "1990-05-18T02:54:00.699729+05:30",
+    "utc": "1990-05-17T21:24:00.699729Z"
+   },
+   "evidence_label": "translator_note",
+   "kind": "gulika_kalam",
+   "part": 6,
+   "period": "night",
+   "start": {
+    "julian_day_ut": 2448029.337288282,
+    "local": "1990-05-18T01:35:41.707554+05:30",
+    "utc": "1990-05-17T20:05:41.707554Z"
+   }
+  }
+ ],
+ "engine_version": "0.12.0",
+ "ephemeris_mode": "moshier",
+ "hora_profile_id": "HORA_EQUAL_60_MINUTES_FROM_SUNRISE_V1",
+ "horas": [
+  {
+   "end": {
+    "julian_day_ut": 2448028.5424881033,
+    "local": "1990-05-17T06:31:10.972122+05:30",
+    "utc": "1990-05-17T01:01:10.972122Z"
+   },
+   "lord": "jupiter",
+   "number": 1,
+   "start": {
+    "julian_day_ut": 2448028.5008214368,
+    "local": "1990-05-17T05:31:10.972136+05:30",
+    "utc": "1990-05-17T00:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.58415477,
+    "local": "1990-05-17T07:31:10.972109+05:30",
+    "utc": "1990-05-17T02:01:10.972109Z"
+   },
+   "lord": "mars",
+   "number": 2,
+   "start": {
+    "julian_day_ut": 2448028.5424881033,
+    "local": "1990-05-17T06:31:10.972122+05:30",
+    "utc": "1990-05-17T01:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.6258214368,
+    "local": "1990-05-17T08:31:10.972136+05:30",
+    "utc": "1990-05-17T03:01:10.972136Z"
+   },
+   "lord": "sun",
+   "number": 3,
+   "start": {
+    "julian_day_ut": 2448028.5841547702,
+    "local": "1990-05-17T07:31:10.972149+05:30",
+    "utc": "1990-05-17T02:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.6674881033,
+    "local": "1990-05-17T09:31:10.972122+05:30",
+    "utc": "1990-05-17T04:01:10.972122Z"
+   },
+   "lord": "venus",
+   "number": 4,
+   "start": {
+    "julian_day_ut": 2448028.6258214368,
+    "local": "1990-05-17T08:31:10.972136+05:30",
+    "utc": "1990-05-17T03:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.70915477,
+    "local": "1990-05-17T10:31:10.972109+05:30",
+    "utc": "1990-05-17T05:01:10.972109Z"
+   },
+   "lord": "mercury",
+   "number": 5,
+   "start": {
+    "julian_day_ut": 2448028.6674881033,
+    "local": "1990-05-17T09:31:10.972122+05:30",
+    "utc": "1990-05-17T04:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.7508214368,
+    "local": "1990-05-17T11:31:10.972136+05:30",
+    "utc": "1990-05-17T06:01:10.972136Z"
+   },
+   "lord": "moon",
+   "number": 6,
+   "start": {
+    "julian_day_ut": 2448028.7091547702,
+    "local": "1990-05-17T10:31:10.972149+05:30",
+    "utc": "1990-05-17T05:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.7924881033,
+    "local": "1990-05-17T12:31:10.972122+05:30",
+    "utc": "1990-05-17T07:01:10.972122Z"
+   },
+   "lord": "saturn",
+   "number": 7,
+   "start": {
+    "julian_day_ut": 2448028.7508214368,
+    "local": "1990-05-17T11:31:10.972136+05:30",
+    "utc": "1990-05-17T06:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.83415477,
+    "local": "1990-05-17T13:31:10.972109+05:30",
+    "utc": "1990-05-17T08:01:10.972109Z"
+   },
+   "lord": "jupiter",
+   "number": 8,
+   "start": {
+    "julian_day_ut": 2448028.7924881033,
+    "local": "1990-05-17T12:31:10.972122+05:30",
+    "utc": "1990-05-17T07:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.8758214368,
+    "local": "1990-05-17T14:31:10.972136+05:30",
+    "utc": "1990-05-17T09:01:10.972136Z"
+   },
+   "lord": "mars",
+   "number": 9,
+   "start": {
+    "julian_day_ut": 2448028.8341547702,
+    "local": "1990-05-17T13:31:10.972149+05:30",
+    "utc": "1990-05-17T08:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.9174881033,
+    "local": "1990-05-17T15:31:10.972122+05:30",
+    "utc": "1990-05-17T10:01:10.972122Z"
+   },
+   "lord": "sun",
+   "number": 10,
+   "start": {
+    "julian_day_ut": 2448028.8758214368,
+    "local": "1990-05-17T14:31:10.972136+05:30",
+    "utc": "1990-05-17T09:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448028.95915477,
+    "local": "1990-05-17T16:31:10.972109+05:30",
+    "utc": "1990-05-17T11:01:10.972109Z"
+   },
+   "lord": "venus",
+   "number": 11,
+   "start": {
+    "julian_day_ut": 2448028.9174881033,
+    "local": "1990-05-17T15:31:10.972122+05:30",
+    "utc": "1990-05-17T10:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.0008214368,
+    "local": "1990-05-17T17:31:10.972136+05:30",
+    "utc": "1990-05-17T12:01:10.972136Z"
+   },
+   "lord": "mercury",
+   "number": 12,
+   "start": {
+    "julian_day_ut": 2448028.9591547702,
+    "local": "1990-05-17T16:31:10.972149+05:30",
+    "utc": "1990-05-17T11:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.0424881033,
+    "local": "1990-05-17T18:31:10.972122+05:30",
+    "utc": "1990-05-17T13:01:10.972122Z"
+   },
+   "lord": "moon",
+   "number": 13,
+   "start": {
+    "julian_day_ut": 2448029.0008214368,
+    "local": "1990-05-17T17:31:10.972136+05:30",
+    "utc": "1990-05-17T12:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.08415477,
+    "local": "1990-05-17T19:31:10.972109+05:30",
+    "utc": "1990-05-17T14:01:10.972109Z"
+   },
+   "lord": "saturn",
+   "number": 14,
+   "start": {
+    "julian_day_ut": 2448029.0424881033,
+    "local": "1990-05-17T18:31:10.972122+05:30",
+    "utc": "1990-05-17T13:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.1258214368,
+    "local": "1990-05-17T20:31:10.972136+05:30",
+    "utc": "1990-05-17T15:01:10.972136Z"
+   },
+   "lord": "jupiter",
+   "number": 15,
+   "start": {
+    "julian_day_ut": 2448029.0841547702,
+    "local": "1990-05-17T19:31:10.972149+05:30",
+    "utc": "1990-05-17T14:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.1674881033,
+    "local": "1990-05-17T21:31:10.972122+05:30",
+    "utc": "1990-05-17T16:01:10.972122Z"
+   },
+   "lord": "mars",
+   "number": 16,
+   "start": {
+    "julian_day_ut": 2448029.1258214368,
+    "local": "1990-05-17T20:31:10.972136+05:30",
+    "utc": "1990-05-17T15:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.20915477,
+    "local": "1990-05-17T22:31:10.972109+05:30",
+    "utc": "1990-05-17T17:01:10.972109Z"
+   },
+   "lord": "sun",
+   "number": 17,
+   "start": {
+    "julian_day_ut": 2448029.1674881033,
+    "local": "1990-05-17T21:31:10.972122+05:30",
+    "utc": "1990-05-17T16:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.2508214368,
+    "local": "1990-05-17T23:31:10.972136+05:30",
+    "utc": "1990-05-17T18:01:10.972136Z"
+   },
+   "lord": "venus",
+   "number": 18,
+   "start": {
+    "julian_day_ut": 2448029.2091547702,
+    "local": "1990-05-17T22:31:10.972149+05:30",
+    "utc": "1990-05-17T17:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.2924881033,
+    "local": "1990-05-18T00:31:10.972122+05:30",
+    "utc": "1990-05-17T19:01:10.972122Z"
+   },
+   "lord": "mercury",
+   "number": 19,
+   "start": {
+    "julian_day_ut": 2448029.2508214368,
+    "local": "1990-05-17T23:31:10.972136+05:30",
+    "utc": "1990-05-17T18:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.33415477,
+    "local": "1990-05-18T01:31:10.972109+05:30",
+    "utc": "1990-05-17T20:01:10.972109Z"
+   },
+   "lord": "moon",
+   "number": 20,
+   "start": {
+    "julian_day_ut": 2448029.2924881033,
+    "local": "1990-05-18T00:31:10.972122+05:30",
+    "utc": "1990-05-17T19:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.3758214368,
+    "local": "1990-05-18T02:31:10.972136+05:30",
+    "utc": "1990-05-17T21:01:10.972136Z"
+   },
+   "lord": "saturn",
+   "number": 21,
+   "start": {
+    "julian_day_ut": 2448029.3341547702,
+    "local": "1990-05-18T01:31:10.972149+05:30",
+    "utc": "1990-05-17T20:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.4174881033,
+    "local": "1990-05-18T03:31:10.972122+05:30",
+    "utc": "1990-05-17T22:01:10.972122Z"
+   },
+   "lord": "jupiter",
+   "number": 22,
+   "start": {
+    "julian_day_ut": 2448029.3758214368,
+    "local": "1990-05-18T02:31:10.972136+05:30",
+    "utc": "1990-05-17T21:01:10.972136Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.45915477,
+    "local": "1990-05-18T04:31:10.972109+05:30",
+    "utc": "1990-05-17T23:01:10.972109Z"
+   },
+   "lord": "mars",
+   "number": 23,
+   "start": {
+    "julian_day_ut": 2448029.4174881033,
+    "local": "1990-05-18T03:31:10.972122+05:30",
+    "utc": "1990-05-17T22:01:10.972122Z"
+   },
+   "truncated_by_next_sunrise": false
+  },
+  {
+   "end": {
+    "julian_day_ut": 2448029.500447733,
+    "local": "1990-05-18T05:30:38.684119+05:30",
+    "utc": "1990-05-18T00:00:38.684119Z"
+   },
+   "lord": "sun",
+   "number": 24,
+   "start": {
+    "julian_day_ut": 2448029.4591547702,
+    "local": "1990-05-18T04:31:10.972149+05:30",
+    "utc": "1990-05-17T23:01:10.972149Z"
+   },
+   "truncated_by_next_sunrise": true
+  }
+ ],
+ "karanas": [
+  {
+   "current_at_next_sunrise": false,
+   "current_at_sunrise": true,
+   "end": {
+    "julian_day_ut": 2448028.8239770783,
+    "local": "1990-05-17T13:16:31.619566+05:30",
+    "utc": "1990-05-17T07:46:31.619566Z"
+   },
+   "index": 44,
+   "kind": "karana",
+   "kshaya": false,
+   "name": "bava",
+   "start": {
+    "julian_day_ut": 2448028.3174113287,
+    "local": "1990-05-17T01:07:04.338797+05:30",
+    "utc": "1990-05-16T19:37:04.338797Z"
+   }
+  },
+  {
+   "current_at_next_sunrise": false,
+   "current_at_sunrise": false,
+   "end": {
+    "julian_day_ut": 2448029.3228418943,
+    "local": "1990-05-18T01:14:53.539672+05:30",
+    "utc": "1990-05-17T19:44:53.539672Z"
+   },
+   "index": 45,
+   "kind": "karana",
+   "kshaya": true,
+   "name": "balava",
+   "start": {
+    "julian_day_ut": 2448028.8239770783,
+    "local": "1990-05-17T13:16:31.619566+05:30",
+    "utc": "1990-05-17T07:46:31.619566Z"
+   }
+  },
+  {
+   "current_at_next_sunrise": true,
+   "current_at_sunrise": false,
+   "end": {
+    "julian_day_ut": 2448029.8136841636,
+    "local": "1990-05-18T13:01:42.311736+05:30",
+    "utc": "1990-05-18T07:31:42.311736Z"
+   },
+   "index": 46,
+   "kind": "karana",
+   "kshaya": false,
+   "name": "kaulava",
+   "start": {
+    "julian_day_ut": 2448029.3228418943,
+    "local": "1990-05-18T01:14:53.539672+05:30",
+    "utc": "1990-05-17T19:44:53.539672Z"
+   }
+  }
+ ],
+ "location": {
+  "altitude_meters": 0.0,
+  "latitude": 28.61,
+  "longitude": 77.21
+ },
+ "lunar_months": [
+  {
+   "amanta_adhika": false,
+   "amanta_month": "vaishakha",
+   "month_end_new_moon": {
+    "julian_day_ut": 2448035.9910587324,
+    "local": "1990-05-24T17:17:07.474478+05:30",
+    "utc": "1990-05-24T11:47:07.474478Z"
+   },
+   "month_start_new_moon": {
+    "julian_day_ut": 2448006.6857211245,
+    "local": "1990-04-25T09:57:26.305159+05:30",
+    "utc": "1990-04-25T04:27:26.305159Z"
+   },
+   "paksha": "krishna",
+   "purnimanta_adhika": false,
+   "purnimanta_month": "jyeshtha",
+   "saka_year_expired": 1912,
+   "saura_frame": "lahiri_variable",
+   "suppressed_month_before": null,
+   "vikrama_year_chaitradi_expired": 2047,
+   "year_reason": null
+  },
+  {
+   "amanta_adhika": false,
+   "amanta_month": "vaishakha",
+   "month_end_new_moon": {
+    "julian_day_ut": 2448035.9910587324,
+    "local": "1990-05-24T17:17:07.474478+05:30",
+    "utc": "1990-05-24T11:47:07.474478Z"
+   },
+   "month_start_new_moon": {
+    "julian_day_ut": 2448006.6857211245,
+    "local": "1990-04-25T09:57:26.305159+05:30",
+    "utc": "1990-04-25T04:27:26.305159Z"
+   },
+   "paksha": "krishna",
+   "purnimanta_adhika": false,
+   "purnimanta_month": "jyeshtha",
+   "saka_year_expired": 1912,
+   "saura_frame": "crc_fixed_23_15",
+   "suppressed_month_before": null,
+   "vikrama_year_chaitradi_expired": 2047,
+   "year_reason": null
+  }
+ ],
+ "moonrise": {
+  "instant": {
+   "julian_day_ut": 2448029.3115684963,
+   "local": "1990-05-18T00:58:39.518079+05:30",
+   "utc": "1990-05-17T19:28:39.518079Z"
+  },
+  "status": "occurred"
+ },
+ "moonset": {
+  "instant": {
+   "julian_day_ut": 2448028.754019794,
+   "local": "1990-05-17T11:35:47.310206+05:30",
+   "utc": "1990-05-17T06:05:47.310206Z"
+  },
+  "status": "occurred"
+ },
+ "nakshatra_panchaka": [
+  {
+   "end": {
+    "julian_day_ut": 2448033.4016295327,
+    "local": "1990-05-22T03:08:20.791624+05:30",
+    "utc": "1990-05-21T21:38:20.791624Z"
+   },
+   "ends_after_day": true,
+   "start": {
+    "julian_day_ut": 2448029.0998164667,
+    "local": "1990-05-17T19:53:44.142721+05:30",
+    "utc": "1990-05-17T14:23:44.142721Z"
+   },
+   "starts_before_day": false
+  }
+ ],
+ "nakshatras": [
+  {
+   "current_at_next_sunrise": false,
+   "current_at_sunrise": true,
+   "end": {
+    "julian_day_ut": 2448028.583195354,
+    "local": "1990-05-17T07:29:48.078573+05:30",
+    "utc": "1990-05-17T01:59:48.078573Z"
+   },
+   "index": 22,
+   "kind": "nakshatra",
+   "kshaya": false,
+   "name": "shravana",
+   "start": {
+    "julian_day_ut": 2448027.5285429014,
+    "local": "1990-05-16T06:11:06.106680+05:30",
+    "utc": "1990-05-16T00:41:06.106680Z"
+   }
+  },
+  {
+   "current_at_next_sunrise": true,
+   "current_at_sunrise": false,
+   "end": {
+    "julian_day_ut": 2448029.608707261,
+    "local": "1990-05-18T08:06:32.307334+05:30",
+    "utc": "1990-05-18T02:36:32.307334Z"
+   },
+   "index": 23,
+   "kind": "nakshatra",
+   "kshaya": false,
+   "name": "dhanishta",
+   "start": {
+    "julian_day_ut": 2448028.583195354,
+    "local": "1990-05-17T07:29:48.078573+05:30",
+    "utc": "1990-05-17T01:59:48.078573Z"
+   }
+  }
+ ],
+ "next_sunrise": {
+  "instant": {
+   "julian_day_ut": 2448029.500447733,
+   "local": "1990-05-18T05:30:38.684119+05:30",
+   "utc": "1990-05-18T00:00:38.684119Z"
+  },
+  "status": "occurred"
+ },
+ "not_implemented": [
+  {
+   "item": "choghadiya",
+   "reason": "no primary source read (PC-22)"
+  },
+  {
+   "item": "gowri_panchangam",
+   "reason": "no primary source read (PC-22)"
+  },
+  {
+   "item": "regional_solar_calendars",
+   "reason": "Tamil, Bengali, Malayalam and Odia solar-month rules not implemented (PC-02)"
+  },
+  {
+   "item": "bhadra_residence",
+   "reason": "no source read (PC-21)"
+  },
+  {
+   "item": "vikrama_karttikadi_ashadhadi",
+   "reason": "regional Vikrama year beginnings not implemented (PC-17)"
+  },
+  {
+   "item": "unequal_hora",
+   "reason": "no source read (PC-18)"
+  }
+ ],
+ "profile_id": "PANCHANG_DRIK_CRC_1955_V1",
+ "provenance": [
+  {
+   "entry_id": "prov.day",
+   "evidence_label": "source_supported",
+   "item": "Civil day and Vara",
+   "references": [
+    {
+     "locator": "Art. 5 (p. 2), Art. 31-32 (pp. 19-20)",
+     "note": "",
+     "source_id": "SRC-SEWELL-DIKSHIT-INDIAN-CALENDAR-1896",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Recommendation (8), p. 7",
+     "note": "",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Part B, Calendar for five years, explanation (6)",
+     "note": "",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "The day and the weekday run from sunrise to sunrise; a day bears the tithi (and other elements) current at its sunrise."
+  },
+  {
+   "entry_id": "prov.sunrise",
+   "evidence_label": "source_supported",
+   "item": "Sunrise and sunset",
+   "references": [
+    {
+     "locator": "Part B, Calendar for five years, explanation (5); minutes, item (8)",
+     "note": "reproduced to the minute on the printed calendar for Saka 1876 (pp. 41-42, page images)",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Sunrise and sunset are the moments the centre of the Sun is on the horizon as affected by refraction, taken as 30 minutes of arc (default); the upper-limb convention of Phase 4 is an explicit alternative."
+  },
+  {
+   "entry_id": "prov.elements",
+   "evidence_label": "source_supported",
+   "item": "Tithi, Nakshatra, Yoga, Karana",
+   "references": [
+    {
+     "locator": "Art. 7-10 (pp. 3-4)",
+     "note": "",
+     "source_id": "SRC-SEWELL-DIKSHIT-INDIAN-CALENDAR-1896",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Recommendations (7) and (9), p. 7",
+     "note": "",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "pp. 12-14 (yoga and karana lists)",
+     "note": "",
+     "source_id": "SRC-RAMAN-MUHURTHA-1948",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "p. 99 footnote (fixed karanas)",
+     "note": "",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Tithi: the Moon gains 12 degrees on the Sun; Karana: half a tithi (6 degrees), Kimstughna, seven movable karanas eight times, Shakuni, Chatushpada, Naga; Yoga: the sum of the sidereal longitudes in 13 deg 20 min parts; Nakshatra: 13 deg 20 min of the sidereal zodiac from Ashwini; true (apparent) longitudes; nakshatras with the variable ayanamsa (Lahiri)."
+  },
+  {
+   "entry_id": "prov.month",
+   "evidence_label": "source_supported",
+   "item": "Lunar month, adhika and kshaya",
+   "references": [
+    {
+     "locator": "Recommendation (6), p. 7",
+     "note": "",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Art. 13-14, 48, 51 (pp. 4-5, 29-31)",
+     "note": "",
+     "source_id": "SRC-SEWELL-DIKSHIT-INDIAN-CALENDAR-1896",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Amanta months run from new moon to new moon and are named after the saura month in which the new moon falls; two new moons in one saura month make the first month adhika; a saura month without a new moon gives a suppressed (kshaya) name. Purnimanta: the dark fortnight takes the name of the following month."
+  },
+  {
+   "entry_id": "prov.saura_frames",
+   "evidence_label": "unresolved_conflict",
+   "item": "Saura month frames",
+   "references": [
+    {
+     "locator": "Recommendations (5) and (7), p. 7",
+     "note": "",
+     "source_id": "SRC-CALENDAR-REFORM-COMMITTEE-1955",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "The Committee fixed the saura months 23 deg 15 min ahead of the vernal equinox; nakshatras use the variable (Lahiri) ayanamsa. Almanacs that measure sankrantis with the variable ayanamsa are not verified in a primary source read, so both frames are computed and reported; they differ by the growth of the ayanamsa since 1956."
+  },
+  {
+   "entry_id": "prov.day_parts",
+   "evidence_label": "source_supported",
+   "item": "Eighth parts of the day",
+   "references": [
+    {
+     "locator": "Ch. XXXIII p. 175 (text)",
+     "note": "",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "IMAGE-TRANSLATION"
+    },
+    {
+     "locator": "p. 176 tables",
+     "note": "the tables use a 12-hour day from 6 o'clock; dividing the actual sunrise-to-sunset span into eight is PC-19's inference",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "IMAGE-TRANSLATION"
+    }
+   ],
+   "statement": "The day is divided into eight parts; the lord of the day governs the first and the last, the other lords follow in weekday order; Saturn's part is Gulika. Yamaganda: 5th, 4th, 3rd, 2nd, 1st, 7th, 6th part Sunday to Saturday."
+  },
+  {
+   "entry_id": "prov.rahu_kalam",
+   "evidence_label": "translator_note",
+   "item": "Rahu Kalam",
+   "references": [
+    {
+     "locator": "p. 176 footnote",
+     "note": "the translator's, not the text's",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "IMAGE-TRANSLATION"
+    }
+   ],
+   "statement": "Daytime only: Sunday 8th part, Monday 2nd, Tuesday 7th, Wednesday 5th, Thursday 6th, Friday 4th, Saturday 3rd (clock times for a 6-to-6 day)."
+  },
+  {
+   "entry_id": "prov.hora",
+   "evidence_label": "source_supported",
+   "item": "Hora",
+   "references": [
+    {
+     "locator": "p. 176 (text) and p. 177 table (hours from 6 o'clock)",
+     "note": "",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "IMAGE-TRANSLATION"
+    },
+    {
+     "locator": "Art. 68-70",
+     "note": "equal hours from sunrise",
+     "source_id": "SRC-RAMAN-GRAHA-BHAVA-BALAS",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Horas of one hour from sunrise; the first is the weekday lord, each next lord the sixth in weekday order from the previous one."
+  },
+  {
+   "entry_id": "prov.panchaka",
+   "evidence_label": "modern_tradition",
+   "item": "Panchaka",
+   "references": [
+    {
+     "locator": "pp. 19-22 (remainder), p. 26 (nakshatra panchaka)",
+     "note": "",
+     "source_id": "SRC-RAMAN-MUHURTHA-1948",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "Ch. XXIX pp. 161-162",
+     "note": "",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Two different things share the name. Nakshatra Panchaka: the Moon from the third quarter of Dhanishta to the end of Revati (Raman). Remainder Panchaka: tithi (1-30) + weekday (Sunday 1) + nakshatra (Ashwini 1) + lagna (Aries 1), divided by 9; remainders 1, 2, 4, 6, 8 are Mrityu, Agni, Raja, Chora, Roga (Raman; the same test as Kalaprakasika's 'add 15, 12, 10, 8, 4 and look for remainder 5')."
+  },
+  {
+   "entry_id": "prov.bhadra",
+   "evidence_label": "modern_tradition",
+   "item": "Bhadra",
+   "references": [
+    {
+     "locator": "pp. 13-14, 29",
+     "note": "",
+     "source_id": "SRC-RAMAN-MUHURTHA-1948",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Bhadra is the Vishti karana (Raman lists Visti among the karanas and calls Bhadra unfit for good work). Bhadra's residence (loka) rules are not implemented."
+  },
+  {
+   "entry_id": "prov.tara_chandra",
+   "evidence_label": "source_supported",
+   "item": "Tara Bala and Chandra Bala",
+   "references": [
+    {
+     "locator": "Ch. XXXIII pp. 166-167",
+     "note": "",
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    },
+    {
+     "locator": "pp. 17-18",
+     "note": "",
+     "source_id": "SRC-RAMAN-MUHURTHA-1948",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "Tara: count from the birth nakshatra to the day's, divide by 9; 1 Janma, 2 Sampat, 3 Vipat, 4 Kshema, 5 Pratyak, 6 Sadhana, 7 Naidhana, 8 Mitra, 9 Parama Mitra. Chandra Bala: Kalaprakasika avoids only the 8th from the birth Moon sign (Chandrashtama); Raman avoids the 6th, 8th and 12th."
+  },
+  {
+   "entry_id": "prov.special_points",
+   "evidence_label": "source_supported",
+   "item": "Upagrahas, Gulika and Mandi, special Lagnas, Pranapada",
+   "references": [
+    {
+     "locator": "Ch. 3 v. 61-74 (pp. 43-47), Ch. 5 v. 1-8 (pp. 61-64)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "IMAGE-TRANSLATION"
+    },
+    {
+     "locator": "Ch. 5 v. 10-13 (p. 65)",
+     "note": "",
+     "source_id": "SRC-BPHS-SANTHANAM-1984",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    {
+     "locator": "Ch. 25 sl. 2",
+     "note": "",
+     "source_id": "SRC-PHALADEEPIKA-SASTRI",
+     "verification_level": "OCR-TRANSLATION"
+    },
+    {
+     "locator": "Ch. 1 (Gulika at the end of Saturn's part)",
+     "note": "",
+     "source_id": "SRC-UTTARA-KALAMRITA-SASTRI",
+     "verification_level": "OCR-TRANSLATION"
+    }
+   ],
+   "statement": "BPHS Ch. 3 v. 61-74 and Ch. 5 v. 1-13; Phaladeepika Ch. 25 sl. 2; see PC-25 to PC-29 for the separately tagged readings."
+  },
+  {
+   "entry_id": "prov.ghati",
+   "evidence_label": "engineering_convention",
+   "item": "Ghati and pala",
+   "references": [
+    {
+     "locator": "Art. 8-9 tables (gh., pa.)",
+     "note": "",
+     "source_id": "SRC-SEWELL-DIKSHIT-INDIAN-CALENDAR-1896",
+     "verification_level": "OCR-ORIGINAL-ENGLISH"
+    }
+   ],
+   "statement": "A ghati is 24 minutes and a pala 24 seconds of civil time; elapsed time is counted from the sunrise of the chosen convention."
+  }
+ ],
+ "reason": null,
+ "regional_convention": "pan_indian_drik_crc_1955",
+ "standards_version": "1.23.0",
+ "status": "success",
+ "sunrise": {
+  "instant": {
+   "julian_day_ut": 2448028.5008214368,
+   "local": "1990-05-17T05:31:10.972136+05:30",
+   "utc": "1990-05-17T00:01:10.972136Z"
+  },
+  "status": "occurred"
+ },
+ "sunrise_convention": "crc_1955_centre_refraction_30",
+ "sunset": {
+  "instant": {
+   "julian_day_ut": 2448029.0653558634,
+   "local": "1990-05-17T19:04:06.746600+05:30",
+   "utc": "1990-05-17T13:34:06.746600Z"
+  },
+  "status": "occurred"
+ },
+ "system": "panchang_muhurta_calendar",
+ "timezone": "Asia/Kolkata",
+ "tithi_at_sunrise": {
+  "index": 22,
+  "name": "saptami",
+  "number_in_paksha": 7,
+  "paksha": "krishna"
+ },
+ "tithis": [
+  {
+   "current_at_next_sunrise": false,
+   "current_at_sunrise": true,
+   "end": {
+    "julian_day_ut": 2448028.8239770783,
+    "local": "1990-05-17T13:16:31.619566+05:30",
+    "utc": "1990-05-17T07:46:31.619566Z"
+   },
+   "index": 22,
+   "kind": "tithi",
+   "kshaya": false,
+   "name": "saptami",
+   "start": {
+    "julian_day_ut": 2448027.803599204,
+    "local": "1990-05-16T12:47:10.971220+05:30",
+    "utc": "1990-05-16T07:17:10.971220Z"
+   }
+  },
+  {
+   "current_at_next_sunrise": true,
+   "current_at_sunrise": false,
+   "end": {
+    "julian_day_ut": 2448029.813684177,
+    "local": "1990-05-18T13:01:42.312903+05:30",
+    "utc": "1990-05-18T07:31:42.312903Z"
+   },
+   "index": 23,
+   "kind": "tithi",
+   "kshaya": false,
+   "name": "ashtami",
+   "start": {
+    "julian_day_ut": 2448028.8239770783,
+    "local": "1990-05-17T13:16:31.619566+05:30",
+    "utc": "1990-05-17T07:46:31.619566Z"
+   }
+  }
+ ],
+ "vara": {
+  "lord": "jupiter",
+  "weekday": "thursday"
+ },
+ "warnings": [
+  "Moshier analytical ephemeris used (no Swiss Ephemeris data files configured)"
+ ],
+ "yogas": [
+  {
+   "current_at_next_sunrise": false,
+   "current_at_sunrise": true,
+   "end": {
+    "julian_day_ut": 2448029.1455633296,
+    "local": "1990-05-17T20:59:36.671675+05:30",
+    "utc": "1990-05-17T15:29:36.671675Z"
+   },
+   "index": 25,
+   "kind": "yoga",
+   "kshaya": false,
+   "name": "brahma",
+   "start": {
+    "julian_day_ut": 2448028.1797874225,
+    "local": "1990-05-16T21:48:53.633307+05:30",
+    "utc": "1990-05-16T16:18:53.633307Z"
+   }
+  },
+  {
+   "current_at_next_sunrise": true,
+   "current_at_sunrise": false,
+   "end": {
+    "julian_day_ut": 2448030.0863947985,
+    "local": "1990-05-18T19:34:24.510588+05:30",
+    "utc": "1990-05-18T14:04:24.510588Z"
+   },
+   "index": 26,
+   "kind": "yoga",
+   "kshaya": false,
+   "name": "indra",
+   "start": {
+    "julian_day_ut": 2448029.1455633296,
+    "local": "1990-05-17T20:59:36.671675+05:30",
+    "utc": "1990-05-17T15:29:36.671675Z"
+   }
+  }
+ ]
+}

@@ -25,6 +25,10 @@ from pandit_rule_engine.derived import TableDerivedFacts
 from pandit_rule_engine.evaluator import evaluate_ruleset
 from pandit_rule_engine.facts import ChartFacts
 from pandit_rule_engine.loader import Ruleset, load_ruleset
+from pandit_rule_engine.panchang_evidence import (
+    PanchangEvidence,
+    panchang_evidence_from_facts,
+)
 from pandit_rule_engine.phase9_evidence import (
     ChineseEvidence,
     JaiminiEvidence,
@@ -61,6 +65,7 @@ class RuleEngine:
         jaimini: JaiminiEvidence | None = None,
         chinese: ChineseEvidence | None = None,
         tarot: TarotEvidence | None = None,
+        panchang: PanchangEvidence | None = None,
     ) -> EvidenceBundle:
         derived = TableDerivedFacts(facts, self.tables)
         results = evaluate_ruleset(self.ruleset, facts, derived)
@@ -78,6 +83,7 @@ class RuleEngine:
             jaimini=jaimini,
             chinese=chinese,
             tarot=tarot,
+            panchang=panchang,
         )
 
     def evaluate_kundli(
@@ -92,6 +98,7 @@ class RuleEngine:
         jaimini_facts: Mapping[str, Any] | None = None,
         chinese_facts: Mapping[str, Any] | None = None,
         tarot_layout: Mapping[str, Any] | None = None,
+        panchang_facts: Mapping[str, Any] | None = None,
     ) -> EvidenceBundle:
         """Evaluate a Phase 5 Kundli given in its JSON form. `dasha_facts` is an
         optional astro-engine `DashaFacts` (Phase 7), `transit_facts` an
@@ -108,7 +115,8 @@ class RuleEngine:
         Phase 9 closure (v1.21.0): `kp_facts`, `shadbala_facts` (exactly one
         profile), `jaimini_facts`, `chinese_facts` and `tarot_layout` are
         optional JSON forms of the WP-E to WP-I results, recorded as-is; no
-        rule reads them."""
+        rule reads them. Phase 10 (v1.23.0): `panchang_facts` is an optional
+        astro-engine `DailyPanchang`, recorded as-is; no rule reads it."""
         dasha = None if dasha_facts is None else dasha_evidence_from_facts(dasha_facts)
         transit = None if transit_facts is None else transit_evidence_from_facts(transit_facts)
         ashtakavarga = (
@@ -128,4 +136,7 @@ class RuleEngine:
             jaimini=None if jaimini_facts is None else jaimini_evidence_from_facts(jaimini_facts),
             chinese=None if chinese_facts is None else chinese_evidence_from_facts(chinese_facts),
             tarot=None if tarot_layout is None else tarot_evidence_from_layout(tarot_layout),
+            panchang=None
+            if panchang_facts is None
+            else panchang_evidence_from_facts(panchang_facts),
         )

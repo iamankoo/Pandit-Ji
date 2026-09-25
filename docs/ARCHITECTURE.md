@@ -145,8 +145,8 @@ astro_engine/
   ashtakvarga/
   dashas/           # vimshottari (mahadasha/antardasha/pratyantar), timeline builder, period lookup (Phase 7)
   transits/         # gochar states, ingress/station events, sade sati (modern tradition), sign-based transit-to-natal contacts (Phase 8)
-  panchang/         # tithi, vara, nakshatra, yoga, karana, hora, choghadiya, rahu kaal
-  muhurta/
+  panchang/         # Phase 10: tithi, vara, nakshatra, yoga, karana with exact transitions, sunrise/moonrise, lunar months (both saura frames), horas, eighth-day parts, Panchaka, Bhadra, special points (PC-01 to PC-31)
+  muhurta/          # Phase 10: purpose-tagged, source-tagged factor evaluation and search (MU-01 to MU-14)
   compatibility/    # ashtakoot/guna milan scoring
   numerology/
   western/          # tropical + Placidus module, kept isolated from Vedic assumptions (Phase 9 WP-D: built as `pandit_astro_engine/western`, standards WD-01 to WD-20; own body/sign identifiers, no Vedic imports)
@@ -276,7 +276,10 @@ User: "Will my career improve next year?"
 | `shadbala_for_rule` | `rule-engine` | Yes | SM-09 gate: a planet's total only from a complete `MODERN_RAMAN` result, otherwise `NOT_EVALUABLE` with one reason; no shipped rule calls it. |
 | `JaiminiFactsRequest` / `JaiminiFacts` | `astro-engine` | Yes | Phase 9 closure. The WP-G facts object with provenance (JN-19). |
 | `EvidenceBundle` sections `kp`, `shadbala`, `jaimini`, `chinese`, `tarot` | `rule-engine` | Yes | Phase 9 closure. Optional, transport-only sections (EV-01 to EV-10); omitted when absent; no rule reads them. |
-| `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |
+| `PanchangRequest` / `DailyPanchang` | `astro-engine` | Yes | Phase 10. Input: civil date + location + IANA timezone + sunrise convention (default CRC 1955). Output: the five limbs with exact transitions, lunar months under both saura frames, horas, day parts, Panchaka, Bhadra; `not_implemented` lists Choghadiya and Gowri (PC-01 to PC-24). |
+| `SpecialPointsRequest` / `SpecialPointsFacts` | `astro-engine` | Yes | Phase 10. Upagrahas, Gulika/Mandi, special Lagnas, Pranapada, each with its reading's profile (PC-25 to PC-29). |
+| `MuhurtaEvaluateRequest` / `MuhurtaEvaluation`, `MuhurtaSearchRequest` / `MuhurtaSearchResult` | `astro-engine` | Yes | Phase 10. Vivaha, Griha Pravesha, Chaula factor facts and windows; no verdict (MU-01 to MU-14). |
+| `EvidenceBundle` section `panchang` | `rule-engine` | Yes | Phase 10. Optional, transport-only (PC-30); no rule reads it. |
 | `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |
 | `NumerologyRequest` / `NumerologyResponse` | `astro-engine` | Yes | Input: birth date (+ name, if name-numerology requested) + system config. Output: Moolank/Bhagyank/name-number per `docs/ASTROLOGY_STANDARDS.md`. |
 | `RuleEvaluationRequest` / `RuleEvaluationResponse` | `rule-engine` | Yes | Input: normalized Facts object (from an `astro-engine` response). Output: evidence bundle (triggered rules + contradictions). |

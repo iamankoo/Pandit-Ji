@@ -129,7 +129,9 @@ def kp_sidereal_mode(variant: str) -> Iterator[None]:
 #: Reference ayanamsas read, never applied as a chart frame, by modules
 #: whose source tables were computed in that frame (Raman Shadbala Cheshta
 #: Bala, standards v1.21.0 SR-17).
-SWE_REFERENCE_AYANAMSA = {"raman": swe.SIDM_RAMAN}
+#: Phase 10 (standards v1.23.0, PC-05) also reads the Lahiri ayanamsa this way,
+#: so a Panchang calculation never changes the applied chart frame.
+SWE_REFERENCE_AYANAMSA = {"raman": swe.SIDM_RAMAN, "lahiri": swe.SIDM_LAHIRI}
 
 
 def reference_ayanamsa_with_nutation_degrees(key: str, julian_day_ut: float) -> float:
@@ -251,6 +253,56 @@ def rise_or_set(
     except swe.Error as exc:  # pragma: no cover - defensive
         raise EphemerisCalculationError(str(exc)) from exc
 
+    if return_code == -2:
+        return False, None
+    if return_code != 0:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(f"rise_trans returned unexpected code {return_code}")
+    return True, times[0]
+
+
+#: Rise/set conventions for Phase 10 (standards v1.23.0, PC-03). Values are
+#: (Swiss Ephemeris flag bits, geometric horizon altitude in degrees or None
+#: for the Swiss Ephemeris standard refraction model).
+RISE_SET_CONVENTIONS: dict[str, tuple[int, float | None]] = {
+    # Upper limb, standard atmospheric refraction: the Phase 4 convention.
+    "upper_limb_standard_refraction": (0, None),
+    # Centre of the disc, refraction taken as a constant 30 minutes of arc:
+    # the geometric altitude of the centre is -0.5 degree (Calendar Reform
+    # Committee, 1955).
+    "centre_refraction_30_arcmin": (swe.BIT_DISC_CENTER | swe.BIT_NO_REFRACTION, -0.5),
+}
+
+SWE_RISE_SET_BODY = {"sun": swe.SUN, "moon": swe.MOON}
+
+
+def rise_or_set_with_convention(
+    julian_day_ut_search_start: float,
+    *,
+    body: str,
+    event: str,
+    convention: str,
+    longitude: float,
+    latitude: float,
+    altitude_meters: float,
+) -> tuple[bool, float | None]:
+    """Next rise or set of the Sun or the Moon after the start instant under
+    a named `RISE_SET_CONVENTIONS` entry. Returns (False, None) when the
+    event does not occur (circumpolar), never a fabricated time."""
+    bits, horizon = RISE_SET_CONVENTIONS[convention]
+    rsmi = (swe.CALC_RISE if event == "rise" else swe.CALC_SET) | bits
+    geopos = (longitude, latitude, altitude_meters)
+    swe_body = SWE_RISE_SET_BODY[body]
+    try:
+        if horizon is None:
+            return_code, times = swe.rise_trans(
+                julian_day_ut_search_start, swe_body, rsmi, geopos, 0.0, 0.0
+            )
+        else:
+            return_code, times = swe.rise_trans_true_hor(
+                julian_day_ut_search_start, swe_body, rsmi, geopos, 0.0, 0.0, horizon
+            )
+    except swe.Error as exc:  # pragma: no cover - defensive
+        raise EphemerisCalculationError(str(exc)) from exc
     if return_code == -2:
         return False, None
     if return_code != 0:  # pragma: no cover - defensive

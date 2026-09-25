@@ -373,6 +373,28 @@ Each system should be isolated as a module, rather than mixing incompatible rule
 
 Deliverable: modular multi-system astrology framework.
 
+Status (2026-09-25, project-owner decisions; details in `docs/ASTROLOGY_STANDARDS.md` v1.21.0 and `SUMMARY.md` §34-§35): **complete as scoped by the owner, with accepted deferrals.** The module list above is kept unchanged as the original roadmap.
+
+| Roadmap item | Outcome |
+|---|---|
+| KP Astrology, KP Horary | Implemented as a foundation (positions, cusps, star/sub lords, 249 table, significators a-d, Ruling Planets, horary chart); no event judgment or timing |
+| Lal Kitab | Deferred (owner-accepted): no edition could be read; presumed in copyright |
+| Nadi Astrology | Deferred (owner-accepted): leaf-matching is not a deterministic calculation |
+| Horary Astrology (general) | Deferred (owner-accepted): tradition not chosen; KP Horary implemented |
+| Western Astrology, Tropical zodiac, Western aspects, Placidus | Implemented (WP-D) |
+| Chinese astrology | Implemented as Four Pillars calendar pillars; luck cycles need the person's sex (not collected) |
+| Vastu | Deferred (owner-accepted); cross-domain Vastu stays with Phase 17 |
+| Feng Shui-related modules | Deferred (owner-accepted) |
+| Tarot | Implemented as deck, spreads and seeded or user-selected layouts; meanings deferred (owner-accepted) |
+| Shadbala | Implemented: the BPHS verse profile (no total) and a separate modern profile after B. V. Raman (with totals); Ishta/Kashta (Ch. 28) research only |
+| Ashtakvarga | Implemented (WP-A1/A2/A3, evidence bundle WP-EB) |
+| Chara Karakas, Rashi Drishti | Implemented (WP-B), with planet-level Rashi Drishti added |
+| Arudha Pada, Karakamsa | Implemented on the owner's Phase 9 directive (not in the original list above) |
+| Jaimini Dashas | Deferred (owner-accepted) |
+| Ayurdaya | Excluded: `PRODUCT_POLICIES.md` prohibits lifespan outputs (owner decision) |
+
+Every implemented system is recorded in the rule-engine evidence bundle as an optional section (no rule reads them yet). Deferred and excluded systems are not implemented and must not be presented as available.
+
 ## Phase 10 — Panchang, Muhurta & Calendar Engine
 
 Build the Indian calendar subsystem.

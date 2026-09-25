@@ -35,6 +35,7 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - `DOCUMENTATION-DIRECT` (added in Phase 9 WP-D): technical documentation (software or astronomy) read directly in the publisher's current online text.
 - `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` (added in Phase 9 WP-I): a work written in English read in a published web transcription (for example a proofread Wikisource text), not checked against page images.
 - `WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)` (added in Phase 9 WP-H): a non-English original (for example classical Chinese) read in a web transcription by a non-qualified reader. Useful evidence, never a verification of the language, like `OCR-SOURCE-LANGUAGE (unreviewed)`.
+- `IMAGE-ORIGINAL-ENGLISH` (added in the Phase 9 closure, v1.21.0): a work written in English checked against rendered page images of the scan (the English counterpart of `IMAGE-TRANSLATION`).
 - `SECONDARY` (added in Phase 9 WP-H): several agreeing secondary or popular references (for example almanac websites), no primary or scholarly table read. At most MEDIUM confidence.
 
 "TRANSLATION-LEVEL VERIFIED" means one of the first three levels. "SANSKRIT-LEVEL VERIFIED" means the last level only.
@@ -287,6 +288,15 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - **Group 20 extracts**: Part II trump headings I The Magician to XXI The World and 0 The Fool, with Strength numbered VIII and Justice XI ("this card has been interchanged with that of Justice, which is usually numbered eight"); Part III suits Wands, Cups, Swords, Pentacles, King to Ace; "An Ancient Celtic Method of Divination": a Significator chosen by the querent's sex and age, the pack shuffled and cut three times, ten positions from "This covers him" to "What will come"; another method asks that some cards be turned round (reversed) before shuffling.
 - **Rules extracted**: TA-02, TA-03, TA-08, TA-09. **Copyright**: public domain (Waite d. 1942, Smith d. 1951); only names, numbers and position titles are used; the divinatory meanings are not stored.
 
+### SRC-RAMAN-GRAHA-BHAVA-BALAS (added in the Phase 9 closure, v1.21.0)
+
+- **Title**: B. V. Raman, *Graha and Bhava Balas*, second edition (Raman Publications, Bangalore; the first edition's date is given in the archive metadata as 1942 and was not verified). English original. **Location**: archive.org item `gzwo_graha-and-bhava-balas-by-b-v-raman-english-sanskrit-astrology-hindu-astrolo` (community upload; its CC0 tag is not credible -- Raman died in 1998, so the book is presumed in copyright in India to the end of 2058): OCR text and the `_text.pdf` scan, read 2026-09-25; pages rendered to images for the Standard Horoscope examples (pp. 11-12, 18, 22, 26, 29-30, 36, 53-57, 70-72, 75, 77, 79-81) and Tables IV-IX (pp. 97-101).
+- **Classification**: `MODERN_REFERENCE` (a twentieth-century manual following Sripati). **Status**: `PARTIALLY_REVIEWED` (Chapters I, III-VIII and Tables IV-IX; Chapters IX-X on Bhava Bala and Ishta/Kashta not read). **Level**: `IMAGE-ORIGINAL-ENGLISH` for the numbers used; `OCR-ORIGINAL-ENGLISH` for the prose.
+- **Group 22 extracts (wording summarized)**: the six balas and their parts; Saptavargaja values 45/30/22.5/15/7.5/3.75/1.875 with Moolatrikona in the Rasi only (Art. 30); Kendra by signs "sharing the view of Parasara" (Art. 33); Drekkana genders and order (Art. 36-39, text versus Example 12); Diva/Ratri Bala from apparent time (Art. 47-51); Paksha with the Moon doubled and two Moon rules (Art. 52-55); Tribhaga (Art. 56-57); Sristyadi and condensed ahargana, 360-day year and 30-day month lords counted from Wednesday (Art. 58-64); Hora in equal hours from sunrise (Art. 68-70); Surya Siddhanta-style declination table and the Kesava Daivajna Ayana formula (Art. 71-75); Yuddha within one degree with disc diameters (Art. 76-77); Cheshta Kendra from Kedarnath Dutt's mean-motion tables (Art. 79-107, Tables IV-IX); Naisargika (Art. 108); Sripati Drishti values and special aspects, Drik = Pinda / 4 (Art. 109-120); the full Standard Horoscope table (Art. 121).
+- **Verified**: every component checked on his own printed inputs against his printed results (fixture `raman_standard_horoscope.json`; 68 tests); the condensed ahargana also reproduces the Santhanam BPHS Ch. 27 note example.
+- **Conflicts and slips found (recorded, rule followed)**: see `docs/ASTROLOGY_STANDARDS.md` SR-06, SR-09 and SR-24.
+- **Rules extracted**: SR-04 to SR-21. **Copyright**: cited only; the fixture holds printed numbers, not text.
+
 ### Group 21: Phase 9 systems researched but not implemented (2026-09-24/25)
 
 - **Lal Kitab**: five Urdu editions identified (1939 *Lal Kitab ke Farman*, 1940 *Lal Kitab ke Arman*, 1941 *Gutka*, 1942, 1952) with archive.org copies (items `lal-kitab-1939_202006`, `LalKitab1941`, `Pt.RoopChandLalKitab.11952`, rights unverified). Authorship attributed to Pt. Roop Chand Joshi (`CONTESTED`); presumed in copyright in India to the end of 2042. **Not read** (no qualified Urdu reader). Status `IDENTIFIED`. P9-01.
@@ -338,6 +348,9 @@ Open standards conflicts added by Phase 9 WP-E to WP-I (no winner chosen unless 
 - **Ch. 8 example (b), status RECORDED (verse followed).** "Venus, the Sun and Mercury aspect none" contradicts the verse table and the example's own (c) for Venus and the Sun. JN-11.
 - **Standard nativity degrees, status OBSERVATION.** Ch. 29's longitudes table (p. 294, page image) and the Ch. 32 table used by the WP-B-2 fixture (p. 319) give different degrees for the Sun and Mars (one row apart); the Chara Karaka ranking is unchanged. JN-18.
 - **Chinese day boundary and time basis, status OPEN.** 23:00 versus midnight, and clock versus mean versus apparent solar time; both are no-default request fields. CN-08 to CN-10.
+
+- **Raman Drekkana order and Moon nature, status OPEN (no default).** Raman's Art. 36 text (neuter middle, female last) versus his Example 12 (female second); Art. 53's "increasing Moon" versus "8th day to 8th day". Exposed as required request fields (SR-06, SR-09).
+- **Raman book slips, status RECORDED (rule followed).** SR-24 lists them; none changes a rule.
 
 ## 5. Research protocol
 
@@ -480,7 +493,8 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.15.0-v1.19.0. Nothing falls back fro
 | `KP_SIGNIFICATORS_FOUR_LEVEL_READER_VI` | active, only | source_supported | KP Reader VI levels (a)-(d), `OCR-ORIGINAL-ENGLISH` |
 | `KP_RULING_PLANETS_READER_VI` | active, only | source_supported | KP Reader VI p. 123; day-lord convention no default |
 | `KP_HORARY_NUMBER_249_READER_VI` | active, only | source_supported | KP Reader VI; ARMC solved numerically |
-| `SHADBALA_BPHS_SANTHANAM_27_VERSE` | active, only | per component | BPHS Ch. 27 verses, `OCR-TRANSLATION`; no total produced |
+| `SHADBALA_BPHS_SANTHANAM_27_VERSE` | active | per component | BPHS Ch. 27 verses, `OCR-TRANSLATION`; no total produced |
+| `SHADBALA_RAMAN_GRAHA_BHAVA_BALAS` | active (v1.21.0), separate | modern_tradition | B. V. Raman, *Graha and Bhava Balas*, `IMAGE-ORIGINAL-ENGLISH` for the worked numbers; Drekkana and Moon readings required, no default; produces totals |
 | `RASHI_DRISHTI_PLANET_BPHS_8_4_5` | active | source_supported | BPHS Ch. 8 v. 4-5, `IMAGE-TRANSLATION` |
 | `ARUDHA_BHAVA_PADA_BPHS_29_1_5` | active | source_supported | BPHS Ch. 29 v. 1-5, `IMAGE-TRANSLATION` |
 | `ARUDHA_GRAHA_PADA_BPHS_29_6_7` | active (Sun, Moon only) | source_supported | BPHS Ch. 29 v. 6-7, `OCR-TRANSLATION` |

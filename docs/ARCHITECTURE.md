@@ -151,7 +151,7 @@ astro_engine/
   numerology/
   western/          # tropical + Placidus module, kept isolated from Vedic assumptions (Phase 9 WP-D: built as `pandit_astro_engine/western`, standards WD-01 to WD-20; own body/sign identifiers, no Vedic imports)
   kp/               # KP (Krishnamurti Paddhati) foundation (Phase 9 WP-E, standards KP-01 to KP-16): Krishnamurti ayanamsa applied only for the call, sidereal Placidus cusps, star/sub/sub-sub lords, the derived 249-entry table, four-level significators, Ruling Planets, KP horary charts
-  shadbala/         # Shadbala components of BPHS Ch. 27 (Phase 9 WP-F, SB-01 to SB-20); verse-literal, no total while components are not evaluable
+  shadbala/         # Shadbala components of BPHS Ch. 27 (Phase 9 WP-F, SB-01 to SB-20); verse-literal, no total while components are not evaluable; plus the separate modern Raman profile with totals (raman.py, raman_service.py; SR-01 to SR-24), never mixed with the verse profile
   chinese/          # Chinese Four Pillars calendar facts (Phase 9 WP-H, CN-01 to CN-14); solar terms from the tropical Sun, no Vedic imports
   tarot/            # Waite-Smith deck, spreads, seeded deterministic draws (Phase 9 WP-I, TA-01 to TA-10); no ephemeris, no system randomness
   config.py         # CalculationConfig value object (ayanamsa, house system, zodiac, ephemeris version)
@@ -270,7 +270,10 @@ User: "Will my career improve next year?"
 | `ShadbalaRequest` / `ShadbalaFacts` | `astro-engine` | Yes | Phase 9 WP-F. Per-planet Shadbala components with status, reason and provenance under `SHADBALA_BPHS_SANTHANAM_27_VERSE`; no Shadbala total while components are not evaluable (§Shadbala standards). |
 | Jaimini WP-G functions (`planet_rashi_drishti`, `bhava_padas`, `graha_padas`, `karakamsa`) | `astro-engine` | Yes | Phase 9 WP-G. Pure functions over signs, Chara Karaka results and longitudes (§Jaimini standards JN-11 to JN-18). |
 | `ChineseChartRequest` / `ChineseChartFacts` | `astro-engine` | Yes | Phase 9 WP-H. Year, month, day and hour pillars; explicit time basis and day boundary (no defaults); luck cycles not produced (they need the person's sex, not collected) (§Chinese standards). |
-| `TarotDrawRequest` / `TarotSelectionRequest` / `TarotLayout` | `astro-engine` | Yes | Phase 9 WP-I. Card placements only, seeded or user-selected; no meanings (§Tarot standards). |
+| `TarotDrawRequest` / `TarotSelectionRequest` / `TarotLayout` | `astro-engine` | Yes | Phase 9 WP-I. Card placements only, seeded or user-selected; no meanings; provenance entries (TA-11) (§Tarot standards). |
+| `RamanShadbalaRequest` / `RamanShadbalaFacts` | `astro-engine` | Yes | Phase 9 closure. The modern Shadbala profile after B. V. Raman with totals; two no-default readings; Cheshta in the frame of Raman's tables (SR-01 to SR-24). |
+| `JaiminiFactsRequest` / `JaiminiFacts` | `astro-engine` | Yes | Phase 9 closure. The WP-G facts object with provenance (JN-19). |
+| `EvidenceBundle` sections `kp`, `shadbala`, `jaimini`, `chinese`, `tarot` | `rule-engine` | Yes | Phase 9 closure. Optional, transport-only sections (EV-01 to EV-10); omitted when absent; no rule reads them. |
 | `PanchangRequest` / `PanchangResponse` | `astro-engine` | Yes | Input: date + location + regional config. Output: Tithi/Vara/Nakshatra/Yoga/Karana (+ Muhurta windows on request). |
 | `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |
 | `NumerologyRequest` / `NumerologyResponse` | `astro-engine` | Yes | Input: birth date (+ name, if name-numerology requested) + system config. Output: Moolank/Bhagyank/name-number per `docs/ASTROLOGY_STANDARDS.md`. |

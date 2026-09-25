@@ -1516,4 +1516,6 @@ Base commit before this work: `5c3415f` (§35).
 4. Further Muhurta purposes and any strength threshold for Shadbala-based rules.
 
 ### F. Commits, push and CI
-Recorded in the follow-up documentation commit after the push.
+- Commits (author and committer `iamankoo <aniketraj00384@gmail.com>`, no AI attribution): `7c9cccf` feat: add the Shadbala method policy (MODERN_RAMAN default, BPHS_VERSE_REFERENCE reference); `23eeb01` feat: add Phase 10 Panchang, calendar, special points and Muhurta (standards v1.23.0); plus this documentation commit.
+- Push: `5c3415f..23eeb01`, first attempt; `origin/main` verified equal to `23eeb0162cb7185e115795366b9f9363d08df7d0`.
+- CI run `36135679187` (event `push`, commit `23eeb01`, covering both commits): completed, conclusion success; 15 of 15 jobs succeeded; all 173 steps inspected individually; the only skipped steps are the by-design ones ("Install domain services" outside `server`; `packages/ui` Lint, Format check and Test; `infrastructure/migrations` mypy and pytest). astro-engine job: 1561 passed. rule-engine job: 347 passed, 6 skipped (module-level `importorskip("swisseph")`, the new end-to-end module included; astro-engine is not installed in that job, as before).

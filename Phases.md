@@ -458,7 +458,11 @@ Status (2026-09-25, owner approval of Phase 10; details in `docs/ASTROLOGY_STAND
 
 Owner decisions of 2026-09-25 (standards v1.24.0): **Phase 10 is accepted as complete for its supported scope.** Lahiri is the default saura frame for user-facing results, with the CRC 23 deg 15 min frame as a labelled alternative (PC-15); the Muhurta rules stay as astro-engine data, a recorded deviation (MU-03); Choghadiya and Gowri stay deferred and unavailable until verified primary sources exist (PC-22); no further Muhurta purposes until the three are validated in production (MU-01); no Shadbala strength threshold, so Shadbala-dependent rules stay NOT_EVALUABLE (SM-11). Deferred items: Choghadiya, Gowri, unequal horas, Bhadra residence, regional solar calendars, Karttikadi/Ashadhadi Vikrama years, other Muhurta purposes. Roadmap note: Griha Pravesh and Housewarming are one ceremony and one rule set.
 
+**Stopping point (2026-09-25): Phase 10 closure is complete for the approved scope. Phase 11 has not started.** The next session must begin by rereading `SUMMARY.md` (§39) and this file, and may continue only from the saved stopping point after the owner's explicit approval.
+
 ## Phase 11 — Numerology + Compatibility
+
+Status (2026-09-25): **not started**; awaiting the owner's explicit approval (see `SUMMARY.md` §39).
 
 Build separate engines.
 

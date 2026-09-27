@@ -538,7 +538,11 @@ Status (2026-09-27, owner's Phase 11 directive; details in `docs/ASTROLOGY_STAND
 | Doshas (Bhakoot, Nadi) | Implemented with the source's exception conditions; Bhakoot cancellation verdict not evaluated (disputed); Gana dosha by role |
 | Additional compatibility factors | The ten poruthams of Kalaprakasika Ch. XIII as a separate system (role-dependent ones not evaluable); the Kuja/Mangal partner comparison from the Phase 6 profiles |
 
-Owner decisions still open: an explicit, consented role input (would unlock Varna, Gana, Dhinam, Mahendhram, Sthree-Dheergham and most Rasi rules); a Vashya source or reading (would allow the 36-point total); a Devanagari letter table; numerology interpretation content (Phase 12).
+Owner decisions still open: an explicit, consented role input (would unlock Varna, Gana, Dhinam, Mahendhram, Sthree-Dheergham and most Rasi rules); a Vashya source or reading (would allow the 36-point total); a Devanagari letter table; numerology interpretation content (Phase 12); a default matching system (none is set); whether 18 stays the matching age threshold.
+
+Owner acceptance (2026-09-27): **Phase 11 is accepted as complete for its source-supported scope**, exactly as documented above: unsupported or unresolved functionality stays deferred or NOT_EVALUABLE, and in the full-roadmap sense the 36-point system is not produced and role-dependent factors are not evaluable. The open decisions above are not resolved.
+
+**Stopping point (2026-09-27): Phase 11 closed for its source-supported scope. Phase 12 has not started.** The next session must begin by rereading `SUMMARY.md` §40 first, then this file, and verify the actual repository HEAD before any Phase 12 work, which needs the owner's explicit approval.
 
 ## Phase 12 — Astrology Knowledge Base
 

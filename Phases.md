@@ -462,7 +462,7 @@ Owner decisions of 2026-09-25 (standards v1.24.0): **Phase 10 is accepted as com
 
 ## Phase 11 — Numerology + Compatibility
 
-Status (2026-09-25): **not started**; awaiting the owner's explicit approval (see `SUMMARY.md` §39).
+Status (2026-09-25): **not started**; awaiting the owner's explicit approval (see `SUMMARY.md` §39). *(Superseded by the Phase 11 status block at the end of this section, 2026-09-27.)*
 
 Build separate engines.
 
@@ -492,6 +492,53 @@ Implement:
 - Additional compatibility factors
 
 Deliverable: compatibility + numerology services.
+
+Phase 11 produces **deterministic numerology numbers and matching facts with their provenance**. It does not interpret them: numerology and compatibility interpretation, reports and AI conversation belong to Phase 12 (knowledge), Phase 15 (agent) and Phase 19 (app). "Tara" here is the matching factor (Tara Kuta), not the Phase 10 Muhurta Tara Balam; "Nadi" here is the matching factor (Nadi Kuta / Nadi Dosha), not the Phase 9 Nadi Astrology.
+
+Dependencies:
+
+- Phase 4 (UTC time resolution, the Moon's sidereal longitude) and Phase 5 (Nakshatra, Pada and Rashi classification, sign lords)
+- Phase 6 (the BPHS Ch. 3 natural relationships, reused for Graha Maitri; the Kuja/Mangal rule profiles, compared across two people through the evidence bundle)
+- Phase 7 conventions (the EXACT / APPROXIMATE / NOT_EVALUABLE birth-time precision model)
+- Phase 6 consumes Phase 11 facts through the evidence bundle; the rule engine never calculates them
+
+Inputs: for numerology, a civil date of birth and/or an explicitly supplied Latin spelling of the name in use, a profile ID and (Pythagorean) a master-number policy; for compatibility, a profile ID with no default, two people's birth date-time, timezone, coordinates and precision (no gender, sex or role), the caller's current civil date and a consent attestation.
+
+Outputs: `NumerologyFacts` (Moolank, Bhagyank, each profile's own date numbers, the name number, Cheiro's associated numbers, interpretation references, provenance) and `CompatibilityFacts` (per-factor facts, doshas with exception conditions, the Ashtakoot total only when every kuta is evaluated, the ten-porutham counts, policy checks, provenance), plus additive optional `numerology` and `compatibility` sections in the evidence bundle and a Kuja partner comparison.
+
+Methodology: `docs/ASTROLOGY_STANDARDS.md` v1.25.0 (NU-01 to NU-16, CM-01 to CM-12, AK-01 to AK-16, TP-01 to TP-14, EV-11 to EV-16).
+
+Exclusions:
+
+- Gender, sex or bride/groom role collection or inference; any matching for a person under 18
+- An overall compatible/incompatible verdict, statements of effect, caste-based rules, remedies
+- Numerology interpretation text, generated lucky numbers, colours or stones; transliteration of non-Latin names
+- Regional nadi schemes, varga kuta, name-letter matching, porutham gothram and asterism sex; HTTP endpoints and database tables (Phase 18)
+
+Exit criteria:
+
+- Both numerology profiles and both matching systems are implemented as separate, versioned profiles with provenance in every result
+- Role-dependent factors are not evaluable unless role-invariant; no 36-point total is produced from a partial set of kutas
+- Matching is refused for anyone under 18 before any calculation; no gender or role input exists
+- Non-Latin names are not evaluable rather than transliterated; interpretation is deferred
+- Facts are recorded in the evidence bundle; earlier bundles hash as before; Phase 4-10 behaviour is unchanged
+- Tests cover every kuta and porutham, the source tables and worked examples, the policies, uncertainty, determinism and regression of all earlier suites
+
+Status (2026-09-27, owner's Phase 11 directive; details in `docs/ASTROLOGY_STANDARDS.md` v1.25.0 and `SUMMARY.md` §40): **implemented for the source-supported scope, with the limits below.** The lists above are kept unchanged as the original roadmap.
+
+| Roadmap item | Outcome |
+|---|---|
+| Moolank | Implemented (Cheiro's Birth number; Chaldean default, Pythagorean alternate) |
+| Bhagyank | Implemented (Phase 1 arithmetic), with Cheiro's separate date numbers and Balliett's birth number reported beside it |
+| Name numerology | Implemented for Latin spellings (Cheiro and Balliett tables); Devanagari and other scripts not evaluable, no transliteration |
+| Lucky numbers | Chaldean: Cheiro's own-series and interchangeable numbers, as source associations; Pythagorean: deferred (no rule read) |
+| Numerology interpretation | Deferred to Phase 12 (source references only) |
+| Ashtakoot (Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, Nadi) | Implemented after Muhurta Chintamani v. 21-37. Tara, Graha Maitri, Bhakoot and Nadi always evaluable; Varna and Gana only when role-invariant; Yoni not evaluable for asymmetric printed cells; Vashya never scored (the source leaves most relations to usage and the point schemes disagree) |
+| 36-point system | Not produced under v1.25.0: it requires all eight kutas, and Vashya is never scored |
+| Doshas (Bhakoot, Nadi) | Implemented with the source's exception conditions; Bhakoot cancellation verdict not evaluated (disputed); Gana dosha by role |
+| Additional compatibility factors | The ten poruthams of Kalaprakasika Ch. XIII as a separate system (role-dependent ones not evaluable); the Kuja/Mangal partner comparison from the Phase 6 profiles |
+
+Owner decisions still open: an explicit, consented role input (would unlock Varna, Gana, Dhinam, Mahendhram, Sthree-Dheergham and most Rasi rules); a Vashya source or reading (would allow the 36-point total); a Devanagari letter table; numerology interpretation content (Phase 12).
 
 ## Phase 12 — Astrology Knowledge Base
 

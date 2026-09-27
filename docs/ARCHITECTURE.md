@@ -147,8 +147,9 @@ astro_engine/
   transits/         # gochar states, ingress/station events, sade sati (modern tradition), sign-based transit-to-natal contacts (Phase 8)
   panchang/         # Phase 10: tithi, vara, nakshatra, yoga, karana with exact transitions, sunrise/moonrise, lunar months (Lahiri saura frame by default, CRC fixed frame as a labelled alternative, both reported), horas, eighth-day parts, Panchaka, Bhadra, special points (PC-01 to PC-31)
   muhurta/          # Phase 10: purpose-tagged, source-tagged factor evaluation and search (MU-01 to MU-14); rules held as versioned astro-engine data with `export_rules()`, an intentional, owner-approved deviation from the Phase 6 rule format (MU-03)
-  compatibility/    # ashtakoot/guna milan scoring
-  numerology/
+  compatibility/    # Phase 11: two never-merged profiles (Muhurta Chintamani Ashtakoot,
+                    #   Kalaprakasika ten poruthams), minimum-age gate, no gender/role input
+  numerology/       # Phase 11: Chaldean (Cheiro, default) and Pythagorean (Balliett) profiles
   western/          # tropical + Placidus module, kept isolated from Vedic assumptions (Phase 9 WP-D: built as `pandit_astro_engine/western`, standards WD-01 to WD-20; own body/sign identifiers, no Vedic imports)
   kp/               # KP (Krishnamurti Paddhati) foundation (Phase 9 WP-E, standards KP-01 to KP-16): Krishnamurti ayanamsa applied only for the call, sidereal Placidus cusps, star/sub/sub-sub lords, the derived 249-entry table, four-level significators, Ruling Planets, KP horary charts
   shadbala/         # Shadbala components of BPHS Ch. 27 (Phase 9 WP-F, SB-01 to SB-20); verse-literal, no total while components are not evaluable; plus the separate modern Raman profile with totals (raman.py, raman_service.py; SR-01 to SR-24), never mixed with the verse profile
@@ -280,8 +281,8 @@ User: "Will my career improve next year?"
 | `SpecialPointsRequest` / `SpecialPointsFacts` | `astro-engine` | Yes | Phase 10. Upagrahas, Gulika/Mandi, special Lagnas, Pranapada, each with its reading's profile (PC-25 to PC-29). |
 | `MuhurtaEvaluateRequest` / `MuhurtaEvaluation`, `MuhurtaSearchRequest` / `MuhurtaSearchResult` | `astro-engine` | Yes | Phase 10. Vivaha, Griha Pravesha, Chaula factor facts and windows; no verdict (MU-01 to MU-14). |
 | `EvidenceBundle` section `panchang` | `rule-engine` | Yes | Phase 10. Optional, transport-only (PC-30); no rule reads it. |
-| `CompatibilityRequest` / `CompatibilityResponse` | `astro-engine` | Yes | Input: two birth-profile references. Output: Ashtakoot/Guna Milan scores + component breakdown. |
-| `NumerologyRequest` / `NumerologyResponse` | `astro-engine` | Yes | Input: birth date (+ name, if name-numerology requested) + system config. Output: Moolank/Bhagyank/name-number per `docs/ASTROLOGY_STANDARDS.md`. |
+| `CompatibilityRequest` / `CompatibilityFacts` | `astro-engine` | Yes | Input (Phase 11, v1.25.0 CM-03): a matching `profile` with no default (`ASHTAKOOT_MUHURTA_CHINTAMANI_VIVAHA_21_37_V1` or `TEN_PORUTHAM_KALAPRAKASIKA_IYER_1917_XIII_V1`), `person_a` and `person_b` (birth date-time, timezone, coordinates, precision; no gender, sex or role), `as_of_date`, `participant_consent_attested`. Output: status (`complete`, `partial`, `not_evaluable`, `blocked_by_policy`, ...), the two birth-Moon placements, per-factor facts with reasons, doshas with exception conditions, the 36-point total only when every kuta is evaluated, ten-porutham counts, methodology metadata and limitations. *(Corrected in Phase 11: the Phase 2 row assumed Ashtakoot scores only.)* |
+| `NumerologyRequest` / `NumerologyFacts` | `astro-engine` | Yes | Input (Phase 11, v1.25.0 NU-01 to NU-11): `profile` (Chaldean default), civil `date_of_birth` and/or `name.latin_spelling` (no transliteration), `master_number_policy` (Pythagorean: required). Output: Moolank, Bhagyank, each profile's date numbers, name number with normalisation notes, associated numbers, interpretation references (interpretation deferred), methodology metadata. |
 | `RuleEvaluationRequest` / `RuleEvaluationResponse` | `rule-engine` | Yes | Input: normalized Facts object (from an `astro-engine` response). Output: evidence bundle (triggered rules + contradictions). |
 | `KnowledgeRetrievalRequest` / `KnowledgeRetrievalResponse` | `knowledge` | No (retrieval, not fact) | Input: query/context. Output: narration-only text chunks + sources — never chart facts. |
 
@@ -372,7 +373,7 @@ PostgreSQL is the sole database technology (ADR-004); pgvector runs inside it fo
 | `panchang` | `daily_panchang`, `muhurta_windows` | Keyed by `(date, location)`, not by user — shared/cacheable. |
 | `rules` | `rule_definitions` (versioned), `rule_sets`, `rule_evaluation_results` | `rule_evaluation_results` is the durable evidence trail. |
 | `knowledge` | `knowledge_chunks`, `embeddings` (pgvector), `sources` | RAG corpus for narrative/remedy phrasing only. |
-| `compatibility` | `match_requests`, `guna_scores`, `match_results` | References two `birth_profiles`. |
+| `compatibility` | `match_requests`, `guna_scores`, `match_results` | References two `birth_profiles`. *(Phase 11 note: results are per-profile factor facts; a `guna_scores` table would hold only Ashtakoot points; the schema is designed in Phase 18. No gender or role column; consent for the second person's data is required.)* |
 | `numerology` | `numerology_profiles`, `numerology_reports` | |
 | `conversation` | `chat_sessions`, `messages`, `agent_traces` | `agent_traces` stores the full evidence-bundle + verification result per assistant turn. |
 | `reports` | `generated_reports`, `report_templates` | |

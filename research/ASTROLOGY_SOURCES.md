@@ -36,6 +36,7 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` (added in Phase 9 WP-I): a work written in English read in a published web transcription (for example a proofread Wikisource text), not checked against page images.
 - `WEB-TRANSCRIPTION-SOURCE-LANGUAGE (unreviewed)` (added in Phase 9 WP-H): a non-English original (for example classical Chinese) read in a web transcription by a non-qualified reader. Useful evidence, never a verification of the language, like `OCR-SOURCE-LANGUAGE (unreviewed)`.
 - `IMAGE-ORIGINAL-ENGLISH` (added in the Phase 9 closure, v1.21.0): a work written in English checked against rendered page images of the scan (the English counterpart of `IMAGE-TRANSLATION`).
+- `IMAGE-SOURCE-LANGUAGE (unreviewed)` (added in Phase 11): a Sanskrit or Hindi page (text or a printed table) read on a rendered page image by a non-qualified reader. Stronger than OCR for numerals and tables; never a Sanskrit-level verification.
 - `SECONDARY` (added in Phase 9 WP-H): several agreeing secondary or popular references (for example almanac websites), no primary or scholarly table read. At most MEDIUM confidence.
 
 "TRANSLATION-LEVEL VERIFIED" means one of the first three levels. "SANSKRIT-LEVEL VERIFIED" means the last level only.
@@ -319,6 +320,7 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - **Group 23 extracts**: eighth parts of the day, Gulika, Ardhapraharam, Yamaganda, Kalan (p. 175, text); the day and night tables and the Rahu Kalam list (p. 176, the translator's footnote and tables, a 12-hour day from six o'clock); horas (p. 176 text, p. 177 table); Pariyaya (Tara), Vainasika, Chandrashtama (pp. 166-167); the Panchakam remainder test (p. 161); Chaula (pp. 37-40), marriage (pp. 79-87), house entry (pp. 129-132); fixed karanas (p. 99 note); Rikta tithis (p. 99).
 - **Not encoded (policy)**: statements of effect, the marriage age of a girl, caste-specific exceptions (MU-10).
 - **Rules extracted**: PC-18 to PC-21, MU-04 to MU-12.
+- **Phase 11 (v1.25.0)**: Ch. XIII (pp. 69-78, the ten considerations) read in OCR, pp. 72-76 checked on page images (PDF pp. 109-113). Findings: the printed Manushya gana list names five nakshatras only; Rasyadhipathi gives the book's own friendship lists and no judgment rule; the p. 70 footnote names one pair the other way round (Chithra-Pushya). Rules extracted: TP-01 to TP-14.
 
 ### SRC-RAMAN-MUHURTHA-1948 (added in Phase 10, v1.23.0)
 
@@ -326,6 +328,43 @@ Check copyright and translation rights before ingestion/training. Community uplo
 - **Classification**: `MODERN_REFERENCE`. **Status**: `PARTIALLY_REVIEWED` (pp. 1-31). **Level**: `OCR-ORIGINAL-ENGLISH`.
 - **Group 23 extracts**: the 27 yogas and 11 karanas (pp. 12-14); Tarabala, Chandrabala (6th, 8th, 12th) and the remainder Panchaka with its purpose-specific exceptions (pp. 17-22); Nakshatra Panchaka from the third quarter of Dhanishta to the end of Revati (p. 26); Bhadra unfit for good work (p. 29).
 - **Rules extracted**: PC-09, PC-10, PC-20, PC-21, MU-04 (common factors).
+
+### SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA (added in Phase 11, v1.25.0)
+
+- **Title**: *Muhurta Chintamani* of Daivajna Sri Ramacharya, Sanskrit text with the Hindi commentary of Pt. Mahidhara Sharma (Bombay: Khemraj Shri Krishnadas, Sri Venkateshwar Press; printing year not found in the scan). **Location**: archive.org `ytNP_muhurta-chintamani-of-daivagya-shri-ramacharya-with-hindi-commentary-by-pt.-mahi` (JK Sanskrit Academy scan): OCR text and PDF, read 2026-09-27. The verses (c. 1600 CE) are public domain; the Hindi commentary's copyright status was not verified (cited and summarised only; no text reproduced).
+- **Classification**: `PRIMARY_CLASSICAL` (verses; a North Indian muhurta text) with `CLASSICAL_COMMENTARY` (the Hindi commentary and the editor's guna tables). **Status**: `PARTIALLY_REVIEWED` (Vivaha Prakarana v. 21-42, printed pp. 81-89). **Level**: `IMAGE-SOURCE-LANGUAGE (unreviewed)` for the guna tables (Varna and Vashya p. 85; Tara, Yoni and Gana p. 86; Graha Maitri, Nadi and Bhakoot p. 87; PDF pp. 97-99) and verse 35; `OCR-SOURCE-LANGUAGE (unreviewed)` for the verses and Hindi otherwise. No Sanskrit-level review.
+- **Group 24 extracts**: v. 21 the eight kutas "each greater in gunas" (the Hindi: 1-8, 36 in all); v. 22 varnas of the signs; v. 23 vashya (partly to "worldly usage"); v. 24 Tara both ways, 3/5/7 unfavourable; v. 25-26 yonis and seven great enmities; v. 27-28 planetary friendships; v. 29-30 ganas; v. 31 Bhakoot 6/8, 5/9, 2/12 (the Hindi marks the mitra/shatru shadashtaka verse as interpolated); v. 32-33 Bhakoot cancellations; v. 34 three nadis; v. 36 varga kuta; v. 37 the same-sign / same-nakshatra exception.
+- **Recorded slips and conflicts**: Graha Maitri table Sun-Mercury 3 (rule and his own text 4) and Venus-Sun 5 (Sun row 0, rule 0); Yoni table asymmetric cells (for example elephant-buffalo 3/2) and a tiger-cow 1 against the verse's great enmity; Gana table and Hindi text disagree with each other and with the Daivajna Manohara on mixed ganas; the Hindi on Vashya (2 or 0 by direction) disagrees with the Vashya table.
+- **Rules extracted**: AK-01 to AK-15.
+
+### SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA (added in Phase 11, v1.25.0)
+
+- **Title**: *Muhurta Chintamani* of Rama Daivajna with the Piyushadhara commentary of Govinda Jyotirvid (Bombay: Nirnaya Sagar Press; edition year not found in the scan). **Location**: archive.org `muhurtachintamanioframadaivagnapiyushadharagovindajyotishinarayanaramaacharyanirnayasagarpress__790_k`: OCR text read 2026-09-27; no page image checked. The Piyushadhara (c. 1603 CE) is public domain.
+- **Classification**: `CLASSICAL_COMMENTARY` (quoting Narada, Vasishtha, Kashyapa, Garga, the Daivajna Manohara, the Jyotirnibandha and others). **Status**: `PARTIALLY_REVIEWED` (commentary on Vivaha Prakarana v. 21-33, printed pp. 245-257; the commentary on v. 34 onward not read). **Level**: `OCR-SOURCE-LANGUAGE (unreviewed)`.
+- **Group 24 extracts**: v. 21: "ekadi-gunadhikah", 1 to 8 gunas, and the Daivajna Manohara's allocation; v. 22: one guna for an equal or higher groom's varna, none for a lower, "some say half for an equal varna"; v. 23: the water signs are Cancer, Capricorn, Aquarius and Pisces, the human signs Gemini, Virgo and Libra; the Daivajna Manohara's vashya scheme; v. 24: 3, 1.5 or 0 for Tara; v. 25-26: 0 to 4 for yoni by enmity class; v. 27-28: 5, 4, 3, 1, 0.5, 0 for Graha Maitri; v. 29-30: 6 for the same gana, other cells by role; v. 31-33: Bhakoot examples and a long dispute over how the cancellations combine, ending "follow local custom".
+- **Rules extracted**: AK-01 to AK-04, AK-06, AK-07, AK-11, AK-15.
+
+### SRC-CHEIRO-BOOK-OF-NUMBERS-1926 (added in Phase 11, v1.25.0)
+
+- **Title**: "Cheiro" (William John Warner, 1866-1936), *Cheiro's Book of Numbers*, complete edition, revised (first published London: Herbert Jenkins, 1926; the scan is a D. B. Taraporevala, Bombay, reprint, year not found). **Location**: archive.org `cheirosbookofnumbers` (OCR text and PDF) and `in.ernet.dli.2015.70770` (OCR), read 2026-09-27. Author died 1936: public domain in India and the UK (life + 60/70); a 1926 publication is public domain in the United States. The reprint's own typography is not reproduced.
+- **Classification**: `MODERN_POPULAR` (the founding text of the "Chaldean" numerology in Indian use; not a classical source). **Status**: `PARTIALLY_REVIEWED` (read in OCR: Ch. II, the opening of Ch. III, Ch. XII and Ch. XV, and in Ch. III-XI, XIII and XIV only the passages on each number's series, interchangeable numbers and days and the John Smith example; the character descriptions and Ch. XVI onward not read). **Level**: `IMAGE-ORIGINAL-ENGLISH` for the alphabet table (Ch. XII, printed p. 70, PDF p. 71); `OCR-ORIGINAL-ENGLISH` otherwise.
+- **Group 24 extracts**: the nine single numbers and "natural addition" (Ch. II); the Birth number from the day (Ch. III: 1st, 10th, 19th, 28th = 1); each number's own series and "interchangeable" numbers (Ch. III-XI, XV); the alphabet with no letter valued 9 (Ch. XII); the name number from the most-used name (Ch. XII: Lloyd George, Baldwin, David Lloyd George; Ch. XIII: John Smith); compound numbers 10-52 (Ch. XIII); day, month and year numbers "separate and distinct and not added together" (Ch. XV, p. 93).
+- **Rules extracted**: NU-04, NU-05, NU-07, NU-08, NU-12, NU-13.
+
+### SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908 (added in Phase 11, v1.25.0)
+
+- **Title**: Mrs. L. Dow Balliett (Sarah Joanna Balliett, b. 1847), *The Philosophy of Numbers: Their Tone and Colors* (Atlantic City, 1908). **Location**: archive.org `cu31924028928798` (Cornell University Library copy): OCR text read 2026-09-27; no page image checked. Public domain (1908).
+- **Classification**: `MODERN_POPULAR` (an early source of the "Pythagorean" letter table). **Status**: `PARTIALLY_REVIEWED` (printed pp. 11-23, 33 and 44-46 read in OCR). **Level**: `OCR-ORIGINAL-ENGLISH`.
+- **Group 24 extracts**: the alphabet in nine parts (p. 18); the name digit word by word (Henry 34 = 7, Elder 26 = 8, 15 = 6, pp. 19-20); the birth number as month digit + day digit + year digit (17 January 1872: 1 + 8 + 9 = 18 = 9, p. 20); 11 and 22 among the "free numbers" and kept unreduced (pp. 20-21; White 29 = 11 and Cream 22, p. 33; No. 22 and No. 11, pp. 44-46). No rule for lucky numbers was found in the pages read.
+- **Rules extracted**: NU-04, NU-06, NU-07, NU-08.
+
+### Group 24: Phase 11 research (2026-09-27)
+
+- **Ashtakoot**: Muhurta Chintamani was read in two Sanskrit editions (above). No English translation was obtained or read; nothing is claimed at translation or Sanskrit level. The Daivajna Manohara is known here only through the Piyushadhara's quotations. The popular 36-point tables on web pages were not used as a source.
+- **Ten poruthams**: Kalaprakasika Ch. XIII re-read (entry below); pp. 72-76 checked on page images.
+- **Numerology**: Cheiro and Balliett (above). The terms Moolank and Bhagyank were not found in either; they are the Indian names used in the Phase 1 standard. No source for a Devanagari letter table, for master number 33, for Pythagorean lucky numbers or for Hindi numerology was read.
+- **Kuja partner rule**: BPHS Ch. 80 v. 49 as already recorded for Phase 6 (the Phase 6 rule YAML); not re-read.
+- **Not read**: any English Muhurta Chintamani, the Daivajna Manohara itself, Muhurta Martanda, the Jyotirnibandha, Florence Campbell or other twentieth-century numerology books still in copyright.
 
 ### Group 23: Phase 10 research (2026-09-25)
 
@@ -352,13 +391,13 @@ Check copyright and translation rights before ingestion/training. Community uplo
 
 | Source | Status | Notes |
 |---|---|---|
-| Muhurta Chintamani (Daivagya Rama) | `IDENTIFIED` | Only Sanskrit manuscript scans (and a Hindi edition, not read) found; no readable English text obtained (re-checked in Phase 10). An English translation exists commercially. Mangal-related verse not verified in this source. |
+| Muhurta Chintamani (Daivagya Rama) | `PARTIALLY_REVIEWED` (Phase 11) | Vivaha Prakarana v. 21-42 read in two Sanskrit editions: see SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA and SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA. Still no English translation read. Mangal-related verse not verified in this source. |
 | Jaimini Upadesa Sutras | `IDENTIFIED` | archive.org search mostly returns the unrelated *Mimamsa Sutras of Jaimini*; the astrological work must be identified separately. |
 | Prasna Marga (B.V. Raman translation) | `IDENTIFIED` | `TRADITIONAL_SECONDARY`. |
 | Brihat Samhita, Surya Siddhanta (Burgess translation) | `IDENTIFIED` | Surya Siddhanta is relevant to combustion and calculation questions. |
 | Bhavartha Ratnakara (B.V. Raman) | `IDENTIFIED` | `MODERN_REFERENCE`. |
 | Lal Kitab (1941 Urdu edition) | `IDENTIFIED` | Provenance `CONTESTED`. |
-| Nadi and Chaldean numerology items | `IDENTIFIED` | `MODERN_POPULAR` only. |
+| Nadi and Chaldean numerology items | Nadi: `IDENTIFIED`; Chaldean numerology: see SRC-CHEIRO-BOOK-OF-NUMBERS-1926 (Phase 11) | `MODERN_POPULAR`. Nadi Astrology (palm-leaf) is unrelated to the Nadi Kuta of matching. |
 | KP source literature | `PARTIALLY_REVIEWED` | KP Readers I, III, VI registered above (Phase 9 WP-E); other KP literature (the *KP Ephemeris*, Readers II, IV, V, magazine articles) not read. |
 | Samudrika / palmistry classics | `NOT_RESEARCHED` | See `research/PALM_READING.md`. |
 | Remedies, puja, paddhati, vrata, mantra, yantra | `NOT_RESEARCHED` | BPHS Ch. 84–97 is a candidate corpus but `CONTESTED`. No other authoritative source has been identified. Nothing may enter the knowledge base without a recorded source. |
@@ -398,6 +437,18 @@ Open standards conflicts added by Phase 9 WP-E to WP-I (no winner chosen unless 
 - **Gulika and Mandi (Phase 10), status OPEN (three readings).** PC-26.
 - **Upagraha Vyatipata and Parivesha (Phase 10), status OPEN (two profiles).** PC-25.
 - **CRC printed nakshatra ending, 5 April 1954, status RECORDED.** Printed 27:48, computed 27:45.9; every other printed value agrees within a minute. PC-31.
+
+Open standards conflicts added by Phase 11 (`docs/ASTROLOGY_STANDARDS.md` v1.25.0):
+
+- **Vashya scoring, status OPEN (no points given).** Muhurta Chintamani v. 23 defers most sign relations to worldly usage; the Daivajna Manohara's scheme, Mahidhara's text and Mahidhara's five-class table disagree. AK-03. Consequence: no 36-point total.
+- **Mixed-gana points, status OPEN (role-dependent in any case).** The Daivajna Manohara quote (with an internal "4 or 3"), Mahidhara's text and his table disagree. AK-07.
+- **Equal varnas, status RESOLVED BY PROFILE.** One guna in this profile; "some say half" recorded. AK-02.
+- **Mahidhara's printed tables, status RECORDED (rule followed).** Graha Maitri Sun-Mercury and Venus-Sun; Yoni asymmetric cells (not evaluable) and tiger-cow (verse governs). AK-05, AK-06.
+- **Bhakoot cancellations, status OPEN.** How the v. 32-33 conditions combine is disputed by the commentators. AK-11.
+- **Kalaprakasika gana list, status RECORDED.** Four nakshatras unassigned in print. TP-03.
+- **Sthree-Dheergham, status OPEN (two readings).** Beyond the 13th, or the 7th. TP-02.
+- **Cheiro versus the Phase 1 Bhagyank, status RECORDED (both reported).** Cheiro keeps day, month and year separate; the Phase 1 standard adds all digits; Balliett adds the reduced parts. NU-04.
+- **Cheiro's month number, status OPEN.** "June = 5" is not the calendar month; the basis is not stated. NU-04.
 
 ## 5. Research protocol
 
@@ -573,3 +624,14 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.23.0. Readings the sources do not se
 | Gulika/Mandi `gulika_portion_start_bphs_translation` / `gulika_portion_end` / `mandi_phaladeepika_ghati_table` | all three reported | translator_note / translator_note / source_supported | BPHS Ch. 3 v. 66-70; Uttara Kalamrita; Phaladeepika Ch. 25 sl. 2 (`OCR-TRANSLATION`) |
 | Pranapada `sun_at_given_time` / `sun_at_sunrise` | both reported | inference | BPHS Ch. 3 v. 71-74, `IMAGE-TRANSLATION` |
 | Muhurta rules `MU.*` (rules version 1.0.0) | active: Vivaha, Griha Pravesha, Chaula | source_supported / inference / modern_tradition per rule | Kalaprakasika (`OCR-TRANSLATION`); Raman 1948 (`OCR-ORIGINAL-ENGLISH`) |
+
+### 6.9 Phase 11 profile IDs
+
+Defined in `docs/ASTROLOGY_STANDARDS.md` v1.25.0.
+
+| Profile ID | Status | Label | Source basis and verification level |
+|---|---|---|---|
+| `NUMEROLOGY_CHALDEAN_CHEIRO_1926_V1` | active, default (owner decision) | source_supported / modern_tradition; Bhagyank phase1_locked_standard | Cheiro 1926; table `IMAGE-ORIGINAL-ENGLISH`, rest `OCR-ORIGINAL-ENGLISH` |
+| `NUMEROLOGY_PYTHAGOREAN_BALLIETT_1908_V1` | active, alternate | source_supported; Bhagyank phase1_locked_standard | Balliett 1908, `OCR-ORIGINAL-ENGLISH` |
+| `ASHTAKOOT_MUHURTA_CHINTAMANI_VIVAHA_21_37_V1` | active (system `NORTH_INDIAN_ASHTAKOOT`) | source_supported / commentary / unresolved_conflict per kuta | Muhurta Chintamani, Mahidhara edition (tables `IMAGE-SOURCE-LANGUAGE (unreviewed)`) and Piyushadhara (`OCR-SOURCE-LANGUAGE (unreviewed)`) |
+| `TEN_PORUTHAM_KALAPRAKASIKA_IYER_1917_XIII_V1` | active (system `SOUTH_INDIAN_TEN_PORUTHAM`) | source_supported; Rasyadhipathi inference | Kalaprakasika Ch. XIII, `IMAGE-TRANSLATION` pp. 72-76 |

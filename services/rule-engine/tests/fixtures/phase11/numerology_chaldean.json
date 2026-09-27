@@ -1,0 +1,329 @@
+{
+ "system": "chaldean",
+ "profile_id": "NUMEROLOGY_CHALDEAN_CHEIRO_1926_V1",
+ "methodology_version": "1.0.0",
+ "standards_version": "1.25.0",
+ "engine_version": "0.14.0",
+ "master_number_policy": "none",
+ "date_of_birth": "1990-06-15",
+ "moolank": {
+  "item_id": "moolank",
+  "status": "evaluated",
+  "reason": null,
+  "label": "source_supported",
+  "inputs": {
+   "day": 15
+  },
+  "reduction": {
+   "chain": [
+    15,
+    6
+   ],
+   "value": 6,
+   "compound": 15,
+   "master_retained": false
+  },
+  "note": ""
+ },
+ "bhagyank": {
+  "item_id": "bhagyank",
+  "status": "evaluated",
+  "reason": null,
+  "label": "phase1_locked_standard",
+  "inputs": {
+   "digits": "15061990"
+  },
+  "reduction": {
+   "chain": [
+    31,
+    4
+   ],
+   "value": 4,
+   "compound": 31,
+   "master_retained": false
+  },
+  "note": ""
+ },
+ "date_numbers": [
+  {
+   "item_id": "cheiro_day_number",
+   "status": "evaluated",
+   "reason": null,
+   "label": "source_supported",
+   "inputs": {
+    "day": 15
+   },
+   "reduction": {
+    "chain": [
+     15,
+     6
+    ],
+    "value": 6,
+    "compound": 15,
+    "master_retained": false
+   },
+   "note": ""
+  },
+  {
+   "item_id": "cheiro_month_number",
+   "status": "not_evaluable",
+   "reason": "cheiro_month_number_basis_unclear",
+   "label": "unresolved_conflict",
+   "inputs": {
+    "month": 6
+   },
+   "reduction": null,
+   "note": "Cheiro's example gives 'June = 5', not the calendar month number."
+  },
+  {
+   "item_id": "cheiro_year_number",
+   "status": "evaluated",
+   "reason": null,
+   "label": "source_supported",
+   "inputs": {
+    "year": 1990
+   },
+   "reduction": {
+    "chain": [
+     19,
+     10,
+     1
+    ],
+    "value": 1,
+    "compound": 19,
+    "master_retained": false
+   },
+   "note": ""
+  }
+ ],
+ "name_number": {
+  "status": "evaluated",
+  "reason": null,
+  "input_spelling": "Lloyd George",
+  "normalized_words": [
+   "LLOYD",
+   "GEORGE"
+  ],
+  "normalization_notes": [],
+  "offending_characters": [],
+  "words": [
+   {
+    "word": "LLOYD",
+    "letter_values": [
+     3,
+     3,
+     7,
+     1,
+     4
+    ],
+    "total": 18,
+    "reduction": {
+     "chain": [
+      18,
+      9
+     ],
+     "value": 9,
+     "compound": 18,
+     "master_retained": false
+    }
+   },
+   {
+    "word": "GEORGE",
+    "letter_values": [
+     3,
+     5,
+     7,
+     2,
+     3,
+     5
+    ],
+    "total": 25,
+    "reduction": {
+     "chain": [
+      25,
+      7
+     ],
+     "value": 7,
+     "compound": 25,
+     "master_retained": false
+    }
+   }
+  ],
+  "reduction": {
+   "chain": [
+    16,
+    7
+   ],
+   "value": 7,
+   "compound": 16,
+   "master_retained": false
+  }
+ },
+ "associated_numbers": {
+  "status": "evaluated",
+  "reason": null,
+  "birth_number": 6,
+  "own_series_dates": [
+   6,
+   15,
+   24
+  ],
+  "interchangeable_numbers": [
+   3,
+   9
+  ],
+  "interchangeable_dates": [
+   3,
+   9,
+   12,
+   18,
+   21,
+   27,
+   30
+  ],
+  "statement": "Cheiro's own-series dates and 'interchangeable' numbers for this Birth number, which he calls favourable; reported as the source's associations, with no claim of effect."
+ },
+ "interpretation": {
+  "status": "deferred",
+  "reason": "interpretation_deferred_to_knowledge_phase",
+  "references": [
+   {
+    "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+    "locator": "Ch. VIII, pp. 52-54",
+    "verification_level": "OCR-ORIGINAL-ENGLISH",
+    "note": "Birth number chapter."
+   },
+   {
+    "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+    "locator": "Ch. XIII, pp. 78-86 (compound numbers 10-52)",
+    "verification_level": "OCR-ORIGINAL-ENGLISH",
+    "note": "Compound-number descriptions."
+   }
+  ]
+ },
+ "assumptions": [
+  "The date of birth is the civil calendar date at the birth place, as entered.",
+  "The name is the spelling in use, supplied by the caller in Latin letters."
+ ],
+ "confidence": "HIGH for the letter table (page image and worked examples); MEDIUM for the other rules (OCR text)",
+ "provenance": [
+  {
+   "entry_id": "prov.numerology.tradition",
+   "item": "Status of numerology",
+   "evidence_label": "modern_tradition",
+   "statement": "Numerology is a modern tradition. Pandit Ji reports the numbers each profile's source defines; it makes no claim that a number has an effect.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.numerology.bhagyank",
+   "item": "Bhagyank",
+   "evidence_label": "phase1_locked_standard",
+   "statement": "Bhagyank sums every digit of the day, month and year and reduces the total (Phase 1 standard). The single digit equals the reduction of any other grouping of the same digits (all are congruent modulo 9); only the intermediate compound number and master-number retention can differ between groupings.",
+   "references": [
+    {
+     "source_id": "PANDIT-JI-ASTROLOGY-STANDARDS",
+     "locator": "docs/ASTROLOGY_STANDARDS.md, 'Numerology standards' (Phase 1)",
+     "verification_level": "OWNER-LOCKED",
+     "note": "Owner-locked Phase 1 arithmetic; no Phase 11 source states it."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.numerology.name_input",
+   "item": "Name input",
+   "evidence_label": "engineering_convention",
+   "statement": "The name is the Latin spelling the caller supplies, recorded exactly. Letters with diacritics are reduced to their base letter; hyphens, apostrophes and full stops are ignored; words are separated by white space. Devanagari or any other script is not transliterated: it is not evaluable until a Latin spelling is supplied.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.cheiro.letters",
+   "item": "Letter values",
+   "evidence_label": "source_supported",
+   "statement": "Cheiro's Chaldean table; no letter is valued 9.",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. XII, printed p. 70 (alphabet table)",
+     "verification_level": "IMAGE-ORIGINAL-ENGLISH",
+     "note": "Reproduces Cheiro's own examples: Baldwin 22, Lloyd 18, George 25, David 16, John 18, Smith 17."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.cheiro.birth_number",
+   "item": "Moolank (Cheiro's Birth number)",
+   "evidence_label": "source_supported",
+   "statement": "The day of the month reduced by 'natural addition' to one digit (the 1st, 10th, 19th and 28th are all 1).",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. II, p. 35; Ch. III, p. 37",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.cheiro.reduction",
+   "item": "Reduction and master numbers",
+   "evidence_label": "source_supported",
+   "statement": "Every number reduces to one digit; 11 and 22 are compound numbers with their own meanings (Ch. XIII), not retained master numbers. The Chaldean profile therefore allows only the master-number policy 'none'.",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. II, p. 35; Ch. XII, p. 72 (Baldwin: 22 = 4)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.cheiro.name",
+   "item": "Name number",
+   "evidence_label": "source_supported",
+   "statement": "Each name word's letters are added; for one word the compound is that total (Baldwin 22); for several words each word is reduced to a digit and the digits are added (Lloyd George 9 + 7 = 16; David Lloyd George 23; John Smith 17). The name used is the one most in use, which only the caller can supply.",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. XII, pp. 71-73; Ch. XIII, p. 86 (John Smith)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.cheiro.date_numbers",
+   "item": "Cheiro's separate date numbers",
+   "evidence_label": "unresolved_conflict",
+   "statement": "Cheiro treats the day, month and year numbers as 'separate and distinct and not added together', which differs from the Phase 1 Bhagyank. Both are reported. His month number is not the calendar month (6 June is 'June = 5'); its basis is not stated, so it is not evaluable.",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. XV, p. 93 (6 June 1866 example)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    },
+    {
+     "source_id": "PANDIT-JI-ASTROLOGY-STANDARDS",
+     "locator": "docs/ASTROLOGY_STANDARDS.md, 'Numerology standards' (Phase 1)",
+     "verification_level": "OWNER-LOCKED",
+     "note": "Owner-locked Phase 1 arithmetic; no Phase 11 source states it."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.cheiro.associated",
+   "item": "Associated ('lucky') numbers",
+   "evidence_label": "modern_tradition",
+   "statement": "Cheiro names, for each Birth number, the dates of its own series and its 'interchangeable' numbers, and calls them favourable. Pandit Ji reports these associations as the source's statements, with no claim of effect.",
+   "references": [
+    {
+     "source_id": "SRC-CHEIRO-BOOK-OF-NUMBERS-1926",
+     "locator": "Ch. III-XI (each number's chapter); Ch. XV, p. 91",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    }
+   ]
+  }
+ ]
+}

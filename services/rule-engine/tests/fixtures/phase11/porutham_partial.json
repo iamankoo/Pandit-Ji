@@ -1,0 +1,424 @@
+{
+ "system": "SOUTH_INDIAN_TEN_PORUTHAM",
+ "profile_id": "TEN_PORUTHAM_KALAPRAKASIKA_IYER_1917_XIII_V1",
+ "methodology_version": "1.0.0",
+ "standards_version": "1.25.0",
+ "engine_version": "0.14.0",
+ "status": "partial",
+ "reason": null,
+ "as_of_date": "2026-09-27",
+ "minimum_age_years": 18,
+ "policy_checks": [
+  {
+   "participant": "A",
+   "minimum_age_met": true,
+   "reason": null
+  },
+  {
+   "participant": "B",
+   "minimum_age_met": true,
+   "reason": null
+  }
+ ],
+ "placements": [
+  {
+   "participant": "A",
+   "birth_time_status": "exact",
+   "nakshatra": "vishakha",
+   "pada": 3,
+   "rashi": "libra",
+   "moon_longitude": 208.63874618957323,
+   "moon_longitude_low": null,
+   "moon_longitude_high": null
+  },
+  {
+   "participant": "B",
+   "birth_time_status": "exact",
+   "nakshatra": "dhanishta",
+   "pada": 3,
+   "rashi": "aquarius",
+   "moon_longitude": 301.44187226506716,
+   "moon_longitude_low": null,
+   "moon_longitude_high": null
+  }
+ ],
+ "factors": [
+  {
+   "factor_id": "dhinam",
+   "name": "Dhinam",
+   "status": "not_evaluable",
+   "reason": "role_required_not_collected",
+   "points": null,
+   "max_points": null,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": false,
+   "label": "source_supported",
+   "facts": {
+    "count_a_to_b": 8,
+    "count_b_to_a": 21
+   },
+   "note": "Counted from the bride's nakshatra to the groom's (p. 69); the counts both ways are given.",
+   "provenance_ids": [
+    "prov.tp.role"
+   ]
+  },
+  {
+   "factor_id": "ganam",
+   "name": "Ganam",
+   "status": "evaluated",
+   "reason": null,
+   "points": null,
+   "max_points": null,
+   "classification": "agreement",
+   "role_dependent": true,
+   "role_invariant": true,
+   "label": "source_supported",
+   "facts": {
+    "ganam_a": "rakshasa",
+    "ganam_b": "rakshasa"
+   },
+   "note": "The same ganam 'signifies suitability' whichever partner is which.",
+   "provenance_ids": [
+    "prov.tp.ganam"
+   ]
+  },
+  {
+   "factor_id": "mahendhram",
+   "name": "Mahendhram",
+   "status": "not_evaluable",
+   "reason": "role_required_not_collected",
+   "points": null,
+   "max_points": null,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": false,
+   "label": "source_supported",
+   "facts": {
+    "count_a_to_b": 8,
+    "count_b_to_a": 21
+   },
+   "note": "The groom's nakshatra should be the 4th, 7th, ... 25th from the bride's (p. 72).",
+   "provenance_ids": [
+    "prov.tp.role"
+   ]
+  },
+  {
+   "factor_id": "sthree_dheergham",
+   "name": "Sthree-Dheergham",
+   "status": "not_evaluable",
+   "reason": "role_required_not_collected",
+   "points": null,
+   "max_points": null,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": false,
+   "label": "source_supported",
+   "facts": {
+    "count_a_to_b": 8,
+    "count_b_to_a": 21
+   },
+   "note": "The groom's nakshatra beyond the 13th from the bride's; 'some writers' say beyond the 7th (p. 72): a role and a reading question.",
+   "provenance_ids": [
+    "prov.tp.role"
+   ]
+  },
+  {
+   "factor_id": "yoni",
+   "name": "Yoni",
+   "status": "evaluated",
+   "reason": null,
+   "points": null,
+   "max_points": null,
+   "classification": "neutral",
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "yoni_a": "tiger",
+    "yoni_b": "lion"
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.tp.symmetric"
+   ]
+  },
+  {
+   "factor_id": "rasi",
+   "name": "Rasi",
+   "status": "not_evaluable",
+   "reason": "role_required_not_collected",
+   "points": null,
+   "max_points": null,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": false,
+   "label": "source_supported",
+   "facts": {
+    "sign_count_a_to_b": 5,
+    "sign_count_b_to_a": 9
+   },
+   "note": "Each rule names the groom's sign counted from the bride's (pp. 73-74).",
+   "provenance_ids": [
+    "prov.tp.role"
+   ]
+  },
+  {
+   "factor_id": "rasyadhipathi",
+   "name": "Rasyadhipathi",
+   "status": "not_evaluable",
+   "reason": "relation_not_specified_by_source",
+   "points": null,
+   "max_points": null,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "inference",
+   "facts": {
+    "lord_a": "venus",
+    "lord_b": "saturn",
+    "a_lord_counts_b_lord_friend": true,
+    "b_lord_counts_a_lord_friend": null
+   },
+   "note": "Saturn's friends are not listed.",
+   "provenance_ids": [
+    "prov.tp.rasyadhipathi"
+   ]
+  },
+  {
+   "factor_id": "vasyam",
+   "name": "Vasyam",
+   "status": "evaluated",
+   "reason": null,
+   "points": null,
+   "max_points": null,
+   "classification": "disagreement",
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "a_concordant_to_b": false,
+    "b_concordant_to_a": false
+   },
+   "note": "'Concordant to that of the bride, or vice versa' (p. 75): either direction.",
+   "provenance_ids": [
+    "prov.tp.symmetric"
+   ]
+  },
+  {
+   "factor_id": "rajju",
+   "name": "Rajju",
+   "status": "evaluated",
+   "reason": null,
+   "points": null,
+   "max_points": null,
+   "classification": "agreement",
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "rajju_a": "nabhi",
+    "rajju_b": "siro"
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.tp.symmetric"
+   ]
+  },
+  {
+   "factor_id": "vedhai",
+   "name": "Vedhai",
+   "status": "evaluated",
+   "reason": null,
+   "points": null,
+   "max_points": null,
+   "classification": "agreement",
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "repellent_pair": false
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.tp.symmetric"
+   ]
+  }
+ ],
+ "doshas": [
+  {
+   "dosha_id": "rajju_dosha",
+   "name": "Rajju Dosha",
+   "state": "absent",
+   "reason": null,
+   "facts": {
+    "rajju_a": "nabhi",
+    "rajju_b": "siro"
+   },
+   "exception_conditions": {},
+   "cancellation_state": "not_applicable",
+   "note": "p. 76 exception: adverse effects 'need not be considered'. No effect statement is encoded.",
+   "provenance_ids": [
+    "prov.tp.exception"
+   ]
+  },
+  {
+   "dosha_id": "vedhai_dosha",
+   "name": "Vedhai Dosha",
+   "state": "absent",
+   "reason": null,
+   "facts": {
+    "repellent_pair": false
+   },
+   "exception_conditions": {},
+   "cancellation_state": "not_applicable",
+   "note": "p. 76 exception: adverse effects 'need not be considered'. No effect statement is encoded.",
+   "provenance_ids": [
+    "prov.tp.exception"
+   ]
+  }
+ ],
+ "ashtakoot_total": null,
+ "porutham_summary": {
+  "agreements": 3,
+  "disagreements": 1,
+  "neutral": 1,
+  "not_evaluable": 5
+ },
+ "assumptions": [
+  "The birth Moon is sidereal under the request's ayanamsa (Lahiri by default), classified with the Phase 5 half-open nakshatra, pada and sign intervals.",
+  "The caller supplies the current civil date for the age check; the engine reads no clock.",
+  "No role, gender or relationship of the two people is known or assumed."
+ ],
+ "unresolved_choices": [
+  "Ganam: four nakshatras are in no printed list.",
+  "Sthree-Dheergham: beyond the 13th, or 'some writers' the 7th.",
+  "Dhinam: the rule names the 2nd, 4th, 6th and 8th as good and the 3rd, 5th and 7th as bad, and is silent on the 1st and 9th of each cycle.",
+  "Rasyadhipathi: no judgment rule is printed; Saturn's friends are not listed."
+ ],
+ "not_implemented": [
+  {
+   "item": "Male, female and hermaphrodite asterisms (p. 77)",
+   "reason": "Judged by which partner is the man and which the woman."
+  },
+  {
+   "item": "Nakshatra gothram (p. 77)",
+   "reason": "Divides 28 asterisms including Abhijit; the Moon's 27 are not mapped to it."
+  },
+  {
+   "item": "Castes of the signs (p. 77)",
+   "reason": "Caste-specific rules are excluded by policy."
+  },
+  {
+   "item": "Named nakshatra pairs and common-nakshatra rules (pp. 70-72)",
+   "reason": "Judged by role and stated as effects."
+  },
+  {
+   "item": "Statements of effect and the omen rule (p. 76)",
+   "reason": "PRODUCT_POLICIES.md: no fear-based claims; omens are not calculable."
+  }
+ ],
+ "source_confidence": "HIGH for the tables read on page images (pp. 72-76, translation level); MEDIUM for pp. 69-71 (OCR); no Sanskrit-level review.",
+ "provenance": [
+  {
+   "entry_id": "prov.policy",
+   "item": "Product policy",
+   "evidence_label": "product_policy",
+   "statement": "No gender or role is collected, inferred or assumed; factors the source judges from a named partner are not evaluable unless both assignments give the same result. Matching is refused when either person is under 18 on the caller's date. No overall compatible/incompatible verdict and no statement of effect is produced.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.tp.overview",
+   "item": "The ten considerations",
+   "evidence_label": "source_supported",
+   "statement": "Dhinam, Ganam, Mahendhram, Sthree-Dheergham, Yoni, Rasi, Rasyadhipathi, Vasyam, Rajju and Vedhai, judged as agreement or disagreement; the source gives no points. Its statement that at least five should agree is provenance, not a verdict.",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII, printed pp. 69 and 76",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.tp.role",
+   "item": "Role-dependent considerations",
+   "evidence_label": "source_supported",
+   "statement": "Dhinam, Mahendhram and Sthree-Dheergham are counted from the bride's nakshatra to the groom's, and most Rasi and mixed-Ganam rules name the groom's position: they are not evaluable without a role.",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII pp. 69-70",
+     "verification_level": "OCR-TRANSLATION",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII pp. 72-74",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.tp.ganam",
+   "item": "Ganam",
+   "evidence_label": "source_supported",
+   "statement": "The printed Manushya list names only five nakshatras; Uttara Phalguni, Purva Ashadha, Uttara Ashadha and Purva Bhadrapada are in no list and are not evaluable (not filled from another text).",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII p. 72",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.tp.symmetric",
+   "item": "Symmetric considerations",
+   "evidence_label": "source_supported",
+   "statement": "Yoni (same: agreement; hostile: disagreement; otherwise neutral), Rasi (opposite signs), Vasyam (either sign concordant to the other), Rajju (not the same division) and Vedhai (not in one repellent set) need no role.",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII pp. 73-76",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.tp.rasyadhipathi",
+   "item": "Rasyadhipathi",
+   "evidence_label": "inference",
+   "statement": "Kalaprakasika gives its own friendship lists (p. 74-75), not the BPHS table, and states no judgment rule; that mutual friendship is the agreement is inferred from the exception clause ('they be friendly planets'). Saturn's friends are not listed.",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII pp. 74-76",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.tp.exception",
+   "item": "Exception",
+   "evidence_label": "source_supported",
+   "statement": "The adverse effects of Rajju, Vedhai, Ganam and Rasi 'need not be considered' when the Moon-sign lords are the same, friendly, or the signs are opposite. Reported as conditions only.",
+   "references": [
+    {
+     "source_id": "SRC-KALAPRAKASIKA-IYER-1917",
+     "locator": "Ch. XIII p. 76",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Factor-level facts only: no overall compatible or incompatible verdict, and no claim about the success of a relationship."
+ ]
+}

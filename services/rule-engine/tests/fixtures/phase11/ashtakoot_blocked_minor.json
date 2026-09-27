@@ -1,0 +1,36 @@
+{
+ "system": "NORTH_INDIAN_ASHTAKOOT",
+ "profile_id": "ASHTAKOOT_MUHURTA_CHINTAMANI_VIVAHA_21_37_V1",
+ "methodology_version": "1.0.0",
+ "standards_version": "1.25.0",
+ "engine_version": "0.14.0",
+ "status": "blocked_by_policy",
+ "reason": "participant_under_minimum_age",
+ "as_of_date": "2026-09-27",
+ "minimum_age_years": 18,
+ "policy_checks": [
+  {
+   "participant": "A",
+   "minimum_age_met": true,
+   "reason": null
+  },
+  {
+   "participant": "B",
+   "minimum_age_met": false,
+   "reason": "participant_under_minimum_age"
+  }
+ ],
+ "placements": [],
+ "factors": [],
+ "doshas": [],
+ "ashtakoot_total": null,
+ "porutham_summary": null,
+ "assumptions": [],
+ "unresolved_choices": [],
+ "not_implemented": [],
+ "source_confidence": "",
+ "provenance": [],
+ "notes": [
+  "Marriage matching is not produced unless both people are at least 18 on the supplied date (PRODUCT_POLICIES.md, Minors)."
+ ]
+}

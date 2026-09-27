@@ -20,6 +20,14 @@ from pandit_rule_engine.ashtakavarga_evidence import (
     ashtakavarga_evidence_from_facts,
 )
 from pandit_rule_engine.bundle import EvidenceBundle, build_bundle
+from pandit_rule_engine.compatibility_evidence import (
+    CompatibilityEvidence,
+    KujaPartnerComparison,
+    NumerologyEvidence,
+    compatibility_evidence_from_facts,
+    kuja_partner_comparison,
+    numerology_evidence_from_facts,
+)
 from pandit_rule_engine.dasha_evidence import DashaEvidence, dasha_evidence_from_facts
 from pandit_rule_engine.derived import TableDerivedFacts
 from pandit_rule_engine.evaluator import evaluate_ruleset
@@ -66,6 +74,8 @@ class RuleEngine:
         chinese: ChineseEvidence | None = None,
         tarot: TarotEvidence | None = None,
         panchang: PanchangEvidence | None = None,
+        compatibility: CompatibilityEvidence | None = None,
+        numerology: NumerologyEvidence | None = None,
     ) -> EvidenceBundle:
         derived = TableDerivedFacts(facts, self.tables)
         results = evaluate_ruleset(self.ruleset, facts, derived)
@@ -84,6 +94,21 @@ class RuleEngine:
             chinese=chinese,
             tarot=tarot,
             panchang=panchang,
+            compatibility=compatibility,
+            numerology=numerology,
+        )
+
+    @staticmethod
+    def kuja_partner_comparison(
+        bundle_a: EvidenceBundle, bundle_b: EvidenceBundle
+    ) -> KujaPartnerComparison:
+        """Phase 11 (v1.25.0 EV-14): set two people's Phase 6 Kuja results
+        side by side for BPHS Ch. 80 v. 49. No verdict."""
+        return kuja_partner_comparison(
+            bundle_a.results,
+            bundle_b.results,
+            bundle_a.versions.ruleset_content_hash,
+            bundle_b.versions.ruleset_content_hash,
         )
 
     def evaluate_kundli(
@@ -99,6 +124,9 @@ class RuleEngine:
         chinese_facts: Mapping[str, Any] | None = None,
         tarot_layout: Mapping[str, Any] | None = None,
         panchang_facts: Mapping[str, Any] | None = None,
+        compatibility_facts: Mapping[str, Any] | None = None,
+        numerology_facts: Mapping[str, Any] | None = None,
+        kuja_comparison: KujaPartnerComparison | None = None,
     ) -> EvidenceBundle:
         """Evaluate a Phase 5 Kundli given in its JSON form. `dasha_facts` is an
         optional astro-engine `DashaFacts` (Phase 7), `transit_facts` an
@@ -116,7 +144,13 @@ class RuleEngine:
         profile), `jaimini_facts`, `chinese_facts` and `tarot_layout` are
         optional JSON forms of the WP-E to WP-I results, recorded as-is; no
         rule reads them. Phase 10 (v1.23.0): `panchang_facts` is an optional
-        astro-engine `DailyPanchang`, recorded as-is; no rule reads it."""
+        astro-engine `DailyPanchang`, recorded as-is; no rule reads it.
+        Phase 11 (v1.25.0): `compatibility_facts` is an optional astro-engine
+        `CompatibilityFacts` (one matching profile), optionally with the
+        `kuja_comparison` from `kuja_partner_comparison`, and
+        `numerology_facts` an optional `NumerologyFacts`; recorded, not read
+        by any rule. `kuja_comparison` is ignored without
+        `compatibility_facts`."""
         dasha = None if dasha_facts is None else dasha_evidence_from_facts(dasha_facts)
         transit = None if transit_facts is None else transit_evidence_from_facts(transit_facts)
         ashtakavarga = (
@@ -139,4 +173,10 @@ class RuleEngine:
             panchang=None
             if panchang_facts is None
             else panchang_evidence_from_facts(panchang_facts),
+            compatibility=None
+            if compatibility_facts is None
+            else compatibility_evidence_from_facts(compatibility_facts, kuja_comparison),
+            numerology=None
+            if numerology_facts is None
+            else numerology_evidence_from_facts(numerology_facts),
         )

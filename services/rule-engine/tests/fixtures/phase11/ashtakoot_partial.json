@@ -1,0 +1,518 @@
+{
+ "system": "NORTH_INDIAN_ASHTAKOOT",
+ "profile_id": "ASHTAKOOT_MUHURTA_CHINTAMANI_VIVAHA_21_37_V1",
+ "methodology_version": "1.0.0",
+ "standards_version": "1.25.0",
+ "engine_version": "0.14.0",
+ "status": "partial",
+ "reason": null,
+ "as_of_date": "2026-09-27",
+ "minimum_age_years": 18,
+ "policy_checks": [
+  {
+   "participant": "A",
+   "minimum_age_met": true,
+   "reason": null
+  },
+  {
+   "participant": "B",
+   "minimum_age_met": true,
+   "reason": null
+  }
+ ],
+ "placements": [
+  {
+   "participant": "A",
+   "birth_time_status": "exact",
+   "nakshatra": "vishakha",
+   "pada": 3,
+   "rashi": "libra",
+   "moon_longitude": 208.63874618957323,
+   "moon_longitude_low": null,
+   "moon_longitude_high": null
+  },
+  {
+   "participant": "B",
+   "birth_time_status": "exact",
+   "nakshatra": "dhanishta",
+   "pada": 3,
+   "rashi": "aquarius",
+   "moon_longitude": 301.44187226506716,
+   "moon_longitude_low": null,
+   "moon_longitude_high": null
+  }
+ ],
+ "factors": [
+  {
+   "factor_id": "varna",
+   "name": "Varna",
+   "status": "evaluated",
+   "reason": null,
+   "points": 1.0,
+   "max_points": 1.0,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": true,
+   "label": "source_supported",
+   "facts": {
+    "varna_a": "shudra",
+    "varna_b": "shudra"
+   },
+   "note": "Equal varnas: one guna under either assignment. Some authorities give half a guna (Piyushadhara, 'ke'pyahuh sadrshe dalam'); not this profile.",
+   "provenance_ids": [
+    "prov.ak.varna"
+   ]
+  },
+  {
+   "factor_id": "vashya",
+   "name": "Vashya",
+   "status": "not_evaluable",
+   "reason": "reading_ambiguous",
+   "points": null,
+   "max_points": 2.0,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": null,
+   "label": "unresolved_conflict",
+   "facts": {
+    "b_vashya_to_a_by_verse": true,
+    "a_vashya_to_b_by_verse": null,
+    "b_water_sign_food_of_human_sign_a": true,
+    "a_water_sign_food_of_human_sign_b": false
+   },
+   "note": "The verse defers most sign relations to 'worldly usage' and the point schemes read disagree; the verse-level relations are reported, no points are given.",
+   "provenance_ids": [
+    "prov.ak.vashya"
+   ]
+  },
+  {
+   "factor_id": "tara",
+   "name": "Tara Kuta",
+   "status": "evaluated",
+   "reason": null,
+   "points": 1.5,
+   "max_points": 3.0,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "count_a_to_b": 8,
+    "count_b_to_a": 21,
+    "remainder_a_to_b": 8,
+    "remainder_b_to_a": 3,
+    "favourable_directions": 1
+   },
+   "note": "Matching Tara Kuta; not the Phase 10 Muhurta Tara Bala.",
+   "provenance_ids": [
+    "prov.ak.tara"
+   ]
+  },
+  {
+   "factor_id": "yoni",
+   "name": "Yoni",
+   "status": "evaluated",
+   "reason": null,
+   "points": 2.0,
+   "max_points": 4.0,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "commentary",
+   "facts": {
+    "yoni_a": "tiger",
+    "yoni_b": "lion",
+    "table_cell_ab": 2,
+    "table_cell_ba": 2
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.ak.yoni"
+   ]
+  },
+  {
+   "factor_id": "graha_maitri",
+   "name": "Graha Maitri",
+   "status": "evaluated",
+   "reason": null,
+   "points": 5.0,
+   "max_points": 5.0,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "lord_a": "venus",
+    "lord_b": "saturn",
+    "a_lord_towards_b_lord": "friend",
+    "b_lord_towards_a_lord": "friend"
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.ak.graha_maitri"
+   ]
+  },
+  {
+   "factor_id": "gana",
+   "name": "Gana",
+   "status": "evaluated",
+   "reason": null,
+   "points": 6.0,
+   "max_points": 6.0,
+   "classification": null,
+   "role_dependent": true,
+   "role_invariant": true,
+   "label": "source_supported",
+   "facts": {
+    "gana_a": "rakshasa",
+    "gana_b": "rakshasa"
+   },
+   "note": "The same gana: six gunas in every source read, whichever partner is which.",
+   "provenance_ids": [
+    "prov.ak.gana"
+   ]
+  },
+  {
+   "factor_id": "bhakoot",
+   "name": "Bhakoot",
+   "status": "evaluated",
+   "reason": null,
+   "points": 0.0,
+   "max_points": 7.0,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "sign_count_a_to_b": 5,
+    "sign_count_b_to_a": 9,
+    "unfavourable_kind": "navapanchama"
+   },
+   "note": "",
+   "provenance_ids": [
+    "prov.ak.bhakoot"
+   ]
+  },
+  {
+   "factor_id": "nadi",
+   "name": "Nadi Kuta",
+   "status": "evaluated",
+   "reason": null,
+   "points": 8.0,
+   "max_points": 8.0,
+   "classification": null,
+   "role_dependent": false,
+   "role_invariant": null,
+   "label": "source_supported",
+   "facts": {
+    "nadi_a": "antya",
+    "nadi_b": "madhya"
+   },
+   "note": "Matching Nadi Kuta; unrelated to the deferred Phase 9 Nadi Astrology.",
+   "provenance_ids": [
+    "prov.ak.nadi"
+   ]
+  }
+ ],
+ "doshas": [
+  {
+   "dosha_id": "nadi_dosha",
+   "name": "Nadi Dosha",
+   "state": "absent",
+   "reason": null,
+   "facts": {
+    "nadi_a": "antya",
+    "nadi_b": "madhya"
+   },
+   "exception_conditions": {},
+   "cancellation_state": "not_applicable",
+   "note": "v. 34-35 (dosha); v. 37 (exception). No statement of effect is encoded.",
+   "provenance_ids": [
+    "prov.ak.nadi"
+   ]
+  },
+  {
+   "dosha_id": "bhakoot_dosha",
+   "name": "Bhakoot Dosha",
+   "state": "present",
+   "reason": "cancellation_scheme_disputed",
+   "facts": {
+    "sign_count_a_to_b": 5,
+    "sign_count_b_to_a": 9,
+    "unfavourable_kind": "navapanchama"
+   },
+   "exception_conditions": {
+    "same_sign_lord": false,
+    "sign_lords_mutual_friends": true,
+    "nadi_different": true,
+    "tara_favourable_both_ways": false,
+    "navamsa_lords_friendly_and_strong": null,
+    "sign_vashya_by_verse": true
+   },
+   "cancellation_state": "not_evaluated_scheme_disputed",
+   "note": "v. 31 (dosha); v. 32-33 name the cancellations (same lord, friendly lords, strong friendly navamsa lords, tara purity, vashya), with nadi purity required throughout; commentators dispute how they combine, so no cancellation verdict is given. 'Strong' is undefined.",
+   "provenance_ids": [
+    "prov.ak.bhakoot"
+   ]
+  },
+  {
+   "dosha_id": "gana_dosha",
+   "name": "Gana Dosha",
+   "state": "absent",
+   "reason": null,
+   "facts": {
+    "gana_a": "rakshasa",
+    "gana_b": "rakshasa"
+   },
+   "exception_conditions": {},
+   "cancellation_state": "not_applicable",
+   "note": "",
+   "provenance_ids": [
+    "prov.ak.gana"
+   ]
+  }
+ ],
+ "ashtakoot_total": {
+  "status": "not_evaluable",
+  "reason": "factor_not_evaluable",
+  "points": null,
+  "max_points": 36.0,
+  "missing_factors": [
+   "vashya"
+  ]
+ },
+ "porutham_summary": null,
+ "assumptions": [
+  "The birth Moon is sidereal under the request's ayanamsa (Lahiri by default), classified with the Phase 5 half-open nakshatra, pada and sign intervals.",
+  "The caller supplies the current civil date for the age check; the engine reads no clock.",
+  "No role, gender or relationship of the two people is known or assumed."
+ ],
+ "unresolved_choices": [
+  "Vashya: the verse leaves most sign relations to worldly usage and the point schemes read disagree (no points given).",
+  "Gana: the Daivajna Manohara quote, Mahidhara's text and Mahidhara's table disagree on mixed-gana cells (role-dependent in any case).",
+  "Varna: equal varnas give one guna in this profile; some authorities give half.",
+  "Yoni: pairs whose two printed table cells differ are not evaluable.",
+  "Bhakoot cancellations: how the v. 32-33 conditions combine is disputed."
+ ],
+ "not_implemented": [
+  {
+   "item": "Varga kuta (v. 36)",
+   "reason": "Name-letter based and stated as an eastern opinion; no name is taken."
+  },
+  {
+   "item": "Purva, madhya and apara bhaga (v. 35)",
+   "reason": "A statement of which partner is loved, by role; statements of effect are not encoded."
+  },
+  {
+   "item": "Four- and five-nadi regional schemes; regional and caste exceptions to Nadi dosha",
+   "reason": "Regional conventions not selected; caste-specific rules are excluded by policy."
+  },
+  {
+   "item": "Statements of effect (death, poverty, loss of children and the like)",
+   "reason": "PRODUCT_POLICIES.md: no fear-based claims."
+  },
+  {
+   "item": "Kuja (Mangal) dosha comparison",
+   "reason": "Given by the rule engine from each person's Phase 6 results, not here."
+  }
+ ],
+ "source_confidence": "MEDIUM: verses and commentary read in OCR of Sanskrit and Hindi by a non-qualified reader; the point tables checked on page images; no Sanskrit-level review.",
+ "provenance": [
+  {
+   "entry_id": "prov.policy",
+   "item": "Product policy",
+   "evidence_label": "product_policy",
+   "statement": "No gender or role is collected, inferred or assumed; factors the source judges from a named partner are not evaluable unless both assignments give the same result. Matching is refused when either person is under 18 on the caller's date. No overall compatible/incompatible verdict and no statement of effect is produced.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.ak.kutas",
+   "item": "The eight kutas and their weights",
+   "evidence_label": "commentary",
+   "statement": "Verse 21 names Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot and Nadi, 'each greater in gunas'; the Piyushadhara reads this as 1 to 8 gunas (36 in all) and quotes the Daivajna Manohara for the same allocation.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "Vivaha Prakarana v. 21, printed p. 81",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "Vivaha Prakarana v. 21 commentary, printed p. 245",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.varna",
+   "item": "Varna",
+   "evidence_label": "source_supported",
+   "statement": "Cancer, Scorpio, Pisces Brahmin; Aries, Leo, Sagittarius Kshatriya; Taurus, Virgo, Capricorn Vaishya; Gemini, Libra, Aquarius Shudra (v. 22). One guna when the groom's varna is equal or higher (Daivajna Manohara; the printed table agrees). Some authorities give half a guna for equal varnas (reported, not in this profile).",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 22, p. 81; varna table, p. 85",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 22 commentary, p. 245",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.vashya",
+   "item": "Vashya",
+   "evidence_label": "unresolved_conflict",
+   "statement": "Verse 23 states only that every sign except Leo is vashya to the human signs, the water signs are their food, and every sign except Scorpio is vashya to Leo; the rest is 'to be known from worldly usage'. The Daivajna Manohara's point scheme, Mahidhara's text (2 when the bride's sign is vashya to the groom's) and Mahidhara's five-class table disagree, and no source read maps every sign to a class.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 23, p. 81; vashya table, p. 85",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 23 commentary, pp. 245-246",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.tara",
+   "item": "Tara Kuta (not the Phase 10 Tara Bala)",
+   "evidence_label": "source_supported",
+   "statement": "Count from each partner's nakshatra to the other's; the remainder by nine is unfavourable when 3, 5 or 7 (v. 24). 3 gunas when both counts are favourable, 1.5 when one is, 0 when neither (Daivajna Manohara; Mahidhara's Tara table agrees). Both directions are counted, so no role is needed.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 24, p. 81; Tara table, p. 86",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 24 commentary, p. 246",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.yoni",
+   "item": "Yoni",
+   "evidence_label": "commentary",
+   "statement": "The fourteen yonis of the nakshatras and the seven great enmities (v. 25-26): horse-buffalo, lion-elephant, sheep-monkey, mongoose-serpent, deer-dog, cat-rat, tiger-cow. 4 gunas for the same yoni, 0 for a great enmity; other pairs take Mahidhara's printed Yoni table where it is symmetric and are not evaluable where its two cells differ.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 25-26, pp. 81-82; Yoni table, p. 86",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 25-26 commentary, pp. 247-248",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.graha_maitri",
+   "item": "Graha Maitri",
+   "evidence_label": "source_supported",
+   "statement": "The friendships of v. 27-28, identical to the locked Phase 6 BPHS Ch. 3 v. 55 table (reused, not redefined). 5 gunas for the same lord or mutual friends, 4 friend-neutral, 3 neutral-neutral, 1 friend-enemy, 0.5 neutral-enemy, 0 mutual enemies (Daivajna Manohara). Mahidhara's printed table gives 3 for Sun-Mercury, against the rule and his own text (4); the rule is followed and the slip recorded.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 27-28, p. 82; Graha Maitri table, p. 87",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 27-28 commentary, p. 249",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "PANDIT-JI-PHASE6-RELATIONSHIPS",
+     "locator": "services/knowledge/rules/bphs/tables/relationships_natural_3_55.yaml",
+     "verification_level": "IMAGE-TRANSLATION",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.gana",
+   "item": "Gana",
+   "evidence_label": "unresolved_conflict",
+   "statement": "Deva, Manushya and Rakshasa nakshatras (v. 29-30). 6 gunas for the same gana. Mixed ganas are scored by the partner's role, and the Daivajna Manohara quote, Mahidhara's text and Mahidhara's table disagree on those cells.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 29-30, p. 83; Gana table, p. 86",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 29-30 commentary, pp. 249-250",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.bhakoot",
+   "item": "Bhakoot",
+   "evidence_label": "source_supported",
+   "statement": "Moon signs 6/8, 5/9 or 2/12 from each other are unfavourable, others favourable (v. 31); 7 gunas or 0 (Daivajna Manohara; Mahidhara's Bhakoot table). The cancellations of v. 32-33 are reported as conditions only: the commentators dispute how they combine, and the Piyushadhara ends by deferring to local custom.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 31-33, pp. 83-84; Bhakoot table, p. 87",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 31-33 commentary, pp. 251-256",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.ak.nadi",
+   "item": "Nadi Kuta (not the Phase 9 Nadi Astrology)",
+   "evidence_label": "source_supported",
+   "statement": "Three nadis of nine nakshatras each (v. 34). 8 gunas for different nadis, 0 for the same (Mahidhara's Nadi table). Verse 37: with the same Moon sign and different nakshatras, the same nakshatra and different signs, or the same nakshatra and different padas, there is no Nadi or Gana dosha. Regional four- and five-nadi schemes are not implemented.",
+   "references": [
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-KHEMRAJ-MAHIDHARA",
+     "locator": "v. 34, pp. 84-85; v. 37, p. 88; Nadi table, p. 87",
+     "verification_level": "IMAGE-SOURCE-LANGUAGE (unreviewed)",
+     "note": ""
+    },
+    {
+     "source_id": "SRC-MUHURTA-CHINTAMANI-NIRNAYASAGAR-PIYUSHADHARA",
+     "locator": "v. 32 commentary, pp. 252-253 (nadi purity required in every cancellation)",
+     "verification_level": "OCR-SOURCE-LANGUAGE (unreviewed)",
+     "note": "The Piyushadhara's own commentary on v. 34 was not read."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Factor-level facts only: no overall compatible or incompatible verdict, and no claim about the success of a relationship."
+ ]
+}

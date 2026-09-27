@@ -27,6 +27,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict, SerializerFunctionWrapHandler, model_serializer
 
 from pandit_rule_engine.ashtakavarga_evidence import AshtakavargaEvidence
+from pandit_rule_engine.compatibility_evidence import CompatibilityEvidence, NumerologyEvidence
 from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.facts import CalculationSnapshot, ChartFacts, PlanetFact
 from pandit_rule_engine.hashing import HASH_ALGORITHM, canonical_json, sha256_hex
@@ -142,6 +143,12 @@ class EvidenceBundle(_Model):
     #: Additive, optional (Phase 10, v1.23.0 PC-30): one day's Panchang.
     #: Omitted when absent, so earlier bundles hash as before.
     panchang: PanchangEvidence | None = None
+    #: Additive, optional (Phase 11, v1.25.0 EV-11 to EV-16): one matching
+    #: profile's facts (with an optional Kuja partner comparison) and one
+    #: numerology profile's numbers. Omitted when absent, so earlier bundles
+    #: hash as before.
+    compatibility: CompatibilityEvidence | None = None
+    numerology: NumerologyEvidence | None = None
     bundle_hash: str
 
     @model_serializer(mode="wrap")
@@ -157,6 +164,8 @@ class EvidenceBundle(_Model):
             "chinese",
             "tarot",
             "panchang",
+            "compatibility",
+            "numerology",
         ):
             if data.get(optional) is None:
                 data.pop(optional, None)
@@ -253,6 +262,8 @@ def build_bundle(
     chinese: ChineseEvidence | None = None,
     tarot: TarotEvidence | None = None,
     panchang: PanchangEvidence | None = None,
+    compatibility: CompatibilityEvidence | None = None,
+    numerology: NumerologyEvidence | None = None,
 ) -> EvidenceBundle:
     """Assemble the bundle and stamp it with its own content hash."""
     versions = VersionInfo(
@@ -284,6 +295,8 @@ def build_bundle(
         "chinese": chinese,
         "tarot": tarot,
         "panchang": panchang,
+        "compatibility": compatibility,
+        "numerology": numerology,
     }
     unsigned = EvidenceBundle(**body, bundle_hash="")
     digest = sha256_hex(canonical_json(unsigned.model_dump(mode="json", exclude={"bundle_hash"})))

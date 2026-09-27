@@ -1,0 +1,216 @@
+{
+ "system": "pythagorean",
+ "profile_id": "NUMEROLOGY_PYTHAGOREAN_BALLIETT_1908_V1",
+ "methodology_version": "1.0.0",
+ "standards_version": "1.25.0",
+ "engine_version": "0.14.0",
+ "master_number_policy": "retain_11_22",
+ "date_of_birth": "1872-01-29",
+ "moolank": {
+  "item_id": "moolank",
+  "status": "evaluated",
+  "reason": null,
+  "label": "phase1_locked_standard",
+  "inputs": {
+   "day": 29
+  },
+  "reduction": {
+   "chain": [
+    29,
+    11
+   ],
+   "value": 11,
+   "compound": 29,
+   "master_retained": true
+  },
+  "note": ""
+ },
+ "bhagyank": {
+  "item_id": "bhagyank",
+  "status": "evaluated",
+  "reason": null,
+  "label": "phase1_locked_standard",
+  "inputs": {
+   "digits": "29011872"
+  },
+  "reduction": {
+   "chain": [
+    30,
+    3
+   ],
+   "value": 3,
+   "compound": 30,
+   "master_retained": false
+  },
+  "note": ""
+ },
+ "date_numbers": [
+  {
+   "item_id": "balliett_birth_number",
+   "status": "evaluated",
+   "reason": null,
+   "label": "source_supported",
+   "inputs": {
+    "month_digit": 1,
+    "day_digit": 11,
+    "year_digit": 9
+   },
+   "reduction": {
+    "chain": [
+     21,
+     3
+    ],
+    "value": 3,
+    "compound": 21,
+    "master_retained": false
+   },
+   "note": ""
+  }
+ ],
+ "name_number": {
+  "status": "evaluated",
+  "reason": null,
+  "input_spelling": "White",
+  "normalized_words": [
+   "WHITE"
+  ],
+  "normalization_notes": [],
+  "offending_characters": [],
+  "words": [
+   {
+    "word": "WHITE",
+    "letter_values": [
+     5,
+     8,
+     9,
+     2,
+     5
+    ],
+    "total": 29,
+    "reduction": {
+     "chain": [
+      29,
+      11
+     ],
+     "value": 11,
+     "compound": 29,
+     "master_retained": true
+    }
+   }
+  ],
+  "reduction": {
+   "chain": [
+    29,
+    11
+   ],
+   "value": 11,
+   "compound": 29,
+   "master_retained": true
+  }
+ },
+ "associated_numbers": {
+  "status": "deferred",
+  "reason": "no_source_rule_read",
+  "birth_number": null,
+  "own_series_dates": [],
+  "interchangeable_numbers": [],
+  "interchangeable_dates": [],
+  "statement": "No rule for associated ('lucky') numbers was read in Balliett (1908)."
+ },
+ "interpretation": {
+  "status": "deferred",
+  "reason": "interpretation_deferred_to_knowledge_phase",
+  "references": []
+ },
+ "assumptions": [
+  "The date of birth is the civil calendar date at the birth place, as entered.",
+  "The name is the spelling in use, supplied by the caller in Latin letters."
+ ],
+ "confidence": "MEDIUM (OCR text; the worked example is reproduced)",
+ "provenance": [
+  {
+   "entry_id": "prov.numerology.tradition",
+   "item": "Status of numerology",
+   "evidence_label": "modern_tradition",
+   "statement": "Numerology is a modern tradition. Pandit Ji reports the numbers each profile's source defines; it makes no claim that a number has an effect.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.numerology.bhagyank",
+   "item": "Bhagyank",
+   "evidence_label": "phase1_locked_standard",
+   "statement": "Bhagyank sums every digit of the day, month and year and reduces the total (Phase 1 standard). The single digit equals the reduction of any other grouping of the same digits (all are congruent modulo 9); only the intermediate compound number and master-number retention can differ between groupings.",
+   "references": [
+    {
+     "source_id": "PANDIT-JI-ASTROLOGY-STANDARDS",
+     "locator": "docs/ASTROLOGY_STANDARDS.md, 'Numerology standards' (Phase 1)",
+     "verification_level": "OWNER-LOCKED",
+     "note": "Owner-locked Phase 1 arithmetic; no Phase 11 source states it."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.numerology.name_input",
+   "item": "Name input",
+   "evidence_label": "engineering_convention",
+   "statement": "The name is the Latin spelling the caller supplies, recorded exactly. Letters with diacritics are reduced to their base letter; hyphens, apostrophes and full stops are ignored; words are separated by white space. Devanagari or any other script is not transliterated: it is not evaluable until a Latin spelling is supplied.",
+   "references": []
+  },
+  {
+   "entry_id": "prov.balliett.letters",
+   "item": "Letter values",
+   "evidence_label": "source_supported",
+   "statement": "The alphabet divided into nine parts: a-i 1-9, j-r 1-9, s-z 1-8.",
+   "references": [
+    {
+     "source_id": "SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908",
+     "locator": "Ch. II, printed pp. 18-20 (alphabet in nine parts; Henry Elder example)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": "Reproduces the worked example: Henry 34 = 7, Elder 26 = 8, name 15 = 6."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.balliett.birth",
+   "item": "Balliett's birth number",
+   "evidence_label": "source_supported",
+   "statement": "The digits of the month, the day and the year are found separately and added (17 January 1872: 1 + 8 + 9 = 18 = 9). Reported beside the Phase 1 Bhagyank.",
+   "references": [
+    {
+     "source_id": "SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908",
+     "locator": "Ch. II, printed pp. 18-20 (alphabet in nine parts; Henry Elder example)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": "Reproduces the worked example: Henry 34 = 7, Elder 26 = 8, name 15 = 6."
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.balliett.master",
+   "item": "Master numbers",
+   "evidence_label": "source_supported",
+   "statement": "Balliett keeps 11 and 22 among the 'free numbers' (White: 29 = 11). The policy is still an explicit request field with no default (Phase 1 standard).",
+   "references": [
+    {
+     "source_id": "SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908",
+     "locator": "Ch. II, pp. 20-21 (11 and 22 among the free numbers); Ch. III, p. 33 (White = 29 = 11, Cream = 22); pp. 44-46 (No. 22, No. 11)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "entry_id": "prov.balliett.name",
+   "item": "Name number",
+   "evidence_label": "source_supported",
+   "statement": "Each name word's digit is found and the digits are added (Henry 7 + Elder 8 = 15 = 6).",
+   "references": [
+    {
+     "source_id": "SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908",
+     "locator": "Ch. II, printed pp. 18-20 (alphabet in nine parts; Henry Elder example)",
+     "verification_level": "OCR-ORIGINAL-ENGLISH",
+     "note": "Reproduces the worked example: Henry 34 = 7, Elder 26 = 8, name 15 = 6."
+    }
+   ]
+  }
+ ]
+}

@@ -423,6 +423,24 @@ layout = TarotService().draw(
 
 `SpecialPointsService` gives the Sun-based upagrahas (two BPHS readings), Gulika and Mandi (three readings), Bhava, Hora, Ghatika and Varnada Lagnas and Pranapada (two Sun readings), each tagged with its reading. `MuhurtaService` evaluates the factor rules of Kalaprakasika (with Raman's Tarabala, Chandrabala and Panchaka) for Vivaha, Griha Pravesha (housewarming) and Chaula (mundan) at an instant, or searches up to 31 days for stretches in which no evaluated factor is unfavourable. There is no overall verdict and no statement of effect; factors that need inputs the product does not collect are `NOT_EVALUABLE` (`docs/ASTROLOGY_STANDARDS.md` v1.23.0, PC-01 to PC-31, MU-01 to MU-14).
 
+## Numerology (Phase 11)
+
+`calculate_numerology(NumerologyRequest(...))` (`pandit_astro_engine.numerology`) under two never-mixed profiles: `NUMEROLOGY_CHALDEAN_CHEIRO_1926_V1` (the default; Cheiro's table, no letter valued 9, no master numbers) and `NUMEROLOGY_PYTHAGOREAN_BALLIETT_1908_V1` (Balliett's table; `master_number_policy` required: `none` or `retain_11_22`). It returns Moolank, the Phase 1 Bhagyank, each profile's own date numbers, the name number from an explicitly supplied Latin spelling (a Devanagari or other non-Latin name is not evaluable: nothing is transliterated), Cheiro's associated ("lucky") numbers and references to where the source interprets a number. Interpretation is deferred. Pure: no clock, network or ephemeris (`docs/ASTROLOGY_STANDARDS.md` NU-01 to NU-16).
+
+```python
+import datetime as dt
+from pandit_astro_engine.numerology import NameInput, NumerologyRequest, calculate_numerology
+
+facts = calculate_numerology(
+    NumerologyRequest(date_of_birth=dt.date(1990, 6, 15), name=NameInput(latin_spelling="Asha Rao"))
+)
+facts.moolank.reduction.value, facts.bhagyank.reduction.chain  # 6, (31, 4)
+```
+
+## Compatibility / Kundli matching (Phase 11)
+
+`CompatibilityService().match(CompatibilityRequest(...))` (`pandit_astro_engine.compatibility`) under one of two separate systems, chosen explicitly (no default): `ASHTAKOOT_MUHURTA_CHINTAMANI_VIVAHA_21_37_V1` (North Indian Ashtakoot, Muhurta Chintamani v. 21-37) or `TEN_PORUTHAM_KALAPRAKASIKA_IYER_1917_XIII_V1` (South Indian ten poruthams, Kalaprakasika Ch. XIII). The two people are `person_a` and `person_b`; no gender or bride/groom role is accepted, so factors the source judges by role are `not_evaluable` unless both assignments agree. Matching is refused (`blocked_by_policy`) unless both are at least 18 on the caller's `as_of_date`, checked before any calculation; `participant_consent_attested=True` is required. Results are factor-level facts with provenance: no overall verdict, no statements of effect, and the 36-point total only when all eight kutas are evaluated (Vashya is never scored under v1.25.0, so the total is not produced). "Tara Kuta" is not the Phase 10 Tara Bala; "Nadi Kuta" is not the Phase 9 Nadi Astrology (`docs/ASTROLOGY_STANDARDS.md` CM-01 to CM-12, AK-01 to AK-16, TP-01 to TP-14).
+
 ## Supported bodies
 
 Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu (`models.CelestialBody`) — stable, machine-readable identifiers used consistently everywhere in this codebase. The Western module has its own identifiers (`western.WesternBody`: the seven classical planets, Uranus, Neptune, Pluto and the north and south nodes), deliberately separate so the outer planets can never enter a Vedic calculation.

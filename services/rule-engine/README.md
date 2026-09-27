@@ -40,6 +40,10 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 `RuleEngine.evaluate_kundli` also accepts `panchang_facts`, the JSON form of an astro-engine `DailyPanchang`. `pandit_rule_engine.panchang_evidence` validates it (status/reason invariants; contiguous element lists from the element at sunrise to the one at the next sunrise; the lunar months of both saura frames and the selected frame, Lahiri by default), keeps the profile and convention identifiers verbatim and records a `facts_hash`. The section is optional and omitted when absent, so earlier bundles hash as before; no rule reads it (`docs/ASTROLOGY_STANDARDS.md` PC-30).
 
+## Compatibility and numerology evidence (Phase 11)
+
+`RuleEngine.evaluate_kundli` also accepts `compatibility_facts` (an astro-engine `CompatibilityFacts` for one matching profile), `numerology_facts` (a `NumerologyFacts`) and `kuja_comparison`. `pandit_rule_engine.compatibility_evidence` checks the Phase 11 invariants: profile and system match; the Ashtakoot has exactly its eight kutas and the ten poruthams their ten; a refused (for example under-18) result carries no facts; a factor that is not evaluated has a reason and no outcome; a 36-point total only when all eight kutas are evaluated, equal to their sum; the Chaldean profile retains no master number. The numerology record keeps the numbers, not the name or the date of birth, plus a `facts_hash`. `RuleEngine.kuja_partner_comparison(bundle_a, bundle_b)` sets two people's Phase 6 Kuja results side by side for BPHS Ch. 80 v. 49, with no verdict. Both sections are optional and omitted when absent; no rule reads them (`docs/ASTROLOGY_STANDARDS.md` EV-11 to EV-16).
+
 ## Local development
 
 ```

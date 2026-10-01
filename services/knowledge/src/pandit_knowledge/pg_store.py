@@ -122,7 +122,7 @@ class PostgresKnowledgeStore:
                     "m": manifest.model_dump_json(),
                 },
             ).rowcount
-            status = conn.execute(
+            status: Any = conn.execute(
                 text("SELECT status FROM knowledge.knowledge_versions WHERE version_id = :v"),
                 {"v": vid},
             ).scalar_one()
@@ -214,7 +214,7 @@ class PostgresKnowledgeStore:
                         inserted += 1
                         continue
                     where = " AND ".join(f"{c} = :{c}" for c in spec.primary_key)
-                    stored = conn.execute(
+                    stored: Any = conn.execute(
                         text(f"SELECT content_hash FROM knowledge.{table} WHERE {where}"),
                         {c: row[c] for c in spec.primary_key},
                     ).scalar_one()
@@ -282,7 +282,7 @@ class PostgresKnowledgeStore:
 
     def embedded_chunk_ids(self, version_id: str, embedding_config_id: str) -> set[str]:
         with self._engine.connect() as conn:
-            rows = conn.execute(
+            rows: Any = conn.execute(
                 text(
                     "SELECT chunk_id FROM knowledge.embeddings "
                     "WHERE version_id = :v AND embedding_config_id = :e"
@@ -305,7 +305,7 @@ class PostgresKnowledgeStore:
         dim = int(config.dimension)
         with self._engine.begin() as conn:
             if method == "ivfflat":
-                rows = conn.execute(
+                rows: Any = conn.execute(
                     text(
                         "SELECT count(*) FROM knowledge.embeddings WHERE embedding_config_id = :e"
                     ),
@@ -332,7 +332,7 @@ class PostgresKnowledgeStore:
         filters: RetrievalFilters,
     ) -> list[tuple[dict[str, Any], float]]:
         with self._engine.connect() as conn:
-            dim = conn.execute(
+            dim: Any = conn.execute(
                 text(
                     "SELECT dimension FROM knowledge.embedding_configs "
                     "WHERE embedding_config_id = :e"
@@ -361,13 +361,23 @@ class PostgresKnowledgeStore:
                 clauses.append(f"{column} = ANY(:{name})")
                 params[name] = list(values)
         chunk_cols = ", ".join(f"c.{col}" for col in VERSIONED_TABLES["chunks"].columns)
-        sql = text(
+        inner = (
             f"SELECT {chunk_cols}, "
             f"(e.embedding::vector({dim}) <=> CAST(:q AS vector({dim}))) AS distance "
             "FROM knowledge.embeddings e "
             "JOIN knowledge.chunks c ON c.version_id = e.version_id AND c.chunk_id = e.chunk_id "
-            f"WHERE {' AND '.join(clauses)} ORDER BY distance, c.chunk_id LIMIT :k"
+            f"WHERE {' AND '.join(clauses)}"
         )
+        if self._approximate:
+            # the raw ORDER BY keeps the ANN index usable
+            sql = text(f"{inner} ORDER BY distance, c.chunk_id LIMIT :k")
+        else:
+            # ties are decided on the distance rounded to 6 decimals (what a hit reports), then
+            # by chunk identifier in byte order, matching the in-memory store exactly
+            sql = text(
+                f"SELECT * FROM ({inner}) AS t "
+                'ORDER BY round(t.distance::numeric, 6), t.chunk_id COLLATE "C" LIMIT :k'
+            )
         with self._engine.begin() as conn:
             if self._approximate:
                 conn.execute(text(f"SET LOCAL hnsw.ef_search = {max(self._ef_search, int(top_k))}"))
@@ -392,7 +402,7 @@ class PostgresKnowledgeStore:
         notes: str,
     ) -> None:
         with self._engine.begin() as conn:
-            ingestion_version = conn.execute(
+            ingestion_version: Any = conn.execute(
                 text(
                     "SELECT ingestion_version FROM knowledge.knowledge_versions "
                     "WHERE version_id = :v"

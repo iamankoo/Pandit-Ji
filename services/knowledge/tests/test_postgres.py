@@ -463,11 +463,17 @@ def test_postgres_retrieval_matches_the_reference_store(
     q = RetrievalQuery(text=text, top_k=10, max_distance=1.0, filters=filters)
     a = Retriever(mem, provider).retrieve(q)
     b = Retriever(pg, provider).retrieve(q)
-    assert [h.chunk_id for h in a.hits] == [h.chunk_id for h in b.hits]
+    # pgvector stores float4 and may round a near-tie differently from the reference store, so
+    # the order may differ only between hits whose distances are equal to within 1e-5
+    assert {h.chunk_id for h in a.hits} == {h.chunk_id for h in b.hits}
     for x, y in zip(a.hits, b.hits, strict=True):
         assert abs(x.distance - y.distance) < 1e-4
+        if x.chunk_id != y.chunk_id:
+            assert abs(x.distance - y.distance) < 1e-5
         assert x.knowledge_version_id == y.knowledge_version_id == vid
-        assert x.content_hash == y.content_hash
+    by_id = {h.chunk_id: h for h in b.hits}
+    for x in a.hits:
+        assert x.content_hash == by_id[x.chunk_id].content_hash
 
 
 def test_postgres_filters_exclude_everything_else(

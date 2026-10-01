@@ -287,7 +287,8 @@ class InMemoryKnowledgeStore:
             if not chunk_matches_filters(chunk, filters):
                 continue
             scored.append((copy.deepcopy(chunk), cosine_distance(vector, stored)))
-        scored.sort(key=lambda item: (item[1], item[0]["chunk_id"]))
+        # ties on the distance rounded to 6 decimals (what a hit reports) break by chunk identifier
+        scored.sort(key=lambda item: (round(item[1], 6), item[0]["chunk_id"]))
         return scored[:top_k]
 
     # -- ingestion runs ------------------------------------------------------------------

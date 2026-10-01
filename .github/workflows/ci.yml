@@ -74,6 +74,48 @@ jobs:
         if: hashFiles(format('{0}/tests/**', matrix.component)) != ''
         run: python -m pytest -q
 
+  knowledge-postgres:
+    name: Knowledge — PostgreSQL + pgvector
+    runs-on: ubuntu-latest
+    # Phase 12: the knowledge service's database tests (migration, triggers, ingestion,
+    # retrieval on a real PostgreSQL with pgvector) and its cross-package regression tests
+    # (which need astro-engine and rule-engine installed). The matrix job above runs the
+    # same suite without a database, so these tests are skipped there by design.
+    services:
+      postgres:
+        image: pgvector/pgvector:pg18
+        env:
+          POSTGRES_USER: pandit
+          POSTGRES_PASSWORD: pandit
+          POSTGRES_DB: pandit
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U pandit -d pandit"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      KNOWLEDGE_TEST_DATABASE_URL: postgresql+psycopg://pandit:pandit@localhost:5432/pandit
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install packages
+        run: |
+          pip install -e packages/contracts
+          pip install -e packages/shared
+          pip install -e services/astro-engine
+          pip install -e services/rule-engine
+          pip install -e "services/knowledge[dev]"
+
+      - name: pytest (PostgreSQL, cross-package regression)
+        working-directory: services/knowledge
+        run: python -m pytest -q -rs
+
   web-typescript:
     name: TypeScript — ${{ matrix.app }}
     runs-on: ubuntu-latest

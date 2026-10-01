@@ -671,6 +671,6 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.26.0 (KB-04, KB-27 to KB-34). A know
 | `KB_BPHS_SAN_HOUSE_KARAKA_32_34` | planetary significator of each house | BPHS Ch. 32 v. 34, `IMAGE-TRANSLATION` |
 | `KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17` | planetary significators of each house (several per house) | Phaladeepika Adh. XV sl. 17, `IMAGE-TRANSLATION` |
 | `KB_BPHS_SAN_STRENGTH_NOTE_3_12_13` | translator's remark that effects scale with strength (no number) | BPHS Ch. 3 v. 12-13 note, `IMAGE-TRANSLATION` |
-| `KB_BPHS_SAN_TERMS_3_10`, `_3_14_15`, `_3_4_6`, `_11`; `KB_BJ_SASTRI_TERMS_2_2_3` | source-attested terms | see terms.yaml; Devanagari `SANSKRIT_READ_ON_PAGE_IMAGE_UNREVIEWED` |
+| `KB_BPHS_SAN_TERMS_3_10`, `KB_BPHS_SAN_TERMS_3_14_15`, `KB_BPHS_SAN_TERMS_3_4_6`, `KB_BPHS_SAN_TERMS_11`, `KB_BJ_SASTRI_TERMS_2_2_3` | source-attested terms | see terms.yaml; Devanagari `SANSKRIT_READ_ON_PAGE_IMAGE_UNREVIEWED` |
 | `CROSS_SOURCE.HOUSE_KARAKA`, `CROSS_SOURCE.HOUSE_SIGNIFICATION` | recorded differences between two profiles (derived) | none preferred |
 | `TAROT_DECK_WAITE_SMITH_1910` (Phase 9 deck, reused) | the 78 card entries | Waite Part III sections 2 and 3, `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` |

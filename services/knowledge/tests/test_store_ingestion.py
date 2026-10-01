@@ -241,7 +241,7 @@ def test_filters_object_is_hashable_and_defaults_empty() -> None:
 # identical on Linux CI: the snapshot hash must not depend on the operating system or on line
 # endings. Update it only when the curated content, the schema/ingestion/chunking/standards
 # versions or the lexical provider change on purpose: that is a new knowledge version.
-PHASE12_LEXICAL_SNAPSHOT_HASH = "c8972e1ec723849a78da3c713f098686eea9199a27ea7494fca4a7fcd479b5e2"
+PHASE12_LEXICAL_SNAPSHOT_HASH = "06361d7aba28c1cebed40012f1f95807ed63f5793c7cce3e242a449d19cf82b5"
 
 
 def test_the_snapshot_hash_is_platform_independent(
@@ -249,4 +249,4 @@ def test_the_snapshot_hash_is_platform_independent(
 ) -> None:
     result = KnowledgeBuilder(InMemoryKnowledgeStore(), provider).build(content)
     assert result.snapshot_hash == PHASE12_LEXICAL_SNAPSHOT_HASH
-    assert result.version_id == "KV-c8972e1ec723849a"
+    assert result.version_id == "KV-06361d7aba28c1ce"

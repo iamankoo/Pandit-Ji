@@ -1,4 +1,7 @@
-# Phase 12 source and edition records (registry: research/ASTROLOGY_SOURCES.md Group 25).
+# Phase 12 source and edition records: a machine-readable projection, for ingestion, of entries that
+# live in the single canonical registry `research/ASTROLOGY_SOURCES.md` (Group 25 and the entries named
+# in `registry_ref`). It is not a second registry: the registry is authoritative, a test checks every
+# `registry_ref` and every profile ID against it, and on any difference the registry wins.
 # `ingestion_permission` states what the project may store of each source (KB-12). Engineering
 # determination only -- not legal advice; the counsel sign-off in LEGAL_REGULATIONS.md is outstanding.
 sources:
@@ -95,7 +98,7 @@ sources:
     copyright_status: Presumed in copyright in India to the end of 2042
     ingestion_permission: DEFERRED_UNRESOLVED
     copyright_note: Deferred in Phase 9 and still deferred; no Lal Kitab knowledge is stored.
-    registry_ref: Group 21 (P9-01)
+    registry_ref: P9-01
 editions:
   - edition_id: BPHS_SANTHANAM_1984
     source_id: SRC.BPHS

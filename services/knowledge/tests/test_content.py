@@ -388,3 +388,28 @@ def test_rules_snapshot_hash_is_line_ending_independent(tmp_path: Path) -> None:
     for f in rules.rglob("*.yaml"):
         f.write_bytes(f.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
     assert rule_index(rules)[1] == baseline
+
+
+# ---- the content is a projection of the single canonical registry --------------------------
+REGISTRY = Path(__file__).resolve().parents[3] / "research" / "ASTROLOGY_SOURCES.md"
+
+
+def test_every_source_names_an_entry_in_the_canonical_registry(content: KnowledgeContent) -> None:
+    registry = REGISTRY.read_text(encoding="utf-8")
+    for source in content.sources:
+        assert source.registry_ref in registry, source.source_id
+
+
+def test_profile_ids_and_the_registry_agree_in_both_directions(content: KnowledgeContent) -> None:
+    import re
+
+    registry = REGISTRY.read_text(encoding="utf-8")
+    ours = {s.profile_id for s in content.statements if s.profile_id.startswith("KB_")}
+    ours |= {t.profile_id for t in content.terms}
+    assert ours
+    for profile in ours:
+        assert f"`{profile}`" in registry, profile
+    section = registry[registry.index("### 6.10 Phase 12 knowledge profile IDs") :]
+    listed = set(re.findall(r"`(KB_[A-Z0-9_]+)`", section))
+    ours_all = ours | {"KB_BPHS_SAN_STRENGTH_NOTE_3_12_13"}
+    assert listed == ours_all

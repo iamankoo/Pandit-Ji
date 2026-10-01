@@ -320,6 +320,18 @@ Two clearly separated stores, because conflating them is exactly how AI-invented
 
 Ingestion pipeline (`Phases.md` Phase 12): document loader → chunker → embedder → dedup/quality filter → `knowledge.knowledge_chunks`. Requires sourcing classical references validated against an astrology-literate reviewer, not just general web scraping (see §"Technical Risks").
 
+### Phase 12 implementation (standards v1.26.0, KB-01 to KB-42)
+
+`services/knowledge` (package `pandit_knowledge` 0.2.0) implements the two stores of this section. It is a library with internal service interfaces only; HTTP and the final database API are Phase 18, narration is Phase 15, the final embedding model is Phase 14.
+
+- **Structured store (source-backed knowledge, not rules).** `concepts` (planets, houses, domains, terms, Tarot cards), `statements` (what one source profile says: significations, planetary ranks, house karakas, a strength remark, derived inversions, recorded source variances), `terms`, `rule_references` (pointers to existing rules, tables and astro-engine profiles; the rule logic stays in the rule engine and the rule YAML is untouched), `domain_mappings` (house to Career, Marriage, Finance, Education, each `SOURCE_SUPPORTED`, `PROJECT_DERIVED`, `UNRESOLVED_CONFLICT` or `NOT_EVALUABLE`) and `exceptions`.
+- **Explanatory store.** `chunks` (deterministic, one passage and one provenance each; `text_origin` distinguishes verbatim public-domain `SOURCE_TEXT` from `PROJECT_RENDERING` templates) and `embeddings` (an untyped pgvector column keyed by an `embedding_configs` identity, so models of different dimensions coexist).
+- **Versioning.** Every row belongs to a `knowledge_versions` row identified by a snapshot hash; a sealed version is immutable (database triggers) and the ingestion is idempotent and resumable. Naming: the tables are schema-qualified (`knowledge.chunks`, `knowledge.sources`, `knowledge.embeddings`); the Phase 2 names `knowledge_chunks` and `embeddings` in §12 became `chunks` and `embeddings`, plus the tables above.
+- **Retrieval.** `Retriever` returns bounded, deterministic hits with full provenance and the fixed stamp `KNOWLEDGE_TEXT_NOT_A_CHART_FACT`; it reads sealed versions only, never writes and never stores the query. Search is exact by default; an HNSW partial expression index per embedding configuration is available and opt-in (`APPROXIMATE_INDEX_SEARCH`).
+- **Boundaries.** The knowledge package imports no calculation or rule code and no calculation, rule or server code imports it, except the server's `get_health` composition (ADR-007). The evidence bundle gained no knowledge section: knowledge is not a chart fact. Chart calculation never embeds or retrieves.
+- **Multilingual.** Identifiers and structured facts are language-neutral; text carries a language tag. Only English knowledge text exists; no Hindi or Hinglish text and no translation was added. Retrieval behaviour for Hindi and Hinglish queries is measured and reported, not claimed (KB-25).
+- **Not in this phase.** HTTP endpoints, narration, a final model, verification, remedies, Lal Kitab, numerology interpretation text, Hindi/Sanskrit text, palm knowledge.
+
 ---
 
 ## 11. Verification Architecture
@@ -372,7 +384,7 @@ PostgreSQL is the sole database technology (ADR-004); pgvector runs inside it fo
 | `transits` | `transit_snapshots`, `transit_events`, `sade_sati_windows` | Snapshots are point-in-time; events are derived. |
 | `panchang` | `daily_panchang`, `muhurta_windows` | Keyed by `(date, location)`, not by user — shared/cacheable. |
 | `rules` | `rule_definitions` (versioned), `rule_sets`, `rule_evaluation_results` | `rule_evaluation_results` is the durable evidence trail. |
-| `knowledge` | `knowledge_chunks`, `embeddings` (pgvector), `sources` | RAG corpus for narrative/remedy phrasing only. |
+| `knowledge` | Phase 12 (migration `0002`): `knowledge_versions`, `sources`, `source_editions`, `concepts`, `statements`, `terms`, `rule_references`, `domain_mappings`, `exceptions`, `chunks`, `embedding_configs`, `embeddings` (pgvector), `ingestion_runs` | Source-backed structured knowledge and a retrieval corpus, versioned and sealed (§10). The Phase 2 names `knowledge_chunks` and `embeddings` became `chunks` and `embeddings`. No chart or user data. |
 | `compatibility` | `match_requests`, `guna_scores`, `match_results` | References two `birth_profiles`. *(Phase 11 note: results are per-profile factor facts; a `guna_scores` table would hold only Ashtakoot points; the schema is designed in Phase 18. No gender or role column; consent for the second person's data is required.)* |
 | `numerology` | `numerology_profiles`, `numerology_reports` | |
 | `conversation` | `chat_sessions`, `messages`, `agent_traces` | `agent_traces` stores the full evidence-bundle + verification result per assistant turn. |
@@ -726,7 +738,9 @@ pandit-ji/
     agent/                  intent, planner, LLM orchestration, evidence assembly (§8);
                             includes voice/ (STT/TTS integration) and reports/ (report
                             templates + assembly) as subpackages
-    knowledge/              RAG store + ingestion pipelines; rules/*.yaml source-of-truth (§10)
+    knowledge/              structured knowledge, versioned ingestion, chunking, embedding
+                            providers and retrieval (Phase 12, §10); rules/*.yaml source-of-truth;
+                            content/ curated Phase 12 records
     verification/           claim/hallucination/contradiction checking, regression + backtesting (§11)
   packages/
     shared/                 config, logging, auth utils shared across services
@@ -840,3 +854,5 @@ To begin or resume work: open `Phases.md`, identify the current phase, its deliv
 1. **Standards document duplication — RESOLVED, LOCKED** (Phase 1 reconciliation). Canonical standards document is `docs/ASTROLOGY_STANDARDS.md`; no separate `docs/calculation-standards.md`.
 2. **Repository structure mismatch — RESOLVED, LOCKED** (Phase 1 reconciliation; FastAPI placement sub-item now also resolved in Phase 2). Canonical structure per §27 above, including `server/` for the FastAPI composition root (ADR-007). No remaining sub-item.
 3. **Palm reading: scope/priority conflict — RESOLVED, LOCKED** (explicit project-owner decision, pre-Phase-3). AI Palm Reading is now a locked product feature (`features.md` §34), consistent with the Pre-Phase-1 Foundation package's `README.md`/`research/PALM_READING.md`. `features.md` §33 no longer lists palm reading under Future Expansion. Its dedicated implementation phase is `Phases.md` Phase 13 (Palm Reading & Vision Intelligence, inserted pre-Phase-3, shifting the former Phase 13-20 to 14-21) — the product-feature decision and the implementation-phase assignment are deliberately kept distinct, per that decision.
+
+4. **Phase 12 interpretation scope (`Phases.md` "Interpretations" versus §10 "language only") — RESOLVED, LOCKED** (explicit project-owner decision, 2026-10-01). Interpretation content is allowed in the knowledge base when it is source-backed, provenance-tagged, profile-specific where sources differ and distinct from chart facts and AI narration; nothing is generated. §10's "language only" described the explanatory store, not the structured store. Recorded in `docs/ASTROLOGY_STANDARDS.md` KB-03.

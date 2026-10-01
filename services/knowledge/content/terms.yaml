@@ -1,0 +1,107 @@
+# Canonical terminology layer (Phase 12, KB-30). Only source-attested terms; nothing is invented,
+# transliterated into Hinglish or translated by the project. No Hindi rendering is stored: no
+# Hindi source was read in Phase 12, so every Hindi rendering is NOT_VERIFIED and absent.
+#
+# kinds: NAME = the source's own primary rendering; ALIAS = another name the same source gives.
+# verification_status values (what was actually done):
+#   TRANSLATION_READ_ON_PAGE_IMAGE      English translation read on the page image
+#   TRANSLATION_READ_IN_OCR             English translation read in OCR only
+#   SANSKRIT_READ_ON_PAGE_IMAGE_UNREVIEWED  Devanagari read on the page image by a non-qualified
+#                                       reader; never a Sanskrit-level verification
+#   TRANSLITERATION_READ_IN_OCR_UNREVIEWED  the translator's Roman transliteration read in OCR
+concepts:
+  - {id: TERM.GRAHA, key: graha, type: TERM}
+  - {id: TERM.NAKSHATRA, key: nakshatra, type: TERM}
+  - {id: TERM.RASI, key: rasi, type: TERM}
+  - {id: TERM.LAGNA, key: lagna, type: TERM}
+  - {id: TERM.BHAVA, key: bhava, type: TERM}
+
+sources:
+  bphs_ch3_v10:
+    edition: BPHS_SANTHANAM_1984
+    profile: KB_BPHS_SAN_TERMS_3_10
+    location: Ch. 3 v. 10
+    status: TRANSLATION_READ_IN_OCR
+  bphs_ch3_v14_15:
+    edition: BPHS_SANTHANAM_1984
+    profile: KB_BPHS_SAN_TERMS_3_14_15
+    location: Ch. 3 v. 14-15 (printed p. 28)
+    status: SANSKRIT_READ_ON_PAGE_IMAGE_UNREVIEWED
+  bj_ch2_v2_3:
+    edition: BRIHAT_JATAKA_SASTRI
+    profile: KB_BJ_SASTRI_TERMS_2_2_3
+    location: Ch. II sloka 2-3
+    status: TRANSLITERATION_READ_IN_OCR_UNREVIEWED
+  bphs_ch3_v4_6:
+    edition: BPHS_SANTHANAM_1984
+    profile: KB_BPHS_SAN_TERMS_3_4_6
+    location: Ch. 3 v. 4-6
+    status: TRANSLATION_READ_IN_OCR
+  bphs_ch11:
+    edition: BPHS_SANTHANAM_1984
+    profile: KB_BPHS_SAN_TERMS_11
+    location: Ch. 11 v. 14-16 (printed p. 123)
+    status: TRANSLATION_READ_ON_PAGE_IMAGE
+
+terms:
+  # English names (BPHS Ch. 3 v. 10)
+  - {concept: PLANET.SUN, kind: NAME, script: Latn, language: en, text: the Sun, source: bphs_ch3_v10}
+  - {concept: PLANET.MOON, kind: NAME, script: Latn, language: en, text: the Moon, source: bphs_ch3_v10}
+  - {concept: PLANET.MARS, kind: NAME, script: Latn, language: en, text: Mars, source: bphs_ch3_v10}
+  - {concept: PLANET.MERCURY, kind: NAME, script: Latn, language: en, text: Mercury, source: bphs_ch3_v10}
+  - {concept: PLANET.JUPITER, kind: NAME, script: Latn, language: en, text: Jupiter, source: bphs_ch3_v10}
+  - {concept: PLANET.VENUS, kind: NAME, script: Latn, language: en, text: Venus, source: bphs_ch3_v10}
+  - {concept: PLANET.SATURN, kind: NAME, script: Latn, language: en, text: Saturn, source: bphs_ch3_v10}
+  - {concept: PLANET.RAHU, kind: NAME, script: Latn, language: en, text: Rahu, source: bphs_ch3_v10}
+  - {concept: PLANET.KETU, kind: NAME, script: Latn, language: en, text: Ketu, source: bphs_ch3_v10}
+
+  # Sanskrit names as printed in the Devanagari of BPHS Ch. 3 v. 14-15 (compound forms: the Moon
+  # appears in the dual compound ravi-candrau, Jupiter and Venus in guru-bhargavau)
+  - {concept: PLANET.SUN, kind: ALIAS, script: Deva, language: sa, text: रवि, source: bphs_ch3_v14_15}
+  - {concept: PLANET.MOON, kind: ALIAS, script: Deva, language: sa, text: चन्द्र, source: bphs_ch3_v14_15}
+  - {concept: PLANET.MARS, kind: ALIAS, script: Deva, language: sa, text: धरात्मज, source: bphs_ch3_v14_15}
+  - {concept: PLANET.MERCURY, kind: ALIAS, script: Deva, language: sa, text: बुध, source: bphs_ch3_v14_15}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Deva, language: sa, text: गुरु, source: bphs_ch3_v14_15}
+  - {concept: PLANET.VENUS, kind: ALIAS, script: Deva, language: sa, text: भार्गव, source: bphs_ch3_v14_15}
+  - {concept: PLANET.SATURN, kind: ALIAS, script: Deva, language: sa, text: रविपुत्र, source: bphs_ch3_v14_15}
+  - {concept: PLANET.RAHU, kind: ALIAS, script: Deva, language: sa, text: स्वर्भानु, source: bphs_ch3_v14_15}
+  - {concept: PLANET.KETU, kind: ALIAS, script: Deva, language: sa, text: पुच्छक, source: bphs_ch3_v14_15}
+
+  # Synonyms in the translator's Roman transliteration (Brihat Jataka Ch. II sloka 2-3, OCR)
+  - {concept: PLANET.SUN, kind: ALIAS, script: Latn, language: sa-Latn, text: Heli, source: bj_ch2_v2_3}
+  - {concept: PLANET.MOON, kind: ALIAS, script: Latn, language: sa-Latn, text: Chandramas, source: bj_ch2_v2_3}
+  - {concept: PLANET.MOON, kind: ALIAS, script: Latn, language: sa-Latn, text: Sitarasmi, source: bj_ch2_v2_3}
+  - {concept: PLANET.MERCURY, kind: ALIAS, script: Latn, language: sa-Latn, text: Bodhana, source: bj_ch2_v2_3}
+  - {concept: PLANET.MERCURY, kind: ALIAS, script: Latn, language: sa-Latn, text: Induputra, source: bj_ch2_v2_3}
+  - {concept: PLANET.MARS, kind: ALIAS, script: Latn, language: sa-Latn, text: Ara, source: bj_ch2_v2_3}
+  - {concept: PLANET.MARS, kind: ALIAS, script: Latn, language: sa-Latn, text: Vakra, source: bj_ch2_v2_3}
+  - {concept: PLANET.MARS, kind: ALIAS, script: Latn, language: sa-Latn, text: Kruradrik, source: bj_ch2_v2_3}
+  - {concept: PLANET.MARS, kind: ALIAS, script: Latn, language: sa-Latn, text: Avaneya, source: bj_ch2_v2_3}
+  - {concept: PLANET.SATURN, kind: ALIAS, script: Latn, language: sa-Latn, text: Kona, source: bj_ch2_v2_3}
+  - {concept: PLANET.SATURN, kind: ALIAS, script: Latn, language: sa-Latn, text: Manda, source: bj_ch2_v2_3}
+  - {concept: PLANET.SATURN, kind: ALIAS, script: Latn, language: sa-Latn, text: Suryaputra, source: bj_ch2_v2_3}
+  - {concept: PLANET.SATURN, kind: ALIAS, script: Latn, language: sa-Latn, text: Asita, source: bj_ch2_v2_3}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Latn, language: sa-Latn, text: Jeeva, source: bj_ch2_v2_3}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Latn, language: sa-Latn, text: Angiras, source: bj_ch2_v2_3}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Latn, language: sa-Latn, text: Suraguru, source: bj_ch2_v2_3}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Latn, language: sa-Latn, text: Vachasampati, source: bj_ch2_v2_3}
+  - {concept: PLANET.JUPITER, kind: ALIAS, script: Latn, language: sa-Latn, text: Ijya, source: bj_ch2_v2_3}
+  - {concept: PLANET.VENUS, kind: ALIAS, script: Latn, language: sa-Latn, text: Sukra, source: bj_ch2_v2_3}
+  - {concept: PLANET.VENUS, kind: ALIAS, script: Latn, language: sa-Latn, text: Bhrigu, source: bj_ch2_v2_3}
+  - {concept: PLANET.VENUS, kind: ALIAS, script: Latn, language: sa-Latn, text: Bhrigusuta, source: bj_ch2_v2_3}
+  - {concept: PLANET.VENUS, kind: ALIAS, script: Latn, language: sa-Latn, text: Asphujit, source: bj_ch2_v2_3}
+  - {concept: PLANET.RAHU, kind: ALIAS, script: Latn, language: sa-Latn, text: Tamas, source: bj_ch2_v2_3}
+  - {concept: PLANET.RAHU, kind: ALIAS, script: Latn, language: sa-Latn, text: Asura, source: bj_ch2_v2_3}
+  - {concept: PLANET.KETU, kind: ALIAS, script: Latn, language: sa-Latn, text: Sikhin, source: bj_ch2_v2_3}
+
+  # General technical terms (BPHS Ch. 3 v. 4-6 and Ch. 11)
+  - {concept: TERM.GRAHA, kind: NAME, script: Latn, language: sa-Latn, text: Graha, source: bphs_ch3_v4_6}
+  - {concept: TERM.GRAHA, kind: ALIAS, script: Latn, language: en, text: planet, source: bphs_ch3_v4_6}
+  - {concept: TERM.NAKSHATRA, kind: NAME, script: Latn, language: sa-Latn, text: Nakshatra, source: bphs_ch3_v4_6}
+  - {concept: TERM.NAKSHATRA, kind: ALIAS, script: Latn, language: en, text: asterism, source: bphs_ch3_v4_6}
+  - {concept: TERM.RASI, kind: NAME, script: Latn, language: sa-Latn, text: Rasi, source: bphs_ch3_v4_6}
+  - {concept: TERM.RASI, kind: ALIAS, script: Latn, language: en, text: sign, source: bphs_ch3_v4_6}
+  - {concept: TERM.LAGNA, kind: NAME, script: Latn, language: sa-Latn, text: Lagna, source: bphs_ch3_v4_6}
+  - {concept: TERM.LAGNA, kind: ALIAS, script: Latn, language: en, text: ascendant, source: bphs_ch3_v4_6}
+  - {concept: TERM.BHAVA, kind: NAME, script: Latn, language: sa-Latn, text: bhava, source: bphs_ch11}
+  - {concept: TERM.BHAVA, kind: ALIAS, script: Latn, language: en, text: house, source: bphs_ch11}

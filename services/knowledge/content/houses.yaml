@@ -1,0 +1,235 @@
+# Structured house knowledge (Phase 12, KB-28). One statement = one source profile.
+# BPHS Ch. 11 v. 2-13 (printed pp. 121-123) and Ch. 32 v. 31-34 (printed pp. 324-325) were checked
+# on the page images on 2026-10-01; Phaladeepika Ch. XV sl. 17 (printed p. 159) likewise.
+# Translator notes (for example the Ch. 32 table "for an easy grasp") are NOT used as verses.
+concepts:
+  - {id: HOUSE.01, key: '1'}
+  - {id: HOUSE.02, key: '2'}
+  - {id: HOUSE.03, key: '3'}
+  - {id: HOUSE.04, key: '4'}
+  - {id: HOUSE.05, key: '5'}
+  - {id: HOUSE.06, key: '6'}
+  - {id: HOUSE.07, key: '7'}
+  - {id: HOUSE.08, key: '8'}
+  - {id: HOUSE.09, key: '9'}
+  - {id: HOUSE.10, key: '10'}
+  - {id: HOUSE.11, key: '11'}
+  - {id: HOUSE.12, key: '12'}
+
+profiles:
+  KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13:
+    edition: BPHS_SANTHANAM_1984
+    location: Ch. 11 v. 2-13 (printed pp. 121-123)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33:
+    edition: BPHS_SANTHANAM_1984
+    location: Ch. 32 v. 31-33 (printed pp. 324-325)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: MEDIUM
+  KB_BPHS_SAN_HOUSE_KARAKA_32_34:
+    edition: BPHS_SANTHANAM_1984
+    location: Ch. 32 v. 34 (printed p. 325)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17:
+    edition: PHALADEEPIKA_SASTRI
+    location: Adhyaya XV sloka 17 (printed p. 159)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+
+statements:
+  # ---- BPHS Ch. 11 v. 2-13: what each house indicates (the house significations)
+  - concept: HOUSE.01
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.PHYSIQUE, rendering: physique}
+      - {id: SIG.APPEARANCE, rendering: appearance}
+      - {id: SIG.INTELLECT, rendering: intellect}
+      - {id: SIG.COMPLEXION_OF_THE_BODY, rendering: complexion of the body}
+      - {id: SIG.VIGOUR, rendering: vigour}
+      - {id: SIG.WEAKNESS, rendering: weakness}
+      - {id: SIG.HAPPINESS, rendering: happiness}
+      - {id: SIG.GRIEF, rendering: grief}
+      - {id: SIG.INNATE_NATURE, rendering: innate nature}
+  - concept: HOUSE.02
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.WEALTH, rendering: wealth}
+      - {id: SIG.GRAINS_FOOD, rendering: grains (food etc.)}
+      - {id: SIG.FAMILY, rendering: family}
+      - {id: SIG.DEATH, rendering: death}
+      - {id: SIG.ENEMIES, rendering: enemies}
+      - {id: SIG.METALS, rendering: metals}
+      - {id: SIG.PRECIOUS_STONES, rendering: precious stones}
+  - concept: HOUSE.03
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      # The printed English reads "tilour"; it is kept as printed and not corrected here.
+      - {id: SIG.UNRESOLVED_PRINTED_TILOUR, rendering: tilour (as printed)}
+      - {id: SIG.SERVANTS, rendering: servants (attendants etc.)}
+      - {id: SIG.BROTHERS_SISTERS, rendering: brothers, sisters etc.}
+      - {id: SIG.INITIATORY_INSTRUCTIONS, rendering: initiatory instructions}
+      - {id: SIG.JOURNEY, rendering: journey}
+      - {id: SIG.PARENTS_DEATH, rendering: parent's death}
+  - concept: HOUSE.04
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.CONVEYANCES, rendering: conveyances}
+      - {id: SIG.RELATIVES, rendering: relatives}
+      - {id: SIG.MOTHER, rendering: mother}
+      - {id: SIG.HAPPINESS, rendering: happiness}
+      - {id: SIG.TREASURE, rendering: treasure}
+      - {id: SIG.LANDS, rendering: lands}
+      - {id: SIG.HOUSES, rendering: houses}
+  - concept: HOUSE.05
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.AMULETS, rendering: amulets}
+      - {id: SIG.SACRED_SPELLS, rendering: sacred spells}
+      - {id: SIG.LEARNING, rendering: learning}
+      - {id: SIG.KNOWLEDGE, rendering: knowledge}
+      - {id: SIG.SONS, rendering: sons}
+      - {id: SIG.ROYALTY_AUTHORITY, rendering: royalty (or authority)}
+      - {id: SIG.FALL_OF_POSITION, rendering: fall of position}
+  - concept: HOUSE.06
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.MATERNAL_UNCLE, rendering: maternal uncle}
+      - {id: SIG.DOUBTS_ABOUT_DEATH, rendering: doubts about death}
+      - {id: SIG.ENEMIES, rendering: enemies}
+      - {id: SIG.ULCERS, rendering: ulcers}
+      - {id: SIG.STEP_MOTHER, rendering: step mother}
+  - concept: HOUSE.07
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.WIFE, rendering: wife}
+      - {id: SIG.TRAVEL, rendering: travel}
+      - {id: SIG.TRADE, rendering: trade}
+      - {id: SIG.LOSS_OF_SIGHT, rendering: loss of sight}
+      - {id: SIG.DEATH, rendering: death}
+  - concept: HOUSE.08
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.LONGEVITY, rendering: longevity}
+      - {id: SIG.BATTLE, rendering: battle}
+      - {id: SIG.ENEMIES, rendering: enemies}
+      - {id: SIG.FORTS, rendering: forts}
+      - {id: SIG.WEALTH_OF_THE_DEAD, rendering: wealth of the dead}
+      - {id: SIG.THINGS_PAST_AND_TO_HAPPEN, rendering: things that have happened and are to happen}
+  - concept: HOUSE.09
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.FORTUNES, rendering: fortunes}
+      - {id: SIG.WIFES_BROTHER, rendering: wife's brother}
+      - {id: SIG.RELIGION, rendering: religion}
+      - {id: SIG.BROTHERS_WIFE, rendering: brother's wife}
+      - {id: SIG.VISITS_TO_SHRINES, rendering: visits to shrines}
+  - concept: HOUSE.10
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.ROYALTY_AUTHORITY, rendering: royalty (authority)}
+      - {id: SIG.PLACE, rendering: place}
+      - {id: SIG.PROFESSION_LIVELIHOOD, rendering: profession (livelihood)}
+      - {id: SIG.HONOUR, rendering: honour}
+      - {id: SIG.FATHER, rendering: father}
+      - {id: SIG.LIVING_IN_FOREIGN_LANDS, rendering: living in foreign lands}
+      - {id: SIG.DEBTS, rendering: debts}
+  - concept: HOUSE.11
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.ALL_ARTICLES, rendering: all articles}
+      - {id: SIG.SONS_WIFE, rendering: son's wife}
+      - {id: SIG.INCOME, rendering: income}
+      - {id: SIG.PROSPERITY, rendering: prosperity}
+      - {id: SIG.QUADRUPEDS, rendering: quadrupeds}
+  - concept: HOUSE.12
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    items:
+      - {id: SIG.EXPENSES, rendering: expenses}
+      - {id: SIG.HISTORY_OF_ENEMIES, rendering: history of enemies}
+      - {id: SIG.ONES_OWN_DEATH, rendering: one's own death}
+
+  # ---- BPHS Ch. 32 v. 31-33: the verse names only six houses (a different, shorter list)
+  - concept: HOUSE.01
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.SOUL, rendering: the soul (and self)}]
+  - concept: HOUSE.02
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.WIFE, rendering: wife (as printed in the verse translation)}]
+  - concept: HOUSE.03
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.YOUNGER_BROTHERS_SISTERS, rendering: younger brothers/sisters}]
+  - concept: HOUSE.05
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.PROGENY, rendering: progeny}]
+  - concept: HOUSE.07
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.WIFE, rendering: wife}]
+  - concept: HOUSE.11
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    items: [{id: SIG.PREBORN, rendering: preborn}]
+
+  # ---- BPHS Ch. 32 v. 34: the planetary significator of each house, in order
+  - {concept: HOUSE.01, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.SUN]}
+  - {concept: HOUSE.02, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.03, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.MARS]}
+  - {concept: HOUSE.04, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.MOON]}
+  - {concept: HOUSE.05, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.06, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.MARS]}
+  - {concept: HOUSE.07, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.VENUS]}
+  - {concept: HOUSE.08, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.SATURN]}
+  - {concept: HOUSE.09, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.10, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.MERCURY]}
+  - {concept: HOUSE.11, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.12, kind: HOUSE_KARAKA, profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34, karaka_planets: [PLANET.SATURN]}
+
+  # ---- Phaladeepika Ch. XV sl. 17: the Karakas of the Bhavas, in order (some houses have several)
+  - {concept: HOUSE.01, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.SUN]}
+  - {concept: HOUSE.02, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.03, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.MARS]}
+  - {concept: HOUSE.04, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.MOON, PLANET.MERCURY]}
+  - {concept: HOUSE.05, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.06, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.SATURN, PLANET.MARS]}
+  - {concept: HOUSE.07, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.VENUS]}
+  - {concept: HOUSE.08, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.SATURN]}
+  - {concept: HOUSE.09, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.SUN, PLANET.JUPITER]}
+  - {concept: HOUSE.10, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.JUPITER, PLANET.SUN, PLANET.MERCURY, PLANET.SATURN]}
+  - {concept: HOUSE.11, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.JUPITER]}
+  - {concept: HOUSE.12, kind: HOUSE_KARAKA, profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17, karaka_planets: [PLANET.SATURN]}
+
+# A source disagreement recorded by hand: it cannot be settled at translation level.
+conflicts:
+  - concept: HOUSE.02
+    profiles: [KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33]
+    note: >-
+      Ch. 32 v. 32 as translated lists "wife" for the 2nd house; Ch. 11 v. 3 lists wealth, grains,
+      family, death, enemies, metals and precious stones and no wife, and puts the wife at the 7th
+      house (v. 8). The translator's own table in the Ch. 32 note gives "family, finance, wife etc."
+      for the 2nd house. Unresolved without a Sanskrit-level review; neither reading is preferred.

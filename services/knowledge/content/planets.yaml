@@ -1,0 +1,154 @@
+# Structured planet knowledge (Phase 12, KB-27). Each statement is ONE source profile; profiles
+# are never merged. `items` hold the source's own short renderings; `id` is a retrieval tag
+# slugged from that rendering and asserts no doctrinal identity between two sources.
+# Verification: BPHS Ch. 3 v. 12-15 on the page image (printed p. 28, checked 2026-10-01);
+# Phaladeepika Ch. XV sl. 15-16 on the page image (printed p. 158, checked 2026-10-01);
+# Brihat Jataka Ch. II sl. 1 in OCR only.
+concepts:
+  - {id: PLANET.SUN, key: sun}
+  - {id: PLANET.MOON, key: moon}
+  - {id: PLANET.MARS, key: mars}
+  - {id: PLANET.MERCURY, key: mercury}
+  - {id: PLANET.JUPITER, key: jupiter}
+  - {id: PLANET.VENUS, key: venus}
+  - {id: PLANET.SATURN, key: saturn}
+  - {id: PLANET.RAHU, key: rahu}
+  - {id: PLANET.KETU, key: ketu}
+
+profiles:
+  KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13:
+    edition: BPHS_SANTHANAM_1984
+    location: Ch. 3 v. 12-13 (printed p. 28)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_BPHS_SAN_PLANET_RANKS_3_14_15:
+    edition: BPHS_SANTHANAM_1984
+    location: Ch. 3 v. 14-15 (printed p. 28)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_BJ_SASTRI_PLANET_KARAKATWA_2_1:
+    edition: BRIHAT_JATAKA_SASTRI
+    location: Ch. II sloka 1
+    location_kind: verse
+    reading: OCR_LEVEL
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16:
+    edition: PHALADEEPIKA_SASTRI
+    location: Adhyaya XV sloka 15-16 (printed p. 158)
+    location_kind: verse
+    reading: PAGE_IMAGE_LEVEL
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+
+statements:
+  # ---- BPHS Ch. 3 v. 12-13: what each planet governs ("planetary governances")
+  - {concept: PLANET.SUN, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.SOUL, rendering: soul of all}]}
+  - {concept: PLANET.MOON, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.MIND, rendering: the mind}]}
+  - {concept: PLANET.MARS, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.STRENGTH, rendering: one's strength}]}
+  - {concept: PLANET.MERCURY, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.SPEECH, rendering: speech-giver}]}
+  - concept: PLANET.JUPITER
+    kind: SIGNIFICATION
+    profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13
+    items: [{id: SIG.KNOWLEDGE, rendering: knowledge}, {id: SIG.HAPPINESS, rendering: happiness}]
+  - {concept: PLANET.VENUS, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.SEMEN_POTENCY, rendering: semen (potency)}]}
+  - {concept: PLANET.SATURN, kind: SIGNIFICATION, profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13, items: [{id: SIG.GRIEF, rendering: grief}]}
+
+  # ---- BPHS Ch. 3 v. 14-15: the allegorical planetary "cabinet" (not a statement about a chart)
+  - {concept: PLANET.SUN, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.ROYAL_STATUS, rendering: royal status}]}
+  - {concept: PLANET.MOON, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.ROYAL_STATUS, rendering: royal status}]}
+  - {concept: PLANET.MARS, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.ARMY_CHIEF, rendering: army chief}]}
+  - {concept: PLANET.MERCURY, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.PRINCE_APPARENT, rendering: prince-apparent}]}
+  - {concept: PLANET.JUPITER, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.MINISTER, rendering: ministerial planet}]}
+  - {concept: PLANET.VENUS, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.MINISTER, rendering: ministerial planet}]}
+  - {concept: PLANET.SATURN, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.SERVANT, rendering: servant}]}
+  - {concept: PLANET.RAHU, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.PLANETARY_ARMY, rendering: planetary army}]}
+  - {concept: PLANET.KETU, kind: ROLE, profile: KB_BPHS_SAN_PLANET_RANKS_3_14_15, items: [{id: ROLE.PLANETARY_ARMY, rendering: planetary army}]}
+
+  # ---- Brihat Jataka Ch. II sl. 1: the seven planets (cross-check of BPHS; OCR level)
+  - {concept: PLANET.SUN, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.SOUL, rendering: the soul}]}
+  - {concept: PLANET.MOON, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.MIND, rendering: the mind}]}
+  - {concept: PLANET.MARS, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.STRENGTH, rendering: strength}]}
+  - {concept: PLANET.MERCURY, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.SPEECH, rendering: speech}]}
+  - concept: PLANET.JUPITER
+    kind: SIGNIFICATION
+    profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1
+    items: [{id: SIG.KNOWLEDGE, rendering: knowledge}, {id: SIG.HAPPINESS, rendering: happiness}]
+  - {concept: PLANET.VENUS, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.SEXUAL_LOVE, rendering: sexual love}]}
+  - {concept: PLANET.SATURN, kind: SIGNIFICATION, profile: KB_BJ_SASTRI_PLANET_KARAKATWA_2_1, items: [{id: SIG.MISERY, rendering: misery}]}
+
+  # ---- Phaladeepika Ch. XV sl. 15-16: what each planet is consulted for
+  - concept: PLANET.SUN
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.SELF, rendering: own self}
+      - {id: SIG.FATHER, rendering: father}
+      - {id: SIG.INFLUENCE, rendering: influence}
+      - {id: SIG.HEALTH, rendering: health}
+      - {id: SIG.VIGOUR, rendering: vigour}
+      - {id: SIG.FORTUNE, rendering: fortune}
+  - concept: PLANET.MOON
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.CHARACTER_OF_HEART, rendering: character of one's heart}
+      - {id: SIG.UNDERSTANDING, rendering: understanding}
+      - {id: SIG.ROYAL_FAVOUR, rendering: royal favour}
+      - {id: SIG.MOTHER, rendering: mother}
+      - {id: SIG.AFFLUENCE, rendering: affluence}
+  - concept: PLANET.MARS
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.COURAGE, rendering: courage}
+      - {id: SIG.DISEASE, rendering: disease}
+      - {id: SIG.CHARACTERISTIC_QUALITIES, rendering: characteristic qualities}
+      - {id: SIG.YOUNGER_BROTHERS, rendering: younger brothers}
+      - {id: SIG.LANDS, rendering: lands}
+      - {id: SIG.FOES, rendering: foes}
+      - {id: SIG.PATERNAL_BLOOD_RELATIONS, rendering: blood-(paternal) relations}
+  - concept: PLANET.MERCURY
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.LEARNING, rendering: learning}
+      - {id: SIG.RELATIVES_IN_GENERAL, rendering: relatives in general}
+      - {id: SIG.DISCRIMINATION, rendering: discrimination}
+      - {id: SIG.MATERNAL_UNCLE, rendering: maternal uncle}
+      - {id: SIG.FRIENDS, rendering: friends}
+      - {id: SIG.SPEECH, rendering: speech}
+      - {id: SIG.ACTION, rendering: action}
+  - concept: PLANET.JUPITER
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.GENIUS, rendering: own genius}
+      - {id: SIG.WEALTH, rendering: wealth}
+      - {id: SIG.PHYSICAL_DEVELOPMENT, rendering: physical development}
+      - {id: SIG.SONS, rendering: sons}
+      - {id: SIG.KNOWLEDGE, rendering: knowledge}
+  - concept: PLANET.VENUS
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.WIFE, rendering: wife}
+      - {id: SIG.VEHICLES, rendering: vehicles}
+      - {id: SIG.ORNAMENTS, rendering: ornaments}
+      - {id: SIG.LOVE_AFFAIRS, rendering: love affairs}
+      - {id: SIG.PLEASURES, rendering: pleasures}
+  - concept: PLANET.SATURN
+    kind: SIGNIFICATION
+    profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+    items:
+      - {id: SIG.PERIOD_OF_LIFE, rendering: period of life}
+      - {id: SIG.LIVELIHOOD, rendering: livelihood}
+      - {id: SIG.CAUSE_OF_DEATH, rendering: cause of death}
+      - {id: SIG.ADVERSITY, rendering: adversity}
+      - {id: SIG.SERVANTS, rendering: servants}
+  - {concept: PLANET.RAHU, kind: SIGNIFICATION, profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16, items: [{id: SIG.PATERNAL_GRANDFATHER, rendering: paternal grand-father}]}
+  - {concept: PLANET.KETU, kind: SIGNIFICATION, profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16, items: [{id: SIG.MATERNAL_GRANDFATHER, rendering: maternal grand-father}]}

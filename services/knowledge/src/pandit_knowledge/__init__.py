@@ -1,12 +1,13 @@
-"""knowledge: structured astrology knowledge (rule source-of-truth) and
-unstructured knowledge (classical text/remedy corpus, RAG retrieval).
+"""knowledge: source-backed astrology knowledge (Phase 12, standards v1.26.0 KB-01 to KB-42).
 
-Phase 3 scope only: package boundary, config, health check. Ingestion
-pipeline and retrieval are implemented starting `Phases.md` Phase 12 --
-see `docs/ARCHITECTURE.md` §"Knowledge Architecture".
+A structured store (concepts, statements, terms, rule references, domain mappings,
+exceptions) and an explanatory store (chunks and embeddings in PostgreSQL + pgvector), both
+versioned and sealed, with bounded retrieval that returns provenance. Library and internal
+service interfaces only: HTTP is Phase 18, narration Phase 15, the final model Phase 14.
 
-Never a source of chart facts -- retrieval results feed narration/remedy
-phrasing only.
+Never a source of chart facts: a retrieved chunk is knowledge text, stamped
+``KNOWLEDGE_TEXT_NOT_A_CHART_FACT``; chart facts and rule results come only from the
+deterministic pipeline (``astro-engine`` and ``rule-engine``).
 """
 
 from pandit_knowledge._version import __version__

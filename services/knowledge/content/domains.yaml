@@ -1,0 +1,82 @@
+# House -> life-domain mappings (Phase 12, KB-29; roadmap: House: Career, Marriage, Finance,
+# Education). The four domains are Pandit Ji PRODUCT domains, not classical terms. A mapping is
+# SOURCE_SUPPORTED only when a read source states a signification whose own wording corresponds to
+# the domain; the source term is always recorded in `bridge`. Every other house/domain pair is
+# written as NOT_EVALUABLE by the loader so no consumer can assume a mapping that no source states.
+# "No source read states it" is NOT a claim that the classical texts are silent: only BPHS Ch. 11,
+# Ch. 32 and Phaladeepika Ch. XV were read for this purpose, at translation level.
+concepts:
+  - {id: DOMAIN.CAREER, key: career}
+  - {id: DOMAIN.MARRIAGE, key: marriage}
+  - {id: DOMAIN.FINANCE, key: finance}
+  - {id: DOMAIN.EDUCATION, key: education}
+
+mappings:
+  - domain: DOMAIN.CAREER
+    house: HOUSE.10
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.10, kind: SIGNIFICATION}
+    bridge: >-
+      Source term: "profession (livelihood)" (Ch. 11 v. 11). "Career" is a Pandit Ji domain label,
+      not a BPHS word. The same verse also lists royalty (authority), honour and father.
+  - domain: DOMAIN.MARRIAGE
+    house: HOUSE.07
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.07, kind: SIGNIFICATION}
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33, concept: HOUSE.07, kind: SIGNIFICATION}
+    bridge: >-
+      Source term: "wife" (Ch. 11 v. 8; Ch. 32 v. 33). The source names the wife, not the event or
+      institution of marriage; "Marriage" is a Pandit Ji domain label and the house is not a
+      statement about any person's marriage.
+  - domain: DOMAIN.MARRIAGE
+    house: HOUSE.02
+    status: UNRESOLVED_CONFLICT
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33, concept: HOUSE.02, kind: SIGNIFICATION}
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.02, kind: SIGNIFICATION}
+    bridge: >-
+      Ch. 32 v. 32 as translated gives "wife" for the 2nd house; Ch. 11 v. 3 does not. See the
+      recorded source conflict on HOUSE.02. Not resolved; neither reading is preferred.
+  - domain: DOMAIN.FINANCE
+    house: HOUSE.02
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.02, kind: SIGNIFICATION}
+    bridge: 'Source term: "wealth" (Ch. 11 v. 3); also grains, family, metals and precious stones.'
+  - domain: DOMAIN.FINANCE
+    house: HOUSE.11
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.11, kind: SIGNIFICATION}
+    bridge: 'Source terms: "income" and "prosperity" (Ch. 11 v. 12).'
+  - domain: DOMAIN.FINANCE
+    house: HOUSE.12
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.12, kind: SIGNIFICATION}
+    bridge: 'Source term: "expenses" (Ch. 11 v. 13); the verse also lists the history of enemies and one''s own death.'
+  - domain: DOMAIN.EDUCATION
+    house: HOUSE.05
+    status: SOURCE_SUPPORTED
+    profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+    supports:
+      - {profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13, concept: HOUSE.05, kind: SIGNIFICATION}
+    bridge: >-
+      Source terms: "learning" and "knowledge" (Ch. 11 v. 6); the verse also lists amulets, sacred
+      spells, sons, royalty (authority) and fall of position.
+
+not_evaluable_notes:
+  - domain: DOMAIN.EDUCATION
+    house: HOUSE.04
+    note: >-
+      Often associated with education in modern practice, but no source read in Phase 12 states it
+      (Ch. 11 v. 5 lists conveyances, relatives, mother, happiness, treasure, lands and houses).
+      That is a finding about the passage read, not a claim about the classical texts as a whole.

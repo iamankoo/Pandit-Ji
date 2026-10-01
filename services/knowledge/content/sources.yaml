@@ -1,0 +1,149 @@
+# Phase 12 source and edition records (registry: research/ASTROLOGY_SOURCES.md Group 25).
+# `ingestion_permission` states what the project may store of each source (KB-12). Engineering
+# determination only -- not legal advice; the counsel sign-off in LEGAL_REGULATIONS.md is outstanding.
+sources:
+  - source_id: SRC.BPHS
+    title: Brihat Parasara Hora Sastra
+    author: Maharshi Parasara (attribution and recension contested)
+    tradition: Parashari (Vedic)
+    original_language: sa
+    source_classification: PRIMARY_CLASSICAL
+    copyright_status: Sanskrit text of uncertain antiquity; both English translations in copyright
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: >-
+      Translations by R. Santhanam (Vol I, 1984) and Gouri Shankar Kapoor (Vol II, 1987) are in
+      copyright; only short source terms, structured facts and citations are stored, never
+      translator prose or notes.
+    registry_ref: SRC-BPHS-SANTHANAM-1984
+  - source_id: SRC.PHALADEEPIKA
+    title: Phaladeepika
+    author: Mantreswara (c. 16th century per the translator)
+    tradition: Vedic (cross-check source)
+    original_language: sa
+    source_classification: PRIMARY_CLASSICAL
+    copyright_status: Sastri translation in copyright ("Copy Right Registered" on the title page)
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: Only short source terms, structured facts and citations are stored.
+    registry_ref: SRC-PHALADEEPIKA-SASTRI
+  - source_id: SRC.BRIHAT_JATAKA
+    title: Brihat Jataka
+    author: Varahamihira
+    tradition: Vedic (cross-check source)
+    original_language: sa
+    source_classification: PRIMARY_CLASSICAL
+    copyright_status: Sastri translation presumed in copyright; publisher not shown in the scan
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: Only short source terms, structured facts and citations are stored.
+    registry_ref: SRC-BRIHAT-JATAKA-SASTRI
+  - source_id: SRC.JATAKA_PARIJATA
+    title: Jataka Parijata
+    author: Daivagya Vaidyanatha
+    tradition: Vedic
+    original_language: sa
+    source_classification: PRIMARY_CLASSICAL
+    copyright_status: Chaukhamba edition with commentaries presumed in copyright; community scan
+    ingestion_permission: LOCATION_ONLY
+    copyright_note: >-
+      Examined for planet and house significations; no passage was read that supports a Phase 12
+      record, so nothing from it is stored (its Phase 6 Kuja rule is referenced only by rule ID).
+    registry_ref: SRC-JATAKA-PARIJATA-CHAUKHAMBHA
+  - source_id: SRC.WAITE_PICTORIAL_KEY
+    title: The Pictorial Key to the Tarot
+    author: Arthur Edward Waite (1857-1942); illustrations by Pamela Colman Smith (not used)
+    tradition: Tarot (Waite-Smith deck); not Vedic
+    original_language: en
+    source_classification: TRADITIONAL_SECONDARY
+    copyright_status: Public domain (author died 1942; published 1910, enlarged 1922)
+    ingestion_permission: FULL_TEXT_PUBLIC_DOMAIN
+    copyright_note: >-
+      Card entries of Part III sections 2 and 3 are stored verbatim from the English Wikisource
+      proofread transcription, with attribution. Waite himself calls the fortune-telling meanings
+      of the Greater Arcana artificial and arbitrary (Part III section 3 closing paragraph).
+    registry_ref: SRC-WAITE-PICTORIAL-KEY-1911
+  - source_id: SRC.CHEIRO
+    title: Cheiro's Book of Numbers
+    author: '"Cheiro" (William John Warner, 1866-1936)'
+    tradition: Chaldean numerology (modern)
+    original_language: en
+    source_classification: MODERN_POPULAR
+    copyright_status: >-
+      Author died 1936 (public domain in India and the UK), but the Taraporevala reprint carries a
+      1959 copyright notice and the only scans available are uncorrected OCR
+    ingestion_permission: DEFERRED_UNRESOLVED
+    copyright_note: >-
+      Numerology interpretation text is NOT ingested: the OCR of the number chapters is garbled
+      in places and no proofread transcription or page-image-checked text exists.
+    registry_ref: SRC-CHEIRO-BOOK-OF-NUMBERS-1926
+  - source_id: SRC.BALLIETT
+    title: The Philosophy of Numbers - Their Tone and Colors
+    author: Mrs. L. Dow Balliett
+    tradition: Pythagorean numerology (modern)
+    original_language: en
+    source_classification: MODERN_POPULAR
+    copyright_status: Public domain (1908)
+    ingestion_permission: DEFERRED_UNRESOLVED
+    copyright_note: >-
+      Read in Phase 11 for the letter table and birth number only; its interpretive passages were
+      not read in Phase 12, so no Pythagorean interpretation is stored.
+    registry_ref: SRC-BALLIETT-PHILOSOPHY-OF-NUMBERS-1908
+  - source_id: SRC.LAL_KITAB
+    title: Lal Kitab (Urdu editions, 1939-1952)
+    author: Attributed to Pt. Roop Chand Joshi (contested)
+    tradition: Lal Kitab
+    original_language: ur
+    source_classification: CONTESTED
+    copyright_status: Presumed in copyright in India to the end of 2042
+    ingestion_permission: DEFERRED_UNRESOLVED
+    copyright_note: Deferred in Phase 9 and still deferred; no Lal Kitab knowledge is stored.
+    registry_ref: Group 21 (P9-01)
+editions:
+  - edition_id: BPHS_SANTHANAM_1984
+    source_id: SRC.BPHS
+    edition_label: Vol I (Ch. 1-45), preface signed Vijaya Dasami 1984
+    translator: R. Santhanam
+    publisher: Ranjan Publications, New Delhi
+    publication_year: '1984'
+    language: en
+    location_url: https://archive.org/details/BPHSEnglish
+    reading_level: PAGE_IMAGE_LEVEL
+    registry_verification_level: IMAGE-TRANSLATION
+  - edition_id: BPHS_KAPOOR_1987
+    source_id: SRC.BPHS
+    edition_label: Vol II (Ch. 46-97), preface dated 21-12-87
+    translator: Gouri Shankar Kapoor
+    publisher: Ranjan Publications, New Delhi
+    publication_year: '1987'
+    language: en
+    location_url: https://archive.org/details/BPHSEnglish
+    reading_level: PAGE_IMAGE_LEVEL
+    registry_verification_level: IMAGE-TRANSLATION
+  - edition_id: PHALADEEPIKA_SASTRI
+    source_id: SRC.PHALADEEPIKA
+    edition_label: 2nd edition (1950)
+    translator: V. Subrahmanya Sastri
+    publisher: Aruna Press, Bangalore
+    publication_year: '1950'
+    language: en
+    location_url: https://archive.org/details/Phaladeepika2ndEd.1950ByVSubrahmanyaSastri
+    reading_level: PAGE_IMAGE_LEVEL
+    registry_verification_level: IMAGE-TRANSLATION
+  - edition_id: BRIHAT_JATAKA_SASTRI
+    source_id: SRC.BRIHAT_JATAKA
+    edition_label: 2nd edition
+    translator: V. Subrahmanya Sastri
+    publisher: not shown in the scan metadata
+    publication_year: ''
+    language: en
+    location_url: https://archive.org/details/BrihatJataka2ndEd.ByVSubrahmanyaSastri
+    reading_level: OCR_LEVEL
+    registry_verification_level: OCR-TRANSLATION
+  - edition_id: WAITE_PICTORIAL_KEY_WIKISOURCE
+    source_id: SRC.WAITE_PICTORIAL_KEY
+    edition_label: English Wikisource proofread transcription, Part 3 (1910/1922 text)
+    translator: ''
+    publisher: Wikisource transcription of the Rider edition
+    publication_year: 1910/1922
+    language: en
+    location_url: https://en.wikisource.org/wiki/The_Pictorial_Key_to_the_Tarot/Part_3
+    reading_level: TRANSCRIPTION_LEVEL
+    registry_verification_level: WEB-TRANSCRIPTION-ORIGINAL-ENGLISH

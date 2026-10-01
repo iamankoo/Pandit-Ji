@@ -1,0 +1,111 @@
+# Rule references, exceptions and strength references (Phase 12, KB-31 to KB-34).
+#
+# A reference points AT an existing deterministic rule or methodology profile; it never copies
+# the rule's logic. The rule engine (and the astro-engine for profiles) stays the only place a
+# rule is evaluated; knowledge only says where a rule lives and which concept it involves.
+# Every `rule_id` below is checked against the rule YAML under `services/knowledge/rules/` by the
+# loader, so a renamed or removed rule fails the build.
+rule_references:
+  # Phase 6 yoga and dosha rules, by the planet they involve
+  - {concept: PLANET.JUPITER, rule_id: BPHS_SAN_GAJAKESARI_36_3_4, kind: RULE, relation: INVOLVES, location: Ch. 36 v. 3-4}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_GAJAKESARI_36_3_4, kind: RULE, relation: INVOLVES, location: Ch. 36 v. 3-4}
+  - {concept: PLANET.JUPITER, rule_id: PHALADEEPIKA_SASTRI_KESARI_6_14, kind: RULE, relation: INVOLVES, location: Adhyaya VI sloka 14}
+  - {concept: PLANET.MOON, rule_id: PHALADEEPIKA_SASTRI_KESARI_6_14, kind: RULE, relation: INVOLVES, location: Adhyaya VI sloka 14}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_SUNAPHA_37_7_10, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 7-10}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_ANAPHA_37_7_10, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 7-10}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_DURADHARA_37_7_10, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 7-10}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_KEMADRUMA_37_11_13, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 11-13}
+  - {concept: PLANET.MOON, rule_id: PHALADEEPIKA_SASTRI_KEMADRUMA_6_5, kind: RULE, relation: INVOLVES, location: Adhyaya VI sloka 5}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_ADHI_MOON_37_5, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 5}
+  - {concept: PLANET.MOON, rule_id: BPHS_SAN_DHANA_MOON_37_6, kind: RULE, relation: INVOLVES, location: Ch. 37 v. 6}
+  - {concept: PLANET.SUN, rule_id: BPHS_SAN_VESI_38_1, kind: RULE, relation: INVOLVES, location: Ch. 38 v. 1}
+  - {concept: PLANET.SUN, rule_id: BPHS_SAN_VOSI_38_1, kind: RULE, relation: INVOLVES, location: Ch. 38 v. 1}
+  - {concept: PLANET.SUN, rule_id: BPHS_SAN_UBHAYACHARI_38_1, kind: RULE, relation: INVOLVES, location: Ch. 38 v. 1}
+  - {concept: PLANET.MARS, rule_id: BPHS_KAPOOR_80_47_49_MARS_HOUSES, kind: RULE, relation: INVOLVES, location: Ch. 80 v. 47-49}
+  - {concept: PLANET.MARS, rule_id: JP_KUJA_DOSHA, kind: RULE, relation: INVOLVES, location: Verse 34}
+  - {concept: PLANET.MARS, rule_id: BPHS_KAPOOR_PMP_75_1_2_RUCHAKA, kind: RULE, relation: INVOLVES, location: Ch. 75 v. 1-2}
+  - {concept: PLANET.MERCURY, rule_id: BPHS_KAPOOR_PMP_75_1_2_BHADRA, kind: RULE, relation: INVOLVES, location: Ch. 75 v. 1-2}
+  - {concept: PLANET.JUPITER, rule_id: BPHS_KAPOOR_PMP_75_1_2_HAMSA, kind: RULE, relation: INVOLVES, location: Ch. 75 v. 1-2}
+  - {concept: PLANET.VENUS, rule_id: BPHS_KAPOOR_PMP_75_1_2_MALAVYA, kind: RULE, relation: INVOLVES, location: Ch. 75 v. 1-2}
+  - {concept: PLANET.SATURN, rule_id: BPHS_KAPOOR_PMP_75_1_2_SHASHA, kind: RULE, relation: INVOLVES, location: Ch. 75 v. 1-2}
+
+# Planetary relationships are NOT restated here: the Phase 6 tables are the only relationship
+# data (KB-32). Natural friend/enemy covers the seven classical planets; the natural-nature table
+# also names Rahu and Ketu among the malefics.
+relationship_tables:
+  seven_planets:
+    - {rule_id: BPHS_SAN_REL_NATURAL_3_55, location: Ch. 3 v. 55}
+    - {rule_id: BPHS_SAN_REL_TEMPORAL_3_56, location: Ch. 3 v. 56}
+    - {rule_id: BPHS_SAN_REL_COMPOUND_3_57_58, location: Ch. 3 v. 57-58}
+  all_nine:
+    - {rule_id: BPHS_SAN_NATURE_3_11, location: Ch. 3 v. 11}
+
+# Exceptions already encoded as cancellations in the Phase 6 rules, recorded as first-class
+# provenance-backed knowledge. They are never merged: the two Kemadruma clauses are separate
+# records, and the Kemadruma exceptions of Phaladeepika are not attached to the BPHS rule (whose
+# verses have no cancellation clause).
+exceptions:
+  - id: EX.PHALADEEPIKA_SASTRI_KEMADRUMA_6_5.MOON_ASSOCIATED_WITH_A_PLANET
+    rule_id: PHALADEEPIKA_SASTRI_KEMADRUMA_6_5
+    concept: PLANET.MOON
+    edition: PHALADEEPIKA_SASTRI
+    location: Adhyaya VI sloka 5 ("some declare")
+    summary: The Moon is associated with a planet.
+    effect: no Kemadruma (full cancellation as encoded in the rule)
+    confidence: MEDIUM
+    conflict_note: >-
+      Reported as "some declare". The first cancellation clause of the translation is illegible in
+      the OCR and is not modelled (rule dependency SLOKA_5_FIRST_CANCELLATION_CLAUSE_ILLEGIBLE).
+  - id: EX.PHALADEEPIKA_SASTRI_KEMADRUMA_6_5.PLANET_IN_KENDRA_FROM_MOON
+    rule_id: PHALADEEPIKA_SASTRI_KEMADRUMA_6_5
+    concept: PLANET.MOON
+    edition: PHALADEEPIKA_SASTRI
+    location: Adhyaya VI sloka 5 ("some declare")
+    summary: A planet occupies a kendra (1st, 4th, 7th or 10th) from the Moon.
+    effect: no Kemadruma (full cancellation as encoded in the rule)
+    confidence: MEDIUM
+    conflict_note: >-
+      Reported as "some declare". The BPHS Kemadruma verses (Ch. 37 v. 11-13) carry no
+      cancellation clause in this edition, so this exception belongs to the Phaladeepika profile only.
+  - id: EX.BPHS_KAPOOR_80_47_49_MARS_HOUSES.BOTH_PARTNERS_HAVE_THE_YOGA
+    rule_id: BPHS_KAPOOR_80_47_49_MARS_HOUSES
+    concept: PLANET.MARS
+    edition: BPHS_KAPOOR_1987
+    location: Ch. 80 v. 49 (printed p. 964)
+    summary: Both partners have the Mars placement.
+    effect: the yoga ceases to have effect (needs the partner's chart; Phase 11 compares the two Kuja results without a verdict)
+    confidence: MEDIUM
+    conflict_note: >-
+      The rule is a widowhood rule in the female-horoscopy chapter, not named Mangal or Kuja
+      Dosha by BPHS; the Jataka Parijata Kuja profile is separate and is not merged with it.
+
+nabhasa_sankhya_exception:
+  edition: BPHS_SANTHANAM_1984
+  location: Ch. 35 v. 17
+  summary: Another Nabhasa yoga explained earlier is derivable.
+  effect: the seven Sankhya yogas are not operable
+  confidence: MEDIUM
+  conflict_note: Verse-level precedence rule; the Sankhya yoga definitions themselves are separate profiles.
+  rule_ids:
+    - BPHS_SAN_NABHASA_35_GOLA
+    - BPHS_SAN_NABHASA_35_YUGA
+    - BPHS_SAN_NABHASA_35_SOOLA
+    - BPHS_SAN_NABHASA_35_KEDARA
+    - BPHS_SAN_NABHASA_35_PAASA
+    - BPHS_SAN_NABHASA_35_DAAMA
+    - BPHS_SAN_NABHASA_35_VEENA
+
+# Strength (KB-34). Source remarks only; Shadbala stays in the astro-engine and the threshold
+# question stays closed (standards SM-11): no record here classifies anything as strong or weak.
+strength:
+  concept: CONCEPT.STRENGTH
+  note_statement:
+    edition: BPHS_SANTHANAM_1984
+    profile: KB_BPHS_SAN_STRENGTH_NOTE_3_12_13
+    location: Ch. 3 v. 12-13 translator's note (printed p. 28)
+    tags: [EFFECT_SCALES_WITH_STRENGTH]
+    # The translator's note says the degree of the benefic effects of those indications will be
+    # commensurate with the strength of the planet. It is a note, not a verse, and names no number.
+  profile_references:
+    - {rule_id: SHADBALA_RAMAN_GRAHA_BHAVA_BALAS, relation: IMPLEMENTED_BY, location: astro-engine Phase 9 (v1.21.0); default user-facing method (SM-02)}
+    - {rule_id: SHADBALA_BPHS_SANTHANAM_27_VERSE, relation: IMPLEMENTED_BY, location: astro-engine Phase 9 (v1.15.0-v1.19.0); reference method, no total (SM-02)}

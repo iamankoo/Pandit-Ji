@@ -63,7 +63,7 @@ Every foundational category (client, backend, database, cache, astronomy, vision
 
 ## Vector Search
 
-**pgvector**, running inside the same PostgreSQL instance (ADR-004) — used only for `knowledge.embeddings` (RAG retrieval) and, separately-namespaced, user-memory semantic retrieval (`docs/ARCHITECTURE.md` §"Memory Architecture"). Relational data (facts, state, evidence, audit) and vector data (embeddings) are stored in the same database but never in the same tables — a fact table never carries a vector column. Indexing approach (HNSW vs IVFFlat) is an implementation detail selected when `knowledge` is built (Phase 12), not fixed here.
+**pgvector**, running inside the same PostgreSQL instance (ADR-004) — used only for `knowledge.embeddings` (RAG retrieval) and, separately-namespaced, user-memory semantic retrieval (`docs/ARCHITECTURE.md` §"Memory Architecture"). Relational data (facts, state, evidence, audit) and vector data (embeddings) are stored in the same database but never in the same tables — a fact table never carries a vector column. Indexing approach: selected in Phase 12 (`docs/ASTROLOGY_STANDARDS.md` KB-35): HNSW as a partial expression index per embedding configuration, created on demand, with exact search as the default; the embedding model itself remains a Phase 14 decision behind a provider abstraction.
 
 ## Cache
 
@@ -91,7 +91,7 @@ No third-party rule-engine product is adopted (`docs/ARCHITECTURE.md` §"Rule En
 
 ## Knowledge System
 
-PostgreSQL + pgvector (above) for storage/retrieval; standard Python text-processing tooling (chunking/embedding pipeline, implementation deferred to Phase 12) for ingestion. No separate document database or search engine (e.g. Elasticsearch) is introduced — the retrieval need (RAG over a moderate, curated corpus) does not justify a second search technology at this stage; revisit only on a measured retrieval-quality or scale bottleneck (§"Scaling Strategy").
+PostgreSQL + pgvector (above) for storage/retrieval; standard Python text-processing tooling (chunking/embedding pipeline, implemented in Phase 12 as `services/knowledge` with a pluggable embedding provider) for ingestion. No separate document database or search engine (e.g. Elasticsearch) is introduced — the retrieval need (RAG over a moderate, curated corpus) does not justify a second search technology at this stage; revisit only on a measured retrieval-quality or scale bottleneck (§"Scaling Strategy").
 
 ## AI / ML
 

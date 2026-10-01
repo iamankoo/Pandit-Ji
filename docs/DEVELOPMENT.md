@@ -72,6 +72,8 @@ cd apps/mobile && flutter pub get && flutter run
 | `apps/web`, `apps/admin` | `npm test` |
 | `apps/mobile` | `flutter test` |
 
+The knowledge service also has PostgreSQL + pgvector integration tests (`services/knowledge/tests/test_postgres.py`), which run only when `KNOWLEDGE_TEST_DATABASE_URL` is set (see `services/knowledge/README.md`); CI runs them in the "Knowledge - PostgreSQL + pgvector" job.
+
 Unit tests live inside each component's own `tests/`. Cross-component integration/contract tests and shared fixtures live in the repository-root `tests/` (see `tests/README.md`) and `datasets/fixtures/`.
 
 ## Linting / formatting / type-checking

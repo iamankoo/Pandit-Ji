@@ -385,7 +385,7 @@ Status (2026-09-25, project-owner decisions; details in `docs/ASTROLOGY_STANDARD
 | Chinese astrology | Implemented as Four Pillars calendar pillars; luck cycles need the person's sex (not collected) |
 | Vastu | Deferred (owner-accepted); cross-domain Vastu stays with Phase 17 |
 | Feng Shui-related modules | Deferred (owner-accepted) |
-| Tarot | Implemented as deck, spreads and seeded or user-selected layouts; meanings deferred (owner-accepted) |
+| Tarot | Implemented as deck, spreads and seeded or user-selected layouts; meanings deferred (owner-accepted). *(Phase 12: Waite's meanings are stored as public-domain knowledge text; the Phase 9 engine itself still returns no meanings.)* |
 | Shadbala | Implemented: the BPHS verse profile (no total) and a separate modern profile after B. V. Raman (with totals); Ishta/Kashta (Ch. 28) research only |
 | Ashtakvarga | Implemented (WP-A1/A2/A3, evidence bundle WP-EB) |
 | Chara Karakas, Rashi Drishti | Implemented (WP-B), with planet-level Rashi Drishti added |
@@ -532,7 +532,7 @@ Status (2026-09-27, owner's Phase 11 directive; details in `docs/ASTROLOGY_STAND
 | Bhagyank | Implemented (Phase 1 arithmetic), with Cheiro's separate date numbers and Balliett's birth number reported beside it |
 | Name numerology | Implemented for Latin spellings (Cheiro and Balliett tables); Devanagari and other scripts not evaluable, no transliteration |
 | Lucky numbers | Chaldean: Cheiro's own-series and interchangeable numbers, as source associations; Pythagorean: deferred (no rule read) |
-| Numerology interpretation | Deferred to Phase 12 (source references only) |
+| Numerology interpretation | Deferred to Phase 12 (source references only). *(Phase 12: still deferred; no usable proofread text, see the Phase 12 status block.)* |
 | Ashtakoot (Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, Nadi) | Implemented after Muhurta Chintamani v. 21-37. Tara, Graha Maitri, Bhakoot and Nadi always evaluable; Varna and Gana only when role-invariant; Yoni not evaluable for asymmetric printed cells; Vashya never scored (the source leaves most relations to usage and the point schemes disagree) |
 | 36-point system | Not produced under v1.25.0: it requires all eight kutas, and Vashya is never scored |
 | Doshas (Bhakoot, Nadi) | Implemented with the source's exception conditions; Bhakoot cancellation verdict not evaluated (disputed); Gana dosha by role |
@@ -542,7 +542,7 @@ Owner decisions still open: an explicit, consented role input (would unlock Varn
 
 Owner acceptance (2026-09-27): **Phase 11 is accepted as complete for its source-supported scope**, exactly as documented above: unsupported or unresolved functionality stays deferred or NOT_EVALUABLE, and in the full-roadmap sense the 36-point system is not produced and role-dependent factors are not evaluable. The open decisions above are not resolved.
 
-**Stopping point (2026-09-27): Phase 11 closed for its source-supported scope. Phase 12 has not started.** The next session must begin by rereading `SUMMARY.md` §40 first, then this file, and verify the actual repository HEAD before any Phase 12 work, which needs the owner's explicit approval.
+**Stopping point (2026-09-27): Phase 11 closed for its source-supported scope. Phase 12 has not started.** The next session must begin by rereading `SUMMARY.md` §40 first, then this file, and verify the actual repository HEAD before any Phase 12 work, which needs the owner's explicit approval. *(Superseded 2026-10-01: Phase 12 is implemented; see the Phase 12 status block and `SUMMARY.md` §41.)*
 
 ## Phase 12 — Astrology Knowledge Base
 
@@ -580,6 +580,56 @@ Store:
 Use PostgreSQL + vector search where useful.
 
 Deliverable: structured astrology knowledge system.
+
+Phase 12 produces **source-backed, versioned knowledge with its provenance, and a bounded retrieval foundation**. It adds no calculation, no rule and no narration: structured facts and the Phase 6 rules decide what applies to a chart; retrieved text is never a fact about a chart. The five concepts CALCULATION, RULE, KNOWLEDGE, INTERPRETATION and NARRATION stay separate. Interpretation content is allowed in the knowledge base only when it is source-backed, provenance-tagged, profile-specific where sources differ and distinct from chart facts and from AI narration (owner decision, 2026-10-01).
+
+Dependencies:
+
+- Phases 4-11 (the deterministic facts and their provenance); Phase 6 (the rule YAML and the relationship tables, which knowledge references and never restates; the evidence bundle, which gains no knowledge section)
+- The Phase 3 `knowledge` schema namespace and the `vector` extension (migration 0001), the Phase 2 two-store architecture (`docs/ARCHITECTURE.md` section 10)
+- Phase 9 (the Tarot deck identifiers and the Shadbala profiles, referenced), Phase 11 (numerology interpretation was deferred to this phase)
+
+Inputs: curated content files (`services/knowledge/content/`: sources, planet and house statements, terms, domain mappings, references, exceptions, the parsed Waite corpus), the Phase 6 rule files (for validation of every rule reference), and one embedding configuration. No user data of any kind.
+
+Outputs: a sealed, versioned **knowledge version** (sources and editions, concepts, statements, terms, rule references, domain mappings, exceptions, chunks, embeddings, ingestion runs) in PostgreSQL with pgvector; a `KnowledgeBase` read interface over one sealed version; a `Retriever` returning bounded, deterministic hits with full provenance and the fixed stamp `KNOWLEDGE_TEXT_NOT_A_CHART_FACT`. Internal service interfaces only.
+
+Methodology: `docs/ASTROLOGY_STANDARDS.md` v1.26.0 (KB-01 to KB-42). Source group: `research/ASTROLOGY_SOURCES.md` Group 25 and section 6.10.
+
+Exclusions:
+
+- HTTP endpoints, public APIs and final database APIs (Phase 18); AI narration and conversation (Phase 15); the final self-hosted model and any fine-tuning (Phase 14); the verification pass (Phase 16); palmistry knowledge (Phase 13)
+- Any calculation, rule evaluation or change to a Phase 4-11 result; a Shadbala strength threshold (SM-11 stays closed); any strong/weak classification
+- Remedies content or a remedies engine; Lal Kitab (deferred in Phase 9); Choghadiya and Gowri (deferred in Phase 10); numerology interpretation text and Pythagorean lucky numbers (no usable text); Hindi, Sanskrit and Hinglish knowledge text, Hindi renderings and any translation by the project or by an AI; a Devanagari letter table
+- Translator prose of in-copyright translations (BPHS, Phaladeepika, Brihat Jataka): only short source terms, structured facts and citations are stored
+
+Test requirements: schema and migration (reversible, constraints, triggers, vocabularies against the Python enums), ingestion (deterministic, idempotent, resumable, version identity), chunking, structured content, retrieval (filters, bounds, determinism, provenance), languages (English, Hindi, Hinglish, with explicit unsupported behaviour), privacy and chart-fact boundary, regression (Phase 6 rule files and rule-set hash, evidence-bundle fields, Tarot deck identifiers, no calculation/rule/server import of the knowledge package), and the in-memory and PostgreSQL stores compared.
+
+Exit criteria:
+
+- Sources and editions are recorded with reading level, copyright status and storage permission; only the permitted content is stored
+- The knowledge schema, a forward-only migration, versions, sealed immutability and idempotent ingestion are implemented and verified on PostgreSQL with pgvector
+- Planet and house concepts, their source-profile statements, terms, rule references, exceptions and domain mappings exist with provenance; conflicts are recorded, not resolved; unsupported pairs are `NOT_EVALUABLE`
+- Chunking, the embedding-provider abstraction (with a migration path to Phase 14) and retrieval with filters are implemented; no retrieved text can become a chart fact; no user data is stored
+- Earlier phases are unchanged (asserted), documentation is consistent, tests and CI pass job by job
+
+Status (2026-10-01, owner's Phase 12 directive; details in `docs/ASTROLOGY_STANDARDS.md` v1.26.0 and `SUMMARY.md` section 41): **implemented for the source-supported scope, with the limits below.** The roadmap lists above are kept unchanged.
+
+| Roadmap item | Outcome |
+|---|---|
+| Planet: Meaning, Significance, Houses, Relationships, Rules | Meaning and significance: source significations (BPHS Ch. 3, Brihat Jataka Ch. II, Phaladeepika Ch. XV) as separate profiles; houses: the mechanical inversion of the two house-karaka tables (`PROJECT_DERIVED`); relationships: referenced from the Phase 6 tables, not restated; rules: references to the existing rule files |
+| Planet: Strength | Only a translator's remark and references to the two Shadbala profiles; no threshold and no classification (SM-11) |
+| House: Significance | BPHS Ch. 11 v. 2-13 (all twelve), Ch. 32 v. 31-33 (six, conflicting at the 2nd), two karaka tables that differ at houses 4, 6, 9 and 10 |
+| House: Career, Marriage, Finance, Education | 48 house/domain pairs recorded: six `SOURCE_SUPPORTED`, Marriage-2nd `UNRESOLVED_CONFLICT`, all others `NOT_EVALUABLE` |
+| Store: concepts, rules, exceptions, terminology, traditional references | Implemented (ten exceptions, 53 source-attested terms, 53 rule references, source and edition records with locations) |
+| Store: interpretations | Structured significations (all Vedic); Tarot meanings verbatim from the public-domain Waite text (78 cards); numerology interpretation deferred (no usable text) |
+| Store: domain mappings | As above; a mapping is never a rule or a prediction |
+| PostgreSQL + vector search where useful | Implemented: pgvector, exact search by default, HNSW partial expression index per embedding configuration on demand |
+
+Not implemented or deferred, with the reason: Hindi and Hinglish knowledge text and cross-language retrieval quality (no Hindi source; behaviour measured, not claimed: KB-25); numerology interpretation (Cheiro and Balliett: uncorrected OCR and an uncertain Indian reprint copyright; Balliett interpretation not read); Lal Kitab, remedies, Choghadiya and Gowri (as above); Jataka Parijata and Saravali knowledge (not read for this purpose); Phaladeepika bhava-effect chapters (rule-like, left to Phase 6); a qualified Sanskrit review. **Belongs to Phase 14**: the final embedding model and its multilingual quality. **Belongs to Phase 15**: narration over retrieved knowledge. **Belongs to Phase 16**: verification of narrated claims against knowledge and facts. **Belongs to Phase 18**: HTTP endpoints, the public database API, rate limits and caching of retrieval. **Belongs to Phase 21**: Hindi and Hinglish retrieval and answer-quality evaluation.
+
+Owner decisions still open: the final embedding model and any Hindi/Hinglish retrieval target; a Hindi source and a Sanskrit reviewer; legal clearance and a proofread text for Cheiro (and a reading of Balliett) before numerology interpretation is stored; further sources for house significations; whether remedies are ever a knowledge domain; whether Tarot meanings should be exposed to users at all (`PRODUCT_POLICIES.md`). The Phase 11 open decisions are unchanged and unresolved.
+
+**Stopping point (2026-10-01): Phase 12 implemented for its source-supported scope. Phase 13 has not started.** The next session must begin by rereading `SUMMARY.md` section 41 first, then this file, and verify the actual repository HEAD before any Phase 13 work, which needs the owner's explicit approval.
 
 ## Phase 13 — Palm Reading & Vision Intelligence
 

@@ -44,6 +44,13 @@ No sexualized, exploitative or manipulative readings involving minors. Apply age
 ## Palm images
 Treat palm images as high-privacy visual data: purpose disclosure, minimum retention, deletion controls, and no secondary use without valid authorization.
 
+Owner decisions of 2026-10-02 (Phase 13; `research/PALM_READING.md`, standards PM-13, PM-17):
+- **Minors**: excluded from palm-image collection and analysis until legal counsel clears the workflow.
+- **Training on user images**: off by default. A user image becomes training or evaluation data only with a separate, explicit authorisation, never as a side effect of using the service.
+- **Prohibited readings**: no medical diagnosis, no disease prediction, no death prediction and no lifespan prediction from a palm image. Further categories (criminality, mental illness, fertility and pregnancy, paternity and legitimacy, sexual conduct, ethnic or intellectual ranking, moral labelling) are proposed for exclusion and are not implemented unless the owner decides.
+- **Logs and the model**: images are referenced by id; no pixels, landmarks or line geometry in logs; the AI model and agent never receive pixels.
+- **Launch gate**: legal counsel review remains required before launch (`LEGAL_REGULATIONS.md`).
+
 ## Integrity
 No fake astrologer identities, testimonials, success stories or citations.
 

@@ -8,7 +8,7 @@ Pandit Ji is developed strictly phase-by-phase per `Phases.md` (the sole authori
 2. Make focused changes that belong to the current phase only — do not pull work forward from a later phase (see `docs/DEVELOPMENT.md` for the local dev/test loop).
 3. Run the relevant checks locally (lint, format, type-check, tests — see `docs/DEVELOPMENT.md`) before opening a pull request. `pre-commit install` once per clone catches the fast subset automatically.
 4. Open a pull request against `main`. CI (`.github/workflows/ci.yml`) must pass.
-5. Keep canonical service names (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`) exactly as locked — never rename or alias them.
+5. Keep canonical service names (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and `palm-vision`, approved for Phase 13 on 2026-10-02 per ADR-008 and not yet created) exactly as locked — never rename or alias them.
 
 ## Git identity and attribution
 

@@ -35,7 +35,7 @@ Every foundational category (client, backend, database, cache, astronomy, vision
 
 **Python + FastAPI + Pydantic v2 + SQLAlchemy 2.x (async, via `asyncpg`)** — FastAPI is already established as the HTTP application layer in `docs/ARCHITECTURE.md` §"API Architecture"; this section locks the surrounding language/validation/ORM choices. Pydantic v2 backs every request/response contract, including the Astrology Service Interfaces (`docs/ARCHITECTURE.md` §9). SQLAlchemy 2.x's async engine fits FastAPI's async request handling and the I/O-bound nature of most Pandit Ji endpoints (mostly DB reads/writes, occasional inference calls). **Alembic** handles migrations (already named in `docs/ARCHITECTURE.md`'s `infrastructure/migrations/`).
 
-`server/` remains the FastAPI HTTP composition layer per ADR-007 — it is not one of the five canonical domain services (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`); this technology choice does not change that boundary.
+`server/` remains the FastAPI HTTP composition layer per ADR-007 — it is not one of the canonical domain services (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and `palm-vision` approved for Phase 13 by ADR-008); this technology choice does not change that boundary.
 
 ## API Gateway
 
@@ -118,6 +118,8 @@ Palm Image → Image preprocessing → Hand detection → Landmarks/geometry
 - **NumPy**: numerical image/geometry processing underlying the above.
 - **MediaPipe**: hand detection, hand landmarks, and left/right localization — Google's pretrained hand-landmark model is a fast, well-tested fit for this specific sub-task.
 - **PyTorch**: custom palm-vision model(s) for palm-line/mount/feature extraction and learned palm-feature analysis.
+
+The pipeline lives in the canonical service `services/palm-vision` (owner decision A, 2026-10-02; ADR-008; `docs/ARCHITECTURE.md` §35); this section locks technologies, not their location. Model weights are pinned artifacts outside git; the vision model is a Phase 13 component and is distinct from the Phase 14 LLM. MediaPipe's licence is stated as Apache 2.0 in its documentation and model README; verify the exact licence of the specific version adopted at implementation time.
 
 **Important, locked constraint**: MediaPipe's 21-point hand-landmark output is a hand-localization/geometry tool, not a palmistry tool — it does not detect palm lines, mounts, or the features palmistry interpretation actually depends on. A dedicated vision model/pipeline (PyTorch, trained/fine-tuned specifically for palm-line and feature extraction) is required for that step, and the architecture must not claim or imply that generic hand-landmark detection alone provides palmistry interpretation. This is a technology-stack restatement of `docs/ASTROLOGY_STANDARDS.md`'s Palmistry standard and `Phases.md` Phase 13's own explicit warning — not a new decision.
 
@@ -272,3 +274,4 @@ Track supported stable release lines rather than pinning every dependency to one
 ## Change Log
 
 - **v1.0.0** (pre-Phase-3): initial technology-stack lock. Established client (Flutter/Next.js), backend (FastAPI/Pydantic v2/SQLAlchemy 2.x), database (PostgreSQL/pgvector), cache/queue (Valkey+Celery), gateway (Traefik), auth (Keycloak), astronomy (Swiss Ephemeris — carried over from `LEGAL_REGULATIONS.md`), ML/vision (PyTorch/OpenCV/MediaPipe), LLM serving (Ollama/vLLM), storage (S3-compatible/MinIO), observability (OpenTelemetry), containers (Docker/Compose), and testing/code-quality tooling per ecosystem. PostgreSQL/Flutter/Next.js version baselines and the Redis-vs-Valkey licensing analysis were verified against current sources at lock time, not assumed. LLM checkpoint, GPU hardware, cloud provider, and production orchestrator remain explicitly deferred.
+- **v1.1.0** (2026-10-02, Phase 13 research and architecture lock): records that the palm vision pipeline lives in the canonical service `services/palm-vision` (owner decision A, ADR-008) and that the vision model is a pinned artifact outside git, distinct from the Phase 14 LLM; the technology choices (OpenCV, NumPy, MediaPipe, PyTorch, S3-compatible storage) are unchanged. Reason: owner decisions A to M of 2026-10-02. Approval: owner decisions.

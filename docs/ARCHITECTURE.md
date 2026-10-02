@@ -48,10 +48,11 @@ Concretely, this means the system is built as a **fact pipeline with a narrating
 | 7 | **Voice** | `services/agent/voice/` (subpackage) | STT/TTS, multilingual voice turn-taking, delegates all reasoning to `agent`. |
 | 8 | **Reports** | `services/agent/reports/` (subpackage) | Deterministic report assembly (chart/dasha/career/marriage/annual/etc.) from `astro-engine` + `rule-engine` + `agent` narration. |
 | 9 | **API Gateway** | `infrastructure/` (config, not code) | Edge routing, TLS, authN enforcement, rate limiting, request IDs, versioning, abuse protection. See ADR-007. |
-| 10 | **FastAPI composition root** | `server/` | Application-level HTTP layer composing the five services into callable endpoints. See ADR-007. |
+| 10 | **FastAPI composition root** | `server/` | Application-level HTTP layer composing the canonical services into callable endpoints (the five of this table today; `palm-vision` joins them when Phase 13 implements it, row 14). See ADR-007. |
 | 11 | **Web/Mobile/Admin Clients** | `apps/{web, mobile, admin}` | Presentation only, no astrology logic. |
 | 12 | **Security/Privacy/Audit** | cross-cutting, see §"Security Architecture" | AuthN/authZ, encryption at rest for birth/palm data, audit logging, data deletion, access control. |
 | 13 | **Human Ecosystem / Content** (future) | not yet scheduled | Live astrologer marketplace, articles, festival calendar — explicitly deferred, not in initial baseline builds. |
+| 14 | **Palm Vision** (approved 2026-10-02, Phase 13; not yet implemented) | `services/palm-vision` | Deterministic, versioned palm image analysis: image quality, hand detection, hand-side classification, palm region, landmarks, the palm-line/feature model and the structured `PalmFactSet`. Owns no knowledge text, no palm rules, no narration, no storage API and no LLM. See §35, ADR-008 and `research/PALM_READING.md`. |
 
 ---
 
@@ -108,7 +109,7 @@ Implementation is deferred (Phase 18, Backend Platform) — this section fixes r
 
 ## 5. Service Architecture
 
-Canonical service names are locked and must not be renamed: `astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`. Do not introduce alternatives such as `astrology-engine`, `ai-agent`, or `knowledge-base` anywhere in code or documentation.
+Canonical service names are locked and must not be renamed: `astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and, from the owner's decision of 2026-10-02 (ADR-008), `palm-vision` (approved for Phase 13; no code exists yet). Do not introduce alternatives such as `astrology-engine`, `ai-agent`, or `knowledge-base` anywhere in code or documentation.
 
 ### astro-engine
 **Responsible for**: deterministic astronomical and chart calculations — planetary positions, houses/ascendant, divisional charts, dignity/combustion/retrograde, ashtakvarga, dashas, transits, panchang, muhurta, compatibility scoring, numerology (see §"Astrology Engine Architecture" for module layout).
@@ -129,6 +130,10 @@ Canonical service names are locked and must not be renamed: `astro-engine`, `rul
 ### verification
 **Responsible for**: validating calculations, evidence, rules, and generated claims before a response is released — fact validation, rule validation, evidence validation, unsupported-claim detection, contradiction detection (see §"Verification Architecture", ADR-006). Also owns the regression-test and backtesting framework.
 **Explicitly not responsible for**: generating narrative content, or being a generic grammar/style checker.
+
+### palm-vision (approved 2026-10-02; Phase 13; not yet implemented)
+**Responsible for**: the deterministic, versioned palm image pipeline: image quality validation, hand detection, hand-side classification, palm region extraction, landmarks, the palm-line/feature model and the structured `PalmFactSet` (see §35, ADR-008).
+**Explicitly not responsible for**: knowledge text (that is `knowledge`), palmistry rules (the `rule-engine` under a separate palm ruleset root), narration (`agent`, Phase 15), verification (`verification`, Phase 16), any LLM (Phase 14), any storage or upload API (Phase 18). It has zero dependency on `astro-engine`, `rule-engine`, `knowledge`, `agent` and `verification`, and none of them imports it.
 
 ---
 
@@ -285,6 +290,8 @@ User: "Will my career improve next year?"
 | `NumerologyRequest` / `NumerologyFacts` | `astro-engine` | Yes | Input (Phase 11, v1.25.0 NU-01 to NU-11): `profile` (Chaldean default), civil `date_of_birth` and/or `name.latin_spelling` (no transliteration), `master_number_policy` (Pythagorean: required). Output: Moolank, Bhagyank, each profile's date numbers, name number with normalisation notes, associated numbers, interpretation references (interpretation deferred), methodology metadata. |
 | `RuleEvaluationRequest` / `RuleEvaluationResponse` | `rule-engine` | Yes | Input: normalized Facts object (from an `astro-engine` response). Output: evidence bundle (triggered rules + contradictions). |
 | `KnowledgeRetrievalRequest` / `KnowledgeRetrievalResponse` | `knowledge` | No (retrieval, not fact) | Input: query/context. Output: narration-only text chunks + sources — never chart facts. |
+| `PalmFactSet` / `PalmFact` | `palm-vision` | Yes, within a documented numerical tolerance (decision K) | Phase 13 (approved, not implemented). Input: an image reference and its bytes. Output: observed and derived palm facts with provenance and artifact identities; never an interpretation. Defined in `packages/contracts`. See §35. |
+| `PalmRuleEvaluation` / `PalmEvidenceBundle` | `rule-engine` (palm ruleset) / assembled from the two | Yes | Phase 13 (approved, not implemented). The interpreted layer and the bundle later phases consume; separate from the Phase 6 evidence bundle. See §35. |
 
 Every contract above requires, at minimum:
 - **Ownership**: exactly one service owns each contract (table above).
@@ -401,6 +408,7 @@ Cross-cutting database concerns (Phase 2 requirement):
 - **Isolation**: standard read-committed isolation is sufficient for this workload (no cross-row invariants requiring serializable isolation have been identified); revisit if one emerges during implementation.
 - **Transactional boundaries**: a single computed artifact (e.g. one `ChartResponse`'s full set of rows) is written in one transaction — partial writes are not acceptable given the "reproducible or absent" requirement.
 - **Retention/deletion**: governed by `PRODUCT_POLICIES.md`'s Data & Privacy Principles — per-category retention schedules, honored user-deletion requests, with `audit_log` itself being append-only and exempt from user-triggered deletion (access-log integrity).
+- **Palm data (decided 2026-10-02, §35)**: no palm table exists in this section. Palm image metadata, palm facts and palm evidence bundles are user data whose tables, deletion cascade, consent and retention records are Phase 18 (the `audit` schema covers palm access by id only); the Phase 13 palm-fact contract and rule outputs are defined in `packages/contracts` without a user-data migration. Palmistry knowledge is knowledge (it belongs in the `knowledge` schema as a new knowledge version and needs a forward-only migration at implementation) and holds no user data.
 - **Backups**: standard PostgreSQL backup/restore (e.g. periodic base backup + WAL archiving); exact tooling deferred to Phase 18/21 deployment work — this section only fixes that backups are mandatory and must cover the single database in full (facts + embeddings + audit).
 
 ---
@@ -472,7 +480,7 @@ FastAPI (server/) (authorization: does this token's user own this resource?)
 - **Birth-profile ownership**: a birth profile belongs to exactly one `users` row (with a family/partner flag for profiles a user maintains on behalf of others) — see `profiles.birth_profiles` in §"Database Architecture".
 - **Report/conversation ownership**: same pattern — owned by the requesting user, checked on every access.
 - **Admin access**: the `admin` app (see §"Service Architecture" / Repository Structure) and `/admin/rules/*` endpoints require a distinct admin-role credential, never the same token scope as a regular user session.
-- **Service-to-service authorization**: internal calls between `server/` and the five services are not exposed to the public gateway; they run on an internal network boundary and are not independently user-authenticated per call (the user-auth check happens once, at the gateway/`server/` boundary, and the resulting user/authorization context is passed down explicitly to the services that need it).
+- **Service-to-service authorization**: internal calls between `server/` and the canonical services (the five, and `palm-vision` once implemented) are not exposed to the public gateway; they run on an internal network boundary and are not independently user-authenticated per call (the user-auth check happens once, at the gateway/`server/` boundary, and the resulting user/authorization context is passed down explicitly to the services that need it).
 
 ---
 
@@ -619,7 +627,7 @@ Scale the affected component
 Only split a service into further services when justified by a measured bottleneck
 ```
 
-Initial architecture favors simplicity: all five canonical services can run as processes within the same deployable unit(s) during early phases (§"Repository Structure" monorepo rationale already establishes this for the codebase; deployment can start similarly consolidated). Do not introduce additional microservices, a message broker beyond Redis, or a second database technology merely because they "sound scalable" (ADR-004, ADR-005) — each of those is an explicit later decision gated on a measured bottleneck, not a default. The canonical service boundaries (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`) are preserved regardless of how the system scales — scaling changes how many instances of a service run and how they're deployed, never what a service is responsible for.
+Initial architecture favors simplicity: all five canonical services (and `palm-vision` once Phase 13 implements it; it may need different hardware and is the likeliest first split) can run as processes within the same deployable unit(s) during early phases (§"Repository Structure" monorepo rationale already establishes this for the codebase; deployment can start similarly consolidated). Do not introduce additional microservices, a message broker beyond Redis, or a second database technology merely because they "sound scalable" (ADR-004, ADR-005) — each of those is an explicit later decision gated on a measured bottleneck, not a default. The canonical service boundaries (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`) are preserved regardless of how the system scales — scaling changes how many instances of a service run and how they're deployed, never what a service is responsible for.
 
 ---
 
@@ -667,6 +675,7 @@ Full text in `docs/architecture/adr/`:
 - **ADR-005**: Redis caching/queue role
 - **ADR-006**: Verification as an independent layer
 - **ADR-007**: API Gateway vs. FastAPI composition root, and where FastAPI lives (`server/`)
+- **ADR-008**: The palm-vision component (`services/palm-vision`), approved 2026-10-02
 
 ---
 
@@ -731,7 +740,7 @@ pandit-ji/
     admin/                  internal admin app (rule authoring/versioning, content ops)
   server/                   FastAPI composition root — routers, dependency wiring,
                             auth-token validation handoff from the gateway; composes
-                            the five services below; owns no business logic (ADR-007)
+                            the canonical services below; owns no business logic (ADR-007)
   services/
     astro-engine/           deterministic calculation library (§6)
     rule-engine/            rule DSL + evaluator (§7)
@@ -742,6 +751,9 @@ pandit-ji/
                             providers and retrieval (Phase 12, §10); rules/*.yaml source-of-truth;
                             content/ curated Phase 12 records
     verification/           claim/hallucination/contradiction checking, regression + backtesting (§11)
+    palm-vision/            (Phase 13; approved 2026-10-02, not yet created) deterministic palm image
+                            pipeline: quality, hand detection, side, region, landmarks, line/feature model,
+                            PalmFactSet (§35, ADR-008); no knowledge text, rules, narration, storage or LLM
   packages/
     shared/                 config, logging, auth utils shared across services
     contracts/              shared pydantic models / OpenAPI-generated client types for web/mobile/admin
@@ -819,6 +831,7 @@ The subsystems, engines, and services named throughout this document are built i
 8. Backtesting/outcome-data collection design.
 9. Concrete authentication mechanism (JWT vs. session, refresh strategy) — deferred from §"Authentication Architecture" to Phase 18.
 10. Concrete API Gateway product — deferred from §4/ADR-007 to Phase 18.
+11. Palm vision (added 2026-10-02): palmistry sources, the palm-fact taxonomy, image-quality calibration, the line model approach, consented training and evaluation data, and the legal classification of palm images. Researched in `research/PALM_READING.md`; the methodology is locked in `docs/ASTROLOGY_STANDARDS.md` v1.27.0 (PM-01 to PM-24); the dataset, calibration, model and counsel items remain open there.
 
 ---
 
@@ -856,3 +869,38 @@ To begin or resume work: open `Phases.md`, identify the current phase, its deliv
 3. **Palm reading: scope/priority conflict — RESOLVED, LOCKED** (explicit project-owner decision, pre-Phase-3). AI Palm Reading is now a locked product feature (`features.md` §34), consistent with the Pre-Phase-1 Foundation package's `README.md`/`research/PALM_READING.md`. `features.md` §33 no longer lists palm reading under Future Expansion. Its dedicated implementation phase is `Phases.md` Phase 13 (Palm Reading & Vision Intelligence, inserted pre-Phase-3, shifting the former Phase 13-20 to 14-21) — the product-feature decision and the implementation-phase assignment are deliberately kept distinct, per that decision.
 
 4. **Phase 12 interpretation scope (`Phases.md` "Interpretations" versus §10 "language only") — RESOLVED, LOCKED** (explicit project-owner decision, 2026-10-01). Interpretation content is allowed in the knowledge base when it is source-backed, provenance-tagged, profile-specific where sources differ and distinct from chart facts and AI narration; nothing is generated. §10's "language only" described the explanatory store, not the structured store. Recorded in `docs/ASTROLOGY_STANDARDS.md` KB-03.
+5. **Palm vision component versus the five locked services — RESOLVED, LOCKED** (explicit project-owner decision A, 2026-10-02). `docs/ARCHITECTURE.md` §2 and §27 listed five canonical services and the repository has no vision component, while `Phases.md` Phase 13 and `TECH_STACK.md` require a vision pipeline (OpenCV, MediaPipe, PyTorch). The owner approved a sixth canonical component, `services/palm-vision`; `astro-engine` (a calculation library), `knowledge` (no calculation or model code) and the other services were rejected as homes (ADR-008). Dependent documents updated: §2, §5, §9, §27, §30, §35, ADR-008, `CONTRIBUTING.md`, `TECH_STACK.md`. Historical statements of "five services" in the Phase 2 and Phase 3 records of `SUMMARY.md` stay as history.
+6. **Phase 13 scope versus Phases 14, 15, 16 and 18 — RESOLVED, LOCKED** (explicit project-owner decision B, 2026-10-02). The Phase 13 text listed "AI narration" and a "verification pass" as its own deliverables while Phases 14 (LLM), 15 (agent and narration), 16 (verification) and 18 (upload and storage) own them. Resolution: Phase 13 builds the deterministic palm facts, the palmistry knowledge and rules, the palm evidence bundle, the evaluation harness and the interfaces; the later phases build the rest. `Phases.md` Phase 13 and §35 record the matrix.
+
+---
+
+## 35. Palm Vision Architecture (approved 2026-10-02; Phase 13; not yet implemented)
+
+Decisions and research: `research/PALM_READING.md` (decisions A to M in its section 1); methodology lock `docs/ASTROLOGY_STANDARDS.md` v1.27.0 PM-01 to PM-24; decision record ADR-008. Nothing in this section exists as code.
+
+```
+Palm image (by reference)
+        ↓
+services/palm-vision:  quality → hand detection → side → palm region → landmarks → line/feature model
+        ↓
+PalmFactSet (OBSERVED + DERIVED facts, provenance, artifact identities)      [packages/contracts]
+        ↓
+rule-engine (separate palm ruleset root) + knowledge (palm knowledge, new knowledge version)
+        ↓
+PalmRuleEvaluation (INTERPRETED, cites fact ids) → PalmEvidenceBundle
+        ↓
+agent (Phase 15, narrates only)  →  verification (Phase 16, checks claims against the bundle)
+```
+
+- **Component.** `services/palm-vision` (canonical name, locked). It owns the image pipeline and the palm-line/feature model; it owns no knowledge text, no palm rules, no narration, no storage API and no LLM.
+- **Dependency direction.** `palm-vision` depends on `packages/contracts` and `packages/shared` only. `astro-engine`, `rule-engine`, `knowledge`, `agent` and `verification` do not import it; they consume `PalmFactSet`, `PalmRuleEvaluation` and `PalmEvidenceBundle` through `packages/contracts`. `palm-vision` imports none of them (tested at implementation, like the Phase 12 boundary). `server/` composes only its health check until Phase 18.
+- **Palm-fact contract.** `PalmFactSet`, `PalmFact` (OBSERVED or DERIVED only), `PalmRuleEvaluation` (INTERPRETED) and `PalmEvidenceBundle`, specified in `research/PALM_READING.md` sections 8 and 15; canonical JSON without floating-point numbers, fixed-point coordinates in a palm-canonical frame, SHA-256 hashes, artifact, preprocessing and runtime identities, a derivation chain. The Phase 6 evidence bundle gains no palm section.
+- **Relationship to `knowledge`.** Palm knowledge (sources, concepts, source-profile statements, conflicts) is a new knowledge version, never a mutation of `KV-06361d7aba28c1ce`. The vocabulary extension (domain `PALMISTRY`, a palm rule kind) is a forward-only migration at implementation. Knowledge text is never a palm fact.
+- **Relationship to `rule-engine`.** Palm rules are evaluated from a completely separate ruleset root with its own manifest. The Phase 6 Vedic ruleset and its hash are unchanged: the knowledge service hashes and the rule-engine loader loads every YAML under the directory they are given, so palm rule files must never be placed under `services/knowledge/rules/`. The proposed root is `services/knowledge/palm_rules/` (alternative `services/rule-engine/palm_rules/`, chosen at implementation start). A palm fact family is a rule-engine extension that changes no Phase 6 rule file, hash or evidence field.
+- **Relationship to `astro-engine`.** None: palmistry here has no astronomical input and palm-vision is not part of the calculation engine.
+- **Relationship to `agent` and `verification`.** The agent (Phase 15) receives the evidence bundle, never pixels, and narrates only from it. Verification (Phase 16) checks each narrated claim against a `fact_id` or `rule_id` in the bundle; a claim without a matching id is unsupported. Phase 13 defines the interface and builds neither.
+- **Object-storage boundary.** Originals and derivatives live in private S3-compatible storage by id; metadata, facts and bundles in PostgreSQL; neither bytes nor pixels in the database or logs. The upload and storage API, signed URLs, consent and retention records are Phase 18; Phase 13 reads an image reference and bytes supplied by tests or fixtures only.
+- **Privacy boundary.** Minors are excluded until counsel clears the workflow; training on user images is off by default; images are referenced by id; the model and the agent never receive pixels; no pixels, landmarks or geometry in logs; legal counsel remains a launch gate (`research/PALM_READING.md` section 12).
+- **Model artifact boundary.** Model weights are not committed to git. They live in a separate artifact registry with a SHA-256, version, training manifest hash and licence record; a result records the artifact identity; a missing or mismatched artifact is a failure, never a silent fallback. CI for this component installs its heavy dependencies only in its own job and runs with a small fixture model or none; the optional-model pattern of the Phase 12 tests applies.
+- **Reproducibility.** Equivalent structured facts within a documented numerical tolerance given the pinned artifact, preprocessing, runtime, input bytes and inference configuration (decision K). The tolerance is unset until measured; no exact-reproducibility claim is made.
+- **Phase boundaries.** Phase 13: the pipeline above, the facts, the palmistry knowledge and rules, the evidence bundle, the evaluation harness and the interfaces. Phase 14: the self-hosted LLM only. Phase 15: the agent and AI narration. Phase 16: verification. Phase 18: upload, object storage, persistence, consent and retention infrastructure and the public API. Phase 13 must not implement any of them.

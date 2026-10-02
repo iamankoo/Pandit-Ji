@@ -671,8 +671,8 @@ Build:
 - Palm-line / palm feature analysis (a dedicated vision model/pipeline — generic hand-landmark detection alone is not palmistry interpretation)
 - Structured, versioned palm-fact output
 - Palmistry rules/knowledge layer (source-tagged, same discipline as the Vedic rule engine)
-- AI narration from structured facts only
-- Verification pass before final interpretation is released
+- The interfaces for AI narration from structured facts only (the narration itself is Phase 15; owner decision B, 2026-10-02)
+- The palm evidence bundle and the claim-checkable interface that the verification pass will check (the verification pass itself is Phase 16; owner decision B, 2026-10-02)
 
 This phase must remain consistent with the core Pandit Ji invariant:
 
@@ -680,7 +680,53 @@ This phase must remain consistent with the core Pandit Ji invariant:
 
 Palm-reading AI must not be the authoritative source of extracted measurements/facts — the vision/analysis pipeline is. The AI reasons over structured palm facts and triggered palmistry rules exactly as it reasons over structured chart facts and triggered yogas/doshas elsewhere in the product; it never infers a palm line or feature that the vision pipeline did not actually detect.
 
-Deliverable: palm-reading vision pipeline + palmistry rule/knowledge layer + AI narration + verification, integrated behind the same evidence-bundle/verification architecture as the rest of Pandit Ji.
+Deliverable: palm-reading vision pipeline + palmistry rule/knowledge layer + the palm evidence bundle and the interfaces for AI narration (Phase 15) and verification (Phase 16), integrated behind the same evidence-bundle/verification architecture as the rest of Pandit Ji. (Wording amended 2026-10-02 by owner decision B: the original listed "AI narration + verification" as Phase 13 deliverables although Phases 14, 15, 16 and 18 own them; `docs/ARCHITECTURE.md` §34 item 6.)
+
+The pipeline stages "AI Reasoning", "Verification" and "Final Interpretation" above are performed by Phases 15 and 16 over the evidence bundle that this phase produces; this phase ends at the Structured Palm Facts, the Palm-Reading Rules/Knowledge and the evidence bundle.
+
+**Phase 13 produces deterministic (reproducible within a documented numerical tolerance), provenance-backed palm facts, palmistry knowledge and rule outputs, an evaluation harness and stable contracts and interfaces.** Phase 14 supplies the self-hosted LLM only (no palm vision model). Phase 15 supplies the agent and AI narration. Phase 16 supplies verification. Phase 18 supplies upload, object storage, persistence, consent and retention infrastructure and the public API.
+
+Methodology and decisions (2026-10-02): `docs/ASTROLOGY_STANDARDS.md` v1.27.0 (PM-01 to PM-24); research `research/PALM_READING.md`; sources `research/ASTROLOGY_SOURCES.md` Group 26 and section 6.11; component `services/palm-vision` (`docs/ARCHITECTURE.md` §35, ADR-008). Owner decisions: A the component `services/palm-vision`; B the phase boundaries above; C palm rules in the rule engine under a completely separate palm ruleset root that never touches the Phase 6 Vedic ruleset or its hash; D Western chirology first, Indian Hasta Samudrika a separate future profile, never merged; E sources read (Heron-Allen, Cheiro, Benham, each only as far as the research records); F a purpose-built consented internal dataset for production training and evaluation, public datasets for research and baselines only after licence and provenance verification; G minors excluded until counsel clears the workflow; H training on user images off by default; I skin-tone fairness evaluated without unjustified personal labels; J no medical diagnosis, disease, death or lifespan prediction; K reproducibility within a documented numerical tolerance; L palmistry knowledge is a new knowledge version and `KV-06361d7aba28c1ce` stays valid; M legal counsel remains a production launch gate.
+
+Dependencies:
+
+- Phases 4-12 (the fact, rule, evidence and knowledge patterns; Phase 6 for the rule engine and evidence-bundle conventions, which stay unchanged; Phase 12 for the sealed, versioned knowledge service and its provenance model); the Phase 3 `knowledge` schema and migration chain (0001, 0002); `packages/contracts` and `packages/shared`
+- No dependency on Phases 14, 15, 16 or 18: the model, agent, verifier, upload and storage are not needed to build or test this phase (a later phase consumes its interfaces)
+- External, before the model can be trained or evaluated: the consented internal dataset (decision F) and counsel's clearance for any collection (decisions G, M); the research, sources and owner reviews recorded in the standards
+
+Inputs: an image reference and the image bytes supplied by tests, fixtures or an evaluation manifest (never live user data in this phase); curated palm knowledge content with provenance (`research/ASTROLOGY_SOURCES.md` Group 26); the palm ruleset YAML; a pinned model artifact set (hand and landmark models, the palm-line model) with recorded hashes and licences; the versioned `quality_config`; the evaluation dataset manifest. No upload, no user account, no stored user image.
+
+Outputs: `services/palm-vision` (image quality, hand detection, hand-side classification, palm region, landmarks, the palm-line/feature model, the structured versioned `PalmFactSet` with provenance and artifact identities); the palm contracts in `packages/contracts` (`PalmFactSet`, `PalmFact`, `PalmRuleEvaluation`, `PalmEvidenceBundle`); palmistry knowledge for the first Western profile as a **new** sealed knowledge version (with a forward-only migration for the vocabulary extension); the palm ruleset (own root and manifest) with its rule-engine extension and evaluation; the `PalmEvidenceBundle`; the evaluation harness and a versioned evaluation report; the interface documentation for Phases 15 and 16. Internal service interfaces only.
+
+Technologies and components: OpenCV, NumPy, MediaPipe (hand detection, landmarks, side) and PyTorch (the palm-line/feature model), as locked in `TECH_STACK.md`; MediaPipe landmarks are a localisation tool and are never presented as palmistry; PostgreSQL and the Phase 12 knowledge service for knowledge; the rule engine for rules; S3-compatible storage by reference only.
+
+Exclusions:
+
+- The LLM (Phase 14); the agent, AI reasoning and AI narration (Phase 15); the verification pass (Phase 16); upload and object-storage APIs, signed URLs, public endpoints, user-data persistence, consent and retention infrastructure (Phase 18); capture guidance in the apps (Phase 19); large-scale and field validation (Phase 21)
+- Any change to a Phase 4-12 result, the Phase 6 rule files, the Phase 6 rule-set hash, the evidence-bundle fields or the Phase 12 knowledge version `KV-06361d7aba28c1ce`
+- Medical diagnosis, disease prediction, death prediction and lifespan prediction (decision J); the further categories proposed in `research/PALM_READING.md` section 18 until the owner decides (criminality, mental illness, fertility, paternity and legitimacy, sexual conduct, ethnic or intellectual ranking, moral labelling)
+- Indian Hasta Samudrika (a separate future profile), Lal Kitab, remedies, face reading, Hindi, Sanskrit and Hinglish palmistry text and any translation by the project or by an AI
+- Minors: no collection, no analysis (decision G); training on user images (decision H); any claim that palm images are or are not biometric or sensitive personal data
+- Hand-shape classes, nail and colour readings, mount "development", event dating on lines, semantic minor lines and the signs (standards PM-08) until a later standards version includes them
+
+Test requirements: the palm-fact contract (canonical JSON, fixed-point coordinates, hashes, derivation chain, OBSERVED/DERIVED/INTERPRETED separation); reproducibility within the documented tolerance on pinned artifacts across platforms (the tolerance is set from measured runs and then asserted); the image-quality gate (accept, retry, reject, reason codes, no hardcoded production threshold); each vision stage on fixtures; hand side including `UNDETERMINED`; the rule engine's palm ruleset (loads in isolation, never loads into the Vedic engine); privacy (no pixels, landmarks or geometry in logs or evidence; image referenced by id); the evidence bundle and the claim-checkable interface; the prohibited-reading filter; knowledge (the new version, provenance, conflicts preserved, `NOT_EVALUABLE`, the migration forward and back); dataset-driven evaluation with precision, recall, IoU or Dice, landmark error, calibration and subgroup metrics (not simple assert-equal); and regression: the Phase 6 rule files and rule-set hash, the evidence-bundle fields, the Phase 9-11 results, the Phase 12 snapshot `KV-06361d7aba28c1ce` for the Phase 12 content, the migration chain, and the package import boundaries (no calculation, rule, knowledge, agent or verification package imports `palm-vision` and it imports none of them).
+
+Exit criteria:
+
+- The methodology is locked by the owner in the standards, the sources and conflicts are recorded, the palm-fact contract and the evidence bundle are stable and versioned, and the first rule list is owner-reviewed
+- `services/palm-vision` produces the structured `PalmFactSet` end to end on the evaluation set with the quality gate in front of line analysis; every fact carries provenance and artifact identities; no interpretation is emitted by the vision model
+- The palm ruleset and the new knowledge version exist with provenance; conflicts are recorded, not resolved; unsupported or prohibited readings are not stored or implemented; unsupported pairs are `NOT_EVALUABLE`
+- A versioned evaluation report with subgroup metrics exists for the pinned artifacts and the dataset manifest; engineering acceptance thresholds are recorded; the production gate is the owner's decision
+- Earlier phases are unchanged (asserted), documentation is consistent, tests and CI pass job by job
+- Counsel clearance and the consented dataset are production launch gates, not exit criteria of the engineering work, and are reported as open
+
+Documentation: standards (the PM section and its changelog), the source registry (Group 26 and the profile IDs), `research/PALM_READING.md`, `docs/ARCHITECTURE.md` (§35, the contract table, the changelog of the known contradictions), ADR-008, `datasets/README.md`, the `services/palm-vision` README, `CONTRIBUTING.md` and `TECH_STACK.md` where they list components, and a `SUMMARY.md` handoff section.
+
+Git/CI: owner identity `iamankoo <aniketraj00384@gmail.com>`, no AI attribution; commits scoped to this phase; a dedicated CI job for `services/palm-vision` (heavy dependencies only there, no model weights in git, an optional-model pattern like the Phase 12 model tests), the knowledge PostgreSQL job extended for the new migration, the existing jobs unchanged; after every push, CI is inspected job by job (never from a workflow-level green alone) and the optional-model coverage gap is reported.
+
+Status (2026-10-02, owner decisions A to M): **research and methodology locked; implementation not started.** The roadmap lists above are kept unchanged except the two Build bullets and the Deliverable amended for decision B. Recorded: the sources read and their limits (Heron-Allen, Cheiro and Benham, each only partly read; the Samudrika tradition not read); the taxonomy support statuses; ten source conflicts; the categories excluded by policy; the palm-fact contract; the quality framework with no hardcoded threshold; the dataset methodology and the review of public datasets (none suitable for production); the privacy and legal status (the DPDP Act and Rules read contain no biometric or sensitive category; classification of palm images unresolved; counsel gate); the evaluation methodology. Owner decisions still open: the further prohibited categories, the first rule list, the palm rule file location, whether the unread chapters are read for the first profile, a Hasta Samudrika source and a qualified Sanskrit reviewer, and the counsel items.
+
+**Stopping point (2026-10-02): Phase 13 research and methodology are locked; no implementation exists.** The next session starts with `SUMMARY.md` §42, this block and `CONTRIBUTING.md`, verifies the repository HEAD and CI job by job, and begins implementation only on the owner's explicit instruction.
 
 ## Phase 14 — Self-Hosted AI Model
 

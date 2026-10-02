@@ -13,7 +13,7 @@ Core invariant: **FACTS FLOW ONE DIRECTION; AI ONLY NARRATES.**
 ```
 apps/           mobile (Flutter), web (Next.js), admin (Next.js)
 server/         FastAPI HTTP composition layer (ADR-007)
-services/       astro-engine, rule-engine, agent, knowledge, verification (canonical, locked names)
+services/       astro-engine, rule-engine, agent, knowledge, verification (canonical, locked names); palm-vision (approved for Phase 13, not yet created; ADR-008)
 packages/       shared, contracts, ui
 datasets/       golden fixtures, backtesting data, palm-reading datasets (foundation only, no data yet)
 tests/          cross-cutting integration/contract tests and shared fixtures

@@ -49,6 +49,26 @@ Build from day one:
 - export/delete workflows
 - child/minor safeguards
 
+## Palm images (Phase 13 research record, 2026-10-02; not legal advice)
+Source of this record: the Digital Personal Data Protection Act, 2023 and the DPDP Rules, 2025 (MeitY PDFs) as extracted and read on 2026-10-02, and the PIB explainer; details in `research/PALM_READING.md` section 12.
+
+**Confirmed from the legal text read**
+- The extracted text of the Act and of the Rules contains no category named "biometric" or "sensitive"; the framework does not define a special category.
+- Rules 1, 2 and 17 to 21 apply from publication (the Rules were notified on 14 November 2025 per the PIB explainer); Rule 4 one year after; Rules 3, 5 to 16, 22 and 23 eighteen months after.
+- Rule 3: a standalone, plain-language notice with an itemised description of the personal data and the specific purposes, and how to withdraw consent as easily as it was given.
+- Rule 6: reasonable security safeguards (encryption, obfuscation, masking or tokens; access control; logs and monitoring; backups) and retention of the logs and the personal data for one year to detect and investigate unauthorised access, unless another law requires otherwise.
+- Rule 7: breach intimation. Rule 8 and the Third Schedule: timed erasure for the listed classes. Rule 10 and the Act s. 9: verifiable parental consent for a child's data and no tracking or behavioural monitoring of children.
+
+**Unresolved legal interpretation (not decided here)**
+- Whether a palm image, or the line geometry extracted from it, is personal data about an identifiable person, and whether it is biometric or sensitive in any applicable law.
+- The notice wording and legal basis for storing derived palm facts; how Rule 6's one-year retention coexists with minimum retention of images.
+- Whether any Third Schedule class or Significant Data Fiduciary status applies.
+- Consent, withdrawal and deletion for dataset use once a model has been trained; minors and age assurance; whether the older Information Technology Act rules on sensitive personal data still apply during the transition.
+
+**Policy and engineering decisions recorded**: minors excluded until counsel clears the workflow; training on user images off by default; the prohibited readings; images referenced by id and never logged (`PRODUCT_POLICIES.md`, standards PM-13, PM-17).
+
+**Counsel-required launch gate**: every unresolved item above, before palm reading is offered publicly. This record does not replace the legal review gate at the top of this document.
+
 ## Google Play
 Maintain accurate Data Safety disclosures, privacy policy, permission disclosures, compliant payments, and account/data deletion. Apps with account creation must provide an in-app and external account-deletion path.
 

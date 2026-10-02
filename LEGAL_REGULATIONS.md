@@ -67,7 +67,7 @@ Source of this record: the Digital Personal Data Protection Act, 2023 and the DP
 
 **Policy and engineering decisions recorded**: minors excluded until counsel clears the workflow; training on user images off by default; the prohibited readings; images referenced by id and never logged (`PRODUCT_POLICIES.md`, standards PM-13, PM-17).
 
-**Counsel-required launch gate**: every unresolved item above, before palm reading is offered publicly. This record does not replace the legal review gate at the top of this document.
+**Production-launch legal review gates (locked 2026-10-02; none is presented as resolved)**: whether palm images constitute personal data in the relevant context; the legal basis and notice and consent requirements; the treatment of derived palm facts; retention and deletion requirements; the interaction between audit logging and deletion; the applicability of the Third Schedule and other relevant DPDP provisions; dataset consent withdrawal after training; minors and children; whether any palm-derived data creates additional regulatory obligations; training-data consent and reuse. Palm reading is not offered publicly until counsel completes the review; minors remain excluded from the initial palm dataset and the production palm-reading scope until counsel clears the workflow. Phase 13 engineering may proceed on synthetic, fixture or internal appropriately governed data. This record does not replace the legal review gate at the top of this document.
 
 ## Google Play
 Maintain accurate Data Safety disclosures, privacy policy, permission disclosures, compliant payments, and account/data deletion. Apps with account creation must provide an in-app and external account-deletion path.

@@ -10,6 +10,8 @@ Pandit Ji is developed strictly phase-by-phase per `Phases.md` (the sole authori
 4. Open a pull request against `main`. CI (`.github/workflows/ci.yml`) must pass.
 5. Keep canonical service names (`astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and `palm-vision`, approved for Phase 13 on 2026-10-02 per ADR-008 and not yet created) exactly as locked — never rename or alias them.
 
+Palm rules (Phase 13) live only in `services/rule-engine/palm_rules/`, a separate ruleset with its own manifest. Never place a palm rule under `services/knowledge/rules/`: the knowledge service hashes every YAML there and the Vedic rule loader reads it, so a palm file would corrupt the Phase 6 hash and the Phase 12 knowledge snapshot.
+
 ## Git identity and attribution
 
 All commits use the project-owner identity `iamankoo <aniketraj00384@gmail.com>`. Do not add AI-assistant/tool attribution (author, committer, commit message, trailers, code comments, or documentation) — the project's contributor history reflects the project owner only.

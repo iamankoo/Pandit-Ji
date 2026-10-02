@@ -396,7 +396,7 @@ Purpose: the source basis of the first (Western chirology) palmistry profile. De
 
 - **Read**: `SRC-HERONALLEN-CHEIROSOPHY`, `SRC-CHEIRO-PALMISTRY-FOR-ALL-1916`, `SRC-BENHAM-SCIENTIFIC-HAND-READING-1901` (above).
 - **Located and not used**: Cheiro, *Language of the Hand* (1894): a HathiTrust record exists (`https://catalog.hathitrust.org/Record/011594957`), the page returned HTTP 403 and was not opened; status `IDENTIFIED` only.
-- **Samudrika / Hasta Samudrika (Indian tradition)**: no primary or translated text obtained. Secondary pointers only: *Samudrika Tilaka* (Durlabha-raja and Jagad-deva, about 1160-1175 CE; a 1954 Sri Venkateswar Steam Press edition) and about 600 manuscripts, from a Wikipedia article citing K. G. Zysk, *The Indian System of Human Marks* (2016). Status `IDENTIFIED`; **no Sanskrit reviewer exists**; no methodology is claimed; a separate future profile (PM-03).
+- **Samudrika / Hasta Samudrika (Indian tradition)**: no primary or translated text obtained. Secondary pointers only: *Samudrika Tilaka* (Durlabha-raja and Jagad-deva, about 1160-1175 CE; a 1954 Sri Venkateswar Steam Press edition) and about 600 manuscripts, from a Wikipedia article citing K. G. Zysk, *The Indian System of Human Marks* (2016). Status `IDENTIFIED`; **no Sanskrit reviewer exists**; no methodology is claimed; a separate future profile (PM-03) whose methodology-profile status is `RESEARCH_PENDING` (final owner decision E, PM-29): no rules from secondary summaries, no inferred Sanskrit meanings, no production interpretation.
 - **Public datasets**: reviewed in `research/PALM_READING.md` section 11; none is a source of palmistry knowledge and none is stored.
 - **Not read**: any Hindi or Sanskrit source; the unread chapters of the three books (listed in `research/PALM_READING.md` section 3).
 
@@ -713,7 +713,7 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.26.0 (KB-04, KB-27 to KB-34). A know
 
 ### 6.11 Phase 13 palmistry profile IDs
 
-Defined in `docs/ASTROLOGY_STANDARDS.md` v1.27.0 (PM-04, PM-05). A palmistry profile is one source passage; profiles are never merged. These identifiers use the `PALM_` prefix and are separate from the Phase 12 knowledge profile identifiers of section 6.10 (a test of the Phase 12 content compares section 6.10 to the end of this file, so no identifier of the Phase 12 prefix may be added here).
+Defined in `docs/ASTROLOGY_STANDARDS.md` v1.27.0 (PM-04, PM-05) and v1.28.0 (PM-29). **Methodology profiles** (final owner decision E): `PALM_WESTERN` (implemented in Phase 13; all the source profiles below belong to it) and `PALM_INDIAN_HASTA_SAMUDRIKA` (reserved extension point, status `RESEARCH_PENDING`, not implemented, no production interpretation; it needs an acceptable primary or authoritative translated source, documented provenance, a copyright and licensing determination and a qualified Sanskrit or traditional reviewer first). A palmistry **source profile** is one source passage; source profiles are never merged. These identifiers use the `PALM_` prefix and are separate from the Phase 12 knowledge profile identifiers of section 6.10 (a test of the Phase 12 content compares section 6.10 to the end of this file, so no identifier of the Phase 12 prefix may be added here).
 
 | Profile ID | Content | Source basis and reading level |
 |---|---|---|

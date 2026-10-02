@@ -14,7 +14,7 @@ Status: Locked (owner decision A, 2026-10-02; resolves `docs/ARCHITECTURE.md` §
 ## Decision
 1. `services/palm-vision` is a canonical service. Name locked: do not use alternatives.
 2. It is responsible for image processing, image quality, hand detection, hand-side classification, palm region extraction, landmarks, the palm-line/feature model and the structured `PalmFactSet`. It owns **no** knowledge text, **no** palm rules, **no** narration, **no** storage API and **no** LLM.
-3. Contracts live in `packages/contracts`; palm knowledge in `services/knowledge` (a new knowledge version); palm rules in the `rule-engine` under a completely separate palm ruleset root (owner decision C), never inside the Phase 6 `rules/` directory.
+3. Contracts live in `packages/contracts`; palm knowledge in `services/knowledge` (a new knowledge version); palm rules in the `rule-engine` at `services/rule-engine/palm_rules/` (the canonical and only location, final owner decision C of 2026-10-02: a separate ruleset with its own manifest and version, never inside `services/knowledge/rules/`, no effect on the Phase 6 hash or `KV-06361d7aba28c1ce`, dedicated isolation tests). Palm knowledge content lives in `services/knowledge/content/palm/`.
 4. Dependency direction: `palm-vision` depends on `packages/contracts` and `packages/shared` only; no other service imports it and it imports none of them.
 5. Palm images are referenced by id; storage, upload, consent and retention infrastructure are Phase 18; the model is a pinned artifact outside git.
 

@@ -1,0 +1,12 @@
+# Recorded source conflicts. None is resolved; no winner is chosen (standards PM-04).
+document_type: palm_conflict
+conflict_id: PALM_CROSS_SOURCE.HANDS
+profiles:
+  - PALM_HA_MAP_LINES_384_393
+  - PALM_CH_LINES_PART1
+  - PALM_BE_HANDS_359
+status: UNRESOLVED_CONFLICT
+summary: >-
+  The three sources disagree on what each hand shows. Heron-Allen requires a sign to appear in
+  both hands to be certain; Cheiro reads the left hand as inherited and the right as developed;
+  Benham reads the left hand as the natural map and the right as how it was altered.

@@ -1,0 +1,26 @@
+document_type: palm_rule
+rule_id: PALMR_HA_LIFE_LINE_ORIGIN_UNDER_JUPITER
+rule_version: "1"
+ruleset_id: PANDIT_JI_PALM_WESTERN_PHASE13
+methodology_profile: PALM_WESTERN
+source_profile: PALM_HA_LINE_LIFE_523_550
+source_id: SRC-HERONALLEN-CHEIROSOPHY
+source_location: para. 538 (p. 238)
+reading_level: OCR_LEVEL
+confidence: MEDIUM
+claim_kind: TRADITIONAL_TENDENCY
+concepts:
+  - PALM_LINE.LIFE
+  - PALM_REGION.MOUNT_JUPITER
+requires:
+  - fact_type: LINE_ROLE_CANDIDATE
+    region_id: ROLE.LIFE
+    labelling_profile: PALM_HA_MAP_LINES_384_393
+  - fact_type: LINE_ATTRIBUTE
+    region_id: ROLE.LIFE
+    value_kind: ENUM
+    value_equals: START_REGION:MOUNT.JUPITER
+interpretation_tags:
+  - AMBITION_INDICATED
+framing: TRADITIONAL_INTERPRETIVE_NOT_SCIENTIFIC
+source_note: Life line commencing under the mount of Jupiter (Heron-Allen paragraph 538, OCR level).

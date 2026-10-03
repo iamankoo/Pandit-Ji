@@ -1,0 +1,22 @@
+document_type: palm_rule
+rule_id: PALMR_CH_RIGHT_HAND_DEVELOPED_QUALITIES
+rule_version: "1"
+ruleset_id: PANDIT_JI_PALM_WESTERN_PHASE13
+methodology_profile: PALM_WESTERN
+source_profile: PALM_CH_LINES_PART1
+source_id: SRC-CHEIRO-PALMISTRY-FOR-ALL-1916
+source_location: Part I ch. XVII, Right and Left Hands
+reading_level: TRANSCRIPTION_LEVEL
+confidence: MEDIUM
+claim_kind: READING_CONVENTION
+concepts:
+  - PALM_FEATURE.HAND_SIDE_BOTH_HANDS
+requires:
+  - fact_type: HAND_SIDE
+    hand_side: RIGHT
+interpretation_tags:
+  - RIGHT_HAND_DEVELOPED_QUALITIES
+known_conflicts:
+  - PALM_CROSS_SOURCE.HANDS
+framing: TRADITIONAL_INTERPRETIVE_NOT_SCIENTIFIC
+source_note: Cheiro reads the right hand as showing developed or cultivated qualities (transcription).

@@ -1,0 +1,9 @@
+{
+  "tolerance_id": "PALM_REPRODUCIBILITY_TOLERANCE_V1",
+  "version": "1",
+  "status": "CALIBRATION_REQUIRED",
+  "max_coord_deviation_fixed": null,
+  "max_score_deviation_bp": null,
+  "calibration_report_sha256": null,
+  "note": "CALIBRATION_REQUIRED: no tolerance is set until measured on representative evaluation data (owner decision G, standards PM-31). A measured record is added as a new tolerance_id version; this record is never edited in place."
+}

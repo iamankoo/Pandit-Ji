@@ -39,6 +39,12 @@ class ConceptType(str, Enum):
     TERM = "TERM"
     TAROT_CARD = "TAROT_CARD"
     CONCEPT = "CONCEPT"
+    # Phase 13 (migration 0003, additive): palmistry concepts. A palm *line* is a named line, a
+    # palm *region* a named region of the hand, a palm *feature* any other concept with a recorded
+    # coverage status (including every concept that was not read).
+    PALM_LINE = "PALM_LINE"
+    PALM_REGION = "PALM_REGION"
+    PALM_FEATURE = "PALM_FEATURE"
 
 
 class StatementKind(str, Enum):
@@ -50,6 +56,10 @@ class StatementKind(str, Enum):
     DERIVED_INVERSION = "DERIVED_INVERSION"  # mechanical inversion of a source table
     STRENGTH_NOTE = "STRENGTH_NOTE"  # a source remark about strength; never a threshold
     SOURCE_VARIANCE = "SOURCE_VARIANCE"  # recorded difference between two source profiles
+    # Phase 13 (migration 0003, additive), palmistry:
+    LOCATION_DEFINITION = "LOCATION_DEFINITION"  # where a source says a named line or region lies
+    READING_CONVENTION = "READING_CONVENTION"  # how a source says hands or signs are to be read
+    COVERAGE = "COVERAGE"  # what was read of a source for a concept (the source coverage manifest)
 
 
 class SupportStatus(str, Enum):
@@ -103,12 +113,14 @@ class TextFidelity(str, Enum):
 class KnowledgeDomain(str, Enum):
     VEDIC = "VEDIC"
     TAROT = "TAROT"
+    PALMISTRY = "PALMISTRY"  # Phase 13 (migration 0003, additive)
 
 
 class RuleKind(str, Enum):
     RULE = "RULE"
     TABLE = "TABLE"
     PROFILE = "PROFILE"  # a Phase 9-11 methodology profile implemented in astro-engine
+    PALM_RULE = "PALM_RULE"  # Phase 13: a rule of the separate palm ruleset (rule-engine)
 
 
 def canonical_json(value: Any) -> str:
@@ -169,7 +181,9 @@ class StatementRecord(_Model):
     profile_id: str
     edition_id: str
     source_location: str
-    location_kind: Literal["verse", "note", "derived", "verse_and_note"]
+    location_kind: Literal[
+        "verse", "note", "derived", "verse_and_note", "paragraph", "chapter", "page"
+    ]
     reading_level: ReadingLevel
     registry_verification_level: str
     confidence: Confidence

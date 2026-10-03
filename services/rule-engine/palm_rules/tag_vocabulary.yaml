@@ -1,0 +1,25 @@
+# The closed vocabulary of interpretation tags. A rule may emit only these tags. Every entry is
+# language-neutral, non-prose and reviewed against the prohibited categories (standards PM-13,
+# PM-25): no medical, death, lifespan, criminality, mental illness, fertility, paternity, sexual
+# conduct, ethnic or intellectual ranking, moral labelling, inherent good or bad, or event claim.
+document_type: palm_tag_vocabulary
+vocabulary_id: PALM_WESTERN_TAGS_V1
+tags:
+  - tag: AMBITION_INDICATED
+    claim_kind: TRADITIONAL_TENDENCY
+    description: A source treats this line origin as indicating ambition.
+  - tag: FORTUNE_FROM_PERSONAL_MERIT
+    claim_kind: TRADITIONAL_TENDENCY
+    description: A source ascribes the course of fortune to the own merit of the subject.
+  - tag: LEFT_HAND_INHERITED_TENDENCIES
+    claim_kind: READING_CONVENTION
+    description: A source reads the left hand as showing inherited tendencies.
+  - tag: RIGHT_HAND_DEVELOPED_QUALITIES
+    claim_kind: READING_CONVENTION
+    description: A source reads the right hand as showing developed or cultivated qualities.
+  - tag: LEFT_HAND_NATURAL_MAP
+    claim_kind: READING_CONVENTION
+    description: A source reads the left hand as the naturally designed map.
+  - tag: RIGHT_HAND_ALTERED_MAP
+    claim_kind: READING_CONVENTION
+    description: A source reads the right hand as showing how the map has been altered.

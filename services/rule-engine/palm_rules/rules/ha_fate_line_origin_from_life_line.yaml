@@ -1,0 +1,25 @@
+document_type: palm_rule
+rule_id: PALMR_HA_FATE_LINE_ORIGIN_FROM_LIFE_LINE
+rule_version: "1"
+ruleset_id: PANDIT_JI_PALM_WESTERN_PHASE13
+methodology_profile: PALM_WESTERN
+source_profile: PALM_HA_LINE_FATE_599_613
+source_id: SRC-HERONALLEN-CHEIROSOPHY
+source_location: para. 599 (p. 256)
+reading_level: OCR_LEVEL
+confidence: MEDIUM
+claim_kind: TRADITIONAL_TENDENCY
+concepts:
+  - PALM_LINE.FATE
+requires:
+  - fact_type: LINE_ROLE_CANDIDATE
+    region_id: ROLE.FATE
+    labelling_profile: PALM_HA_MAP_LINES_384_393
+  - fact_type: LINE_ATTRIBUTE
+    region_id: ROLE.FATE
+    value_kind: ENUM
+    value_equals: ORIGIN:ROLE.LIFE
+interpretation_tags:
+  - FORTUNE_FROM_PERSONAL_MERIT
+framing: TRADITIONAL_INTERPRETIVE_NOT_SCIENTIFIC
+source_note: Fate (fortune) line starting from the life line (Heron-Allen paragraph 599, OCR level).

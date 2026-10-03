@@ -1110,3 +1110,4 @@ Confirms all 13 `Phases.md` Phase 1 content requirements (exact wording preserve
 - [x] Numerology methodology — §Numerology standards — implemented Phase 11 (v1.25.0 NU-01 to NU-16; compatibility CM-01 to CM-12)
 - [x] Data/privacy rules — §Data & privacy principles (cross-reference to `PRODUCT_POLICIES.md`)
 - [x] Prediction language policy — §Prediction language policy
+- [~] Palmistry standards — §Palmistry standards (v1.27.0 PM-01 to PM-24, v1.28.0 PM-25 to PM-31) — Phase 13 infrastructure implemented 2026-10-03 (contracts, `services/palm-vision`, knowledge `KV-a21c2c040abe9663`, palm rules fixture set); no trained palm-line model, no dataset, thresholds and tolerances `CALIBRATION_REQUIRED`; the standards text itself is unchanged by the implementation (no version bump)

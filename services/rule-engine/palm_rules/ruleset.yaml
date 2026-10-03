@@ -1,0 +1,9 @@
+# Palm ruleset manifest (Phase 13). A SEPARATE ruleset from the Phase 6 Vedic ruleset
+# (services/knowledge/rules/ruleset.yaml, PANDIT_JI_VEDIC_PHASE6): own id, own version, own hash.
+document_type: palm_ruleset
+ruleset_id: PANDIT_JI_PALM_WESTERN_PHASE13
+ruleset_version: "1.0.0"
+schema_version: 1
+standards_version: "1.28.0"
+methodology_profile: PALM_WESTERN
+scope: FIXTURE_SET_NOT_THE_PRODUCTION_RULE_LIST

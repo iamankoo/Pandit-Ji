@@ -1,0 +1,52 @@
+[project]
+name = "pandit-palm-vision"
+version = "0.1.0"
+description = "Deterministic palm image pipeline: quality, hand detection, side, palm region, landmarks, palm-line/feature analysis and the structured PalmFactSet (Phase 13)."
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.6,<3",
+  "numpy>=1.26",
+  "opencv-python-headless>=4.9",
+  "pandit-contracts",
+  "pandit-shared",
+]
+
+[project.optional-dependencies]
+# Optional hand model (a verified local model asset is also required; none is bundled).
+mediapipe = [
+  "mediapipe>=0.10",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+  "mypy>=1.10",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pandit_palm_vision = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["cv2", "cv2.*", "mediapipe", "mediapipe.*", "torch", "torch.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

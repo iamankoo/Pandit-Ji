@@ -1,18 +1,20 @@
 """Pandit Ji shared contracts.
 
-Phase 3 (Repository & Engineering Foundation) establishes only the package
-boundary and the `HealthStatus` contract shared by `server/` and every
-`services/*` component's health check.
+Phase 3 (Repository & Engineering Foundation) established the package boundary and the
+`HealthStatus` contract shared by `server/` and every `services/*` component's health check.
 
-The Astrology Service Interfaces (`ChartRequest`/`ChartResponse`,
-`DashaRequest`/`DashaResponse`, etc. -- see `docs/ARCHITECTURE.md` "Astrology
-Service Interfaces") are domain contracts and are added starting with the
-phase that implements the corresponding engine (Phases.md Phase 4 onward),
-not speculatively defined here.
+Phase 13 adds the palm contracts (`palm`, `palm_canonical`, `palm_policy`, `palm_coverage`):
+`PalmFactSet`, `PalmFact`, `PalmRuleEvaluation`, `PalmEvidenceBundle`, canonical serialization,
+the prohibited-interpretation policy and the source coverage manifest models. Import them from
+their modules (for example `pandit_contracts.palm`).
+
+The Astrology Service Interfaces (`ChartRequest`/`ChartResponse`, `DashaRequest`/`DashaResponse`,
+etc. -- see `docs/ARCHITECTURE.md` "Astrology Service Interfaces") are domain contracts defined
+by the phase that implements the corresponding engine.
 """
 
 from pandit_contracts.health import HealthStatus
 
 __all__ = ["HealthStatus"]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

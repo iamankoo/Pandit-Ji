@@ -90,11 +90,12 @@ def snapshot_hash(
     rows: Mapping[str, Sequence[Mapping[str, Any]]],
     embedding_config_id: str,
     rules_snapshot_hash: str,
+    standards_version: str = STANDARDS_VERSION,
 ) -> str:
     return sha256_hex(
         {
             "tables": {t: [r["content_hash"] for r in rs] for t, rs in sorted(rows.items())},
-            "standards_version": STANDARDS_VERSION,
+            "standards_version": standards_version,
             "schema_version": KNOWLEDGE_SCHEMA_VERSION,
             "ingestion_version": INGESTION_VERSION,
             "chunking_version": CHUNKING_VERSION,
@@ -105,16 +106,26 @@ def snapshot_hash(
 
 
 class KnowledgeBuilder:
-    def __init__(self, store: KnowledgeStore, provider: EmbeddingProvider) -> None:
+    def __init__(
+        self,
+        store: KnowledgeStore,
+        provider: EmbeddingProvider,
+        standards_version: str = STANDARDS_VERSION,
+    ) -> None:
+        """``standards_version`` defaults to the Phase 12 value, so the Phase 12 snapshot hash is
+        unchanged; the Phase 13 palm knowledge version passes its own (v1.28.0)."""
         self._store = store
         self._provider = provider
+        self._standards_version = standards_version
 
     def manifest_for(self, content: KnowledgeContent) -> tuple[VersionManifest, dict[str, Any]]:
         rows, chunks = build_rows(content)
         config = self._provider.config
-        snap = snapshot_hash(rows, config.embedding_config_id, content.rules_snapshot_hash)
+        snap = snapshot_hash(
+            rows, config.embedding_config_id, content.rules_snapshot_hash, self._standards_version
+        )
         manifest = VersionManifest(
-            standards_version=STANDARDS_VERSION,
+            standards_version=self._standards_version,
             schema_version=KNOWLEDGE_SCHEMA_VERSION,
             ingestion_version=INGESTION_VERSION,
             chunking_version=CHUNKING_VERSION,

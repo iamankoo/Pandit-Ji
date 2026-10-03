@@ -726,4 +726,9 @@ Defined in `docs/ASTROLOGY_STANDARDS.md` v1.27.0 (PM-04, PM-05) and v1.28.0 (PM-
 | `PALM_CH_MOUNTS_PART2` | the mounts (introduction), the two Mounts of Mars, the thumb's phalanges | Cheiro Part II chapters II, V and VI as read, `WEB-TRANSCRIPTION-ORIGINAL-ENGLISH` |
 | `PALM_BE_LINES_MAIN_MINOR_356` | the six Main lines and seven Minor lines; chance lines | Benham pp. 356-357; p. 356 `IMAGE-ORIGINAL-ENGLISH`, p. 357 OCR |
 | `PALM_BE_HANDS_359` | the left and the right hand | Benham p. 359, `OCR-ORIGINAL-ENGLISH` |
+| `PALM_HA_SIGNS_654_684` | the star and the island as figures (visual definition only; the meanings are excluded by policy) | Heron-Allen paragraphs 654-664 and 677-684, pp. 271-275, Plate IX figs. 10 and 14, `IMAGE-ORIGINAL-ENGLISH` |
+| `PALM_HA_HAND_FORM_100_139` | the palm, the relative length of the fingers, the types of hand (qualitative only; not output) | Heron-Allen pp. 100-102, 106-107, 136-139, `OCR-ORIGINAL-ENGLISH` |
+| `PALM_HA_UNREAD`, `PALM_CH_UNREAD`, `PALM_BE_UNREAD` | coverage-only profiles recording what each source was **not** read for (thumb, nails, hand colour, the other mounts, the other signs, unread sections); they carry no statement | the research record, `research/PALM_READING.md` section 3 |
+| `PALM_WESTERN` | the methodology profile implemented in Phase 13; every profile above belongs to it | standards PM-03, PM-29 |
+| `PALM_INDIAN_HASTA_SAMUDRIKA` | reserved methodology profile, `RESEARCH_PENDING`; one coverage record, no statement, no rule | no text obtained |
 | `PALM_CROSS_SOURCE.LINES`, `PALM_CROSS_SOURCE.MOUNTS`, `PALM_CROSS_SOURCE.HANDS` | recorded differences between the profiles above (derived), the ten items of `research/PALM_READING.md` section 5 | none preferred |

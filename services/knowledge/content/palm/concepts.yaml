@@ -1,0 +1,51 @@
+# Palmistry concepts (Phase 13). Identifiers are language-neutral. A concept's coverage status is in
+# source_coverage.yaml: listing a concept here does not make it supported.
+concepts:
+  # named lines
+  - {id: PALM_LINE.LIFE, key: life_line, type: PALM_LINE}
+  - {id: PALM_LINE.HEAD, key: head_line, type: PALM_LINE}
+  - {id: PALM_LINE.HEART, key: heart_line, type: PALM_LINE}
+  - {id: PALM_LINE.FATE, key: fate_line, type: PALM_LINE}
+  - {id: PALM_LINE.SUN_APOLLO, key: sun_apollo_line, type: PALM_LINE}
+  # the sources disagree on this line's name and origin (recorded conflict)
+  - {id: PALM_LINE.MERCURY_LINE_VARIANT, key: mercury_line_variant, type: PALM_LINE}
+  - {id: PALM_LINE.GIRDLE_OF_VENUS, key: girdle_of_venus, type: PALM_LINE}
+  - {id: PALM_LINE.MARS_LINE, key: mars_line, type: PALM_LINE}
+  - {id: PALM_LINE.CEPHALIC_LINE, key: cephalic_line, type: PALM_LINE}
+  - {id: PALM_LINE.RING_OF_SATURN, key: ring_of_saturn, type: PALM_LINE}
+  - {id: PALM_LINE.BRACELETS, key: bracelets, type: PALM_LINE}
+  # named regions
+  - {id: PALM_REGION.MOUNT_JUPITER, key: mount_jupiter, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_SATURN, key: mount_saturn, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_APOLLO_SUN, key: mount_apollo_sun, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_MERCURY, key: mount_mercury, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_MARS, key: mount_mars, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_MOON, key: mount_moon, type: PALM_REGION}
+  - {id: PALM_REGION.MOUNT_VENUS, key: mount_venus, type: PALM_REGION}
+  - {id: PALM_REGION.PLAIN_OF_MARS, key: plain_of_mars, type: PALM_REGION}
+  - {id: PALM_REGION.TRIANGLE, key: triangle, type: PALM_REGION}
+  - {id: PALM_REGION.QUADRANGLE, key: quadrangle, type: PALM_REGION}
+  # features, conventions and everything with a recorded coverage status
+  - {id: PALM_FEATURE.BRANCHES, key: branches, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.BREAKS, key: breaks, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.LINE_CONDITIONS, key: chained_wavy_forked_sister_lines, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.INTERSECTIONS, key: intersections, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.ISLANDS, key: islands, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.STARS, key: stars, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.OTHER_SIGNS, key: crosses_squares_circles_spots_grilles, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.HAND_SIDE_BOTH_HANDS, key: hand_side_both_hands, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.HAND_SHAPE, key: hand_shape_types, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.FINGERS, key: fingers, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.THUMB, key: thumb, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.NAILS, key: nails, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.HAND_COLOUR_TEXTURE, key: hand_colour_texture_hair, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.LINE_COLOUR, key: line_colour, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.MOUNT_DEVELOPMENT, key: mount_development, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.MOUNT_INTERPRETATIONS, key: mount_interpretations, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.RASCETTE, key: rascette_and_restreintes, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.AGE_DATING, key: dating_of_events_on_lines, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.EXCLUDED_MEDICAL_DEATH_LIFESPAN, key: policy_excluded_group_a, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.EXCLUDED_FURTHER_CATEGORIES, key: policy_excluded_group_b, type: PALM_FEATURE}
+  - {id: PALM_FEATURE.UNREAD_SECTIONS, key: unread_sections, type: PALM_FEATURE}
+  # methodology profile placeholder (RESEARCH_PENDING; nothing is implemented)
+  - {id: PALM_FEATURE.HASTA_SAMUDRIKA_METHODOLOGY, key: hasta_samudrika_methodology, type: PALM_FEATURE}

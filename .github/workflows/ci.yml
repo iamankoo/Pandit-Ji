@@ -29,6 +29,7 @@ jobs:
           - services/agent
           - services/knowledge
           - services/verification
+          - services/palm-vision
           - server
           - infrastructure/migrations
     steps:
@@ -115,6 +116,36 @@ jobs:
       - name: pytest (PostgreSQL, cross-package regression)
         working-directory: services/knowledge
         run: python -m pytest -q -rs
+
+  palm-integration:
+    name: Palm pipeline — integration (no GPU, no model weights, no user data)
+    runs-on: ubuntu-latest
+    # Phase 13: image -> quality -> hand -> facts -> palm rules -> evidence, on synthetic images
+    # only, across the contracts, palm-vision, rule-engine and knowledge packages.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install packages
+        run: |
+          pip install -e packages/contracts
+          pip install -e packages/shared
+          pip install -e services/astro-engine
+          pip install -e services/rule-engine
+          pip install -e services/knowledge
+          pip install -e "services/palm-vision[dev]"
+          pip install pytest ruff
+
+      - name: Ruff lint and format check
+        run: |
+          python -m ruff check tests/integration
+          python -m ruff format --check tests/integration
+
+      - name: pytest (integration)
+        run: python -m pytest -q tests/integration
 
   web-typescript:
     name: TypeScript — ${{ matrix.app }}

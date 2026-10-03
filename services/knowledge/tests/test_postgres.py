@@ -183,6 +183,10 @@ def test_check_constraints_match_the_python_vocabularies(engine: Any) -> None:
         "note",
         "derived",
         "verse_and_note",
+        # Phase 13, migration 0003 (the palmistry sources are books cited by paragraph and page)
+        "paragraph",
+        "chapter",
+        "page",
     }
     assert _check_literals(engine, "terms", "term_kind") == {"NAME", "ALIAS", "RENDERING"}
 
@@ -562,3 +566,29 @@ def test_unsafe_index_identifier_is_refused(pg: Any, provider: HashingEmbeddingP
     )
     with pytest.raises(KnowledgeIntegrityError, match="unsafe"):
         pg.ensure_ann_index(evil, "hnsw")
+
+
+# ---- Phase 13: the palm knowledge version coexists with the Phase 12 version -----------------
+def test_the_palm_version_builds_in_postgres_beside_the_unchanged_phase_12_version(
+    pg: Any, content: KnowledgeContent, provider: HashingEmbeddingProvider
+) -> None:
+    from pandit_knowledge.palm_content import PALM_KNOWLEDGE_STANDARDS_VERSION, load_palm_content
+
+    palm = load_palm_content().knowledge
+    phase12 = KnowledgeBuilder(pg, provider).build(content)
+    before = {t: len(pg.select_rows(phase12.version_id, t)) for t in VERSIONED_TABLES}
+    built = KnowledgeBuilder(pg, provider, PALM_KNOWLEDGE_STANDARDS_VERSION).build(palm)
+    assert phase12.version_id == "KV-06361d7aba28c1ce"  # unchanged by the palm version
+    assert built.version_id != phase12.version_id and built.outcome == "CREATED"
+    assert verify_version(pg, built.version_id) == []
+    assert verify_version(pg, phase12.version_id) == []
+    after = {t: len(pg.select_rows(phase12.version_id, t)) for t in VERSIONED_TABLES}
+    assert before == after
+    memory = KnowledgeBuilder(
+        InMemoryKnowledgeStore(), provider, PALM_KNOWLEDGE_STANDARDS_VERSION
+    ).build(palm)
+    assert (memory.version_id, memory.snapshot_hash) == (built.version_id, built.snapshot_hash)
+    rows = pg.select_rows(built.version_id, "chunks")
+    assert {r["knowledge_domain"] for r in rows} == {"PALMISTRY"}
+    again = KnowledgeBuilder(pg, provider, PALM_KNOWLEDGE_STANDARDS_VERSION).build(palm)
+    assert again.outcome == "NOOP" and again.version_id == built.version_id

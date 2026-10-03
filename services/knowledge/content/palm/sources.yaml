@@ -1,0 +1,86 @@
+# Palmistry sources and editions (Phase 13; registry Group 26, section 6.11).
+# Only facts, short source terms and citations are stored (FACTS_AND_CITATIONS_ONLY): the three
+# Western books were read in part (see research/PALM_READING.md section 3); the Indian tradition
+# has no obtained text (RESEARCH_PENDING).
+sources:
+  - source_id: SRC-HERONALLEN-CHEIROSOPHY
+    title: A Manual of Cheirosophy (cheirognomy and cheiromancy)
+    author: Edward Heron-Allen (1861-1943)
+    tradition: Western cheirosophy
+    original_language: en
+    source_classification: MODERN_POPULAR
+    copyright_status: Published before 1931; US public domain (Indian and UK expiry expected, not confirmed by counsel)
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: Facts, short source terms and citations only; the interpretive prose is not stored.
+    registry_ref: SRC-HERONALLEN-CHEIROSOPHY
+  - source_id: SRC-CHEIRO-PALMISTRY-FOR-ALL-1916
+    title: Palmistry for All
+    author: Cheiro (William John Warner, 1866-1936)
+    tradition: Western chirology with an astrological layer
+    original_language: en
+    source_classification: MODERN_POPULAR
+    copyright_status: Published 1916; US public domain (Indian and UK expiry expected, not confirmed by counsel)
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: Facts, short source terms and citations only; the interpretive prose is not stored.
+    registry_ref: SRC-CHEIRO-PALMISTRY-FOR-ALL-1916
+  - source_id: SRC-BENHAM-SCIENTIFIC-HAND-READING-1901
+    title: The Laws of Scientific Hand Reading
+    author: William G. Benham
+    tradition: Western chirology
+    original_language: en
+    source_classification: MODERN_POPULAR
+    copyright_status: Published 1900-1901; US public domain (Indian and UK status unverified; author death date not found)
+    ingestion_permission: FACTS_AND_CITATIONS_ONLY
+    copyright_note: Facts, short source terms and citations only; scan terms of use ask for non-commercial use of the file.
+    registry_ref: SRC-BENHAM-SCIENTIFIC-HAND-READING-1901
+  - source_id: SRC-SAMUDRIKA-TILAKA-IDENTIFIED
+    title: Samudrika Tilaka (identified; no text obtained)
+    author: Durlabha-raja and Jagad-deva (about 1160-1175 CE, per a secondary reference)
+    tradition: Indian Hasta Samudrika
+    original_language: sa
+    source_classification: UNVERIFIED
+    copyright_status: Not determined (no text obtained)
+    ingestion_permission: DEFERRED_UNRESOLVED
+    copyright_note: Nothing is stored; the Indian profile is RESEARCH_PENDING (owner decision E).
+    registry_ref: Group 26
+editions:
+  - edition_id: ED.HERONALLEN_TENTH_ARCHIVE_UC
+    source_id: SRC-HERONALLEN-CHEIROSOPHY
+    edition_label: Tenth edition (title page), preface dated 20 July 1885, Ward, Lock and Co.
+    translator: NOT_APPLICABLE
+    publisher: Ward, Lock and Co.
+    publication_year: "1885"
+    language: en
+    location_url: https://archive.org/details/manualofcheiroso00heroiala
+    reading_level: OCR_LEVEL
+    registry_verification_level: OCR-ORIGINAL-ENGLISH
+  - edition_id: ED.CHEIRO_1916_GUTENBERG_20480
+    source_id: SRC-CHEIRO-PALMISTRY-FOR-ALL-1916
+    edition_label: G. P. Putnam's Sons 1916, twenty-second impression (Project Gutenberg 20480)
+    translator: NOT_APPLICABLE
+    publisher: G. P. Putnam's Sons
+    publication_year: "1916"
+    language: en
+    location_url: https://www.gutenberg.org/ebooks/20480
+    reading_level: TRANSCRIPTION_LEVEL
+    registry_verification_level: WEB-TRANSCRIPTION-ORIGINAL-ENGLISH
+  - edition_id: ED.BENHAM_1901_GOOGLE_STANFORD
+    source_id: SRC-BENHAM-SCIENTIFIC-HAND-READING-1901
+    edition_label: G. P. Putnam's Sons 1901 (Google scan of the Stanford Lane Medical Library copy)
+    translator: NOT_APPLICABLE
+    publisher: G. P. Putnam's Sons
+    publication_year: "1901"
+    language: en
+    location_url: https://archive.org/details/lawsscientifich00benhgoog
+    reading_level: OCR_LEVEL
+    registry_verification_level: OCR-ORIGINAL-ENGLISH
+  - edition_id: ED.SAMUDRIKA_NONE_OBTAINED
+    source_id: SRC-SAMUDRIKA-TILAKA-IDENTIFIED
+    edition_label: No edition obtained
+    translator: NOT_APPLICABLE
+    publisher: NOT_APPLICABLE
+    publication_year: NOT_APPLICABLE
+    language: sa
+    location_url: NOT_APPLICABLE
+    reading_level: NOT_APPLICABLE
+    registry_verification_level: NONE

@@ -1,0 +1,37 @@
+# Source-attested names (terms) and references to palm rules (Phase 13).
+# Terms are the books' own names for a structure (short source terms, not prose). They are NOT
+# scanned as interpretation: a source name such as the line of health is a name, not a reading.
+terms:
+  - {concept: PALM_LINE.LIFE, kind: NAME, text: Line of Life, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 384, p. 190"}
+  - {concept: PALM_LINE.LIFE, kind: ALIAS, text: the Vital, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 393, p. 191"}
+  - {concept: PALM_LINE.HEAD, kind: NAME, text: Line of Head, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 385, p. 190"}
+  - {concept: PALM_LINE.HEAD, kind: ALIAS, text: the Natural, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 393, p. 191"}
+  - {concept: PALM_LINE.HEART, kind: NAME, text: Line of Heart, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 386, p. 190"}
+  - {concept: PALM_LINE.HEART, kind: ALIAS, text: the Mensal, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 393, p. 191"}
+  - {concept: PALM_LINE.FATE, kind: NAME, text: Line of Fortune, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 387, p. 190"}
+  - {concept: PALM_LINE.FATE, kind: ALIAS, text: the Saturnian, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 393, p. 191"}
+  - {concept: PALM_LINE.FATE, kind: ALIAS, text: Line of Destiny, profile: PALM_CH_LINES_PART1, edition: ED.CHEIRO_1916_GUTENBERG_20480, location: "Part I ch. V"}
+  - {concept: PALM_LINE.FATE, kind: ALIAS, text: Saturn line, profile: PALM_BE_LINES_MAIN_MINOR_356, edition: ED.BENHAM_1901_GOOGLE_STANFORD, location: "p. 356"}
+  - {concept: PALM_LINE.SUN_APOLLO, kind: NAME, text: Line of Apollo or Brilliancy, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 389, p. 191"}
+  - {concept: PALM_LINE.SUN_APOLLO, kind: ALIAS, text: Line of the Sun, profile: PALM_CH_LINES_PART1, edition: ED.CHEIRO_1916_GUTENBERG_20480, location: "Part I ch. VI"}
+  - {concept: PALM_LINE.SUN_APOLLO, kind: ALIAS, text: Apollo line, profile: PALM_BE_LINES_MAIN_MINOR_356, edition: ED.BENHAM_1901_GOOGLE_STANFORD, location: "p. 356"}
+  - {concept: PALM_LINE.MERCURY_LINE_VARIANT, kind: NAME, text: Line of Liver or Health, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 388, pp. 190-191"}
+  - {concept: PALM_LINE.MERCURY_LINE_VARIANT, kind: ALIAS, text: Hepatica, profile: PALM_CH_LINES_PART1, edition: ED.CHEIRO_1916_GUTENBERG_20480, location: "Part I ch. X"}
+  - {concept: PALM_LINE.MERCURY_LINE_VARIANT, kind: ALIAS, text: Mercury line, profile: PALM_BE_LINES_MAIN_MINOR_356, edition: ED.BENHAM_1901_GOOGLE_STANFORD, location: "p. 356"}
+  - {concept: PALM_LINE.GIRDLE_OF_VENUS, kind: NAME, text: Girdle of Venus, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 391, p. 191"}
+  - {concept: PALM_LINE.MARS_LINE, kind: NAME, text: Line of Mars, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 390, p. 191"}
+  - {concept: PALM_LINE.CEPHALIC_LINE, kind: NAME, text: Cephalic Line, profile: PALM_HA_MAP_LINES_384_393, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "para. 392, p. 191"}
+  - {concept: PALM_REGION.MOUNT_APOLLO_SUN, kind: NAME, text: Mount of Apollo, profile: PALM_HA_MAP_MOUNTS_371_383, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "paras. 373-379, pp. 188-189"}
+  - {concept: PALM_REGION.MOUNT_APOLLO_SUN, kind: ALIAS, text: Mount of the Sun, profile: PALM_CH_MOUNTS_PART2, edition: ED.CHEIRO_1916_GUTENBERG_20480, location: "Part II ch. V"}
+  - {concept: PALM_REGION.TRIANGLE, kind: NAME, text: Triangle (Triangle of Mars), profile: PALM_HA_REGIONS_739_760, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "paras. 739-742, p. 286"}
+  - {concept: PALM_REGION.QUADRANGLE, kind: NAME, text: Quadrangle, profile: PALM_HA_REGIONS_739_760, edition: ED.HERONALLEN_TENTH_ARCHIVE_UC, location: "paras. 755-760, p. 288"}
+# References to the separate palm ruleset (services/rule-engine/palm_rules/). The knowledge package
+# imports no rule code and reads no rule-engine tree: that every id below exists in the palm
+# ruleset is asserted by a cross-package integration test (tests/integration).
+rule_references:
+  - {concept: PALM_LINE.LIFE, rule_id: PALMR_HA_LIFE_LINE_ORIGIN_UNDER_JUPITER, relation: IMPLEMENTS_SIGNIFICATION, profile: PALM_HA_LINE_LIFE_523_550, location: "para. 538 (p. 238)"}
+  - {concept: PALM_LINE.FATE, rule_id: PALMR_HA_FATE_LINE_ORIGIN_FROM_LIFE_LINE, relation: IMPLEMENTS_SIGNIFICATION, profile: PALM_HA_LINE_FATE_599_613, location: "para. 599 (p. 256)"}
+  - {concept: PALM_FEATURE.HAND_SIDE_BOTH_HANDS, rule_id: PALMR_CH_LEFT_HAND_INHERITED_TENDENCIES, relation: IMPLEMENTS_CONVENTION, profile: PALM_CH_LINES_PART1, location: "Part I ch. XVII, Right and Left Hands"}
+  - {concept: PALM_FEATURE.HAND_SIDE_BOTH_HANDS, rule_id: PALMR_CH_RIGHT_HAND_DEVELOPED_QUALITIES, relation: IMPLEMENTS_CONVENTION, profile: PALM_CH_LINES_PART1, location: "Part I ch. XVII, Right and Left Hands"}
+  - {concept: PALM_FEATURE.HAND_SIDE_BOTH_HANDS, rule_id: PALMR_BE_LEFT_HAND_NATURAL_MAP, relation: IMPLEMENTS_CONVENTION, profile: PALM_BE_HANDS_359, location: "p. 359"}
+  - {concept: PALM_FEATURE.HAND_SIDE_BOTH_HANDS, rule_id: PALMR_BE_RIGHT_HAND_ALTERED_MAP, relation: IMPLEMENTS_CONVENTION, profile: PALM_BE_HANDS_359, location: "p. 359"}

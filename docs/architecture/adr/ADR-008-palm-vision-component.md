@@ -21,4 +21,5 @@ Status: Locked (owner decision A, 2026-10-02; resolves `docs/ARCHITECTURE.md` §
 ## Consequences
 - `docs/ARCHITECTURE.md` §2 (row 14), §5, §9, §12, §27, §30, §34 (items 5 and 6) and the new §35 are updated; `CONTRIBUTING.md` and `TECH_STACK.md` list the component.
 - ADR-007 is unchanged in substance: `server/` composes the canonical services, now including `palm-vision` once implemented; this ADR adds the sixth.
-- Phase 13 implementation creates the package, its CI job and its tests; none exists today. The Phase 6 rule files and rule-set hash, the evidence-bundle fields and the Phase 12 knowledge snapshot stay unchanged.
+- **Implemented 2026-10-03**: the package, its tests (129), its CI matrix entry and the `palm-integration` job exist (`docs/ARCHITECTURE.md` §35, implementation record). The package depends only on `packages/contracts` and `packages/shared`, and a test asserts it imports no other service. It ships no trained model: the line stage reports `MODEL_UNAVAILABLE`.
+- (Original consequence, now satisfied) Phase 13 implementation creates the package, its CI job and its tests. The Phase 6 rule files and rule-set hash, the evidence-bundle fields and the Phase 12 knowledge snapshot stay unchanged.

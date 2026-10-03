@@ -1,7 +1,7 @@
 [project]
 name = "pandit-knowledge"
-version = "0.2.0"
-description = "Structured + unstructured astrology knowledge, versioned ingestion and provenance-preserving retrieval (Phase 12)."
+version = "0.3.0"
+description = "Structured + unstructured astrology knowledge, versioned ingestion and provenance-preserving retrieval (Phase 12; Phase 13 adds the palmistry vocabulary and a separate palm knowledge version)."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",

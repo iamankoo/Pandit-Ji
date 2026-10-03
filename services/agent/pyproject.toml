@@ -1,7 +1,7 @@
 [project]
 name = "pandit-agent"
-version = "0.2.0"
-description = "Agent Orchestrator foundation plus the Phase 14 self-hosted LLM capability (pandit_agent.llm). No planner, narration or verification yet."
+version = "0.3.0"
+description = "Agent Orchestrator: the Phase 14 self-hosted LLM capability (pandit_agent.llm) and the Phase 15 bounded planner, evidence assembly and structured narration (pandit_agent.orchestration). No verification (Phase 16)."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",

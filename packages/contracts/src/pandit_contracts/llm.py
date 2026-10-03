@@ -122,12 +122,26 @@ class EvidenceItem(_Frozen):
         return self
 
 
+class TaskInstruction(_Frozen):
+    """A trusted, versioned task instruction supplied by application code (Phase 15 templates).
+
+    It is the one channel for task instructions that is not the user message. It must never
+    contain user-supplied text: the caller (the agent's template module) owns that guarantee.
+    """
+
+    task_id: str = Field(min_length=1, max_length=64)
+    text: str = Field(min_length=1, max_length=6000)
+
+
 class LLMContext(_Frozen):
     """The only application state allowed into the prompt: explicit, versioned, size-limited."""
 
     context_version: str = Field(min_length=1, max_length=64)
     items: tuple[EvidenceItem, ...] = Field(default=(), max_length=200)
     restrictions: tuple[ProhibitedCategory, ...] = ()
+    # Additive in Phase 15 (backward compatible: absent means no task section and an unchanged
+    # request hash).
+    task: TaskInstruction | None = None
 
     @model_validator(mode="after")
     def _unique_ids(self) -> LLMContext:
@@ -195,6 +209,10 @@ class LLMRequest(_Frozen):
         ``request_id`` is excluded: two requests that differ only by id are the same request.
         """
         payload = self.model_dump(mode="json", exclude={"request_id"})
+        context = payload.get("context")
+        if isinstance(context, dict) and context.get("task") is None:
+            # Keep every Phase 14 request hash unchanged: the additive field is absent when unset.
+            context.pop("task", None)
         return hashlib.sha256(_canonical(payload).encode("utf-8")).hexdigest()
 
 

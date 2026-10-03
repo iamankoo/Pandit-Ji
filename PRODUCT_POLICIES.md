@@ -6,6 +6,8 @@ Target deterministic calculation accuracy, reproducibility, rule traceability, e
 ## AI
 Use evidence bundles; ask for missing critical data; distinguish fact from interpretation; expose uncertainty; never fabricate chart facts, rules or citations.
 
+Agent and narration (Phase 15, 2026-10-03; `docs/ARCHITECTURE.md` section 37, ADR-010): the agent narrates only evidence it was handed, keeps observed, derived, calculated and rule-evaluation evidence distinct, keeps the astrology and palmistry domains apart, preserves confidence, uncertainty, source profile and knowledge version, and states what the evidence does not cover. Narration is `UNVERIFIED` until Phase 16 verifies it, and always says so. Domain scope of the prohibitions, as implemented and **pending owner confirmation**: palmistry refuses and never produces every category listed under Palm images below; astrology gives contextual, traditional interpretation of high-impact topics with a professional-advice disclaimer, never guarantees an outcome, and refuses lifespan and death-timing requests (the Ayurdaya exclusion). A request that tries to override the agent's rules, extract its instructions, alter evidence or have a narration marked verified is refused.
+
 ## Personalization
 Saved birth profiles, language preference, explicit preferences and conversation context may personalize responses. Training data remains separate and requires privacy/consent/approval controls.
 

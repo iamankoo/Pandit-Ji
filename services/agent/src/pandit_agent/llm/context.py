@@ -92,6 +92,10 @@ def assemble(
 
     system: list[str] = [_CORE]
     context = request.context
+    if context is not None and context.task is not None:
+        _check_content(template, context.task.text)
+        chars += len(context.task.text)
+        system.append(f"Task [{context.task.task_id}]: {context.task.text}")
     if context is not None and context.items:
         lines = [f'{_EVIDENCE_OPEN} context_version="{context.context_version}">']
         for item in context.items:

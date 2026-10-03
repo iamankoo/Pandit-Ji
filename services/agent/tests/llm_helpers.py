@@ -30,6 +30,7 @@ from pandit_agent.llm.manifest import ModelManifest, load_manifest
 from pandit_agent.llm.mock_runtime import MockRuntime, Scripted
 from pandit_agent.llm.service import LLMService
 from pandit_agent.llm.settings import LLMSettings, generation_profile
+from pandit_agent.llm.structured import SchemaRegistry
 
 ASSETS = Path(__file__).resolve().parents[1] / "llm"
 MANIFESTS = ASSETS / "manifests"
@@ -74,12 +75,13 @@ def make_service(
     start: bool = True,
     runtime: MockRuntime | None = None,
     manifest: ModelManifest | None = None,
+    schemas: SchemaRegistry | None = None,
     **settings_over: Any,
 ) -> tuple[LLMService, MockRuntime]:
     rt = runtime if runtime is not None else MockRuntime(script)
     mf = manifest if manifest is not None else mock_manifest()
     cfg = settings(**settings_over)
-    service = LLMService(cfg, mf, ChatTemplate.from_manifest(mf, ASSETS), rt)
+    service = LLMService(cfg, mf, ChatTemplate.from_manifest(mf, ASSETS), rt, schemas=schemas)
     if start:
         service.start()
     return service, rt

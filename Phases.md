@@ -844,6 +844,15 @@ Build:
 
 Deliverable: Pandit Ji Agent v1.
 
+Implementation status (2026-10-03; `SUMMARY.md` §46; ADR-010; `docs/ARCHITECTURE.md` §37). The agent and narration layer is built over the Phase 14 provider; no real model was run.
+
+- **IMPLEMENTED**: contracts (`packages/contracts` 0.4.0 `agent`: `AgentRequest`, `EvidenceRecord`, `AgentContext`, `AgentPlan`, `NarrationResponse` with structured, `UNVERIFIED` claims and references, typed errors); `services/agent` 0.3.0 `pandit_agent.orchestration`: **intent detection** (deterministic, fixed taxonomy from `features.md` section 2, English, Hinglish, Hindi), **planning** (bounded static presets following the career example above), **tool selection and execution** (a closed allow-list of typed evidence tools with timeouts and call budgets; adapters for the Phase 13 `PalmEvidenceBundle` and the Phase 6 astrology `EvidenceBundle`), **context management** (deterministic assembly, priority trimming that is recorded, re-trimming when the model window is smaller), **multi-step reasoning** as the fixed plan plus structured narration through `LLMProvider` with schema-validated output, **error recovery** (typed errors, bounded retries, safe degraded results, no fallback), **memory** (in-session labels only), safety and prompt-injection handling, localized disclaimers, content-free observability, and the Phase 16 hand-off.
+- **PARTIALLY IMPLEMENTED**: *Tool selection and execution*: only the evidence the existing bundles carry (chart placements, rule results, conflicts, palm facts and rules); there is no dasha, transit, compatibility or knowledge-retrieval tool, so those capabilities are reported as missing and a dasha or compatibility question gets a structured insufficiency result. *Memory*: in-session only; persistent long-term memory is Phase 18. *Safety*: the Hindi and Hinglish coverage is a small supplement.
+- **MODEL_DOWNLOAD_REQUIRED / HARDWARE_REQUIRED**: no real model was run; every Phase 15 test used the scripted runtime. **CALIBRATION_REQUIRED**: intent accuracy, injection and safety recall, narration and language quality, evidence and retry budgets. **LEGAL_REVIEW_REQUIRED**: the domain policy scoping (ADR-010 item 5) and the Hindi and Hinglish coverage.
+- **FUTURE_PHASE**: verification (16); persistent memory, upload, storage, consent (18); voice and reports (17, 20); the remaining evidence adapters; combined-domain requests.
+
+**Stopping point (2026-10-03): Phase 15 is implemented as a bounded agent and narration layer that hands `UNVERIFIED` structured claims to Phase 16; the real model has not been run.** Phase 16 has not started. The next session reads `SUMMARY.md` §46, this block, ADR-010 and `CONTRIBUTING.md`, verifies HEAD and CI job by job, and begins Phase 16 only on the owner's explicit instruction.
+
 ## Phase 16 — Evidence & Verification Engine
 
 This phase is critical.

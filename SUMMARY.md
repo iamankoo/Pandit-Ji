@@ -1,5 +1,7 @@
 # Pandit Ji — Project Summary & Session Handoff
 
+> **FINAL HANDOFF (saved 2026-10-03; §48): PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED. On the next session, do not infer the project state from the previous conversation: read this file first (§48, then §47), then follow the source-of-truth hierarchy and the Phase 16 roadmap section of `Phases.md`. Phase 15 is already closed and must not be reimplemented. Phase 15 closure commit `23f9924f1e59772729f30f42c35384471416c045`, CI run `37113858910` (18 of 18 jobs successful). The real model has NOT been run. Phase 16 consumes `NarrationResponse.claims` and the bundle references, is the only phase that may set VERIFIED, and starts only on the owner's explicit instruction.**
+>
 > **STOPPING POINT (2026-10-03, closure): PHASE 15 IS CLOSED (§47). The owner locked the four decisions: domain policy scope (palmistry: the full Phase 13 list; astrology: lifespan and death-timing refusal plus the professional-advice disclaimer), the Phase 15 / Phase 16 boundary (structure and reference integrity only; only Phase 16 may set VERIFIED), deterministic allow-listed tool selection, and in-session-only memory. The real model has NOT been run. PHASE 16 HAS NOT STARTED. The next session must reread `SUMMARY.md` §47, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.**
 >
 > **(Earlier, 2026-10-03) Phase 15 (Pandit Ji Agent) is IMPLEMENTED AS A BOUNDED AGENT AND NARRATION LAYER (§46; ADR-010; `pandit_agent.orchestration`): deterministic intent and planning, a closed allow-list of typed evidence tools, deterministic context assembly, structured narration over the Phase 14 `LLMProvider`, grounded claims with structured references and an `UNVERIFIED` state, safety and prompt-injection handling, bounded in-session memory. The real model has NOT been run: every test used the scripted runtime (MODEL_DOWNLOAD_REQUIRED, HARDWARE_REQUIRED, CALIBRATION_REQUIRED, LEGAL_REVIEW_REQUIRED). Dasha, transit, compatibility and knowledge-retrieval evidence tools, persistent memory and combined-domain requests are not built. PHASE 16 HAS NOT STARTED: verification is not implemented. The next session must reread `SUMMARY.md` §46, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.** *(Previous stopping point: Phase 14, §45, commit `dea8739`.)*
@@ -1938,3 +1940,73 @@ Every Phase 15 roadmap item is IMPLEMENTED or EXPLICITLY DEFERRED (table in `Pha
 
 ### E. Continuation point
 **Development stops here. Phase 16 has not started.** Phase 16 may begin only after an explicit owner instruction. It consumes `NarrationResponse.claims` and the bundles named by `trace.bundle_refs` and is the only phase that may set `VERIFIED`.
+
+## 48. FINAL HANDOFF — Phase 15 CLOSED, Phase 16 NOT STARTED (saved 2026-10-03)
+
+**RESUME RULE. On the next session, do not infer the project state from the previous conversation. Read `SUMMARY.md` first, then follow the source-of-truth hierarchy and the Phase 16 roadmap section. Phase 15 is already closed and must NOT be reimplemented.**
+
+### A. Current stopping point
+| | |
+| --- | --- |
+| Project | Pandit Ji |
+| Current phase | Phase 15 — Pandit Ji Agent: orchestration and narration — **CLOSED** |
+| Next phase | Phase 16 — Evidence & Verification Engine — **NOT STARTED** |
+| Phase 15 closure commit | `23f9924f1e59772729f30f42c35384471416c045` |
+| Phase 15 implementation commit | `8852af1714817f787c528523ab140afae8c79736` (CI run `37107658370`, 18 of 18 jobs successful) |
+| Branch / remote | `main` / `origin/main` (synchronized at the closure commit when this handoff was written) |
+| CI at closure | run `37113858910`, 18 of 18 jobs successful, 0 failed, 14 steps skipped by design |
+| Working tree | clean |
+
+The commit that saves this handoff follows the closure commit and cannot contain its own hash: read the current `HEAD` with `git log -1`, `git ls-remote origin refs/heads/main` and `gh run list --limit 1`, and inspect every job and step, before relying on this table.
+
+### B. Phase 15 final state (all closed; see §46 and §47 for detail)
+Implemented and tested, in `packages/contracts` 0.4.0 (`agent`) and `services/agent` 0.3.0 (`pandit_agent.orchestration`, over the Phase 14 `pandit_agent.llm`):
+- agent contracts (`AgentRequest`, `EvidenceRecord` with five semantic classes, `AgentContext`, `AgentPlan`, `NarrationResponse` / `NarrationSection` / `NarrationClaim` / `EvidenceReference`, `AgentTrace`, typed `AgentErrorCode`);
+- deterministic intent classification (fixed taxonomy from `features.md` section 2; English, Hinglish, Hindi);
+- a bounded static planner (at most 8 steps, no loops, a plan hash);
+- allow-listed deterministic evidence tools (`ToolRegistry`; timeouts and call budgets; tools take only the capability set);
+- astrology evidence integration (`AstrologyBundleTool` over the Phase 6 `EvidenceBundle`; birth time and coordinates are not passed);
+- palm evidence integration (`PalmBundleTool` over the Phase 13 `PalmEvidenceBundle`; no pixels, geometry or image identity);
+- deterministic context assembly (order-independent, context hash, recorded priority trimming, re-trim when the model window is smaller);
+- Phase 14 `LLMProvider` integration (trusted task channel `LLMContext.task`, typed evidence and restrictions, user text only as the user message, schema `pj.narration.v1`, bounded retries, no fallback model, no hosted API);
+- structured narration with referential grounding (cited ids exist in the context; claim type matches the evidence class; interpretations rest on `TRIGGERED` rules; conflicting source profiles are not merged; no claim of verification);
+- safety and policy enforcement (request screening, claim screening, domain policies);
+- prompt-injection protections (typed channels, control-token refusal, injection patterns in English, Hinglish and Hindi; OWASP states prevention cannot be guaranteed);
+- EN, HI and Hinglish handling (requested language never switched; localized disclaimers and refusals, not reviewed by a native-speaker editor);
+- in-session context memory (`InMemoryConversationMemory`: enumerated labels only, process memory, bounded, expiring, erasable);
+- the Phase 16 verification-ready claim interface (below);
+- content-free observability (allow-listed log fields) and typed error handling;
+- comprehensive tests: agent 607 passed and 2 skipped (the optional local tests of Phase 14); contracts 107; integration 25; astro-engine 1673; rule-engine 424; knowledge 167 passed and 4 skipped with PostgreSQL; palm-vision 129; server 5; shared 1; verification 1; ruff, format and mypy clean in every component.
+
+### C. The four locked Phase 15 decisions (owner, 2026-10-03)
+1. **Domain policy.** Palmistry retains the complete Phase 13 prohibited-category list (medical diagnosis, disease, death, lifespan, criminality, mental illness, fertility, paternity, sexual conduct, ethnic or racial ranking, intellectual ranking, moral character, inherent good or bad) and it is never weakened. Astrology retains its separate policy: lifespan and death-timing requests are refused, and high-impact topics (health, finance, legal, relationships, pregnancy, death) carry the existing professional-advice disclaimer. The policies are not merged.
+2. **Phase 15 / Phase 16 boundary.** Phase 15 validates structural and reference integrity. It does not determine whether claim text is semantically supported by the evidence, never sets `VERIFIED` and never sets `verified_by`. Only Phase 16 may perform final verification and set `VERIFIED`.
+3. **Tool selection.** Static, deterministic, allow-listed tools only. No model-selected arbitrary tools, no arbitrary arguments, no shell, execution, network or file primitives. A later phase that needs richer tools must extend the architecture explicitly.
+4. **Memory.** Phase 15 has bounded in-session context only. No persistent memory was implemented and no table or database was created. Persistent memory belongs to later roadmap infrastructure (Phase 18 Memory API; Phase 20 personal memory).
+
+### D. Validation status (do not overstate)
+Phase 15 tests are green and CI is green. **The real Phase 14 model (`Qwen/Qwen3-8B`) has NOT been downloaded, served or run.** Every Phase 15 test used the Phase 14 service over the scripted test runtime. Therefore real narration quality, Hindi and Hinglish quality, reasoning quality, latency, capacity and live-vLLM behaviour are **unvalidated** and must not be presented as production-validated capabilities.
+
+Remaining known limitations:
+- `CALIBRATION_REQUIRED`: intent accuracy, injection and safety recall, language quality, the evidence budget (default 120) and retry bounds.
+- `LEGAL_REVIEW_REQUIRED`: counsel review of the domain policies, the Hindi and Hinglish safety coverage (a small supplement; the Phase 13 lexicon is English only), and the Phase 14 model licence.
+- `MODEL_DOWNLOAD_REQUIRED` / `HARDWARE_REQUIRED`: the real model.
+- Deferred by roadmap assignment (recorded in the `Phases.md` Phase 15 checklist and ADR-010): the dasha, transit, compatibility and knowledge-retrieval evidence tools (Phase 18, which builds those APIs and composes the services; the roadmap does not name the adapters, so this assignment is the closure's, for the owner to confirm or move) and persistent memory (Phases 18 and 20). Until then the planner reports those capabilities as missing; the agent never computes them.
+- Not built: verification (Phase 16), combined palmistry-plus-astrology requests, voice, reports, the Ollama development tier.
+
+### E. Phase 16 starting point (what tomorrow's session must do FIRST)
+Phase 16 (`Phases.md` section "Phase 16 — Evidence & Verification Engine") asks for: calculation verification, rule verification, evidence tracking, contradiction detection, hallucination detection, unsupported-claim detection, and confidence and uncertainty representation; deliverable: a verified-response pipeline (AI answer -> verifier -> approve or regenerate). `docs/ARCHITECTURE.md` section 11 describes the verification architecture and ADR-006 the independence of the verification layer. **There is no Phase 16 ADR yet.** The relevant Phase 15 / Phase 16 decision record is ADR-010 (see "Owner decisions locked"); `services/verification` is still the Phase 3 placeholder (a health check only).
+
+Before any implementation, in this order:
+1. Read `SUMMARY.md` (this section first, then §47, §46 and §45).
+2. Read `SOURCE_OF_TRUTH.md`.
+3. Read `features.md` (sections 24 to 26: AI reasoning, explainability, verification and evaluation).
+4. Read the Phase 16 section of `Phases.md` in full.
+5. Read `docs/ARCHITECTURE.md` (section 11 verification, section 37 agent and narration, section 36 LLM, section 35 palm evidence).
+6. Read ADR-010 and ADR-006.
+7. Confirm `HEAD`, `origin/main`, the working tree and the latest CI status job by job.
+8. Review the Phase 15 -> Phase 16 contract: `pandit_contracts.agent` (`NarrationResponse`, `NarrationClaim`, `EvidenceReference`, `AgentTrace`).
+
+Phase 16 must consume `NarrationResponse.claims` and the evidence and bundle references in the Phase 15 result: each claim has an id, a type (`CALCULATION_FACT`, `OBSERVED_FEATURE`, `DERIVED_FEATURE`, `TRADITIONAL_INTERPRETATION`, `LIMITATION`), a domain, structured references (evidence id, domain, kind FACT / RULE / STATUS, bundle reference), source profiles, source locations, version references, uncertainty flags, a minimum confidence where the producer defined one, and `verification = UNVERIFIED`. The bundles themselves are identified by `trace.bundle_refs` (a `PalmEvidenceBundle` hash or a Phase 6 `EvidenceBundle` hash) with their versions in `trace.version_refs`. **Phase 16 is the ONLY phase allowed to set `VERIFIED`** (a `NarrationClaim` or `NarrationResponse` accepts `VERIFIED` only with a `verified_by`). Phase 15 only guarantees structure and reference integrity, so Phase 16 must itself check that claim text is supported by the referenced evidence.
+
+**Do not start Phase 16 until the owner gives an explicit instruction. Do not reimplement Phase 15.**

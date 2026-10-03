@@ -1,6 +1,8 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-> **STOPPING POINT (2026-10-03, latest): Phase 15 (Pandit Ji Agent) is IMPLEMENTED AS A BOUNDED AGENT AND NARRATION LAYER (§46; ADR-010; `pandit_agent.orchestration`): deterministic intent and planning, a closed allow-list of typed evidence tools, deterministic context assembly, structured narration over the Phase 14 `LLMProvider`, grounded claims with structured references and an `UNVERIFIED` state, safety and prompt-injection handling, bounded in-session memory. The real model has NOT been run: every test used the scripted runtime (MODEL_DOWNLOAD_REQUIRED, HARDWARE_REQUIRED, CALIBRATION_REQUIRED, LEGAL_REVIEW_REQUIRED). Dasha, transit, compatibility and knowledge-retrieval evidence tools, persistent memory and combined-domain requests are not built. PHASE 16 HAS NOT STARTED: verification is not implemented. The next session must reread `SUMMARY.md` §46, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.** *(Previous stopping point: Phase 14, §45, commit `dea8739`.)*
+> **STOPPING POINT (2026-10-03, closure): PHASE 15 IS CLOSED (§47). The owner locked the four decisions: domain policy scope (palmistry: the full Phase 13 list; astrology: lifespan and death-timing refusal plus the professional-advice disclaimer), the Phase 15 / Phase 16 boundary (structure and reference integrity only; only Phase 16 may set VERIFIED), deterministic allow-listed tool selection, and in-session-only memory. The real model has NOT been run. PHASE 16 HAS NOT STARTED. The next session must reread `SUMMARY.md` §47, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.**
+>
+> **(Earlier, 2026-10-03) Phase 15 (Pandit Ji Agent) is IMPLEMENTED AS A BOUNDED AGENT AND NARRATION LAYER (§46; ADR-010; `pandit_agent.orchestration`): deterministic intent and planning, a closed allow-list of typed evidence tools, deterministic context assembly, structured narration over the Phase 14 `LLMProvider`, grounded claims with structured references and an `UNVERIFIED` state, safety and prompt-injection handling, bounded in-session memory. The real model has NOT been run: every test used the scripted runtime (MODEL_DOWNLOAD_REQUIRED, HARDWARE_REQUIRED, CALIBRATION_REQUIRED, LEGAL_REVIEW_REQUIRED). Dasha, transit, compatibility and knowledge-retrieval evidence tools, persistent memory and combined-domain requests are not built. PHASE 16 HAS NOT STARTED: verification is not implemented. The next session must reread `SUMMARY.md` §46, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.** *(Previous stopping point: Phase 14, §45, commit `dea8739`.)*
 >
 > **(Earlier, 2026-10-03) Phase 14 (Self-Hosted AI Model) is IMPLEMENTED AS A SELF-HOSTED LLM CAPABILITY (§45): `LLMProvider` interface, manifest and loader, pinned chat template, structured output, safety scan, health, typed errors, observability, a vLLM HTTP runtime and a scripted CI runtime, in the existing `agent` service (`pandit_agent.llm`, ADR-009). The selected model `Qwen/Qwen3-8B` has NOT been downloaded, served, run or evaluated (MODEL_DOWNLOAD_REQUIRED, HARDWARE_REQUIRED, CALIBRATION_REQUIRED), its licence is not counsel-reviewed (LEGAL_REVIEW_REQUIRED), and no quality, latency or capacity figure exists. PHASE 15 HAS NOT STARTED. The next session must reread `SUMMARY.md` §45, the Phase 14 block of `Phases.md` and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 15 only on the owner's explicit instruction.** *(Previous stopping point: Phase 13 implemented as infrastructure, §44, commit `8551d1a`.)*
 >
@@ -1881,7 +1883,7 @@ A commit cannot contain its own hash or CI result. Confirm with `git log -1`, `g
 
 **Status: the agent and narration layer is implemented over the Phase 14 provider; no real model was run. PHASE 16 HAS NOT STARTED.** Base commit `dea873977d08067399398ab30690fe7731c8e5f9` (§45; CI run `37104759359`, 18 of 18 jobs successful). Git identity `iamankoo <aniketraj00384@gmail.com>`, no AI attribution.
 
-### A. Scope reconciliation and decisions (ADR-010; items 4 and 5 are for owner review)
+### A. Scope reconciliation and decisions (ADR-010; items 2 to 5 were owner-locked at closure, see §47)
 - `Phases.md` Phase 15 lists intent detection, planning, tool selection, tool execution, context management, memory, multi-step reasoning and error recovery. All eight exist; three are partial by design (§C).
 - Location: the existing `agent` service, package `pandit_agent.orchestration`; no new component.
 - Tool selection means selection among allow-listed deterministic evidence tools by a static plan, not model-chosen function calls; tools take no free-form arguments.
@@ -1897,7 +1899,7 @@ A commit cannot contain its own hash or CI result. Confirm with `git log -1`, `g
 
 ### C. Not done (not hidden)
 - **MODEL_DOWNLOAD_REQUIRED / HARDWARE_REQUIRED**: every Phase 15 test used the Phase 14 service over the scripted runtime. Nothing is known about real narration quality, Hindi or Hinglish quality, reasoning quality, latency or real vLLM behaviour.
-- **PARTIALLY IMPLEMENTED**: no dasha, transit, compatibility or knowledge-retrieval evidence tool (those capabilities are reported as missing, and a dasha or compatibility question gets a structured insufficiency result); memory is in-session only; Hindi and Hinglish safety coverage is a small supplement.
+- **Reclassified at closure (§47)**: no roadmap item is partial. The dasha, transit, compatibility and knowledge-retrieval evidence tools are EXPLICITLY DEFERRED to Phase 18 (reported as missing meanwhile); persistent memory is deferred to Phase 18 and Phase 20 (memory here is in-session by owner decision); the Hindi and Hinglish safety coverage is a remaining limitation (a small supplement).
 - **CALIBRATION_REQUIRED**: intent accuracy, injection and safety recall, language quality, the evidence budget (default 120) and retry bounds. **LEGAL_REVIEW_REQUIRED**: the domain policy scoping and the Hindi and Hinglish coverage.
 - **FUTURE_PHASE**: verification (16); persistent memory, upload, storage, consent (18); voice and reports; combined-domain requests.
 
@@ -1909,3 +1911,30 @@ A commit cannot contain its own hash or CI result. Confirm with `git log -1`, `g
 
 ### F. Continuation point
 **Development stops here. Phase 16 has not started.** Resume: read this section, the Phase 15 block of `Phases.md`, ARCHITECTURE §37, ADR-010 and `CONTRIBUTING.md`; verify HEAD equals `origin/main` and CI is green job by job; wait for the owner's explicit instruction. Phase 16 consumes `NarrationResponse.claims` (claim id, type, domain, structured references with bundle references, copied provenance, uncertainty flags, `UNVERIFIED`) and the `PalmEvidenceBundle` or astrology `EvidenceBundle` named by `trace.bundle_refs`; it is the only phase that may set `VERIFIED`.
+
+## 47. Phase 15 — Closure and Decision Lock (2026-10-03)
+
+**Status: PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED.**
+
+- Phase 15 implementation commit: `8852af1714817f787c528523ab140afae8c79736` (CI run `37107658370`, 18 of 18 jobs successful).
+- Closure commit and its CI run: a commit cannot contain its own hash or CI result. Read them with `git log -1`, `git ls-remote origin refs/heads/main` and `gh run list --limit 1`, and inspect every job; the closure audit reported them at the time.
+
+### A. Owner decisions locked (2026-10-03)
+1. **Domain policy scope.** Palmistry: the complete Phase 13 prohibited-category policy, never weakened. Astrology: lifespan and death-timing requests refused; the professional-advice disclaimer for high-impact topics; not merged with the palmistry list, not widened, not narrowed.
+2. **Phase 15 / Phase 16 boundary.** Phase 15 validates structural provenance and reference integrity and marks claims `UNVERIFIED`; it never judges whether claim text is supported and never sets `VERIFIED` or `verified_by`. Phase 16 validates support and is the only phase that may set `VERIFIED`.
+3. **Tool selection.** Static, deterministic, allow-listed; no model-chosen function calling; a later phase needing richer tools must extend the architecture explicitly.
+4. **Memory.** In-session only. Persistent memory belongs to later infrastructure (Phase 18 Memory API, Phase 20 personal memory).
+
+### B. What changed at closure
+- Code (two corrections to match the locked wording, found by the verification): English death-timing phrasings ("when will I die") were not refused in astrology although the Hindi and Hinglish forms were, now they are; death was missing from the high-impact topics that carry the professional-advice disclaimer although `PRODUCT_POLICIES.md` lists it, now it is included. One `getattr` in the astrology adapter became an explicit enum check. No other source change.
+- Tests: `services/agent/tests/test_phase15_closure.py` locks the four decisions (every Phase 13 lexicon term refused for palmistry; astrology death timing; no palmistry leakage into astrology; the disclaimers; structural grounding; no semantic verification; no `VERIFIED` and no `verified_by` anywhere in the code; allow-list; no model-supplied tool or argument; no execution, network, file or persistence primitive; a run with file and socket access disabled; session memory holds labels only and is not persistent).
+- Documentation: `Phases.md` (policy boundary and the roadmap checklist), `docs/ARCHITECTURE.md` section 37, ADR-010 (status Locked), `PRODUCT_POLICIES.md`, `LEGAL_REGULATIONS.md`, the agent README, this file.
+
+### C. Roadmap status
+Every Phase 15 roadmap item is IMPLEMENTED or EXPLICITLY DEFERRED (table in `Phases.md`). Deferred: the dasha, transit, compatibility and knowledge-retrieval evidence tools (Phase 18; the roadmap does not name the adapters, so the assignment is recorded in the Phases.md checklist and ADR-010, and is reported to the owner as such); persistent memory (Phase 18 Memory API and Phase 20).
+
+### D. Real-model status and remaining limitations
+**No real model has been downloaded, served or run.** Every Phase 15 test used the Phase 14 service over the scripted runtime. No multilingual, reasoning, narration-quality, latency or real vLLM claim is made. Remaining: `MODEL_DOWNLOAD_REQUIRED`, `HARDWARE_REQUIRED`, `CALIBRATION_REQUIRED` (intent accuracy, injection and safety recall, language quality, budgets), `LEGAL_REVIEW_REQUIRED` (counsel review of the policies and of the Hindi and Hinglish coverage, which is a small supplement).
+
+### E. Continuation point
+**Development stops here. Phase 16 has not started.** Phase 16 may begin only after an explicit owner instruction. It consumes `NarrationResponse.claims` and the bundles named by `trace.bundle_refs` and is the only phase that may set `VERIFIED`.

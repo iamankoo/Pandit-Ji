@@ -16,6 +16,7 @@ planner reports those capabilities as missing instead of inventing them.
 from __future__ import annotations
 
 from collections.abc import Sequence
+from enum import Enum
 from typing import Any, Protocol
 
 from pandit_contracts.agent import (
@@ -153,7 +154,7 @@ class AstrologyBundleLike(Protocol):
 
 
 def _enum(value: Any) -> str:
-    return str(getattr(value, "value", value))
+    return str(value.value if isinstance(value, Enum) else value)
 
 
 class AstrologyBundleTool:

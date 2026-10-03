@@ -17,6 +17,13 @@ Agent Orchestrator (`docs/architecture/adr/ADR-003-agent-service-boundary.md`). 
 
 Phase 3: package boundary, config, health check, placeholders. Phase 14: the LLM capability. Phase 15: the orchestration and narration layer above. Not built: verification (Phase 16); persistent memory and upload, storage and consent (Phase 18); adapters for dasha, transit, compatibility and knowledge-retrieval evidence; combined-domain requests; voice and reports. The real model is **not** downloaded or run by this repository (`MODEL_DOWNLOAD_REQUIRED`, `HARDWARE_REQUIRED`) and every Phase 15 test ran against the scripted test runtime; narration quality, Hindi and Hinglish quality, intent accuracy, safety recall and latency are unevaluated (`CALIBRATION_REQUIRED`).
 
+## Locked boundaries (owner decisions, 2026-10-03)
+
+- **Palmistry** keeps the complete Phase 13 prohibited-category policy; **astrology** keeps lifespan and death-timing refusal and the professional-advice disclaimer for high-impact topics. They are not merged.
+- **Phase 15 / 16**: this package validates structure and reference integrity and marks every claim `UNVERIFIED`; it never decides whether a claim is supported and never sets `VERIFIED` or `verified_by`. That is Phase 16.
+- **Tools**: a bounded, deterministic, allow-listed selection by a static planner. The model cannot name a tool, pass an argument, execute anything or reach the network or files.
+- **Memory**: bounded in-session context only. Persistent memory is Phase 18 and Phase 20.
+
 ## Using the orchestrator
 
 ```python

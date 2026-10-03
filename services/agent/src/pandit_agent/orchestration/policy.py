@@ -17,7 +17,8 @@ the injection patterns catch common attempts, not all of them. The real protecti
 user text only ever reaches the user message, evidence is typed, and every claim must cite evidence
 ids that exist in the context.
 
-Domain scope (recorded in ``docs/ARCHITECTURE.md`` section 37 for owner review):
+Domain scope (OWNER-LOCKED 2026-10-03, ``docs/ARCHITECTURE.md`` section 37, ADR-010; do not merge
+the two policies for symmetry and do not weaken the palmistry list):
 
 * PALMISTRY: every Phase 13 prohibited category is restricted (PM-13, PM-25).
 * ASTROLOGY: ``PRODUCT_POLICIES.md`` allows contextual traditional interpretation of high-impact
@@ -86,6 +87,11 @@ _SUPPLEMENT: dict[ProhibitedCategory, tuple[str, ...]] = {
         "मरूंगा",
     ),
     PC.LIFESPAN: (
+        # death-timing phrasings: locked as lifespan requests (refused in astrology as well)
+        "when will i die",
+        "when i will die",
+        "when am i going to die",
+        "when will i pass away",
         "how long will i live",
         "how long do i have to live",
         "how many years will i live",
@@ -169,10 +175,13 @@ _INJECTION: tuple[tuple[str, re.Pattern[str]], ...] = tuple(
     )
 )
 
+# The topics PRODUCT_POLICIES.md names as high-impact: health, finance, legal, relationships,
+# pregnancy, death. Relationships are covered by the intents (love, marriage) in disclaimers_for.
 _HIGH_IMPACT = re.compile(
     r"\b(health|disease|illness|medical|doctor|surgery|pregnan\w*|lawsuit|legal|court|"
-    r"invest\w*|loan|debt|stock|sehat|bimari|kanoon|nivesh|karz)\b|"
-    r"(स्वास्थ्य|बीमारी|कानूनी|निवेश|कर्ज|गर्भ)",
+    r"invest\w*|loan|debt|stock|death|dead|dying|mortality|sehat|bimari|kanoon|nivesh|karz|"
+    r"maut|mrityu)\b|"
+    r"(स्वास्थ्य|बीमारी|कानूनी|निवेश|कर्ज|गर्भ|मृत्यु|मौत)",
     re.IGNORECASE,
 )
 

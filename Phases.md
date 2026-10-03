@@ -784,6 +784,20 @@ Reasoning
 
 Deliverable: self-hosted AI inference service.
 
+Implementation status (2026-10-03; `SUMMARY.md` §45; ADR-009; `docs/ARCHITECTURE.md` §36; `research/AI_MODELS.md` Phase 14 record). The inference **capability** is built; the model has not been run or evaluated.
+
+- **IMPLEMENTED**: the LLM contracts (`packages/contracts` 0.3.0: `LLMRequest`, `LLMResponse`, the typed error and readiness vocabularies, provenance); `services/agent` 0.2.0 `pandit_agent.llm` (the `LLMProvider` interface, manifest and loader with hash verification, the pinned chat template, controlled context assembly, structured output validated after generation, an output policy scan using the Phase 13 prohibited categories, health and readiness states, typed errors, content-free structured logging, performance recording, the vLLM HTTP runtime for a self-hosted server, and a scripted test runtime for CI); the manifest for `Qwen/Qwen3-8B` at revision `b968826…` (Apache-2.0); the Phase 13 evidence adapter and an integration test; CI. Location: the existing canonical `agent` service, not a new service (ADR-009).
+- **PARTIALLY IMPLEMENTED**: the vLLM runtime (written to the server's documentation and tested against a protocol fake only); the development tier of `TECH_STACK.md` (Ollama is not implemented).
+- **MODEL_DOWNLOAD_REQUIRED**: the weights (about 16.4 GB) are not downloaded; acquisition is an explicit operator step (`services/agent/llm/README.md`). **HARDWARE_REQUIRED**: a GPU server; none was used.
+- **OPTIONAL_LOCAL_TEST** (skipped in CI): a real vLLM server test and a tokenizer cross-check.
+- **CALIBRATION_REQUIRED**: English, Hindi and Hinglish quality, structured-output reliability, latency, throughput, memory, and reproducibility tolerances. No such figure exists and none is claimed; the language check is a script heuristic only.
+- **LEGAL_REVIEW_REQUIRED**: the model licence (read, not counsel-reviewed) and the Hindi and Hinglish coverage of the prohibited-output controls (the scan is English only).
+- **FUTURE_PHASE**: the agent, planning, tool use, narration (Phase 15); verification (Phase 16); upload, storage, consent (Phase 18); fine-tuning (a separately versioned, reproducible step, not done; no user data is used).
+
+**Cross-check of the Phase 14 instruction against this block (recorded, not silently resolved).** (1) This block says to *evaluate* open-weight models against Hindi, Hinglish, English, reasoning, long context, structured output, tool calling and astrology terminology. Phase 14 verified licence, provenance, language listing, context figures, chat template, structured-output support and runtime compatibility for four candidates from primary sources, and implemented against one; it did **not** run a quality evaluation of any model on any of those criteria (no hardware, no evaluation dataset). That evaluation is **not done** and is `CALIBRATION_REQUIRED`; the selection is a verified-compatibility selection, not a benchmark result. (2) The layered list above (system instructions, tools, astrology engine, knowledge retrieval, reasoning) is delivered only as far as the Phase 14 instruction scopes it: system instructions and controlled evidence context are built; tools, the astrology engine and retrieval are consumed by the agent (Phase 15), consistent with `docs/ARCHITECTURE.md` §16 ("the tool boundary is `agent`"). (3) The instruction forbids any hosted-API stopgap, which ADR-002 had allowed for development, and the Ollama development tier of `TECH_STACK.md` is not implemented; both are recorded as gaps, not contradictions of a locked decision.
+
+**Stopping point (2026-10-03): Phase 14 is implemented as a self-hosted LLM capability behind the `LLMProvider` interface, with no model downloaded, run or evaluated.** Phase 15 has not started. The next session reads `SUMMARY.md` §45, this block and `CONTRIBUTING.md`, verifies HEAD and CI job by job, and begins Phase 15 only on the owner's explicit instruction.
+
 ## Phase 15 — Pandit Ji Agent
 
 This is where the project becomes an actual AI agent.

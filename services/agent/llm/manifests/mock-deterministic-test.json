@@ -1,0 +1,88 @@
+{
+  "manifest_version": 1,
+  "manifest_id": "PJ-LLM-MOCK-TEST-1",
+  "configuration_version": "llm-config-1",
+  "test_fixture": true,
+  "production_eligible": false,
+  "production_blockers": [
+    "TEST_FIXTURE: a deterministic scripted runtime. It is not a language model, has no weights and produces no real language."
+  ],
+  "model_id": "pandit-mock-deterministic",
+  "model_revision": "mock-1",
+  "source": {
+    "url": "urn:pandit-ji:test-fixture",
+    "revision_url": "urn:pandit-ji:test-fixture",
+    "gated": false,
+    "last_modified_at_source": "2026-10-03T00:00:00Z"
+  },
+  "license": {
+    "spdx": "NONE",
+    "name": "none: test fixture without weights",
+    "license_file": "",
+    "license_file_sha256": "",
+    "verification": "NOT_APPLICABLE",
+    "commercial_use": "not applicable",
+    "redistribution_and_derivatives": "not applicable",
+    "legal_status": "NOT_APPLICABLE"
+  },
+  "artifacts": [],
+  "tokenizer": {
+    "tokenizer_class": "Qwen2Tokenizer",
+    "tokenizer_config_sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "bos_token": null,
+    "add_bos_token": false,
+    "eos_token": "<|im_end|>",
+    "pad_token": "<|endoftext|>",
+    "generation_eos_token_ids": [151645, 151643],
+    "special_tokens": ["<|im_start|>", "<|im_end|>", "<|endoftext|>"],
+    "reserved_added_tokens": ["<think>", "</think>"]
+  },
+  "chat_template": {
+    "format": "chatml",
+    "file": "templates/qwen3_chatml.jinja",
+    "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "extracted_from": "the same pinned template as the Qwen3-8B manifest, so CI exercises the real template text",
+    "supports_enable_thinking": true,
+    "generation_prompt": "<|im_start|>assistant\n"
+  },
+  "context": {
+    "native_tokens_model_card": 4096,
+    "max_position_embeddings_config_json": 4096,
+    "extended_tokens_with_yarn": 4096,
+    "extended_enabled": false,
+    "operational_limit_tokens": 4096
+  },
+  "languages": {
+    "supported_interface_modes": ["EN", "HI", "HINGLISH"],
+    "evidence": "none: the scripted runtime returns whatever a test supplies",
+    "quality_status": "NOT_APPLICABLE"
+  },
+  "runtime": {
+    "name": "mock",
+    "minimum_version_from_model_card": "mock-1",
+    "latest_version_observed": "mock-1",
+    "latest_version_observed_on": "2026-10-03",
+    "latest_version_observed_note": "in-process test double",
+    "serving_mode": "in-process",
+    "runtime_tested_against_real_model": false
+  },
+  "quantization": "none",
+  "hardware": {
+    "expected_class": "CPU",
+    "weights_size_bytes": 0,
+    "basis": "no weights"
+  },
+  "generation_config_from_model": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "do_sample": false
+  },
+  "provenance": {
+    "verified_on": "2026-10-03",
+    "verified_by": "test fixture",
+    "weights_committed_to_git": false,
+    "acquisition": "none",
+    "notes": "Used only by tests. It is never a production dependency."
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "manifest_version": 1,
+  "manifest_id": "PJ-LLM-QWEN3-8B-1",
+  "configuration_version": "llm-config-1",
+  "test_fixture": false,
+  "production_eligible": false,
+  "production_blockers": [
+    "MODEL_DOWNLOAD_REQUIRED: weights are not in git and have not been downloaded or served in this repository's CI",
+    "HARDWARE_REQUIRED: a GPU host is needed to serve the model; none was used for Phase 14",
+    "CALIBRATION_REQUIRED: English, Hindi and Hinglish quality, structured-output reliability and latency are unevaluated",
+    "LEGAL_REVIEW_REQUIRED: the licence text was read but counsel has not reviewed it"
+  ],
+  "model_id": "Qwen/Qwen3-8B",
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-8B",
+    "revision_url": "https://huggingface.co/Qwen/Qwen3-8B/tree/b968826d9c46dd6066d109eabc6255188de91218",
+    "gated": false,
+    "last_modified_at_source": "2025-07-26T03:49:13Z"
+  },
+  "license": {
+    "spdx": "Apache-2.0",
+    "name": "Apache License 2.0",
+    "license_file": "LICENSE",
+    "license_file_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "verification": "LICENSE_FILE_READ",
+    "commercial_use": "permitted by the licence text; no use-scale clause",
+    "redistribution_and_derivatives": "permitted with the licence notice; fine-tuned derivatives are separately versioned and not part of Phase 14",
+    "legal_status": "LEGAL_REVIEW_REQUIRED"
+  },
+  "artifacts": [
+    {"filename": "model-00001-of-00005.safetensors", "size_bytes": 3996250744, "sha256": "31d6a825ae35f11fb85b195b4c42c146c051e446433125a215336abdf95cbf5f"},
+    {"filename": "model-00002-of-00005.safetensors", "size_bytes": 3993160032, "sha256": "5991236cea6fe21f3d43cab0f0e84448734fbbe0789816202989f2ddc9d18282"},
+    {"filename": "model-00003-of-00005.safetensors", "size_bytes": 3959604768, "sha256": "c5185c4794be2d8a9784d5753c9922db38df478ce11f9ed0b415b7304d896836"},
+    {"filename": "model-00004-of-00005.safetensors", "size_bytes": 3187841392, "sha256": "b5ee7de71fbf17db3d5704e0c8f2bc7d005ca9e1d7ca2aeb19827b0cfcaa917a"},
+    {"filename": "model-00005-of-00005.safetensors", "size_bytes": 1244659840, "sha256": "20c2d6366ab85c90786ccdd829cd2b9e7d30ef3b2ebbb998280e7e4014b542ff"},
+    {"filename": "model.safetensors.index.json", "size_bytes": 32878, "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc"},
+    {"filename": "config.json", "size_bytes": 728, "sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30"},
+    {"filename": "generation_config.json", "size_bytes": 239, "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"},
+    {"filename": "tokenizer.json", "size_bytes": 11422654, "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"},
+    {"filename": "tokenizer_config.json", "size_bytes": 9732, "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"},
+    {"filename": "vocab.json", "size_bytes": 2776833, "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"},
+    {"filename": "merges.txt", "size_bytes": 1671853, "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"}
+  ],
+  "tokenizer": {
+    "tokenizer_class": "Qwen2Tokenizer",
+    "tokenizer_config_sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "bos_token": null,
+    "add_bos_token": false,
+    "eos_token": "<|im_end|>",
+    "pad_token": "<|endoftext|>",
+    "generation_eos_token_ids": [151645, 151643],
+    "special_tokens": [
+      "<|im_start|>",
+      "<|im_end|>",
+      "<|endoftext|>",
+      "<|object_ref_start|>",
+      "<|object_ref_end|>",
+      "<|box_start|>",
+      "<|box_end|>",
+      "<|quad_start|>",
+      "<|quad_end|>",
+      "<|vision_start|>",
+      "<|vision_end|>",
+      "<|vision_pad|>",
+      "<|image_pad|>",
+      "<|video_pad|>"
+    ],
+    "reserved_added_tokens": [
+      "<tool_call>",
+      "</tool_call>",
+      "<|fim_prefix|>",
+      "<|fim_middle|>",
+      "<|fim_suffix|>",
+      "<|fim_pad|>",
+      "<|repo_name|>",
+      "<|file_sep|>",
+      "<tool_response>",
+      "</tool_response>",
+      "<think>",
+      "</think>"
+    ]
+  },
+  "chat_template": {
+    "format": "chatml",
+    "file": "templates/qwen3_chatml.jinja",
+    "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8",
+    "extracted_from": "tokenizer_config.json chat_template at the pinned revision",
+    "supports_enable_thinking": true,
+    "generation_prompt": "<|im_start|>assistant\n"
+  },
+  "context": {
+    "native_tokens_model_card": 32768,
+    "max_position_embeddings_config_json": 40960,
+    "extended_tokens_with_yarn": 131072,
+    "extended_enabled": false,
+    "operational_limit_tokens": 32768
+  },
+  "languages": {
+    "supported_interface_modes": ["EN", "HI", "HINGLISH"],
+    "evidence": "Hindi is named in the Qwen3 release post language list; Hinglish (romanised Hindi mixed with English) is not named by the model card",
+    "quality_status": "UNEVALUATED"
+  },
+  "runtime": {
+    "name": "vllm",
+    "minimum_version_from_model_card": "0.8.5",
+    "latest_version_observed": "0.19.1",
+    "latest_version_observed_on": "2026-10-03",
+    "latest_version_observed_note": "read from the package index; not installed or run by this repository's CI",
+    "serving_mode": "OpenAI-compatible HTTP server on a private address",
+    "runtime_tested_against_real_model": false
+  },
+  "quantization": "none (bfloat16 weights as published)",
+  "hardware": {
+    "expected_class": "single GPU, 24 GB VRAM or more (estimate)",
+    "weights_size_bytes": 16381516776,
+    "basis": "the five weight files sum to about 16.4 GB in bfloat16 before the KV cache; the VRAM figure is an estimate and has not been measured"
+  },
+  "generation_config_from_model": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "do_sample": true
+  },
+  "provenance": {
+    "verified_on": "2026-10-03",
+    "verified_by": "primary-source reads: the Hugging Face model API (revision, licence tag, gated flag, file list, LFS SHA-256 values), the model files at the pinned revision (small files hashed locally) and the Qwen3 release post",
+    "weights_committed_to_git": false,
+    "acquisition": "explicit only: see services/agent/llm/README.md",
+    "notes": "The weight files' SHA-256 values are the LFS object ids published by the model host; they have not been re-computed locally in this repository's CI. verify_artifacts recomputes them when a local model directory is configured."
+  }
+}

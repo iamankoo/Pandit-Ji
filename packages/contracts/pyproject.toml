@@ -1,6 +1,6 @@
 [project]
 name = "pandit-contracts"
-version = "0.2.0"
+version = "0.3.0"
 description = "Shared Pydantic contracts for Pandit Ji server/ and services/ (health contract; Phase 13 palm fact, rule-evaluation and evidence-bundle contracts)."
 requires-python = ">=3.10"
 dependencies = [

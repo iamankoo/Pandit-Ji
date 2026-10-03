@@ -21,7 +21,7 @@ Every choice below is constrained by principles already locked elsewhere, restat
 
 ## Technology Decision Summary
 
-Every foundational category (client, backend, database, cache, astronomy, vision framework, containers) is locked. Concrete product choices for background jobs, gateway, authentication, and LLM serving were evaluated against Pandit Ji's actual requirements (not defaulted to the most popular option) and are locked with documented reasoning below. Final LLM model checkpoint, GPU hardware, cloud provider, and production orchestrator remain deferred — see §Deferred Technology Decisions.
+Every foundational category (client, backend, database, cache, astronomy, vision framework, containers) is locked. Concrete product choices for background jobs, gateway, authentication, and LLM serving were evaluated against Pandit Ji's actual requirements (not defaulted to the most popular option) and are locked with documented reasoning below. The LLM checkpoint was selected in Phase 14 (§LLM Inference, ADR-009); GPU hardware, cloud provider, and production orchestrator remain deferred — see §Deferred Technology Decisions.
 
 ## Client Stack
 
@@ -103,7 +103,7 @@ Self-hosted only (ADR-002) — no production dependency on OpenAI/Gemini-style h
 - **Development**: **Ollama** — minimal setup, fast local iteration on a developer machine, adequate for functional testing of the agent/planner/verification pipeline without needing production-grade throughput.
 - **Staging/Production**: **vLLM** — PagedAttention-based high-throughput serving, concurrent-request batching, broad support for open-weight model families (Qwen/Llama/Mistral and others), and an OpenAI-compatible API mode that keeps the `LLMProvider` interface implementation simple.
 
-**Model framework**: PyTorch (above). **Model checkpoint**: not selected here — see §Deferred Technology Decisions; model benchmarking against Hindi/Hinglish/English/reasoning/tool-calling criteria is `Phases.md` Phase 14's job (`research/AI_MODELS.md`), and each candidate model family's license (Qwen/Llama/Mistral variants carry different, sometimes conditional, license terms) must be checked at that time, not assumed permissive here.
+**Model framework**: PyTorch (above). **Model checkpoint (selected in Phase 14, 2026-10-03; ADR-009)**: `Qwen/Qwen3-8B` at revision `b968826d9c46dd6066d109eabc6255188de91218`, Apache-2.0, bfloat16 (about 16.4 GB of weights), served by vLLM (the model card asks for 0.8.5 or later; 0.19.1 was the latest release on the package index when checked and was not run). The choice rests on verified licence text, ungated access, pinned file hashes, Hindi in the language list, a ChatML template and runtime compatibility, read from primary sources (`research/AI_MODELS.md`). It is **not** a quality ranking: no benchmark, no Hindi or Hinglish measurement and no GPU run has been performed (`MODEL_DOWNLOAD_REQUIRED`, `HARDWARE_REQUIRED`, `CALIBRATION_REQUIRED`), and the licence is not counsel-reviewed (`LEGAL_REVIEW_REQUIRED`). The checkpoint is replaceable by a new manifest. **Development tier**: the Ollama tier above is **not implemented** in Phase 14; CI uses a scripted test runtime and a developer with a GPU runs the same vLLM runtime; no hosted-API stopgap exists. Python libraries added for the LLM layer: `jinja2` (BSD licence per its package metadata) renders the model's chat template and `jsonschema` (MIT per its package metadata) validates structured output; `types-jsonschema` (Apache-2.0, a development-only type stub package) is a dev dependency.
 
 ## Palm Reading / Computer Vision
 
@@ -198,7 +198,7 @@ Containerized, scaled per `docs/ARCHITECTURE.md` §"Scaling Strategy" (start con
 - **Keycloak**: Apache 2.0 — no concerns.
 - **MinIO**: AGPLv3 for the server. Acceptable here because Pandit Ji only *operates* MinIO as infrastructure (self-hosted object storage) without distributing or modifying its source — this is the boundary AGPL's copyleft actually reaches, unlike Swiss Ephemeris, which Pandit Ji links directly inside its own distributed/served product. Revisit if this distinction is ever unclear for a specific deployment shape.
 - **PyTorch, OpenCV, MediaPipe, vLLM, Ollama**: permissively licensed (BSD/Apache-family) as commonly understood — verify the exact current license of the specific version adopted at implementation time, per this document's own "verify before locking" principle.
-- **Open-weight LLM checkpoints** (Qwen/Llama/Mistral families): licenses vary by family and sometimes by model size/use-scale, and are **not** evaluated here — model selection is deferred to Phase 14 (`research/AI_MODELS.md`), and license terms must be checked per specific checkpoint at that time, not assumed uniform.
+- **Open-weight LLM checkpoints** (Qwen/Llama/Mistral families): licenses vary by family and sometimes by model size/use-scale and must be checked per checkpoint, not assumed uniform. Phase 14 checked the selected checkpoint: `Qwen/Qwen3-8B` carries the standard Apache License 2.0 text (file hashed; no use-scale clause found); the other candidates' licence tags are recorded in `research/AI_MODELS.md` without a reading of their texts. vLLM is Apache-2.0 per its package metadata. This is a licence reading, not legal approval (`LEGAL_REGULATIONS.md`).
 - **Astrology/knowledge source texts**: governed by `research/ASTROLOGY_SOURCES.md`'s and `LEGAL_REGULATIONS.md`'s copyright/licensing requirements — unchanged by this document.
 
 ## Security Considerations
@@ -221,8 +221,8 @@ Restated from `docs/ARCHITECTURE.md` §"Security Architecture" as technology-spe
 ## Deferred Technology Decisions
 
 Explicitly **not** locked here — belong to a later phase, and must not be presented as decided:
-- **Final LLM model checkpoint** — `Phases.md` Phase 14 (Self-Hosted AI Model), per `research/AI_MODELS.md`'s benchmarking criteria.
-- **GPU hardware** (make/model/quantity) — sized against the model checkpoint chosen in Phase 14 and real load, not guessed now.
+- ~~Final LLM model checkpoint~~ — selected in Phase 14 (`Qwen/Qwen3-8B`, ADR-009); **quality, language and latency evaluation and any fine-tuning remain open** (`research/AI_MODELS.md`).
+- **GPU hardware** (make/model/quantity) — still deferred: Phase 14 recorded a weight size (about 16.4 GB) and a 24 GB-class estimate but measured nothing on a GPU; size it against real load.
 - **Cloud provider** (or fully on-prem) for staging/production hosting — a deployment decision, not a technology-stack decision; `docs/ARCHITECTURE.md` §"Deployment Topology" already declines to fix this.
 - **Production container orchestrator** (Kubernetes or otherwise) — evaluated only against a measured scaling need (`docs/ARCHITECTURE.md` §"Scaling Strategy"); Docker Compose is sufficient for the current stage.
 - **Exact production topology** (instance sizing, replica counts, region layout) — an operational detail for Phase 18/21, not a technology choice.
@@ -266,8 +266,8 @@ Track supported stable release lines rather than pinning every dependency to one
 | Containers | Docker + Docker Compose | Locked | Local dev + reproducible environments |
 | Testing | pytest / Flutter test / Vitest / Schemathesis | Locked | Per-layer test technology |
 | Code quality | Ruff+mypy / ESLint+Prettier+tsc / dart analyze+format | Locked | Per-ecosystem lint/format/type-check |
-| LLM checkpoint | — | **Deferred** | Phase 14 |
-| GPU hardware | — | **Deferred** | Sized in Phase 14 |
+| LLM checkpoint | Qwen/Qwen3-8B @ b968826 (Apache-2.0) | **Selected (Phase 14); not yet run or evaluated** | Self-hosted language layer (ADR-009) |
+| GPU hardware | — | **Deferred** | Needs a measured run |
 | Cloud provider | — | **Deferred** | Deployment decision |
 | Orchestrator | — | **Deferred** | Only on measured scaling need |
 
@@ -275,3 +275,4 @@ Track supported stable release lines rather than pinning every dependency to one
 
 - **v1.0.0** (pre-Phase-3): initial technology-stack lock. Established client (Flutter/Next.js), backend (FastAPI/Pydantic v2/SQLAlchemy 2.x), database (PostgreSQL/pgvector), cache/queue (Valkey+Celery), gateway (Traefik), auth (Keycloak), astronomy (Swiss Ephemeris — carried over from `LEGAL_REGULATIONS.md`), ML/vision (PyTorch/OpenCV/MediaPipe), LLM serving (Ollama/vLLM), storage (S3-compatible/MinIO), observability (OpenTelemetry), containers (Docker/Compose), and testing/code-quality tooling per ecosystem. PostgreSQL/Flutter/Next.js version baselines and the Redis-vs-Valkey licensing analysis were verified against current sources at lock time, not assumed. LLM checkpoint, GPU hardware, cloud provider, and production orchestrator remain explicitly deferred.
 - **v1.1.0** (2026-10-02, Phase 13 research and architecture lock): records that the palm vision pipeline lives in the canonical service `services/palm-vision` (owner decision A, ADR-008) and that the vision model is a pinned artifact outside git, distinct from the Phase 14 LLM; the technology choices (OpenCV, NumPy, MediaPipe, PyTorch, S3-compatible storage) are unchanged. Reason: owner decisions A to M of 2026-10-02. Approval: owner decisions.
+- **v1.2.0** (Phase 14, 2026-10-03): the LLM checkpoint is selected (`Qwen/Qwen3-8B`, vLLM; ADR-009) from verified primary sources; the Ollama development tier is recorded as not implemented; `jinja2` and `jsonschema` added to the agent; GPU hardware, quality evaluation and fine-tuning remain open.

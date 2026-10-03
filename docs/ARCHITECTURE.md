@@ -52,7 +52,7 @@ Concretely, this means the system is built as a **fact pipeline with a narrating
 | 11 | **Web/Mobile/Admin Clients** | `apps/{web, mobile, admin}` | Presentation only, no astrology logic. |
 | 12 | **Security/Privacy/Audit** | cross-cutting, see §"Security Architecture" | AuthN/authZ, encryption at rest for birth/palm data, audit logging, data deletion, access control. |
 | 13 | **Human Ecosystem / Content** (future) | not yet scheduled | Live astrologer marketplace, articles, festival calendar — explicitly deferred, not in initial baseline builds. |
-| 14 | **Palm Vision** (approved 2026-10-02, Phase 13; not yet implemented) | `services/palm-vision` | Deterministic, versioned palm image analysis: image quality, hand detection, hand-side classification, palm region, landmarks, the palm-line/feature model and the structured `PalmFactSet`. Owns no knowledge text, no palm rules, no narration, no storage API and no LLM. See §35, ADR-008 and `research/PALM_READING.md`. |
+| 14 | **Palm Vision** (approved 2026-10-02, Phase 13; implemented 2026-10-03, no trained model) | `services/palm-vision` | Deterministic, versioned palm image analysis: image quality, hand detection, hand-side classification, palm region, landmarks, the palm-line/feature model and the structured `PalmFactSet`. Owns no knowledge text, no palm rules, no narration, no storage API and no LLM. See §35, ADR-008 and `research/PALM_READING.md`. |
 
 ---
 
@@ -109,7 +109,7 @@ Implementation is deferred (Phase 18, Backend Platform) — this section fixes r
 
 ## 5. Service Architecture
 
-Canonical service names are locked and must not be renamed: `astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and, from the owner's decision of 2026-10-02 (ADR-008), `palm-vision` (approved for Phase 13; no code exists yet). Do not introduce alternatives such as `astrology-engine`, `ai-agent`, or `knowledge-base` anywhere in code or documentation.
+Canonical service names are locked and must not be renamed: `astro-engine`, `rule-engine`, `agent`, `knowledge`, `verification`, and, from the owner's decision of 2026-10-02 (ADR-008), `palm-vision` (approved for Phase 13; implemented 2026-10-03). Do not introduce alternatives such as `astrology-engine`, `ai-agent`, or `knowledge-base` anywhere in code or documentation.
 
 ### astro-engine
 **Responsible for**: deterministic astronomical and chart calculations — planetary positions, houses/ascendant, divisional charts, dignity/combustion/retrograde, ashtakvarga, dashas, transits, panchang, muhurta, compatibility scoring, numerology (see §"Astrology Engine Architecture" for module layout).
@@ -501,7 +501,7 @@ GPU/CPU infrastructure
 Agent orchestration (§"Agent Orchestrator Architecture") is strictly separated from model inference — this is what lets the model be replaced without redesigning the agent (ADR-002).
 
 - **Inference boundary**: `agent` sends a single, fully-assembled prompt (evidence bundle + user question + conversation memory, per §8) to the AI Reasoner interface and receives text/stream back — no astrology-specific logic lives on the inference side of that boundary.
-- **Model serving**: a dedicated inference service process (candidate stacks: vLLM/Ollama/TGI — selection deferred to Phase 14) sits behind the interface; `agent` never embeds the model in-process.
+- **Model serving**: a dedicated inference service process sits behind the interface; `agent` never embeds the model in-process. Phase 14 (2026-10-03) selected vLLM serving `Qwen/Qwen3-8B` and implemented the interface and runtime as `pandit_agent.llm` (§36, ADR-009); the vLLM server itself has not been run by this repository.
 - **Batching**: the inference service may batch concurrent requests internally; this is invisible to `agent`, which always makes one logical call per response.
 - **Context limits**: the evidence-assembly step (§8) is responsible for keeping the evidence bundle + memory within the serving model's context window — if evidence would exceed it, the planner trims to the most relevant evidence rather than silently truncating mid-prompt.
 - **Structured output**: where the agent needs machine-parseable output from the model (e.g. a claim list for `verification` to check), the interface supports a structured/JSON-constrained output mode, not free-text parsing.
@@ -746,12 +746,15 @@ pandit-ji/
     rule-engine/            rule DSL + evaluator (§7)
     agent/                  intent, planner, LLM orchestration, evidence assembly (§8);
                             includes voice/ (STT/TTS integration) and reports/ (report
-                            templates + assembly) as subpackages
+                            templates + assembly) as subpackages, and (Phase 14, §36, ADR-009)
+                            llm/ (the self-hosted LLM capability: LLMProvider interface, model
+                            manifest and loader, structured output; no planner); data assets
+                            (manifests, pinned chat template) in services/agent/llm/
     knowledge/              structured knowledge, versioned ingestion, chunking, embedding
                             providers and retrieval (Phase 12, §10); rules/*.yaml source-of-truth;
                             content/ curated Phase 12 records
     verification/           claim/hallucination/contradiction checking, regression + backtesting (§11)
-    palm-vision/            (Phase 13; approved 2026-10-02, not yet created) deterministic palm image
+    palm-vision/            (Phase 13; approved 2026-10-02, implemented 2026-10-03) deterministic palm image
                             pipeline: quality, hand detection, side, region, landmarks, line/feature model,
                             PalmFactSet (§35, ADR-008); no knowledge text, rules, narration, storage or LLM
   packages/
@@ -915,3 +918,41 @@ agent (Phase 15, narrates only)  →  verification (Phase 16, checks claims agai
 - **Evidence**: the `PalmEvidenceBundle` links the image reference and hash, the quality, hand and region results, the facts, the rule evaluations, the knowledge and model versions and an uncertainty summary under one bundle hash; a later phase needs no pixels.
 - **CI**: `services/palm-vision` joined the Python matrix; the `palm-integration` job runs the image-to-evidence test with no GPU, no weights and no user data; the knowledge PostgreSQL job covers migration 0003 and the palm parity test.
 - **Not built (by design)**: a trained palm-line model, a dataset, calibrated thresholds and tolerances, the Indian profile, and everything owned by Phases 14, 15, 16 and 18.
+
+## 36. Self-Hosted LLM Capability (Phase 14; implemented 2026-10-03)
+
+Decision record: ADR-009. Evidence and candidates: `research/AI_MODELS.md` ("Phase 14 verification record"). Contracts: `packages/contracts` `pandit_contracts.llm`. Code: `services/agent/src/pandit_agent/llm/`. Assets: `services/agent/llm/` (manifests, the pinned chat template, `README.md` with the acquisition steps).
+
+```
+STRUCTURED FACTS -> RULES / KNOWLEDGE -> EVIDENCE -> LLMProvider -> LLMService -> LLMRuntime -> vLLM server (self-hosted)
+                                                       (interface)   (this layer)   (HTTP)         (separate process, GPU)
+```
+
+**What it is.** The language-generation layer. It receives an `LLMRequest` (conversation turns, an explicit size-limited `LLMContext` of evidence items and restricted categories, the language `EN`/`HI`/`HINGLISH`, versioned generation settings, an output mode) and returns an `LLMResponse` (text, validated structured output, finish reason, token usage, latency, and a provenance block). It is not a fact generator, a calculation engine, a palm vision engine, a rule engine or a verifier: the evidence is produced upstream and is never modified here. It has no planner, memory, tool selection or narration orchestration (Phase 15) and no verification (Phase 16).
+
+**Selected model and runtime.** `Qwen/Qwen3-8B`, revision `b968826d9c46dd6066d109eabc6255188de91218`, Apache-2.0, bfloat16 weights (about 16.4 GB), served by vLLM (model card: 0.8.5 or later). Pinned in `services/agent/llm/manifests/qwen3-8b.json`: revision, SHA-256 of 12 artifacts, licence file hash, tokenizer configuration hash, chat-template hash, context figures (32,768 native per the model card, `max_position_embeddings` 40960 in `config.json`, 131,072 with YaRN which is off), runtime, quantization, hardware class, provenance. The manifest says `production_eligible: false` with four named blockers.
+
+**Four things kept apart.** Model *code* (the package); model *configuration* (`settings.py`: service settings and the versioned generation profiles `deterministic` and `model_default`, config version `gen-1`); model *manifest* (JSON, validated on load: pinned revision, hashes, a read licence, a supported runtime, never committed weights, a test fixture can never be production eligible); model *weights* (never in git, ignored by `.gitignore`; acquisition is an explicit operator step; `verify_model_directory` checks presence, size and SHA-256 against the manifest).
+
+**Request flow.** Readiness check -> requested model must be the loaded model (no silent switch) -> language supported -> output schema registered -> prompt assembly -> the model's own chat template -> token budget -> runtime -> strict parse and schema validation (structured output) -> output policy scan -> language-script heuristic -> response with provenance and one structured log event.
+- *Prompt assembly* (`context.py`): the system block is built only from fixed versioned text (`PROMPT_VERSION_ID` = `pj-prompt-1+<digest of the fixed text>`) plus the request's evidence, restricted categories, language and schema. The caller cannot send a system message. Content containing a model control token or an evidence delimiter is refused. Over-limit content is refused with `CONTEXT_TOO_LARGE`, never truncated. The same request always gives the same prompt.
+- *Chat template* (`chat_template.py`): the template text published with the model at the pinned revision is vendored and its SHA-256 pinned; a different template is refused. Rendering uses the sandboxed Jinja settings of the model's own tooling. Checks: turn-start and end-of-turn token counts, no duplicated special tokens, no BOS, the generation prompt (with the empty reasoning block when thinking is off). Tests assert exact strings for system, user and assistant turns and English, Hindi and Hinglish content. A reasoning block in an output is stripped and never returned.
+- *Structured output* (`structured.py`): schemas are registered by id (`pj.answer_with_evidence_refs.v1` is built in; later phases register theirs). vLLM is asked to constrain decoding with `response_format`, but the guarantee is the post-generation check: strict JSON (no fence stripping, no repair, no `NaN`), then JSON Schema validation. Failures are `MALFORMED_STRUCTURED_OUTPUT` or `SCHEMA_MISMATCH`. Retries happen only at non-zero temperature (a greedy retry repeats itself) and are bounded.
+- *Safety* (`safety.py`): restricted categories travel as typed `ProhibitedCategory` values from the Phase 13 policy; the prompt names them (first layer) and the generated text, including every string inside structured output, is scanned against the same closed lexicon (second layer); a hit is `POLICY_VIOLATION` and the text is not returned. **Limits**: the lexicon is English only, so Hindi and Hinglish output is not covered; a word list is a safety net, not proof; a prompt instruction does not guarantee compliance. Status: `LEGAL_REVIEW_REQUIRED` and `CALIBRATION_REQUIRED`.
+- *Languages* (`language.py`): the interface accepts `EN`, `HI`, `HINGLISH` and the prompt carries a directive for the requested one. A script heuristic (Devanagari versus Latin) is reported as `language_check` and never fails a request. It cannot tell English from romanised Hindi and measures no quality. Real language quality needs an evaluation dataset and human review and is `CALIBRATION_REQUIRED`.
+
+**Health and readiness.** `SERVICE_STARTED` (constructed, nothing loaded), `MODEL_LOADING`, `MODEL_READY`, `MODEL_UNAVAILABLE` (model, runtime, GPU or resources absent: recoverable by an operator), `MODEL_ERROR` (hash, tokenizer, manifest or load failure). A service that could not load never reports ready and refuses requests with a typed failure. When no local model directory was verified, the ready state says the artifact hashes were not verified by this process.
+
+**Errors.** One typed vocabulary (`LLMErrorCode`): model unavailable, model load failure, tokenizer failure, invalid manifest, invalid configuration, invalid request, context too large, generation timeout, generation failure, malformed structured output, schema mismatch, policy violation, unsupported language, unsupported output schema, runtime unavailable, GPU unavailable, insufficient resources, endpoint not permitted. A failure is a `FAILED` response, not an exception. Nothing falls back to another model or to any hosted API.
+
+**Observability.** One JSON log line per load and per request through the shared logging foundation, from a field allow-list (request id, request hash, model id and revision, runtime, status, error code, latency, token counts, finish reason, prompt version, attempts, language, state). A field outside the list raises, so prompts, evidence, generated text, palm facts and images cannot be logged. `PerformanceRecorder` keeps measured load time, latency, tokens per second (completion tokens over total latency) and, where the platform reports it, peak process memory. First-token latency is `null` because the runtime is non-streaming. No target figure is implied.
+
+**Reproducibility.** A response records the manifest id, model id and revision, artifact hashes, tokenizer-configuration and chat-template hashes, runtime and runtime version, quantization, dependency versions, prompt version, generation configuration version and a request hash (SHA-256 over everything that determines the prompt and the sampling, excluding the request id). The prompt is deterministic. Output reproducibility is **not** guaranteed bit for bit: the `deterministic` profile is greedy decoding with a fixed seed, which is the most reproducible setting the runtime offers, but a GPU server may still vary by hardware, batching and library versions. Tolerances are `CALIBRATION_REQUIRED`.
+
+**Self-hosted boundary.** No hosted-model client exists. The HTTP runtime reaches only operator-allow-listed hosts (default loopback), follows no redirects, ignores proxy settings and never echoes a response body; a test scans the agent sources and assets for hosted SDKs and endpoints. The scripted `MockRuntime` (used in CI) serves only a test-fixture manifest, must be passed in explicitly, and labels every response `mock-deterministic` / `is_real_model: false`.
+
+**Phase 13 integration.** `evidence.py` turns the public `PalmEvidenceBundle` into evidence items (one per fact and per rule evaluation plus a readiness item) from identifiers, enumerated values, confidences, statuses and source locations only: no geometry, no image reference or hash. The integration test proves the model can cite real fact and rule ids and cannot change the frozen bundle. The agent imports no other service and no other package imports the agent.
+
+**Interface for Phase 15 and 16.** `LLMProvider.generate(LLMRequest) -> LLMResponse` and `health() -> LLMHealth`. Phase 15 supplies the task context, the structured evidence, the language, the response schema and a generation policy; it receives text, validated structured output, provenance, status and usage. Phase 16 verifies claims against the evidence bundle; Phase 14 does not check that a cited id exists or that a claim is supported.
+
+**Status.** IMPLEMENTED: contracts, manifest and loader, template handling, context assembly, structured output, policy scan, health, errors, observability, the scripted runtime, the vLLM HTTP runtime (against a protocol fake). MODEL_DOWNLOAD_REQUIRED and HARDWARE_REQUIRED: the real model has not been downloaded, served or run here. OPTIONAL_LOCAL_TEST (skipped in CI): a real vLLM server test and a tokenizer cross-check. CALIBRATION_REQUIRED: language quality, structured-output reliability, latency, capacity, tolerances. LEGAL_REVIEW_REQUIRED: the model licence and Hindi and Hinglish prohibited-output coverage. FUTURE_PHASE: planner, narration, tool use, verification, fine-tuning. Not implemented from `TECH_STACK.md`: the Ollama development tier. The vLLM request fields were written to the server's documentation and were not verified against a live server.

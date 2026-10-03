@@ -118,10 +118,12 @@ jobs:
         run: python -m pytest -q -rs
 
   palm-integration:
-    name: Palm pipeline — integration (no GPU, no model weights, no user data)
+    name: Palm and LLM pipeline — integration (no GPU, no model weights, no user data)
     runs-on: ubuntu-latest
     # Phase 13: image -> quality -> hand -> facts -> palm rules -> evidence, on synthetic images
     # only, across the contracts, palm-vision, rule-engine and knowledge packages.
+    # Phase 14: that evidence bundle -> the self-hosted LLM interface, with the scripted test
+    # runtime (no model, no GPU, no hosted API, no secrets).
     steps:
       - uses: actions/checkout@v4
 
@@ -136,6 +138,7 @@ jobs:
           pip install -e services/astro-engine
           pip install -e services/rule-engine
           pip install -e services/knowledge
+          pip install -e services/agent
           pip install -e "services/palm-vision[dev]"
           pip install pytest ruff
 

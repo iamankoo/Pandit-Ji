@@ -93,4 +93,13 @@ Pricing reference (currently published by Astrodienst, **subject to verification
 ## AI/IP
 Maintain a registry for texts, translations, datasets, models, images, voices and code dependencies. Do not ingest/distribute copyrighted material without a valid legal basis/license.
 
+### Self-hosted LLM: model and runtime licence record (Phase 14, 2026-10-03; not legal advice, not legal approval)
+Engineering read the licence material below to choose a model; counsel has **not** reviewed it. Status: `LEGAL_REVIEW_REQUIRED`, and it joins the production launch gates.
+- **Model**: `Qwen/Qwen3-8B`, revision `b968826d9c46dd6066d109eabc6255188de91218`. The host metadata names Apache-2.0 and the repository's LICENSE file (SHA-256 `832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e`) is the standard Apache License 2.0 text with a copyright line for the model's publisher; no use-scale or field-of-use clause was found in it. The model is ungated. Commercial use, redistribution and derivative works are permitted by that text subject to its notice conditions; fine-tuned derivatives are not part of Phase 14 and would be separately versioned and reviewed. The Apache-2.0 patent and trademark provisions were not analysed.
+- **Runtime and libraries**: vLLM is Apache-2.0 per its package metadata; `jinja2` is BSD-licensed and `jsonschema` is MIT per their package metadata. No copyleft dependency was added.
+- **Other candidates read** (tags only, texts not read): Llama 3.1 (a vendor community licence, gated), Mistral-Nemo (Apache-2.0 tag, ungated), Gemma 3 (the vendor's own terms, gated). Their terms were not analysed and nothing here approves or rejects them (`research/AI_MODELS.md`).
+- **Weights provenance**: the weight files' SHA-256 values are the host's published object ids; the repository never contains the weights, and the loader verifies a local copy against the manifest before use. Whether the publisher's training data raises any rights question is not assessed.
+- **Data boundary**: a self-hosted model receives only the evidence the caller supplies; no hosted third-party model API is called, so no user content is sent to a model vendor by this layer. No user data is used to train or fine-tune anything in Phase 14.
+- **Open items for counsel**: the licence and notice obligations on distribution of the weights or a derivative; whether model outputs about palm or chart evidence engage any of the Phase 13 palm-image items; and the Hindi and Hinglish coverage of the prohibited-output controls (the output scan is English only).
+
 This is not legal advice.

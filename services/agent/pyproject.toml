@@ -1,10 +1,13 @@
 [project]
 name = "pandit-agent"
-version = "0.1.0"
-description = "Agent Orchestrator: intent detection, planning, evidence assembly, AI Reasoner invocation (Phase 3 foundation only)."
+version = "0.2.0"
+description = "Agent Orchestrator foundation plus the Phase 14 self-hosted LLM capability (pandit_agent.llm). No planner, narration or verification yet."
 requires-python = ">=3.10"
 dependencies = [
   "pydantic>=2.6,<3",
+  "pydantic-settings>=2.2",
+  "jinja2>=3.1",
+  "jsonschema>=4.20",
   "pandit-contracts",
   "pandit-shared",
 ]
@@ -14,6 +17,7 @@ dev = [
   "pytest>=8.0",
   "ruff>=0.6",
   "mypy>=1.10",
+  "types-jsonschema>=4.20",
 ]
 
 [build-system]

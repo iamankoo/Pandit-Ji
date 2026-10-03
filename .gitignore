@@ -41,3 +41,13 @@ Thumbs.db
 # Local source archive — content is already extracted into tracked files under
 # docs/, research/, and project root; kept out of version control to avoid duplication.
 Pandit-Ji-Pre-Phase-1-Foundation.zip
+
+# Model weights and local model directories — never commit (Phase 14; services/agent/llm/README.md)
+services/agent/llm/models/
+models/
+*.safetensors
+*.gguf
+*.ggml
+*.onnx
+*.pt
+*.pth

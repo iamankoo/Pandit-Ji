@@ -2011,9 +2011,9 @@ Phase 16 must consume `NarrationResponse.claims` and the evidence and bundle ref
 
 **Do not start Phase 16 until the owner gives an explicit instruction. Do not reimplement Phase 15.**
 
-## 49. Phase 16 — Verification Engine (2026-10-05) — CLOSED, Handoff and Continuation Point
+## 49. Phase 16 — Verification Engine (2026-10-05) — IMPLEMENTED (closure pending owner review), Handoff and Continuation Point
 
-**PHASE 16 — CLOSED. PHASE 17 HAS NOT STARTED.** Phase 16 is the ONLY phase allowed to set `VERIFIED`. Phase 15 remains responsible for generation and narration and ends every claim `UNVERIFIED`.
+**PHASE 16 — IMPLEMENTED, closure pending owner review (see §50). PHASE 17 HAS NOT STARTED.** Phase 16 is the ONLY phase allowed to set `VERIFIED`. Phase 15 remains responsible for generation and narration and ends every claim `UNVERIFIED`.
 
 | | |
 | --- | --- |
@@ -2045,3 +2045,54 @@ The regenerate loop and the agent-to-verifier call (composition), persistence of
 
 ### G. Exact stopping point
 **Development stops here. Phase 17 (Life-Domain Intelligence) has NOT started.** Resume: read this section, the Phase 16 block of `Phases.md`, ARCHITECTURE section 38, ADR-011 and `CONTRIBUTING.md`; verify `HEAD`, `origin/main` and CI job by job; begin Phase 17 only on the owner's explicit instruction. Do not reimplement Phase 16.
+
+## 50. FINAL HANDOFF — Phase 16 IMPLEMENTED (closure pending owner review), Phase 17 NOT STARTED (saved 2026-10-05)
+
+**RESUME RULE. Do not reconstruct project state from the previous conversation. SUMMARY.md is the first resume point.** Phase 16 must NOT be reimplemented. This section supersedes the word "CLOSED" in the §49 heading and first line: the owner has not yet reviewed Phase 16, so it is IMPLEMENTED, closure pending owner review.
+
+### A. Current project state
+| | |
+| --- | --- |
+| Project | Pandit Ji |
+| Phase 13 | CLOSED |
+| Phase 14 | CLOSED |
+| Phase 15 | CLOSED |
+| Phase 16 | **IMPLEMENTED — closure pending owner review** |
+| Phase 17 | **NOT STARTED** |
+| Current implementation commit | `fb19552` (the Phase 16 code is `c523f26`, fixed by `efdfe8c`; `fb19552` is the commit that closed the implementation and saved §49) |
+| CI at that commit | run `37354753970`, 18 of 18 jobs successful |
+| Working tree | clean |
+
+The commit that saves this section follows `fb19552` and cannot contain its own hash or CI result: read the current `HEAD` with `git log -1`, `git ls-remote origin refs/heads/main` and `gh run list --limit 1`, and inspect every job.
+
+### B. Phase 16 implemented scope
+Verification service (`pandit_verification` 0.2.0) and contracts (`pandit_contracts.verification`, contracts 0.5.0); structural verification; evidence and reference resolution from the real bundles; semantic lexical grounding; rule verification; provenance and version verification; uncertainty handling; source-conflict handling; palmistry verification; astrology verification; safety and policy enforcement; deterministic verification; the verification report and release action; Phase 15 integration; Phase 16-only `VERIFIED` assignment (`pipeline.apply_report`); verification, security and determinism tests (verification 164, contracts 113, integration 37). Detail: §49, `Phases.md` Phase 16 block, `docs/ARCHITECTURE.md` section 38, ADR-011.
+
+### C. Current decisions (recorded; none implemented further in this handoff)
+1. **Release rule.** A wrong, blocked or invalid claim gives `REGENERATE`. An `UNVERIFIABLE` or `INSUFFICIENT_EVIDENCE` claim is stripped rather than automatically regenerated (`RELEASE_VERIFIED_ONLY`).
+2. **Multi-source claims.** A claim spanning several non-conflicting source profiles stays `UNVERIFIABLE`; no source-merging policy exists yet.
+3. **Regeneration.** The regeneration loop does not belong inside the verifier; the later composition layer (Phase 18) owns it.
+
+### D. Limitations (do not remove)
+- Semantic verification is lexical and structured grounding over a closed vocabulary, not full natural-language entailment.
+- Interpretation verification relies on encoded rule tags, effect class, source and status, not on proving a claim against the complete source text.
+- Hindi and Hinglish coverage is limited and requires calibration (`CALIBRATION_REQUIRED`).
+- Astrology is not independently recalculated from birth data (only the optional injected recomputation hook).
+- `verified_by` is an identifier and label, not a cryptographic signature.
+- No real Phase 14 model has been downloaded, served or run; real end-to-end narration and verification quality is unvalidated.
+- Legal review remains required for the relevant user-facing policy and for any "verified" wording (`LEGAL_REVIEW_REQUIRED`).
+- One palm-vision test fails in the local Python 3.10 environment only (fact ordering differs with local dependency versions); CI and the CI-like Python 3.13 validation pass. It is an environment-specific limitation, not a repository defect found by this phase.
+
+### E. Phase 16 to Phase 17 boundary
+Phase 15 generates and narrates (every claim ends `UNVERIFIED`). Phase 16 verifies. **Only Phase 16 may set `VERIFIED`.** Phase 17 (Life-Domain Intelligence) has NOT started.
+
+### F. Resume instructions (tomorrow)
+1. Read `SUMMARY.md` completely (this section first, then §49).
+2. Read `SOURCE_OF_TRUTH.md`.
+3. Read `features.md`.
+4. Read the Phase 17 section of `Phases.md`.
+5. Read `docs/ARCHITECTURE.md`.
+6. Read the Phase 16 documentation: ADR-011, ARCHITECTURE section 38, the `Phases.md` Phase 16 block, `services/verification/README.md`.
+7. Confirm `HEAD`, `origin/main`, the working tree and the latest CI, job by job.
+8. Review the Phase 16 to Phase 17 boundary above.
+9. Only then prepare or start Phase 17, and only after the owner's explicit instruction. Obtain the owner's review of Phase 16 (the items in §49 F and §50 C) before treating it as closed.

@@ -2010,3 +2010,38 @@ Before any implementation, in this order:
 Phase 16 must consume `NarrationResponse.claims` and the evidence and bundle references in the Phase 15 result: each claim has an id, a type (`CALCULATION_FACT`, `OBSERVED_FEATURE`, `DERIVED_FEATURE`, `TRADITIONAL_INTERPRETATION`, `LIMITATION`), a domain, structured references (evidence id, domain, kind FACT / RULE / STATUS, bundle reference), source profiles, source locations, version references, uncertainty flags, a minimum confidence where the producer defined one, and `verification = UNVERIFIED`. The bundles themselves are identified by `trace.bundle_refs` (a `PalmEvidenceBundle` hash or a Phase 6 `EvidenceBundle` hash) with their versions in `trace.version_refs`. **Phase 16 is the ONLY phase allowed to set `VERIFIED`** (a `NarrationClaim` or `NarrationResponse` accepts `VERIFIED` only with a `verified_by`). Phase 15 only guarantees structure and reference integrity, so Phase 16 must itself check that claim text is supported by the referenced evidence.
 
 **Do not start Phase 16 until the owner gives an explicit instruction. Do not reimplement Phase 15.**
+
+## 49. Phase 16 — Verification Engine (2026-10-05) — CLOSED, Handoff and Continuation Point
+
+**PHASE 16 — CLOSED. PHASE 17 HAS NOT STARTED.** Phase 16 is the ONLY phase allowed to set `VERIFIED`. Phase 15 remains responsible for generation and narration and ends every claim `UNVERIFIED`.
+
+| | |
+| --- | --- |
+| Starting commit | `64c5112173684354d3563e31ea653c172cd69e12` (Phase 15 handoff; CI run `37114194956`, 18 of 18 jobs successful) |
+| Implementation commit | `c523f26e64188233d8ff0482b0b54e3aa9b4f593` (CI run `37354039096`: 17 of 18 jobs successful; "Repository integrity / No unwanted attribution" failed because my integration test contained the word that scan forbids) |
+| Fix commit | `efdfe8cb8b971ebb7240463dbcbac7a4244ef249` (CI run `37354424305`: **18 of 18 jobs successful**, 0 failed; skipped steps are the by-design conditional steps; check-runs API agrees: 18 success) |
+| Handoff commit | the commit that saves this section; read it with `git log -1`, `git ls-remote origin refs/heads/main`, `gh run list --limit 1` and inspect every job |
+| Git identity | `iamankoo <aniketraj00384@gmail.com>`, no AI attribution |
+
+### A. What exists
+- `packages/contracts` 0.5.0 `verification` (additive; `agent.py` unchanged): `VerificationStatus` (`VERIFIED`, `UNSUPPORTED`, `UNVERIFIABLE`, `INVALID_REFERENCE`, `CONFLICTING_EVIDENCE`, `POLICY_BLOCKED`, `INSUFFICIENT_EVIDENCE`), `ReasonCode`, `ClaimVerification` (`verified_by` exactly when verified; claim text only as a hash), `VerificationResponse`, `VerificationTrace`, `ReleaseAction` (`APPROVE`, `RELEASE_VERIFIED_ONLY`, `REGENERATE`, `NOTHING_TO_VERIFY`), `OverallStatus`.
+- `services/verification` 0.2.0 `pandit_verification`: `evidence` (trusted resolution from `PalmEvidenceBundle` and the Phase 6 `EvidenceBundle`, bundle re-hash, optional injected recomputation), `text` (closed-vocabulary analysis), `policy` (own copy of the screens), `engine` (`Verifier`, `VerifierConfig`, seven stages), `pipeline` (`verify_narration`, `apply_report`, the only place `VERIFIED` is applied).
+- Docs: ADR-011, `docs/ARCHITECTURE.md` section 38 (and §34 item 7, the recorded scope reconciliation), the `Phases.md` Phase 16 block and checklist, the verification README, short notes in `PRODUCT_POLICIES.md`, `LEGAL_REGULATIONS.md` and `tests/README.md`. CI: `ci.yml` installs `services/verification` in the integration job.
+
+### B. Methodology (verification contract)
+Per claim: (1) authority and policy (forged `VERIFIED`, claimed verification, injection, embedded evidence, prohibited categories; palmistry the full Phase 13 list, astrology lifespan and death timing) then (2) references, (3) provenance, (4) semantic class, (5) evidence state, (6) source profiles, (7) text grounding. Precedence: `POLICY_BLOCKED`, `INVALID_REFERENCE`, `CONFLICTING_EVIDENCE`, `INSUFFICIENT_EVIDENCE`, `UNSUPPORTED`, `UNVERIFIABLE`. Deterministic: no clock, randomness, network or model; identical inputs give an identical `report_hash`. `VERIFIED` means supported by the encoded evidence and rule model, not true, not scientifically valid, not production-grade (an uncalibrated or not-production-ready bundle still verifies by default and carries the flags; `VerifierConfig` can make that blocking).
+
+### C. Tests (local, CI-like Python 3.13 venv with the newest ruff for lint, format, mypy; Python 3.10 for the full suites)
+verification 164 (new: structural, palmistry, astrology, security and policy, report and pipeline, text analysis); contracts 113 (107 plus 6); integration 37 (25 plus 12 real-bundle tests); agent 607 passed and 2 skipped (unchanged count); astro-engine 1673; rule-engine 424; knowledge 167 passed and 4 skipped in CI with PostgreSQL (137 and 34 locally without it); palm-vision 129; server 5; shared 1. Phase 6 ruleset hash `8d29a18c…77209`, `KV-06361d7aba28c1ce` and `KV-a21c2c040abe9663` unchanged and asserted. One Phase 15 closure test that pinned the verification service as the Phase 3 placeholder was replaced by the invariant it protected (the agent holds no verification and never imports the verifier). A palm-vision test fails in the local Python 3.10 environment only (fact-id ordering differs with local dependency versions); it passes in the CI-like environment and in CI, and no file it touches was changed.
+
+### D. Known limitations (not hidden)
+The text check is closed-vocabulary lexical grounding, not entailment; an interpretation is checked against the rule's tags, effect class, source and status, not the source's full wording; Hindi and Hinglish coverage is a small vocabulary (`CALIBRATION_REQUIRED`); claims built on several non-conflicting source profiles are `UNVERIFIABLE`; no cross-claim comparison (two claims can concern two charts); astrology is not recalculated from birth data (the injected recomputation hook is the independent check); `verified_by` is a label, not a signature; no real model has been run anywhere in the chain; `LEGAL_REVIEW_REQUIRED` for the policy copies and any user-facing wording of "verified".
+
+### E. Deferred
+The regenerate loop and the agent-to-verifier call (composition), persistence of results, a signed attestation and an HTTP surface (Phase 18); independent astrology recalculation from birth data; the dasha, transit, compatibility and knowledge-retrieval evidence adapters (Phase 18, as recorded in Phase 15); persistent memory (Phases 18 and 20).
+
+### F. Owner items to confirm (recorded, none blocking)
+`docs/ARCHITECTURE.md` §34 item 7 and ADR-011: the seven statuses and the release-action semantics (a wrong, blocked or invalid claim forces `REGENERATE`; unverifiable or insufficient claims only strip), multi-source non-conflicting claims being `UNVERIFIABLE`, and the regenerate loop living in Phase 18.
+
+### G. Exact stopping point
+**Development stops here. Phase 17 (Life-Domain Intelligence) has NOT started.** Resume: read this section, the Phase 16 block of `Phases.md`, ARCHITECTURE section 38, ADR-011 and `CONTRIBUTING.md`; verify `HEAD`, `origin/main` and CI job by job; begin Phase 17 only on the owner's explicit instruction. Do not reimplement Phase 16.

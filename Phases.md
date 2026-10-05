@@ -903,6 +903,29 @@ Build:
 
 Deliverable: verified-response pipeline.
 
+Implementation status (2026-10-05; `SUMMARY.md` section 49; ADR-011; `docs/ARCHITECTURE.md` section 38). **Phase 16 is implemented.** It lives in the `verification` service (`pandit_verification` 0.2.0) with additive contracts in `packages/contracts` 0.5.0 (`verification`); the Phase 15 agent contract and every Phase 6 to 15 behaviour are unchanged. No model is used or needed.
+
+PHASE 16 BOUNDARY (owner-locked 2026-10-03, carried forward). Phase 15 validates structure and reference integrity and emits `UNVERIFIED`; Phase 16 validates support and is the **only** code that sets `VERIFIED` (`pipeline.apply_report`, only for claims the verifier returned as `VERIFIED`). `VERIFIED` means *supported by the application's encoded evidence and rule model*; it is not a statement that astrology or palmistry is scientifically valid. The domain policies are not weakened: palmistry keeps the complete Phase 13 prohibited-category list; astrology keeps lifespan and death-timing blocked. Conflicting palmistry source profiles are never merged. `NOT_EVALUABLE`, not visible, missing-basis and below-floor evidence never yields `VERIFIED`.
+
+Roadmap checklist (every item is IMPLEMENTED within a stated bound or EXPLICITLY DEFERRED):
+
+| Requirement | Status | Evidence |
+| --- | --- | --- |
+| Calculation verification | IMPLEMENTED within a bound: each bundle is re-hashed (palm `bundle_hash_of`; Phase 6 hashing rule); an injected independent re-evaluation must reproduce it when supplied; a claim's placement assertions are compared with the trusted chart. NOT done: independent recalculation from birth data and ephemeris (the verifier is given no birth data) | `evidence.py`; `test_structural.py`; `test_astrology.py`; integration `test_the_real_astrology_bundle_hash_is_reproduced_by_the_verifier` |
+| Rule verification | IMPLEMENTED (triggered, evaluable, fact basis visible and complete, versions and ruleset pins, conflicts, tags and effect class) | `engine.py` stages 2 to 6; `test_palmistry.py`; `test_astrology.py` |
+| Evidence tracking | IMPLEMENTED (resolved provenance, bundle references, versions, rule versions and ruleset hashes in every result and trace; claim text only as a hash) | `ClaimVerification`, `VerificationTrace`; `test_report_and_pipeline.py` |
+| Contradiction detection | IMPLEMENTED: claim versus evidence, a claim against itself, conflicting source profiles. Claims are not compared with each other (two claims can concern two charts) | `test_astrology.py`; `test_palmistry.py` |
+| Hallucination detection | IMPLEMENTED within lexical bounds (ungrounded entity, number, topic, valence, overstated certainty, outcome wording) | `engine.py` `_grounding`; `text.py` |
+| Unsupported-claim detection | IMPLEMENTED within lexical bounds; text the checker cannot read is `UNVERIFIABLE`, not assumed supported | `test_palmistry.py`; `test_text_analysis.py` |
+| Confidence / uncertainty representation | IMPLEMENTED (computed `UncertaintyFlag`s, `text_coverage_bp`, explicit `VerifierConfig` floors; no confidence is invented) | `engine.py`; `test_palmistry.py` |
+| Deliverable: verified-response pipeline | IMPLEMENTED as `verify_narration` and `apply_report` (approve, release verified only, regenerate, nothing to verify). The loop that regenerates and the agent-to-verifier call are composition and are DEFERRED to Phase 18 | `pipeline.py`; integration `test_verification_phase16.py` |
+
+- **IMPLEMENTED** in code: the contract; trusted resolution with integrity and optional recomputation; seven stages; policy screens (prohibited categories, death timing, injection, forged authority, embedded evidence, claimed verification); per-claim results and the response report; the release action; the pipeline; the Phase 13 palm and Phase 6 astrology integrations against real bundles.
+- **Limitations (not hidden)**: the text check is closed-vocabulary lexical grounding, not entailment; an interpretation is checked against the rule's tags, effect class, source and status, not the source's full wording; Hindi and Hinglish coverage is a small vocabulary (`CALIBRATION_REQUIRED`); claims built on several non-conflicting source profiles are `UNVERIFIABLE` (no source-policy rule exists); no real model has been run anywhere in the chain; counsel review of the policy copies is `LEGAL_REVIEW_REQUIRED`.
+- **DEFERRED**: the regenerate loop and persistence of results, a signed attestation, an HTTP surface (Phase 18); independent recalculation from birth data; dasha, transit, compatibility and knowledge-retrieval evidence adapters (Phase 18, as recorded in Phase 15).
+
+**Stopping point (2026-10-05): Phase 16 is implemented. Phase 17 has NOT started** and begins only on the owner's explicit instruction.
+
 ## Phase 17 — Life-Domain Intelligence
 
 Now build specialized analysis across the complete life spectrum.

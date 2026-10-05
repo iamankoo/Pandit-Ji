@@ -676,6 +676,9 @@ Full text in `docs/architecture/adr/`:
 - **ADR-006**: Verification as an independent layer
 - **ADR-007**: API Gateway vs. FastAPI composition root, and where FastAPI lives (`server/`)
 - **ADR-008**: The palm-vision component (`services/palm-vision`), approved 2026-10-02
+- **ADR-009**: Self-hosted LLM capability (Phase 14)
+- **ADR-010**: Agent orchestration and narration (Phase 15)
+- **ADR-011**: The verification engine (Phase 16)
 
 ---
 
@@ -877,6 +880,8 @@ To begin or resume work: open `Phases.md`, identify the current phase, its deliv
 5. **Palm vision component versus the five locked services — RESOLVED, LOCKED** (explicit project-owner decision A, 2026-10-02). `docs/ARCHITECTURE.md` §2 and §27 listed five canonical services and the repository has no vision component, while `Phases.md` Phase 13 and `TECH_STACK.md` require a vision pipeline (OpenCV, MediaPipe, PyTorch). The owner approved a sixth canonical component, `services/palm-vision`; `astro-engine` (a calculation library), `knowledge` (no calculation or model code) and the other services were rejected as homes (ADR-008). Dependent documents updated: §2, §5, §9, §27, §30, §35, ADR-008, `CONTRIBUTING.md`, `TECH_STACK.md`. Historical statements of "five services" in the Phase 2 and Phase 3 records of `SUMMARY.md` stay as history.
 6. **Phase 13 scope versus Phases 14, 15, 16 and 18 — RESOLVED, LOCKED** (explicit project-owner decision B, 2026-10-02). The Phase 13 text listed "AI narration" and a "verification pass" as its own deliverables while Phases 14 (LLM), 15 (agent and narration), 16 (verification) and 18 (upload and storage) own them. Resolution: Phase 13 builds the deterministic palm facts, the palmistry knowledge and rules, the palm evidence bundle, the evaluation harness and the interfaces; the later phases build the rest. `Phases.md` Phase 13 and §35 record the matrix.
 
+7. **Phase 16 scope: statuses and the regenerate step — RECORDED, FOR OWNER CONFIRMATION** (2026-10-05). `Phases.md` Phase 16 and ADR-006 name only PASS or REGENERATE ("approve / regenerate") and do not define a status vocabulary or a claim-level taxonomy; the Phase 16 instruction asks for seven statuses. Resolved by the hierarchy (locked decisions, `features.md`, `Phases.md` first): the seven statuses were added in `pandit_contracts.verification` without touching the agent contract, and "approve / regenerate" is the verifier's release action (`APPROVE`, `RELEASE_VERIFIED_ONLY`, `REGENERATE`, `NOTHING_TO_VERIFY`). The loop that regenerates is orchestration (composition at Phase 18), not verification. The instruction's claim types (observed, derived, calculated, rule evaluation, interpretation, context status) are the agent's `EvidenceClass` values; the agent's `ClaimType` values (`CALCULATION_FACT`, `OBSERVED_FEATURE`, `DERIVED_FEATURE`, `TRADITIONAL_INTERPRETATION`, `LIMITATION`) are what a claim carries, and the verifier uses both. No other conflict was found (ADR-011).
+
 ---
 
 ## 35. Palm Vision Architecture (approved 2026-10-02; Phase 13; implemented as infrastructure 2026-10-03, see the end of this section)
@@ -1007,3 +1012,36 @@ AgentRequest -> screen -> intent/domain -> plan -> collect evidence (allow-liste
 4. **Memory.** Phase 15 is bounded in-session context (`InMemoryConversationMemory`: enumerated labels, process memory only, bounded, expiring, erasable). Persistent memory, long-term profile storage and any palm-image-derived memory, with their privacy, storage and consent lifecycle, belong to later infrastructure: Phase 18 (Memory API) and Phase 20 (personal memory). No persistent memory table or database was created.
 
 **Real-model status (unchanged).** No real model has been downloaded, served or run. Every Phase 15 test used the Phase 14 service over the scripted test runtime. No multilingual, reasoning, narration quality, latency or real vLLM claim is made, and nothing here is production-ready.
+
+---
+
+## 38. Verification Engine (Phase 16; implemented 2026-10-05)
+
+Decision record: ADR-011 (which also lists the judgement calls for the owner). Contracts: `packages/contracts` `pandit_contracts.verification` (additive; the Phase 15 agent contract is unchanged). Code: `services/verification/src/pandit_verification/`. It is the independent layer of ADR-006: it imports the contracts and shared packages only (no agent, no model, no network) and reads the Phase 13 and Phase 6 bundles through their public contracts.
+
+```
+NarrationResponse (claims: UNVERIFIED, from Phase 15)      trusted bundles (Phase 13 / Phase 6)
+              |                                                          |
+              +----------------------> Verifier <-----------------------+
+                                           |
+   authority + policy -> references -> provenance -> semantic class -> evidence state
+        -> source profiles -> text grounding
+                                           |
+            VerificationResponse: per-claim status, reasons, provenance, uncertainty; overall; release action
+                                           |
+                    apply_report: only VERIFIED claims get VerificationState.VERIFIED + verified_by
+```
+
+**Trusted evidence.** `TrustedEvidence.add_palm(PalmEvidenceBundle)` and `add_astrology(EvidenceBundle)` resolve every fact, rule and status record themselves. A bundle's own hash is recomputed; an optional injected recomputation (palm rule re-evaluation; astrology re-evaluation) must reproduce it. A bundle that fails is untrusted and every claim on it is `INVALID_REFERENCE`. The verifier never reads evidence, versions, provenance or confidence from the claim as truth: it compares what the claim copied with what it resolved.
+
+**Methodology.** Seven stages. (1) Authority and policy: a claim that already carries `VERIFIED` or `verified_by`, claims verification, embeds evidence or instructions, or touches a prohibited category (palmistry: every Phase 13 category; astrology: lifespan and death timing) is `POLICY_BLOCKED` and nothing else runs. (2) References: the bundle must be a trusted bundle of the claim's domain, the id must exist in it, with the stated kind; pins (`expected_ruleset_hashes`, `expected_knowledge_versions`, `pinned_rule_versions`) must hold. (3) Provenance: the claim's copied source profiles, locations, versions and confidence must equal what the evidence says. (4) Semantic class: an observed feature cites observed facts, a derived feature derived facts (a derived fact is never accepted as observed, and text that calls one the other is misrepresentation), a calculation fact calculated facts, an interpretation at least one rule. (5) Evidence state: a rule must be `TRIGGERED`; not evaluable, not visible, below a configured confidence floor, unresolved dependencies and a missing fact basis give `INSUFFICIENT_EVIDENCE`; a not-triggered or cancelled rule gives `UNSUPPORTED`. (6) Source profiles: rules of different sources that share a conflict group are never merged (`CONFLICTING_EVIDENCE`); a conflicted rule can be cited alone only when the claim names its source. (7) Text grounding (below).
+
+**Text grounding.** `text.py` recognises a closed vocabulary and the engine checks it: planet, sign, house, dignity and retrograde assertions are bound to the nearest planet in the sentence and compared with the trusted chart (a contradiction is `CONFLICTING_EVIDENCE`; an uncited or unknown entity is `UNSUPPORTED`); palm hand, line and mount mentions must be in the cited evidence and its fact basis; numbers must appear in the evidence; certainty and outcome wording, life topics and valence are not supported by a fact; an interpretation must be framed as a tradition's reading, reflect a cited tag, and mention only topics and valence the cited tags carry (astrology effect class; palm tags carry no valence). Unreadable text is `UNVERIFIABLE`. This is lexical grounding, not entailment, and the result reports how much of the text it read (`text_coverage_bp`).
+
+**Result and report.** `ClaimVerification` (claim id, status, `verified_by` exactly when verified, hash of the claim text, references, rule references, reasons, computed uncertainty, resolved provenance, verifier version, checks run) and `VerificationResponse` (per-claim results, overall status, release action, counts, trace with bundle integrity, config and input hashes, `report_hash`). Mixed results are first-class; the release action is `APPROVE`, `RELEASE_VERIFIED_ONLY`, `REGENERATE` or `NOTHING_TO_VERIFY` (rules in ADR-011).
+
+**Phase 15 / Phase 16 boundary (owner-locked).** Phase 15 validates structure and reference integrity and ends `UNVERIFIED`; Phase 16 validates support and is the only code that applies `VERIFIED` (`pipeline.apply_report`). Phase 16 re-checks everything the agent checked, from the bundles, and does not rely on the agent.
+
+**Determinism and audit.** No clock, randomness, network or model: the same claim, evidence, configuration and verifier version give the same `report_hash`. Results hold identifiers, reason codes, hashes and versions, never claim text, prompts or image references.
+
+**Status.** IMPLEMENTED: the contract, trusted resolution with integrity and optional recomputation, the seven stages, the policy screens, the report and release action, the verified-response pipeline, the Phase 13 palm and Phase 6 astrology integration (real bundles in `tests/integration/test_verification_phase16.py`). NOT BUILT: the regenerate loop and the agent-to-verifier call (composition, Phase 18), persistence, a signed attestation, an HTTP surface, independent recalculation from birth data, any multilingual quality claim beyond the small vocabulary. The text check is limited as described and `CALIBRATION_REQUIRED`; no real model has been run; counsel review of the policy copies is `LEGAL_REVIEW_REQUIRED`.

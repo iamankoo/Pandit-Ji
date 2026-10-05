@@ -16,6 +16,10 @@ Phase 15 adds the agent and narration contracts (`agent`): `AgentRequest`, `Evid
 references, and the typed agent errors. Phase 14's `LLMContext` gains an additive, optional
 `task` field (a trusted task instruction); request hashes without it are unchanged.
 
+Phase 16 adds the verification contracts (`verification`): `VerificationStatus`,
+`ClaimVerification`, `VerificationResponse`, the reason codes and the release action. Only the
+verification layer may produce `VERIFIED`; the agent contracts are unchanged.
+
 The Astrology Service Interfaces (`ChartRequest`/`ChartResponse`, `DashaRequest`/`DashaResponse`,
 etc. -- see `docs/ARCHITECTURE.md` "Astrology Service Interfaces") are domain contracts defined
 by the phase that implements the corresponding engine.
@@ -25,4 +29,4 @@ from pandit_contracts.health import HealthStatus
 
 __all__ = ["HealthStatus"]
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"

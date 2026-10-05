@@ -288,14 +288,15 @@ def test_a_narration_that_claims_to_be_verified_is_rejected() -> None:
     assert response.error.code is AgentErrorCode.NARRATION_GROUNDING_FAILURE
 
 
-def test_the_verification_service_is_still_the_phase_3_placeholder() -> None:
-    root = Path(__file__).resolve().parents[2] / "verification" / "src" / "pandit_verification"
-    assert sorted(p.name for p in root.glob("*.py")) == [
-        "__init__.py",
-        "_version.py",
-        "config.py",
-        "health.py",
-    ]
+def test_the_agent_contains_no_verification_and_does_not_import_the_verifier() -> None:
+    # Phase 15 pinned the verification service as the Phase 3 placeholder. Phase 16 implemented it
+    # there, so the pin is replaced by the invariant it protected: verification is not in the agent
+    # and the agent never calls it (the verifier is independent of the layer it checks, ADR-006).
+    package = Path(__file__).resolve().parents[1] / "src" / "pandit_agent"
+    for path in package.rglob("*.py"):
+        text = path.read_text(encoding="utf-8")
+        assert "pandit_verification" not in text, path.name
+        assert "verifier" not in path.stem and "verification" not in path.stem, path.name
 
 
 # ======================= Decision 3: tool selection ============================================

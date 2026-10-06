@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-> **LATEST STOPPING POINT (2026-10-06; §51; supersedes the older banners below, which are history): Phase 17 research and architecture lock written (documentation only, not owner-approved); PHASE 17 HAS NOT STARTED; Phase 16 is IMPLEMENTED, closure pending owner review (§50). Overall: BLOCKED — OWNER DECISION REQUIRED. Read §51, then §50, before anything else.**
+> **LATEST STOPPING POINT (2026-10-06; §52; supersedes the older banners below, which are history): the owner approved the Phase 17 decisions and the architecture is LOCKED (ADR-012 Locked, standards v1.30.0); PHASE 16 IS CLOSED; PHASE 17 IS NOT IMPLEMENTED and the next run is the Phase 17 implementation. Read §52, then §51, before anything else.**
 
 > **FINAL HANDOFF (saved 2026-10-03; §48): PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED. On the next session, do not infer the project state from the previous conversation: read this file first (§48, then §47), then follow the source-of-truth hierarchy and the Phase 16 roadmap section of `Phases.md`. Phase 15 is already closed and must not be reimplemented. Phase 15 closure commit `23f9924f1e59772729f30f42c35384471416c045`, CI run `37113858910` (18 of 18 jobs successful). The real model has NOT been run. Phase 16 consumes `NarrationResponse.claims` and the bundle references, is the only phase that may set VERIFIED, and starts only on the owner's explicit instruction.**
 >
@@ -2013,9 +2013,9 @@ Phase 16 must consume `NarrationResponse.claims` and the evidence and bundle ref
 
 **Do not start Phase 16 until the owner gives an explicit instruction. Do not reimplement Phase 15.**
 
-## 49. Phase 16 — Verification Engine (2026-10-05) — IMPLEMENTED (closure pending owner review), Handoff and Continuation Point
+## 49. Phase 16 — Verification Engine (2026-10-05) — IMPLEMENTED; CLOSED by the owner 2026-10-06 (§52), Handoff and Continuation Point
 
-**PHASE 16 — IMPLEMENTED, closure pending owner review (see §50). PHASE 17 HAS NOT STARTED.** Phase 16 is the ONLY phase allowed to set `VERIFIED`. Phase 15 remains responsible for generation and narration and ends every claim `UNVERIFIED`.
+**PHASE 16 — IMPLEMENTED; CLOSED by the owner on 2026-10-06 (see §52; it was "closure pending owner review" when this section was written). PHASE 17 HAS NOT STARTED.** Phase 16 is the ONLY phase allowed to set `VERIFIED`. Phase 15 remains responsible for generation and narration and ends every claim `UNVERIFIED`.
 
 | | |
 | --- | --- |
@@ -2048,7 +2048,7 @@ The regenerate loop and the agent-to-verifier call (composition), persistence of
 ### G. Exact stopping point
 **Development stops here. Phase 17 (Life-Domain Intelligence) has NOT started.** Resume: read this section, the Phase 16 block of `Phases.md`, ARCHITECTURE section 38, ADR-011 and `CONTRIBUTING.md`; verify `HEAD`, `origin/main` and CI job by job; begin Phase 17 only on the owner's explicit instruction. Do not reimplement Phase 16.
 
-## 50. FINAL HANDOFF — Phase 16 IMPLEMENTED (closure pending owner review), Phase 17 NOT STARTED (saved 2026-10-05)
+## 50. FINAL HANDOFF — Phase 16 IMPLEMENTED (since CLOSED, §52), Phase 17 NOT STARTED (saved 2026-10-05)
 
 **RESUME RULE. Do not reconstruct project state from the previous conversation. SUMMARY.md is the first resume point.** Phase 16 must NOT be reimplemented. This section supersedes the word "CLOSED" in the §49 heading and first line: the owner has not yet reviewed Phase 16, so it is IMPLEMENTED, closure pending owner review.
 
@@ -2059,7 +2059,7 @@ The regenerate loop and the agent-to-verifier call (composition), persistence of
 | Phase 13 | CLOSED |
 | Phase 14 | CLOSED |
 | Phase 15 | CLOSED |
-| Phase 16 | **IMPLEMENTED — closure pending owner review** |
+| Phase 16 | **IMPLEMENTED — then CLOSED by the owner 2026-10-06 (§52)** |
 | Phase 17 | **NOT STARTED** |
 | Current implementation commit | `fb19552` (the Phase 16 code is `c523f26`, fixed by `efdfe8c`; `fb19552` is the commit that closed the implementation and saved §49) |
 | CI at that commit | run `37354753970`, 18 of 18 jobs successful |
@@ -2124,3 +2124,16 @@ BPHS Vol I Ch. 9, 12 to 14, 17 to 20, 24, 25, 29 to 31, 33, 34, 39 to 45 and Vol
 
 ### E. Exact stopping point and resume
 **OVERALL STATUS: BLOCKED — OWNER DECISION REQUIRED.** Development stops here. Resume: read this section, `research/PHASE_17_LIFE_DOMAIN_RESEARCH.md`, ADR-012, standards LD-01 to LD-24 and `CONTRIBUTING.md`; verify `HEAD`, `origin/main` and CI job by job; wait for the owner's decisions; only then write the Phase 17 implementation master prompt. Do not reimplement Phase 16 and do not start Phase 18.
+
+## 52. Phase 17 — Owner Decision and Architecture Final Lock (2026-10-06) — documentation only, Handoff and Continuation Point
+
+**PHASE 17 IS NOT IMPLEMENTED. The owner approved the decisions below (OWNER-APPROVED, 2026-10-06). PHASE 16 IS CLOSED.** Starting commit `051a903d892bd75469d9106158fe60dd0f855be9` (the research lock; CI run `37493914335`, 18 of 18 jobs successful). The commit of this section and its CI run cannot be written here: read them with `git log -1`, `git ls-remote origin refs/heads/main` and `gh run list --limit 1`, and inspect every job. Git identity `iamankoo <aniketraj00384@gmail.com>`, no AI attribution.
+
+### A. Decisions locked (details: `research/PHASE_17_LIFE_DOMAIN_RESEARCH.md` section 0; standards LD-01 to LD-27)
+Scope: all 27 domains representable, only source-backed ones reason, the rest `NOT_EVALUABLE` or the existing insufficiency status. Taxonomy: `Phases.md` execution taxonomy with `features.md` concepts as sub-domains or extensions (matrix sheet F). Varga: only the locked BPHS mappings (D2, D3, D7, D9, D10, D12, D20, D24); D4 is not property and not foreign settlement. Dasha and transit: consume an available section; absent means insufficient; no Phase 18 tool or adapter; only the marriage dasha method is represented. Architecture: no new service; knowledge (methodology, mappings, provenance), a separate rule-engine domain ruleset (Phase 6 hash untouched), agent presets and orchestration; Phase 15 narration only; Phase 16 verification only; Phase 18 APIs, regenerate loop and reports. Reports not Phase 17. Safety: no minors interpretation until a policy exists (age never inferred); no predictive fertility or pregnancy; finance interpretive only; health interpretation only; subject sex never required or inferred; fear and derogatory source statements transformed before narration; `marriage.spouse_longevity` is `POLICY_BLOCKED`. Vastu `RESEARCH_PENDING`, deferred. Research statuses not upgraded; conflicts DC-01 to DC-05 preserved.
+
+### B. Phase 16 closure
+Phase 16 is CLOSED. Consistency check done before closing: the contract statuses and release actions match ADR-011 and `docs/ARCHITECTURE.md` §38; the verification (164) and contracts (113) suites pass locally at the documented counts; CI was green at the lock commit. The owner's acceptance names the entailment boundary, the multi-source `UNVERIFIABLE` rule and the Phase 18 regenerate loop; the release-action semantics of §50 C(1) are accepted under the acceptance of the existing boundary decisions (recorded, not separately listed by the owner). Known limitations stand (§49 D).
+
+### C. Exact stopping point for the Phase 17 implementation run
+Nothing is implemented: no code, contract, rule, mapping, data file, schema or test changed. The implementation run starts from: ADR-012, standards LD-01 to LD-27, the research record section 0 (including the derived design constraints, which the implementation prompt must confirm), the matrix sheets and the checks listed in the owner's final-architecture list (no new service; Phase 6 hash `8d29a18c…77209`, Phase 12 `KV-06361d7aba28c1ce`, Phase 13 `KV-a21c2c040abe9663`, Phase 15 and 16 implementation unchanged). Still open: `RESEARCH_PENDING` items, `LEGAL_REVIEW_REQUIRED`, the final minors policy. Do not start Phase 18; do not implement reports or Vastu.

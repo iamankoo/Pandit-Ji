@@ -136,3 +136,21 @@ Houses and varga evidence = source statements as read; rules = existing Phase 6 
 | five `BPHS_KAPOOR_PMP_75_*` | Personality, status | B Ch. 75 v. 1-2 (IT) | the planet in its sign in a kendra | already tagged personality, status in Phase 6 | SOURCE_SUPPORTED (existing tag) |
 | `BPHS_KAPOOR_80_47_49_MARS_HOUSES`, `JP_KUJA_DOSHA` | Marriage | B Ch. 80 v. 47-49 (IT); Jataka Parijata v. 34 (OT, source language) | Mars houses | already tagged marriage; the BPHS tag is `marriage.spouse_longevity` (death-adjacent; owner decision) | SOURCE_SUPPORTED, two profiles, conflict group |
 | 31 Nabhasa rules (`BPHS_SAN_NABHASA_*`) | none beyond `general` | B Ch. 35 (OT) | chart-pattern facts | effects were not read in this run | NOT_EVALUABLE for domains |
+
+## F. Canonical taxonomy (OWNER-APPROVED structure, 2026-10-06; statuses are the researched statuses and are not upgraded)
+
+Parent links only; a sub-domain with no mapping of its own is `NOT_EVALUABLE` and does not borrow its parent's status. All 27 `Phases.md` domains remain individually addressable. `E` marks a `features.md` extension.
+
+| Family root | Sub-domains and extensions (status) | Shared evidence | Notes |
+| --- | --- | --- | --- |
+| Career | Job (partial); Corporate life (`NOT_EVALUABLE`) | 10th house, D10 bridge, Phaladeepika V profile | one methodology, no duplicate |
+| Finance | Wealth (supported); Income E (supported); Investments E (`NOT_EVALUABLE`) | 2nd, 11th, 12th houses; D2 | policy: finance guidance only |
+| Business | Startup (`NOT_EVALUABLE`); Entrepreneurship E (`NOT_EVALUABLE`) | 7th (trade), 10th | root is partial |
+| Relationship | Love (partial); GF/BF (`NOT_EVALUABLE`); Marriage (supported); Spouse (partial; sex-gated) | 7th house, Venus, D9 | adult-confirmation and policy gates |
+| Education | School, College (`NOT_EVALUABLE`); Higher education E (`NOT_EVALUABLE`); Subjects (partial); Foreign education (`NOT_EVALUABLE`) | 5th house, Mercury, Jupiter, D24 | Foreign education has no composition rule; cross-referenced to Travel |
+| Travel | Foreign travel (partial); Foreign settlement (partial) | 3rd, 7th, 9th, 12th, 10th | D4 is not used |
+| Family | Parents E (partial; conflict DC-01); Siblings E (supported) | 2nd, 3rd, 4th, 9th/10th; D3, D12 | Children remains top-level |
+| Children | none | 5th house, Jupiter, D7 | structural significations only |
+| Self | Personality (partial); Birth, Childhood, Personal life (`NOT_EVALUABLE`) | 1st house | Childhood: minors policy |
+| Spirituality | none (partial) | 9th, 12th, D20 | no karaka stated |
+| Extensions | Major life transitions E (`NOT_EVALUABLE`); General life patterns E (partial); Health E (`NOT_EVALUABLE`; interpretation only) | D1; D45, D60 | Health policy LD-20d; Vastu is not part of the taxonomy (`RESEARCH_PENDING`) |

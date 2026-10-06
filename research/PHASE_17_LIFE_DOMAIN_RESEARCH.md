@@ -1,8 +1,34 @@
 # Phase 17 — Life-Domain Intelligence: Research and Architecture Lock
 
-Status: **RESEARCH AND ARCHITECTURE LOCK (2026-10-06). NOT an implementation. Phase 17 has NOT started. This record is NOT owner-approved**: every item marked `OWNER_DECISION_REQUIRED` waits for the owner. Companion: `research/PHASE_17_DOMAIN_MATRIX.md` (matrices). Sources are registered only in `research/ASTROLOGY_SOURCES.md` Group 27 (the single canonical registry; no second registry was created). Methodology: `docs/ASTROLOGY_STANDARDS.md` v1.29.0 LD-01 to LD-24. Architecture: `docs/ARCHITECTURE.md` section 39 and `docs/architecture/adr/ADR-012-life-domain-intelligence.md` (status Proposed).
+Status: **RESEARCH AND ARCHITECTURE LOCK (2026-10-06), with the owner's decisions recorded in section 0 (OWNER-APPROVED 2026-10-06). NOT an implementation. Phase 17 has NOT started.** Sections 1 to 19 are the research record as written at the research lock (commit `051a903`); where an item there says `OWNER_DECISION_REQUIRED` or "recommended", section 0 is the decision and governs. Research statuses and source conflicts are unchanged by the approval. Companion: `research/PHASE_17_DOMAIN_MATRIX.md` (matrices). Sources are registered only in `research/ASTROLOGY_SOURCES.md` Group 27 (the single canonical registry; no second registry was created). Methodology: `docs/ASTROLOGY_STANDARDS.md` v1.29.0 LD-01 to LD-24. Architecture: `docs/ARCHITECTURE.md` section 39 and `docs/architecture/adr/ADR-012-life-domain-intelligence.md` (status Proposed).
 
 Nothing here is legal advice, and nothing here states that astrology predicts anything. A source-backed mapping means "a named classical text says it", not "it is true".
+
+## 0. Owner decisions (OWNER-APPROVED 2026-10-06; they govern the sections below)
+
+| # | Decision (as approved) | Effect on this record |
+| --- | --- | --- |
+| 1 | All 27 domains stay in the framework; only source-backed domains reason substantively; the rest return `NOT_EVALUABLE` or the existing insufficiency status; no invented methodology | section 10, 18-1 |
+| 2 | Reconciled taxonomy: `Phases.md` is the execution taxonomy; `features.md` concepts become explicit sub-domains or extensions with parent links; no duplicate methodologies (Career/Job/Corporate; Finance/Wealth/Income/Investments; Business/Startup/Entrepreneurship; Love/GF-BF/Relationship/Marriage/Spouse; Education/School/College/Subjects/Foreign education); no feature concept deleted | standards LD-03, LD-25; matrix sheet F |
+| 3 | Locked varga mappings (BPHS Ch. 7): D2 wealth, D3 co-born, D7 children, D9 spouse and marriage, D10 power and position (and career as the bridge label), D12 parents, D20 worship and spirituality, D24 learning and education; D4 is NOT property and NOT foreign settlement; no modern varga meaning; unverified stays `NOT_EVALUABLE` | section 6, LD-09 |
+| 4 | No Phase 18 Dasha API or tool in Phase 17; an available dasha section may be consumed; absent means insufficient or `NOT_EVALUABLE`; the marriage method of the researched source may be represented; general domain dasha stays `RESEARCH_PENDING`, not implemented | section 7, LD-12 |
+| 5 | Same for transit: consume available evidence; no new adapter | section 8, LD-13 |
+| 6 | No new service. Knowledge: methodology, metadata, house/karaka/varga mappings, provenance. Rule engine: a separate Phase 17 domain ruleset (Phase 6 rules and hash untouched). Agent: presets, evidence assembly, orchestration. Phase 15: narration only. Phase 16: verification only. Phase 18: Dasha/Transit APIs and tools, regenerate loop, report/API composition | section 15, ADR-012 Locked |
+| 7 | Reports are not Phase 17; Phase 17 yields structured reasoning suitable for later reporting | section 14, LD-22 |
+| 8 | No astrology interpretation involving minors until the policy exists; age never inferred; no minor mode; unresolved policy gives `POLICY_BLOCKED` or `NOT_EVALUABLE` | section 11, LD-20a |
+| 9 | No predictive fertility or pregnancy outcomes; historical offspring statements stay in the research and knowledge layer with policy metadata | LD-20b |
+| 10 | Finance as traditional or interpretive guidance only; no guaranteed outcome, investment advice, certainty, guaranteed wealth or profit or loss; professional-advice disclaimer | LD-20c |
+| 11 | Health is interpretation only; no diagnosis, medical certainty, treatment or replacement of professionals; separate from the palmistry policy | LD-20d |
+| 12 | Vastu stays `RESEARCH_PENDING` and deferred; never blocks ordinary Phase 17 work | section 13, LD-21 |
+| 13 | Subject sex never required or inferred; a source-backed need with no data is `NOT_EVALUABLE` | LD-20e |
+| 14 | Fear, illegitimacy, moral judgment, derogatory and stigma statements are not automatic user-facing claims; provenance kept; policy transformation before narration | LD-20f, LD-26 |
+| 15 | `marriage.spouse_longevity` is never used for user-facing lifespan or death prediction; a conflict is `POLICY_BLOCKED` | LD-20g |
+| 16 | Phase 16 boundary accepted and **Phase 16 CLOSED**: structural and reference integrity with its locked lexical and evidence methodology; multi-source non-conflicting claims `UNVERIFIABLE`; regeneration loop Phase 18; no verifier change except a documentation correction | LD-27 |
+| 17 | No research status is upgraded (`PARTIALLY_SUPPORTED`, `NOT_EVALUABLE`, `RESEARCH_PENDING`); all conflicts stay open | whole record |
+
+Design constraints derived from these decisions (for the implementation prompt; derived, not owner text): relationship-family and children domains need an explicit caller-supplied statement of adulthood and are `POLICY_BLOCKED` without one, because age may not be inferred and no minors policy exists; Childhood and School are `POLICY_BLOCKED` while the minors policy is unresolved; the Children domain may state only structural significations (factors present), never an outcome, number, timing, loss or legitimacy; the request contract carries no sex field; the Phase 6 rule `BPHS_KAPOOR_80_47_49_MARS_HOUSES` may be shown as a structural Mars-house fact but its `marriage.spouse_longevity` signification is blocked.
+
+Still open after the approval: `RESEARCH_PENDING` (domain combination rules, dasha beyond marriage, unread sources); source conflicts DC-01 to DC-05; `LEGAL_REVIEW_REQUIRED`; the final minors policy; the Phase 16 release-action detail of SUMMARY section 50 C(1) is accepted under the owner's acceptance of the existing Phase 16 boundary decisions (the owner's list names the entailment, multi-source and regeneration items).
 
 ## 1. What the source of truth actually specifies for Phase 17
 
@@ -220,6 +246,6 @@ Additional decisions the research raised: whether to encode derogatory or fear s
 | Reports | OWNER_DECISION_REQUIRED (decision 7) |
 | Hindi and Hinglish wording | CALIBRATION_REQUIRED (unchanged limitation) |
 
-**OVERALL STATUS: BLOCKED — OWNER DECISION REQUIRED.** The research needed to start the structural layer (taxonomy, houses, karakas, vargas, existing rules) is done and source-backed; the decisions above fix its scope, location and policy gates. Rule-level combinations and domain-relevant dasha remain `RESEARCH_PENDING` and are not needed for the structural layer.
+**OVERALL STATUS AT THE RESEARCH LOCK: BLOCKED — OWNER DECISION REQUIRED. After the owner's decisions of section 0 the status is: DECISIONS LOCKED; implementation may start only on the owner's explicit instruction (next run: Phase 17 implementation).** The research needed to start the structural layer (taxonomy, houses, karakas, vargas, existing rules) is done and source-backed; the decisions above fix its scope, location and policy gates. Rule-level combinations and domain-relevant dasha remain `RESEARCH_PENDING` and are not needed for the structural layer.
 
 NO PHASE 17 IMPLEMENTATION WAS PERFORMED.

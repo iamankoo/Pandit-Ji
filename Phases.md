@@ -982,6 +982,8 @@ Interpretation
 
 Deliverable: complete domain reasoning system.
 
+Research and architecture lock (2026-10-06; `research/PHASE_17_LIFE_DOMAIN_RESEARCH.md`, `research/PHASE_17_DOMAIN_MATRIX.md`, `docs/ASTROLOGY_STANDARDS.md` v1.29.0 LD-01 to LD-24, `docs/ARCHITECTURE.md` section 39, ADR-012 Proposed). **Phase 17 is NOT implemented and has NOT started; this lock is not owner-approved.** The text above specifies no contracts, tests or exit criteria; the lock records what the other documents and the sources say. Result: of the 27 domains, 7 are `SOURCE_SUPPORTED`, 11 `PARTIALLY_SUPPORTED` and 9 `NOT_EVALUABLE` (no source read states the mapping); the dasha and transit tools and APIs remain Phase 18 (Phase 17 may read only a section already inside a supplied bundle: owner decision); reports and Vastu are not Phase 17 build items (reports: unresolved owner decision; Vastu: `RESEARCH_PENDING`, `DEFERRED`); children, fertility, paternity, minors and the sex of the subject are policy gaps. Overall: BLOCKED — OWNER DECISION REQUIRED (the thirteen decisions of the research record, section 18). Phase 18 responsibilities are not moved.
+
 ## Phase 18 — Backend Platform
 
 Now expose everything through production APIs.

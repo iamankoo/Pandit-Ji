@@ -1,5 +1,7 @@
 # Pandit Ji — Project Summary & Session Handoff
 
+> **LATEST STOPPING POINT (2026-10-06; §51; supersedes the older banners below, which are history): Phase 17 research and architecture lock written (documentation only, not owner-approved); PHASE 17 HAS NOT STARTED; Phase 16 is IMPLEMENTED, closure pending owner review (§50). Overall: BLOCKED — OWNER DECISION REQUIRED. Read §51, then §50, before anything else.**
+
 > **FINAL HANDOFF (saved 2026-10-03; §48): PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED. On the next session, do not infer the project state from the previous conversation: read this file first (§48, then §47), then follow the source-of-truth hierarchy and the Phase 16 roadmap section of `Phases.md`. Phase 15 is already closed and must not be reimplemented. Phase 15 closure commit `23f9924f1e59772729f30f42c35384471416c045`, CI run `37113858910` (18 of 18 jobs successful). The real model has NOT been run. Phase 16 consumes `NarrationResponse.claims` and the bundle references, is the only phase that may set VERIFIED, and starts only on the owner's explicit instruction.**
 >
 > **STOPPING POINT (2026-10-03, closure): PHASE 15 IS CLOSED (§47). The owner locked the four decisions: domain policy scope (palmistry: the full Phase 13 list; astrology: lifespan and death-timing refusal plus the professional-advice disclaimer), the Phase 15 / Phase 16 boundary (structure and reference integrity only; only Phase 16 may set VERIFIED), deterministic allow-listed tool selection, and in-session-only memory. The real model has NOT been run. PHASE 16 HAS NOT STARTED. The next session must reread `SUMMARY.md` §47, the Phase 15 block of `Phases.md`, ADR-010 and `CONTRIBUTING.md`, verify HEAD and CI job by job, and may start Phase 16 only on the owner's explicit instruction.**
@@ -2096,3 +2098,29 @@ Phase 15 generates and narrates (every claim ends `UNVERIFIED`). Phase 16 verifi
 7. Confirm `HEAD`, `origin/main`, the working tree and the latest CI, job by job.
 8. Review the Phase 16 to Phase 17 boundary above.
 9. Only then prepare or start Phase 17, and only after the owner's explicit instruction. Obtain the owner's review of Phase 16 (the items in §49 F and §50 C) before treating it as closed.
+
+## 51. Phase 17 — Research and Architecture Lock (2026-10-06) — documentation only, Handoff and Continuation Point
+
+**PHASE 17 HAS NOT STARTED. This is a research and architecture lock; it is NOT owner-approved and NOTHING was implemented.** Phase 16 is still IMPLEMENTED, closure pending owner review (§49 F, §50 C). Starting commit `2b8fc186e20463872c3d8bdc3c8b33f2f99daa31` (CI run `37355402624`, 18 of 18 jobs successful as recorded in §50). The lock commit and its CI run cannot be written here: read them with `git log -1`, `git ls-remote origin refs/heads/main` and `gh run list --limit 1`, and inspect every job. Git identity `iamankoo <aniketraj00384@gmail.com>`, no AI attribution.
+
+### A. What was produced (documentation only)
+`research/PHASE_17_LIFE_DOMAIN_RESEARCH.md`; `research/PHASE_17_DOMAIN_MATRIX.md`; `research/ASTROLOGY_SOURCES.md` Group 27 (the single registry; no second registry); `docs/ASTROLOGY_STANDARDS.md` v1.29.0 §Life-Domain Intelligence standards LD-01 to LD-24; `docs/ARCHITECTURE.md` §39 and §34 item 8; `docs/architecture/adr/ADR-012-life-domain-intelligence.md` (Proposed); `Phases.md` Phase 17 lock note; `LEGAL_REGULATIONS.md` counsel items. No code, contract, rule, mapping, data file, schema, test or CI file changed.
+
+### B. Findings
+- `Phases.md` Phase 17 specifies only a 27-domain list, a seven-step chain and one deliverable line; everything else comes from other documents.
+- Of the 27 domains: 7 `SOURCE_SUPPORTED` (Education, Career, Finance, Wealth, Marriage, Family, Children), 11 `PARTIALLY_SUPPORTED`, 9 `NOT_EVALUABLE`.
+- The only source read that assigns divisional charts to matters of life is BPHS Ch. 7 v. 1-8 (page-image verified, pp. 91-92). It does not support "D4 = property/home", "D9 = dharma" or "D12 = ancestry" as worded in the standards (recorded, not changed).
+- Source conflicts recorded (not merged): father at the 10th (BPHS Ch. 11 v. 11) or the 9th (Phaladeepika XVI sl. 22-23); the 2nd house for marriage; the karaka of the 10th; livelihood by Dasamsa (BPHS) or by the Navamsa of the 10th lord (Phaladeepika V sl. 1).
+- Baseline audit corrections: the ruleset has 51 rules (not about 219); rules do carry a free-form `interpretation_tags.domain` (44 `general`, 2 `marriage`, 5 `personality`+`status`). The Phase 6 `ChartFacts` is D1-only (no varga placements); dasha, transit, Ashtakavarga and compatibility sections exist in the `EvidenceBundle` but no shipped rule reads them; the agent has no dasha or transit tool (Phase 18).
+- Proposed architecture (ADR-012, no new service): domain methodology data in `knowledge`; relevance evaluation in a separate domain ruleset in the `rule-engine` (palm-rules precedent; the Phase 6 hash `8d29a18c…77209` unchanged); presets and narration in `agent`; additive contracts; Phase 16 verification with an additive resolution change.
+- Policy gaps (none decided): children, fertility, pregnancy and paternity (the sources contain statements the palmistry policy prohibits; the astrology policy is silent); minors in relationship, love, marriage, spouse and children domains; the sex of the subject (not collected); derogatory and fear statements in the sources.
+- Vastu: `RESEARCH_PENDING`, `DEFERRED`. Reports: `UNRESOLVED_OWNER_DECISION` (five documents disagree; recommended: not Phase 17).
+
+### C. Not done and not read (not hidden)
+BPHS Vol I Ch. 9, 12 to 14, 17 to 20, 24, 25, 29 to 31, 33, 34, 39 to 45 and Vol II; Phaladeepika Adh. XIX and XX (dasha) and most others; Brihat Jataka (domain chapters); Saravali; Uttara Kalamrita; Jaimini for domains; no Sanskrit-level review. Domain combinations and domain-relevant dasha (beyond marriage) are `RESEARCH_PENDING`. No real model has been run anywhere in the chain.
+
+### D. Owner decisions waiting (research record section 18)
+1 scope (27 versus supported plus `NOT_EVALUABLE`), 2 taxonomy, 3 domain-to-varga mapping and the standards wording, 4 dasha ownership, 5 transit ownership, 6 architecture location, 7 reports, 8 children and minors, 9 fertility and pregnancy, 10 finance, 11 health, 12 Vastu, 13 Phase 16 closure; plus the sex of the subject, fear statements, and the tag `marriage.spouse_longevity`.
+
+### E. Exact stopping point and resume
+**OVERALL STATUS: BLOCKED — OWNER DECISION REQUIRED.** Development stops here. Resume: read this section, `research/PHASE_17_LIFE_DOMAIN_RESEARCH.md`, ADR-012, standards LD-01 to LD-24 and `CONTRIBUTING.md`; verify `HEAD`, `origin/main` and CI job by job; wait for the owner's decisions; only then write the Phase 17 implementation master prompt. Do not reimplement Phase 16 and do not start Phase 18.

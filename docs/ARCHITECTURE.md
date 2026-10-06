@@ -679,6 +679,7 @@ Full text in `docs/architecture/adr/`:
 - **ADR-009**: Self-hosted LLM capability (Phase 14)
 - **ADR-010**: Agent orchestration and narration (Phase 15)
 - **ADR-011**: The verification engine (Phase 16)
+- **ADR-012**: Life-Domain Intelligence (Phase 17; Proposed, research lock 2026-10-06, not owner-approved)
 
 ---
 
@@ -882,6 +883,8 @@ To begin or resume work: open `Phases.md`, identify the current phase, its deliv
 
 7. **Phase 16 scope: statuses and the regenerate step — RECORDED, FOR OWNER CONFIRMATION** (2026-10-05). `Phases.md` Phase 16 and ADR-006 name only PASS or REGENERATE ("approve / regenerate") and do not define a status vocabulary or a claim-level taxonomy; the Phase 16 instruction asks for seven statuses. Resolved by the hierarchy (locked decisions, `features.md`, `Phases.md` first): the seven statuses were added in `pandit_contracts.verification` without touching the agent contract, and "approve / regenerate" is the verifier's release action (`APPROVE`, `RELEASE_VERIFIED_ONLY`, `REGENERATE`, `NOTHING_TO_VERIFY`). The loop that regenerates is orchestration (composition at Phase 18), not verification. The instruction's claim types (observed, derived, calculated, rule evaluation, interpretation, context status) are the agent's `EvidenceClass` values; the agent's `ClaimType` values (`CALCULATION_FACT`, `OBSERVED_FEATURE`, `DERIVED_FEATURE`, `TRADITIONAL_INTERPRETATION`, `LIMITATION`) are what a claim carries, and the verifier uses both. No other conflict was found (ADR-011).
 
+8. **Phase 17 scope, ownership and taxonomy — RECORDED, FOR OWNER DECISION** (2026-10-06, research lock; ADR-012 Proposed). `Phases.md` Phase 17 lists 27 domains and a chain but no contract, service, test or exit criterion; `features.md` sections 11 to 13 and 20 list more domains; the agent `Intent` has 14 values; `domains.yaml` has four domains. Open items, none silently resolved: which taxonomy governs; whether Phase 17 reads dasha and transit sections already in a supplied bundle or waits for Phase 18; where domain relevance is evaluated (recommended: a separate domain ruleset in the rule-engine, with domain methodology data in `knowledge`, presets in `agent`); the domain-to-varga mapping that `docs/ASTROLOGY_STANDARDS.md` deferred to Phase 17 (the only source read, BPHS Ch. 7 v. 1-8, does not support "D4 = property/home", "D9 = dharma" or "D12 = ancestry" as worded in the standards); reports ownership (ARCHITECTURE section 5, `Phases.md` Phase 15, 11, 18, 19 and 20, and `reports/__init__.py` disagree); "cross-domain Vastu stays with Phase 17" versus the deferral and the absence of any source or data; the policy gaps for children, fertility, paternity, minors and the sex of the subject. See section 39.
+
 ---
 
 ## 35. Palm Vision Architecture (approved 2026-10-02; Phase 13; implemented as infrastructure 2026-10-03, see the end of this section)
@@ -1045,3 +1048,27 @@ NarrationResponse (claims: UNVERIFIED, from Phase 15)      trusted bundles (Phas
 **Determinism and audit.** No clock, randomness, network or model: the same claim, evidence, configuration and verifier version give the same `report_hash`. Results hold identifiers, reason codes, hashes and versions, never claim text, prompts or image references.
 
 **Status.** IMPLEMENTED: the contract, trusted resolution with integrity and optional recomputation, the seven stages, the policy screens, the report and release action, the verified-response pipeline, the Phase 13 palm and Phase 6 astrology integration (real bundles in `tests/integration/test_verification_phase16.py`). NOT BUILT: the regenerate loop and the agent-to-verifier call (composition, Phase 18), persistence, a signed attestation, an HTTP surface, independent recalculation from birth data, any multilingual quality claim beyond the small vocabulary. The text check is limited as described and `CALIBRATION_REQUIRED`; no real model has been run; counsel review of the policy copies is `LEGAL_REVIEW_REQUIRED`.
+
+---
+
+## 39. Life-Domain Intelligence (Phase 17; research and architecture lock 2026-10-06; NOT implemented)
+
+Decision record: ADR-012 (**Proposed**, not owner-approved). Research: `research/PHASE_17_LIFE_DOMAIN_RESEARCH.md`, `research/PHASE_17_DOMAIN_MATRIX.md`; methodology: `docs/ASTROLOGY_STANDARDS.md` v1.29.0 LD-01 to LD-24; sources: `research/ASTROLOGY_SOURCES.md` Group 27. **Phase 17 has not started.**
+
+**Where it lives (proposed; no new service).** Domain methodology data (what is relevant to a domain, with provenance and status) in `services/knowledge/content/`, outside `rules/`. Deterministic evaluation of domain relevance in the `rule-engine`, in a separate domain ruleset with its own manifest and hash (the palm-rules precedent), so the Phase 6 ruleset hash is unchanged. Intent-to-domain routing, evidence presets, narration schema and policy in `services/agent`. Contracts in a new additive `packages/contracts` module. Verification by Phase 16 through the existing claim contract.
+
+```
+Intent (coarse router) -> LifeDomain (registry data) -> DomainDefinition (knowledge data: houses, karakas,
+  vargas, status, conflicts) -> evidence plan -> domain ruleset (rule-engine; structural relation facts over
+  D1 facts, varga placements, and the dasha and transit sections of a supplied bundle)
+  -> DomainAnalysisResult (structured; NOT_EVALUABLE with typed reasons)
+  -> Phase 15 narration (UNVERIFIED) -> Phase 16 verification
+```
+
+**What Phase 15 consumes:** the domain result as evidence records of the existing five classes. **What Phase 16 verifies:** domain claims against the domain evidence (an additive resolution change). **What Phase 18 supplies:** the Dasha and Transit APIs and the tools that obtain dasha and transit facts for a user and date, the regenerate loop, persistence, the reports API. **What Phase 17 does not own:** those, plus reports (recommended), Vastu (`RESEARCH_PENDING`, `DEFERRED`), health (unless the owner adds it), voice and any model run.
+
+**Evidence availability.** Available now: D1 chart facts (houses, lords, occupants, aspects, dignity), the 51 Phase 6 rules, Phase 12 significations and karakas, every divisional chart as an `astro-engine` output, and optional dasha, transit, Ashtakavarga and compatibility sections in the Phase 6 `EvidenceBundle`. Not available to rules: divisional placements (the Phase 6 `ChartFacts` is D1-only) and any use of the dasha or transit sections (no shipped rule reads them). Phase 18: the tools and APIs that fetch those facts for a user.
+
+**Research result.** Of the 27 `Phases.md` domains, 7 are `SOURCE_SUPPORTED`, 11 `PARTIALLY_SUPPORTED`, 9 `NOT_EVALUABLE`. The only source read that assigns divisional charts to matters of life is BPHS Ch. 7 v. 1-8 (D2 wealth, D3 co-born, D7 sons, D9 spouse, D10 power and position, D12 parents, D20 worship, D24 learning; D4 is "fortunes": property is not stated). Policy gaps (children, fertility, paternity, minors, sex of the subject, derogatory statements) and every item under `OWNER_DECISION_REQUIRED` in the research record are open.
+
+**Status.** Research and architecture lock only. No code, contract, rule, mapping, data file or schema was added or changed. Overall: **BLOCKED — OWNER DECISION REQUIRED** (research record section 19).

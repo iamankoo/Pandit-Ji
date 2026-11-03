@@ -1,4 +1,4 @@
-"""Phase 18 backend platform tables: identity, profiles, charts, conversation, reports, platform, audit.
+"""Phase 18 backend platform tables (identity, profiles, charts, conversation, reports, platform).
 
 Additive and forward-compatible: it creates the new ``platform`` schema and the tables the backend
 needs (users keyed by the OIDC subject, birth profiles, stored Kundlis, conversations, consented
@@ -41,15 +41,11 @@ def _user_fk() -> sa.Column:  # type: ignore[type-arg]
 
 
 def _created() -> sa.Column:  # type: ignore[type-arg]
-    return sa.Column(
-        "created_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW
-    )
+    return sa.Column("created_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW)
 
 
 def _updated() -> sa.Column:  # type: ignore[type-arg]
-    return sa.Column(
-        "updated_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW
-    )
+    return sa.Column("updated_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW)
 
 
 TABLES = (
@@ -126,9 +122,7 @@ def upgrade() -> None:
         ),
         schema="profiles",
     )
-    op.create_index(
-        "ix_birth_profiles_user_id", "birth_profiles", ["user_id"], schema="profiles"
-    )
+    op.create_index("ix_birth_profiles_user_id", "birth_profiles", ["user_id"], schema="profiles")
     op.create_table(
         "kundlis",
         _id(),
@@ -155,9 +149,7 @@ def upgrade() -> None:
         _created(),
         schema="conversation",
     )
-    op.create_index(
-        "ix_conversations_user_id", "conversations", ["user_id"], schema="conversation"
-    )
+    op.create_index("ix_conversations_user_id", "conversations", ["user_id"], schema="conversation")
     op.create_table(
         "messages",
         _id(),
@@ -260,9 +252,7 @@ def upgrade() -> None:
     op.create_table(
         "events",
         sa.Column("id", sa.BigInteger(), primary_key=True, autoincrement=True),
-        sa.Column(
-            "occurred_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW
-        ),
+        sa.Column("occurred_at", sa.DateTime(timezone=True), nullable=False, server_default=_NOW),
         sa.Column("actor_hash", sa.String(64)),
         sa.Column("action", sa.String(48), nullable=False),
         sa.Column("resource_type", sa.String(32), nullable=False),

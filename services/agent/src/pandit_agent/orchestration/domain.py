@@ -64,9 +64,9 @@ _VARGA: dict[LifeDomain, tuple[int, ...]] = {
     L.SPIRITUALITY: (20,),
 }
 _DASHA: frozenset[LifeDomain] = frozenset({L.MARRIAGE})
-_TRANSIT: frozenset[LifeDomain] = frozenset(
-    {L.EDUCATION, L.CAREER, L.MARRIAGE, L.WEALTH, L.INCOME, L.SIBLINGS}
-)
+# No domain reads transit evidence: the Phaladeepika XVI bhava transit records are non-evaluating
+# (RESEARCH_PENDING; the domain-to-house bridge is not owner-approved), so no preset asks for it.
+_TRANSIT: frozenset[LifeDomain] = frozenset()
 _PHASE6_RULES: frozenset[LifeDomain] = frozenset(
     {L.PERSONALITY, L.EDUCATION, L.CAREER, L.FINANCE, L.WEALTH, L.MARRIAGE}
 )

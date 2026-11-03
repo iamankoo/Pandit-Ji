@@ -8,6 +8,10 @@ and no new calculation exist: this module only maps fields, like the other adapt
 A missing or malformed divisional chart is reported to the caller as ``None`` /
 :class:`FactsError`; the evaluator then answers ``INSUFFICIENT_EVIDENCE`` for any rule that needs
 it. A varga fact is never invented.
+
+Only the eight divisional charts of the locked BPHS mappings (``LOCKED_VARGAS``: D2, D3, D7, D9,
+D10, D12, D20, D24) are read into the container. Every other chart of the Kundli (D1, D4 and the
+rest) is skipped before it is parsed: it is never materialized, hashed or offered to a rule.
 """
 
 from __future__ import annotations
@@ -20,6 +24,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict
 
 from pandit_rule_engine.adapters import FactsError
+from pandit_rule_engine.domain.schema import LOCKED_VARGAS
 from pandit_rule_engine.vocab import Body, Sign
 
 
@@ -59,7 +64,11 @@ def _body(value: Any, where: str) -> Body:
 
 
 def varga_from_kundli(kundli: Mapping[str, Any]) -> VargaPlacements | None:
-    """The divisional placements of a Phase 5 Kundli (JSON form), or ``None`` if it has none."""
+    """The approved divisional placements of a Phase 5 Kundli (JSON form).
+
+    ``None`` when the Kundli has no divisional charts at all. Charts outside ``LOCKED_VARGAS`` are
+    ignored; if none of the approved eight is present the container is empty (no placement exists).
+    """
     charts_raw = kundli.get("charts")
     if not isinstance(charts_raw, Mapping) or not charts_raw:
         return None
@@ -78,6 +87,8 @@ def varga_from_kundli(kundli: Mapping[str, Any]) -> VargaPlacements | None:
             number = int(raw.get("varga", key))
         except (TypeError, ValueError) as exc:
             raise FactsError(f"{where}: varga is not an integer") from exc
+        if number not in LOCKED_VARGAS:
+            continue  # an unapproved chart is never read, parsed or hashed
         placements: dict[Body, Sign] = {}
         for index, planet in enumerate(raw.get("planets") or ()):
             if not isinstance(planet, Mapping):

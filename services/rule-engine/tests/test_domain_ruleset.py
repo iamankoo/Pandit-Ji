@@ -335,20 +335,26 @@ def test_only_the_marriage_dasha_method_exists_and_no_analogy_for_other_domains(
     )
 
 
-def test_the_bhava_transit_method_applies_only_to_houses_a_domain_maps_itself() -> None:
+def test_the_six_bhava_transit_records_are_research_pending_and_evaluate_nothing() -> None:
     rs = ruleset()
-    transit = [r for r in rs.rules.values() if r.kind is DomainRuleKind.BHAVA_TRANSIT_METHOD]
-    assert {(r.domain, r.params.house) for r in transit} == {  # type: ignore[union-attr]
-        (L.EDUCATION, 5), (L.CAREER, 10), (L.MARRIAGE, 7), (L.WEALTH, 2), (L.INCOME, 11),
-        (L.SIBLINGS, 3),
-    }  # fmt: skip
+    ids = {
+        "DOM_CAREER_METHOD_PXVI31_H10_PXVI31": L.CAREER,
+        "DOM_EDUCATION_METHOD_PXVI31_H05_PXVI31": L.EDUCATION,
+        "DOM_INCOME_METHOD_PXVI31_H11_PXVI31": L.INCOME,
+        "DOM_MARRIAGE_METHOD_PXVI31_H07_PXVI31": L.MARRIAGE,
+        "DOM_SIBLINGS_METHOD_PXVI31_H03_PXVI31": L.SIBLINGS,
+        "DOM_WEALTH_METHOD_PXVI31_H02_PXVI31": L.WEALTH,
+    }
+    transit = [r for r in rs.rules.values() if "PXVI31" in r.rule_id]
+    assert {r.rule_id: r.domain for r in transit} == ids
     for rule in transit:
-        houses = {
-            r.params.house  # type: ignore[union-attr]
-            for r in rs.rules_for(rule.domain)
-            if r.kind is DomainRuleKind.HOUSE_RELEVANCE
-        }
-        assert rule.params.house in houses  # type: ignore[union-attr]
+        assert rule.kind is DomainRuleKind.POLICY_WITHHELD
+        assert rule.support is DomainSupport.NOT_EVALUABLE  # the bridge is not source-established
+        assert rule.params.reason is DomainReason.RESEARCH_PENDING  # type: ignore[union-attr]
+        assert rule.params.outcome == "NOT_EVALUABLE"  # type: ignore[union-attr]
+        assert not rule.tags.domain_tags and not rule.tags.signification_tags
+        assert "RESEARCH_PENDING" in rule.bridge_note and "Phaladeepika XVI" in rule.bridge_note
+    assert not any(r.kind.value == "BHAVA_TRANSIT_METHOD" for r in rs.rules.values())
 
 
 # ---- policy in the data
@@ -511,21 +517,25 @@ def test_the_loader_rejects_the_marriage_method_for_another_domain(tmp_path: Pat
     _expect(copy, "serves Marriage only")
 
 
-def test_the_loader_rejects_a_transit_method_on_a_house_the_domain_does_not_map(
-    tmp_path: Path,
-) -> None:
+def test_the_loader_rejects_not_evaluable_support_on_an_evaluating_rule(tmp_path: Path) -> None:
     copy = copy_ruleset(tmp_path)
     path = copy / "rules" / "career.yaml"
     docs = read_docs(path)
-    transit = next(d for d in docs if d["kind"] == "BHAVA_TRANSIT_METHOD")
-    bad = {
-        **transit,
-        "rule_id": "DOM_CAREER_METHOD_H07",
-        "mapping_id": "MAP.CAREER.METHOD.H07",
-        "params": {**transit["params"], "house": 7},
-    }
-    write_docs(path, [*docs, bad])
-    _expect(copy, "no inheritance")
+    docs[0]["support"] = "NOT_EVALUABLE"  # a house rule evaluates; it cannot rest on no support
+    write_docs(path, docs)
+    with pytest.raises(DomainRulesetLoadError, match="NOT_EVALUABLE mapping"):
+        load_domain_ruleset(copy)
+
+
+def test_the_loader_rejects_a_research_pending_record_that_evaluates(tmp_path: Path) -> None:
+    copy = copy_ruleset(tmp_path)
+    path = copy / "rules" / "career.yaml"
+    docs = read_docs(path)
+    record = next(d for d in docs if d["rule_id"] == "DOM_CAREER_METHOD_PXVI31_H10_PXVI31")
+    record["params"]["outcome"] = "POLICY_BLOCKED"  # no longer a non-evaluating record
+    write_docs(path, docs)
+    with pytest.raises(DomainRulesetLoadError, match="NOT_EVALUABLE mapping"):
+        load_domain_ruleset(copy)
 
 
 def test_the_loader_rejects_a_prohibited_tag(tmp_path: Path) -> None:

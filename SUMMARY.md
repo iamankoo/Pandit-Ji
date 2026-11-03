@@ -2143,8 +2143,8 @@ Nothing is implemented: no code, contract, rule, mapping, data file, schema or t
 **Status: implemented, verified locally and pushed. Phase 18 has NOT started.** Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. Implementation commit and CI run: see the line `FINAL RECORD` at the end of this section.
 
 ### A. What exists
-- Knowledge version `KV-edb2a7d07a626dcb` (standards 1.30.0; separate and additive; Phase 12 `KV-06361d7aba28c1ce` and Phase 13 `KV-a21c2c040abe9663` unchanged; migration `0004_domain_knowledge_vocabulary`, CHECK vocabularies only).
-- Domain ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.0, methodology `DOMAIN_METHODOLOGY_P17_1`, hash `54bdb767830b05d03e109ff0a0c65bb1829f83e8553446090492969420ac2b94` (108 rules). Phase 6 hash `8d29a18c...77209` and its 51 rules unchanged.
+- Knowledge version `KV-4da4248a7fb5589c` (standards 1.30.0; separate and additive; Phase 12 `KV-06361d7aba28c1ce` and Phase 13 `KV-a21c2c040abe9663` unchanged; migration `0004_domain_knowledge_vocabulary`, CHECK vocabularies only).
+- Domain ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.1, methodology `DOMAIN_METHODOLOGY_P17_1`, hash `63d807503249da14f0aa61acc20aedaf08e74a1037da5562bcab55c17177070f` (108 rules). Phase 6 hash `8d29a18c...77209` and its 51 rules unchanged.
 - Contracts 0.6.0 `domain` (36 `LifeDomain` = 27 + 9 extensions, no sex/age field, existing status names); rule-engine `pandit_rule_engine.domain`; knowledge `domain_content`; agent `orchestration/domain.py` (presets, routing, `DomainAnalysisTool`, screens, short-circuits). No new service, no Phase 16 change.
 
 ### B. Domain outcome
@@ -2153,20 +2153,20 @@ Nothing is implemented: no code, contract, rule, mapping, data file, schema or t
 - NOT_EVALUABLE: Birth, College, Corporate Life, Startup, GF/BF, Foreign Education, Personal Life.
 - The 9 extensions: Parents (PARTIALLY_SUPPORTED, evaluated, adult-gated, DC-01), Siblings (SOURCE_SUPPORTED, evaluated, adult-gated), Income (SOURCE_SUPPORTED, evaluated); Investments, Entrepreneurship, Higher Education, Major Life Transitions, Health NOT_EVALUABLE; General Life Patterns labelled PARTIALLY_SUPPORTED but NOT_EVALUABLE (no locked mapping).
 - POLICY_BLOCKED (minors policy unresolved): Childhood, School. Adult-gated domains need `subject_adult_confirmed=True`.
-- Varga source: the Phase 5 Kundli JSON `charts` section (present since commit `e7bd575`), read by field mapping only; Phase 6 `ChartFacts` stays D1-only and unchanged.
-- Dasha: only the marriage method (Phaladeepika X sl. 13-14) from a supplied section; transit: only the researched bhava method from a supplied section; Varga: D2, D3, D7, D9, D10, D12, D20, D24 from the Kundli JSON, never D4; missing sections give INSUFFICIENT_EVIDENCE. Conflicts DC-01..DC-05 and Kuja stay open.
+- Varga source: the Phase 5 Kundli JSON `charts` section (present since commit `e7bd575`; owner-accepted as a pre-Phase-17 source), read by field mapping only and restricted to the eight approved charts; Phase 6 `ChartFacts` stays D1-only and unchanged.
+- Dasha: only the marriage method (Phaladeepika X sl. 13-14) from a supplied section; an absent section gives INSUFFICIENT_EVIDENCE + PHASE_18_DEPENDENCY (LD-14), a present but unusable one MISSING_DASHA_EVIDENCE. Transit: NO domain reads transit; the six Phaladeepika XVI sl. 31-32 records are non-evaluating RESEARCH_PENDING records (owner correction, final-corrections run). Varga: only D2, D3, D7, D9, D10, D12, D20, D24 are read from the Kundli JSON into the container; D4 and all other charts are skipped before parsing. Conflicts DC-01..DC-05 and Kuja stay open.
 
 ### C. Test counts (local, Python 3.13 venv, PostgreSQL pgvector 18 for knowledge)
-contracts 136; shared 1; astro-engine 1673; rule-engine 553; knowledge 187 passed, 4 skipped (sentence-transformers absent); agent 655 passed, 2 skipped; verification 164; palm-vision 129; server 5; integration 46. ruff check, ruff format --check and mypy clean on every package.
+contracts 136; shared 1; astro-engine 1673; rule-engine 568; knowledge 188 passed, 4 skipped (sentence-transformers absent; PostgreSQL pgvector 18 enabled); agent 656 passed, 2 skipped; verification 164; palm-vision 129; server 5; integration 48. ruff check, ruff format --check and mypy clean on every package.
 
 ### D. Findings and limits (carry to Phase 18)
 - The Phase 16 verifier cannot resolve a domain result without registration; composition must register it as a trusted bundle (shown in `tests/integration/test_domain_phase17.py`). Unregistered: UNVERIFIABLE / EVIDENCE_UNAVAILABLE. Limitation claims for missing sections stay UNVERIFIABLE until the composition layer records the gaps as trusted missing evidence.
 - Phase 18: Dasha and Transit APIs/tools, the regenerate loop, report/API composition, the trusted-bundle registration, any production Varga source beyond the Kundli JSON.
-- Open points for the owner: (1) LD-14 names `PHASE_18_DEPENDENCY` as the typed reason for an absent dasha or transit section; the implementation uses `MISSING_DASHA_EVIDENCE` / `MISSING_TRANSIT_EVIDENCE` (the status is the approved INSUFFICIENT_EVIDENCE; `PHASE_18_DEPENDENCY` exists in the enum but is unused). (2) The Phaladeepika XVI bhava transit method is applied to the house each of six domains itself maps (a bridge from a source stated for any bhava; rules are PARTIALLY_SUPPORTED); its aspect alternative, Moon reckoning, karaka clause and sl. 34-35 are not evaluated.
+- Resolved by the owner (final-corrections run): the Varga source is accepted and restricted to eight charts; the transit domain-to-house bridge is not approved (records are non-evaluating); LD-14 `PHASE_18_DEPENDENCY` is now used for an absent dasha section.
 - The test model window is small: a large domain result needs `max_evidence_items` around 30 with the scripted test runtime (real models are not affected; not run).
 - Hindi and Hinglish domain texts: `CALIBRATION_REQUIRED`. `LEGAL_REVIEW_REQUIRED` items unchanged. Vastu, reports: not implemented. One PostgreSQL ANN-index test failed once in a full local run and passed in four later runs; watch CI.
 
 ### E. Exact stopping point
 Stop. Phase 18 starts only on the owner's explicit instruction after reviewing the Phase 17 final audit.
 
-FINAL RECORD: implementation commit `7121816` (history rewritten on the owner's instruction to remove an unauthorised commit-message trailer; tree identical to the original `893229f`). Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. The CI run id of the final commit is recorded in the owner-facing audit reply (it cannot be known before the push).
+FINAL RECORD: starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`; implementation commit `7121816` (rewritten without the trailer); audit-reconciliation docs `11a653d`; final-corrections commit and its CI run are recorded in the owner-facing audit reply (a commit cannot contain its own SHA). Final-corrections run: Varga adapter restricted to 8 charts; the six bhava transit records made non-evaluating (`RESEARCH_PENDING`); LD-14 `PHASE_18_DEPENDENCY` used for an absent dasha section. Final identifiers: knowledge version `KV-4da4248a7fb5589c`, ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.1 hash `63d807503249da14f0aa61acc20aedaf08e74a1037da5562bcab55c17177070f`.

@@ -174,20 +174,6 @@ class MarriageDashaParams(_M):
     relations: tuple[Literal["occupies", "aspects", "owns"], ...] = ("occupies", "aspects", "owns")
 
 
-class BhavaTransitParams(_M):
-    kind: Literal["BHAVA_TRANSIT_METHOD"]
-    house: int = Field(ge=1, le=12)
-    #: Phaladeepika XVI sl. 31 clauses (a)-(d), (e) conjunction in transit, and sl. 32.
-    clauses: tuple[Literal["31a", "31b", "31c", "31d", "31e", "32"], ...] = (
-        "31a",
-        "31b",
-        "31c",
-        "31d",
-        "31e",
-        "32",
-    )
-
-
 class SubjectParams(_M):
     kind: Literal["SUBJECT_PROFICIENCY"]
     house: Literal[2] = 2
@@ -220,7 +206,6 @@ RuleParams = Annotated[
     | VargaParams
     | Phase6Params
     | MarriageDashaParams
-    | BhavaTransitParams
     | SubjectParams
     | WithheldParams,
     Field(discriminator="kind"),
@@ -279,8 +264,14 @@ class DomainRuleDocument(_M):
             raise ValueError("mapping_id must look like MAP.<DOMAIN>.<KIND>.<id>")
         if self.params.kind != self.kind.value:
             raise ValueError("params.kind must equal kind")
-        if self.support is DomainSupport.NOT_EVALUABLE:
+        if self.support is DomainSupport.NOT_EVALUABLE and not (
+            isinstance(self.params, WithheldParams)
+            and self.params.outcome == "NOT_EVALUABLE"
+            and self.params.reason is DomainReason.RESEARCH_PENDING
+        ):
             raise ValueError("a rule cannot execute a NOT_EVALUABLE mapping")
+        # (a research-pending record is the one exception: it states a researched method that
+        # is not approved for this domain and evaluates nothing)
         if self.kind is DomainRuleKind.POLICY_WITHHELD and (
             self.tags.domain_tags or self.tags.signification_tags
         ):

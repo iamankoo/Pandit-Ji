@@ -62,7 +62,7 @@ document_type: domain_rule
 rule_id: DOM_SIBLINGS_METHOD_PXVI31_H03_PXVI31
 rule_version: '1'
 domain: SIBLINGS
-kind: BHAVA_TRANSIT_METHOD
+kind: POLICY_WITHHELD
 mapping_id: MAP.SIBLINGS.METHOD.PXVI31_H03.PXVI31
 status: active
 source: Phaladeepika (Mantreswara)
@@ -73,27 +73,16 @@ source_location: Adhyaya XVI sloka 31-35 (printed pp. 174-175)
 verification_level: IMAGE-TRANSLATION
 confidence: HIGH
 profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
-support: PARTIALLY_SUPPORTED
+support: NOT_EVALUABLE
 source_term: success or acquisition of the 3th Bhava
-bridge_note: The source states the method for any Bhava; here it is applied to the house this domain itself
-  maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
-  reckoning are not evaluated.
+bridge_note: 'Researched, not evaluated. Phaladeepika XVI sl. 31-32 states a transit method for the success
+  or acquisition of any bhava (here: house 3, clauses 31a-31e and 32). The owner did not approve applying
+  that general method to the house this domain maps, so the domain-to-house bridge is RESEARCH_PENDING:
+  no transit evidence is read and no supported domain claim is produced.'
 params:
-  kind: BHAVA_TRANSIT_METHOD
-  house: 3
-  clauses:
-  - 31a
-  - 31b
-  - 31c
-  - 31d
-  - 31e
-  - '32'
-tags:
-  domain_tags:
-  - siblings
-  signification_tags:
-  - bhava.transit_relation_of_researched_method
-  effect_class: context_dependent
+  kind: POLICY_WITHHELD
+  reason: RESEARCH_PENDING
+  outcome: NOT_EVALUABLE
 ---
 document_type: domain_rule
 rule_id: DOM_SIBLINGS_VARGA_D3_B7

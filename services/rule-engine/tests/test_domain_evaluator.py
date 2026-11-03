@@ -233,20 +233,32 @@ def test_varga_present_gives_a_placement_fact_for_exactly_the_locked_varga() -> 
     assert dict(fact.attributes)["varga"] == "D7"
 
 
-def test_the_marriage_dasha_method_needs_a_dasha_section_and_as_of() -> None:
+def test_an_absent_dasha_section_carries_the_phase_18_dependency_reason() -> None:
     rule_id = "DOM_MARRIAGE_METHOD_PX13_DASHA_7TH_PX13"
-    absent = evaluate(L.MARRIAGE)
-    got = next(r for r in absent.rules if r.rule_id == rule_id)
-    assert (
-        got.status is S.INSUFFICIENT_EVIDENCE and got.reason is DomainReason.MISSING_DASHA_EVIDENCE
-    )
+    result = evaluate(L.MARRIAGE)
+    got = next(r for r in result.rules if r.rule_id == rule_id)
+    assert got.status is S.INSUFFICIENT_EVIDENCE
+    assert got.reason is DomainReason.PHASE_18_DEPENDENCY  # LD-14
+    assert result.inputs.dasha_available is False
+    assert DomainReason.PHASE_18_DEPENDENCY in {r.code for r in result.reasons}
+
+
+def test_a_present_but_unusable_dasha_keeps_its_own_typed_reason() -> None:
+    rule_id = "DOM_MARRIAGE_METHOD_PX13_DASHA_7TH_PX13"
     timeline = dasha(
         [("mahadasha", "venus", "2020-01-01T00:00:00+00:00", "2040-01-01T00:00:00+00:00")]
     )
-    no_clock = evaluate(L.MARRIAGE, dasha=timeline)
-    assert next(r for r in no_clock.rules if r.rule_id == rule_id).status is S.INSUFFICIENT_EVIDENCE
+    failed = evaluate(
+        L.MARRIAGE, dasha=dasha([], status="failed"), as_of="2026-06-01T00:00:00+00:00"
+    )
     outside = evaluate(L.MARRIAGE, dasha=timeline, as_of="2050-01-01T00:00:00+00:00")
-    assert next(r for r in outside.rules if r.rule_id == rule_id).status is S.INSUFFICIENT_EVIDENCE
+    for result in (failed, outside):
+        got = next(r for r in result.rules if r.rule_id == rule_id)
+        assert got.status is S.INSUFFICIENT_EVIDENCE
+        assert got.reason is DomainReason.MISSING_DASHA_EVIDENCE
+    no_clock = evaluate(L.MARRIAGE, dasha=timeline)
+    got = next(r for r in no_clock.rules if r.rule_id == rule_id)
+    assert got.status is S.INSUFFICIENT_EVIDENCE and got.reason is DomainReason.MISSING_FACT
 
 
 def test_the_marriage_dasha_method_is_the_phaladeepika_7th_house_relation_only() -> None:
@@ -283,68 +295,55 @@ def test_the_rejected_occupant_owner_aspector_analogy_is_not_used_for_other_doma
         assert not any(f.dasha_refs for f in result.facts)
 
 
-def test_an_unusable_dasha_status_is_insufficient() -> None:
-    bad = dasha([], status="failed")
-    result = evaluate(L.MARRIAGE, dasha=bad, as_of="2026-06-01T00:00:00+00:00")
-    rule = next(r for r in result.rules if r.rule_id == "DOM_MARRIAGE_METHOD_PX13_DASHA_7TH_PX13")
-    assert rule.status is S.INSUFFICIENT_EVIDENCE
+_TRANSIT_RECORDS = {
+    L.CAREER: "DOM_CAREER_METHOD_PXVI31_H10_PXVI31",
+    L.EDUCATION: "DOM_EDUCATION_METHOD_PXVI31_H05_PXVI31",
+    L.INCOME: "DOM_INCOME_METHOD_PXVI31_H11_PXVI31",
+    L.MARRIAGE: "DOM_MARRIAGE_METHOD_PXVI31_H07_PXVI31",
+    L.SIBLINGS: "DOM_SIBLINGS_METHOD_PXVI31_H03_PXVI31",
+    L.WEALTH: "DOM_WEALTH_METHOD_PXVI31_H02_PXVI31",
+}
 
 
-def _transit_rules(domain: LifeDomain) -> list[str]:
-    return [
-        r.rule_id
-        for r in ruleset().rules_for(domain)
-        if r.kind is DomainRuleKind.BHAVA_TRANSIT_METHOD
+@pytest.mark.parametrize("domain", sorted(_TRANSIT_RECORDS, key=lambda d: d.value))
+def test_the_bhava_transit_records_never_evaluate_and_expose_nothing(domain: LifeDomain) -> None:
+    signs = {b: s for b, s in BASE.items() if b != "ketu"}
+    outcomes = [
+        evaluate(domain, varga=varga_of()),  # transit section absent
+        evaluate(domain, varga=varga_of(), transit=transit(signs)),  # present and usable
+        evaluate(domain, varga=varga_of(), transit=transit(signs, status="failed")),  # unusable
     ]
-
-
-def test_transit_rules_are_insufficient_without_a_transit_section() -> None:
-    ids = _transit_rules(L.CAREER)
-    assert ids
-    result = evaluate(L.CAREER, varga=varga_of())
-    for rule_id in ids:
-        got = next(r for r in result.rules if r.rule_id == rule_id)
-        assert got.status is S.INSUFFICIENT_EVIDENCE
-        assert got.reason is DomainReason.MISSING_TRANSIT_EVIDENCE
-    assert result.inputs.transit_available is False
-
-
-def test_a_failed_transit_section_is_insufficient_not_defaulted() -> None:
-    bad = transit({"jupiter": "leo"}, status="failed")
-    result = evaluate(L.CAREER, varga=varga_of(), transit=bad)
-    for rule_id in _transit_rules(L.CAREER):
-        assert (
-            next(r for r in result.rules if r.rule_id == rule_id).status is S.INSUFFICIENT_EVIDENCE
-        )
-
-
-def test_transit_rules_use_supplied_transit_and_label_unevaluated_alternatives() -> None:
-    signs = {b: s for b, s in BASE.items() if b != "ketu"}
-    result = evaluate(
-        L.CAREER, varga=varga_of(), transit=transit(signs), as_of="2026-09-21T12:00:00+00:00"
+    for result in outcomes:
+        got = next(r for r in result.rules if r.rule_id == _TRANSIT_RECORDS[domain])
+        assert got.status is S.NOT_EVALUABLE
+        assert got.reason is DomainReason.RESEARCH_PENDING
+        assert got.interpretation is None and got.fact_refs == ()
+        assert got.support is DomainSupport.NOT_EVALUABLE
+        assert not any(f.transit_refs for f in result.facts)
+        assert not any(f.kind.value == "TRANSIT_RELATION" for f in result.facts)
+    # the section is only recorded as present or absent: it never changes any rule outcome
+    assert outcomes[0].rules == outcomes[1].rules == outcomes[2].rules
+    assert (outcomes[0].inputs.transit_available, outcomes[1].inputs.transit_available) == (
+        False,
+        True,
     )
-    for rule_id in _transit_rules(L.CAREER):
-        got = next(r for r in result.rules if r.rule_id == rule_id)
-        assert got.status in {S.TRIGGERED, S.NOT_TRIGGERED, S.CONFLICTING_EVIDENCE}
-    fact = next(f for f in result.facts if f.transit_refs)
-    attrs = dict(fact.attributes)
-    assert attrs["aspect_alternative"] == "not_evaluated"
-    assert attrs["moon_reckoning"] == "not_evaluated"
-    assert result.inputs.transit_available is True
 
 
-def test_without_d9_the_amsa_alternative_is_never_invented() -> None:
-    signs = {b: s for b, s in BASE.items() if b != "ketu"}
-    result = evaluate(L.CAREER, transit=transit(signs))
-    for rule_id in _transit_rules(L.CAREER):
-        got = next(r for r in result.rules if r.rule_id == rule_id)
-        if got.status is S.INSUFFICIENT_EVIDENCE:
-            assert got.reason is DomainReason.MISSING_VARGA_EVIDENCE
-        else:
-            assert got.status in {S.TRIGGERED, S.CONFLICTING_EVIDENCE}
-    for fact in result.facts:
-        if fact.transit_refs:
-            assert dict(fact.attributes)["amsa_alternative"] == "not_evaluated_missing_d9"
+def test_an_absent_transit_section_cannot_make_any_rule_insufficient() -> None:
+    """No rule reads transit evidence, so there is no transit-missing case to type (LD-14).
+
+    The ``PHASE_18_DEPENDENCY`` reason for an absent transit section applies the day an
+    owner-approved transit method exists; until then the section is not consumed at all.
+    """
+    for domain in LifeDomain:
+        result = evaluate(domain, varga=varga_of())
+        assert DomainReason.MISSING_TRANSIT_EVIDENCE not in {r.code for r in result.reasons}
+        for rule in result.rules:
+            assert rule.reason is not DomainReason.MISSING_TRANSIT_EVIDENCE
+
+
+def test_the_evaluator_has_no_transit_rule_kind() -> None:
+    assert "BHAVA_TRANSIT_METHOD" not in {k.value for k in DomainRuleKind}
 
 
 def test_phase6_dependent_rules_need_the_phase6_results() -> None:

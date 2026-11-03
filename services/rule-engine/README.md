@@ -46,7 +46,7 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 ## Domain ruleset (Phase 17)
 
-`pandit_rule_engine.domain` loads the separate ruleset in `domain_rules/` (108 rules, own manifest and hash; the Phase 6 ruleset and hash are untouched) and `evaluate_domain` returns a `DomainAnalysisResult`. No source-backed method means `NOT_EVALUABLE`; missing divisional, dasha, transit or Phase 6 inputs mean `INSUFFICIENT_EVIDENCE`; policy gates mean `POLICY_BLOCKED`; open source conflicts mean `CONFLICTING_EVIDENCE`. `varga_from_kundli` reads divisional placements from the existing Kundli JSON; `ChartFacts` stays D1-only.
+`pandit_rule_engine.domain` loads the separate ruleset in `domain_rules/` (108 rules, own manifest and hash; the Phase 6 ruleset and hash are untouched) and `evaluate_domain` returns a `DomainAnalysisResult`. No source-backed method means `NOT_EVALUABLE`; missing divisional, dasha, transit or Phase 6 inputs mean `INSUFFICIENT_EVIDENCE`; policy gates mean `POLICY_BLOCKED`; open source conflicts mean `CONFLICTING_EVIDENCE`. `varga_from_kundli` reads divisional placements from the existing Kundli JSON, restricted to the eight approved charts (D2, D3, D7, D9, D10, D12, D20, D24; D4 and the rest are never read); `ChartFacts` stays D1-only. An absent dasha section is `INSUFFICIENT_EVIDENCE` with `PHASE_18_DEPENDENCY`. No rule reads transit evidence: the six Phaladeepika XVI sl. 31-32 records are non-evaluating `RESEARCH_PENDING` records.
 
 ## Local development
 

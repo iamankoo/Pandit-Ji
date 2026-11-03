@@ -7,13 +7,17 @@ no file and no network, calls no model and invents no methodology:
 * a domain without an approved, source-backed mapping is ``NOT_EVALUABLE`` with a typed reason;
 * a policy gate (a static block, or adulthood not stated by the caller) is ``POLICY_BLOCKED``
   and nothing else is produced;
-* a required input that was not supplied (a divisional chart, a dasha or transit section, the
-  Phase 6 rule results, ``as_of_utc``) makes that rule ``INSUFFICIENT_EVIDENCE`` and is never
-  replaced by a default;
+* a required input that was not supplied (a divisional chart, the dasha section, the Phase 6 rule
+  results, ``as_of_utc``) makes that rule ``INSUFFICIENT_EVIDENCE`` and is never replaced by a
+  default; an absent dasha section carries the typed reason ``PHASE_18_DEPENDENCY`` (LD-14), a
+  present but unusable one ``MISSING_DASHA_EVIDENCE``;
+* no rule reads the transit section: the six Phaladeepika XVI sl. 31-32 records are non-evaluating
+  (``NOT_EVALUABLE``, ``RESEARCH_PENDING``) because the owner did not approve applying a general
+  bhava method to a domain's mapped house; the section is only recorded as present or absent;
 * a mapping with an unresolved source conflict is ``CONFLICTING_EVIDENCE``, with the conflict
   named and no tags exposed;
 * facts are structural (a house's sign and lord, a karaka's placement, a divisional placement, a
-  relation of a dasha lord to the 7th house, transit relations of the researched bhava method);
+  relation of a dasha lord to the 7th house);
   none states an effect or a prediction. The interpretation tags of a triggered rule are the
   structured significations the source assigns, never prose.
 
@@ -47,7 +51,6 @@ from pandit_rule_engine.dasha_evidence import DashaEvidence
 from pandit_rule_engine.domain.inputs import VargaPlacements
 from pandit_rule_engine.domain.loader import DomainRuleset
 from pandit_rule_engine.domain.schema import (
-    BhavaTransitParams,
     DomainRuleDocument,
     HouseParams,
     KarakaParams,
@@ -58,7 +61,7 @@ from pandit_rule_engine.domain.schema import (
     WithheldParams,
 )
 from pandit_rule_engine.facts import ChartFacts, PlanetFact
-from pandit_rule_engine.transit_evidence import StateRecord, TransitEvidence
+from pandit_rule_engine.transit_evidence import TransitEvidence
 from pandit_rule_engine.vocab import SIGN_INDEX, SIGN_ORDER, Body, Sign
 
 EVALUATOR_VERSION = "1.0.0"
@@ -96,11 +99,6 @@ def _astro_ref(body: Body) -> str:
 
 def _pairs(**values: str) -> tuple[tuple[str, str], ...]:
     return tuple(sorted(values.items()))
-
-
-def _trine(a: Sign, b: Sign) -> bool:
-    """``a`` is the 5th or 9th sign from ``b`` (BPHS Ch. 7 v. 33-36: the konas)."""
-    return (SIGN_INDEX[a] - SIGN_INDEX[b]) % 12 in (4, 8)
 
 
 def _tags(rule: DomainRuleDocument) -> DomainInterpretation:
@@ -378,7 +376,7 @@ def _marriage_dasha_rule(
     as_of_utc: str | None,
 ) -> tuple[DomainFact, DomainRuleResult]:
     if dasha is None:
-        raise _Insufficient(DomainReason.MISSING_DASHA_EVIDENCE, "no dasha section supplied")
+        raise _Insufficient(DomainReason.PHASE_18_DEPENDENCY, "no dasha section supplied")
     if dasha.status not in _USABLE_DASHA:
         raise _Insufficient(DomainReason.MISSING_DASHA_EVIDENCE, f"dasha status {dasha.status}")
     if as_of_utc is None:
@@ -426,97 +424,6 @@ def _marriage_dasha_rule(
         dasha_refs=(current.period_id,),
         **_fact_base(rule),  # type: ignore[arg-type]
     )
-    return _applied(rule, fact, holds=holds)
-
-
-def _transit_states(transit: TransitEvidence) -> dict[Body, StateRecord]:
-    if transit.status != "success" or transit.snapshot is None:
-        raise _Insufficient(
-            DomainReason.MISSING_TRANSIT_EVIDENCE, f"transit status {transit.status}"
-        )
-    return {state.body: state for state in transit.snapshot.states}
-
-
-def _bhava_transit_rule(
-    rule: DomainRuleDocument,
-    params: BhavaTransitParams,
-    facts: ChartFacts,
-    transit: TransitEvidence | None,
-    varga: VargaPlacements | None,
-) -> tuple[DomainFact, DomainRuleResult]:
-    if transit is None:
-        raise _Insufficient(DomainReason.MISSING_TRANSIT_EVIDENCE, "no transit section supplied")
-    states = _transit_states(transit)
-    assert transit.snapshot is not None
-
-    def at(body: Body) -> Sign:
-        state = states.get(body)
-        if state is None:
-            raise _Insufficient(DomainReason.MISSING_TRANSIT_EVIDENCE, f"transit.{body.value}")
-        return Sign(state.sign)
-
-    house_sign = _house_sign(facts, params.house)
-    bhava_lord = _lord(facts, house_sign)
-    lagna_lord = _lord(facts, facts.lagna_sign)
-    natal_bhava_lord = _planet(facts, bhava_lord).sign
-    natal_lagna_lord = _planet(facts, lagna_lord).sign
-    d9 = varga.chart(9) if varga is not None else None
-    amsa_bhava = d9.planets.get(bhava_lord) if d9 is not None else None
-    amsa_lagna = d9.planets.get(lagna_lord) if d9 is not None else None
-
-    def trine_clause(moving: Sign, rasi_of: Sign, amsa_of: Sign | None) -> str:
-        if _trine(moving, rasi_of):
-            return "true"
-        if amsa_of is None:
-            return "unevaluated"  # the Amsa alternative needs the D9 placement
-        return "true" if _trine(moving, amsa_of) else "false"
-
-    wanted = set(params.clauses)
-    values: dict[str, str] = {}
-    if "31a" in wanted:
-        values["clause_31a"] = trine_clause(at(lagna_lord), natal_bhava_lord, amsa_bhava)
-    if "31b" in wanted:
-        values["clause_31b"] = str(at(lagna_lord) is house_sign).lower()
-    if "31c" in wanted:
-        values["clause_31c"] = trine_clause(at(bhava_lord), natal_lagna_lord, amsa_lagna)
-    if "31d" in wanted:
-        values["clause_31d"] = str(at(bhava_lord) is facts.lagna_sign).lower()
-    if "31e" in wanted:
-        values["clause_31e"] = str(
-            at(lagna_lord) is at(bhava_lord) and lagna_lord is not bhava_lord
-        ).lower()
-    if "32" in wanted:
-        values["clause_32"] = trine_clause(at(Body.JUPITER), natal_bhava_lord, amsa_bhava)
-    holds = any(v == "true" for v in values.values())
-    undecided = any(v == "unevaluated" for v in values.values())
-    attrs = {
-        "house": str(params.house),
-        "house_sign": house_sign.value,
-        "bhava_lord": bhava_lord.value,
-        "lagna_lord": lagna_lord.value,
-        "transit_at_utc": transit.snapshot.at_utc,
-        "transit_sign_bhava_lord": at(bhava_lord).value,
-        "transit_sign_lagna_lord": at(lagna_lord).value,
-        "transit_sign_jupiter": at(Body.JUPITER).value,
-        "trine_definition": "5th_or_9th_sign",
-        "amsa_alternative": "evaluated" if d9 is not None else "not_evaluated_missing_d9",
-        "aspect_alternative": "not_evaluated",
-        "moon_reckoning": "not_evaluated",
-        **values,
-    }
-    fact = DomainFact(
-        fact_id=f"{rule.rule_id.lower()}.relation",
-        kind=DomainFactKind.TRANSIT_RELATION,
-        subject=f"bhava:{params.house}",
-        attributes=tuple(sorted(attrs.items())),
-        chart_refs=("astro.lagna", _astro_ref(bhava_lord), _astro_ref(lagna_lord)),
-        house_refs=(params.house,),
-        transit_refs=(transit.snapshot.at_utc,),
-        varga_refs=(9,) if d9 is not None else (),
-        **_fact_base(rule),  # type: ignore[arg-type]
-    )
-    if not holds and undecided:
-        raise _Insufficient(DomainReason.MISSING_VARGA_EVIDENCE, "the Amsa alternative needs D9")
     return _applied(rule, fact, holds=holds)
 
 
@@ -690,8 +597,6 @@ def evaluate_domain(
                 continue
             elif isinstance(params, MarriageDashaParams):
                 fact, result = _marriage_dasha_rule(rule, params, facts, dasha, request.as_of_utc)
-            elif isinstance(params, BhavaTransitParams):
-                fact, result = _bhava_transit_rule(rule, params, facts, transit, varga)
             elif isinstance(params, SubjectParams):
                 fact, result = _subject_rule(rule, params, facts)
             else:

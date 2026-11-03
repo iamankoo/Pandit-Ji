@@ -388,3 +388,15 @@ def test_the_agent_request_has_no_sex_age_or_adult_field_the_model_could_set() -
         "adult",
         "subject_adult_confirmed",
     }
+
+
+def test_no_preset_asks_for_transit_evidence_because_no_domain_reads_it() -> None:
+    assert not any(p.transit for p in PRESETS.values())
+    assert not any(C.ASTRO_TRANSIT in p.desired for p in PRESETS.values())
+    plan = build_plan(
+        Domain.ASTROLOGY,
+        Intent.CAREER,
+        ToolRegistry([DomainAnalysisTool(evaluated(L.CAREER))]),
+        L.CAREER,
+    )
+    assert all(C.ASTRO_TRANSIT not in step.capabilities for step in plan.steps)

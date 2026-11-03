@@ -331,12 +331,6 @@ def _check_rules(
             and rule.domain is not LifeDomain.SUBJECTS
         ):
             problems.append(f"{rid}: the subject method serves Subjects only")
-        if rule.kind is DomainRuleKind.BHAVA_TRANSIT_METHOD:
-            house = rule.params.house  # type: ignore[union-attr]
-            if house not in _house_rules(rules, rule.domain):
-                problems.append(
-                    f"{rid}: house {house} is not a house this domain maps itself (no inheritance)"
-                )
         for tag in (*rule.tags.domain_tags, *rule.tags.signification_tags):
             if _tag_prohibited(tag):
                 problems.append(f"{rid}: tag {tag!r} falls in a prohibited category")

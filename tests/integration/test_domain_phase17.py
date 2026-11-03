@@ -365,7 +365,7 @@ def test_phase_17_adds_no_service_and_no_later_phase_code() -> None:
 def test_every_preset_agrees_with_the_domain_ruleset() -> None:
     from pandit_agent.orchestration.domain import PRESETS
     from pandit_contracts.domain import DomainRuleKind
-    from pandit_rule_engine.domain.schema import BhavaTransitParams, VargaParams
+    from pandit_rule_engine.domain.schema import VargaParams
 
     ruleset = load_domain_ruleset(DOMAIN_RULES)
     for domain, preset in PRESETS.items():
@@ -374,10 +374,37 @@ def test_every_preset_agrees_with_the_domain_ruleset() -> None:
         assert set(preset.varga_facts) == vargas, domain
         has_dasha = any(r.kind is DomainRuleKind.MARRIAGE_DASHA_METHOD for r in rules)
         assert preset.dasha == has_dasha, domain
-        has_transit = any(isinstance(r.params, BhavaTransitParams) for r in rules)
-        assert preset.transit == has_transit, domain
+        # no rule reads transit evidence (the bhava transit records are non-evaluating)
+        assert preset.transit is False, domain
         assert (
             preset.adult_confirmation_required
             == ruleset.adult_confirmation_required(domain)
         )
         assert set(preset.safety) == set(ruleset.effective_policy(domain)), domain
+
+
+def test_the_final_phase_17_identifiers_are_pinned(domain_kv: str) -> None:
+    ruleset = load_domain_ruleset(DOMAIN_RULES)
+    assert domain_kv == "KV-4da4248a7fb5589c"
+    assert ruleset.manifest.ruleset_version == "1.0.1"
+    assert ruleset.manifest.methodology_version == "DOMAIN_METHODOLOGY_P17_1"
+    assert (
+        ruleset.content_hash
+        == "63d807503249da14f0aa61acc20aedaf08e74a1037da5562bcab55c17177070f"
+    )
+    assert len(ruleset.rules) == 108
+
+
+def test_marriage_without_a_dasha_section_carries_the_phase_18_dependency(
+    chart: tuple[Any, dict[str, Any]], domain_kv: str
+) -> None:
+    result = _analyse(LifeDomain.MARRIAGE, chart, domain_kv)
+    dasha_rule = next(r for r in result.rules if r.rule_id.endswith("DASHA_7TH_PX13"))
+    assert dasha_rule.status is DomainStatus.INSUFFICIENT_EVIDENCE
+    assert (
+        dasha_rule.reason is not None
+        and dasha_rule.reason.value == "PHASE_18_DEPENDENCY"
+    )
+    transit = [r for r in result.rules if "PXVI31" in r.rule_id]
+    assert transit and all(r.status is DomainStatus.NOT_EVALUABLE for r in transit)
+    assert all(r.interpretation is None for r in transit)

@@ -285,3 +285,28 @@ def test_the_rule_engine_ruleset_and_the_knowledge_mappings_agree(domain: Knowle
         assert mapping.domain_id == f"DOMAIN.{rule.domain.value}"
         assert mapping.support_status.value == rule.support.value
         assert mapping.profile_id == rule.profile
+
+
+def test_the_six_bhava_transit_records_are_research_pending_policy_notes(
+    domain: KnowledgeContent,
+) -> None:
+    transit = [m for m in domain.domain_mappings if "PXVI31" in m.mapping_id]
+    assert len(transit) == 6
+    for mapping in transit:
+        assert mapping.support_status is SupportStatus.NOT_EVALUABLE
+        assert mapping.supporting_statement_ids == ()  # nothing supports the unapproved bridge
+    notes = [
+        s
+        for s in domain.statements
+        if s.statement_kind is StatementKind.POLICY_NOTE
+        and "PXVI31" in str(s.attributes.get("mapping_id"))
+    ]
+    assert len(notes) == 6
+    for note in notes:
+        assert note.attributes["reason"] == "RESEARCH_PENDING"
+        assert note.attributes["transformation"] == "NOT_EVALUABLE"
+    # no method concept (no reading convention) exists for the unapproved bridge
+    assert not any(
+        s.statement_kind is StatementKind.READING_CONVENTION and "PXVI31" in s.concept_id
+        for s in domain.statements
+    )

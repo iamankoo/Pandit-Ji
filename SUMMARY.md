@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-> **LATEST STOPPING POINT (2026-11-03; §53): PHASE 17 IS IMPLEMENTED (life-domain intelligence); PHASE 18 HAS NOT STARTED. Read §53 first.** **LATEST STOPPING POINT (2026-10-06; §52; supersedes the older banners below, which are history): the owner approved the Phase 17 decisions and the architecture is LOCKED (ADR-012 Locked, standards v1.30.0); PHASE 16 IS CLOSED; PHASE 17 IS NOT IMPLEMENTED and the next run is the Phase 17 implementation. Read §52, then §51, before anything else.**
+> **LATEST STOPPING POINT (2026-11-03; §53): PHASE 17 (LIFE-DOMAIN INTELLIGENCE) IS CLOSED; PHASE 18 (BACKEND PLATFORM) HAS NOT STARTED. Read §53 first.** **LATEST STOPPING POINT (2026-10-06; §52; supersedes the older banners below, which are history): the owner approved the Phase 17 decisions and the architecture is LOCKED (ADR-012 Locked, standards v1.30.0); PHASE 16 IS CLOSED; PHASE 17 IS NOT IMPLEMENTED and the next run is the Phase 17 implementation. Read §52, then §51, before anything else.**
 
 > **FINAL HANDOFF (saved 2026-10-03; §48): PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED. On the next session, do not infer the project state from the previous conversation: read this file first (§48, then §47), then follow the source-of-truth hierarchy and the Phase 16 roadmap section of `Phases.md`. Phase 15 is already closed and must not be reimplemented. Phase 15 closure commit `23f9924f1e59772729f30f42c35384471416c045`, CI run `37113858910` (18 of 18 jobs successful). The real model has NOT been run. Phase 16 consumes `NarrationResponse.claims` and the bundle references, is the only phase that may set VERIFIED, and starts only on the owner's explicit instruction.**
 >
@@ -2138,9 +2138,9 @@ Phase 16 is CLOSED. Consistency check done before closing: the contract statuses
 ### C. Exact stopping point for the Phase 17 implementation run
 Nothing is implemented: no code, contract, rule, mapping, data file, schema or test changed. The implementation run starts from: ADR-012, standards LD-01 to LD-27, the research record section 0 (including the derived design constraints, which the implementation prompt must confirm), the matrix sheets and the checks listed in the owner's final-architecture list (no new service; Phase 6 hash `8d29a18c…77209`, Phase 12 `KV-06361d7aba28c1ce`, Phase 13 `KV-a21c2c040abe9663`, Phase 15 and 16 implementation unchanged). Still open: `RESEARCH_PENDING` items, `LEGAL_REVIEW_REQUIRED`, the final minors policy. Do not start Phase 18; do not implement reports or Vastu.
 
-## 53. Phase 17 IMPLEMENTED (2026-11-03) - final handoff
+## 53. Phase 17 CLOSED (2026-11-03) - final handoff
 
-**Status: implemented, verified locally and pushed. Phase 18 has NOT started.** Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. Implementation commit and CI run: see the line `FINAL RECORD` at the end of this section.
+**Status: CLOSED by the owner (implementation and final audit approved, 2026-11-03). Phase 18 has NOT started.** Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. Implementation commit and CI run: see the line `FINAL RECORD` at the end of this section.
 
 ### A. What exists
 - Knowledge version `KV-4da4248a7fb5589c` (standards 1.30.0; separate and additive; Phase 12 `KV-06361d7aba28c1ce` and Phase 13 `KV-a21c2c040abe9663` unchanged; migration `0004_domain_knowledge_vocabulary`, CHECK vocabularies only).
@@ -2166,7 +2166,58 @@ contracts 136; shared 1; astro-engine 1673; rule-engine 568; knowledge 188 passe
 - The test model window is small: a large domain result needs `max_evidence_items` around 30 with the scripted test runtime (real models are not affected; not run).
 - Hindi and Hinglish domain texts: `CALIBRATION_REQUIRED`. `LEGAL_REVIEW_REQUIRED` items unchanged. Vastu, reports: not implemented. One PostgreSQL ANN-index test failed once in a full local run and passed in four later runs; watch CI.
 
-### E. Exact stopping point
-Stop. Phase 18 starts only on the owner's explicit instruction after reviewing the Phase 17 final audit.
+### E. Complete taxonomy and support classifications (36 domains; support is never inherited)
+| # | Domain | Parent | Classification | Result |
+|---|---|---|---|---|
+| 1 | Birth | Personality | NOT_EVALUABLE | NOT_EVALUABLE (UNDEFINED_DOMAIN) |
+| 2 | Personality | - | PARTIALLY_SUPPORTED | evaluated (researched portions) |
+| 3 | Childhood | Personality | NOT_EVALUABLE | POLICY_BLOCKED (minors policy unresolved) |
+| 4 | School | Education | NOT_EVALUABLE | POLICY_BLOCKED (minors policy unresolved) |
+| 5 | College | Education | NOT_EVALUABLE | NOT_EVALUABLE |
+| 6 | Subjects | Education | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 7 | Education | - | SOURCE_SUPPORTED | evaluated |
+| 8 | Career | - | SOURCE_SUPPORTED | evaluated |
+| 9 | Job | Career | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 10 | Corporate Life | Career | NOT_EVALUABLE | NOT_EVALUABLE |
+| 11 | Business | - | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 12 | Startup | Business | NOT_EVALUABLE | NOT_EVALUABLE |
+| 13 | Finance | - | SOURCE_SUPPORTED | evaluated (interpretive only) |
+| 14 | Wealth | Finance | SOURCE_SUPPORTED | evaluated (interpretive only) |
+| 15 | Love | Relationship | PARTIALLY_SUPPORTED | evaluated, adult-gated |
+| 16 | GF/BF | Relationship | NOT_EVALUABLE | NOT_EVALUABLE (POLICY_BLOCKED without adult confirmation) |
+| 17 | Relationship | - | PARTIALLY_SUPPORTED | evaluated, adult-gated |
+| 18 | Marriage | Relationship | SOURCE_SUPPORTED | evaluated, adult-gated (DC-02, Kuja conflicts) |
+| 19 | Spouse | Relationship | PARTIALLY_SUPPORTED | evaluated, adult-gated (sex-specific parts NOT_EVALUABLE) |
+| 20 | Family | - | SOURCE_SUPPORTED | evaluated, adult-gated |
+| 21 | Children | - | SOURCE_SUPPORTED | evaluated, structural significations only, adult-gated |
+| 22 | Travel | - | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 23 | Foreign Travel | Travel | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 24 | Foreign Education | Education | NOT_EVALUABLE | NOT_EVALUABLE |
+| 25 | Foreign Settlement | Travel | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 26 | Personal Life | Personality | NOT_EVALUABLE | NOT_EVALUABLE (UNDEFINED_DOMAIN) |
+| 27 | Spirituality | - | PARTIALLY_SUPPORTED | evaluated (researched portion) |
+| 28 | Parents (extension) | Family | PARTIALLY_SUPPORTED | evaluated, adult-gated (DC-01) |
+| 29 | Siblings (extension) | Family | SOURCE_SUPPORTED | evaluated, adult-gated |
+| 30 | Income (extension) | Finance | SOURCE_SUPPORTED | evaluated (interpretive only) |
+| 31 | Investments (extension) | Finance | NOT_EVALUABLE | NOT_EVALUABLE |
+| 32 | Entrepreneurship (extension) | Business | NOT_EVALUABLE | NOT_EVALUABLE |
+| 33 | Higher Education (extension) | Education | NOT_EVALUABLE | NOT_EVALUABLE |
+| 34 | Major Life Transitions (extension) | - | NOT_EVALUABLE | NOT_EVALUABLE |
+| 35 | General Life Patterns (extension) | - | PARTIALLY_SUPPORTED (label) | NOT_EVALUABLE (METHODOLOGY_NOT_APPROVED; no locked mapping) |
+| 36 | Health (extension) | - | NOT_EVALUABLE | NOT_EVALUABLE (interpretation only; never a diagnosis) |
 
-FINAL RECORD: starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`; implementation commit `7121816` (rewritten without the trailer); audit-reconciliation docs `11a653d`; final-corrections commit and its CI run are recorded in the owner-facing audit reply (a commit cannot contain its own SHA). Final-corrections run: Varga adapter restricted to 8 charts; the six bhava transit records made non-evaluating (`RESEARCH_PENDING`); LD-14 `PHASE_18_DEPENDENCY` used for an absent dasha section. Final identifiers: knowledge version `KV-4da4248a7fb5589c`, ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.1 hash `63d807503249da14f0aa61acc20aedaf08e74a1037da5562bcab55c17177070f`.
+Parent links are those of the ruleset taxonomy (`services/rule-engine/domain_rules/taxonomy.yaml`), which the tests pin; the table is a convenience copy.
+
+### F. Preserved boundaries (closure record)
+- Varga: only D2, D3, D7, D9, D10, D12, D20 and D24 are read, from the Phase 5 Kundli JSON `charts` section (owner-accepted, pre-Phase-17, read-only); D4 and all other charts are skipped before parsing. Phase 6 `ChartFacts` is D1-only and its hash `8d29a18c...77209` is unchanged.
+- Transit: the six Phaladeepika XVI sl. 31-32 records are non-evaluating (`RESEARCH_PENDING`); the domain-to-house methodology is unresolved. Dasha: only the marriage method (Phaladeepika X sl. 13-14); an absent dasha section carries `PHASE_18_DEPENDENCY`. The transit `PHASE_18_DEPENDENCY` applies only when a future owner-approved transit evaluation path exists.
+- Verifier: trusted-bundle registration of domain results is a Phase 18 dependency; gap claims stay `UNVERIFIABLE` until trusted gap evidence is registered.
+- Limitations: Hindi/Hinglish `CALIBRATION_REQUIRED`; `LEGAL_REVIEW_REQUIRED` items unchanged; no real model run.
+
+### G. Phase 18 mandatory starting conditions (owner directive; none implemented)
+1. Dasha and Transit APIs and evidence composition. 2. An owner-approved transit methodology before any domain transit evaluation. 3. Trusted-bundle registration with the Phase 16 verifier. 4. A regeneration loop respecting the Phase 16 release behaviour (wrong/blocked/invalid: regenerate; unverifiable/insufficient: strip). 5. Reports and API composition. 6. All Phase 6, 12, 13 and 16 protected boundaries preserved. 7. No hosted AI API or fallback; the self-hosted `Qwen/Qwen3-8B` architecture (ADR-009) retained.
+
+### H. Exact stopping point
+Phase 17 is closed. Phase 18 (`Phases.md` "Phase 18 - Backend Platform") starts only on the owner's explicit instruction. Do not implement any of G now.
+
+FINAL RECORD: starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`; implementation commit `7121816` (rewritten without a commit-message trailer); audit-reconciliation docs `11a653d`; final-corrections commit `ecd1d54166e8ddd750da73592e9c3ec0a274ed65`, CI run `41587059261` (18 of 18 jobs successful). Knowledge version `KV-4da4248a7fb5589c`; ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.1, hash `63d807503249da14f0aa61acc20aedaf08e74a1037da5562bcab55c17177070f`. The closure documentation commit and its CI run are recorded in the closure report (a commit cannot contain its own SHA).

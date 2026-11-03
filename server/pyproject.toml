@@ -9,6 +9,11 @@ dependencies = [
   "pydantic>=2.6,<3",
   "psycopg[binary]>=3.1,<4",
   "redis>=5.0,<6",
+  "sqlalchemy>=2.0,<3",
+  "pyjwt[crypto]>=2.8,<3",
+  "celery>=5.4,<6",
+  "httpx>=0.27",
+  "tzdata",
   "pandit-contracts",
   "pandit-shared",
   "pandit-astro-engine",
@@ -44,6 +49,10 @@ select = ["E", "F", "I", "UP", "B"]
 python_version = "3.10"
 strict = true
 mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["celery", "celery.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

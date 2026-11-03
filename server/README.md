@@ -31,3 +31,7 @@ pytest
 ruff check .
 mypy src
 ```
+
+## Phase 18 backend
+
+Run the unit tests with `pytest` (SQLite, in-memory store, a throw-away RSA key and the scripted language-model double; no services needed). The integration tests run when `SERVER_TEST_DATABASE_URL` (PostgreSQL with pgvector), `SERVER_TEST_VALKEY_URL` and `SERVER_TEST_KEYCLOAK_URL` (a Keycloak started with `infrastructure/keycloak/pandit-ji-realm.json`) are set. Configuration is read from the environment (`config.py`, `.env.example`). Start a worker with `celery -A pandit_server.jobs.celery_app worker`. The API is under `/api/v1`; OpenAPI is served at `/docs`. The language model is the self-hosted Qwen3-8B on vLLM; without it chat answers `503 llm_unavailable` and there is no hosted fallback.

@@ -263,7 +263,7 @@ Track supported stable release lines rather than pinning every dependency to one
 | LLM serving | Ollama (dev) / vLLM (staging/prod) | Locked | Self-hosted AI inference |
 | Storage | S3-compatible (MinIO self-hosted default) | Locked | User files (palm images, reports) |
 | Observability | OpenTelemetry | Locked | Traces/metrics/logs |
-| Containers | Docker + Docker Compose | **Superseded for development (owner directive 2026-11-03): GitHub Codespaces, no Docker** | Production hosting is evaluated separately |
+| Containers | Docker + Docker Compose | Locked (restored by owner decision 2026-11-04) | Local dev, integration tests and CI |
 | Testing | pytest / Flutter test / Vitest / Schemathesis | Locked | Per-layer test technology |
 | Code quality | Ruff+mypy / ESLint+Prettier+tsc / dart analyze+format | Locked | Per-ecosystem lint/format/type-check |
 | LLM checkpoint | Qwen/Qwen3-8B @ b968826 (Apache-2.0) | **Selected (Phase 14); not yet run or evaluated** | Self-hosted language layer (ADR-009) |
@@ -278,3 +278,5 @@ Track supported stable release lines rather than pinning every dependency to one
 - **v1.2.0** (Phase 14, 2026-10-03): the LLM checkpoint is selected (`Qwen/Qwen3-8B`, vLLM; ADR-009) from verified primary sources; the Ollama development tier is recorded as not implemented; `jinja2` and `jsonschema` added to the agent; GPU hardware, quality evaluation and fine-tuning remain open.
 
 - **v1.3.0** (2026-11-03, owner directive): development, testing and validation for Phases 18-21 run exclusively in GitHub Codespaces without Docker (no Docker, Compose, Dockerfiles, dev containers or Docker-based CI); the Docker rows and statements above are superseded for development. Production hosting is evaluated separately. Existing Docker artifacts are replaced in Phase 18.
+
+- **v1.4.0** (2026-11-04, owner decision and Phase 18): Docker and Docker Compose are permitted again (v1.3.0's Codespaces-only, no-Docker rule is superseded). Phase 18 uses Keycloak (OIDC resource server), PostgreSQL/SQLAlchemy 2, Valkey, Celery and WebSockets as locked; PyJWT, SQLAlchemy and Celery become `server/` dependencies.

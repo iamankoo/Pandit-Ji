@@ -1,57 +1,96 @@
-"""Structured error handling foundation.
+"""Structured error handling.
 
-Every unhandled/HTTP error response is shaped consistently:
-`{"error": {"code": ..., "message": ..., "request_id": ...}}`. This is a
-foundation for later phases' failure architecture
-(`docs/ARCHITECTURE.md` §"Failure Architecture") -- domain-specific error
-codes are added as each domain endpoint is built.
+Every error response has one shape: ``{"error": {"code", "message", "request_id"}}`` (plus optional
+``details`` for validation). Application code raises :class:`ApiError`; nothing internal (stack
+traces, SQL, tokens, personal data) is ever put in a response.
 """
 
 from __future__ import annotations
+
+from typing import Any
 
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException
 
-# `starlette.exceptions.HTTPException` (not `fastapi.HTTPException`, which is
-# a subclass) is what Starlette's router itself raises for an unmatched route
-# (a plain 404). Registering the handler for the base class here catches both
-# that internal case and any `fastapi.HTTPException` raised by application
-# code, since exception-handler dispatch is isinstance-based on the ancestor.
+
+class ApiError(Exception):
+    """A typed, user-safe error."""
+
+    def __init__(
+        self,
+        status_code: int,
+        code: str,
+        message: str,
+        *,
+        headers: dict[str, str] | None = None,
+        details: Any = None,
+    ) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+        self.code = code
+        self.message = message
+        self.headers = headers or {}
+        self.details = details
 
 
-def _error_body(code: str, message: str, request: Request) -> dict[str, dict[str, str | None]]:
-    request_id = getattr(request.state, "request_id", None)
-    return {"error": {"code": code, "message": message, "request_id": request_id}}
+def not_found(what: str = "resource") -> ApiError:
+    # The same response for "does not exist" and "belongs to someone else" (no existence leak).
+    return ApiError(404, "not_found", f"The requested {what} was not found.")
+
+
+def _body(
+    code: str, message: str, request: Request, details: Any = None
+) -> dict[str, dict[str, Any]]:
+    error: dict[str, Any] = {
+        "code": code,
+        "message": message,
+        "request_id": getattr(request.state, "request_id", None),
+    }
+    if details is not None:
+        error["details"] = details
+    return {"error": error}
 
 
 def register_exception_handlers(app: FastAPI) -> None:
+    @app.exception_handler(ApiError)
+    async def api_error_handler(request: Request, exc: ApiError) -> JSONResponse:
+        return JSONResponse(
+            status_code=exc.status_code,
+            content=_body(exc.code, exc.message, request, exc.details),
+            headers=exc.headers,
+        )
+
     @app.exception_handler(HTTPException)
     async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
         return JSONResponse(
             status_code=exc.status_code,
-            content=_error_body(
-                code=f"http_{exc.status_code}", message=str(exc.detail), request=request
-            ),
+            content=_body(f"http_{exc.status_code}", str(exc.detail), request),
         )
 
     @app.exception_handler(RequestValidationError)
     async def validation_exception_handler(
         request: Request, exc: RequestValidationError
     ) -> JSONResponse:
+        # Field locations and messages only; never the submitted values (they may be personal).
+        details = [
+            {"loc": [str(p) for p in e.get("loc", ())], "type": str(e.get("type", ""))}
+            for e in exc.errors()
+        ]
         return JSONResponse(
             status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            content=_error_body(
-                code="validation_error", message="Request validation failed.", request=request
-            ),
+            content=_body("validation_error", "Request validation failed.", request, details),
         )
 
     @app.exception_handler(Exception)
     async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+        import logging
+
+        logging.getLogger("pandit_server").error(
+            "unhandled_exception", extra={"error_type": type(exc).__name__}
+        )
         return JSONResponse(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            content=_error_body(
-                code="internal_error", message="An unexpected error occurred.", request=request
-            ),
+            content=_body("internal_error", "An unexpected error occurred.", request),
         )

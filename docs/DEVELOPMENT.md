@@ -2,7 +2,7 @@
 
 This is the Phase 3 (Repository & Engineering Foundation) developer guide. For architecture, read `docs/ARCHITECTURE.md`; for the roadmap, `Phases.md`; for locked technology choices, `TECH_STACK.md`.
 
-> **Owner directive (2026-11-03):** for Phases 18-21 all development, testing and validation happen in GitHub Codespaces, without Docker (no Docker, Compose, Dockerfiles or Docker-based dev containers or CI). Any Docker instruction below is superseded for development; see `SUMMARY.md` section 54.
+> **Superseded on 2026-11-04 (see `SUMMARY.md` section 55): Docker is permitted again and development is local.** ~~Owner directive (2026-11-03): for Phases 18-21 all development, testing and validation happen in GitHub Codespaces, without Docker (no Docker, Compose, Dockerfiles or Docker-based dev containers or CI). Any Docker instruction below is superseded for development; see `SUMMARY.md` section 54.~~
 
 ## Prerequisites
 

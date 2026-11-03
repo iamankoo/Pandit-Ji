@@ -45,7 +45,9 @@ services:
 
   keycloak:
     image: quay.io/keycloak/keycloak:26.0
-    command: ["start-dev"]
+    command: ["start-dev", "--import-realm"]
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import:ro
     environment:
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-changeme-in-env}
@@ -89,6 +91,23 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.server.rule=PathPrefix(`/`)"
       - "traefik.http.services.server.loadbalancer.server.port=8000"
+
+  worker:
+    # Celery worker for background jobs (reports); same image as the server.
+    build:
+      context: ..
+      dockerfile: server/Dockerfile
+    env_file:
+      - ../.env
+    command: ["celery", "-A", "pandit_server.jobs.celery_app", "worker", "--loglevel=INFO", "--concurrency=2"]
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-pandit}:${POSTGRES_PASSWORD:-pandit}@postgres:5432/${POSTGRES_DB:-pandit}
+      VALKEY_URL: redis://valkey:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
 
   gateway:
     image: traefik:v3.2

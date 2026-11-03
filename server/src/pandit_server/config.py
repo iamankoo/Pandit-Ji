@@ -55,3 +55,35 @@ class Settings(BaseServiceSettings):
     ai_inference_base_url: str = Field(
         default="http://localhost:11434", alias="AI_INFERENCE_BASE_URL"
     )
+
+    # --- Auth details (OIDC resource server; Keycloak is the identity provider) ---
+    auth_jwks_url: str | None = Field(default=None, alias="AUTH_JWKS_URL")
+    auth_audience: str = Field(default="pandit-server", alias="AUTH_AUDIENCE")
+    auth_algorithms: str = Field(default="RS256", alias="AUTH_ALGORITHMS")
+    auth_clock_skew_seconds: int = Field(default=30, alias="AUTH_CLOCK_SKEW_SECONDS")
+    auth_jwks_cache_seconds: int = Field(default=300, alias="AUTH_JWKS_CACHE_SECONDS")
+    auth_admin_role: str = Field(default="pandit-admin", alias="AUTH_ADMIN_ROLE")
+
+    # --- Rate limiting (requests per window, per user or per IP; Valkey-backed) ---
+    rate_limit_window_seconds: int = Field(default=60, alias="RATE_LIMIT_WINDOW_SECONDS")
+    rate_limit_default: int = Field(default=120, alias="RATE_LIMIT_DEFAULT")
+    rate_limit_anonymous: int = Field(default=30, alias="RATE_LIMIT_ANONYMOUS")
+    rate_limit_expensive: int = Field(default=20, alias="RATE_LIMIT_EXPENSIVE")
+    rate_limit_auth: int = Field(default=10, alias="RATE_LIMIT_AUTH")
+
+    # --- Caching (deterministic results only) ---
+    cache_ttl_seconds: int = Field(default=3600, alias="CACHE_TTL_SECONDS")
+
+    # --- Limits and safety ---
+    max_request_bytes: int = Field(default=262144, alias="MAX_REQUEST_BYTES")
+    cors_origins: str = Field(default="", alias="CORS_ORIGINS")
+    metrics_token: str | None = Field(default=None, alias="METRICS_TOKEN")
+    memory_retention_days: int = Field(default=365, alias="MEMORY_RETENTION_DAYS")
+
+    # --- Self-hosted LLM boundary (Phase 14; no hosted fallback exists) ---
+    llm_manifest_name: str = Field(default="qwen3-8b.json", alias="LLM_MANIFEST_NAME")
+    chat_max_regenerations: int = Field(default=2, alias="CHAT_MAX_REGENERATIONS")
+    chat_max_evidence_items: int = Field(default=120, alias="CHAT_MAX_EVIDENCE_ITEMS")
+
+    # --- Background jobs (Celery over Valkey; eager mode runs tasks inline, for tests) ---
+    celery_eager: bool = Field(default=False, alias="CELERY_EAGER")

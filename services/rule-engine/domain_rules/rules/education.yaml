@@ -1,0 +1,249 @@
+# Phase 17 domain rules: EDUCATION. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_EDUCATION_HOUSE_02_PXVI5
+rule_version: '1'
+domain: EDUCATION
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.EDUCATION.HOUSE.02.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: knowledge (2nd lord)
+bridge_note: Phaladeepika XVI sloka 5 speaks of knowledge and wealth through the 2nd lord's association;
+  derived, not a house-list term.
+params:
+  kind: HOUSE_RELEVANCE
+  house: 2
+  detail: FULL
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.house2.knowledge_2nd_lord
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_HOUSE_05_P11
+rule_version: '1'
+domain: EDUCATION
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.EDUCATION.HOUSE.05.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: learning; knowledge
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 5
+  detail: FULL
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.house5.learning_knowledge
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_KARAKA_JUPITER_B312
+rule_version: '1'
+domain: EDUCATION
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.EDUCATION.KARAKA.JUPITER.B312
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 3 v. 12-13 (printed p. 28)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13
+support: SOURCE_SUPPORTED
+source_term: knowledge
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: jupiter
+  detail: FULL
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.karaka.jupiter.knowledge
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_KARAKA_MERCURY_PXV15
+rule_version: '1'
+domain: EDUCATION
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.EDUCATION.KARAKA.MERCURY.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: SOURCE_SUPPORTED
+source_term: learning
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: mercury
+  detail: FULL
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.karaka.mercury.learning
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_METHOD_PXVI31_H05_PXVI31
+rule_version: '1'
+domain: EDUCATION
+kind: BHAVA_TRANSIT_METHOD
+mapping_id: MAP.EDUCATION.METHOD.PXVI31_H05.PXVI31
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 31-35 (printed pp. 174-175)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+support: PARTIALLY_SUPPORTED
+source_term: success or acquisition of the 5th Bhava
+bridge_note: The source states the method for any Bhava; here it is applied to the house this domain itself
+  maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+  reckoning are not evaluated.
+params:
+  kind: BHAVA_TRANSIT_METHOD
+  house: 5
+  clauses:
+  - 31a
+  - 31b
+  - 31c
+  - 31d
+  - 31e
+  - '32'
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - bhava.transit_relation_of_researched_method
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_PHASE6_BPHS_SAN_LAGNADHI_36_37
+rule_version: '1'
+domain: EDUCATION
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.EDUCATION.PHASE6.BPHS_SAN_LAGNADHI_36_37
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 36 v. 37
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_LAGNADHI_36_37
+support: PARTIALLY_SUPPORTED
+source_term: learned in the Sastras
+bridge_note: The source's effect is being a great person learned in Sastras; the match to 'education'
+  is a bridge.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_LAGNADHI_36_37
+  phase6_signification: yoga.lagnadhi_36_37
+  blocked: false
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.phase6.bphs_san_lagnadhi_36_37
+  effect_class: supportive
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_PHASE6_BPHS_SAN_VOSI_38_1
+rule_version: '1'
+domain: EDUCATION
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.EDUCATION.PHASE6.BPHS_SAN_VOSI_38_1
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 38 v. 1-4
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_VOSI_38_1
+support: PARTIALLY_SUPPORTED
+source_term: learning (among other effects)
+bridge_note: One of several effects the source names.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_VOSI_38_1
+  phase6_signification: yoga.vosi_38_1
+  blocked: false
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.phase6.bphs_san_vosi_38_1
+  effect_class: supportive
+---
+document_type: domain_rule
+rule_id: DOM_EDUCATION_VARGA_D24_B7
+rule_version: '1'
+domain: EDUCATION
+kind: VARGA_RELEVANCE
+mapping_id: MAP.EDUCATION.VARGA.D24.B7
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 7 v. 1-8 (printed pp. 91-92)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+support: SOURCE_SUPPORTED
+source_term: learning
+bridge_note: ''
+params:
+  kind: VARGA_RELEVANCE
+  varga: 24
+  show_house_lords:
+  - 5
+  show_karakas:
+  - mercury
+  - jupiter
+  show_lagna_lord: false
+tags:
+  domain_tags:
+  - education
+  signification_tags:
+  - education.varga.d24.learning
+  effect_class: neutral

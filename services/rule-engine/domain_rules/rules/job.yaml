@@ -1,0 +1,59 @@
+# Phase 17 domain rules: JOB. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_JOB_HOUSE_10_P11
+rule_version: '1'
+domain: JOB
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.JOB.HOUSE.10.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: PARTIALLY_SUPPORTED
+source_term: profession (livelihood)
+bridge_note: The source does not separate employment from other livelihood; its own record, not inherited
+  from Career.
+params:
+  kind: HOUSE_RELEVANCE
+  house: 10
+  detail: FULL
+tags:
+  domain_tags:
+  - job
+  signification_tags:
+  - job.house10.profession_livelihood
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_JOB_KARAKA_SATURN_PXV15
+rule_version: '1'
+domain: JOB
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.JOB.KARAKA.SATURN.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: PARTIALLY_SUPPORTED
+source_term: livelihood; servants
+bridge_note: '''servants'' and ''livelihood'' are the source''s terms; ''job'' is a bridge.'
+params:
+  kind: KARAKA_RELEVANCE
+  planet: saturn
+  detail: FULL
+tags:
+  domain_tags:
+  - job
+  signification_tags:
+  - job.karaka.saturn.livelihood_servants
+  effect_class: neutral

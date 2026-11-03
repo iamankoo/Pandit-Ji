@@ -592,3 +592,42 @@ def test_the_palm_version_builds_in_postgres_beside_the_unchanged_phase_12_versi
     assert {r["knowledge_domain"] for r in rows} == {"PALMISTRY"}
     again = KnowledgeBuilder(pg, provider, PALM_KNOWLEDGE_STANDARDS_VERSION).build(palm)
     assert again.outcome == "NOOP" and again.version_id == built.version_id
+
+
+# ---- Phase 17: the domain methodology version coexists with Phase 12 and Phase 13 --------------
+def test_the_domain_version_builds_in_postgres_beside_the_unchanged_earlier_versions(
+    pg: Any, content: KnowledgeContent, provider: HashingEmbeddingProvider
+) -> None:
+    from pandit_knowledge.domain_content import (
+        DOMAIN_KNOWLEDGE_STANDARDS_VERSION,
+        load_domain_content,
+    )
+    from pandit_knowledge.palm_content import PALM_KNOWLEDGE_STANDARDS_VERSION, load_palm_content
+
+    domain = load_domain_content()
+    phase12 = KnowledgeBuilder(pg, provider).build(content)
+    palm = KnowledgeBuilder(pg, provider, PALM_KNOWLEDGE_STANDARDS_VERSION).build(
+        load_palm_content().knowledge
+    )
+    before = {
+        v: {t: len(pg.select_rows(v, t)) for t in VERSIONED_TABLES}
+        for v in (phase12.version_id, palm.version_id)
+    }
+    built = KnowledgeBuilder(pg, provider, DOMAIN_KNOWLEDGE_STANDARDS_VERSION).build(domain)
+    assert phase12.version_id == "KV-06361d7aba28c1ce"
+    assert palm.version_id == "KV-a21c2c040abe9663"
+    assert built.outcome == "CREATED"
+    assert built.version_id not in {phase12.version_id, palm.version_id}
+    for version in (phase12.version_id, palm.version_id, built.version_id):
+        assert verify_version(pg, version) == []
+    after = {v: {t: len(pg.select_rows(v, t)) for t in VERSIONED_TABLES} for v in before}
+    assert before == after  # earlier versions are untouched
+    memory = KnowledgeBuilder(
+        InMemoryKnowledgeStore(), provider, DOMAIN_KNOWLEDGE_STANDARDS_VERSION
+    ).build(domain)
+    assert (memory.version_id, memory.snapshot_hash) == (built.version_id, built.snapshot_hash)
+    again = KnowledgeBuilder(pg, provider, DOMAIN_KNOWLEDGE_STANDARDS_VERSION).build(domain)
+    assert again.outcome == "NOOP" and again.version_id == built.version_id
+    kinds = {r["rule_kind"] for r in pg.select_rows(built.version_id, "rule_references")}
+    assert kinds == {"RULE", "DOMAIN_RULE"}
+    assert pg.select_rows(built.version_id, "chunks") == []

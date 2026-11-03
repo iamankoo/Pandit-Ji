@@ -1,0 +1,185 @@
+# Phase 17 domain rules: PARENTS. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_PARENTS_HOUSE_04_P11
+rule_version: '1'
+domain: PARENTS
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.PARENTS.HOUSE.04.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: mother
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 4
+  detail: FULL
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.house4.mother
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_PARENTS_HOUSE_09_PXVI22
+rule_version: '1'
+domain: PARENTS
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.PARENTS.HOUSE.09.PXVI22
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 22-23
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: DOM17_PHALA_SASTRI_FATHER_XVI_22_23
+support: UNRESOLVED_CONFLICT
+source_term: father
+bridge_note: Phaladeepika uses the 9th for the father; BPHS Ch. 11 v. 11 the 10th (DC-01).
+params:
+  kind: HOUSE_RELEVANCE
+  house: 9
+  detail: FULL
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.house9.father
+  effect_class: neutral
+conflict_ids:
+- DC-01
+---
+document_type: domain_rule
+rule_id: DOM_PARENTS_HOUSE_10_P11
+rule_version: '1'
+domain: PARENTS
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.PARENTS.HOUSE.10.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: UNRESOLVED_CONFLICT
+source_term: father
+bridge_note: BPHS Ch. 11 v. 11 puts the father at the 10th; Phaladeepika XVI sloka 22-23 uses the 9th
+  (DC-01).
+params:
+  kind: HOUSE_RELEVANCE
+  house: 10
+  detail: FULL
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.house10.father
+  effect_class: neutral
+conflict_ids:
+- DC-01
+---
+document_type: domain_rule
+rule_id: DOM_PARENTS_KARAKA_MOON_PXV15
+rule_version: '1'
+domain: PARENTS
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.PARENTS.KARAKA.MOON.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: SOURCE_SUPPORTED
+source_term: mother
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: moon
+  detail: FULL
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.karaka.moon.mother
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_PARENTS_KARAKA_SUN_PXV15
+rule_version: '1'
+domain: PARENTS
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.PARENTS.KARAKA.SUN.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: SOURCE_SUPPORTED
+source_term: father
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: sun
+  detail: FULL
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.karaka.sun.father
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_PARENTS_VARGA_D12_B7
+rule_version: '1'
+domain: PARENTS
+kind: VARGA_RELEVANCE
+mapping_id: MAP.PARENTS.VARGA.D12.B7
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 7 v. 1-8 (printed pp. 91-92)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+support: SOURCE_SUPPORTED
+source_term: parents
+bridge_note: ''
+params:
+  kind: VARGA_RELEVANCE
+  varga: 12
+  show_house_lords:
+  - 4
+  - 10
+  show_karakas:
+  - sun
+  - moon
+  show_lagna_lord: false
+tags:
+  domain_tags:
+  - parents
+  signification_tags:
+  - parents.varga.d12.parents
+  effect_class: neutral

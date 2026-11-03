@@ -22,6 +22,7 @@ from pandit_contracts.agent import (
     EvidenceCapability,
     EvidenceRecord,
 )
+from pandit_contracts.domain import LifeDomain
 
 from pandit_agent.orchestration.errors import AgentFailure
 
@@ -33,11 +34,18 @@ class ToolSpec:
     capabilities: frozenset[EvidenceCapability]
     timeout_s: float = 5.0
     max_calls: int = 1
+    # Phase 17: a tool that serves one life domain's analysis names it, so the planner can pick the
+    # tool of the requested domain; None for every Phase 15 tool.
+    life_domain: LifeDomain | None = None
 
 
 @dataclass(frozen=True)
 class ToolResult:
     records: tuple[EvidenceRecord, ...]
+    # Phase 17: the capabilities this call actually provided, when that depends on the data (a
+    # domain result that carries no dasha section does not provide ASTRO_DASHA). None: every
+    # capability the plan asked of the tool, as in Phase 15.
+    provided: frozenset[EvidenceCapability] | None = None
 
 
 class EvidenceTool(Protocol):
@@ -71,12 +79,24 @@ class ToolRegistry:
                 AgentErrorCode.TOOL_NOT_ALLOWED, f"tool {name!r} is not in the allow-list"
             ) from exc
 
-    def tools_for(self, capability: EvidenceCapability, domain: Domain) -> tuple[ToolSpec, ...]:
+    def tools_for(
+        self,
+        capability: EvidenceCapability,
+        domain: Domain,
+        life_domain: LifeDomain | None = None,
+    ) -> tuple[ToolSpec, ...]:
         return tuple(
             t.spec
             for t in self._tools.values()
-            if capability in t.spec.capabilities and t.spec.domain is domain
+            if capability in t.spec.capabilities
+            and t.spec.domain is domain
+            and (t.spec.life_domain is None or t.spec.life_domain is life_domain)
         )
+
+    @property
+    def has_life_domain_tools(self) -> bool:
+        """True when at least one life-domain analysis tool is registered (Phase 17)."""
+        return any(t.spec.life_domain is not None for t in self._tools.values())
 
     @property
     def names(self) -> tuple[str, ...]:

@@ -1,0 +1,88 @@
+# Phase 17 domain rules: BUSINESS. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_BUSINESS_HOUSE_07_P11
+rule_version: '1'
+domain: BUSINESS
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.BUSINESS.HOUSE.07.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: trade
+bridge_note: '''Business'' is a product label; the source term for the 7th is trade.'
+params:
+  kind: HOUSE_RELEVANCE
+  house: 7
+  detail: FULL
+tags:
+  domain_tags:
+  - business
+  signification_tags:
+  - business.house7.trade
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_BUSINESS_HOUSE_10_P11
+rule_version: '1'
+domain: BUSINESS
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.BUSINESS.HOUSE.10.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: PARTIALLY_SUPPORTED
+source_term: profession (livelihood)
+bridge_note: Livelihood is not specific to trade.
+params:
+  kind: HOUSE_RELEVANCE
+  house: 10
+  detail: FULL
+tags:
+  domain_tags:
+  - business
+  signification_tags:
+  - business.house10.profession_livelihood
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_BUSINESS_KARAKA_MERCURY_H10_B3234
+rule_version: '1'
+domain: BUSINESS
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.BUSINESS.KARAKA.MERCURY_H10.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: PARTIALLY_SUPPORTED
+source_term: significator of the 10th house
+bridge_note: A house karaka of the 10th; the match to business is a bridge.
+params:
+  kind: KARAKA_RELEVANCE
+  planet: mercury
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - business
+  signification_tags:
+  - business.karaka.mercury.significator_of_the_10th_house
+  effect_class: neutral

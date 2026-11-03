@@ -1,0 +1,87 @@
+# Phase 17 domain rules: TRAVEL. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_TRAVEL_HOUSE_03_P11
+rule_version: '1'
+domain: TRAVEL
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.TRAVEL.HOUSE.03.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: journey
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 3
+  detail: FULL
+tags:
+  domain_tags:
+  - travel
+  signification_tags:
+  - travel.house3.journey
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_TRAVEL_HOUSE_07_P11
+rule_version: '1'
+domain: TRAVEL
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.TRAVEL.HOUSE.07.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: travel
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 7
+  detail: FULL
+tags:
+  domain_tags:
+  - travel
+  signification_tags:
+  - travel.house7.travel
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_TRAVEL_HOUSE_09_P11
+rule_version: '1'
+domain: TRAVEL
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.TRAVEL.HOUSE.09.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: visits to shrines
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 9
+  detail: FULL
+tags:
+  domain_tags:
+  - travel
+  signification_tags:
+  - travel.house9.visits_to_shrines
+  effect_class: neutral

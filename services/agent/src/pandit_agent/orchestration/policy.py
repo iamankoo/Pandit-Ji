@@ -257,11 +257,17 @@ def claims_verification(text: str) -> bool:
 
 
 def disclaimers_for(
-    policy: DomainPolicy, intent: Intent, user_text: str, *, evidence_not_production_ready: bool
+    policy: DomainPolicy,
+    intent: Intent,
+    user_text: str,
+    *,
+    evidence_not_production_ready: bool,
+    high_impact_domain: bool = False,
 ) -> tuple[DisclaimerCode, ...]:
     codes: list[DisclaimerCode] = list(policy.base_disclaimers)
     if policy.domain is Domain.ASTROLOGY and (
         intent in {Intent.WEALTH, Intent.BUSINESS, Intent.LOVE_RELATIONSHIP, Intent.MARRIAGE}
+        or high_impact_domain
         or _HIGH_IMPACT.search(user_text)
     ):
         codes.append(DisclaimerCode.NOT_PROFESSIONAL_ADVICE)

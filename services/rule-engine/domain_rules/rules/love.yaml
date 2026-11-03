@@ -1,0 +1,29 @@
+# Phase 17 domain rules: LOVE. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_LOVE_KARAKA_VENUS_PXV15
+rule_version: '1'
+domain: LOVE
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.LOVE.KARAKA.VENUS.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: PARTIALLY_SUPPORTED
+source_term: love affairs
+bridge_note: Venus as the source's significator of love affairs; no house in the sources read lists love.
+params:
+  kind: KARAKA_RELEVANCE
+  planet: venus
+  detail: FULL
+tags:
+  domain_tags:
+  - love
+  signification_tags:
+  - love.karaka.venus.love_affairs
+  effect_class: neutral

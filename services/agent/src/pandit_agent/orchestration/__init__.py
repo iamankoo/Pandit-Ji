@@ -9,6 +9,7 @@ user data.
 """
 
 from pandit_agent.orchestration.adapters import AstrologyBundleTool, PalmBundleTool
+from pandit_agent.orchestration.domain import DomainAnalysisTool
 from pandit_agent.orchestration.memory import InMemoryConversationMemory
 from pandit_agent.orchestration.orchestrator import AgentConfig, AgentOrchestrator
 from pandit_agent.orchestration.prompts import narration_schema_registry
@@ -18,6 +19,7 @@ __all__ = [
     "AgentConfig",
     "AgentOrchestrator",
     "AstrologyBundleTool",
+    "DomainAnalysisTool",
     "InMemoryConversationMemory",
     "PalmBundleTool",
     "ToolRegistry",

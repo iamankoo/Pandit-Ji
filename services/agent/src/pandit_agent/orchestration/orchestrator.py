@@ -14,7 +14,8 @@ computes a fact, and never marks anything verified (that is Phase 16).
 from __future__ import annotations
 
 import time
-from dataclasses import dataclass, field
+from collections.abc import Callable
+from dataclasses import dataclass, field, replace
 
 from pandit_contracts.agent import (
     AgentContext,
@@ -33,6 +34,7 @@ from pandit_contracts.agent import (
     NarrationSection,
     PolicyMetadata,
 )
+from pandit_contracts.domain import DomainAnalysisResult, LifeDomain
 from pandit_contracts.llm import LLMErrorCode, ModelProvenance, Readiness
 from pandit_shared.logging import bind_request_id
 
@@ -41,6 +43,15 @@ from pandit_agent.llm.provider import LLMProvider
 from pandit_agent.llm.settings import generation_profile
 from pandit_agent.orchestration import i18n
 from pandit_agent.orchestration.context import assemble_context
+from pandit_agent.orchestration.domain import (
+    STATUS_KIND,
+    DomainAnalysisTool,
+    domain_output_restrictions,
+    domain_request_refusals,
+    resolve_life_domain,
+    screen_domain_claim,
+    screen_domain_request,
+)
 from pandit_agent.orchestration.errors import AgentFailure
 from pandit_agent.orchestration.intent import IntentError, resolve
 from pandit_agent.orchestration.memory import ConversationMemory
@@ -122,6 +133,9 @@ class _State:
     injection: bool = False
     policy: DomainPolicy | None = None
     calls_per_tool: dict[str, int] = field(default_factory=dict)
+    life_domain: LifeDomain | None = None
+    domain_result: DomainAnalysisResult | None = None
+    domain_message: i18n.Message | None = None
 
 
 class AgentOrchestrator:
@@ -157,7 +171,7 @@ class AgentOrchestrator:
             )
         finally:
             bind_request_id(None)
-        self._log(request, response)
+        self._log(request, response, state)
         return response
 
     # -- pipeline --------------------------------------------------------------------------
@@ -176,9 +190,33 @@ class AgentOrchestrator:
             ) from exc
         state.domain, state.intent = resolved.domain, resolved.intent
         policy = policy_for(resolved.domain)
+        life_domain: LifeDomain | None = None
+        if resolved.domain is Domain.ASTROLOGY and self._tools.has_life_domain_tools:
+            life_domain = resolve_life_domain(
+                request.user_text, resolved.intent, intent_hint=request.intent_hint
+            )
+        state.life_domain = life_domain
+        if life_domain is not None:
+            # the stricter domain policy: more restricted output categories, never fewer
+            policy = replace(
+                policy,
+                output_restrictions=tuple(
+                    dict.fromkeys((*policy.output_restrictions, *domain_output_restrictions()))
+                ),
+                request_refusals=tuple(
+                    dict.fromkeys((*policy.request_refusals, *domain_request_refusals()))
+                ),
+            )
         state.policy = policy
 
         screen = screen_request(request.user_text, policy)
+        if (
+            life_domain is not None
+            and not screen.injection
+            and screen_domain_request(request.user_text)
+        ):
+            state.domain_message = i18n.Message.DOMAIN_POLICY_BLOCKED
+            raise AgentFailure(AgentErrorCode.UNSAFE_REQUEST, "the request is outside policy")
         if screen.injection:
             state.injection = True
             raise AgentFailure(
@@ -187,7 +225,7 @@ class AgentOrchestrator:
         if screen.unsafe:
             raise AgentFailure(AgentErrorCode.UNSAFE_REQUEST, "the request is outside policy")
 
-        plan = build_plan(resolved.domain, resolved.intent, self._tools)
+        plan = build_plan(resolved.domain, resolved.intent, self._tools, life_domain)
         state.plan_hash = plan.plan_hash
 
         records: list[EvidenceRecord] = []
@@ -215,9 +253,18 @@ class AgentOrchestrator:
                 failed_optional |= wanted
                 continue
             records.extend(result.records)
-            provided |= set(wanted & tool.spec.capabilities)
+            if result.provided is not None:
+                provided |= set(result.provided)
+            else:
+                provided |= set(wanted & tool.spec.capabilities)
+            if isinstance(tool, DomainAnalysisTool):
+                state.domain_result = tool.result
+
+        if life_domain is not None:
+            self._domain_short_circuit(state, records)
 
         state.steps += 1  # ASSESS_SUFFICIENCY
+        domain_screen = screen_domain_claim if life_domain is not None else None
         budgets = _budget_ladder(self._config.max_evidence_items)
         context: AgentContext | None = None
         sections: tuple[NarrationSection, ...] = ()
@@ -242,7 +289,7 @@ class AgentOrchestrator:
                     )
                 state.steps += 1  # NARRATE
             try:
-                sections = self._narrate(request, state, context, policy)
+                sections = self._narrate(request, state, context, policy, domain_screen)
                 break
             except AgentFailure as failure:
                 # The model's window is smaller than the context: re-assemble with a smaller
@@ -260,7 +307,11 @@ class AgentOrchestrator:
         disclaimers = tuple(
             Disclaimer(code=c, text=i18n.disclaimer_text(c, request.language))
             for c in disclaimers_for(
-                policy, resolved.intent, request.user_text, evidence_not_production_ready=not_ready
+                policy,
+                resolved.intent,
+                request.user_text,
+                evidence_not_production_ready=not_ready,
+                high_impact_domain=self._high_impact(life_domain),
             )
         )
         degraded = bool(context.missing) or context.trimmed_count > 0
@@ -281,8 +332,60 @@ class AgentOrchestrator:
             trace=self._trace(state, started),
         )
 
+    @staticmethod
+    def _high_impact(life_domain: LifeDomain | None) -> bool:
+        from pandit_agent.orchestration.domain import PRESETS
+
+        return life_domain is not None and bool(
+            {
+                "FINANCE_INTERPRETIVE_ONLY",
+                "HEALTH_INTERPRETATION_ONLY",
+                "CHILDREN_STRUCTURAL_ONLY",
+                "ADULT_CONFIRMATION_REQUIRED",
+            }
+            & {p.value for p in PRESETS[life_domain].safety}
+        )
+
+    def _domain_short_circuit(self, state: _State, records: list[EvidenceRecord]) -> None:
+        """A domain result that carries no substantive evidence is answered without the model.
+
+        ``POLICY_BLOCKED`` is a refusal, ``NOT_EVALUABLE`` and an evidence-less ``INSUFFICIENT``
+        or conflicting result a degraded, structured insufficiency. The structured result itself
+        is the product; the agent only states it, in the requested language.
+        """
+        status = next((r for r in records if r.kind == STATUS_KIND), None)
+        if status is None:
+            return
+        own = [r for r in records if r.bundle_ref == status.bundle_ref]
+        state.bundle_refs = tuple(sorted({r.bundle_ref for r in records}))
+        state.version_refs = tuple(sorted({r.version_ref for r in records if r.version_ref}))
+        text = status.text
+        if status.status == "POLICY_BLOCKED":
+            if "ADULT_CONFIRMATION_REQUIRED" in text:
+                state.domain_message = i18n.Message.DOMAIN_ADULT_CONFIRMATION
+            elif "MINORS_POLICY_UNRESOLVED" in text:
+                state.domain_message = i18n.Message.DOMAIN_MINORS_POLICY
+            else:
+                state.domain_message = i18n.Message.DOMAIN_POLICY_BLOCKED
+            raise AgentFailure(AgentErrorCode.UNSAFE_REQUEST, "the reading is outside policy")
+        if status.status == "NOT_EVALUABLE":
+            state.domain_message = i18n.Message.DOMAIN_NOT_EVALUABLE
+            raise AgentFailure(
+                AgentErrorCode.INSUFFICIENT_EVIDENCE, "the domain has no approved methodology"
+            )
+        if status.status != "EVALUATED" and len(own) <= 1:
+            state.domain_message = i18n.Message.DOMAIN_INSUFFICIENT
+            raise AgentFailure(
+                AgentErrorCode.INSUFFICIENT_EVIDENCE, "required domain evidence is not available"
+            )
+
     def _narrate(
-        self, request: AgentRequest, state: _State, context: AgentContext, policy: DomainPolicy
+        self,
+        request: AgentRequest,
+        state: _State,
+        context: AgentContext,
+        policy: DomainPolicy,
+        domain_screen: Callable[[str], tuple[str, ...]] | None = None,
     ) -> tuple[NarrationSection, ...]:
         health = self._llm.health()
         if health.state is not Readiness.MODEL_READY or health.model_id is None:
@@ -306,7 +409,7 @@ class AgentOrchestrator:
                 state.language_check = response.language_check.value
                 state.prompt_version = response.prompt_version or TASK_VERSION
                 try:
-                    return ground_narration(response.structured, context, policy)
+                    return ground_narration(response.structured, context, policy, domain_screen)
                 except AgentFailure as failure:
                     last = failure
                     grounding = failure.code is AgentErrorCode.NARRATION_GROUNDING_FAILURE
@@ -356,7 +459,11 @@ class AgentOrchestrator:
             policy=self._policy_meta(state.policy, state) if state.policy else None,
             trace=self._trace(state, started),
             error=failure.to_error(),
-            user_message=i18n.user_message_for(code, request.language),
+            user_message=(
+                i18n.text(state.domain_message, request.language)
+                if state.domain_message is not None
+                else i18n.user_message_for(code, request.language)
+            ),
         )
 
     def _insufficiency_sections(
@@ -365,7 +472,9 @@ class AgentOrchestrator:
         assert state.domain is not None
         claim = NarrationClaim(
             claim_id="C001",
-            text=i18n.text(i18n.Message.INSUFFICIENT_EVIDENCE, request.language),
+            text=i18n.text(
+                state.domain_message or i18n.Message.INSUFFICIENT_EVIDENCE, request.language
+            ),
             claim_type=ClaimType.LIMITATION,
             domain=state.domain,
             references=(),
@@ -410,7 +519,26 @@ class AgentOrchestrator:
             language_check=state.language_check,
         )
 
-    def _log(self, request: AgentRequest, response: NarrationResponse) -> None:
+    @staticmethod
+    def _domain_log_fields(state: _State) -> dict[str, object]:
+        """Content-free identifiers of the domain analysis (Phase 17); empty for other requests."""
+        result = state.domain_result
+        if state.life_domain is None:
+            return {}
+        fields: dict[str, object] = {"life_domain": state.life_domain.value}
+        if result is not None:
+            fields.update(
+                domain_analysis_id=result.analysis_id,
+                domain_preset=f"preset:{result.domain.value}",
+                domain_status=result.status.value,
+                domain_evidence_count=len(result.facts) + len(result.rules),
+                knowledge_version=result.versions.knowledge_version,
+                ruleset_version=result.versions.ruleset_ref,
+                policy_status=",".join(p.value for p in result.policy_flags) or "none",
+            )
+        return fields
+
+    def _log(self, request: AgentRequest, response: NarrationResponse, state: _State) -> None:
         t = response.trace
         prov = t.llm_provenance
         log_event(
@@ -439,4 +567,5 @@ class AgentOrchestrator:
             claims=len(response.claims),
             injection_suspected=response.policy.injection_suspected if response.policy else None,
             agent_version=t.agent_version,
+            **self._domain_log_fields(state),
         )

@@ -1,0 +1,64 @@
+# BPHS Ch. 7 v. 1-8: the use of the sixteen divisions. Only the eight with mapped_domains are Phase 17 mappings
+# (owner decision 3). D4 is 'fortunes': not property, not foreign settlement.
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+source: BPHS_SANTHANAM_1984
+location: Ch. 7 v. 1-8 (printed pp. 91-92)
+varga_uses:
+- varga: 1
+  source_term: physique from the ascendant
+  mapped_domains: []
+- varga: 2
+  source_term: wealth from Hora
+  mapped_domains:
+  - WEALTH
+  - FINANCE
+- varga: 3
+  source_term: happiness through co-born from the decanate
+  mapped_domains:
+  - SIBLINGS
+- varga: 4
+  source_term: fortunes from Chaturthamsa
+  mapped_domains: []
+- varga: 7
+  source_term: sons and grandsons from Saptamsa
+  mapped_domains:
+  - CHILDREN
+- varga: 9
+  source_term: spouse from Navamsa
+  mapped_domains:
+  - MARRIAGE
+  - SPOUSE
+- varga: 10
+  source_term: power (and position) from Dasamsa
+  mapped_domains:
+  - CAREER
+- varga: 12
+  source_term: parents from Dvadasamsa
+  mapped_domains:
+  - PARENTS
+- varga: 16
+  source_term: benefits and adversities through conveyances from Shodasamsa
+  mapped_domains: []
+- varga: 20
+  source_term: worship from Vimsamsa
+  mapped_domains:
+  - SPIRITUALITY
+- varga: 24
+  source_term: learning from Chaturvimsamsa
+  mapped_domains:
+  - EDUCATION
+- varga: 27
+  source_term: strength and weakness from Bhamsa
+  mapped_domains: []
+- varga: 30
+  source_term: evil effects from Trimsamsa
+  mapped_domains: []
+- varga: 40
+  source_term: auspicious and inauspicious effects from Khavedamsa
+  mapped_domains: []
+- varga: 45
+  source_term: all indications from Akshavedamsa
+  mapped_domains: []
+- varga: 60
+  source_term: all indications from Shashtiamsa
+  mapped_domains: []

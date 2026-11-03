@@ -1,0 +1,61 @@
+# Phase 17 domain rules: RELATIONSHIP. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_RELATIONSHIP_HOUSE_07_P11
+rule_version: '1'
+domain: RELATIONSHIP
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.RELATIONSHIP.HOUSE.07.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: PARTIALLY_SUPPORTED
+source_term: wife
+bridge_note: The source frame is marital and gendered (wife); relationship is a product label.
+params:
+  kind: HOUSE_RELEVANCE
+  house: 7
+  detail: FULL
+tags:
+  domain_tags:
+  - relationship
+  signification_tags:
+  - relationship.house7.wife
+  effect_class: neutral
+policy_flags:
+- SEX_SPECIFIC_SOURCE
+---
+document_type: domain_rule
+rule_id: DOM_RELATIONSHIP_KARAKA_VENUS_H7_B3234
+rule_version: '1'
+domain: RELATIONSHIP
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.RELATIONSHIP.KARAKA.VENUS_H7.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: PARTIALLY_SUPPORTED
+source_term: significator of the 7th house
+bridge_note: The source frame is marital.
+params:
+  kind: KARAKA_RELEVANCE
+  planet: venus
+  detail: FULL
+  for_house: 7
+tags:
+  domain_tags:
+  - relationship
+  signification_tags:
+  - relationship.karaka.venus.significator_of_the_7th_house
+  effect_class: neutral

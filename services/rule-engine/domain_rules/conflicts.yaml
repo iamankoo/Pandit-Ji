@@ -1,0 +1,52 @@
+# Recorded source conflicts (DC-01 to DC-05 and the Phase 6 Kuja group). Kept, never resolved.
+document_type: domain_conflict
+conflict_id: DC-01
+title: 'The father: 10th house (BPHS Ch. 11 v. 11) versus 9th house (Phaladeepika XVI sloka 22-23)'
+profiles:
+- KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+- DOM17_PHALA_SASTRI_FATHER_XVI_22_23
+note: The BPHS translator's note admits both houses. Both profiles are kept; nothing is merged.
+---
+document_type: domain_conflict
+conflict_id: DC-02
+title: 'Marriage and the 2nd house: Ch. 11 v. 3 lists no wife; Ch. 32 v. 32-33 as printed gives wife'
+profiles:
+- KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+- KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+note: Unresolved without a Sanskrit-level review (Phase 12 record).
+---
+document_type: domain_conflict
+conflict_id: DC-03
+title: 'Significators of the 10th house: BPHS Ch. 32 v. 34 (Mercury) versus Phaladeepika XV sloka 17 (Jupiter,
+  Sun, Mercury, Saturn)'
+profiles:
+- KB_BPHS_SAN_HOUSE_KARAKA_32_34
+- KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+note: Both lists are kept separate; Mercury is common to both.
+---
+document_type: domain_conflict
+conflict_id: DC-04
+title: 'Which divisional chart judges livelihood: Dasamsa (BPHS Ch. 7 v. 1-8, power and position) versus
+  the Navamsa of the 10th lord (Phaladeepika V sloka 1)'
+profiles:
+- DOM17_BPHS_SAN_VARGA_USE_7_1_8
+- DOM17_PHALA_SASTRI_LIVELIHOOD_V_1
+note: Two methods. Only the locked BPHS mapping (D10) is implemented; the Phaladeepika method is not approved
+  and is reported NOT_EVALUABLE.
+---
+document_type: domain_conflict
+conflict_id: DC-05
+title: The standards wording 'D4 property/home', 'D9 dharma', 'D12 ancestry' versus the BPHS Ch. 7 verse
+  (fortunes, spouse, parents)
+profiles:
+- DOCS_ASTROLOGY_STANDARDS_DIVISIONAL_CHARTS
+- DOM17_BPHS_SAN_VARGA_USE_7_1_8
+note: A documentation inconsistency, recorded and not resolved. Phase 17 follows the verse.
+---
+document_type: domain_conflict
+conflict_id: KUJA_DOSHA_TOPIC
+title: 'Phase 6 conflict group: the Kuja yoga in BPHS Ch. 80 v. 47-49 and in Jataka Parijata verse 34'
+profiles:
+- BPHS_KAPOOR_80_47_49_MARS_HOUSES
+- JP_KUJA_DOSHA
+note: Carried from the Phase 6 ruleset; the profiles are not merged.

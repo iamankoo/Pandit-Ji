@@ -1,6 +1,6 @@
 # Pandit Ji — Project Summary & Session Handoff
 
-> **LATEST STOPPING POINT (2026-10-06; §52; supersedes the older banners below, which are history): the owner approved the Phase 17 decisions and the architecture is LOCKED (ADR-012 Locked, standards v1.30.0); PHASE 16 IS CLOSED; PHASE 17 IS NOT IMPLEMENTED and the next run is the Phase 17 implementation. Read §52, then §51, before anything else.**
+> **LATEST STOPPING POINT (2026-11-03; §53): PHASE 17 IS IMPLEMENTED (life-domain intelligence); PHASE 18 HAS NOT STARTED. Read §53 first.** **LATEST STOPPING POINT (2026-10-06; §52; supersedes the older banners below, which are history): the owner approved the Phase 17 decisions and the architecture is LOCKED (ADR-012 Locked, standards v1.30.0); PHASE 16 IS CLOSED; PHASE 17 IS NOT IMPLEMENTED and the next run is the Phase 17 implementation. Read §52, then §51, before anything else.**
 
 > **FINAL HANDOFF (saved 2026-10-03; §48): PHASE 15 IS CLOSED. PHASE 16 HAS NOT STARTED. On the next session, do not infer the project state from the previous conversation: read this file first (§48, then §47), then follow the source-of-truth hierarchy and the Phase 16 roadmap section of `Phases.md`. Phase 15 is already closed and must not be reimplemented. Phase 15 closure commit `23f9924f1e59772729f30f42c35384471416c045`, CI run `37113858910` (18 of 18 jobs successful). The real model has NOT been run. Phase 16 consumes `NarrationResponse.claims` and the bundle references, is the only phase that may set VERIFIED, and starts only on the owner's explicit instruction.**
 >
@@ -2137,3 +2137,33 @@ Phase 16 is CLOSED. Consistency check done before closing: the contract statuses
 
 ### C. Exact stopping point for the Phase 17 implementation run
 Nothing is implemented: no code, contract, rule, mapping, data file, schema or test changed. The implementation run starts from: ADR-012, standards LD-01 to LD-27, the research record section 0 (including the derived design constraints, which the implementation prompt must confirm), the matrix sheets and the checks listed in the owner's final-architecture list (no new service; Phase 6 hash `8d29a18c…77209`, Phase 12 `KV-06361d7aba28c1ce`, Phase 13 `KV-a21c2c040abe9663`, Phase 15 and 16 implementation unchanged). Still open: `RESEARCH_PENDING` items, `LEGAL_REVIEW_REQUIRED`, the final minors policy. Do not start Phase 18; do not implement reports or Vastu.
+
+## 53. Phase 17 IMPLEMENTED (2026-11-03) - final handoff
+
+**Status: implemented, verified locally and pushed. Phase 18 has NOT started.** Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. Implementation commit and CI run: see the line `FINAL RECORD` at the end of this section.
+
+### A. What exists
+- Knowledge version `KV-edb2a7d07a626dcb` (standards 1.30.0; separate and additive; Phase 12 `KV-06361d7aba28c1ce` and Phase 13 `KV-a21c2c040abe9663` unchanged; migration `0004_domain_knowledge_vocabulary`, CHECK vocabularies only).
+- Domain ruleset `PANDIT_JI_DOMAIN_PHASE17` 1.0.0, methodology `DOMAIN_METHODOLOGY_P17_1`, hash `54bdb767830b05d03e109ff0a0c65bb1829f83e8553446090492969420ac2b94` (108 rules). Phase 6 hash `8d29a18c...77209` and its 51 rules unchanged.
+- Contracts 0.6.0 `domain` (36 `LifeDomain` = 27 + 9 extensions, no sex/age field, existing status names); rule-engine `pandit_rule_engine.domain`; knowledge `domain_content`; agent `orchestration/domain.py` (presets, routing, `DomainAnalysisTool`, screens, short-circuits). No new service, no Phase 16 change.
+
+### B. Domain outcome
+- Evaluated, source-supported: Education, Career, Finance, Wealth, Marriage, Family, Children (structural only).
+- Evaluated for the researched portions only (partial): Personality, Subjects, Job, Business, Love, Relationship, Spouse, Travel, Foreign Travel, Foreign Settlement, Spirituality.
+- NOT_EVALUABLE: Birth, College, Corporate Life, Startup, GF/BF, Foreign Education, Personal Life; extensions Investments, Entrepreneurship, Higher Education, Major Life Transitions, General Life Patterns, Health.
+- POLICY_BLOCKED (minors policy unresolved): Childhood, School. Adult-gated domains need `subject_adult_confirmed=True`.
+- Dasha: only the marriage method (Phaladeepika X sl. 13-14) from a supplied section; transit: only the researched bhava method from a supplied section; Varga: D2, D3, D7, D9, D10, D12, D20, D24 from the Kundli JSON, never D4; missing sections give INSUFFICIENT_EVIDENCE. Conflicts DC-01..DC-05 and Kuja stay open.
+
+### C. Test counts (local, Python 3.13 venv, PostgreSQL pgvector 18 for knowledge)
+contracts 136; shared 1; astro-engine 1673; rule-engine 553; knowledge 187 passed, 4 skipped (sentence-transformers absent); agent 655 passed, 2 skipped; verification 164; palm-vision 129; server 5; integration 46. ruff check, ruff format --check and mypy clean on every package.
+
+### D. Findings and limits (carry to Phase 18)
+- The Phase 16 verifier cannot resolve a domain result without registration; composition must register it as a trusted bundle (shown in `tests/integration/test_domain_phase17.py`). Unregistered: UNVERIFIABLE / EVIDENCE_UNAVAILABLE. Limitation claims for missing sections stay UNVERIFIABLE until the composition layer records the gaps as trusted missing evidence.
+- Phase 18: Dasha and Transit APIs/tools, the regenerate loop, report/API composition, the trusted-bundle registration, any production Varga source beyond the Kundli JSON.
+- The test model window is small: a large domain result needs `max_evidence_items` around 30 with the scripted test runtime (real models are not affected; not run).
+- Hindi and Hinglish domain texts: `CALIBRATION_REQUIRED`. `LEGAL_REVIEW_REQUIRED` items unchanged. Vastu, reports: not implemented. One PostgreSQL ANN-index test failed once in a full local run and passed in four later runs; watch CI.
+
+### E. Exact stopping point
+Stop. Phase 18 starts only on the owner's explicit instruction after reviewing the Phase 17 final audit.
+
+FINAL RECORD: (filled in by the follow-up documentation commit)

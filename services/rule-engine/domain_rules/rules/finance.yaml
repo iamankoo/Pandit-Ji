@@ -1,0 +1,272 @@
+# Phase 17 domain rules: FINANCE. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_FINANCE_HOUSE_02_P11
+rule_version: '1'
+domain: FINANCE
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.FINANCE.HOUSE.02.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: wealth
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 2
+  detail: FULL
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.house2.wealth
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_HOUSE_11_P11
+rule_version: '1'
+domain: FINANCE
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.FINANCE.HOUSE.11.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: income; prosperity
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 11
+  detail: FULL
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.house11.income_prosperity
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_HOUSE_12_P11
+rule_version: '1'
+domain: FINANCE
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.FINANCE.HOUSE.12.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: expenses
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 12
+  detail: FULL
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.house12.expenses
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_KARAKA_JUPITER_H11_B3234
+rule_version: '1'
+domain: FINANCE
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.FINANCE.KARAKA.JUPITER_H11.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: SOURCE_SUPPORTED
+source_term: significator of the 11th house
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: jupiter
+  detail: FULL
+  for_house: 11
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.karaka.jupiter.significator_of_the_11th_house
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_KARAKA_JUPITER_H2_B3234
+rule_version: '1'
+domain: FINANCE
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.FINANCE.KARAKA.JUPITER_H2.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: SOURCE_SUPPORTED
+source_term: significator of the 2nd house
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: jupiter
+  detail: FULL
+  for_house: 2
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.karaka.jupiter.significator_of_the_2nd_house
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_KARAKA_SATURN_H12_B3234
+rule_version: '1'
+domain: FINANCE
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.FINANCE.KARAKA.SATURN_H12.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: SOURCE_SUPPORTED
+source_term: significator of the 12th house
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: saturn
+  detail: FULL
+  for_house: 12
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.karaka.saturn.significator_of_the_12th_house
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_PHASE6_BPHS_SAN_DHANA_MOON_37_6
+rule_version: '1'
+domain: FINANCE
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.FINANCE.PHASE6.BPHS_SAN_DHANA_MOON_37_6
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 6
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_DHANA_MOON_37_6
+support: SOURCE_SUPPORTED
+source_term: very affluent / medium / negligible by count
+bridge_note: ''
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_DHANA_MOON_37_6
+  phase6_signification: yoga.dhana_moon_37_6
+  blocked: false
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.phase6.bphs_san_dhana_moon_37_6
+  effect_class: supportive
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_FINANCE_VARGA_D2_B7
+rule_version: '1'
+domain: FINANCE
+kind: VARGA_RELEVANCE
+mapping_id: MAP.FINANCE.VARGA.D2.B7
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 7 v. 1-8 (printed pp. 91-92)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+support: SOURCE_SUPPORTED
+source_term: wealth
+bridge_note: ''
+params:
+  kind: VARGA_RELEVANCE
+  varga: 2
+  show_house_lords:
+  - 2
+  show_karakas:
+  - jupiter
+  show_lagna_lord: false
+tags:
+  domain_tags:
+  - finance
+  signification_tags:
+  - finance.varga.d2.wealth
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME

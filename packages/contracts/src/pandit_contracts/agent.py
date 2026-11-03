@@ -27,6 +27,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, model_validator
 
+from pandit_contracts.domain import LifeDomain
 from pandit_contracts.llm import LLMLanguage, ModelProvenance
 
 AGENT_CONTRACT_VERSION = "1.0.0"
@@ -81,6 +82,9 @@ class EvidenceCapability(str, Enum):
     ASTRO_DASHA = "ASTRO_DASHA"
     ASTRO_TRANSIT = "ASTRO_TRANSIT"
     ASTRO_COMPATIBILITY = "ASTRO_COMPATIBILITY"
+    # Phase 17 (additive): the structured, source-backed life-domain analysis (rule-engine domain
+    # ruleset result). It is supplied already computed; the agent never evaluates a rule itself.
+    ASTRO_DOMAIN = "ASTRO_DOMAIN"
     PALM_FACTS = "PALM_FACTS"
     PALM_RULES = "PALM_RULES"
 
@@ -263,6 +267,8 @@ class AgentPlan(_Frozen):
     steps: tuple[AgentStep, ...] = Field(max_length=16)
     required: tuple[EvidenceCapability, ...] = ()
     desired: tuple[EvidenceCapability, ...] = ()
+    # Phase 17 (additive): the life domain a domain preset planned for; None for Phase 15 plans.
+    life_domain: LifeDomain | None = None
     plan_hash: str
 
 

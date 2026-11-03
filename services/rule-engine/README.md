@@ -44,6 +44,10 @@ The rule engine consumes facts only. It never computes astronomy, never calls th
 
 `RuleEngine.evaluate_kundli` also accepts `compatibility_facts` (an astro-engine `CompatibilityFacts` for one matching profile), `numerology_facts` (a `NumerologyFacts`) and `kuja_comparison`. `pandit_rule_engine.compatibility_evidence` checks the Phase 11 invariants: profile and system match; the Ashtakoot has exactly its eight kutas and the ten poruthams their ten; a refused (for example under-18) result carries no facts; a factor that is not evaluated has a reason and no outcome; a 36-point total only when all eight kutas are evaluated, equal to their sum; the Chaldean profile retains no master number. The numerology record keeps the numbers, not the name or the date of birth, plus a `facts_hash`. `RuleEngine.kuja_partner_comparison(bundle_a, bundle_b)` sets two people's Phase 6 Kuja results side by side for BPHS Ch. 80 v. 49, with no verdict. Both sections are optional and omitted when absent; no rule reads them (`docs/ASTROLOGY_STANDARDS.md` EV-11 to EV-16).
 
+## Domain ruleset (Phase 17)
+
+`pandit_rule_engine.domain` loads the separate ruleset in `domain_rules/` (108 rules, own manifest and hash; the Phase 6 ruleset and hash are untouched) and `evaluate_domain` returns a `DomainAnalysisResult`. No source-backed method means `NOT_EVALUABLE`; missing divisional, dasha, transit or Phase 6 inputs mean `INSUFFICIENT_EVIDENCE`; policy gates mean `POLICY_BLOCKED`; open source conflicts mean `CONFLICTING_EVIDENCE`. `varga_from_kundli` reads divisional placements from the existing Kundli JSON; `ChartFacts` stays D1-only.
+
 ## Local development
 
 ```

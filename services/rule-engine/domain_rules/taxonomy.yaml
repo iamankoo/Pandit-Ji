@@ -1,0 +1,247 @@
+# The canonical taxonomy (ADR-012, standards LD-03, LD-25). `support` is the research status: it is
+# never upgraded and never inherited from the parent. Policy (the stricter side) inherits.
+document_type: domain_taxonomy
+taxonomy_version: DOMAIN_TAXONOMY_P17_1
+entries:
+- domain: BIRTH
+  label: Birth
+  parent: PERSONALITY
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: UNDEFINED_DOMAIN
+  note: No source term read; BPHS Ch. 9 (evils at birth) is lifespan-adjacent and excluded by policy.
+- domain: PERSONALITY
+  label: Personality
+  parent: null
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: House 1 terms are a bridge to the product label.
+- domain: CHILDHOOD
+  label: Childhood
+  parent: PERSONALITY
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  blocked_reason: MINORS_POLICY_UNRESOLVED
+  policy:
+  - MINORS_SENSITIVE
+  note: Policy-blocked while the minors policy is unresolved.
+- domain: SCHOOL
+  label: School
+  parent: EDUCATION
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  blocked_reason: MINORS_POLICY_UNRESOLVED
+  policy:
+  - MINORS_SENSITIVE
+  note: Policy-blocked while the minors policy is unresolved; no source separates school from education.
+- domain: COLLEGE
+  label: College
+  parent: EDUCATION
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  note: No source separates levels of education.
+- domain: SUBJECTS
+  label: Subjects
+  parent: EDUCATION
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: Only Phaladeepika XVI sloka 5-6 (the 2nd lord's association); modern subjects are not supported.
+- domain: EDUCATION
+  label: Education
+  parent: null
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+- domain: CAREER
+  label: Career
+  parent: null
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+  note: 'Livelihood by Dasamsa (BPHS) versus the Navamsa of the 10th lord (Phaladeepika): DC-04, preserved.'
+- domain: JOB
+  label: Job
+  parent: CAREER
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: Its own research record; not inherited from Career.
+- domain: CORPORATE_LIFE
+  label: Corporate life
+  parent: CAREER
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  note: A modern concept; no source read.
+- domain: BUSINESS
+  label: Business
+  parent: null
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+- domain: STARTUP
+  label: Startup
+  parent: BUSINESS
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+- domain: FINANCE
+  label: Finance
+  parent: null
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+  policy:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  note: Traditional interpretive guidance only.
+- domain: WEALTH
+  label: Wealth
+  parent: FINANCE
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+- domain: LOVE
+  label: Love
+  parent: RELATIONSHIP
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: Venus as karaka only; no house in the source lists it.
+- domain: GF_BF
+  label: GF/BF
+  parent: RELATIONSHIP
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  policy:
+  - MINORS_SENSITIVE
+- domain: RELATIONSHIP
+  label: Relationship
+  parent: null
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  policy:
+  - ADULT_CONFIRMATION_REQUIRED
+  adult_confirmation_required: true
+  note: The source frame is marital.
+- domain: MARRIAGE
+  label: Marriage
+  parent: RELATIONSHIP
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+  note: Conflict DC-02 and the spouse-longevity block are preserved.
+- domain: SPOUSE
+  label: Spouse
+  parent: RELATIONSHIP
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  policy:
+  - SEX_SPECIFIC_SOURCE
+  note: The source frame is a man's wife; sex-specific readings are NOT_EVALUABLE.
+- domain: FAMILY
+  label: Family
+  parent: null
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+  policy:
+  - ADULT_CONFIRMATION_REQUIRED
+  adult_confirmation_required: true
+- domain: CHILDREN
+  label: Children
+  parent: null
+  kind: PHASES_MD
+  support: SOURCE_SUPPORTED
+  policy:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+  adult_confirmation_required: true
+  note: Structural significations only.
+- domain: TRAVEL
+  label: Travel
+  parent: null
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+- domain: FOREIGN_TRAVEL
+  label: Foreign travel
+  parent: TRAVEL
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+- domain: FOREIGN_EDUCATION
+  label: Foreign education
+  parent: EDUCATION
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  note: No source combines foreign and learning; a composition would be an invented rule.
+- domain: FOREIGN_SETTLEMENT
+  label: Foreign settlement
+  parent: TRAVEL
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: D4 is not used.
+- domain: PERSONAL_LIFE
+  label: Personal life
+  parent: PERSONALITY
+  kind: PHASES_MD
+  support: NOT_EVALUABLE
+  not_evaluable_reason: UNDEFINED_DOMAIN
+- domain: SPIRITUALITY
+  label: Spirituality
+  parent: null
+  kind: PHASES_MD
+  support: PARTIALLY_SUPPORTED
+  note: No karaka is stated in a source read.
+- domain: PARENTS
+  label: Parents
+  parent: FAMILY
+  kind: EXTENSION
+  support: PARTIALLY_SUPPORTED
+  note: 'Father: 10th (BPHS) versus 9th (Phaladeepika): DC-01, preserved.'
+- domain: SIBLINGS
+  label: Siblings
+  parent: FAMILY
+  kind: EXTENSION
+  support: SOURCE_SUPPORTED
+- domain: INCOME
+  label: Income
+  parent: FINANCE
+  kind: EXTENSION
+  support: SOURCE_SUPPORTED
+- domain: INVESTMENTS
+  label: Investments
+  parent: FINANCE
+  kind: EXTENSION
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  note: No source; high-impact.
+- domain: ENTREPRENEURSHIP
+  label: Entrepreneurship
+  parent: BUSINESS
+  kind: EXTENSION
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+- domain: HIGHER_EDUCATION
+  label: Higher education
+  parent: EDUCATION
+  kind: EXTENSION
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+- domain: MAJOR_LIFE_TRANSITIONS
+  label: Major life transitions
+  parent: null
+  kind: EXTENSION
+  support: NOT_EVALUABLE
+  not_evaluable_reason: UNDEFINED_DOMAIN
+- domain: GENERAL_LIFE_PATTERNS
+  label: General life patterns
+  parent: null
+  kind: EXTENSION
+  support: PARTIALLY_SUPPORTED
+  not_evaluable_reason: METHODOLOGY_NOT_APPROVED
+  note: The researched D1, D45 and D60 portions are not among the locked mappings; nothing is evaluated.
+- domain: HEALTH
+  label: Health
+  parent: null
+  kind: EXTENSION
+  support: NOT_EVALUABLE
+  not_evaluable_reason: NO_SOURCE_READ
+  policy:
+  - HEALTH_INTERPRETATION_ONLY
+  note: Interpretation only; no source mined; never a diagnosis.

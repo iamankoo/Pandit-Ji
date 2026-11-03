@@ -40,6 +40,15 @@ _ALLOWED_FIELDS = frozenset(
         "claims",
         "injection_suspected",
         "agent_version",
+        # Phase 17 (additive, content-free): the domain analysis that fed this request
+        "life_domain",
+        "domain_analysis_id",
+        "domain_preset",
+        "domain_status",
+        "domain_evidence_count",
+        "knowledge_version",
+        "ruleset_version",
+        "policy_status",
     }
 )
 

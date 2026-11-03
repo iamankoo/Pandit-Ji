@@ -1,0 +1,249 @@
+# Phase 17 domain rules: SUBJECTS. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_METHOD_PXVI5_JUPITER_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: SUBJECT_PROFICIENCY
+mapping_id: MAP.SUBJECTS.METHOD.PXVI5_JUPITER.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: sacred scriptures and code of laws
+bridge_note: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+  word.
+params:
+  kind: SUBJECT_PROFICIENCY
+  house: 2
+  associated_planet: jupiter
+  area_tag: subjects.proficiency.scriptures_law
+tags:
+  domain_tags:
+  - subjects
+  signification_tags:
+  - subjects.proficiency.scriptures_law
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_METHOD_PXVI5_MARS_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: SUBJECT_PROFICIENCY
+mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MARS.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: works involving hard labour
+bridge_note: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+  word.
+params:
+  kind: SUBJECT_PROFICIENCY
+  house: 2
+  associated_planet: mars
+  area_tag: subjects.proficiency.labour_works
+tags:
+  domain_tags:
+  - subjects
+  signification_tags:
+  - subjects.proficiency.labour_works
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_METHOD_PXVI5_MERCURY_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: SUBJECT_PROFICIENCY
+mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MERCURY.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: politics
+bridge_note: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+  word.
+params:
+  kind: SUBJECT_PROFICIENCY
+  house: 2
+  associated_planet: mercury
+  area_tag: subjects.proficiency.politics
+tags:
+  domain_tags:
+  - subjects
+  signification_tags:
+  - subjects.proficiency.politics
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_METHOD_PXVI5_MOON_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: SUBJECT_PROFICIENCY
+mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MOON.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: the arts
+bridge_note: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+  word.
+params:
+  kind: SUBJECT_PROFICIENCY
+  house: 2
+  associated_planet: moon
+  area_tag: subjects.proficiency.arts
+tags:
+  domain_tags:
+  - subjects
+  signification_tags:
+  - subjects.proficiency.arts
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_KETU_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: POLICY_WITHHELD
+mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_KETU.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: 2nd lord with ketu
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_RAHU_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: POLICY_WITHHELD
+mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_RAHU.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: 2nd lord with rahu
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_SATURN_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: POLICY_WITHHELD
+mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_SATURN.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: 2nd lord with saturn
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_VENUS_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: POLICY_WITHHELD
+mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_VENUS.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: 2nd lord with venus
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED
+---
+document_type: domain_rule
+rule_id: DOM_SUBJECTS_WITHHELD_PXVI6_MALEFICS_IN_2_PXVI5
+rule_version: '1'
+domain: SUBJECTS
+kind: POLICY_WITHHELD
+mapping_id: MAP.SUBJECTS.WITHHELD.PXVI6_MALEFICS_IN_2.PXVI5
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+support: PARTIALLY_SUPPORTED
+source_term: malefics in the 2nd house
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED

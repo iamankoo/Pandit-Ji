@@ -1,0 +1,1381 @@
+# Phase 17 domain mappings (house, karaka, divisional chart, method, Phase 6 rule applicability, withheld).
+# Projection of services/rule-engine/domain_rules/rules (one mapping per rule, same ids).
+profiles:
+  KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13:
+    key: P11
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 11 v. 2-13 (printed pp. 121-123)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33:
+    key: B3233
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 32 v. 31-33 (printed pp. 324-325)
+    registry_level: IMAGE-TRANSLATION
+    confidence: MEDIUM
+  KB_BPHS_SAN_HOUSE_KARAKA_32_34:
+    key: B3234
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 32 v. 34 (printed p. 325)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13:
+    key: B312
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 3 v. 12-13 (printed p. 28)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17:
+    key: PXV17
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XV sloka 17 (printed p. 159)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16:
+    key: PXV15
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XV sloka 15-16 (printed p. 158)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  DOM17_BPHS_SAN_VARGA_USE_7_1_8:
+    key: B7
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 7 v. 1-8 (printed pp. 91-92)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  DOM17_BPHS_SAN_12TH_HOUSE_23_10_12:
+    key: B23
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 23 v. 10-12
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6:
+    key: PXVI5
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XVI sloka 5-6 (printed pp. 165-166)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  DOM17_PHALA_SASTRI_FATHER_XVI_22_23:
+    key: PXVI22
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XVI sloka 22-23
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_MARRIAGE_DASHA_X_13:
+    key: PX13
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya X sloka 13
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35:
+    key: PXVI31
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XVI sloka 31-35 (printed pp. 174-175)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  DOM17_PHALA_SASTRI_LIVELIHOOD_V_1:
+    key: PV1
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya V sloka 1 (printed pp. 43-44)
+    registry_level: IMAGE-TRANSLATION
+    confidence: HIGH
+  DOM17_PHALA_SASTRI_LIVELIHOOD_V_4_8:
+    key: PV48
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya V sloka 4 and 8
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_BPHS_SAN_5TH_HOUSE_16_1_32:
+    key: B16
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 16 v. 1-32
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_BPHS_SAN_5TH_HOUSE_16_14_15:
+    key: B1614
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 16 v. 14-15
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_CHILDREN_XII_1_5:
+    key: PXII
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XII sloka 1-5
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_7TH_HOUSE_X_2_4:
+    key: PX24
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya X sloka 2-4
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_7TH_HOUSE_X_7_8:
+    key: PX78
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya X sloka 7-8
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  DOM17_PHALA_SASTRI_ASCETIC_XXVII_5:
+    key: PXXVII
+    source: PHALADEEPIKA_SASTRI
+    location: Adhyaya XXVII sloka 5
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+  KB_BPHS_SAN_LUNAR_YOGAS_37:
+    key: K37
+    source: BPHS_SANTHANAM_1984
+    location: Ch. 37
+    registry_level: OCR-TRANSLATION
+    confidence: MEDIUM
+mappings:
+- mapping_id: MAP.BUSINESS.HOUSE.07.P11
+  rule_id: DOM_BUSINESS_HOUSE_07_P11
+  domain: BUSINESS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.07
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: trade
+  bridge: '''Business'' is a product label; the source term for the 7th is trade.'
+- mapping_id: MAP.BUSINESS.HOUSE.10.P11
+  rule_id: DOM_BUSINESS_HOUSE_10_P11
+  domain: BUSINESS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.10
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: profession (livelihood)
+  bridge: Livelihood is not specific to trade.
+- mapping_id: MAP.BUSINESS.KARAKA.MERCURY_H10.B3234
+  rule_id: DOM_BUSINESS_KARAKA_MERCURY_H10_B3234
+  domain: BUSINESS
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MERCURY
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: PARTIALLY_SUPPORTED
+  source_term: significator of the 10th house
+  bridge: A house karaka of the 10th; the match to business is a bridge.
+  for_house: 10
+- mapping_id: MAP.CAREER.HOUSE.10.P11
+  rule_id: DOM_CAREER_HOUSE_10_P11
+  domain: CAREER
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.10
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: profession (livelihood)
+  bridge: '''Career'' is a product label; the source term is profession (livelihood); honour and authority
+    are also listed.'
+- mapping_id: MAP.CAREER.KARAKA.JUPITER_H10.PXV17
+  rule_id: DOM_CAREER_KARAKA_JUPITER_H10_PXV17
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+  support: UNRESOLVED_CONFLICT
+  source_term: significator of the 10th house
+  bridge: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate (DC-03).
+  conflict_ids:
+  - DC-03
+  for_house: 10
+- mapping_id: MAP.CAREER.KARAKA.MERCURY_H10.B3234
+  rule_id: DOM_CAREER_KARAKA_MERCURY_H10_B3234
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MERCURY
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 10th house
+  bridge: ''
+  for_house: 10
+- mapping_id: MAP.CAREER.KARAKA.MERCURY_H10.PXV17
+  rule_id: DOM_CAREER_KARAKA_MERCURY_H10_PXV17
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MERCURY
+  profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 10th house
+  bridge: ''
+  for_house: 10
+- mapping_id: MAP.CAREER.KARAKA.SATURN.PXV15
+  rule_id: DOM_CAREER_KARAKA_SATURN_PXV15
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SATURN
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: livelihood
+  bridge: ''
+- mapping_id: MAP.CAREER.KARAKA.SATURN_H10.PXV17
+  rule_id: DOM_CAREER_KARAKA_SATURN_H10_PXV17
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SATURN
+  profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+  support: UNRESOLVED_CONFLICT
+  source_term: significator of the 10th house
+  bridge: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate (DC-03).
+  conflict_ids:
+  - DC-03
+  for_house: 10
+- mapping_id: MAP.CAREER.KARAKA.SUN_H10.PXV17
+  rule_id: DOM_CAREER_KARAKA_SUN_H10_PXV17
+  domain: CAREER
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SUN
+  profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+  support: UNRESOLVED_CONFLICT
+  source_term: significator of the 10th house
+  bridge: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate (DC-03).
+  conflict_ids:
+  - DC-03
+  for_house: 10
+- mapping_id: MAP.CAREER.METHOD.PXVI31_H10.PXVI31
+  rule_id: DOM_CAREER_METHOD_PXVI31_H10_PXVI31
+  domain: CAREER
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H10
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 10th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+- mapping_id: MAP.CAREER.PHASE6.BPHS_SAN_ADHI_MOON_37_5
+  rule_id: DOM_CAREER_PHASE6_BPHS_SAN_ADHI_MOON_37_5
+  domain: CAREER
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_ADHI_MOON_37_5
+  profile: BPHS_SAN_ADHI_MOON_37_5
+  support: PARTIALLY_SUPPORTED
+  source_term: king, minister or army chief (position)
+  bridge: Position and rank, not career as such.
+  phase6_rule_id: BPHS_SAN_ADHI_MOON_37_5
+  phase6_signification: yoga.adhi_moon_37_5
+  blocked: false
+- mapping_id: MAP.CAREER.PHASE6.BPHS_SAN_UBHAYACHARI_38_1
+  rule_id: DOM_CAREER_PHASE6_BPHS_SAN_UBHAYACHARI_38_1
+  domain: CAREER
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_UBHAYACHARI_38_1
+  profile: BPHS_SAN_UBHAYACHARI_38_1
+  support: PARTIALLY_SUPPORTED
+  source_term: king or equal to a king (position)
+  bridge: Position and rank, not career as such.
+  phase6_rule_id: BPHS_SAN_UBHAYACHARI_38_1
+  phase6_signification: yoga.ubhayachari_38_1
+  blocked: false
+- mapping_id: MAP.CAREER.VARGA.D10.B7
+  rule_id: DOM_CAREER_VARGA_D10_B7
+  domain: CAREER
+  kind: VARGA_RELEVANCE
+  target: VARGA.D10
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: PARTIALLY_SUPPORTED
+  source_term: power (and position)
+  bridge: The verse says power (and position); 'career' is the translator's gloss.
+- mapping_id: MAP.CAREER.WITHHELD.PV1_NAVAMSA_LORD.PV1
+  rule_id: DOM_CAREER_WITHHELD_PV1_NAVAMSA_LORD_PV1
+  domain: CAREER
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PV1.NAVAMSA_LORD
+  profile: DOM17_PHALA_SASTRI_LIVELIHOOD_V_1
+  support: PARTIALLY_SUPPORTED
+  source_term: livelihood by the Navamsa of the 10th lord
+  bridge: ''
+  conflict_ids:
+  - DC-04
+  withheld_reason: METHODOLOGY_NOT_APPROVED
+  outcome: NOT_EVALUABLE
+- mapping_id: MAP.CAREER.WITHHELD.PV48_LIVELIHOOD_LABELS.PV48
+  rule_id: DOM_CAREER_WITHHELD_PV48_LIVELIHOOD_LABELS_PV48
+  domain: CAREER
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PV48.LIVELIHOOD_LABELS
+  profile: DOM17_PHALA_SASTRI_LIVELIHOOD_V_4_8
+  support: PARTIALLY_SUPPORTED
+  source_term: livelihood descriptions with derogatory wording
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.CHILDREN.HOUSE.05.P11
+  rule_id: DOM_CHILDREN_HOUSE_05_P11
+  domain: CHILDREN
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.05
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: sons
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+- mapping_id: MAP.CHILDREN.KARAKA.JUPITER_H5.B3234
+  rule_id: DOM_CHILDREN_KARAKA_JUPITER_H5_B3234
+  domain: CHILDREN
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 5th house
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+  for_house: 5
+- mapping_id: MAP.CHILDREN.VARGA.D7.B7
+  rule_id: DOM_CHILDREN_VARGA_D7_B7
+  domain: CHILDREN
+  kind: VARGA_RELEVANCE
+  target: VARGA.D7
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: sons and grandsons
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+- mapping_id: MAP.CHILDREN.WITHHELD.B1614_LEGITIMACY.B1614
+  rule_id: DOM_CHILDREN_WITHHELD_B1614_LEGITIMACY_B1614
+  domain: CHILDREN
+  kind: POLICY_WITHHELD
+  target: WITHHELD.B1614.LEGITIMACY
+  profile: DOM17_BPHS_SAN_5TH_HOUSE_16_14_15
+  support: PARTIALLY_SUPPORTED
+  source_term: statements about legitimacy of birth
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.CHILDREN.WITHHELD.B16_OFFSPRING_OUTCOMES.B16
+  rule_id: DOM_CHILDREN_WITHHELD_B16_OFFSPRING_OUTCOMES_B16
+  domain: CHILDREN
+  kind: POLICY_WITHHELD
+  target: WITHHELD.B16.OFFSPRING_OUTCOMES
+  profile: DOM17_BPHS_SAN_5TH_HOUSE_16_1_32
+  support: PARTIALLY_SUPPORTED
+  source_term: statements about the presence, absence, number or loss of offspring
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+  withheld_reason: PREDICTIVE_FERTILITY_BLOCKED
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.CHILDREN.WITHHELD.PXII_OFFSPRING_OUTCOMES.PXII
+  rule_id: DOM_CHILDREN_WITHHELD_PXII_OFFSPRING_OUTCOMES_PXII
+  domain: CHILDREN
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXII.OFFSPRING_OUTCOMES
+  profile: DOM17_PHALA_SASTRI_CHILDREN_XII_1_5
+  support: PARTIALLY_SUPPORTED
+  source_term: statements about the acquisition or absence of children
+  bridge: ''
+  policy_flags:
+  - CHILDREN_STRUCTURAL_ONLY
+  - FERTILITY_PREDICTION_BLOCKED
+  - ADULT_CONFIRMATION_REQUIRED
+  withheld_reason: PREDICTIVE_FERTILITY_BLOCKED
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.EDUCATION.HOUSE.02.PXVI5
+  rule_id: DOM_EDUCATION_HOUSE_02_PXVI5
+  domain: EDUCATION
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.02
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: knowledge (2nd lord)
+  bridge: Phaladeepika XVI sloka 5 speaks of knowledge and wealth through the 2nd lord's association;
+    derived, not a house-list term.
+- mapping_id: MAP.EDUCATION.HOUSE.05.P11
+  rule_id: DOM_EDUCATION_HOUSE_05_P11
+  domain: EDUCATION
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.05
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: learning; knowledge
+  bridge: ''
+- mapping_id: MAP.EDUCATION.KARAKA.JUPITER.B312
+  rule_id: DOM_EDUCATION_KARAKA_JUPITER_B312
+  domain: EDUCATION
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13
+  support: SOURCE_SUPPORTED
+  source_term: knowledge
+  bridge: ''
+- mapping_id: MAP.EDUCATION.KARAKA.MERCURY.PXV15
+  rule_id: DOM_EDUCATION_KARAKA_MERCURY_PXV15
+  domain: EDUCATION
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MERCURY
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: learning
+  bridge: ''
+- mapping_id: MAP.EDUCATION.METHOD.PXVI31_H05.PXVI31
+  rule_id: DOM_EDUCATION_METHOD_PXVI31_H05_PXVI31
+  domain: EDUCATION
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H05
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 5th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+- mapping_id: MAP.EDUCATION.PHASE6.BPHS_SAN_LAGNADHI_36_37
+  rule_id: DOM_EDUCATION_PHASE6_BPHS_SAN_LAGNADHI_36_37
+  domain: EDUCATION
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_LAGNADHI_36_37
+  profile: BPHS_SAN_LAGNADHI_36_37
+  support: PARTIALLY_SUPPORTED
+  source_term: learned in the Sastras
+  bridge: The source's effect is being a great person learned in Sastras; the match to 'education' is
+    a bridge.
+  phase6_rule_id: BPHS_SAN_LAGNADHI_36_37
+  phase6_signification: yoga.lagnadhi_36_37
+  blocked: false
+- mapping_id: MAP.EDUCATION.PHASE6.BPHS_SAN_VOSI_38_1
+  rule_id: DOM_EDUCATION_PHASE6_BPHS_SAN_VOSI_38_1
+  domain: EDUCATION
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_VOSI_38_1
+  profile: BPHS_SAN_VOSI_38_1
+  support: PARTIALLY_SUPPORTED
+  source_term: learning (among other effects)
+  bridge: One of several effects the source names.
+  phase6_rule_id: BPHS_SAN_VOSI_38_1
+  phase6_signification: yoga.vosi_38_1
+  blocked: false
+- mapping_id: MAP.EDUCATION.VARGA.D24.B7
+  rule_id: DOM_EDUCATION_VARGA_D24_B7
+  domain: EDUCATION
+  kind: VARGA_RELEVANCE
+  target: VARGA.D24
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: learning
+  bridge: ''
+- mapping_id: MAP.FAMILY.HOUSE.02.P11
+  rule_id: DOM_FAMILY_HOUSE_02_P11
+  domain: FAMILY
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.02
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: family
+  bridge: ''
+- mapping_id: MAP.FAMILY.HOUSE.04.P11
+  rule_id: DOM_FAMILY_HOUSE_04_P11
+  domain: FAMILY
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.04
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: relatives
+  bridge: ''
+- mapping_id: MAP.FAMILY.KARAKA.MERCURY.PXV15
+  rule_id: DOM_FAMILY_KARAKA_MERCURY_PXV15
+  domain: FAMILY
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MERCURY
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: relatives in general
+  bridge: ''
+- mapping_id: MAP.FINANCE.HOUSE.02.P11
+  rule_id: DOM_FINANCE_HOUSE_02_P11
+  domain: FINANCE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.02
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: wealth
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.FINANCE.HOUSE.11.P11
+  rule_id: DOM_FINANCE_HOUSE_11_P11
+  domain: FINANCE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.11
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: income; prosperity
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.FINANCE.HOUSE.12.P11
+  rule_id: DOM_FINANCE_HOUSE_12_P11
+  domain: FINANCE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.12
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: expenses
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.FINANCE.KARAKA.JUPITER_H11.B3234
+  rule_id: DOM_FINANCE_KARAKA_JUPITER_H11_B3234
+  domain: FINANCE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 11th house
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  for_house: 11
+- mapping_id: MAP.FINANCE.KARAKA.JUPITER_H2.B3234
+  rule_id: DOM_FINANCE_KARAKA_JUPITER_H2_B3234
+  domain: FINANCE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 2nd house
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  for_house: 2
+- mapping_id: MAP.FINANCE.KARAKA.SATURN_H12.B3234
+  rule_id: DOM_FINANCE_KARAKA_SATURN_H12_B3234
+  domain: FINANCE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SATURN
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 12th house
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  for_house: 12
+- mapping_id: MAP.FINANCE.PHASE6.BPHS_SAN_DHANA_MOON_37_6
+  rule_id: DOM_FINANCE_PHASE6_BPHS_SAN_DHANA_MOON_37_6
+  domain: FINANCE
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_DHANA_MOON_37_6
+  profile: BPHS_SAN_DHANA_MOON_37_6
+  support: SOURCE_SUPPORTED
+  source_term: very affluent / medium / negligible by count
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  phase6_rule_id: BPHS_SAN_DHANA_MOON_37_6
+  phase6_signification: yoga.dhana_moon_37_6
+  blocked: false
+- mapping_id: MAP.FINANCE.VARGA.D2.B7
+  rule_id: DOM_FINANCE_VARGA_D2_B7
+  domain: FINANCE
+  kind: VARGA_RELEVANCE
+  target: VARGA.D2
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: wealth
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.FOREIGN_SETTLEMENT.HOUSE.10.P11
+  rule_id: DOM_FOREIGN_SETTLEMENT_HOUSE_10_P11
+  domain: FOREIGN_SETTLEMENT
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.10
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: living in foreign lands
+  bridge: The source term is residence in foreign lands; 'settlement' is a product label.
+- mapping_id: MAP.FOREIGN_SETTLEMENT.HOUSE.12.B23
+  rule_id: DOM_FOREIGN_SETTLEMENT_HOUSE_12_B23
+  domain: FOREIGN_SETTLEMENT
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.12
+  profile: DOM17_BPHS_SAN_12TH_HOUSE_23_10_12
+  support: PARTIALLY_SUPPORTED
+  source_term: wandering from country to country
+  bridge: Derived from the effect chapter.
+- mapping_id: MAP.FOREIGN_TRAVEL.HOUSE.12.B23
+  rule_id: DOM_FOREIGN_TRAVEL_HOUSE_12_B23
+  domain: FOREIGN_TRAVEL
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.12
+  profile: DOM17_BPHS_SAN_12TH_HOUSE_23_10_12
+  support: PARTIALLY_SUPPORTED
+  source_term: wandering from country to country
+  bridge: Derived from the effect chapter (12th lord and 12th house with malefics or benefics); not a
+    house-list term.
+- mapping_id: MAP.INCOME.HOUSE.11.P11
+  rule_id: DOM_INCOME_HOUSE_11_P11
+  domain: INCOME
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.11
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: income
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.INCOME.KARAKA.JUPITER_H11.B3234
+  rule_id: DOM_INCOME_KARAKA_JUPITER_H11_B3234
+  domain: INCOME
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 11th house
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  for_house: 11
+- mapping_id: MAP.INCOME.METHOD.PXVI31_H11.PXVI31
+  rule_id: DOM_INCOME_METHOD_PXVI31_H11_PXVI31
+  domain: INCOME
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H11
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 11th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.JOB.HOUSE.10.P11
+  rule_id: DOM_JOB_HOUSE_10_P11
+  domain: JOB
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.10
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: profession (livelihood)
+  bridge: The source does not separate employment from other livelihood; its own record, not inherited
+    from Career.
+- mapping_id: MAP.JOB.KARAKA.SATURN.PXV15
+  rule_id: DOM_JOB_KARAKA_SATURN_PXV15
+  domain: JOB
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SATURN
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: PARTIALLY_SUPPORTED
+  source_term: livelihood; servants
+  bridge: '''servants'' and ''livelihood'' are the source''s terms; ''job'' is a bridge.'
+- mapping_id: MAP.LOVE.KARAKA.VENUS.PXV15
+  rule_id: DOM_LOVE_KARAKA_VENUS_PXV15
+  domain: LOVE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.VENUS
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: PARTIALLY_SUPPORTED
+  source_term: love affairs
+  bridge: Venus as the source's significator of love affairs; no house in the sources read lists love.
+- mapping_id: MAP.MARRIAGE.HOUSE.02.B3233
+  rule_id: DOM_MARRIAGE_HOUSE_02_B3233
+  domain: MARRIAGE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.02
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_32_31_33
+  support: UNRESOLVED_CONFLICT
+  source_term: wife (as printed in the verse translation)
+  bridge: BPHS Ch. 32 v. 32-33 as printed gives wife for the 2nd; Ch. 11 v. 3 does not (DC-02).
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+  conflict_ids:
+  - DC-02
+- mapping_id: MAP.MARRIAGE.HOUSE.07.P11
+  rule_id: DOM_MARRIAGE_HOUSE_07_P11
+  domain: MARRIAGE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.07
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: wife
+  bridge: '''Marriage'' is a product label; the source term is wife (a gendered term); facts are stated
+    neutrally.'
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.MARRIAGE.KARAKA.VENUS_H7.B3234
+  rule_id: DOM_MARRIAGE_KARAKA_VENUS_H7_B3234
+  domain: MARRIAGE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.VENUS
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 7th house
+  bridge: ''
+  for_house: 7
+- mapping_id: MAP.MARRIAGE.METHOD.PX13_DASHA_7TH.PX13
+  rule_id: DOM_MARRIAGE_METHOD_PX13_DASHA_7TH_PX13
+  domain: MARRIAGE
+  kind: MARRIAGE_DASHA_METHOD
+  target: METHOD.PX13.DASHA_7TH
+  profile: DOM17_PHALA_SASTRI_MARRIAGE_DASHA_X_13
+  support: SOURCE_SUPPORTED
+  source_term: the Dasa of the planet in, aspecting or owning the 7th
+  bridge: 'Phaladeepika X sloka 13: the acquisition of a wife may happen in that Dasa. Presented as a
+    traditional timing indicator only; the Antardasha and the transit clause are not evaluated.'
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.MARRIAGE.METHOD.PXVI31_H07.PXVI31
+  rule_id: DOM_MARRIAGE_METHOD_PXVI31_H07_PXVI31
+  domain: MARRIAGE
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H07
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 7th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.MARRIAGE.PHASE6.BPHS_KAPOOR_80_47_49_MARS_HOUSES
+  rule_id: DOM_MARRIAGE_PHASE6_BPHS_KAPOOR_80_47_49_MARS_HOUSES
+  domain: MARRIAGE
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_80_47_49_MARS_HOUSES
+  profile: BPHS_KAPOOR_80_47_49_MARS_HOUSES
+  support: SOURCE_SUPPORTED
+  source_term: Mars in the houses of the Kuja yoga
+  bridge: The Phase 6 signification is spouse longevity; it is never user-facing (owner decision 15).
+  policy_flags:
+  - LIFESPAN_BLOCKED
+  - FEAR_OR_STIGMA_TRANSFORMED
+  conflict_ids:
+  - KUJA_DOSHA_TOPIC
+  phase6_rule_id: BPHS_KAPOOR_80_47_49_MARS_HOUSES
+  phase6_signification: marriage.spouse_longevity
+  blocked: true
+- mapping_id: MAP.MARRIAGE.PHASE6.JP_KUJA_DOSHA
+  rule_id: DOM_MARRIAGE_PHASE6_JP_KUJA_DOSHA
+  domain: MARRIAGE
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.JP_KUJA_DOSHA
+  profile: JP_KUJA_DOSHA
+  support: PARTIALLY_SUPPORTED
+  source_term: Mars in the houses of the Kuja yoga
+  bridge: A separate source profile of the Kuja yoga; the profiles are not merged.
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  conflict_ids:
+  - KUJA_DOSHA_TOPIC
+  phase6_rule_id: JP_KUJA_DOSHA
+  phase6_signification: marriage.spouse_welfare
+  blocked: false
+- mapping_id: MAP.MARRIAGE.VARGA.D9.B7
+  rule_id: DOM_MARRIAGE_VARGA_D9_B7
+  domain: MARRIAGE
+  kind: VARGA_RELEVANCE
+  target: VARGA.D9
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: spouse
+  bridge: ''
+- mapping_id: MAP.MARRIAGE.WITHHELD.PX24_SPOUSE_LOSS.PX24
+  rule_id: DOM_MARRIAGE_WITHHELD_PX24_SPOUSE_LOSS_PX24
+  domain: MARRIAGE
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PX24.SPOUSE_LOSS
+  profile: DOM17_PHALA_SASTRI_7TH_HOUSE_X_2_4
+  support: PARTIALLY_SUPPORTED
+  source_term: statements about the loss of a spouse
+  bridge: ''
+  policy_flags:
+  - LIFESPAN_BLOCKED
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: SPOUSE_LONGEVITY_BLOCKED
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.PARENTS.HOUSE.04.P11
+  rule_id: DOM_PARENTS_HOUSE_04_P11
+  domain: PARENTS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.04
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: mother
+  bridge: ''
+- mapping_id: MAP.PARENTS.HOUSE.09.PXVI22
+  rule_id: DOM_PARENTS_HOUSE_09_PXVI22
+  domain: PARENTS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.09
+  profile: DOM17_PHALA_SASTRI_FATHER_XVI_22_23
+  support: UNRESOLVED_CONFLICT
+  source_term: father
+  bridge: Phaladeepika uses the 9th for the father; BPHS Ch. 11 v. 11 the 10th (DC-01).
+  conflict_ids:
+  - DC-01
+- mapping_id: MAP.PARENTS.HOUSE.10.P11
+  rule_id: DOM_PARENTS_HOUSE_10_P11
+  domain: PARENTS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.10
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: UNRESOLVED_CONFLICT
+  source_term: father
+  bridge: BPHS Ch. 11 v. 11 puts the father at the 10th; Phaladeepika XVI sloka 22-23 uses the 9th (DC-01).
+  conflict_ids:
+  - DC-01
+- mapping_id: MAP.PARENTS.KARAKA.MOON.PXV15
+  rule_id: DOM_PARENTS_KARAKA_MOON_PXV15
+  domain: PARENTS
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MOON
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: mother
+  bridge: ''
+- mapping_id: MAP.PARENTS.KARAKA.SUN.PXV15
+  rule_id: DOM_PARENTS_KARAKA_SUN_PXV15
+  domain: PARENTS
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SUN
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: father
+  bridge: ''
+- mapping_id: MAP.PARENTS.VARGA.D12.B7
+  rule_id: DOM_PARENTS_VARGA_D12_B7
+  domain: PARENTS
+  kind: VARGA_RELEVANCE
+  target: VARGA.D12
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: parents
+  bridge: ''
+- mapping_id: MAP.PERSONALITY.HOUSE.01.P11
+  rule_id: DOM_PERSONALITY_HOUSE_01_P11
+  domain: PERSONALITY
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.01
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: innate nature
+  bridge: '''Personality'' is a product label; the source terms for the 1st house are physique, appearance,
+    intellect and innate nature.'
+- mapping_id: MAP.PERSONALITY.KARAKA.MOON.B312
+  rule_id: DOM_PERSONALITY_KARAKA_MOON_B312
+  domain: PERSONALITY
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MOON
+  profile: KB_BPHS_SAN_PLANET_KARAKATWA_3_12_13
+  support: PARTIALLY_SUPPORTED
+  source_term: mind
+  bridge: '''mind'' is the source''s signification of the Moon; ''personality'' is a bridge.'
+- mapping_id: MAP.PERSONALITY.KARAKA.SUN_H1.B3234
+  rule_id: DOM_PERSONALITY_KARAKA_SUN_H1_B3234
+  domain: PERSONALITY
+  kind: KARAKA_RELEVANCE
+  target: PLANET.SUN
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: PARTIALLY_SUPPORTED
+  source_term: significator of the 1st house
+  bridge: House karaka of the 1st house; the label 'personality' is a bridge.
+  for_house: 1
+- mapping_id: MAP.PERSONALITY.PHASE6.BPHS_KAPOOR_PMP_75_1_2_BHADRA
+  rule_id: DOM_PERSONALITY_PHASE6_BPHS_KAPOOR_PMP_75_1_2_BHADRA
+  domain: PERSONALITY
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_PMP_75_1_2_BHADRA
+  profile: BPHS_KAPOOR_PMP_75_1_2_BHADRA
+  support: SOURCE_SUPPORTED
+  source_term: Pancha Mahapurusha (Bhadra)
+  bridge: ''
+  phase6_rule_id: BPHS_KAPOOR_PMP_75_1_2_BHADRA
+  phase6_signification: pancha_mahapurusha.bhadra
+  blocked: false
+- mapping_id: MAP.PERSONALITY.PHASE6.BPHS_KAPOOR_PMP_75_1_2_HAMSA
+  rule_id: DOM_PERSONALITY_PHASE6_BPHS_KAPOOR_PMP_75_1_2_HAMSA
+  domain: PERSONALITY
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_PMP_75_1_2_HAMSA
+  profile: BPHS_KAPOOR_PMP_75_1_2_HAMSA
+  support: SOURCE_SUPPORTED
+  source_term: Pancha Mahapurusha (Hamsa)
+  bridge: ''
+  phase6_rule_id: BPHS_KAPOOR_PMP_75_1_2_HAMSA
+  phase6_signification: pancha_mahapurusha.hamsa
+  blocked: false
+- mapping_id: MAP.PERSONALITY.PHASE6.BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+  rule_id: DOM_PERSONALITY_PHASE6_BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+  domain: PERSONALITY
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+  profile: BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+  support: SOURCE_SUPPORTED
+  source_term: Pancha Mahapurusha (Malavya)
+  bridge: ''
+  phase6_rule_id: BPHS_KAPOOR_PMP_75_1_2_MALAVYA
+  phase6_signification: pancha_mahapurusha.malavya
+  blocked: false
+- mapping_id: MAP.PERSONALITY.PHASE6.BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+  rule_id: DOM_PERSONALITY_PHASE6_BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+  domain: PERSONALITY
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+  profile: BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+  support: SOURCE_SUPPORTED
+  source_term: Pancha Mahapurusha (Ruchaka)
+  bridge: ''
+  phase6_rule_id: BPHS_KAPOOR_PMP_75_1_2_RUCHAKA
+  phase6_signification: pancha_mahapurusha.ruchaka
+  blocked: false
+- mapping_id: MAP.PERSONALITY.PHASE6.BPHS_KAPOOR_PMP_75_1_2_SHASHA
+  rule_id: DOM_PERSONALITY_PHASE6_BPHS_KAPOOR_PMP_75_1_2_SHASHA
+  domain: PERSONALITY
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_KAPOOR_PMP_75_1_2_SHASHA
+  profile: BPHS_KAPOOR_PMP_75_1_2_SHASHA
+  support: SOURCE_SUPPORTED
+  source_term: Pancha Mahapurusha (Shasha)
+  bridge: ''
+  phase6_rule_id: BPHS_KAPOOR_PMP_75_1_2_SHASHA
+  phase6_signification: pancha_mahapurusha.shasha
+  blocked: false
+- mapping_id: MAP.RELATIONSHIP.HOUSE.07.P11
+  rule_id: DOM_RELATIONSHIP_HOUSE_07_P11
+  domain: RELATIONSHIP
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.07
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: wife
+  bridge: The source frame is marital and gendered (wife); relationship is a product label.
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.RELATIONSHIP.KARAKA.VENUS_H7.B3234
+  rule_id: DOM_RELATIONSHIP_KARAKA_VENUS_H7_B3234
+  domain: RELATIONSHIP
+  kind: KARAKA_RELEVANCE
+  target: PLANET.VENUS
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: PARTIALLY_SUPPORTED
+  source_term: significator of the 7th house
+  bridge: The source frame is marital.
+  for_house: 7
+- mapping_id: MAP.SIBLINGS.HOUSE.03.P11
+  rule_id: DOM_SIBLINGS_HOUSE_03_P11
+  domain: SIBLINGS
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.03
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: brothers, sisters
+  bridge: ''
+- mapping_id: MAP.SIBLINGS.KARAKA.MARS_H3.B3234
+  rule_id: DOM_SIBLINGS_KARAKA_MARS_H3_B3234
+  domain: SIBLINGS
+  kind: KARAKA_RELEVANCE
+  target: PLANET.MARS
+  profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+  support: SOURCE_SUPPORTED
+  source_term: significator of the 3rd house
+  bridge: ''
+  for_house: 3
+- mapping_id: MAP.SIBLINGS.METHOD.PXVI31_H03.PXVI31
+  rule_id: DOM_SIBLINGS_METHOD_PXVI31_H03_PXVI31
+  domain: SIBLINGS
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H03
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 3th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+- mapping_id: MAP.SIBLINGS.VARGA.D3.B7
+  rule_id: DOM_SIBLINGS_VARGA_D3_B7
+  domain: SIBLINGS
+  kind: VARGA_RELEVANCE
+  target: VARGA.D3
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: happiness through co-born
+  bridge: The verse says happiness through co-born (from the decanate).
+- mapping_id: MAP.SPIRITUALITY.HOUSE.09.P11
+  rule_id: DOM_SPIRITUALITY_HOUSE_09_P11
+  domain: SPIRITUALITY
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.09
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: religion; visits to shrines
+  bridge: ''
+- mapping_id: MAP.SPIRITUALITY.HOUSE.12.B23
+  rule_id: DOM_SPIRITUALITY_HOUSE_12_B23
+  domain: SPIRITUALITY
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.12
+  profile: DOM17_BPHS_SAN_12TH_HOUSE_23_10_12
+  support: PARTIALLY_SUPPORTED
+  source_term: final emancipation
+  bridge: Derived from the effect chapter and the translator's note on the 12th house.
+- mapping_id: MAP.SPIRITUALITY.VARGA.D20.B7
+  rule_id: DOM_SPIRITUALITY_VARGA_D20_B7
+  domain: SPIRITUALITY
+  kind: VARGA_RELEVANCE
+  target: VARGA.D20
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: worship
+  bridge: ''
+- mapping_id: MAP.SPIRITUALITY.WITHHELD.PXXVII_ASCETIC_LABELS.PXXVII
+  rule_id: DOM_SPIRITUALITY_WITHHELD_PXXVII_ASCETIC_LABELS_PXXVII
+  domain: SPIRITUALITY
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXXVII.ASCETIC_LABELS
+  profile: DOM17_PHALA_SASTRI_ASCETIC_XXVII_5
+  support: PARTIALLY_SUPPORTED
+  source_term: ascetic classes described with derogatory labels
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.SPOUSE.HOUSE.07.P11
+  rule_id: DOM_SPOUSE_HOUSE_07_P11
+  domain: SPOUSE
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.07
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: PARTIALLY_SUPPORTED
+  source_term: wife
+  bridge: A gendered source term; no sex is collected, so facts are stated neutrally.
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.SPOUSE.KARAKA.VENUS.PXV15
+  rule_id: DOM_SPOUSE_KARAKA_VENUS_PXV15
+  domain: SPOUSE
+  kind: KARAKA_RELEVANCE
+  target: PLANET.VENUS
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: PARTIALLY_SUPPORTED
+  source_term: wife
+  bridge: A gendered source term.
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+- mapping_id: MAP.SPOUSE.VARGA.D9.B7
+  rule_id: DOM_SPOUSE_VARGA_D9_B7
+  domain: SPOUSE
+  kind: VARGA_RELEVANCE
+  target: VARGA.D9
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: spouse
+  bridge: ''
+- mapping_id: MAP.SPOUSE.WITHHELD.PX78_MIRRORED_HUSBAND.PX78
+  rule_id: DOM_SPOUSE_WITHHELD_PX78_MIRRORED_HUSBAND_PX78
+  domain: SPOUSE
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PX78.MIRRORED_HUSBAND
+  profile: DOM17_PHALA_SASTRI_7TH_HOUSE_X_7_8
+  support: PARTIALLY_SUPPORTED
+  source_term: the mirrored reading for a woman's nativity
+  bridge: ''
+  policy_flags:
+  - SEX_SPECIFIC_SOURCE
+  withheld_reason: SEX_SPECIFIC_METHOD
+  outcome: NOT_EVALUABLE
+- mapping_id: MAP.SUBJECTS.METHOD.PXVI5_JUPITER.PXVI5
+  rule_id: DOM_SUBJECTS_METHOD_PXVI5_JUPITER_PXVI5
+  domain: SUBJECTS
+  kind: SUBJECT_PROFICIENCY
+  target: METHOD.PXVI5.JUPITER
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: sacred scriptures and code of laws
+  bridge: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+    word.
+- mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MARS.PXVI5
+  rule_id: DOM_SUBJECTS_METHOD_PXVI5_MARS_PXVI5
+  domain: SUBJECTS
+  kind: SUBJECT_PROFICIENCY
+  target: METHOD.PXVI5.MARS
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: works involving hard labour
+  bridge: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+    word.
+- mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MERCURY.PXVI5
+  rule_id: DOM_SUBJECTS_METHOD_PXVI5_MERCURY_PXVI5
+  domain: SUBJECTS
+  kind: SUBJECT_PROFICIENCY
+  target: METHOD.PXVI5.MERCURY
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: politics
+  bridge: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+    word.
+- mapping_id: MAP.SUBJECTS.METHOD.PXVI5_MOON.PXVI5
+  rule_id: DOM_SUBJECTS_METHOD_PXVI5_MOON_PXVI5
+  domain: SUBJECTS
+  kind: SUBJECT_PROFICIENCY
+  target: METHOD.PXVI5.MOON
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: the arts
+  bridge: The 2nd lord associated (same sign) with this planet; a product 'subject' is not the source's
+    word.
+- mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_KETU.PXVI5
+  rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_KETU_PXVI5
+  domain: SUBJECTS
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXVI5.KETU
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: 2nd lord with ketu
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_RAHU.PXVI5
+  rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_RAHU_PXVI5
+  domain: SUBJECTS
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXVI5.RAHU
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: 2nd lord with rahu
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_SATURN.PXVI5
+  rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_SATURN_PXVI5
+  domain: SUBJECTS
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXVI5.SATURN
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: 2nd lord with saturn
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.SUBJECTS.WITHHELD.PXVI5_VENUS.PXVI5
+  rule_id: DOM_SUBJECTS_WITHHELD_PXVI5_VENUS_PXVI5
+  domain: SUBJECTS
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXVI5.VENUS
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: 2nd lord with venus
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.SUBJECTS.WITHHELD.PXVI6_MALEFICS_IN_2.PXVI5
+  rule_id: DOM_SUBJECTS_WITHHELD_PXVI6_MALEFICS_IN_2_PXVI5
+  domain: SUBJECTS
+  kind: POLICY_WITHHELD
+  target: WITHHELD.PXVI6.MALEFICS_IN_2
+  profile: DOM17_PHALA_SASTRI_SUBJECTS_XVI_5_6
+  support: PARTIALLY_SUPPORTED
+  source_term: malefics in the 2nd house
+  bridge: ''
+  policy_flags:
+  - FEAR_OR_STIGMA_TRANSFORMED
+  withheld_reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+- mapping_id: MAP.TRAVEL.HOUSE.03.P11
+  rule_id: DOM_TRAVEL_HOUSE_03_P11
+  domain: TRAVEL
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.03
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: journey
+  bridge: ''
+- mapping_id: MAP.TRAVEL.HOUSE.07.P11
+  rule_id: DOM_TRAVEL_HOUSE_07_P11
+  domain: TRAVEL
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.07
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: travel
+  bridge: ''
+- mapping_id: MAP.TRAVEL.HOUSE.09.P11
+  rule_id: DOM_TRAVEL_HOUSE_09_P11
+  domain: TRAVEL
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.09
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: visits to shrines
+  bridge: ''
+- mapping_id: MAP.WEALTH.HOUSE.02.P11
+  rule_id: DOM_WEALTH_HOUSE_02_P11
+  domain: WEALTH
+  kind: HOUSE_RELEVANCE
+  target: HOUSE.02
+  profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+  support: SOURCE_SUPPORTED
+  source_term: wealth
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.WEALTH.KARAKA.JUPITER.PXV15
+  rule_id: DOM_WEALTH_KARAKA_JUPITER_PXV15
+  domain: WEALTH
+  kind: KARAKA_RELEVANCE
+  target: PLANET.JUPITER
+  profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+  support: SOURCE_SUPPORTED
+  source_term: wealth
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.WEALTH.METHOD.PXVI31_H02.PXVI31
+  rule_id: DOM_WEALTH_METHOD_PXVI31_H02_PXVI31
+  domain: WEALTH
+  kind: BHAVA_TRANSIT_METHOD
+  target: METHOD.PXVI31.H02
+  profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+  support: PARTIALLY_SUPPORTED
+  source_term: success or acquisition of the 2th Bhava
+  bridge: The source states the method for any Bhava; here it is applied to the house this domain itself
+    maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+    reckoning are not evaluated.
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+- mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_DHANA_MOON_37_6
+  rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_DHANA_MOON_37_6
+  domain: WEALTH
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_DHANA_MOON_37_6
+  profile: BPHS_SAN_DHANA_MOON_37_6
+  support: SOURCE_SUPPORTED
+  source_term: very affluent / medium / negligible by count
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  phase6_rule_id: BPHS_SAN_DHANA_MOON_37_6
+  phase6_signification: yoga.dhana_moon_37_6
+  blocked: false
+- mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_DURADHARA_37_7_10
+  rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_DURADHARA_37_7_10
+  domain: WEALTH
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_DURADHARA_37_7_10
+  profile: BPHS_SAN_DURADHARA_37_7_10
+  support: PARTIALLY_SUPPORTED
+  source_term: wealth, conveyances (among effects)
+  bridge: Wealth is one of several effects the source names.
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  phase6_rule_id: BPHS_SAN_DURADHARA_37_7_10
+  phase6_signification: yoga.duradhara_37_7_10
+  blocked: false
+- mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_GAJAKESARI_36_3_4
+  rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_GAJAKESARI_36_3_4
+  domain: WEALTH
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_GAJAKESARI_36_3_4
+  profile: BPHS_SAN_GAJAKESARI_36_3_4
+  support: PARTIALLY_SUPPORTED
+  source_term: splendorous, wealthy, intelligent (among effects)
+  bridge: Wealth is one of several effects the source names; the Phaladeepika Kesari profile is a separate
+    rule and is not merged.
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  phase6_rule_id: BPHS_SAN_GAJAKESARI_36_3_4
+  phase6_signification: yoga.gajakesari
+  blocked: false
+- mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_KEMADRUMA_37_11_13
+  rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_KEMADRUMA_37_11_13
+  domain: WEALTH
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_KEMADRUMA_37_11_13
+  profile: BPHS_SAN_KEMADRUMA_37_11_13
+  support: PARTIALLY_SUPPORTED
+  source_term: a source statement of penury
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  - FEAR_OR_STIGMA_TRANSFORMED
+  phase6_rule_id: BPHS_SAN_KEMADRUMA_37_11_13
+  phase6_signification: yoga.kemadruma_37_11_13
+  blocked: true
+- mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_SUNAPHA_37_7_10
+  rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_SUNAPHA_37_7_10
+  domain: WEALTH
+  kind: PHASE6_RULE_APPLICABILITY
+  target: RULE.BPHS_SAN_SUNAPHA_37_7_10
+  profile: BPHS_SAN_SUNAPHA_37_7_10
+  support: PARTIALLY_SUPPORTED
+  source_term: intelligence, wealth, fame (among effects)
+  bridge: Wealth is one of several effects the source names.
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME
+  phase6_rule_id: BPHS_SAN_SUNAPHA_37_7_10
+  phase6_signification: yoga.sunapha_37_7_10
+  blocked: false
+- mapping_id: MAP.WEALTH.VARGA.D2.B7
+  rule_id: DOM_WEALTH_VARGA_D2_B7
+  domain: WEALTH
+  kind: VARGA_RELEVANCE
+  target: VARGA.D2
+  profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+  support: SOURCE_SUPPORTED
+  source_term: wealth
+  bridge: ''
+  policy_flags:
+  - FINANCE_INTERPRETIVE_ONLY
+  - PROFESSIONAL_ADVICE_DISCLAIMER
+  - NO_GUARANTEED_OUTCOME

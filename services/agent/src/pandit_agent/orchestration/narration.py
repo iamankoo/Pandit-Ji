@@ -22,6 +22,7 @@ Any violation fails the whole narration with a typed error and no partial narrat
 
 from __future__ import annotations
 
+from collections.abc import Callable
 from typing import Any
 
 from pandit_contracts.agent import (
@@ -82,10 +83,18 @@ def _flags(records: list[EvidenceRecord], trimmed: bool) -> tuple[UncertaintyFla
     return tuple(f for f in _FLAG_ORDER if f in found)
 
 
-def _check_text(text: str, policy: DomainPolicy) -> None:
+def _check_text(
+    text: str,
+    policy: DomainPolicy,
+    extra_screen: Callable[[str], tuple[str, ...]] | None = None,
+) -> None:
     if screen_claim_text(text, policy):
         raise AgentFailure(
             AgentErrorCode.POLICY_REJECTION, "generated text touches a restricted category"
+        )
+    if extra_screen is not None and extra_screen(text):
+        raise AgentFailure(
+            AgentErrorCode.POLICY_REJECTION, "generated text touches a restricted domain class"
         )
     if claims_verification(text):
         raise _fail("the narration claims verification, which only Phase 16 may do")
@@ -122,6 +131,7 @@ def ground_narration(
     structured: Any,
     context: AgentContext,
     policy: DomainPolicy,
+    extra_screen: Callable[[str], tuple[str, ...]] | None = None,
 ) -> tuple[NarrationSection, ...]:
     if not isinstance(structured, dict) or not isinstance(structured.get("sections"), list):
         raise _fail("the structured narration has an unexpected shape")
@@ -130,12 +140,12 @@ def ground_narration(
     counter = 0
     for raw_section in structured["sections"]:
         heading = str(raw_section["heading"])
-        _check_text(heading, policy)
+        _check_text(heading, policy, extra_screen)
         claims: list[NarrationClaim] = []
         for raw in raw_section["claims"]:
             counter += 1
             text = str(raw["text"])
-            _check_text(text, policy)
+            _check_text(text, policy, extra_screen)
             ids = tuple(dict.fromkeys(str(i) for i in raw["evidence_ids"]))
             cited: list[EvidenceRecord] = []
             for evidence_id in ids:

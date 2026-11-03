@@ -27,6 +27,7 @@ from pandit_contracts.agent import (
     EvidenceCapability,
     Intent,
 )
+from pandit_contracts.domain import LifeDomain
 
 from pandit_agent.orchestration.errors import AgentFailure
 from pandit_agent.orchestration.tools import ToolRegistry
@@ -62,13 +63,25 @@ def capabilities_for(
     return _PRESETS[intent]
 
 
-def build_plan(domain: Domain, intent: Intent, registry: ToolRegistry) -> AgentPlan:
-    required, desired = capabilities_for(intent)
+def build_plan(
+    domain: Domain,
+    intent: Intent,
+    registry: ToolRegistry,
+    life_domain: LifeDomain | None = None,
+) -> AgentPlan:
+    """The plan for a request. With a life domain (Phase 17) the capabilities come from that
+    domain's static preset; without one the plan is exactly the Phase 15 plan."""
+    if life_domain is not None:
+        from pandit_agent.orchestration.domain import capabilities_for_domain
+
+        required, desired = capabilities_for_domain(life_domain)
+    else:
+        required, desired = capabilities_for(intent)
     wanted = tuple(dict.fromkeys((*required, *desired)))
     steps: list[AgentStep] = []
     planned: dict[str, set[EvidenceCapability]] = {}
     for capability in wanted:
-        for spec in registry.tools_for(capability, domain):
+        for spec in registry.tools_for(capability, domain, life_domain):
             planned.setdefault(spec.name, set()).add(capability)
             break  # one tool per capability: the first registered, in registry order
     for index, (tool_name, caps) in enumerate(planned.items(), start=1):
@@ -92,6 +105,8 @@ def build_plan(domain: Domain, intent: Intent, registry: ToolRegistry) -> AgentP
         "required": [c.value for c in required],
         "desired": [c.value for c in desired],
     }
+    if life_domain is not None:  # added only when set, so every Phase 15 plan hash is unchanged
+        body["life_domain"] = life_domain.value
     digest = hashlib.sha256(
         json.dumps(body, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
     ).hexdigest()
@@ -102,5 +117,6 @@ def build_plan(domain: Domain, intent: Intent, registry: ToolRegistry) -> AgentP
         steps=tuple(steps),
         required=required,
         desired=desired,
+        life_domain=life_domain,
         plan_hash=digest,
     )

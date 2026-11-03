@@ -1,0 +1,9 @@
+# Phase 17 domain ruleset manifest. A SEPARATE ruleset from the Phase 6 Vedic ruleset
+# (services/knowledge/rules/ruleset.yaml) and from the Phase 13 palm ruleset: own id, version, hash.
+document_type: domain_ruleset
+ruleset_id: PANDIT_JI_DOMAIN_PHASE17
+ruleset_version: 1.0.0
+schema_version: 1
+standards_version: 1.30.0
+methodology_version: DOMAIN_METHODOLOGY_P17_1
+scope: SOURCE_BACKED_STRUCTURAL_DOMAIN_RELEVANCE_NOT_PREDICTION

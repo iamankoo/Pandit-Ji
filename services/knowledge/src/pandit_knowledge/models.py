@@ -45,6 +45,8 @@ class ConceptType(str, Enum):
     PALM_LINE = "PALM_LINE"
     PALM_REGION = "PALM_REGION"
     PALM_FEATURE = "PALM_FEATURE"
+    # Phase 17 (migration 0004, additive): a divisional chart (varga), D1 to D60.
+    VARGA = "VARGA"
 
 
 class StatementKind(str, Enum):
@@ -60,10 +62,17 @@ class StatementKind(str, Enum):
     LOCATION_DEFINITION = "LOCATION_DEFINITION"  # where a source says a named line or region lies
     READING_CONVENTION = "READING_CONVENTION"  # how a source says hands or signs are to be read
     COVERAGE = "COVERAGE"  # what was read of a source for a concept (the source coverage manifest)
+    # Phase 17 (migration 0004, additive), life-domain methodology:
+    DOMAIN_DEFINITION = "DOMAIN_DEFINITION"  # a domain's taxonomy entry, research status, policy
+    VARGA_USE = "VARGA_USE"  # what a source says a divisional chart is used for
+    POLICY_NOTE = "POLICY_NOTE"  # a source statement withheld or transformed by policy (class only)
 
 
 class SupportStatus(str, Enum):
     SOURCE_SUPPORTED = "SOURCE_SUPPORTED"
+    # Phase 17 (migration 0004, additive): a mapping a source supports only in part (a bridge or a
+    # derived reading); never treated as SOURCE_SUPPORTED.
+    PARTIALLY_SUPPORTED = "PARTIALLY_SUPPORTED"
     PROJECT_DERIVED = "PROJECT_DERIVED"
     UNRESOLVED_CONFLICT = "UNRESOLVED_CONFLICT"
     NOT_EVALUABLE = "NOT_EVALUABLE"
@@ -121,6 +130,7 @@ class RuleKind(str, Enum):
     TABLE = "TABLE"
     PROFILE = "PROFILE"  # a Phase 9-11 methodology profile implemented in astro-engine
     PALM_RULE = "PALM_RULE"  # Phase 13: a rule of the separate palm ruleset (rule-engine)
+    DOMAIN_RULE = "DOMAIN_RULE"  # Phase 17: a rule of the separate domain ruleset (rule-engine)
 
 
 def canonical_json(value: Any) -> str:

@@ -42,6 +42,10 @@ agent = AgentOrchestrator(llm, ToolRegistry([PalmBundleTool(palm_evidence_bundle
 response = agent.run(agent_request)  # a NarrationResponse; check response.status
 ```
 
+## Life-domain analysis (Phase 17)
+
+`DomainAnalysisTool` serves one already-computed `DomainAnalysisResult` (contracts only; the agent never imports the rule engine). The static presets (`PRESETS`, 36 domains), keyword and intent routing, the domain request and claim screens and the no-model short-circuits (`POLICY_BLOCKED`, `NOT_EVALUABLE`, evidence-less insufficiency) live in `orchestration/domain.py`. The model never chooses the domain, the tool or any argument. Without a registered domain tool the Phase 15 behaviour is unchanged. See `docs/ARCHITECTURE.md` section 39.
+
 ## Local development
 
 ```

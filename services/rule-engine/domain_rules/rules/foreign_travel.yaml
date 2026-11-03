@@ -1,0 +1,30 @@
+# Phase 17 domain rules: FOREIGN_TRAVEL. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_FOREIGN_TRAVEL_HOUSE_12_B23
+rule_version: '1'
+domain: FOREIGN_TRAVEL
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.FOREIGN_TRAVEL.HOUSE.12.B23
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 23 v. 10-12
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: DOM17_BPHS_SAN_12TH_HOUSE_23_10_12
+support: PARTIALLY_SUPPORTED
+source_term: wandering from country to country
+bridge_note: Derived from the effect chapter (12th lord and 12th house with malefics or benefics); not
+  a house-list term.
+params:
+  kind: HOUSE_RELEVANCE
+  house: 12
+  detail: FULL
+tags:
+  domain_tags:
+  - foreign_travel
+  signification_tags:
+  - foreign_travel.house12.wandering_from_country_to_country
+  effect_class: neutral

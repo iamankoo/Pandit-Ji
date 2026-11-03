@@ -20,6 +20,11 @@ Phase 16 adds the verification contracts (`verification`): `VerificationStatus`,
 `ClaimVerification`, `VerificationResponse`, the reason codes and the release action. Only the
 verification layer may produce `VERIFIED`; the agent contracts are unchanged.
 
+Phase 17 adds the life-domain contracts (`domain`): `LifeDomain` (the 27 domains and the
+extensions), `DomainAnalysisRequest` (no sex field, no inferred age), `DomainAnalysisResult` with
+its facts, rule results, versions and typed reasons. `EvidenceCapability` gains the additive
+`ASTRO_DOMAIN`; nothing else in the agent or verification contracts changes.
+
 The Astrology Service Interfaces (`ChartRequest`/`ChartResponse`, `DashaRequest`/`DashaResponse`,
 etc. -- see `docs/ARCHITECTURE.md` "Astrology Service Interfaces") are domain contracts defined
 by the phase that implements the corresponding engine.
@@ -29,4 +34,4 @@ from pandit_contracts.health import HealthStatus
 
 __all__ = ["HealthStatus"]
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"

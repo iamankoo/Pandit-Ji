@@ -1,0 +1,316 @@
+# Phase 17 domain rules: WEALTH. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_WEALTH_HOUSE_02_P11
+rule_version: '1'
+domain: WEALTH
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.WEALTH.HOUSE.02.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: wealth
+bridge_note: ''
+params:
+  kind: HOUSE_RELEVANCE
+  house: 2
+  detail: FULL
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.house2.wealth
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_KARAKA_JUPITER_PXV15
+rule_version: '1'
+domain: WEALTH
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.WEALTH.KARAKA.JUPITER.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: SOURCE_SUPPORTED
+source_term: wealth
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: jupiter
+  detail: FULL
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.karaka.jupiter.wealth
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_METHOD_PXVI31_H02_PXVI31
+rule_version: '1'
+domain: WEALTH
+kind: BHAVA_TRANSIT_METHOD
+mapping_id: MAP.WEALTH.METHOD.PXVI31_H02.PXVI31
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 31-35 (printed pp. 174-175)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+support: PARTIALLY_SUPPORTED
+source_term: success or acquisition of the 2th Bhava
+bridge_note: The source states the method for any Bhava; here it is applied to the house this domain itself
+  maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+  reckoning are not evaluated.
+params:
+  kind: BHAVA_TRANSIT_METHOD
+  house: 2
+  clauses:
+  - 31a
+  - 31b
+  - 31c
+  - 31d
+  - 31e
+  - '32'
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - bhava.transit_relation_of_researched_method
+  effect_class: context_dependent
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_DHANA_MOON_37_6
+rule_version: '1'
+domain: WEALTH
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_DHANA_MOON_37_6
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 6
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_DHANA_MOON_37_6
+support: SOURCE_SUPPORTED
+source_term: very affluent / medium / negligible by count
+bridge_note: ''
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_DHANA_MOON_37_6
+  phase6_signification: yoga.dhana_moon_37_6
+  blocked: false
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.phase6.bphs_san_dhana_moon_37_6
+  effect_class: supportive
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_DURADHARA_37_7_10
+rule_version: '1'
+domain: WEALTH
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_DURADHARA_37_7_10
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 7-10
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_DURADHARA_37_7_10
+support: PARTIALLY_SUPPORTED
+source_term: wealth, conveyances (among effects)
+bridge_note: Wealth is one of several effects the source names.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_DURADHARA_37_7_10
+  phase6_signification: yoga.duradhara_37_7_10
+  blocked: false
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.phase6.bphs_san_duradhara_37_7_10
+  effect_class: context_dependent
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_GAJAKESARI_36_3_4
+rule_version: '1'
+domain: WEALTH
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_GAJAKESARI_36_3_4
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 36 v. 3-4
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_GAJAKESARI_36_3_4
+support: PARTIALLY_SUPPORTED
+source_term: splendorous, wealthy, intelligent (among effects)
+bridge_note: Wealth is one of several effects the source names; the Phaladeepika Kesari profile is a separate
+  rule and is not merged.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_GAJAKESARI_36_3_4
+  phase6_signification: yoga.gajakesari
+  blocked: false
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.phase6.bphs_san_gajakesari_36_3_4
+  effect_class: context_dependent
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_KEMADRUMA_37_11_13
+rule_version: '1'
+domain: WEALTH
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_KEMADRUMA_37_11_13
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 11-13
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_KEMADRUMA_37_11_13
+support: PARTIALLY_SUPPORTED
+source_term: a source statement of penury
+bridge_note: ''
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_KEMADRUMA_37_11_13
+  phase6_signification: yoga.kemadruma_37_11_13
+  blocked: true
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.phase6.bphs_san_kemadruma_37_11_13
+  effect_class: challenging
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+- FEAR_OR_STIGMA_TRANSFORMED
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_PHASE6_BPHS_SAN_SUNAPHA_37_7_10
+rule_version: '1'
+domain: WEALTH
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.WEALTH.PHASE6.BPHS_SAN_SUNAPHA_37_7_10
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 7-10
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_SUNAPHA_37_7_10
+support: PARTIALLY_SUPPORTED
+source_term: intelligence, wealth, fame (among effects)
+bridge_note: Wealth is one of several effects the source names.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_SUNAPHA_37_7_10
+  phase6_signification: yoga.sunapha_37_7_10
+  blocked: false
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.phase6.bphs_san_sunapha_37_7_10
+  effect_class: context_dependent
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME
+---
+document_type: domain_rule
+rule_id: DOM_WEALTH_VARGA_D2_B7
+rule_version: '1'
+domain: WEALTH
+kind: VARGA_RELEVANCE
+mapping_id: MAP.WEALTH.VARGA.D2.B7
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 7 v. 1-8 (printed pp. 91-92)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+support: SOURCE_SUPPORTED
+source_term: wealth
+bridge_note: ''
+params:
+  kind: VARGA_RELEVANCE
+  varga: 2
+  show_house_lords:
+  - 2
+  show_karakas:
+  - jupiter
+  show_lagna_lord: false
+tags:
+  domain_tags:
+  - wealth
+  signification_tags:
+  - wealth.varga.d2.wealth
+  effect_class: neutral
+policy_flags:
+- FINANCE_INTERPRETIVE_ONLY
+- PROFESSIONAL_ADVICE_DISCLAIMER
+- NO_GUARANTEED_OUTCOME

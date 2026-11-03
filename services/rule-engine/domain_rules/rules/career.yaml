@@ -1,0 +1,397 @@
+# Phase 17 domain rules: CAREER. Source-backed structural relevance only; no prediction.
+document_type: domain_rule
+rule_id: DOM_CAREER_HOUSE_10_P11
+rule_version: '1'
+domain: CAREER
+kind: HOUSE_RELEVANCE
+mapping_id: MAP.CAREER.HOUSE.10.P11
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 11 v. 2-13 (printed pp. 121-123)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_SIGNIFICATION_11_2_13
+support: SOURCE_SUPPORTED
+source_term: profession (livelihood)
+bridge_note: '''Career'' is a product label; the source term is profession (livelihood); honour and authority
+  are also listed.'
+params:
+  kind: HOUSE_RELEVANCE
+  house: 10
+  detail: FULL
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.house10.profession_livelihood
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_JUPITER_H10_PXV17
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.JUPITER_H10.PXV17
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 17 (printed p. 159)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+support: UNRESOLVED_CONFLICT
+source_term: significator of the 10th house
+bridge_note: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate
+  (DC-03).
+params:
+  kind: KARAKA_RELEVANCE
+  planet: jupiter
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.jupiter.significator_of_the_10th_house
+  effect_class: neutral
+conflict_ids:
+- DC-03
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_MERCURY_H10_B3234
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.MERCURY_H10.B3234
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 32 v. 34 (printed p. 325)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_BPHS_SAN_HOUSE_KARAKA_32_34
+support: SOURCE_SUPPORTED
+source_term: significator of the 10th house
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: mercury
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.mercury.significator_of_the_10th_house
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_MERCURY_H10_PXV17
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.MERCURY_H10.PXV17
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 17 (printed p. 159)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+support: SOURCE_SUPPORTED
+source_term: significator of the 10th house
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: mercury
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.mercury.significator_of_the_10th_house
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_SATURN_H10_PXV17
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.SATURN_H10.PXV17
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 17 (printed p. 159)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+support: UNRESOLVED_CONFLICT
+source_term: significator of the 10th house
+bridge_note: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate
+  (DC-03).
+params:
+  kind: KARAKA_RELEVANCE
+  planet: saturn
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.saturn.significator_of_the_10th_house
+  effect_class: neutral
+conflict_ids:
+- DC-03
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_SATURN_PXV15
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.SATURN.PXV15
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 15-16 (printed p. 158)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_PLANET_KARAKATWA_XV_15_16
+support: SOURCE_SUPPORTED
+source_term: livelihood
+bridge_note: ''
+params:
+  kind: KARAKA_RELEVANCE
+  planet: saturn
+  detail: FULL
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.saturn.livelihood
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_KARAKA_SUN_H10_PXV17
+rule_version: '1'
+domain: CAREER
+kind: KARAKA_RELEVANCE
+mapping_id: MAP.CAREER.KARAKA.SUN_H10.PXV17
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XV sloka 17 (printed p. 159)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: KB_PHALA_SASTRI_HOUSE_KARAKA_XV_17
+support: UNRESOLVED_CONFLICT
+source_term: significator of the 10th house
+bridge_note: Phaladeepika lists more significators of the 10th than BPHS; the lists are kept separate
+  (DC-03).
+params:
+  kind: KARAKA_RELEVANCE
+  planet: sun
+  detail: FULL
+  for_house: 10
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.karaka.sun.significator_of_the_10th_house
+  effect_class: neutral
+conflict_ids:
+- DC-03
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_METHOD_PXVI31_H10_PXVI31
+rule_version: '1'
+domain: CAREER
+kind: BHAVA_TRANSIT_METHOD
+mapping_id: MAP.CAREER.METHOD.PXVI31_H10.PXVI31
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya XVI sloka 31-35 (printed pp. 174-175)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_BHAVA_TRANSIT_XVI_31_35
+support: PARTIALLY_SUPPORTED
+source_term: success or acquisition of the 10th Bhava
+bridge_note: The source states the method for any Bhava; here it is applied to the house this domain itself
+  maps. Sign-level relations (the Amsa alternative only with D9); the aspect alternative and the Moon
+  reckoning are not evaluated.
+params:
+  kind: BHAVA_TRANSIT_METHOD
+  house: 10
+  clauses:
+  - 31a
+  - 31b
+  - 31c
+  - 31d
+  - 31e
+  - '32'
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - bhava.transit_relation_of_researched_method
+  effect_class: context_dependent
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_PHASE6_BPHS_SAN_ADHI_MOON_37_5
+rule_version: '1'
+domain: CAREER
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.CAREER.PHASE6.BPHS_SAN_ADHI_MOON_37_5
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 37 v. 5
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_ADHI_MOON_37_5
+support: PARTIALLY_SUPPORTED
+source_term: king, minister or army chief (position)
+bridge_note: Position and rank, not career as such.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_ADHI_MOON_37_5
+  phase6_signification: yoga.adhi_moon_37_5
+  blocked: false
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.phase6.bphs_san_adhi_moon_37_5
+  effect_class: supportive
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_PHASE6_BPHS_SAN_UBHAYACHARI_38_1
+rule_version: '1'
+domain: CAREER
+kind: PHASE6_RULE_APPLICABILITY
+mapping_id: MAP.CAREER.PHASE6.BPHS_SAN_UBHAYACHARI_38_1
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 38 v. 1-4
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: BPHS_SAN_UBHAYACHARI_38_1
+support: PARTIALLY_SUPPORTED
+source_term: king or equal to a king (position)
+bridge_note: Position and rank, not career as such.
+params:
+  kind: PHASE6_RULE_APPLICABILITY
+  phase6_rule_id: BPHS_SAN_UBHAYACHARI_38_1
+  phase6_signification: yoga.ubhayachari_38_1
+  blocked: false
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.phase6.bphs_san_ubhayachari_38_1
+  effect_class: supportive
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_VARGA_D10_B7
+rule_version: '1'
+domain: CAREER
+kind: VARGA_RELEVANCE
+mapping_id: MAP.CAREER.VARGA.D10.B7
+status: active
+source: Brihat Parasara Hora Sastra
+source_id: BPHS_SANTHANAM_1984
+source_edition: Ranjan Publications, New Delhi, Vol I (Ch. 1-45)
+translator: R. Santhanam
+source_location: Ch. 7 v. 1-8 (printed pp. 91-92)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_BPHS_SAN_VARGA_USE_7_1_8
+support: PARTIALLY_SUPPORTED
+source_term: power (and position)
+bridge_note: The verse says power (and position); 'career' is the translator's gloss.
+params:
+  kind: VARGA_RELEVANCE
+  varga: 10
+  show_house_lords:
+  - 10
+  show_karakas: []
+  show_lagna_lord: false
+tags:
+  domain_tags:
+  - career
+  signification_tags:
+  - career.varga.d10.power_and_position
+  effect_class: neutral
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_WITHHELD_PV1_NAVAMSA_LORD_PV1
+rule_version: '1'
+domain: CAREER
+kind: POLICY_WITHHELD
+mapping_id: MAP.CAREER.WITHHELD.PV1_NAVAMSA_LORD.PV1
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya V sloka 1 (printed pp. 43-44)
+verification_level: IMAGE-TRANSLATION
+confidence: HIGH
+profile: DOM17_PHALA_SASTRI_LIVELIHOOD_V_1
+support: PARTIALLY_SUPPORTED
+source_term: livelihood by the Navamsa of the 10th lord
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: METHODOLOGY_NOT_APPROVED
+  outcome: NOT_EVALUABLE
+conflict_ids:
+- DC-04
+---
+document_type: domain_rule
+rule_id: DOM_CAREER_WITHHELD_PV48_LIVELIHOOD_LABELS_PV48
+rule_version: '1'
+domain: CAREER
+kind: POLICY_WITHHELD
+mapping_id: MAP.CAREER.WITHHELD.PV48_LIVELIHOOD_LABELS.PV48
+status: active
+source: Phaladeepika (Mantreswara)
+source_id: PHALADEEPIKA_SASTRI
+source_edition: Aruna Press, Bangalore, 2nd edition (1950)
+translator: V. Subrahmanya Sastri
+source_location: Adhyaya V sloka 4 and 8
+verification_level: OCR-TRANSLATION
+confidence: MEDIUM
+profile: DOM17_PHALA_SASTRI_LIVELIHOOD_V_4_8
+support: PARTIALLY_SUPPORTED
+source_term: livelihood descriptions with derogatory wording
+bridge_note: ''
+params:
+  kind: POLICY_WITHHELD
+  reason: HISTORICAL_STATEMENT_WITHHELD
+  outcome: POLICY_BLOCKED
+policy_flags:
+- FEAR_OR_STIGMA_TRANSFORMED

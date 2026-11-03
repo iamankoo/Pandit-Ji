@@ -57,6 +57,12 @@ class Message(str, Enum):
     LIMITATIONS_HEADING = "LIMITATIONS_HEADING"
     LIMITATION_MISSING = "LIMITATION_MISSING"
     LIMITATION_TRIMMED = "LIMITATION_TRIMMED"
+    # Phase 17: life-domain outcomes (structured results the agent states without a model call)
+    DOMAIN_NOT_EVALUABLE = "DOMAIN_NOT_EVALUABLE"
+    DOMAIN_POLICY_BLOCKED = "DOMAIN_POLICY_BLOCKED"
+    DOMAIN_ADULT_CONFIRMATION = "DOMAIN_ADULT_CONFIRMATION"
+    DOMAIN_MINORS_POLICY = "DOMAIN_MINORS_POLICY"
+    DOMAIN_INSUFFICIENT = "DOMAIN_INSUFFICIENT"
 
 
 MESSAGES: dict[Message, dict[LLMLanguage, str]] = {
@@ -110,6 +116,46 @@ MESSAGES: dict[Message, dict[LLMLanguage, str]] = {
         HG: "Size limit ki wajah se {count} kam-priority evidence items chhod diye gaye.",
     },
 }
+
+MESSAGES.update(
+    {
+        Message.DOMAIN_NOT_EVALUABLE: {
+            EN: "This area cannot be evaluated: the sources this system has read do not support a "
+            "method for it, so no reading is given.",
+            HI: "इस क्षेत्र का मूल्यांकन नहीं हो सकता: इस प्रणाली द्वारा पढ़े गए स्रोत इसके लिए कोई विधि "
+            "नहीं देते, इसलिए कोई पठन नहीं दिया जा रहा।",
+            HG: "Is area ka evaluation nahi ho sakta: is system ne jo sources padhe hain unme iske "
+            "liye koi method nahi hai, isliye koi reading nahi di ja rahi.",
+        },
+        Message.DOMAIN_POLICY_BLOCKED: {
+            EN: "This reading is not available under the current product policy.",
+            HI: "यह पठन वर्तमान उत्पाद नीति के अंतर्गत उपलब्ध नहीं है।",
+            HG: "Yeh reading abhi ki product policy ke under available nahi hai.",
+        },
+        Message.DOMAIN_ADULT_CONFIRMATION: {
+            EN: "For this topic I need an explicit confirmation that the reading is for an adult; "
+            "it was not given, so no reading is provided.",
+            HI: "इस विषय के लिए मुझे स्पष्ट पुष्टि चाहिए कि पठन किसी वयस्क के लिए है; वह नहीं दी गई, "
+            "इसलिए कोई पठन नहीं दिया जा रहा।",
+            HG: "Is topic ke liye mujhe explicit confirmation chahiye ki reading kisi adult "
+            "ke liye hai; woh nahi di gayi, isliye koi reading nahi di ja rahi.",
+        },
+        Message.DOMAIN_MINORS_POLICY: {
+            EN: "Readings involving minors are not offered until the relevant product and legal "
+            "policy is established.",
+            HI: "नाबालिगों से जुड़े पठन तब तक नहीं दिए जाते जब तक संबंधित उत्पाद और "
+            "कानूनी नीति तय नहीं हो जाती।",
+            HG: "Minors se jude readings tab tak nahi diye jaate jab tak relevant product "
+            "aur legal policy tay nahi ho jaati.",
+        },
+        Message.DOMAIN_INSUFFICIENT: {
+            EN: "The evidence this area needs is not available, so no reading is given.",
+            HI: "इस क्षेत्र के लिए आवश्यक साक्ष्य उपलब्ध नहीं है, इसलिए कोई पठन नहीं दिया जा रहा।",
+            HG: "Is area ke liye zaroori evidence available nahi hai, isliye koi reading "
+            "nahi di ja rahi.",
+        },
+    }
+)
 
 _ERROR_MESSAGE: dict[AgentErrorCode, Message] = {
     AgentErrorCode.UNSAFE_REQUEST: Message.REFUSAL_UNSAFE,

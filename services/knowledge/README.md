@@ -39,6 +39,10 @@ kb = KnowledgeBase(store, result.version_id)  # structured access
 hits = Retriever(store, provider).retrieve(RetrievalQuery(text="profession", top_k=3))
 ```
 
+## Domain methodology (Phase 17)
+
+`pandit_knowledge.domain_content` builds a separate, additive knowledge version (`KV-edb2a7d07a626dcb`, standards 1.30.0, no chunks) holding the domain definitions, house and karaka mappings, the locked Varga uses, policy notes and source conflicts, each with profile and location. Migration `0004_domain_knowledge_vocabulary` only widens CHECK vocabularies. Phase 12 and Phase 13 versions are unchanged.
+
 ## Local development
 
 ```

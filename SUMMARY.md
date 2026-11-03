@@ -2150,8 +2150,10 @@ Nothing is implemented: no code, contract, rule, mapping, data file, schema or t
 ### B. Domain outcome
 - Evaluated, source-supported: Education, Career, Finance, Wealth, Marriage, Family, Children (structural only).
 - Evaluated for the researched portions only (partial): Personality, Subjects, Job, Business, Love, Relationship, Spouse, Travel, Foreign Travel, Foreign Settlement, Spirituality.
-- NOT_EVALUABLE: Birth, College, Corporate Life, Startup, GF/BF, Foreign Education, Personal Life; extensions Investments, Entrepreneurship, Higher Education, Major Life Transitions, General Life Patterns, Health.
+- NOT_EVALUABLE: Birth, College, Corporate Life, Startup, GF/BF, Foreign Education, Personal Life.
+- The 9 extensions: Parents (PARTIALLY_SUPPORTED, evaluated, adult-gated, DC-01), Siblings (SOURCE_SUPPORTED, evaluated, adult-gated), Income (SOURCE_SUPPORTED, evaluated); Investments, Entrepreneurship, Higher Education, Major Life Transitions, Health NOT_EVALUABLE; General Life Patterns labelled PARTIALLY_SUPPORTED but NOT_EVALUABLE (no locked mapping).
 - POLICY_BLOCKED (minors policy unresolved): Childhood, School. Adult-gated domains need `subject_adult_confirmed=True`.
+- Varga source: the Phase 5 Kundli JSON `charts` section (present since commit `e7bd575`), read by field mapping only; Phase 6 `ChartFacts` stays D1-only and unchanged.
 - Dasha: only the marriage method (Phaladeepika X sl. 13-14) from a supplied section; transit: only the researched bhava method from a supplied section; Varga: D2, D3, D7, D9, D10, D12, D20, D24 from the Kundli JSON, never D4; missing sections give INSUFFICIENT_EVIDENCE. Conflicts DC-01..DC-05 and Kuja stay open.
 
 ### C. Test counts (local, Python 3.13 venv, PostgreSQL pgvector 18 for knowledge)
@@ -2160,10 +2162,11 @@ contracts 136; shared 1; astro-engine 1673; rule-engine 553; knowledge 187 passe
 ### D. Findings and limits (carry to Phase 18)
 - The Phase 16 verifier cannot resolve a domain result without registration; composition must register it as a trusted bundle (shown in `tests/integration/test_domain_phase17.py`). Unregistered: UNVERIFIABLE / EVIDENCE_UNAVAILABLE. Limitation claims for missing sections stay UNVERIFIABLE until the composition layer records the gaps as trusted missing evidence.
 - Phase 18: Dasha and Transit APIs/tools, the regenerate loop, report/API composition, the trusted-bundle registration, any production Varga source beyond the Kundli JSON.
+- Open points for the owner: (1) LD-14 names `PHASE_18_DEPENDENCY` as the typed reason for an absent dasha or transit section; the implementation uses `MISSING_DASHA_EVIDENCE` / `MISSING_TRANSIT_EVIDENCE` (the status is the approved INSUFFICIENT_EVIDENCE; `PHASE_18_DEPENDENCY` exists in the enum but is unused). (2) The Phaladeepika XVI bhava transit method is applied to the house each of six domains itself maps (a bridge from a source stated for any bhava; rules are PARTIALLY_SUPPORTED); its aspect alternative, Moon reckoning, karaka clause and sl. 34-35 are not evaluated.
 - The test model window is small: a large domain result needs `max_evidence_items` around 30 with the scripted test runtime (real models are not affected; not run).
 - Hindi and Hinglish domain texts: `CALIBRATION_REQUIRED`. `LEGAL_REVIEW_REQUIRED` items unchanged. Vastu, reports: not implemented. One PostgreSQL ANN-index test failed once in a full local run and passed in four later runs; watch CI.
 
 ### E. Exact stopping point
 Stop. Phase 18 starts only on the owner's explicit instruction after reviewing the Phase 17 final audit.
 
-FINAL RECORD: implementation commit `893229f477bd2f2a8fa265271ad6482b12d5b162` (starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`), CI run `41580451127`, 18 of 18 jobs successful (each job inspected). That commit message carries a co-author trailer that the owner's instruction excluded; it is not rewritten without the owner's decision.
+FINAL RECORD: implementation commit `7121816` (history rewritten on the owner's instruction to remove an unauthorised commit-message trailer; tree identical to the original `893229f`). Starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`. The CI run id of the final commit is recorded in the owner-facing audit reply (it cannot be known before the push).

@@ -2166,4 +2166,4 @@ contracts 136; shared 1; astro-engine 1673; rule-engine 553; knowledge 187 passe
 ### E. Exact stopping point
 Stop. Phase 18 starts only on the owner's explicit instruction after reviewing the Phase 17 final audit.
 
-FINAL RECORD: (filled in by the follow-up documentation commit)
+FINAL RECORD: implementation commit `893229f477bd2f2a8fa265271ad6482b12d5b162` (starting commit `3676ec7718190afc312d9ff8fcc88d821da27982`), CI run `41580451127`, 18 of 18 jobs successful (each job inspected). That commit message carries a co-author trailer that the owner's instruction excluded; it is not rewritten without the owner's decision.

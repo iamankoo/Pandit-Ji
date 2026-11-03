@@ -2,6 +2,8 @@
 
 Pandit Ji is developed strictly phase-by-phase per `Phases.md` (the sole authoritative execution roadmap — see `SOURCE_OF_TRUTH.md` for the full authority order). Before starting any work, read `Phases.md` to confirm the current phase, its deliverables, dependencies, exit criteria, and explicitly excluded work.
 
+> **Owner directive (2026-11-03):** for Phases 18-21 all development, testing and validation happen in GitHub Codespaces, without Docker (no Docker, Compose, Dockerfiles or Docker-based dev containers or CI). Any Docker instruction below is superseded for development; see `SUMMARY.md` section 54.
+
 ## Engineering workflow
 
 1. Branch from `main`.

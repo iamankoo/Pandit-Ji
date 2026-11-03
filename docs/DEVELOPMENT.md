@@ -2,6 +2,8 @@
 
 This is the Phase 3 (Repository & Engineering Foundation) developer guide. For architecture, read `docs/ARCHITECTURE.md`; for the roadmap, `Phases.md`; for locked technology choices, `TECH_STACK.md`.
 
+> **Owner directive (2026-11-03):** for Phases 18-21 all development, testing and validation happen in GitHub Codespaces, without Docker (no Docker, Compose, Dockerfiles or Docker-based dev containers or CI). Any Docker instruction below is superseded for development; see `SUMMARY.md` section 54.
+
 ## Prerequisites
 
 - Python 3.12+ (each Python component declares `>=3.10` for portability, but 3.12 matches `TECH_STACK.md`'s policy and the Docker images)
